@@ -1,29 +1,28 @@
-# OpenADMET CYP — передача проекта
+# OpenADMET CYP — Research Handoff
 
-Приватный исследовательский репозиторий для продолжения CYP Challenge. Снимок собран **29 октября 2026**. Здесь объединены Direct Inhibition, TDI, ADMETlab, воспроизведения открытых решений, аудит данных и приватные эксперименты P1–P11.
+Private research repository for continuing the CYP Challenge. This snapshot was assembled on **29 October 2026** and brings together Direct Inhibition, TDI, ADMETlab collection, reproductions of public solutions, data audits, and private experiments P1–P11.
 
-## Аннотация
+## Abstract
 
-Проект исследует предсказание прямого ингибирования CYP1A2, CYP2C9, CYP2D6 и CYP3A4 по структуре малой молекулы. Основная задача — регрессия pIC50 на официальных 4 905 обучающих и 750 скрытых тестовых молекулах. Центральный воспроизведённый рецепт — ансамбль Chemprop по briford с четырьмя наборами задач (18/8/6/1), пятью фолдами и опубликованным преобразованием распределения выходов. Его точный сохранённый submission получил MA-ST-RAE **0,4424575** на доступной части скрытого теста и остаётся лучшим сохранённым ориентиром проекта.
+This project studies structure-based prediction of direct inhibition of CYP1A2, CYP2C9, CYP2D6, and CYP3A4. The primary task is pIC50 regression using 4,905 official training molecules and 750 blinded query molecules. The main reproduced baseline is a briford-style Chemprop ensemble with four task sets (18/8/6/1), five folds, and the published output-distribution placement procedure. Its exact preserved submission achieved **MA-ST-RAE 0.4424575** on the evaluated portion of the hidden test set and remains the project's best preserved submission.
 
-В ходе работы собраны и химически проверены результаты ADMETlab для 32 421 уникальной запрошенной структуры: 32 419 полных численных векторов, 32 418 строк, допустимых как признаки, и полное покрытие всех 5 655 официальных молекул. Предсказанные ADMET-свойства не являются экспериментальными CYP-метками. Проверены LightGBM на ADME/ADMET-признаках, прямое включение 120 свойств в Chemprop, варианты функции потерь, исправление единиц двух дескрипторов, дополнительные представления и вложенные ансамбли. H6 улучшил некоторые локальные ST-RAE, но ухудшил результат leaderboard до 0,4616; вариант на исходной native-основе дал 0,4679. 27 октября исходный submission 0,4425 был восстановлен. Это отрицательный результат переноса локального выигрыша, а не подтверждённое улучшение метода.
+ADMETlab outcomes were collected and chemically audited for 32,421 unique requested structures: 32,419 complete numerical vectors, 32,418 feature-eligible rows, and complete coverage of all 5,655 official molecules. These predicted properties are not experimental CYP labels. Experiments tested LightGBM readouts of ADME/ADMET features, direct concatenation of 120 properties into Chemprop, alternative losses, a two-descriptor unit correction, additional representations, and nested ensembles. H6 improved some local ST-RAE estimates but worsened the leaderboard score to 0.4616; a variant anchored to the original native ensemble scored 0.4679. The original 0.4425 submission was restored on 27 October. The local gains therefore did not establish an improvement on the leaderboard.
 
-Главный оставшийся вопрос — соответствие валидации и преобразования выходов распределению челленджа. Два использованных holdout (own750 и reconstructed-briford529) пересекаются на 143 молекулах, многократно использовались при разработке и не воспроизводят плотные серии аналогов скрытого теста. P11 сохраняет предварительный протокол оценки будущих кандидатов, но не даёт доказанного прогноза leaderboard. Отдельная TDI-ветка воспроизводит Jeremy/Hauser и проверяет расширения; ни один кандидат не улучшил оба development holdout, поэтому в TDI ничего не отправлено.
+The main unresolved question is how validation and output calibration correspond to the challenge distribution. The two development cohorts, own750 and reconstructed-briford529, overlap by 143 molecules, have been reused during development, and do not reproduce the dense analogue-series structure of the blinded query set. P11 provides a provisional protocol for evaluating future candidates, not a validated leaderboard forecast. A separate TDI branch reproduces Jeremy and Hauser recipes and tests extensions; no candidate improved both development holdouts, so no TDI submission was made.
 
-**Выбран рабочий комплект:** код, данные и результаты всех направлений; сохранены веса основного native, финальные H6-головы и TDI-baseline. Промежуточные/отклонённые checkpoint исключены по решению владельца. Быстрые каталоги: [данные](data/README.md), [модели](models/README.md), [результаты](results/README.md).
+**Working package:** code, data, and results across the research directions, with the original native ensemble, final H6 heads, and selected TDI baseline models. Intermediate and rejected binary checkpoints were omitted at the owner's request. Quick access: [data](data/README.md), [models](models/README.md), and [results](results/README.md).
 
-## Начать здесь
+## Start here
 
-1. [HANDOFF_RU.md](docs/HANDOFF_RU.md) — состояние, основные выводы, следующий шаг.
-2. [EXPERIMENTS.md](docs/EXPERIMENTS.md) — карта экспериментов и решений.
-3. [DATA.md](docs/DATA.md) — данные, признаки, ограничения и химические исправления.
-4. [REPRODUCING.md](docs/REPRODUCING.md) — восстановление, проверка и запуск на другой машине.
-5. [SUBMISSIONS.md](docs/SUBMISSIONS.md) — точные файлы и история отправок.
-6. [ARCHIVE_INDEX.md](docs/ARCHIVE_INDEX.md) — полный каталог направлений.
-7. [PACKAGE.md](docs/PACKAGE.md) — состав и восстановление архива.
-8. [KNOWN_GAPS.md](docs/KNOWN_GAPS.md) — недоступные исторические iCloud-копии и сознательно исключённые checkpoint.
+1. [HANDOFF.md](docs/HANDOFF.md) — current state, findings, and next steps.
+2. [EXPERIMENTS.md](docs/EXPERIMENTS.md) — experiment map and decisions.
+3. [DATA.md](docs/DATA.md) — datasets, features, chemical corrections, and validation scope.
+4. [REPRODUCING.md](docs/REPRODUCING.md) — restoration and execution on another machine.
+5. [SUBMISSIONS.md](docs/SUBMISSIONS.md) — exact files and submission history.
+6. [ARCHIVE_INDEX.md](docs/ARCHIVE_INDEX.md) — research directory guide.
+7. [PACKAGE.md](docs/PACKAGE.md) — package contents and manifests.
 
-## Быстрая проверка без обучения
+## Quick verification without training
 
 ```bash
 gh repo clone AdeliyaLeleytner/cyp-challenge-handoff
@@ -31,15 +30,15 @@ cd cyp-challenge-handoff
 python3 tools/verify_handoff.py
 ```
 
-Для всех включённых моделей, массивов и крупных таблиц (около 2,94 ГБ загрузки; рекомендуется 12 ГБ свободного места):
+Restore the included models, arrays, and large tables with the commands below. The download is approximately 2.94 GB; allow 12 GB of free disk space.
 
 ```bash
 python3 tools/restore_assets.py --download
 python3 tools/verify_handoff.py --all
 ```
 
-Доступ к приватному репозиторию и его release требует авторизации GitHub. `restore_assets.py` использует `gh`, проверяет SHA256, восстанавливает пути и не запускает обучение или отправки. Сначала можно выполнить `--list`, а для отдельного направления — `--prefix archive/artifacts/cyp-private-v2-20261026/p11/`. Повторные файлы хранятся в release один раз по хешу; при восстановлении используются жёсткие ссылки с резервным копированием при невозможности link.
+Access to the private repository and release requires an authorized GitHub account. The restoration tool uses `gh`, checks SHA256 hashes, and restores the original archive paths. It performs no training or submissions. Use `--list` to inspect the required downloads or `--prefix archive/artifacts/cyp-private-v2-20261026/p11/` to select a research directory. Identical files are stored once by hash; restoration uses hard links where possible and copies otherwise.
 
-`archive/` — снимки исторических рабочих каталогов, с исходными именами для прослеживаемости. Они содержат устаревшие планы и абсолютные пути: текущую последовательность действий определяют документы в `docs/`. Новые команды не запускают старые submission/collector/lease scripts автоматически. Исходный публичный gist удалён по решению владельца; ссылки на него в исторических отчётах не означают, что он доступен или должен быть восстановлен.
+The `archive/` directory preserves historical working directories and source records under their original names. Use `docs/` for the current handoff workflow: historical plans may be outdated and may contain machine-specific absolute paths. The tools do not automatically execute archived submission, collection, or compute-rental scripts. The original public gist was deleted at the owner's request; historical references to it do not imply that it is available or should be restored.
 
-Материалы остаются приватными. Права на сторонний код, данные и checkpoint сохраняются у их владельцев; общий open-source license всему архиву не назначен. Перед дальнейшим распространением проверяйте условия конкретного upstream. Для продолжения другому человеку нужно выдать доступ к репозиторию.
+Keep these materials private. Third-party code, datasets, and checkpoints retain their original ownership and license terms; no blanket open-source license is assigned to the archive. The recipient must be granted repository access before continuing the work.

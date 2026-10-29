@@ -1,11 +1,11 @@
-# Данные для продолжения
+# Data Entry Points
 
-Начните с [описания данных](../docs/DATA.md). Основные точки входа:
+Start with the [data guide](../docs/DATA.md).
 
-- [Официальный Direct train](../archive/artifacts/cyp-private-v2-20261026/p11/evidence/official_train.csv) и [blind query](../archive/artifacts/cyp-private-v2-20261026/p11/evidence/official_blind.csv).
-- [ADMETlab: проверенная таблица всех 32 421 исходов](../archive/artifacts/goal-20261026/audited-dataset/admetlab-32421-audited-features.csv), [manifest](../archive/artifacts/goal-20261026/audited-dataset/manifest.json), [пояснения](../archive/artifacts/goal-20261026/audited-dataset/README.txt).
-- [Prepared native datasets](../archive/artifacts/cyp-private-v2-20261026/model-audit/incumbent-artifact-copy/prepared/): точные наборы для четырёх native-компонентов.
-- [TDI baseline prepared data](../archive/artifacts/tdi-20261024/remote/baseline/prepared/); provenance и число известных меток — в [TDI report](../archive/artifacts/tdi-20261024/REPORT.md).
-- [Сырые ADMETlab ответы и объединённые результаты](../archive/admetlab-collection/results/). Учёт missing/rejected/ineligible сохраняется; predicted properties не становятся экспериментальными метками.
+- [Official Direct training data](../archive/artifacts/cyp-private-v2-20261026/p11/evidence/official_train.csv) and [blinded queries](../archive/artifacts/cyp-private-v2-20261026/p11/evidence/official_blind.csv).
+- [Audited ADMETlab table covering all 32,421 outcomes](../archive/artifacts/goal-20261026/audited-dataset/admetlab-32421-audited-features.csv), its [manifest](../archive/artifacts/goal-20261026/audited-dataset/manifest.json), and [data notes](../archive/artifacts/goal-20261026/audited-dataset/README.txt).
+- [Prepared native datasets](../archive/artifacts/cyp-private-v2-20261026/model-audit/incumbent-artifact-copy/prepared/): exact inputs for the four native components.
+- [Prepared TDI baseline data](../archive/artifacts/tdi-20261024/remote/baseline/prepared/); label counts and provenance are documented in the [TDI report](../archive/artifacts/tdi-20261024/REPORT.md).
+- [Raw ADMETlab responses and merged outputs](../archive/admetlab-collection/results/). Preserve missing, rejected, and ineligible outcomes; predicted properties are not experimental labels.
 
-Крупные CSV/массивы восстанавливаются из закрытого release. Размер official Direct train не равен размеру TDI train или полного external pool. Не переносите splits между ними без identity audit.
+Large tables and arrays are restored from the private release. Official Direct training data, TDI training data, and the external pool are different populations. Audit molecular identities before transferring splits between them.

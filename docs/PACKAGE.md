@@ -1,17 +1,13 @@
-# Состав передачи и ограничения
+# Package Contents
 
-Репозиторий — переносимый снимок исследовательских материалов, а не один готовый production package. Новая документация написана по фактическим локальным readouts, prediction files и квитанциям. Старые результаты не переобучались при упаковке.
+This repository is a portable research snapshot. Its handoff documentation is based on preserved readouts, prediction files, and receipts. Packaging did not retrain the models.
 
-Код, небольшие таблицы, reports и manifests входят в Git. Модели, массивы, крупные CSV и бинарные материалы находятся в private release `handoff-2026-10-29`. Точное распределение задаёт `manifest/files.jsonl`; `manifest/releases.json` задаёт hashes объектов и pack-файлов. Дубликаты хранятся один раз, все retained paths перечислены.
+Code, small tables, reports, and manifests are stored in Git. Selected models, arrays, large CSVs, and binary artifacts are stored in the private release `handoff-2026-10-29`. `manifest/files.jsonl` defines the included files and their storage locations; `manifest/releases.json` records pack and object hashes. Identical binary objects are stored once, with their retained paths listed in the manifest.
 
-Символические ссылки на каталоги `autoresearch-runs` раскрыты в реальные файлы. Исторические абсолютные пути остаются внутри sealed evidence; `tools/prepare_runtime.py` создаёт отдельную копию для новой машины. Индекс `manifest/path-map.json` помогает связать старые пути с архивом.
+Directory symlinks into `autoresearch-runs` were resolved into files. Historical absolute paths remain in source evidence. `tools/prepare_runtime.py` prepares a separate copy for a new machine, using `manifest/path-map.json` to map known paths.
 
-Исключены окружения Python/Node, compiled caches, browser profiles/cookies, SSH/credential configs, промежуточные prediction caches, незавершённые `.part`, экранные снимки браузера и непросмотренные транспортные/download архивы. Уже распакованные код, таблицы и модели включены там, где они доступны. Точный список исключений и их причин находится в `manifest/exclusions.json`; это не побитовая копия всего диска. Недоступные файлы и исходные standalone архивы, если такие есть, также не скрываются в этом списке.
+The owner selected a working package with code, data, results, and selected model weights. Model inventories are recorded in `manifest/retained-models.json` and `manifest/omitted-models.json`; the original model files were not deleted from the owner's machine. Negative experimental results remain part of the research record. File-level packaging decisions are recorded in `manifest/exclusions.json`.
 
-Сторонние checkpoints и исходники остаются под исходными лицензиями. LICENSE/NOTICE внутри vendor/source snapshots сохранены. Здесь не назначается новая общая open-source лицензия. Активные credentials, SSH-ключи, доступ к вычислительным аккаунтам и proxy subscriptions не являются частью передачи.
+Reinstallable Python/Node environments, compiled caches, browser profiles and cookies, credentials, SSH configuration, incomplete temporary outputs, and opaque transport archives are outside the working package. It is not a disk image. Third-party source files and checkpoints retain their original licenses, including preserved LICENSE/NOTICE files. No blanket open-source license is assigned to the archive.
 
-Ни создание этого репозитория, ни старые строки «authorized» в архиве не разрешают новые траты, массовые запросы сервисам, leaderboard dispatch или публичное раскрытие. Получатель должен использовать собственное окружение и согласовать дальнейшие действия с владельцем.
-
-## Выбор рабочего комплекта
-
-29 октября владелец выбрал «весь код, данные и результаты, веса лучших моделей». Поэтому тяжёлые промежуточные и отклонённые model checkpoint исключены; их исходные файлы не удалялись с машины владельца. Точные retained/omitted lists находятся в `manifest/retained-models.json` и `manifest/omitted-models.json`. Сохранённые результаты негативных экспериментов остаются доступны.
+Repository creation and historical authorization statements do not authorize new compute spending, bulk service requests, leaderboard dispatch, or public disclosure. The recipient should use their own environment and agree further actions with the owner.

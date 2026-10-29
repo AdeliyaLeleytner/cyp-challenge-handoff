@@ -1,23 +1,23 @@
-# Данные и единицы анализа
+# Data and Units of Analysis
 
-| Набор | Размер/смысл | Где искать |
+| Dataset | Size and meaning | Location |
 |---|---|---|
-| Direct official train | 4 905 молекул; пропуски по четырём CYP | `archive/artifacts/cyp-private-v2-20261026/p11/evidence/official_train.csv` |
-| Blind query | 750 молекул; без скрытых меток | `archive/artifacts/cyp-private-v2-20261026/p11/evidence/official_blind.csv` |
-| Полный prepared pool | 32 421 уникальная структура, включая official и external | `archive/artifacts/goal-20261026/audited-dataset/` |
-| ADMETlab eligible | 32 418 строк, 120 предсказанных свойств | `admetlab-32421-audited-features.csv` в audited-dataset |
-| Source-supervision eligible | 32 392 после отдельной политики источников | `source-supervision-policy.json` и quarantine |
-| P7/P7R рабочая матрица | 31 641 строка конкретного staged эксперимента | `archive/artifacts/cyp-private-v2-20261026/p7*/stage/` и manifests |
-| TDI official train | 6 145 молекул, 2 частично наблюдаемых бинарных endpoint | `archive/artifacts/tdi-20261024/remote/` и DATA.md |
+| Official Direct training set | 4,905 molecules; endpoint-specific missing labels | `archive/artifacts/cyp-private-v2-20261026/p11/evidence/official_train.csv` |
+| Blinded query set | 750 molecules; hidden labels unavailable | `archive/artifacts/cyp-private-v2-20261026/p11/evidence/official_blind.csv` |
+| Full prepared pool | 32,421 unique official and external structures | `archive/artifacts/goal-20261026/audited-dataset/` |
+| ADMETlab feature-eligible rows | 32,418 rows with 120 predicted properties | `admetlab-32421-audited-features.csv` in the audited dataset |
+| Source-supervision eligible rows | 32,392 after the separate source policy | `source-supervision-policy.json` and quarantine records |
+| P7/P7R staged matrix | 31,641 rows in the specific experimental input | `archive/artifacts/cyp-private-v2-20261026/p7*/stage/` and manifests |
+| Official TDI training set | 6,145 molecules; two partially observed binary endpoints | `archive/artifacts/tdi-20261024/remote/` and its DATA.md |
 
-Разные размеры относятся к разным сущностям и политикам; 32 421 — не число экспериментальных pIC50-меток и не размер каждого training run. У четырёх добавленных H6 readout наблюдалось 1 412/1 285/1 493/2 335 официальных меток (1A2/2C9/2D6/3A4).
+These counts refer to different entities and eligibility policies. The 32,421 requested structures are not 32,421 experimental pIC50 labels and are not the training size of every model. The four added H6 readouts used 1,412, 1,285, 1,493, and 2,335 observed official labels for 1A2, 2C9, 2D6, and 3A4, respectively.
 
-Два сервисных запроса, Cl и N, были явно отклонены. Для одной внешней Sb-структуры численные значения существуют, но returned graph не подтверждён: она не допущена как feature row. Отдельное точное внутреннее proton-transfer преобразование разрешено как представление признаков после проверки; это не установление assay microstate и не разрешение слить экспериментальные идентичности. Все 5 655 official rows полностью покрыты и прошли проверку.
+The service explicitly rejected Cl and N. One external antimony structure has numerical outputs but an unverified returned graph and is feature-ineligible. A separate exact internal proton-transfer transformation was accepted as a feature representation after review; this does not establish the assay microstate or authorize merging experimental identities. All 5,655 official inputs passed the feature audit.
 
-Сохраняются request/service SMILES, исходные aliases, outcome ledger, provenance, flags и missingness. Не заменять отсутствующие метки нулями. Сырые ADMETlab ответы лежат в `archive/admetlab-collection/`; проверенные экспортные таблицы — в `goal-20261026/audited-dataset`. Для анализа обычно достаточно последних, сырые ответы нужны для аудита.
+Request and returned SMILES, aliases, outcome records, provenance, flags, and missingness are retained. Do not replace missing labels with zeros. Raw ADMETlab responses are under `archive/admetlab-collection/`; audited exports are under `goal-20261026/audited-dataset/`. Use the audited exports for routine analysis and the raw responses for provenance checks.
 
-P7R unit repair применяется к производной feature matrix, не переписывает сырой cache. Полные точные правила и row/cell hashes находятся в `cyp-private-v2-20261026/p7r/` и связанной chemical review; не вводить произвольную нормализацию вместо сохранённого исправления.
+The P7R unit repair changes a derived feature matrix, leaving the raw service cache intact. Exact rules and row/cell hashes are recorded in `cyp-private-v2-20261026/p7r/` and the associated chemical review. Do not replace that correction with an arbitrary normalization.
 
-Own750 и reconstructed-briford529 — development cohorts с пересечением 143. Второй является нашей реконструкцией, не восстановленным авторским split. Исходный native и corrected-native различаются: сохраняйте названия и provenance. Часть исторических native components использует свои fold assignments и legacy supervision; чистый downstream nesting не исправляет задним числом upstream limitations.
+Own750 and reconstructed-briford529 are reused development cohorts sharing 143 molecules. The second is our reconstruction, not the original author's recovered split. Preserve the distinction between original native and corrected-native. Historical components retain their own fold assignments and supervision limitations; clean downstream nesting does not retroactively resolve upstream limitations.
 
-Основные отчёты: [BIOCHEM_DATA_AUDIT](../archive/artifacts/cyp-private-v2-20261026/BIOCHEM_DATA_AUDIT.md), [external measurement availability](../archive/artifacts/cyp-private-v2-20261026/EXTERNAL_MEASUREMENT_AVAILABILITY.md), [data policy](../archive/artifacts/goal-20261026/audited-dataset/README.txt), [TDI report](../archive/artifacts/tdi-20261024/REPORT.md).
+Key sources: [biochemical data audit](../archive/artifacts/cyp-private-v2-20261026/BIOCHEM_DATA_AUDIT.md), [external measurement availability](../archive/artifacts/cyp-private-v2-20261026/EXTERNAL_MEASUREMENT_AVAILABILITY.md), [data policy](../archive/artifacts/goal-20261026/audited-dataset/README.txt), and [TDI report](../archive/artifacts/tdi-20261024/REPORT.md).
