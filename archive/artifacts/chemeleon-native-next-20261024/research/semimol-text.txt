@@ -1,0 +1,1722 @@
+alphaXiv: https://www.alphaxiv.org/abs/2601.04507
+
+Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)
+A Semi-supervised Molecular Learning Framework for Activity Cliff Estimation
+Fang Wu
+Stanford University
+fangwu97@stanford.edu
+Abstract
+Machine learning (ML) enables accurate and fast
+molecular property predictions, which is of inter-
+est in drug discovery and material design. Their
+success is based on the principle of similarity at its
+heart, assuming that similar molecules exhibit close
+properties. However, activity cliffs challenge this
+principle, and their presence leads to a sharp de-
+cline in the performance of existing ML algorithms,
+particularly graph-based methods. To overcome
+this obstacle under a low-data scenario, we propose
+a novel semi-supervised learning (SSL) method
+dubbed SemiMol, which employs predictions on
+numerous unannotated data as pseudo-signals for
+subsequent training. Specifically, we introduce an
+additional instructor model to evaluate the accuracy
+and trustworthiness of proxy labels because exist-
+ing pseudo-labeling approaches require probabilis-
+tic outputs to reveal the model’s confidence and
+fail to be applied in regression tasks. Moreover,
+we design a self-adaptive curriculum learning al-
+gorithm to progressively move the target model to-
+ward hard samples at a controllable pace. Extensive
+experiments on 30 activity cliff datasets demon-
+strate that SemiMol significantly enhances graph-
+based ML architectures and outpasses state-of-the-
+art pretraining and SSL baselines.
+1 Introduction
+The Similar-Structure, Similar-Property Principle
+(SSP) [Bender and Glen, 2004] has been a central premise
+in medicinal chemistry that similar molecules tend to exhibit
+similar properties, which can be physical (e.g., boiling
+points) or biological (e.g., activity). This fundamental
+assertion is validated by long experience suggesting that
+rules of thumb such as phenethylamines are likely to have
+activity in the central nervous system and that β-lactams
+frequently possess antibacterial activity [Martin et al., 2002].
+Computational chemists have also exploited this premise
+in their analysis of the molecular diversity of compound
+libraries and the selection of compounds for high-throughput
+screening (HTS) [Johnson et al., 1989].
+Figure 1: For non-activity cliffs, GNNs successfully discover the
+motif of COC(=O)c1ccccc1 and group molecules with this pat-
+tern as local anesthetics. For activity cliffs, GNNs are misguided by
+the shared motif pattern of COCCNCc1ccccc1 and wrongly pre-
+dict the inactivity of relevant molecules.
+This concept of chemical similarity (or molecular similar-
+ity) rationalizes the thriving deployment of machine learn-
+ing (ML) models in discovering and designing new drugs
+with expected functions. Noticeably, ML algorithms usu-
+ally work by recognizing the statistically important patterns
+and assigning close values to neighbor samples in the high-
+dimensional feature space [Mitchell and Mitchell, 1997].
+They learn motifs that appear repeatedly in the training set,
+cluster molecules that carry the same motif, and make similar
+predictions for them [Wu et al., 2023b]. Therefore, SSP lays
+down a solid scientific foundation for and highly aligns with
+the inner operation logic of ML mechanisms.
+Despite the triumph that ML has achieved in forecasting
+molecular properties, one particular exception to this princi-
+ple holds great insights into the underlying structure-activity
+(or structure-property) relationships [Stumpfe et al., 2020].
+This exception is constituted by activity cliffs [Maggiora,
+2006], which are pairs of structurally similar molecules that
+exhibit a large difference in their biological activity. These
+outliers can impose a detrimental effect on ML models by
+misguiding them to seriously mispredict the activity of cer-
+tain molecules, even with an overall high model predictivity
+arXiv:2601.04507v1 [cs.CE] 8 Jan 2026
+
+Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)
+(see Figure 1). Although numerous studies have focused on
+defining activity cliffs and investigating their influence [van
+Tilborg et al., 2022], how to ameliorate this obstacle to the
+development of ML remains unexplored.
+In particular, the quantity and quality of the data are one
+of the most pivot factors in the success of deep learning
+(DL) algorithms, but the evaluation of DL methods on activ-
+ity cliff estimation is always in a low-data scenario. Mean-
+while, the graph research community for molecule model-
+ing has been trying to replicate the victory of self-supervised
+pretraining in NLP and claims substantial improvements
+by pretraining on large-scale datasets [Rong et al., 2020;
+Zhou et al., 2022]. Consequently, it provokes the question
+that “how much benefit self-supervised learning can bring to
+estimate activity cliffs?”. As an answer, we observe a negli-
+gible reward gained by pretraining in many cases. Our first
+important finding is that self-supervised graph pretraining
+does not always have statistically significant advantages over
+non-pretraining methods with an average improvement ratio
+of merely 6.35%. Secondly, although several recent studies
+leverage the 3D spatial information of molecules during the
+pretraining stages [Fang et al., 2022], the incorporation of 3D
+geometry does not exhibit considerable advantages in recog-
+nizing molecular cliffs. Third, the design of the backbone
+GNNs has a larger impact on the accuracy of activity cliff
+estimation than the choice of pretraining mechanisms.
+This phenomenon inspires us to explore a more effi-
+cient schema to employ the abundant unlabeled molecules
+and relieve the data scarcity in activity cliff identification.
+Towards this direction, we present a novel and effective
+semi-supervised learning (SSL) mechanism dubbed Semi-
+Mol, which leverages predictions on unannotated data as su-
+pervised signals for subsequent training. However, pseudo-
+labels can be unreliable because labeled and unlabeled sam-
+ples are usually drawn from different data distributions and
+DL models often struggle to detect this discrepancy. Besides
+that, existing pseudo-labeling approaches require probabilis-
+tic outputs to reveal the model’s confidence and fail to be
+applied in regression tasks [Rizve et al., 2021; Wu et al.,
+2023a]. To surmount this barrier, we introduce an additional
+instructor model to evaluate the accuracy and trustworthiness
+of proxy labels. These confidence scores then instruct the
+target molecular model to selectively focus on different data
+points in a progressive way. In SemiMol, rather than using
+fixed thresholds or manually tuning thresholds with percentile
+scores [Cascante-Bonilla et al., 2021], we propose a self-
+adaptive criterion for curriculum learning to determine which
+subset of pseudo-labeled samples should be incorporated into
+the training set. With these delicately designed controllable
+learning paces, the target molecular model can take advantage
+of the unlabeled data assuredly without suffering from over-
+reliance on labeled data and the severe inaccuracy of some
+pseudo-labels.
+We conducted extensive experimentation and visualization
+on MoleculeACE [van Tilborg et al., 2022] to verify the effec-
+tiveness of our method. It can be found that our SemiMol sig-
+nificantly promotes the representation ability of graph-based
+DL models in low-data scenarios and it outperforms state-of-
+the-art (SOTA) pretrained GNNs, descriptor-based ML mod-
+els, and sequenced-based language models as well as prevail-
+ing SSL methods on all 30 activity cliff datasets. These re-
+sults provide encouraging evidence that SemiMol can accu-
+rately capture adequate chemical and biological information
+to recognize cliffs in bioactivity. Our work positions itself
+in a broader movement within the graph-learning community
+for bioinformatics and aims to explore the optimal solution
+for low-data molecular property prediction systematically.
+2 Method
+2.1 Preliminaries and Background
+Task formulation. Assume that there exists a set of ac-
+cessible molecular data D
+⋆ 
+= {(x
+⋆
+i 
+, y
+⋆
+i 
+)}
+N
+i=1
+, which con-
+sists of labeled data points x
+⋆
+i 
+. They can be in different for-
+mats such as 1D sequences, 2D graphs, and 3D structures,
+and y
+⋆
+i 
+can be any discrete (e.g., toxicity, and drug reaction)
+or continuous properties (e.g., water solubility, and free en-
+ergy). Here we only consider the continuous property to align
+with the setting of the activity cliff estimation problem. Still,
+our approach can be easily extended to binary or multi-label
+circumstances. The target molecular model f : X → Y
+aims to capture the mapping of molecules and their proper-
+ties. It can be any type of architecture such as Transform-
+ers, GNNs, or geometric neural networks. We also have an-
+other set of unseen data D
+test 
+to evaluate the model’s perfor-
+mance. Typically, D
+⋆ 
+is divided into the training and vali-
+dation sets, denoted as D
+train 
+= 
+
+x
+train
+i 
+, y
+train
+i
+ 
+N
+1
+i=1 
+and
+D
+val 
+= 
+
+x
+val
+i 
+, y
+val
+i
+ 
+N
+2
+i=1
+, respectively. Furthermore, there
+is a set of unlabeled data points D
+∗ 
+= {x
+∗
+i 
+}
+M
+i=1
+, where the
+number of unlabeled data M is much larger than that of la-
+beled data N (e.g., 100 or 10000 times larger).
+Semi-supervised learning. SSL has attracted increasing
+interest in overcoming the need for large annotated datasets.
+Existing semi-supervised algorithms can be roughly sepa-
+rated into three sorts: consistency regularization, proxy-label
+methods, and generative models. The consistency regulariza-
+tion is based on the simple concept that randomness within
+the neural network (e.g., with dropout) or data augmentation
+transformations should not modify model predictions given
+the same input and imposes an auxiliary loss. This line
+of research includes π-model [Laine and Aila, 2016], tem-
+poral ensembling [Laine and Aila, 2016], and mean teach-
+ers [Tarvainen and Valpola, 2017] The proxy-label methods
+regard proxy labels on unlabeled data as targets and con-
+sist of two groups: self-training [Yarowsky, 1995], where the
+model itself produces the proxy labels, and multiview learn-
+ing [Zhao et al., 2017], where proxy labels are produced by
+models trained on different views of the data. The generative
+models rely on variational autoencoders (VAE) [Ehsan Ab-
+basnejad et al., 2017] and generative adversarial networks
+(GAN) [Odena, 2016] to capture the joint distribution p(y|x)
+more accurately.
+2.2 Motivation of SemiMol
+Proxy-labeling with confidence. Labeled data D
+⋆ 
+and un-
+labeled data D
+∗ 
+in most cases follow significantly differ-
+ent data distributions, i.e., P(x
+⋆
+i 
+, y
+⋆
+i 
+)̸ = P(x
+∗
+i 
+, y
+∗
+i 
+). How-
+
+Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)
+Labeled Molecules
+Target Model 𝑓
+Instructor Model 𝑔
+I. Pseudo-labeling
+II. Confidence Prediction
+0 
+1
+𝛾
+III. Selection
+and Training
+Hybrid Dataset
+Sample Selection
+𝛾′
+∆𝛾
+Evaluation on
+Validation Set
+Self-adaptive Curriculum Learning
+Unlabeled Molecules 
+Pseudo-labeled Molecules
+Figure 2: Illustration of SemiMol. The target model first assigns predictions for unlabeled molecular data. Then the instructor model analyzes
+the confidence of those proxy labels. After that, a self-adaptive curriculum learning schema is adopted to move the target model towards hard
+samples progressively. By iteratively repeating these processes, the target model can extract task-specific information from vast unannotated
+molecules to the greatest extent.
+ever, on the one hand, many existing semi-supervised al-
+gorithms [Yarowsky, 1995; Laine and Aila, 2016; Sohn et
+al., 2020; Xie et al., 2020] assume that there is no distri-
+butional shift between D
+⋆ 
+and D
+∗
+. They are likely only to
+reinforce the consistent information in the labeled data D
+⋆
+to unlabeled examples D
+∗ 
+instead of mining auxiliary infor-
+mation from D
+∗
+, without exception for proxy labeling [Lee
+and others, 2013]. On the other hand, despite the versatility
+and modality-agnostic of proxy labeling, it achieves relatively
+poor performance compared to recent semi-supervised algo-
+rithms [Rizve et al., 2021]. This arises because some pseudo-
+labels ˆy
+∗
+i 
+can be severely incorrect during training due to the
+poor generalization ability of classic DL models [Hendrycks
+et al., 2021]. If we directly utilize pseudo-labels that are pre-
+dicted by a previously learned model for subsequent train-
+ing, the conformance-biased information in the proceeding
+epochs could increase confidence in erroneous predictions
+and eventually lead to a vicious circle of error accumula-
+tion [Arazo et al., 2020]. The situation can be even worse
+when the labeled data D
+⋆ 
+contain noises due to unavoidable
+experimental errors. Consequently, it is necessary to under-
+stand the quality and reliability of pseudo-annotations and
+intelligently select a subset to diminish the noise present in
+training [Rizve et al., 2021].
+Confidence for regression tasks. Even though confidence
+is crucial for pseudo-label selection and confidence-based se-
+lection reduces pseudo-label error rates, the poor calibration
+of neural networks renders this solution insufficient. Explic-
+itly, incorrect predictions in poorly calibrated networks can
+also have high confidence scores (i.e., ˆy
+∗
+i 
+→ 0 or ˆy
+∗
+i 
+→
+1) [Rizve et al., 2021]. More importantly, the majority of ex-
+isting approaches such as uncertainty-aware pseudo-label se-
+lection (UPS) [Rizve et al., 2021] resort to the target model’s
+output ˆy
+i 
+as the indicator of confidence. They tend to pro-
+duce hard labels by y
+∗
+i 
+= 1 [ˆy
+∗
+i 
+≥ γ
+1
+] or y
+∗
+i 
+= 1 [ˆy
+∗
+i 
+≤ γ
+2
+],
+where γ
+1 
+and γ
+2 
+are pre-defined confidence thresholds. How-
+ever, this selection mechanism becomes inapplicable if Y is
+a continuous label space because networks no longer output
+class probabilities. In other words, for regression tasks, ˆy
+∗
+i
+does not disclose any confidential information. Noticeably, a
+great number of biochemical problems are regression-based,
+including molecular property prediction [Wu et al., 2018], 3D
+structure prediction [Jumper et al., 2021], and binding affinity
+prediction [Wang et al., 2005]. This presents an unavoidable
+but essential challenge for probabilistic output-based proxy-
+labeling algorithms [Rizve et al., 2021].
+According to these two motivations, instead of depending
+on the output of the model ˆy
+∗
+i 
+to judge the reliability of the
+proxy labels, we accompany the target molecular model f
+with an additional instructor model g. It plays the role of a
+critic and predicts label observability, i.e., whether the label
+is true or fake. The introduction of g disentangles the confi-
+dence prediction and the property prediction and can greatly
+reduce the noise introduced by the pseudo-labeling process.
+2.3 Framework of SemiMol
+Instructor-guided SSL. To circumvent the obstacle of
+over-reliance and reduce the noise of proxy labels, we present
+an instructor-guided semi-supervised framework, dubbed
+SemiMol (see Figure 2), to intelligently select a subset of
+pseudo-labels with less noise. SemiMol is made up of two
+components: one target molecular model f and one instruc-
+tor model g. The former f is responsible for predicting the
+properties ˆy. In contrast, the latter g plays a role in mea-
+
+Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)
+suring the reliability p of supervised signals, which can be
+interpreted as the confidence probabilities of pseudo-labels.
+We separate the integral procedure of SemiMol into two
+phases. In the first step, we retain pseudo-labels {ˆy
+∗
+i 
+}
+M
+i=1
+.
+There are several approaches to creating proxy labels, such
+as label propagation via neighborhood graphs [Iscen et al.,
+2019]. Here we follow [Lee and others, 2013] and require the
+molecular model f to directly annotate samples in the unla-
+beled dataset D
+∗
+. Then in the following step, we construct
+a new dataset with both labeled and pseudo-labeled samples
+as D
+′ 
+= D
+⋆ 
+∪ {(x
+∗
+i 
+, ˆy
+∗
+i 
+)}
+M
+i=1 
+and proceed training the target
+molecular model f and the instructor model g based on this
+new set. These two operations are iteratively repeated until f
+reaches the optimal performance on the validation set D
+val
+.
+To be specific, the instructor model g : (X × Y × H
+f 
+) →
+P forecasts the confidence measure p
+i 
+(0 ≤ p ≤ 1) of
+whether the given label y
+′
+i 
+belongs to the ground-truth label
+set {y
+⋆
+i 
+}
+N
+i=1 
+or the pseudo-label set {y
+∗
+i 
+}
+M
+i=1
+. It digests three
+items: the data sample with its label (x
+′
+i
+, y
+′
+i
+) ∈ D
+′ 
+and an
+additional loss term H
+f 
+(f (x
+′
+i
+), y
+′
+i
+), where H
+f 
+is tradition-
+ally selected as a root-mean-squared-error (RMSE) loss or
+a mean absolute error (MAE) loss for regression tasks and
+cross-entropy (CE) loss for classification problems. Here we
+regard H
+f 
+(.) as the ingredient of g’s input to provide more in-
+formation about the main molecular property prediction task.
+Finally, the instructor model g is supervised via a binary CE
+loss (BCE) as
+L
+g
+
+D
+′
+, {ˆy
+′
+i
+}
+N +M
+i=1
+ 
+= 
+X
+(x
+′
+i
+,y
+′
+i
+)∈D
+′
+BCE(p
+i
+, c
+i
+)
+= 
+X
+(x
+′
+i
+,y
+′
+i
+)∈D
+′
+BCE
+
+g
+
+x
+′
+i
+, y
+′
+i
+, H
+f 
+(ˆy
+′
+i
+, y
+′
+i
+) 
+
+, c
+i
+
+,
+(1)
+where c
+i 
+∈ [0, 1] is an integer and represents the observability
+mask. It indicates whether y
+i 
+is pseudo-labeled (c
+i 
+= 0) or
+not (c
+i 
+= 1).
+Curriculum-based pseudo-labeling. Meanwhile, the tar-
+get molecular model f receives discriminative information
+{p
+i
+}
+N +M
+i=1 
+from the instructor model g and uses it to effi-
+ciently select pseudo-labeled samples to backpropagate its
+gradient. Remarkably, the criterion leveraged to determine
+which subset of unlabeled samples D
+∗ 
+to be incorporated into
+the training in each round is vital to the success of pseudo-
+labeling. Various uncertainty metrics have been explored
+in the previous literature. For instance, several approaches
+choose instances with the highest-confidence [Zhu, 2005] or
+retrieve the nearest samples in the feature space [Shi et al.,
+2018]. Afterward, some studies adopt techniques of fixed
+thresholds, tuning thresholds manually, or using percentile
+scores [Cascante-Bonilla et al., 2021]. Here, we propose a
+self-adaptive curriculum learning algorithm to enable pseudo-
+annotated samples to enter or leave the new training set.
+Specifically, we first initialize a percentage threshold γ and
+use it to produce hard labels and constitute the hybrid set
+D
+′′ 
+= D
+⋆ 
+∪ {(x
+∗
+i 
+, ˆy
+∗
+i 
+) |p
+∗
+i 
+≥ γ} to train the target model f .
+Then, as the training progresses, we adaptively adjust the
+confidence cut-off γ based on the model’s performance in the
+validation set. If the model is assessed to be more powerful
+Algorithm 1 SemiMol Algorithm
+1: Input: target model f , instructor model g, labeled data
+D
+⋆
+, unlabeled data D
+∗
+, pseudo-label update frequency k,
+threshold percent γ, stepping threshold percent ∆γ
+2: Initialize and pretrain a target model f
+0 
+and an instructor
+model g
+0
+3: for epochs n = 0, 1, 2, ... do
+4: if n mod k == 0 then
+5: ˆy
+∗
+i 
+← f (x
+∗
+i 
+) ∀x
+∗
+i 
+∈ D
+∗ 
+▷ Iteratively assign
+pseudo-labels every k epochs
+6: end if
+7: D
+′ 
+← D
+⋆ 
+∪ {(x
+∗
+i 
+, ˆy
+∗
+i 
+)}
+M
+i=1
+8: ˆy
+′
+i 
+← f (x
+′
+i
+) ∀x
+′
+i 
+∈ D
+′
+9: p
+i 
+← g(x
+′
+i
+, y
+′
+i
+, H
+f 
+(.)) ∀(x
+′
+i
+, y
+′
+i
+) ∈ D
+′ 
+▷ Predict
+the confidence scores
+10: L
+g
+
+D
+′
+, {ˆy
+′
+i
+}
+N +M
+i=1
+ 
+← Equation 1
+11: D
+′′ 
+← D
+⋆ 
+∪{(x
+∗
+i 
+, ˆy
+∗
+i 
+) |p
+∗
+i 
+≥ γ} ▷ Build the training
+set
+12: L
+f 
+(D
+′′
+) ← Equation 2
+13: Update the parameters of f and g based on L
+g 
+(.) and
+L
+f 
+(.)
+14: Evaluate f on the validation set and attain performance
+s
+15: if n > 0 and s < s
+′ 
+then
+16: γ ← γ − ∆γ ▷ Turn down the threshold auto-
+matically
+17: end if
+18: s
+′ 
+← s ▷ Record the validation metric of previous
+epoch
+19: end for
+(e.g., the evaluation metric like RMSE becomes smaller), we
+propose to lower the threshold as γ = γ − ∆γ, where ∆γ is
+the stepping percent. This leads to a larger hybrid set D
+′′ 
+and
+the loss of the target model f can be written as:
+L
+f 
+(D
+′′
+) = 
+X
+(x
+′′
+i 
+,y
+′′
+i 
+)∈D
+′′
+H
+f 
+(f (x
+′′
+i 
+), y
+′′
+i 
+), (2)
+Our self-adaptive curriculum learning strategy discourages
+concept drift or confirmation bias since it can prevent erro-
+neous annotations predicted by an undertrained network dur-
+ing the early stages of training to be accumulated [Cascante-
+Bonilla et al., 2021]. The pseudo-code of our SemiMol is
+depicted in Algorithm 1.
+Tips for implementing SemiMol. Before executing Semi-
+Mol, it is natural to first obtain a well-trained molecular tar-
+get model f
+0 
+through regular supervised learning on the la-
+beled dataset D
+⋆ 
+and then initialize an instructor model g
+0
+by discriminating pseudo-labels generated by that f
+0
+. This is
+empirically proven to achieve higher training stability and ro-
+bustness. Moreover, we choose to assign pseudo-labels every
+k epochs, where a proper setting of k is critical to the success
+of SemiMol. If pseudo-labels are updated too frequently, the
+training procedure tends to be volatile.
+
+Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)
+0.0 0.5 1.0 1.5 2.0 2.5
+CHEMBL1862_Ki
+CHEMBL1871_Ki
+CHEMBL2034_Ki
+CHEMBL204_Ki
+CHEMBL2047_EC50
+CHEMBL214_Ki
+CHEMBL2147_Ki
+CHEMBL218_EC50
+CHEMBL219_Ki
+CHEMBL228_Ki
+CHEMBL231_Ki
+CHEMBL233_Ki
+CHEMBL234_Ki
+CHEMBL235_EC50
+CHEMBL236_Ki
+CHEMBL237_EC50
+CHEMBL237_Ki
+CHEMBL238_Ki
+CHEMBL239_EC50
+CHEMBL244_Ki
+CHEMBL262_Ki
+CHEMBL264_Ki
+CHEMBL2835_Ki
+CHEMBL287_Ki
+CHEMBL2971_Ki
+CHEMBL3979_EC50
+CHEMBL4005_Ki
+CHEMBL4203_Ki
+CHEMBL4616_EC50
+CHEMBL4792_Ki
+1.65
+1.03
+1.16
+1.57
+0.98
+1.21
+2.41
+1.08
+1.12
+1.22
+1.56
+1.31
+1.23
+1.09
+1.36
+1.48
+1.36
+1.22
+1.15
+1.7
+1.21
+1.07
+1.2
+1.15
+2.08
+1.16
+1.01
+1.07
+0.93
+1.55
+1.58
+0.94
+1.31
+1.36
+0.94
+1.16
+2.17
+1.04
+1.07
+1.19
+1.15
+1.24
+1.04
+1.03
+1.16
+1.36
+1.18
+1.1
+1.07
+1.51
+1.1
+1.01
+1.04
+1.02
+1.74
+1.12
+0.96
+1.02
+0.97
+1.05
+GROVE
+0.00 0.25 0.50 0.75 1.00 1.25 1.50 1.75
+1.01
+0.9
+0.98
+1.28
+0.86
+1.08
+1.69
+0.96
+1.08
+1.12
+1.09
+1.2
+0.93
+0.98
+1.3
+1.19
+1.19
+1.01
+0.86
+1.31
+1.14
+1.0
+0.78
+0.98
+0.96
+1.11
+0.84
+1.05
+0.93
+0.85
+1.06
+0.87
+1.14
+1.14
+0.8
+1.08
+1.41
+1.02
+1.08
+1.01
+0.9
+1.14
+0.92
+0.95
+1.05
+1.01
+1.18
+0.85
+0.97
+1.22
+1.07
+0.98
+0.63
+0.95
+0.9
+1.19
+0.98
+1.0
+0.91
+0.83
+MolCLR
+0.0 0.2 0.4 0.6 0.8 1.0 1.2
+0.91
+0.82
+0.9
+1.1
+0.88
+1.11
+1.12
+0.92
+1.1
+1.07
+1.01
+0.98
+0.94
+0.96
+0.97
+1.24
+0.98
+1.03
+0.99
+1.13
+1.04
+0.79
+0.65
+0.95
+0.9
+0.98
+0.88
+1.01
+0.8
+0.97
+0.83
+0.8
+0.83
+0.93
+0.88
+1.11
+1.01
+0.95
+1.05
+0.96
+0.85
+0.93
+0.85
+0.9
+0.89
+1.16
+0.93
+0.78
+0.86
+1.04
+1.0
+0.74
+0.65
+0.85
+0.81
+0.96
+0.98
+0.91
+0.77
+0.89
+GEM
+Figure 3: Comparison of different GNNs with and without pretraining on 30 activity cliff datasets. The light blue corresponds to the
+performance without pretraining, while the antique white represents the performance with pretraining.
+3 Experiments
+3.1 Data and Experimental Setups
+All our evaluations in this section are performed on datasets
+from MoleculeACE (Activity Cliff Estimation), which is
+an open-access benchmarking platform and available on
+Github https://github.com/molML/MoleculeACE. It contains
+more than 35,000 molecules over 30 macromolecular tar-
+gets, where each target corresponds to a dataset. In partic-
+ular, 12 of 30 datasets in MoleculeCAE have no more than
+1K molecules in the training set, indicating a standard low-
+data regime. In addition, we take Graph Isomorphic Network
+(GIN) [Xu et al., 2018] along with a Graph Multi-set Trans-
+former (GMT) [Baek et al., 2021] to aggregate node features
+as the backbone. More experimental details and dataset statis-
+tics are elaborated on Appendix.
+3.2 Does GNN Pretraining Help Mitigate the
+Activity Cliff Problem?
+Data quantity and quality are always regarded as one of the
+most pivot factors in the success of DL algorithms. How-
+ever, assessing DL methods on activity cliffs is in a low-data
+scenario. It is worth noting that the past few years have
+witnessed the prevailing of self-supervised learning across
+multiple areas [Devlin et al., 2018; Brown et al., 2020;
+Dosovitskiy et al., 2020], and the graph research community
+in molecule modeling has been trying to replicate its success
+in natural language processing. Various works attempt to ex-
+cavate information on large-scale unlabeled molecules [Rong
+et al., 2020; Fang et al., 2022; Wang et al., 2022; Zhou
+et al., 2022], and claim significant performance improve-
+ments [Rong et al., 2020; You et al., 2020; Zhu et al., 2021;
+Zhou et al., 2022]. Nevertheless, the efficacy of those pre-
+training frameworks is only validated on datasets of non-
+activity cliff molecules and it remains unknown whether they
+are also powerful in alleviating the data scarcity trouble in
+activity cliff estimation.
+Here, we investigate several SOTA pretraining GNNs, con-
+taining GROVE [Rong et al., 2020], MolCLR [Wang et al.,
+2022], and GEM [Fang et al., 2022], and examine their ef-
+fectiveness in activity cliff datasets. To be explicit, GROVE
+adopts a Transformer-style [Vaswani et al., 2017] architec-
+ture, significantly enlarging the representation ability and ap-
+plication scope of molecular representation learning schemes.
+MolCLR applies data augmentation to molecular graphs at
+both node and graph levels and uses a contrastive learn-
+ing strategy to generalize GNNs to a more giant chemical
+space. GEM proposes a geometry-based GNN with dedi-
+cated geometry-level self-supervised learning techniques to
+capture molecular geometry knowledge. Figure 3 exhibits
+
+Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)
+GROVE MPNN GAT MolCLR SVM GCN GBM KNN RF AFP CNN GEM Transformer MLP LSTM SemiMol
+Algorithm
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+2.00
+2.25
+RMSE
+Figure 4: Performance of various ML models measured by the overall RMSE on 30 activity cliff datasets.
+the empirical results. It can be found that pretraining gener-
+ally benefits the activity cliff estimation problem in all three
+selected pretraining frameworks. It leads to average improve-
+ments of 8.57%, 3.92%, and 6.54% for GROVE, MolCLR,
+and GEM on all 30 datasets. However, the improvements are
+not always convincing and can be negligible or even negative.
+For instance, GROVE performs worse with pretraining in two
+datasets, MolCLR becomes less competitive with pretraining
+in six datasets, and GEM is negatively influenced with pre-
+training in three datasets.
+This phenomenon is consistent with the conclusion in one
+recent study [Sun, 2022] that self-supervised graph pretrain-
+ing does not always behave statistically more powerfully over
+non-pretraining methods in many settings. Besides, the local
+and global molecular 3D structures may not be the key to
+tackling our problem since GEM has incorporated them for
+self-supervised learning but shows little benefit. Finally, we
+compare the performance of different GNNs before and after
+self-supervised learning. GROVE reaches an average RMSE
+of 1.3107 and 1.1871 before and after pretraining. MolCLR
+attains an average RMSE of 1.0556 and 1.0071 before and
+after pretraining. GEM realizes an average RMSE of 0.9699
+and 0.9035 before and after pretraining. The design of GNNs’
+architecture is a more foundational factor in achieving a bet-
+ter performance in our activity cliff problem. GEM without
+pretraining can easily outpace pretrained MolCLR and pre-
+trained GROVE.
+Why is GNN pretraining not Beneficial? We fail to re-
+produce the gain of pretraining in conventional molecular
+datasets like MoleculeNet due to several potential reasons.
+Firstly, the target labels of most unsupervised pretraining are
+not appropriately aligned with or even contradictory to our
+activity cliff estimation task. For instance, GROVE [Rong et
+al., 2020] requires GNNs to decide whether a molecule con-
+tains a motif. However, these 85 sorts of pre-defined motifs
+might be deceptive in estimating the property of activity cliff
+molecules. Secondly, as suggested by [Sun, 2022], pretrain-
+ing is found to typically help when high-quality hand-crafted
+features are absent. In our experiments, we inject rich fea-
+tures into GNNs, including the additional node features such
+as hydrogen acceptor match, acidic match, and bond features
+such as ring information. Last but not least, some pretrain-
+ing methods, such as masked node label prediction, might be
+too easy to transfer enough knowledge for our activity cliff
+estimation task.
+3.3 Does SemiMol Improve the Activity Cliff
+Estimation?
+Overall performance. We compare SemiMol with diverse
+ML and DL algorithms on MoleculeACE and document the
+results of activity cliff molecules and all molecules in Fig-
+ure 4 and Appendix, separately. It can be observed that our
+SemiMol outperforms other baselines with the lowest RMSE
+on 30 activity cliff datasets. More essentially, we discover an
+average improvement of 26.53% brought by SemiMol, which
+is significantly larger than the benefits of SOTA pretraining
+approaches. This phenomenon declares that GNNs empow-
+ered by SSL can be a more influential toolkit than existing
+algorithms to overcome the obstacle of activity cliffs and ac-
+celerate the process of new drug discovery.
+Among all approaches, non-pretrained GNNs, including
+MPNN [Gilmer et al., 2017], GAT [Veliˇckovi´c et al., 2017],
+GCN [Kipf and Welling, 2016], and AFP [Baek et al., 2021],
+generally perform worse than other methods. Meanwhile, the
+performance of pretrained GNNs varies dramatically. For in-
+stance, GEM outweighs GROVE by a large margin. However,
+as analyzed in Section 3.2, the benefit of pretraining is proven
+limited. This difference is more related to the capability of
+the backbone GNNs than to the pretraining strategies. Ad-
+
+Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)
+Datasets CHEMBL1862 Ki CHEMBL1871 Ki CHEMBL2034 Ki CHEMBL204 Ki CHEMBL2047 EC50
+GIN 1.019 0.854 0.951 1.179 0.895
++ π-model 
+0.984 0.793 0.902 1.060 0.880
++ Semi-GAN 0.955 0.781 0.834 0.927 0.854
++ SemiMol 0.714 0.671 0.703 0.801 0.629
+Table 1: Performance of different semi-supervised learning algorithms on 5 datasets of MoleculeACE.
+Datasets CHEMBL214 Ki CHEMBL2147 Ki CHEMBL218 EC50 CHEMBL219 Ki CHEMBL228 Ki
+SemiMol
++ Fixed Threshold 0.788 0.704 0.781 0.914 0.821
++ Percentile Scores 
+0.739 0.683 0.744 0.850 0.779
++ Self-adaptive Paces 0.726 0.672 0.723 0.835 0.758
+Table 2: Comparison with different curriculum learning methods on 5 datasets of MoleculeACE.
+ditionally, sequence-based models such as LSTM [Hochre-
+iter and Schmidhuber, 1997] and Transformer [Vaswani et
+al., 2017] are conspicuous for their outstanding performance.
+They are empirically a better choice for addressing the activ-
+ity cliff problem than graph-based and descriptor-based mod-
+els if no additional unlabeled data are provided in the fine-
+tuning stage.
+Comparison with other semi-supervised methods. Di-
+verse SSL algorithms have been invented to employ the abun-
+dant unlabeled resources in a task-specific manner. Approxi-
+mately, they can be divided into three categories: consistency
+regularization, proxy-label methods, and generative models.
+Here, we pick up one baseline instance from each kind and
+investigate their improvements for molecular property predic-
+tion. Notably, random node dropping and edge perturbation
+are biochemically improper, and data augmentation may alter
+the semantics of molecular graphs [Sun et al., 2021]. Thus,
+we employ the π-model [Laine and Aila, 2016] for compar-
+ison, which applies different stochastic transformations (i.e.,
+dropout) to the networks instead of the input graphs. More-
+over, we select Semi-GAN [Odena, 2016], which introduces
+a discriminator to classify whether the input is labeled or not.
+As mentioned previously, UPS [Rizve et al., 2021] leverages
+the prediction uncertainty to guide the pseudo-label selec-
+tion procedure and is therefore inapplicable in our situation.
+We select five datasets from MoleculeACE for comparison
+and use GIN as the backbone architecture. As shown in Ta-
+ble 1, SemiMol outperforms all other semi-supervised meth-
+ods in overall RMSE. In addition to that, SemiMol overcomes
+the drawbacks of UPS and can be used for regression tasks.
+All the above evidence clarifies that SemiMol is a cutting-
+edge proxy labeling algorithm in comparison to existing SSL
+mechanisms with stronger generalization and broader appli-
+cations.
+Ablation study. We also implement an extra experiment
+to illustrate the effectiveness of our self-adaptive curriculum
+learning mechanism and report the results in Table 2. It can be
+found that our self-adaptive schedule achieves stronger per-
+formance in overall RMSE than a fixed threshold and per-
+centile score-based curriculum learning paradigm [Cascante-
+Bonilla et al., 2021].
+Performance for classification tasks. Notably, datasets in
+MoleculeACE are all regression tasks, and one major advan-
+tage of our SemiMol over other proxy-labeling algorithms is
+that SemiMol can deal with continuous property space. In
+spite of that, SemiMol can also be employed for classifica-
+tion tasks. In order to better demonstrate its superiority, we
+use a classification dataset, CYP3A4 [Rao et al., 2022], and
+examine its performance. CYP3A4 consists of the property
+cliffs in the Cytochrome P450 3A4 inhibitions experimentally
+measured by [Veith et al., 2009], including 3,626 active in-
+hibitors/substrates and 5,496 inactive compounds. We report
+the corresponding performance of different approaches in Ta-
+ble 3, where the best performance is in bold and the second
+best is underlined. It can be observed that SemiMol outper-
+forms all semi-supervised baselines, which rely on MPNN as
+the backbone architecture.
+Models 
+CYP3A4
+ROC-AUC Cliff ROC-AUC
+GCN 0.7659 0.6801
+GAT 0.7734 0.6828
+MPNN 0.7811 0.6867
+π-model 0.7842 0.6903
+Semi-GAN 0.8015 0.7122
+UPS 0.8438 0.7546
+SemiMol 0.8568 0.7703
+Table 3: Performance in the classification dataset, CYP3A4.
+4 Conclusion
+The past decade has witnessed the increasing employment
+of machine learning techniques for drug discovery, but the
+topic of activity cliffs (AC) receives little interest from the
+scientific community. In this work, we identify the best prac-
+tice to enhance models’ predictivity in the presence of activ-
+ity cliffs and propose an effective semi-supervised learning
+(SSL) method named SemiMol. It introduces an instructor
+model to understand the confidence of proxy-label and ex-
+ploits a self-adaptive curriculum training paradigm to move
+the target model toward hard samples more efficiently. We
+demonstrate that graph-based DL models can hold up against
+simpler ML algorithms for drug discovery even in low-data
+scenarios. We envision more efficient and better-suited SSL
+methods to propel the frontier of AC identification.
+
+Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)
+References
+[Arazo
+ et al., 2020] Eric Arazo, Diego Ortego, Paul Albert,
+Noel E O’Connor, and Kevin McGuinness. Pseudo-
+labeling and confirmation bias in deep semi-supervised
+learning. In 2020 International Joint Conference on Neu-
+ral Networks (IJCNN), pages 1–8. IEEE, 2020.
+[Baek
+ et al., 2021] Jinheon Baek, Minki Kang, and Sung Ju
+Hwang. Accurate learning of graph representations with
+graph multiset pooling. arXiv preprint arXiv:2102.11533,
+2021.
+[Bender and Glen, 2004] Andreas
+ Bender and Robert C
+Glen. Molecular similarity: a key technique in molec-
+ular informatics. Organic & biomolecular chemistry,
+2(22):3204–3218, 2004.
+[Brown
+ et al., 2020] Tom Brown, Benjamin Mann, Nick Ry-
+der, Melanie Subbiah, Jared D Kaplan, Prafulla Dhari-
+wal, Arvind Neelakantan, Pranav Shyam, Girish Sastry,
+Amanda Askell, et al. Language models are few-shot
+learners. Advances in neural information processing sys-
+tems, 33:1877–1901, 2020.
+[Cascante-Bonilla
+ et al., 2021] Paola Cascante-Bonilla,
+Fuwen Tan, Yanjun Qi, and Vicente Ordonez. Curriculum
+labeling: Revisiting pseudo-labeling for semi-supervised
+learning. In Proceedings of the AAAI Conference on
+Artificial Intelligence, volume 35, pages 6912–6920,
+2021.
+[Devlin
+ et al., 2018] Jacob Devlin, Ming-Wei Chang, Ken-
+ton Lee, and Kristina Toutanova. Bert: Pre-training of
+deep bidirectional transformers for language understand-
+ing. arXiv preprint arXiv:1810.04805, 2018.
+[Dosovitskiy
+ et al., 2020] Alexey Dosovitskiy, Lucas Beyer,
+Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai,
+Thomas Unterthiner, Mostafa Dehghani, Matthias Min-
+derer, Georg Heigold, Sylvain Gelly, et al. An image is
+worth 16x16 words: Transformers for image recognition
+at scale. arXiv preprint arXiv:2010.11929, 2020.
+[Ehsan Abbasnejad
+ et al., 2017] M Ehsan Abbasnejad, An-
+thony Dick, and Anton van den Hengel. Infinite variational
+autoencoder for semi-supervised learning. In Proceedings
+of the IEEE Conference on Computer Vision and Pattern
+Recognition, pages 5888–5897, 2017.
+[Fang
+ et al., 2022] Xiaomin Fang, Lihang Liu, Jieqiong Lei,
+Donglong He, Shanzhuo Zhang, Jingbo Zhou, Fan Wang,
+Hua Wu, and Haifeng Wang. Geometry-enhanced molecu-
+lar representation learning for property prediction. Nature
+Machine Intelligence, 4(2):127–134, 2022.
+[Fey and Lenssen, 2019] Matthias Fey and Jan Eric Lenssen.
+Fast graph representation learning with pytorch geometric.
+arXiv preprint arXiv:1903.02428, 2019.
+[Gaulton
+ et al., 2012] Anna Gaulton, Louisa J Bellis, A Pa-
+tricia Bento, Jon Chambers, Mark Davies, Anne Hersey,
+Yvonne Light, Shaun McGlinchey, David Michalovich,
+Bissan Al-Lazikani, et al. Chembl: a large-scale bioac-
+tivity database for drug discovery. Nucleic acids research,
+40(D1):D1100–D1107, 2012.
+[Gilmer
+ et al., 2017] Justin Gilmer, Samuel S Schoenholz,
+Patrick F Riley, Oriol Vinyals, and George E Dahl. Neu-
+ral message passing for quantum chemistry. In Interna-
+tional conference on machine learning, pages 1263–1272.
+PMLR, 2017.
+[Hendrycks
+ et al., 2021] Dan Hendrycks, Steven Basart,
+Norman Mu, Saurav Kadavath, Frank Wang, Evan
+Dorundo, Rahul Desai, Tyler Zhu, Samyak Parajuli, Mike
+Guo, et al. The many faces of robustness: A critical anal-
+ysis of out-of-distribution generalization. In Proceedings
+of the IEEE/CVF International Conference on Computer
+Vision, pages 8340–8349, 2021.
+[Hochreiter and Schmidhuber, 1997] Sepp
+ Hochreiter and
+J¨urgen Schmidhuber. Long short-term memory. Neural
+computation, 9(8):1735–1780, 1997.
+[Iscen
+ et al., 2019] Ahmet Iscen, Giorgos Tolias, Yannis
+Avrithis, and Ondrej Chum. Label propagation for
+deep semi-supervised learning. In Proceedings of the
+IEEE/CVF conference on computer vision and pattern
+recognition, pages 5070–5079, 2019.
+[Johnson
+ et al., 1989] M Johnson, M Lajiness, and G Mag-
+giora. Molecular similarity: a basis for designing drug
+screening programs. Progress in clinical and biological
+research, 291:167–171, 1989.
+[Jumper
+ et al., 2021] John Jumper, Richard Evans, Alexan-
+der Pritzel, Tim Green, Michael Figurnov, Olaf Ron-
+neberger, Kathryn Tunyasuvunakool, Russ Bates, Au-
+gustin 
+ˇ
+Z´ıdek, Anna Potapenko, et al. Highly accu-
+rate protein structure prediction with alphafold. Nature,
+596(7873):583–589, 2021.
+[Kimber
+ et al., 2021] Talia B Kimber, Maxime Gagnebin,
+and Andrea Volkamer. Maxsmi: maximizing molecular
+property prediction performance with confidence estima-
+tion using smiles augmentation and deep learning. Artifi-
+cial Intelligence in the Life Sciences, 1:100014, 2021.
+[Kipf and Welling, 2016] Thomas N Kipf and Max Welling.
+Semi-supervised classification with graph convolutional
+networks. arXiv preprint arXiv:1609.02907, 2016.
+[Laine and Aila, 2016] Samuli Laine and Timo Aila.
+ Tem-
+poral ensembling for semi-supervised learning. arXiv
+preprint arXiv:1610.02242, 2016.
+[Landrum and others, 2013] Greg Landrum et al.
+ Rdkit: A
+software suite for cheminformatics, computational chem-
+istry, and predictive modeling. Greg Landrum, 8, 2013.
+[Lee and others, 2013] Dong-Hyun Lee et al. Pseudo-label:
+The simple and efficient semi-supervised learning method
+for deep neural networks. In Workshop on challenges in
+representation learning, ICML, volume 3, page 896, 2013.
+[Ma
+ et al., 2019] Yanjun Ma, Dianhai Yu, Tian Wu, and
+Haifeng Wang. Paddlepaddle: An open-source deep learn-
+ing platform from industrial practice. Frontiers of Data
+and Domputing, 1(1):105–115, 2019.
+[Maggiora, 2006] Gerald M Maggiora. On outliers and ac-
+tivity cliffs why qsar often disappoints, 2006.
+
+Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)
+[Martin
+ et al., 2002] Yvonne C Martin, James L Kofron, and
+Linda M Traphagen. Do structurally similar molecules
+have similar biological activity? Journal of medicinal
+chemistry, 45(19):4350–4358, 2002.
+[Mitchell and Mitchell, 1997] Tom M Mitchell and Tom M
+Mitchell. Machine learning, volume 1. McGraw-hill New
+York, 1997.
+[Odena, 2016] Augustus Odena.
+ Semi-supervised learning
+with generative adversarial networks. arXiv preprint
+arXiv:1606.01583, 2016.
+[Pedregosa
+ et al., 2011] Fabian Pedregosa, Ga¨el Varoquaux,
+Alexandre Gramfort, Vincent Michel, Bertrand Thirion,
+Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron
+Weiss, Vincent Dubourg, et al. Scikit-learn: Machine
+learning in python. the Journal of machine Learning re-
+search, 12:2825–2830, 2011.
+[Ramsundar
+ et al., 2019] Bharath Ramsundar, Peter East-
+man, Patrick Walters, Vijay Pande, Karl Leswing,
+and Zhenqin Wu. Deep Learning for the Life Sci-
+ences. O’Reilly Media, 2019. https://www.amazon.
+com/Deep-Learning-Life-Sciences-Microscopy/dp/
+1492039837.
+[Rao
+ et al., 2022] Jiahua Rao, Shuangjia Zheng, Yutong Lu,
+and Yuedong Yang. Quantitative evaluation of explainable
+graph neural networks for molecular property prediction.
+Patterns, 3(12):100628, 2022.
+[Rizve
+ et al., 2021] Mamshad Nayeem Rizve, Kevin Duarte,
+Yogesh S Rawat, and Mubarak Shah. In defense of
+pseudo-labeling: An uncertainty-aware pseudo-label se-
+lection framework for semi-supervised learning. arXiv
+preprint arXiv:2101.06329, 2021.
+[Rong
+ et al., 2020] Yu Rong, Yatao Bian, Tingyang Xu,
+Weiyang Xie, Ying Wei, Wenbing Huang, and Junzhou
+Huang. Self-supervised graph transformer on large-scale
+molecular data. Advances in Neural Information Process-
+ing Systems, 33:12559–12571, 2020.
+[Shi
+ et al., 2018] Weiwei Shi, Yihong Gong, Chris Ding,
+Zhiheng MaXiaoyu Tao, and Nanning Zheng. Transduc-
+tive semi-supervised deep learning using min-max fea-
+tures. In Proceedings of the European Conference on
+Computer Vision (ECCV), pages 299–315, 2018.
+[Shortle, 2009] David Shortle. One sequence plus one mu-
+tation equals two folds. Proceedings of the National
+Academy of Sciences, 106(50):21011–21012, 2009.
+[Sohn
+ et al., 2020] Kihyuk Sohn, David Berthelot, Nicholas
+Carlini, Zizhao Zhang, Han Zhang, Colin A Raffel,
+Ekin Dogus Cubuk, Alexey Kurakin, and Chun-Liang Li.
+Fixmatch: Simplifying semi-supervised learning with con-
+sistency and confidence. Advances in neural information
+processing systems, 33:596–608, 2020.
+[Sterling and Irwin, 2015] Teague Sterling and John J Irwin.
+Zinc 15–ligand discovery for everyone. Journal of chemi-
+cal information and modeling, 55(11):2324–2337, 2015.
+[Stumpfe
+ et al., 2020] Dagmar Stumpfe, Huabin Hu, and
+J¨urgen Bajorath. Advances in exploring activity cliffs.
+Journal of Computer-Aided Molecular Design, 34:929–
+942, 2020.
+[Sun
+ et al., 2021] Mengying Sun, Jing Xing, Huijun Wang,
+Bin Chen, and Jiayu Zhou. Mocl: Data-driven molecu-
+lar fingerprint via knowledge-aware contrastive learning
+from molecular graph. In Proceedings of the 27th ACM
+SIGKDD Conference on Knowledge Discovery & Data
+Mining, pages 3585–3594, 2021.
+[Sun, 2022] Ruoxi Sun. Does gnn pretraining help molecular
+representation? arXiv preprint arXiv:2207.06010, 2022.
+[Tarvainen and Valpola, 2017] Antti
+ Tarvainen and Harri
+Valpola. Mean teachers are better role models: Weight-
+averaged consistency targets improve semi-supervised
+deep learning results. Advances in neural information pro-
+cessing systems, 30, 2017.
+[van Tilborg
+ et al., 2022] Derek van Tilborg, Alisa
+Alenicheva, and Francesca Grisoni. Exposing the
+limitations of molecular machine learning with activity
+cliffs. Journal of Chemical Information and Modeling,
+62(23):5938–5951, 2022.
+[Vaswani
+ et al., 2017] Ashish Vaswani, Noam Shazeer, Niki
+Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez,
+Łukasz Kaiser, and Illia Polosukhin. Attention is all you
+need. Advances in neural information processing systems,
+30, 2017.
+[Veith
+ et al., 2009] Henrike Veith, Noel Southall, Ruili
+Huang, Tim James, Darren Fayne, Natalia Artemenko,
+Min Shen, James Inglese, Christopher P Austin, David G
+Lloyd, et al. Comprehensive characterization of cy-
+tochrome p450 isozyme selectivity across chemical li-
+braries. Nature biotechnology, 27(11):1050–1055, 2009.
+[Veliˇ
+ckovi´c et al., 2017] Petar Veliˇckovi´c, Guillem Cucurull,
+Arantxa Casanova, Adriana Romero, Pietro Lio, and
+Yoshua Bengio. Graph attention networks. arXiv preprint
+arXiv:1710.10903, 2017.
+[Wang
+ et al., 2005] Renxiao Wang, Xueliang Fang, Yipin
+Lu, Chao-Yie Yang, and Shaomeng Wang. The pdbbind
+database: methodologies and updates. Journal of medici-
+nal chemistry, 48(12):4111–4119, 2005.
+[Wang
+ et al., 2022] Yuyang Wang, Jianren Wang, Zhonglin
+Cao, and Amir Barati Farimani. Molecular contrastive
+learning of representations via graph neural networks. Na-
+ture Machine Intelligence, 4(3):279–287, 2022.
+[Wu
+ et al., 2018] Zhenqin Wu, Bharath Ramsundar, Evan N
+Feinberg, Joseph Gomes, Caleb Geniesse, Aneesh S
+Pappu, Karl Leswing, and Vijay Pande. Moleculenet: a
+benchmark for molecular machine learning. Chemical sci-
+ence, 9(2):513–530, 2018.
+[Wu
+ et al., 2023a] Fang Wu, Huiling Qin, Wenhao Gao,
+Siyuan Li, Connor W Coley, Stan Z Li, Xianyuan Zhan,
+and Jinbo Xu. Instructbio: A large-scale semi-supervised
+learning paradigm for biochemical problems. arXiv
+preprint arXiv:2304.03906, 2023.
+
+Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)
+[Wu
+ et al., 2023b] Fang Wu, Dragomir Radev, and Stan Z Li.
+Molformer: motif-based transformer on 3d heterogeneous
+molecular graphs. Rn, 1:1, 2023.
+[Xie
+ et al., 2020] Qizhe Xie, Minh-Thang Luong, Eduard
+Hovy, and Quoc V Le. Self-training with noisy stu-
+dent improves imagenet classification. In Proceedings of
+the IEEE/CVF conference on computer vision and pattern
+recognition, pages 10687–10698, 2020.
+[Xiong
+ et al., 2019] Zhaoping Xiong, Dingyan Wang, Xi-
+aohong Liu, Feisheng Zhong, Xiaozhe Wan, Xutong Li,
+Zhaojun Li, Xiaomin Luo, Kaixian Chen, Hualiang Jiang,
+et al. Pushing the boundaries of molecular representation
+for drug discovery with the graph attention mechanism.
+Journal of medicinal chemistry, 63(16):8749–8760, 2019.
+[Xu
+ et al., 2018] Keyulu Xu, Weihua Hu, Jure Leskovec, and
+Stefanie Jegelka. How powerful are graph neural net-
+works? arXiv preprint arXiv:1810.00826, 2018.
+[Yarowsky, 1995] David
+ Yarowsky. Unsupervised word
+sense disambiguation rivaling supervised methods. In 33rd
+annual meeting of the association for computational lin-
+guistics, pages 189–196, 1995.
+[You
+ et al., 2020] Yuning You, Tianlong Chen, Zhangyang
+Wang, and Yang Shen. When does self-supervision help
+graph convolutional networks? In international confer-
+ence on machine learning, pages 10871–10880. PMLR,
+2020.
+[Zhao
+ et al., 2017] Jing Zhao, Xijiong Xie, Xin Xu, and
+Shiliang Sun. Multi-view learning overview: Recent
+progress and new challenges. Information Fusion, 38:43–
+54, 2017.
+[Zhou
+ et al., 2022] Gengmo Zhou, Zhifeng Gao, Qiankun
+Ding, Hang Zheng, Hongteng Xu, Zhewei Wei, Linfeng
+Zhang, and Guolin Ke. Uni-mol: A universal 3d molecu-
+lar representation learning framework. International Con-
+ference on Learning Representations, 2022.
+[Zhu
+ et al., 2021] Yanqiao Zhu, Yichen Xu, Feng Yu, Qiang
+Liu, Shu Wu, and Liang Wang. Graph contrastive learning
+with adaptive augmentation. In Proceedings of the Web
+Conference 2021, pages 2069–2080, 2021.
+[Zhu, 2005] Xiaojin Jerry Zhu. Semi-supervised learning lit-
+erature survey. 2005.
+
+Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)
+Experimental Setting
+All experiments were run on two A100-GPUs. We use Pytorch Geometric package (PyG) [Fey and Lenssen, 2019] v.2.2.0 to
+build all GNNs. An Adam optimizer is used to propagate the gradient. We try a ReduceLROnPlateau scheduler to adjust the
+learning rate with a factor of 0.6 and a patience of 10, but find a constant learning rate also performs well. Hyperparameters to
+search in running the experiments of SemiMol are listed in Table 4.
+Table 4: Hyperparameters setup for SemiMol.
+Hyperparameters Search Space Symbol Value
+Training Setups
+Learning rate - [1e-4, 5e-5, 1e-6, 5e-6]
+Batch size - [32, 64, 128]
+Epochs - [100, 300]
+Dropout rate - [0.2, 0.4]
+SemiMol Setups
+Loss weight λ [0.1, 1.0, 10.0, 100.0]
+Starting Confidence Threshold γ [0.8, 0.9, 0.95]
+Stepping Confidence Percent ∆γ [0.05, 0.1, 0.2]
+Pseudo-label Update Frequency k [5, 10, 15, 20]
+Neural Network Setups
+Number of MPNN layers - [2, 3, 4, 5, 6]
+The hidden dimension of node representations - [32, 64, 128, 256, 512]
+The hidden dimension of edge representations - [64, 128, 256]
+Number of heads in GMT - [4, 8 ,12]
+Hidden dimension in GMT - [64, 128, 256, 512]
+Number of fully-connected layers - [1, 2, 3]
+Baselines
+Here we provide detailed descriptions of some key baselines in the ACE problem.
+Descriptor-based Models
+KNN, SVM, GBM, RF, and MLP. Each algorithm was combined with four types of molecular descriptors, i.e., human-
+engineered numerical features designed to capture predetermined chemical information. We explored molecular descriptors
+with several levels of complexity: (1) extended connectivity fingerprints (ECFPs), encoding atom-centered radial substructures
+in the form of a binary array; (2) Molecular ACCess System (MACCS) keys, which encode the presence of predefined substruc-
+tures in a binary array; (3) weighted holistic invariant molecular (WHIM) descriptors, capturing three-dimensional molecular
+size, shape, symmetry, and atom distribution; and (4) eleven physicochemical properties relevant for drug-likeness.
+Graph-based Models
+GCN, GAT, MPNN, and AFP are all implemented using the Pytorch Geometric package. In GCN, GAT, and MPNN, the
+global pooling is realized using a graph multiset Transformer.
+SMILES-based Models
+All SMILES strings are encoded as one-hot vectors. SMILES strings longer than 200 characters are truncated (0.71% on
+average). Noncanonical SMILES strings are generated using RDKit [Landrum and others, 2013]. LSTM 
+[Hochreiter and
+Schmidhuber, 1997] is a type of recurrent neural network (RNN), which can learn from string sequences by keeping track
+of long-range dependencies. In our study, LSTM models were pretrained on SMILES obtained by merging all training sets
+with no repetitions (36K molecules) using next-character prediction before applying transfer learning for bioactivity prediction.
+Transformer 
+[Vaswani
+ et al., 2017] processes the whole sequence at once in a graphlike manner using positional embedding to
+capture positional information. Transformers implement the self-attention mechanism to learn which portions of the sequence
+are more relevant for a given task. The ChemBERTa architecture, which was pretrained on 10M compounds, was used in
+combination with transfer learning for bioactivity prediction. 1D CNN utilizes a single 1D convolutional layer with a kernel
+size equal to 1 followed by a fully connected layer.
+
+Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)
+Data
+Unlabeled Data
+We use the ZINC15 [Sterling and Irwin, 2015] database to collect unlabeled molecular data, which can be downloaded from
+DeepChem [Ramsundar et al., 2019]. There are four different data sizes supported by ZINC15: 250K, 1M, 10M, and 270M. We
+use the 250K version as the unlabeled dataset for simplicity. Those unlabeled SMILES are then converted by RDKit [Landrum
+and others, 2013] into 2D graphs. We expect future work to enrich the unlabeled corpus by leveraging other resources such as
+ChemBL [Gaulton et al., 2012], Chembridge, and Chemdiv.
+Activity Cliff Data
+MoleculeACE is a tool for evaluating the predictive performance on activity cliff compounds of ML models. It collects and
+curates bioactivity data on 30 macromolecular targets. The curated collection contains a total of 48.7K molecules, of which
+35.6K are unique, and mimics typical drug discovery datasets as it includes several target families and spans different training
+scenarios. For each macromolecular target, activity cliffs are identified by considering pairwise structural similarities and dif-
+ferences in potency. Three distinct approaches containing substructure similarity, scaffold similarity, and similarity of SMILES
+strings are used to quantify molecular similarities between any pairs of molecules.
+Since MoleculeACE is a relatively new benchmark with no prior work thoroughly calculating its statistics, we compute
+the key stats in Table 5 for readers to have a comprehensive understanding of its molecular distributions. All datasets in
+MoleculeACE use the split as suggested by [van Tilborg et al., 2022]. The data statistics and a brief description of those
+datasets are reported in Table 5. We refer the readers to [van Tilborg et al., 2022] for more details regarding the data curation
+and detection of activity cliffs.
+Table 5: Description of 30 regression datasets in MoleculeACE, including the number of molecules, the maximum, the minimum, the mean,
+and the standard deviation of the ground truth properties.
+# of Compounds Min Max Mean Std
+CHEMBL4203 Ki 731 -4.90 0.50 -2.50 1.02
+CHEMBL2034 Ki 750 -4.27 1.00 -1.20 1.09
+CHEMBL233 Ki 3,142 -4.80 2.00 -1.68 1.29
+CHEMBL4616 EC50
+ 682 -4.15 1.00 -1.20 0.93
+CHEMBL287 Ki 1,328 -4.67 1.44 -1.52 1.09
+CHEMBL218 EC50 1,031 -4.99 1.52 -2.25 1.05
+CHEMBL264 Ki 2,862 -4.93 1.60 -1.25 1.10
+CHEMBL219 Ki 1,859 -4.95 1.74 -1.77 1.07
+CHEMBL2835 Ki 615 -3.66 1.00 -0.33 0.95
+CHEMBL2147 Ki 1,456 -5.00 2.00 -1.14 1.96
+CHEMBL231 Ki 973 -5.00 1.31 -2.07 1.26
+CHEMBL3979 EC50 1,125 -4.79 1.22 -2.27 1.15
+CHEMBL237 EC50 955 -4.70 1.96 -1.56 1.39
+CHEMBL244 Ki
+ 3,097 -5.00 2.00 -1.86 1.64
+CHEMBL4792 Ki 1,471 -4.25 1.15 -2.07 1.11
+CHEMBL1871 Ki 659 -4.75 0.60 -1.95 1.03
+CHEMBL237 Ki 2,602 -4.91 1.85 -1.66 1.33
+CHEMBL262 Ki 856 -5.00 1.05 -2.49 1.06
+CHEMBL2047 EC50 631 -4.96 0.52 -2.77 0.98
+CHEMBL239 EC50 1,721 -4.95 1.59 -2.65 1.09
+CHEMBL2971 Ki 976 -5.00 1.22 -1.14 1.45
+CHEMBL204 Ki 2,754 -6.39 2.00 -2.10 1.51
+CHEMBL214 Ki 3,317 -4.80 1.85 -1.66 1.14
+CHEMBL1862 Ki 794 -5.00 1.73 -1.41 1.51
+CHEMBL234 Ki 3,657 -4.86 1.70 -1.54 1.18
+CHEMBL238 Ki 1,052 -4.97 0.35 -2.34 1.09
+CHEMBL235 EC50 2,349 -5.00 1.74 -2.57 1.09
+CHEMBL4005 Ki 960 -4.35 1.52 -1.31 1.07
+CHEMBL236 Ki
+ 2,598 -5.00 2.00 -2.01 1.35
+CHEMBL228 Ki
+ 1,704 -4.86 1.89 -1.67 1.21
+In CYP3A4, the active compounds were compared with inactive ones through MMPA46 in the RDKit package [Landrum and
+others, 2013]. This led to 106 molecular pairs and corresponding substructures involving 46 active and 51 inactive compounds.
+
+Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence (IJCAI-24)
+During the GNN model training, all these involved compounds involved in found pairs are put into the test set. CYP3A4
+can be attained in the Github of Mol-XAI [Rao et al., 2022] https://github.com/biomed-AI/MolRep and the data is stored
+in https://drive.google.com/drive/folders/1Lbb5KBat4Au 1yMHKyYnAxf6xVFNWtkW.
+To make a thorough comparison, we pick up random forest (RF), gradient boosting (GBM), support vector regression (SVM),
+K-nearest neighbor (KNN), message passing neural network (MPNN) [Gilmer et al., 2017], graph convolutional network
+(GCN) [Kipf and Welling, 2016], graph attention network (GAT) [Veliˇckovi´c et al., 2017], attentive fingerprint (AFP) [Xiong et
+al., 2019], long short-term memory networks (LSTM) [Hochreiter and Schmidhuber, 1997], 1D convolutional neural networks
+(CNN) [Kimber et al., 2021], and Transformers [Vaswani et al., 2017] as baselines. We run a Bayesian optimization with a
+Gaussian process to optimize the hyperparameters as suggested in MoleculeACE [van Tilborg et al., 2022]. The details of those
+architectures are listed as follows:
+• KNN, SVM, GBM, and RF regression models were implemented using sklearn [Pedregosa et al., 2011]. For KNN, we op-
+timize the number of neighbors k from the candidate k = [3, 5, 11, 21]. For SVM, we optimize the kernel coefficient γ and
+regularization parameter C from the candidate γ = 
+
+1 × 10
+−6
+, 1 × 10
+−5
+, 1 × 10
+−4
+, 1 × 10
+−3
+, 1 ×10
+−2
+, or 1 × 10
+−1
+
+and C = [1, 10, 100, 1000, 10, 000]. For GBM, we optimize the number of boosting stages n
+b 
+and the maximal model
+depth m
+d 
+from the candidate values n
+b 
+= [100, 200, 400] and m
+d 
+= [5, 6, 7]. For RF, we select the number of decision
+trees t from the candidate list t = [100, 250, 500, 1000].
+• For sequence-based methods, SMILES strings were encoded as one-hot vectors. SMILES strings longer than 200 charac-
+ters were truncated. LSTM model has 4 layers with hidden units of 1024, 1024, 256, and 256. Transformer models and
+the corresponding SMILES tokenization were based on the ChemBERTa [Baek et al., 2021].
+• For graph-based baselines, we mainly search for hidden atom features from [32, 64, 128, 256, 512], the number of convolu-
+tional layers from [1, 2, 3, 4, 5], hidden multiset Transformer nodes from [64, 128, 256, 512] and hidden predictor features
+from [128, 256, 512]. For AFP, we tune the timestep from [1, 2, 3, 4, 5].
+We also select three SOTA pretraining GNNs to examine the efficacy of pretraining on activity cliffs. GROVE [Rong
+et al., 2020] is downloaded from its official Github https://github.com/tencent-ailab/grover. To be explicit, we use the
+base pretrained model for GROVE. MolCLR is downloaded from its official Github https://github.com/yuyangw/MolCLR
+GEM is downloaded from its official Github https://github.com/PaddlePaddle/PaddleHelix/tree/dev/apps/pretrained compound/
+ChemRL/GEM. Both GROVE and MolCLR are implemented in PyG, while GEM is implemented in its self-built PaddlePaddle
+platform. [Ma et al., 2019].
+Activity Cliffs on Proteins
+In the main text, we mainly discuss the divergent performance of machine learning algorithms between non-activity cliff small
+molecules and activity cliff small molecules. However, this phenomenon can also exist for macromolecules, such as proteins.
+For instance, some prior studies [Shortle, 2009] discovered that a single amino acid substitution could completely change the
+fold of a protein. And the structural change produced by this one mutation cannot be dismissed as a semantic issue over
+what constitutes a different fold. To be explicit, one conformation consists of a three-helix bundle, whereas the alternate form
+has a four-strand β-sheet with a single α-helix. This one amino acid can cause a big structural difference even though other
+segments in the sequence are the same. This “similar sequence, different property (i.e., structures)” can be a big challenge
+for tasks like protein structure prediction, which can be seen as a different version of activity cliffs in macromolecules. We
+envision more future work that can explore the representation behavior of machine learning algorithms in modeling this type of
+macromolecules and examine whether they suffer from the same issue as representing activity cliff small molecules.

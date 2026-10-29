@@ -1,0 +1,112 @@
+{
+  "hypothesis": "H7 final bounded three-expert convex mixture",
+  "expert_order": [
+    "corrected_native",
+    "primary_LGBM_ADMET120",
+    "H6_LGBM_ADME720"
+  ],
+  "files": {
+    "base_config": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/h6-lightgbm/worktree/full_feature_config.json",
+      "sha256": "a16710146a0e9232599951f15eb920b2b4fbad698a5106d71ed4fc190beb6200"
+    },
+    "primary_inner": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/full-feature-evaluation/inner-selection.json",
+      "sha256": "baa70240a9aaf897da041cee0c3007aef021c8762616f9852bf3b5038db74d88"
+    },
+    "h6_inner": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/h6-lightgbm/results/inner-selection.json",
+      "sha256": "8426221653233f18c7998cab2f7ea204753b5b4a9b5570530a1e37c9c5341080"
+    },
+    "primary_audit": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/cpu-evaluation-audit/verification.json",
+      "sha256": "1526a8f67195e63739f56f154d9be5f249a66513e828458931c0886636c0ca64"
+    },
+    "h6_audit": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/h6-evaluation-audit/verification.json",
+      "sha256": "b7a4904974429d8460a0c6ec0cce6e47c299bc307086836f6aa51811728d5e71"
+    },
+    "own750_primary_oof": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/full-feature-evaluation/own750__lightgbm__admet__grid1__training_OOF.csv",
+      "sha256": "7d982500d30ed3d61ad8dada1bec71e8ff40f7276a986e3ac52fbf9d02ec07fd"
+    },
+    "own750_primary_query": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/full-feature-evaluation/own750__lightgbm__admet__raw.csv",
+      "sha256": "e599fe54dafd811bf985ae5b7cffacf3f27699859370ad754fb85814e67fb312"
+    },
+    "own750_h6_oof": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/h6-lightgbm/results/own750__lightgbm__adme720__grid1__training_OOF.csv",
+      "sha256": "2c19d4a92ad3748ccf1efd78213021efb8d960ae46160d0bbc6c7fd89ffccebf"
+    },
+    "own750_h6_query": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/h6-lightgbm/results/own750__lightgbm__adme720__raw.csv",
+      "sha256": "614a695d9cec65cb7991bb9ebe41431156f2404a9e5326a44f16a42ed3394997"
+    },
+    "own750_native_query": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/full-feature-evaluation/own750__native__raw.csv",
+      "sha256": "4cdffd9ae3aa67f76e0161e5db407feb59317f51c752a408e538ab94ff477f8e"
+    },
+    "own750_primary_global_query": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/full-feature-evaluation/own750__lightgbm__admet__native_blend_global__raw.csv",
+      "sha256": "c8fe7735469db7184e17380b82956979d66af2fab5d7a0392bc2860343869562"
+    },
+    "own750_primary_global_placed": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/full-feature-evaluation/own750__lightgbm__admet__native_blend_global__native_published_placement_diagnostic.csv",
+      "sha256": "aa495fd625783fb4d5d55f92b64bbaad8c874377812d6ec70356d0de707f76fa"
+    },
+    "briford529_primary_oof": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/full-feature-evaluation/briford529__lightgbm__admet__grid1__training_OOF.csv",
+      "sha256": "a6c9ef1091dd24ce1dbfd3d3363ff13268c74f7570cbdb202f96c019dc6b16de"
+    },
+    "briford529_primary_query": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/full-feature-evaluation/briford529__lightgbm__admet__raw.csv",
+      "sha256": "6353dc0956ff7276e7694a7ff3e716e8054e8ac7b3a4461e458b2ef9b1c4abca"
+    },
+    "briford529_h6_oof": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/h6-lightgbm/results/briford529__lightgbm__adme720__grid1__training_OOF.csv",
+      "sha256": "bed467f4a992cff615121ec984e357411c075ee5e78508b9dcfa36b02c128228"
+    },
+    "briford529_h6_query": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/h6-lightgbm/results/briford529__lightgbm__adme720__raw.csv",
+      "sha256": "ee4710b6db831f441f16f985f05ccddb65b1ba00be64693ca8e7702320faf768"
+    },
+    "briford529_native_query": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/full-feature-evaluation/briford529__native__raw.csv",
+      "sha256": "d991d89844d24416ebcd9954af405aa01078476e9975dbdfa92a9d3535aca352"
+    },
+    "briford529_primary_global_query": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/full-feature-evaluation/briford529__lightgbm__admet__native_blend_global__raw.csv",
+      "sha256": "3715f1e5a7fc55ec4bef8e9bdda5e8d3deb79dd87886c66be5c25f7f4503b6db"
+    },
+    "briford529_primary_global_placed": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/full-feature-evaluation/briford529__lightgbm__admet__native_blend_global__native_published_placement_diagnostic.csv",
+      "sha256": "3bc446fbc77543878d0a3924ff3d853f14875fead8d64d5d19610942c16af868"
+    }
+  },
+  "cohorts": {
+    "own750": {
+      "primary_candidate": "lightgbm__admet__grid1",
+      "h6_candidate": "lightgbm__adme720__grid1"
+    },
+    "briford529": {
+      "primary_candidate": "lightgbm__admet__grid1",
+      "h6_candidate": "lightgbm__adme720__grid1"
+    }
+  },
+  "bootstrap_samples": 1000,
+  "bootstrap_seed": 20261026,
+  "output_dir": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/h7-simplex/results",
+  "source_experiments": {
+    "primary": {
+      "id": "ea7f1cb9-544a-41ec-b0a8-0c7aa7630d86",
+      "run": "d8ab78b2-2ca8-482f-8706-6d48b128a33a",
+      "commit": "437cf5e8c403a7fd87ba8b211ee1c4c24d847c07"
+    },
+    "h6": {
+      "id": "45e61a59-ce5e-4646-b5c2-0b351513322e",
+      "run": "35635752-241c-4080-bd0e-e17ae3bb6206",
+      "commit": "61a00bd673e421b026f2f7c1d630d86c24c841fd"
+    }
+  },
+  "selection": "Exactly three frozen experts; their original per-cohort inner-selected hyperparameters. Global simplex weights fit within each outer-training pool; no outer-driven knobs. This is the last experiment in this bounded round."
+}

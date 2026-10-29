@@ -1,0 +1,25 @@
+{
+  "utc": "2026-10-25T20:13:10.468827+00:00",
+  "tested_rows": 50,
+  "overlap_with_collected": 0,
+  "outcome": "HTTP429",
+  "new_predictions": 0,
+  "100_molecule_test": "not attempted because50 failed",
+  "all_collected_unique": 2010,
+  "remaining_unique": 3645,
+  "http": [
+    {
+      "utc": "2026-10-25T20:12:01.421329+00:00",
+      "method": "GET",
+      "http_status": 200,
+      "local_ip": "192.168.0.16"
+    },
+    {
+      "utc": "2026-10-25T20:12:02.308433+00:00",
+      "method": "POST",
+      "http_status": 429,
+      "local_ip": "192.168.0.16"
+    }
+  ],
+  "interpretation": "The50-molecule request occurred about145seconds after the10-molecule batch completed. Batch size remains confounded with timing and server state."
+}

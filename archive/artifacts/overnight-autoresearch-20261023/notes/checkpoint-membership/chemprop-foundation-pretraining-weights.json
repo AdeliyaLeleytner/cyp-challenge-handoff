@@ -1,0 +1,284 @@
+{
+  "info": {
+    "_id": "6a830ff36a30971b2d08430a",
+    "id": "openadmet/chemprop-foundation-pretraining-weights",
+    "private": false,
+    "tags": [
+      "chemistry",
+      "biology",
+      "en",
+      "license:apache-2.0",
+      "region:us"
+    ],
+    "downloads": 0,
+    "likes": 0,
+    "modelId": "openadmet/chemprop-foundation-pretraining-weights",
+    "author": "openadmet",
+    "sha": "0f8201d06c4656c3f97bc244ce2dc18ac2881be9",
+    "lastModified": "2026-08-17T14:12:46.000Z",
+    "gated": false,
+    "disabled": false,
+    "model-index": null,
+    "config": {},
+    "cardData": {
+      "license": "apache-2.0",
+      "language": [
+        "en"
+      ],
+      "tags": [
+        "chemistry",
+        "biology"
+      ]
+    },
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "atompair__s42.pt"
+      },
+      {
+        "rfilename": "e3fp__s42.pt"
+      },
+      {
+        "rfilename": "ecfp__s42.pt"
+      },
+      {
+        "rfilename": "erg__s42.pt"
+      },
+      {
+        "rfilename": "jazzy__s42.pt"
+      },
+      {
+        "rfilename": "minimol__s42.pt"
+      },
+      {
+        "rfilename": "osmordred__s42.pt"
+      },
+      {
+        "rfilename": "osmordred_pca80__s42.pt"
+      },
+      {
+        "rfilename": "osmordred_pca90__s42.pt"
+      },
+      {
+        "rfilename": "osmordred_pca95__s42.pt"
+      },
+      {
+        "rfilename": "pubchem__s42.pt"
+      },
+      {
+        "rfilename": "rdkit2d__s42.pt"
+      },
+      {
+        "rfilename": "surrogate_adme__s42.pt"
+      },
+      {
+        "rfilename": "usrcat__s42.pt"
+      },
+      {
+        "rfilename": "whim__s42.pt"
+      }
+    ],
+    "spaces": [],
+    "createdAt": "2026-08-17T13:43:15.000Z",
+    "usedStorage": 522897751
+  },
+  "tree": [
+    {
+      "type": "file",
+      "oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "size": 1519,
+      "path": ".gitattributes"
+    },
+    {
+      "type": "file",
+      "oid": "b8fd1faecd09f6f6b477d71a46dffb25d95914b0",
+      "size": 955,
+      "path": "README.md"
+    },
+    {
+      "type": "file",
+      "oid": "0ca7da7ce06482adcdd0270ed0d29f20da2393df",
+      "size": 34859831,
+      "lfs": {
+        "oid": "767c9308b67b07e040f9874f740e3ac87b7d4c75842c0e4ff772568e052759c0",
+        "size": 34859831,
+        "pointerSize": 133
+      },
+      "xetHash": "35bd225baae316e22b38d0925b0c671c12855f73de49efd1f1570c604bb2b4fb",
+      "path": "atompair__s42.pt"
+    },
+    {
+      "type": "file",
+      "oid": "e26c5466add12afbed934236c12257511115593a",
+      "size": 34859791,
+      "lfs": {
+        "oid": "61a3c78869f9e2b2732d4bc255be6bf8a0dd13a76b2108205b3e3423ba861f65",
+        "size": 34859791,
+        "pointerSize": 133
+      },
+      "xetHash": "6a9becb1d7f6b58e38afcb457c7d22c77efaae532bdc9194c857ba28ce82f5c9",
+      "path": "e3fp__s42.pt"
+    },
+    {
+      "type": "file",
+      "oid": "9b5d15a6a10605eab9105bfb0aa04a1994a3a013",
+      "size": 34859791,
+      "lfs": {
+        "oid": "28b92750f5b12744f3da9b7fef4fa0f9c5a28a1dae2bb2dc5337f62d8173c557",
+        "size": 34859791,
+        "pointerSize": 133
+      },
+      "xetHash": "2b6d2d28ff3aa19c958e52a086b851d95b24bc6b295afee90455854bf210393a",
+      "path": "ecfp__s42.pt"
+    },
+    {
+      "type": "file",
+      "oid": "aaeab8d216bb1f832f3c9e5a48f0bae40837fc88",
+      "size": 34859781,
+      "lfs": {
+        "oid": "439be4d74b7bf0fe674c92fa7f827f3b1d1429b5bcd1d6b2e618cfc9bba52c6c",
+        "size": 34859781,
+        "pointerSize": 133
+      },
+      "xetHash": "7376de75623fd7c6988f86f79200415a2719f1720846b8207ba4645febf5c80e",
+      "path": "erg__s42.pt"
+    },
+    {
+      "type": "file",
+      "oid": "fc3c4ced6775480401e08d1a8b0f4e0ca32120e8",
+      "size": 34859801,
+      "lfs": {
+        "oid": "a4e94d2f560af9784fa8a07c1a0431468648a75093431454c671a660b8ce4af4",
+        "size": 34859801,
+        "pointerSize": 133
+      },
+      "xetHash": "c1cd6f9add688f32d9fd0c995c7525f936a9029c137fc278b6e92c1f6ebe41e1",
+      "path": "jazzy__s42.pt"
+    },
+    {
+      "type": "file",
+      "oid": "ca22e5d185229528e549ec3c58f112f23ab45c67",
+      "size": 34859821,
+      "lfs": {
+        "oid": "53466446e4301b7e22a2ed07b546ea58b205fd5739e7b849ff23b174a14e3f7a",
+        "size": 34859821,
+        "pointerSize": 133
+      },
+      "xetHash": "b8f90a64e18f2fcca0e73625d9d383ec0603f385a48f932386f0a5a5eb05f5e9",
+      "path": "minimol__s42.pt"
+    },
+    {
+      "type": "file",
+      "oid": "b6906ef9a01d30d4b36974fa83e80c6a37486ab9",
+      "size": 34859841,
+      "lfs": {
+        "oid": "851cb23c2ea81b8fefa73d50b873cff50ffd971bdc443cba6f5f7864097050db",
+        "size": 34859841,
+        "pointerSize": 133
+      },
+      "xetHash": "eef59cbc8e7d474185793e5b25b0ffcef58d30b996210d7fff611db39613b15f",
+      "path": "osmordred__s42.pt"
+    },
+    {
+      "type": "file",
+      "oid": "878c8c3a3350c13ae2faa70e457cade61d6f20a6",
+      "size": 34859965,
+      "lfs": {
+        "oid": "17f99a075826c230071986c750eae7c09c4f771cd63f733e4b2293d330749a39",
+        "size": 34859965,
+        "pointerSize": 133
+      },
+      "xetHash": "18bdbdab16a981d6ae0f49991dcba10277eb8663ba6b1d46ae6163183cf9b365",
+      "path": "osmordred_pca80__s42.pt"
+    },
+    {
+      "type": "file",
+      "oid": "a3c0a678fc7693b9909fd6469cdcf45c5b0ca58a",
+      "size": 34859965,
+      "lfs": {
+        "oid": "70951da6ece3583e98557e74dcd8eba2ec6b1cb6ac3a30d56548e94a23f9919e",
+        "size": 34859965,
+        "pointerSize": 133
+      },
+      "xetHash": "8b7c19dc102610d25e844e732d1227273ae6710cd4ae3cc325f078ffa6db7ef9",
+      "path": "osmordred_pca90__s42.pt"
+    },
+    {
+      "type": "file",
+      "oid": "5f79af26cc9ba3e9c6cf8c1a37e86a1a9e3a1934",
+      "size": 34859965,
+      "lfs": {
+        "oid": "cad94a2751d8062c99f527a937fa905ebe4b46c58ed6c50e43c703daa1cf6e00",
+        "size": 34859965,
+        "pointerSize": 133
+      },
+      "xetHash": "877e7557264196b78edbf31a5e40aec5ab9efd6d0579bd93cf22c1b599df34f7",
+      "path": "osmordred_pca95__s42.pt"
+    },
+    {
+      "type": "file",
+      "oid": "b258f411a4bb23acec10cb47f9e53781159d0697",
+      "size": 34859821,
+      "lfs": {
+        "oid": "5363a13b8c1399abb1aa412fe53cee89678f21d4bf3152ae9309adb7f517aa32",
+        "size": 34859821,
+        "pointerSize": 133
+      },
+      "xetHash": "eb5eacfed23366990f344f028b0036bba45a4993183afd2e80e03ad95899a43b",
+      "path": "pubchem__s42.pt"
+    },
+    {
+      "type": "file",
+      "oid": "e739b20b182dcbb9ae676500caadd5cd92f7e237",
+      "size": 34859821,
+      "lfs": {
+        "oid": "538a054f6fa1d3b80d296ac999ec7fb8ea614d398d4774fb65fb1611f2a9a131",
+        "size": 34859821,
+        "pointerSize": 133
+      },
+      "xetHash": "478bdbd103b12cfb847fa36b0197e04c58012d3b8006be8571090436f35bb9c0",
+      "path": "rdkit2d__s42.pt"
+    },
+    {
+      "type": "file",
+      "oid": "67081d144c7d65da5a6bd8fb0054ef7941903a64",
+      "size": 34859955,
+      "lfs": {
+        "oid": "924b61bc3778266669663db079f547c8d982f1af0e07b9936767d5a91da97f0e",
+        "size": 34859955,
+        "pointerSize": 133
+      },
+      "xetHash": "f85f17c2246e489804b04ae790db9a1c608f5bcbd1ae9544406c96023ff1bd6b",
+      "path": "surrogate_adme__s42.pt"
+    },
+    {
+      "type": "file",
+      "oid": "143753090178f7d7d6278048467956778fba1796",
+      "size": 34859811,
+      "lfs": {
+        "oid": "00383f5a68beedb6a32df37809d490f439400f5d9d993e82e09d96490731b0cd",
+        "size": 34859811,
+        "pointerSize": 133
+      },
+      "xetHash": "9451f58f5d247afdf80b794f28f82a5f8c42f94b84b85f8ff33e35df27eab71e",
+      "path": "usrcat__s42.pt"
+    },
+    {
+      "type": "file",
+      "oid": "e3b449aff76a571f2867ca18a2299148edc09cd5",
+      "size": 34859791,
+      "lfs": {
+        "oid": "9b7f37f6a5ee2d1863134d03e6a42e0016801669e3c97262027fc13479811cb9",
+        "size": 34859791,
+        "pointerSize": 133
+      },
+      "xetHash": "34343255e5763e515614d34f893d8f870ca5d10a4e8600bfa04dc993fbe5f162",
+      "path": "whim__s42.pt"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+Seed set to 42
+{"event": "exact_strae_fold_config", "fold": 0, "criterion_mode": "exact_strae_v1", "fit_statistics": {"primary_indices": [0, 1, 2, 3], "primary_counts": [1498, 942, 1113, 1051], "primary_means": [4.084773266889186, 4.592306529338641, 4.80565911619946, 4.970844518687916], "primary_denominators": [791.1121772439253, 287.9058359665584, 467.0410577395687, 496.923952309333], "mode": "exact_strae_v1", "n_fit_rows": 24736, "n_targets": 18, "target_counts": [1498, 942, 1113, 1051, 3193, 3193, 3193, 3193, 12772, 8519, 6814, 8767, 8831, 12561, 12561, 12561, 12561, 12561], "auxiliary_indices": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], "native_task_weights": [0.740429699420929, 1.18834388256073, 1.0034117698669434, 1.067814588546753, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657], "primary_native_weight_sum": 3.9999999403953552, "auxiliary_head_coefficients": [0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868], "auxiliary_total_nominal_budget": 1.0499999530613415, "scaler_mean": [4.084773264755713, 4.592306533689965, 4.805659119223863, 4.970844514249735, -1.9305355224815155, -0.6947899487858091, -0.43309622929214603, -0.6571984298793505, 5.259290252253063, 5.287261417654006, 5.268475936520719, 5.363722492110107, 5.278118000229222, -39.40848504236086, -32.30859360992323, -22.405426481349544, -45.80035140141, -50.64389563207055], "scaler_scale": [1.096015387450597, 0.768100848782032, 0.9084245791312313, 1.0025457961370492, 1.3579076052819274, 0.46217827573348225, 1.1212608381903877, 0.6922649363465525, 0.6641741667077186, 0.6796218271117668, 0.7619542181736071, 0.6973596180734007, 0.6836470412393164, 38.48633864439671, 42.363680663150454, 32.49791612535807, 37.84592354331698, 50.99447581633049], "per_entry_coefficients": [0.0003463527104553278, 0.0006669722812350792, 0.0004862659096439583, 0.0005043758665073206, 2.3488880879185305e-05, 2.3488880879185305e-05, 2.3488880879185305e-05, 2.3488880879185305e-05, 5.872220219796326e-06, 8.803849823598859e-06, 1.1006750315121614e-05, 8.554807419555e-06, 8.492809041698413e-06, 5.970861925582253e-06, 5.970861925582253e-06, 5.970861925582253e-06, 5.970861925582253e-06, 5.970861925582253e-06], "normalization": "N_fit / B; primary sigma/(J*D_fit); auxiliary native_weight/(sum_primary_native_weights*n_aux_fit)", "qualification": "Preserves nominal native auxiliary head ratios, not native realized label-frequency weighting. Test denominators are unknown."}, "validation_statistics": {"primary_indices": [0, 1, 2, 3], "primary_counts": [322, 192, 230, 211], "primary_means": [3.997177250559006, 4.549866381406249, 4.690669856078261, 4.894790379715641], "primary_denominators": [165.26193621142858, 66.52324747765626, 93.15256610607827, 110.73404966279617]}, "checkpoint_monitor": "val_primary_strae", "bounds_scaling": "same fit-center mean and scale for central/lower/upper; no bound-specific fitting", "native_architecture_and_optimizer_preserved": true, "explicit_changes": ["primary exact interval macro objective", "per-auxiliary-head observed-label mean and nominal author budget", "uniform-row unbiased minibatch estimator", "primary-only validation checkpoint selection"], "precision": "16-mixed forward; FP32 differentiable loss; float64 full-validation official arithmetic"}
+Using 16bit Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2]
+Loading `train_dataloader` to estimate number of stepping batches.
+/opt/conda/lib/python3.11/site-packages/lightning/pytorch/utilities/model_summary/model_summary.py:231: Precision 16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
+
+  | Name            | Type               | Params | Mode 
+---------------------------------------------------------------
+0 | message_passing | BondMessagePassing | 1.1 M  | train
+1 | agg             | NormAggregation    | 0      | train
+2 | bn              | BatchNorm1d        | 1.4 K  | train
+3 | predictor       | RegressionFFN      | 306 K  | train
+4 | X_d_transform   | Identity           | 0      | train
+5 | metrics         | ModuleList         | 0      | train
+6 | loss_objective  | ExactSTObjective   | 0      | train
+---------------------------------------------------------------
+1.4 M     Trainable params
+0         Non-trainable params
+1.4 M     Total params
+5.595     Total estimated model params size (MB)
+27        Modules in train mode
+0         Modules in eval mode
+{"event": "exact_strae_epoch", "epoch": 0, "val_primary_strae": 0.8531666373258759, "per_primary_ST_RAE": [0.7979973764400642, 0.8041066256825077, 0.9650883299069264, 0.8454742172740052]}
+{"event": "exact_strae_epoch", "epoch": 1, "val_primary_strae": 0.8353553436221148, "per_primary_ST_RAE": [0.6612915495322854, 0.7858851282290585, 0.9720062521915639, 0.9222384445355514]}
+{"event": "exact_strae_epoch", "epoch": 2, "val_primary_strae": 0.7865888662846616, "per_primary_ST_RAE": [0.6460252816387126, 0.6972740461152861, 0.9446601994472211, 0.8583959379374267]}
+{"event": "exact_strae_epoch", "epoch": 3, "val_primary_strae": 0.7365113128873999, "per_primary_ST_RAE": [0.6455920793449511, 0.647517415904248, 0.8765281886914796, 0.7764075676089208]}
+{"event": "exact_strae_epoch", "epoch": 4, "val_primary_strae": 0.745955718229498, "per_primary_ST_RAE": [0.6317689749027096, 0.7079873975015404, 0.8658207553000662, 0.7782457452136755]}
+{"event": "exact_strae_epoch", "epoch": 5, "val_primary_strae": 0.7265800781821952, "per_primary_ST_RAE": [0.6111268215767164, 0.6898472728670505, 0.8479342373179505, 0.7574119809670635]}
+{"event": "exact_strae_epoch", "epoch": 6, "val_primary_strae": 0.7158530053034244, "per_primary_ST_RAE": [0.5782937395632292, 0.6376842676646554, 0.860495305026448, 0.7869387089593651]}
+{"event": "exact_strae_epoch", "epoch": 7, "val_primary_strae": 0.7280593673682784, "per_primary_ST_RAE": [0.5635008968367162, 0.7582379857641808, 0.85911857775453, 0.7313800091176862]}
+{"event": "exact_strae_epoch", "epoch": 8, "val_primary_strae": 0.7068203344982797, "per_primary_ST_RAE": [0.562635115042954, 0.6652164979664762, 0.8690232875053177, 0.7304064374783713]}
+{"event": "exact_strae_epoch", "epoch": 9, "val_primary_strae": 0.6936165576543524, "per_primary_ST_RAE": [0.5078176124847834, 0.6204334871116746, 0.8935335961653667, 0.7526815348555852]}
+{"event": "exact_strae_epoch", "epoch": 10, "val_primary_strae": 0.6809495015249637, "per_primary_ST_RAE": [0.5308604512646747, 0.6505077531800528, 0.8108907751452781, 0.731539026509849]}
+{"event": "exact_strae_epoch", "epoch": 11, "val_primary_strae": 0.7070798352077183, "per_primary_ST_RAE": [0.5781403890517781, 0.589091121856194, 0.8587527608244006, 0.8023350690985004]}
+{"event": "exact_strae_epoch", "epoch": 12, "val_primary_strae": 0.6722153456952403, "per_primary_ST_RAE": [0.5035763049048485, 0.5889368544429576, 0.8345792364310224, 0.7617689870021328]}
+{"event": "exact_strae_epoch", "epoch": 13, "val_primary_strae": 0.7089402793124768, "per_primary_ST_RAE": [0.5667062145691399, 0.6027719100252842, 0.8967243247678336, 0.7695586678876498]}
+{"event": "exact_strae_epoch", "epoch": 14, "val_primary_strae": 0.6809978071356356, "per_primary_ST_RAE": [0.5344606444502974, 0.6160766880987781, 0.8226471702192055, 0.7508067257742614]}
+{"event": "exact_strae_epoch", "epoch": 15, "val_primary_strae": 0.7005445475302734, "per_primary_ST_RAE": [0.5603497242503146, 0.6022102661729092, 0.9100065931618583, 0.7296116065360113]}
+{"event": "exact_strae_epoch", "epoch": 16, "val_primary_strae": 0.6771434370001104, "per_primary_ST_RAE": [0.5381423961614065, 0.5744463398829928, 0.8330710218726525, 0.7629139900833897]}
+{"event": "exact_strae_epoch", "epoch": 17, "val_primary_strae": 0.6650976983491084, "per_primary_ST_RAE": [0.5117184686502401, 0.5863381813703774, 0.8255841052408444, 0.7367500381349715]}
+{"event": "exact_strae_epoch", "epoch": 18, "val_primary_strae": 0.703566044005887, "per_primary_ST_RAE": [0.6026121528477352, 0.5819851045635497, 0.8280071638990341, 0.8016597547132291]}
+{"event": "exact_strae_epoch", "epoch": 19, "val_primary_strae": 0.6932711541009668, "per_primary_ST_RAE": [0.5378087313888106, 0.5886625829100499, 0.8511192667232982, 0.7954940353817087]}
+{"event": "exact_strae_epoch", "epoch": 20, "val_primary_strae": 0.6833974056258583, "per_primary_ST_RAE": [0.5193847245948784, 0.5329191689517553, 0.8778036815879423, 0.8034820473688573]}
+{"event": "exact_strae_epoch", "epoch": 21, "val_primary_strae": 0.6833065120634221, "per_primary_ST_RAE": [0.5093147389559518, 0.6029428191891182, 0.8330397066389712, 0.7879287834696472]}
+{"event": "exact_strae_epoch", "epoch": 22, "val_primary_strae": 0.6732587958758258, "per_primary_ST_RAE": [0.504096829825805, 0.5607874439485692, 0.8509410454404028, 0.7772098642885267]}
+{"event": "exact_strae_epoch", "epoch": 23, "val_primary_strae": 0.6873508533492049, "per_primary_ST_RAE": [0.5291160037767706, 0.5870014854856629, 0.8750569066919099, 0.7582290174424761]}
+{"event": "exact_strae_epoch", "epoch": 24, "val_primary_strae": 0.6972316064021145, "per_primary_ST_RAE": [0.5158654287066601, 0.5953317026600264, 0.922110016743202, 0.7556192774985695]}
+{"event": "exact_strae_epoch", "epoch": 25, "val_primary_strae": 0.7064237311166154, "per_primary_ST_RAE": [0.5731945825524122, 0.5924638396633455, 0.834775643693317, 0.8252608585573871]}
+{"event": "exact_strae_epoch", "epoch": 26, "val_primary_strae": 0.7034483413172485, "per_primary_ST_RAE": [0.5071294743069292, 0.5499469530939808, 0.9910177203898124, 0.7656992174782713]}
+{"event": "exact_strae_epoch", "epoch": 27, "val_primary_strae": 0.7123469344272931, "per_primary_ST_RAE": [0.5607222652607887, 0.5656034791542613, 0.8857701427182596, 0.837291850575863]}
+{"event": "exact_strae_epoch", "epoch": 28, "val_primary_strae": 0.7004034131282475, "per_primary_ST_RAE": [0.5268841949320408, 0.5981086762582029, 0.9070148641934698, 0.7696059171292762]}
+{"event": "exact_strae_epoch", "epoch": 29, "val_primary_strae": 0.6996088459162477, "per_primary_ST_RAE": [0.5394669796870926, 0.5654137251349148, 0.9139520152789639, 0.7796026635640196]}
+{"event": "exact_strae_epoch", "epoch": 30, "val_primary_strae": 0.7129651522555871, "per_primary_ST_RAE": [0.5540554133536157, 0.5637553917027064, 0.9611330828975341, 0.7729167210684926]}
+{"event": "exact_strae_epoch", "epoch": 31, "val_primary_strae": 0.7166485840880727, "per_primary_ST_RAE": [0.5660155634443308, 0.5993184206642866, 0.9143584267428075, 0.7869019255008661]}
+{"event": "exact_strae_epoch", "epoch": 32, "val_primary_strae": 0.7134665055409528, "per_primary_ST_RAE": [0.5320750397428696, 0.610259569692302, 0.9605961206570972, 0.7509352920715422]}
+{"event": "exact_strae_epoch", "epoch": 33, "val_primary_strae": 0.7010795605729223, "per_primary_ST_RAE": [0.5316185765983166, 0.5624061721216266, 0.9133886673870468, 0.7969048261846992]}
+{"event": "exact_strae_epoch", "epoch": 34, "val_primary_strae": 0.7178133162946492, "per_primary_ST_RAE": [0.5450641221397889, 0.621414310643102, 0.9053885421612334, 0.7993862902344719]}
+{"event": "exact_strae_epoch", "epoch": 35, "val_primary_strae": 0.7117086170777791, "per_primary_ST_RAE": [0.5626582675489336, 0.6156927303781329, 0.8747124636047516, 0.7937710067792986]}
+{"event": "exact_strae_epoch", "epoch": 36, "val_primary_strae": 0.6959846749438926, "per_primary_ST_RAE": [0.5952000733522318, 0.5683092578604705, 0.852441444338144, 0.767987924224724]}
+{"event": "exact_strae_epoch", "epoch": 37, "val_primary_strae": 0.7079495696882878, "per_primary_ST_RAE": [0.5461160834333099, 0.5966436149402037, 0.9238965835533228, 0.7651419968263145]}
+{"event": "exact_strae_epoch", "epoch": 38, "val_primary_strae": 0.6780898868921511, "per_primary_ST_RAE": [0.5271202958123248, 0.5510397537963213, 0.8991724274768754, 0.7350270704830831]}
+{"event": "exact_strae_epoch", "epoch": 39, "val_primary_strae": 0.7141810269115909, "per_primary_ST_RAE": [0.5596564508911318, 0.575170234218558, 0.9404369142541309, 0.7814605082825434]}
+{"event": "exact_strae_epoch", "epoch": 40, "val_primary_strae": 0.703031711279747, "per_primary_ST_RAE": [0.5424813911359735, 0.5938582316131645, 0.8894868584165455, 0.786300363953304]}
+{"event": "exact_strae_epoch", "epoch": 41, "val_primary_strae": 0.7087008991609188, "per_primary_ST_RAE": [0.5433318333219481, 0.5966414586686762, 0.9374109708832141, 0.7574193337698367]}
+{"event": "exact_strae_epoch", "epoch": 42, "val_primary_strae": 0.7103554482531702, "per_primary_ST_RAE": [0.5714508424740308, 0.5985475649630194, 0.9363433987665712, 0.7350799868090592]}
+{"event": "exact_strae_epoch", "epoch": 43, "val_primary_strae": 0.7142817795599679, "per_primary_ST_RAE": [0.5581432395625738, 0.5696915488495087, 0.9372752862054444, 0.7920170436223445]}
+{"event": "exact_strae_epoch", "epoch": 44, "val_primary_strae": 0.720096958083971, "per_primary_ST_RAE": [0.5297834904544405, 0.5967392197088094, 0.9499034830134442, 0.8039616391591898]}
+{"event": "exact_strae_epoch", "epoch": 45, "val_primary_strae": 0.691985215872424, "per_primary_ST_RAE": [0.5269434293000992, 0.5968348017862355, 0.8875259298596736, 0.7566367025436873]}
+{"event": "exact_strae_epoch", "epoch": 46, "val_primary_strae": 0.6927271277660767, "per_primary_ST_RAE": [0.5271281149490409, 0.5786154317695463, 0.943554276323026, 0.7216106880226937]}
+{"event": "exact_strae_epoch", "epoch": 47, "val_primary_strae": 0.6647893034657008, "per_primary_ST_RAE": [0.51304894244915, 0.5277503013090656, 0.8780161295029939, 0.7403418406015937]}
+{"event": "exact_strae_epoch", "epoch": 48, "val_primary_strae": 0.7198228464153487, "per_primary_ST_RAE": [0.6146082300115024, 0.5823661259414893, 0.867174471616617, 0.8151425580917857]}
+{"event": "exact_strae_epoch", "epoch": 49, "val_primary_strae": 0.696432721654528, "per_primary_ST_RAE": [0.5087965115617838, 0.5859529779652982, 0.9508239380478867, 0.740157459043143]}
+{"event": "exact_strae_epoch", "epoch": 50, "val_primary_strae": 0.6977714113929373, "per_primary_ST_RAE": [0.5254843723209263, 0.6221987567359221, 0.8746946934515276, 0.7687078230633736]}
+{"event": "exact_strae_epoch", "epoch": 51, "val_primary_strae": 0.6866095281420668, "per_primary_ST_RAE": [0.5283617767791979, 0.5337326985707025, 0.9174438147308331, 0.7668998224875337]}
+{"event": "exact_strae_epoch", "epoch": 52, "val_primary_strae": 0.6908851014264461, "per_primary_ST_RAE": [0.5495390114510916, 0.60547050680382, 0.8921191595976828, 0.7164117278531899]}
+{"event": "exact_strae_epoch", "epoch": 53, "val_primary_strae": 0.7166853463350744, "per_primary_ST_RAE": [0.5769878293937064, 0.571681814728974, 0.9435986013206809, 0.774473139896936]}
+{"event": "exact_strae_epoch", "epoch": 54, "val_primary_strae": 0.6974469905005338, "per_primary_ST_RAE": [0.5363419547964362, 0.5657930108387647, 0.9137758861521693, 0.773877110214765]}
+{"event": "exact_strae_epoch", "epoch": 55, "val_primary_strae": 0.6824322002073262, "per_primary_ST_RAE": [0.5143698958839542, 0.5681718578455417, 0.9153031153315662, 0.7318839317682431]}
+{"event": "exact_strae_epoch", "epoch": 56, "val_primary_strae": 0.7011712960220597, "per_primary_ST_RAE": [0.5223107172210492, 0.580092025721046, 0.9281039582599084, 0.7741784828862356]}
+{"event": "exact_strae_epoch", "epoch": 57, "val_primary_strae": 0.6998563185664562, "per_primary_ST_RAE": [0.5402099260139288, 0.5881520574201679, 0.9156453739931467, 0.7554179168385815]}
+{"event": "exact_strae_epoch", "epoch": 58, "val_primary_strae": 0.7031873892836016, "per_primary_ST_RAE": [0.5650351910422339, 0.5621740627930684, 0.9273359531833762, 0.7582043501157274]}
+{"event": "exact_strae_epoch", "epoch": 59, "val_primary_strae": 0.6793039584617349, "per_primary_ST_RAE": [0.5414466418861433, 0.5396486905654472, 0.8789350152121659, 0.7571854861831828]}
+{"event": "exact_strae_epoch", "epoch": 60, "val_primary_strae": 0.6789505835021646, "per_primary_ST_RAE": [0.5329723293940014, 0.532215103653628, 0.8848004718844611, 0.7658144290765682]}
+{"event": "exact_strae_epoch", "epoch": 61, "val_primary_strae": 0.6926992033419272, "per_primary_ST_RAE": [0.5337243415419669, 0.5541434946513449, 0.9438867623141075, 0.7390422148602896]}
+{"event": "exact_strae_epoch", "epoch": 62, "val_primary_strae": 0.7357086809967216, "per_primary_ST_RAE": [0.5704204454668087, 0.6011629529975134, 0.9342476442632568, 0.8370036812593074]}
+{"event": "exact_strae_epoch", "epoch": 63, "val_primary_strae": 0.7247793892801911, "per_primary_ST_RAE": [0.5547914292928765, 0.5800314066623289, 0.9950013189602065, 0.7692934022053528]}
+{"event": "exact_strae_epoch", "epoch": 64, "val_primary_strae": 0.7202863313900263, "per_primary_ST_RAE": [0.5608619480138924, 0.5971231360983215, 0.935958446696907, 0.7872017947509843]}
+{"event": "exact_strae_epoch", "epoch": 65, "val_primary_strae": 0.7083206061366955, "per_primary_ST_RAE": [0.5413809918132402, 0.5843286501519614, 0.9104130520778361, 0.7971597305037443]}
+{"event": "exact_strae_epoch", "epoch": 66, "val_primary_strae": 0.7168947144483553, "per_primary_ST_RAE": [0.5507078062547238, 0.6024368627107, 0.9377685538396631, 0.7766656349883342]}
+{"event": "exact_strae_epoch", "epoch": 67, "val_primary_strae": 0.7113790594327073, "per_primary_ST_RAE": [0.5202579761765842, 0.6082862301780264, 0.9332220054566437, 0.783750025919575]}
+{"event": "exact_strae_epoch", "epoch": 68, "val_primary_strae": 0.7043697936677761, "per_primary_ST_RAE": [0.5339748742486297, 0.5963764516132929, 0.9113967034477525, 0.7757311453614296]}
+{"event": "exact_strae_epoch", "epoch": 69, "val_primary_strae": 0.693638088465182, "per_primary_ST_RAE": [0.5406588764938065, 0.5872756888388305, 0.9233209059312297, 0.7232968825968615]}
+{"event": "exact_strae_epoch", "epoch": 70, "val_primary_strae": 0.7105947915464794, "per_primary_ST_RAE": [0.5222026068713785, 0.6058396463106202, 0.9765449710192565, 0.7377919419846621]}
+{"event": "exact_strae_epoch", "epoch": 71, "val_primary_strae": 0.7055460318735902, "per_primary_ST_RAE": [0.530952274954679, 0.600807933557746, 0.9604875478354632, 0.7299363711464726]}
+{"event": "exact_strae_epoch", "epoch": 72, "val_primary_strae": 0.696159244805747, "per_primary_ST_RAE": [0.5502305792694606, 0.5846751883931961, 0.9166341499187141, 0.7330970616416171]}
+{"event": "exact_strae_epoch", "epoch": 73, "val_primary_strae": 0.6904443128664407, "per_primary_ST_RAE": [0.5363888229614502, 0.5715417209074936, 0.9496396425467072, 0.7042070650501117]}
+{"event": "exact_strae_epoch", "epoch": 74, "val_primary_strae": 0.6982169321083882, "per_primary_ST_RAE": [0.5430583167618225, 0.5542550497733333, 0.9387699845725356, 0.7567843773258613]}
+[rank: 0] Received SIGTERM: 15
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f03da03b880>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1618, in __del__
+  File "/opt/conda/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1582, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/opt/conda/lib/python3.11/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/multiprocessing/connection.py", line 948, in wait
+    ready = selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torch/utils/data/_utils/signal_handling.py", line 73, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 118887) is killed by signal: Terminated. 

@@ -1,0 +1,46 @@
+--- H6-evaluated/admet_full_models.py
++++ locked-final/admet_full_models.py
+@@ -6,13 +6,14 @@
+ from sklearn.metrics.pairwise import rbf_kernel
+ from lightgbm import LGBMRegressor
+ 
+-def transform(a,b,scale=True):
++def transform(a,b,scale=True,return_objects=False):
+     imputer=SimpleImputer(strategy='median',keep_empty_features=True)
+     a=imputer.fit_transform(a);b=imputer.transform(b)
++    fitted={'imputer':imputer,'scaler':None}
+     if scale:
+-        scaler=StandardScaler();a=scaler.fit_transform(a);b=scaler.transform(b)
++        scaler=StandardScaler();a=scaler.fit_transform(a);b=scaler.transform(b);fitted['scaler']=scaler
+         a=np.clip(a,-20,20);b=np.clip(b,-20,20)
+-    return a,b
++    return (a,b,fitted) if return_objects else (a,b)
+ 
+ def tanimoto(a,b):
+     numerator=a@b.T;den=a.sum(1)[:,None]+b.sum(1)[None,:]-numerator
+@@ -23,7 +24,7 @@
+     if len(columns)!=120 or int(cyp.sum())!=13:raise ValueError('Expected120 features with13 prespecified CYP endpoints')
+     return {'cyp_only':np.flatnonzero(cyp),'non_cyp':np.flatnonzero(~cyp)}
+ 
+-def predict(spec,params,train,query,target,X,seed,threads):
++def predict(spec,params,train,query,target,X,seed,threads,artifact=None):
+     family,view=spec['family'],spec['view']
+     if family=='kernel':
+         def block(key,kind):
+@@ -48,6 +49,14 @@
+     if view in ('adme','adme_admet'):features=X[view]
+     elif view in ('cyp_only','non_cyp'):features=X['admet'][:,X['admet_groups'][view]]
+     else:features={'admet':X['admet'],'structure':X['structure'],'augmented':np.column_stack([X['structure'],X['admet']])}[view]
+-    a,b=transform(features[train],features[query],False)
++    if artifact is not None:
++        from .final_model_artifacts import identity,reuse,persist
++        expected=identity(spec,params,train,query,target,features,seed,threads,artifact)
++        cached=reuse(artifact,expected,features[query])
++        if cached is not None:return cached
++        a,b,preprocessing=transform(features[train],features[query],False,True)
++    else:a,b=transform(features[train],features[query],False)
+     model=LGBMRegressor(n_estimators=220,num_leaves=params['num_leaves'],max_depth=params['max_depth'],min_child_samples=10,learning_rate=.03,reg_lambda=5,objective='regression_l1',verbosity=-1,n_jobs=threads,random_state=seed,force_col_wise=True)
+-    return model.fit(a,target).predict(b)
++    prediction=model.fit(a,target).predict(b)
++    if artifact is not None:return persist(artifact,expected,model,preprocessing,features[query],prediction)
++    return prediction

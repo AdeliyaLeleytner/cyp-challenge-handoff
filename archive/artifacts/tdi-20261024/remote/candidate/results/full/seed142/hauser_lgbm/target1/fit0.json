@@ -1,0 +1,34 @@
+{
+  "job_sha256": "a55c16859d5e33724def8d4293fedf379076e9282ac8c0ade82c381710bdb172",
+  "fit": 0,
+  "metadata": {
+    "learner": "hauser_lgbm",
+    "seed": 142,
+    "device": "cpu",
+    "n_jobs": 1,
+    "n_train_pool": 4916,
+    "n_train_observed": 2845,
+    "n_train_positive": 611,
+    "n_valid": 1229,
+    "n_query": 750,
+    "feature_width": 4279,
+    "train_rows_sha256": "1b656d44aa4484bdf3c826a3c44eaf0c180aafcfc35b4be204dc999dbc71e342",
+    "observed_train_rows_sha256": "36c2afbc553210c7ac54c92421e4369fc9591a91d8b2fec17239ae2e21a96764",
+    "valid_rows_sha256": "6b89cbdf8d1e31c052fd6899f19ee21f4edf107e294a7429fed1ff53ecffb094",
+    "pca_scope": "none",
+    "preset": {
+      "n_estimators": 200,
+      "learning_rate": 0.03,
+      "max_depth": 7,
+      "num_leaves": 63,
+      "min_child_samples": 20,
+      "colsample_bytree": 0.4,
+      "subsample": 1.0,
+      "subsample_freq": 0,
+      "reg_alpha": 0.0,
+      "reg_lambda": 0.5
+    },
+    "feature_fidelity": "4279_columns_supplied_caller_must_verify_native_order"
+  },
+  "npz_sha256": "21b031ea4dab22f6b60bdc420f0c2ee358be86cb344ff2cc92c6bd4c35e77708"
+}

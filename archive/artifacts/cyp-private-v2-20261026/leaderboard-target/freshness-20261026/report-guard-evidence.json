@@ -1,0 +1,64 @@
+{
+  "scope": "Only exact fetched report guard and helper executed locally with mockURLlookup; no real submission, fullhandler, network orstorage execution",
+  "space_revision": "059ab0d96a539616ba7d0f805a2e7d1808703192",
+  "source_sha256": "6371f97c9518e5cf5e86ef5a46a302b5b6b802733ac1ad8676e51b6bb00da91e",
+  "guard_lines": [
+    489,
+    499
+  ],
+  "helper_lines": [
+    471,
+    482
+  ],
+  "cases": [
+    {
+      "tag": "",
+      "open_code_checkbox": false,
+      "mock_reachable": false,
+      "result": "Not submitted",
+      "local_mock_link_checks": 0,
+      "actual_network_requests": 0
+    },
+    {
+      "tag": "",
+      "open_code_checkbox": true,
+      "mock_reachable": false,
+      "result": {
+        "value": "Error: Could not open the Method Report Link. Please check the URL and try again, or uncheck the 'open code' box.",
+        "visible": true
+      },
+      "local_mock_link_checks": 0,
+      "actual_network_requests": 0
+    },
+    {
+      "tag": "https://example.invalid/report",
+      "open_code_checkbox": true,
+      "mock_reachable": true,
+      "result": "https://example.invalid/report",
+      "local_mock_link_checks": 1,
+      "actual_network_requests": 0
+    },
+    {
+      "tag": "https://example.invalid/report",
+      "open_code_checkbox": true,
+      "mock_reachable": false,
+      "result": {
+        "value": "Error: Could not open the Method Report Link. Please check the URL and try again, or uncheck the 'open code' box.",
+        "visible": true
+      },
+      "local_mock_link_checks": 1,
+      "actual_network_requests": 0
+    },
+    {
+      "tag": "http://example.invalid/report",
+      "open_code_checkbox": true,
+      "mock_reachable": true,
+      "result": {
+        "value": "Error: Could not open the Method Report Link. Please check the URL and try again, or uncheck the 'open code' box.",
+        "visible": true
+      },
+      "local_mock_link_checks": 0,
+      "actual_network_requests": 0
+    }
+  ]
+}

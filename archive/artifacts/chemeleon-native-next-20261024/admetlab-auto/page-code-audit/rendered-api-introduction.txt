@@ -1,0 +1,72 @@
+- navigation:
+  - link "🏠 Home":
+    - /url: /
+- main:
+  - button "Menu"
+  - complementary:
+    - searchbox "Search text"
+    - heading "ADMETlab3.0 API" [level=1]:
+      - link "ADMETlab3.0 API":
+        - /url: "#"
+    - list:
+      - link "Introduction":
+        - /url: "#/"
+      - link "ADMETlab Utils":
+        - /url: "#/one"
+      - link "ADMET Calculation":
+        - /url: "#/two"
+      - link "Quick Examples":
+        - /url: "#/three"
+  - article:
+    - heading "Introduction" [level=1]:
+      - link "Introduction":
+        - /url: "#/?id=-introduction"
+        - text: Introduction
+    - separator
+    - paragraph: Our servers have unfortunately been under persistent unknown attacks, which has led to a collapse of server resources and instability. We are doing our utmost to fix these issues and restore normal service as quickly as possible.
+    - paragraph:
+      - text: In the meantime, if it’s convenient for you and you have a significant volume of calculations, you are welcome to send the molecules you wish to compute directly to
+      - code: minddance@163.com
+      - text: . We will process your request as soon as possible and return the results to you in a timely manner.
+    - paragraph: This document aims to elucidate how ADMETlab 3.0’s API service is structured, with a variety of usage cases as illustrations, to help new users learn how the service works and how to construct the URLs that are the interface to this service.
+    - blockquote:
+      - paragraph:
+        - strong: "USAGE POLICY:"
+        - text: Please note that ADMETlab 3.0 API is not designed for processing very large volumes (millions) of requests at the same time. We suggest that any script or application refrain from exceeding 5 requests per second to prevent overloading the ADMETlab 3.0 servers. If you have a large data set that you need to compute with, please contact us for assistance in optimizing your task, as there are likely more efficient ways to approach such bulk queries.
+    - paragraph:
+      - img "ADMETlab 3.0 Framework"
+    - strong: Figure 1.
+    - text: Overview scheme of ADMETlab 3.0 API
+    - heading "How ADMETlab 3.0 Works" [level=3]:
+      - link "How ADMETlab 3.0 Works":
+        - /url: "#/?id=how-admetlab-30-works"
+    - separator
+    - paragraph:
+      - text: "The conceptual framework of ADMETlab 3.0 is primarily composed of three-part request:"
+      - strong: 1) input
+      - text: —cleaning individual molecules or batches of molecules;
+      - strong: 2) operation
+      - text: —calculating the ADMET properties of these molecules using deep learning models; and
+      - strong: 3) output
+      - text: —determining which result files to return. The beauty of this design is that all the underlying functionalities are modular, allowing for flexible combinations.
+    - paragraph
+    - paragraph:
+      - text: For example, this service supports input of chemical structure by SMILES. It supports output of chemical structure as images in SVG format. You can combine these two into a visualization request for a SMILES string. - In this case, you can obtain the SVG image of the molecule by sending a
+      - generic: POST
+      - text: request with the SMILES string to
+      - code: https://admetlab3.scbdd.com/api/molsvg
+      - text: "using the following request format:"
+    - code: "{ \"SMILES\": \"CC(C)OC(=O)CC(=O)CSC1=C(C=C2CCCC2=N1)C#N\" }"
+    - button "Copy to clipboard Error Copied":
+      - text: Copy to clipboard
+      - generic: Error
+      - generic: Copied
+    - text: json
+    - paragraph: "We will get the output:"
+    - paragraph
+    - paragraph: The possibilities are nearly endless, and more importantly, the action of the service is simple to understand from the URL alone, without needing any extra programming, parsing, etc. And at the same time, more complex data handling is available for programmers who want rigorous schema-based XML communications, or who want to use JSON data to embed functionality in a web page via JavaScript.
+    - text: Made with
+    - text: by
+    - link "Computational Biology & Drug Design Group":
+      - /url: http://www.scbdd.com/
+    - text: © 2023

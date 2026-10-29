@@ -1,0 +1,87 @@
+Seed set to 44
+Loading foundation model: /workspace/cyp-repro/assets/weights/chemeleon_mp.pt
+  Loaded custom foundation weights (hidden_dim=2048)
+{"event": "exact_strae_fold_config", "fold": 2, "criterion_mode": "exact_strae_v1", "fit_statistics": {"primary_indices": [0, 1, 2, 3], "primary_counts": [1629, 911, 1049, 989], "primary_means": [4.026722720419276, 4.560017999801317, 4.78459572192183, 4.9658002620626895], "primary_denominators": [839.6547202692486, 289.9267955236433, 426.11273664954433, 501.316708451456], "mode": "exact_strae_v1", "n_fit_rows": 24912, "n_targets": 18, "target_counts": [1629, 911, 1049, 989, 3124, 3124, 3124, 3124, 12574, 8345, 6721, 8845, 8707, 12980, 12980, 12980, 12980, 12980], "auxiliary_indices": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], "native_task_weights": [0.6643903851509094, 1.1971782445907593, 1.0417358875274658, 1.0966956615447998, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896], "primary_native_weight_sum": 4.000000178813934, "auxiliary_head_coefficients": [0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099], "auxiliary_total_nominal_budget": 1.0499999947845937, "scaler_mean": [4.026722721632014, 4.560018005800299, 4.784595725761355, 4.965800255567167, -1.8463463850159183, -0.6643356352547639, -0.3946239612595329, -0.625725138516456, 5.242983544746946, 5.288515880737854, 5.259389231485583, 5.356865470998364, 5.285771798359153, -37.65828553259456, -30.420458241447438, -21.528667021111406, -44.47886405848811, -47.8806920749507], "scaler_scale": [1.1031789898415356, 0.7987959211510736, 0.8937748011533863, 1.058891924274784, 1.3641783692813896, 0.46345080241258285, 1.107292122786255, 0.7036411154186554, 0.6550912033374086, 0.6865279518315502, 0.7540420285938116, 0.7075555154860542, 0.6927536338451348, 38.092098118727705, 42.097678909782296, 32.32682442569276, 37.75850918862929, 51.22511562253449], "per_entry_coefficients": [0.00032846209376628755, 0.0006887910443982508, 0.0005243769572466862, 0.0005280553721945813, 2.400768233913924e-05, 2.400768233913924e-05, 2.400768233913924e-05, 2.400768233913924e-05, 5.964689011251072e-06, 8.987417570697541e-06, 1.1159053656817585e-05, 8.47936683182261e-06, 8.613759001661994e-06, 5.778120156199614e-06, 5.778120156199614e-06, 5.778120156199614e-06, 5.778120156199614e-06, 5.778120156199614e-06], "normalization": "N_fit / B; primary sigma/(J*D_fit); auxiliary native_weight/(sum_primary_native_weights*n_aux_fit)", "qualification": "Preserves nominal native auxiliary head ratios, not native realized label-frequency weighting. Test denominators are unknown."}, "validation_statistics": {"primary_indices": [0, 1, 2, 3], "primary_counts": [436, 235, 268, 262], "primary_means": [4.059729603678899, 4.627623520361701, 4.790481577421642, 4.9428144617900776], "primary_denominators": [226.9278394314404, 76.86848547625536, 125.45226925648134, 123.3797207161755]}, "checkpoint_monitor": "val_primary_strae", "bounds_scaling": "same fit-center mean and scale for central/lower/upper; no bound-specific fitting", "native_architecture_and_optimizer_preserved": true, "explicit_changes": ["primary exact interval macro objective", "per-auxiliary-head observed-label mean and nominal author budget", "uniform-row unbiased minibatch estimator", "primary-only validation checkpoint selection"], "precision": "16-mixed forward; FP32 differentiable loss; float64 full-validation official arithmetic"}
+Using 16bit Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [5]
+Loading `train_dataloader` to estimate number of stepping batches.
+/opt/conda/lib/python3.11/site-packages/lightning/pytorch/utilities/model_summary/model_summary.py:231: Precision 16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
+
+  | Name            | Type               | Params | Mode 
+---------------------------------------------------------------
+0 | message_passing | BondMessagePassing | 8.7 M  | train
+1 | agg             | MeanAggregation    | 0      | train
+2 | bn              | BatchNorm1d        | 4.1 K  | train
+3 | predictor       | RegressionFFN      | 710 K  | train
+4 | X_d_transform   | Identity           | 0      | train
+5 | metrics         | ModuleList         | 0      | train
+6 | loss_objective  | ExactSTObjective   | 0      | train
+---------------------------------------------------------------
+9.4 M     Trainable params
+0         Non-trainable params
+9.4 M     Total params
+37.715    Total estimated model params size (MB)
+27        Modules in train mode
+0         Modules in eval mode
+{"event": "exact_strae_epoch", "epoch": 0, "val_primary_strae": 0.8158152514098265, "per_primary_ST_RAE": [0.6296087962435245, 0.7901872682924378, 0.9316594122555616, 0.9118055288477824]}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/briford_native.py", line 210, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/briford_native.py", line 208, in main
+    if args.worker:return worker(args.worker)
+                          ^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/briford_native.py", line 116, in worker
+    model,valid=train_fn(fs,df.iloc[f['train']].reset_index(drop=True),df.iloc[f['validation']].reset_index(drop=True),y[f['train']],y[f['validation']],fold_idx=job['fold'],checkpoint_dir=str(out/'checkpoints'))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/briford_native.py", line 113, in <lambda>
+    train_fn=lambda *a,**kw:train_exact_strae_fold(core,*a,**kw)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/strae_trainer.py", line 143, in train_exact_strae_fold
+    start = time.time(); trainer.fit(model, train_loader, val_loader)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 560, in fit
+    call._call_and_handle_interrupt(
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 598, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1011, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1055, in _run_stage
+    self.fit_loop.run()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/fit_loop.py", line 216, in run
+    self.advance()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/fit_loop.py", line 458, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/training_epoch_loop.py", line 153, in run
+    self.on_advance_end(data_fetcher)
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/training_epoch_loop.py", line 398, in on_advance_end
+    self.val_loop.run()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/utilities.py", line 179, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 152, in run
+    return self.on_run_end()
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 295, in on_run_end
+    self._on_evaluation_epoch_end()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 375, in _on_evaluation_epoch_end
+    call._call_lightning_module_hook(trainer, hook_name)
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 177, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/strae_trainer.py", line 69, in on_validation_epoch_end
+    result = primary_metric(predictions, y, lower, upper, primary)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/strae_objective.py", line 52, in primary_metric
+    raise ValueError('Finite predictions with the same N x T shape are required')
+ValueError: Finite predictions with the same N x T shape are required

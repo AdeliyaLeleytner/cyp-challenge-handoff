@@ -1,0 +1,45 @@
+{
+  "config": {
+    "manifest": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/stage/manifest.json",
+      "sha256": "a526a8bfc96e9d7ffa67a9979d605885f7c0fc1951ff81fd54e9c83a1d2cd781"
+    },
+    "output_dir": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/results",
+    "bootstrap_samples": 1000,
+    "bootstrap_seed": 20261026,
+    "scorer_sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3",
+    "timeout_seconds": 600,
+    "no_base_fits": true,
+    "no_new_features": true,
+    "no_new_calibration": true
+  },
+  "manifest_sha256": "a526a8bfc96e9d7ffa67a9979d605885f7c0fc1951ff81fd54e9c83a1d2cd781",
+  "scope": "Original-incumbent anchored historical expert combination",
+  "base_fits": 0,
+  "new_feature_values": 0,
+  "new_calibration_fits": 0,
+  "new_coefficient_fits": 8,
+  "no_global_OOF_substitution": true,
+  "source_limits": {
+    "matching_outer_training_only": true,
+    "no_global_OOF_substitution": true,
+    "H6_run": [
+      "35635752-241c-4080-bd0e-e17ae3bb6206",
+      "done",
+      "61a00bd673e421b026f2f7c1d630d86c24c841fd"
+    ],
+    "historical_limits": [
+      "Original native components use different inner fold maps; these are rowwise OOF values, not one common native split.",
+      "The original fixed expert retains previously audited public-source associations and strict-tautomer purge limitations. New P9 fits exclude whole outerquery and audited equivalences; this does not retrospectively clean the historical expert.",
+      "Both outer cohorts are repeatedly used development diagnostics, not independent blind confirmation."
+    ],
+    "H6_previously_selected_and_query_reused": true,
+    "source_sha256": "9fddbcd55393becc0fcfebbcf982cfb9a62a628eebab5dcde057cdde26399bfc"
+  },
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "rdkit": "2026.9.1"
+  }
+}

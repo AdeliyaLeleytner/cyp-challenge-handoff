@@ -1,0 +1,917 @@
+{
+  "sources": [
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-access/webbatch-docs/description.md",
+      "sha256": "15f9b4b91dfe975bbf9da159634f7e05949982844c9cc3cb35e513184d8fe8a4",
+      "url": "https://admetlab3.scbdd.com/documentation/description.md"
+    },
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-auto/page-code-audit/rendered-api-calculation.txt",
+      "sha256": "0ed6ae3752aa9e30a3100896b3ae2f0d73682d3f43196e56d7b87d81825b06ee",
+      "url": "https://admetlab3.scbdd.com/apis/#/two"
+    }
+  ],
+  "entries": {
+    "MW": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Vol": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Dense": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "nHA": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "nHD": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "TPSA": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "nRot": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "nRing": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "MaxRing": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "nHet": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "fChar": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "nRig": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Flex": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "nStereo": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "gasa": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "QED": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Synth": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Fsp3": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "MCE-18": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Natural Product-likeness": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Alarm_NMR": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "BMS": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Chelating": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "PAINS": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Lipinski": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Pfizer": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "GSK": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "GoldenTriangle": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "logS": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "logS"
+    },
+    "logD": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "logD7.4"
+    },
+    "logP": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "logP"
+    },
+    "mp": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "melting point"
+    },
+    "bp": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "boiling point"
+    },
+    "pka_acidic": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "pKa (acidic)"
+    },
+    "pka_basic": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "pKa (basic)"
+    },
+    "caco2": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "Caco-2 Permeability"
+    },
+    "MDCK": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "MDCK Permeability"
+    },
+    "PAMPA": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "PAMPA"
+    },
+    "pgp_inh": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "Pgp-inhibitor"
+    },
+    "pgp_sub": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "Pgp-substrate"
+    },
+    "hia": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "HIA"
+    },
+    "f20": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "F20%"
+    },
+    "f30": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "F30%"
+    },
+    "f50": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "F50%"
+    },
+    "OATP1B1": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "OATP1B1inhibitor"
+    },
+    "OATP1B3": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "OATP1B3 inhibitor"
+    },
+    "BCRP": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "BCRP inhibitor"
+    },
+    "BSEP": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "BSEP inhibitor"
+    },
+    "BBB": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "BBB Penetration"
+    },
+    "MRP1": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "MRP1 inhibitor"
+    },
+    "PPB": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "PPB"
+    },
+    "VDss": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "VDss"
+    },
+    "Fu": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "Fu"
+    },
+    "CYP1A2-inh": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "CYP1A2 inhibitor"
+    },
+    "CYP1A2-sub": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "CYP1A2 substrate"
+    },
+    "CYP2C19-inh": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "CYP2C19 inhibitor"
+    },
+    "CYP2C19-sub": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "CYP2C19 substrate"
+    },
+    "CYP2C9-inh": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "CYP2C9 inhibitor"
+    },
+    "CYP2C9-sub": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "CYP2C9 substrate"
+    },
+    "CYP2D6-inh": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "CYP2D6 inhibitor"
+    },
+    "CYP2D6-sub": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "CYP2D6 substrate"
+    },
+    "CYP3A4-inh": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "CYP3A4 inhibitor"
+    },
+    "CYP3A4-sub": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "CYP3A4 substrate"
+    },
+    "CYP2B6-inh": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "CYP2B6 inhibitor"
+    },
+    "CYP2B6-sub": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "CYP2B6 substrate"
+    },
+    "CYP2C8-inh": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "CYP2C8 inhibitor"
+    },
+    "LM-human": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "HLM Stability"
+    },
+    "cl-plasma": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "CL-plasma"
+    },
+    "t0.5": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "T1/2"
+    },
+    "BCF": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "Bioconcentration Factor"
+    },
+    "IGC50": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "IGC50"
+    },
+    "LC50DM": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "LC50DM"
+    },
+    "LC50FM": {
+      "kind": "regression",
+      "probability_bounds_checked": false,
+      "source": "official program description Table2",
+      "documented_name": "LC50FM"
+    },
+    "hERG": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "hERG Blockers"
+    },
+    "hERG-10um": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "hERG Blocker (10um)"
+    },
+    "DILI": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "DILI"
+    },
+    "Ames": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "AMES Mutagenicity"
+    },
+    "ROA": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "ROA"
+    },
+    "FDAMDD": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "FDAMDD"
+    },
+    "SkinSen": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "Skin Sensitization"
+    },
+    "Carcinogenicity": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "Carcinogencity"
+    },
+    "EC": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "Eye Corrosion"
+    },
+    "EI": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "Eye Irritation"
+    },
+    "Respiratory": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "Respiratory"
+    },
+    "H-HT": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "Human Hepatotoxicity"
+    },
+    "Neurotoxicity-DI": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "Drug-induced Neurotoxicity"
+    },
+    "Ototoxicity": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "Ototoxicity"
+    },
+    "Hematotoxicity": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "Hematotoxicity"
+    },
+    "Nephrotoxicity-DI": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "Drug-induced Nephrotoxicity"
+    },
+    "Genotoxicity": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "Genotoxicity"
+    },
+    "RPMI-8226": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "RPMI-8226 Immunitoxicity"
+    },
+    "A549": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "A549 Cytotoxicity"
+    },
+    "HEK293": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "Hek293 Cytotoxicity"
+    },
+    "NR-AhR": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "NR-AhR"
+    },
+    "NR-AR": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "NR-AR"
+    },
+    "NR-AR-LBD": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "NR-AR-LBD"
+    },
+    "NR-Aromatase": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "NR-Aromatase"
+    },
+    "NR-ER": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "NR-ER"
+    },
+    "NR-ER-LBD": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "NR-ER-LBD"
+    },
+    "NR-PPAR-gamma": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "NR-PPAR-gamma"
+    },
+    "SR-ARE": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "SR-ARE"
+    },
+    "SR-ATAD5": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "SR-ATAD5"
+    },
+    "SR-HSE": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "SR-HSE"
+    },
+    "SR-MMP": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "SR-MMP"
+    },
+    "SR-p53": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official program description Table3 + API value/decision distinction",
+      "documented_name": "SR-p53"
+    },
+    "NonBiodegradable": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "NonGenotoxic_Carcinogenicity": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "SureChEMBL": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "LD50_oral": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Skin_Sensitization": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Acute_Aquatic_Toxicity": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "FAF-Drugs4 Rule": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Genotoxic_Carcinogenicity_Mutagenicity": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Aggregators": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official API explanation example explicitly states probability in0..1",
+      "documented_explanation": "Category 0: non-colloidal aggregators; Category 1: colloidal aggregators. The output value is the probability of being colloidal aggregators, within the range of 0 to 1."
+    },
+    "Fluc": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official API explanation example explicitly states probability in0..1",
+      "documented_explanation": "Category 0: non-fLuc inhibitors; Category 1: fLuc inhibitors. The output value is the probability of being fLuc inhibitors, within the range of 0 to 1."
+    },
+    "Blue_fluorescence": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official API explanation example explicitly states probability in0..1",
+      "documented_explanation": "Category 0: non-blue fluorescence; Category 1: blue fluorescence. The output value is the probability of being blue fluorescence, within the range of 0 to 1."
+    },
+    "Green_fluorescence": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official API explanation example explicitly states probability in0..1",
+      "documented_explanation": "Category 0: non-green fluorescence; Category 1: green fluorescence. The output value is the probability of being green fluorescence, within the range of 0 to 1."
+    },
+    "Reactive": {
+      "kind": "classification_probability",
+      "probability_bounds_checked": true,
+      "bounds": [
+        0,
+        1
+      ],
+      "source": "official API explanation example explicitly states probability in0..1",
+      "documented_explanation": "Category 0: non-reactive compound; Category 1: reactive compound. The output value is the probability of being reactive compound, within the range of 0 to 1."
+    },
+    "Other_assay_interference": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    },
+    "Promiscuous": {
+      "kind": "untyped_or_computed_rule",
+      "probability_bounds_checked": false
+    }
+  },
+  "policy": "Only documented classification probabilities receive0..1 bounds. Regression and untyped/computed/rule columns do not receive generic probability bounds; raw rule-list extraction and molecular mass/formal charge have separate checks."
+}

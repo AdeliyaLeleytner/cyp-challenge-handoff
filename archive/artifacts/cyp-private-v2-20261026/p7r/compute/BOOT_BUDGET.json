@@ -1,0 +1,65 @@
+{
+  "utc": "2026-10-26T17:22:08.728184+00:00",
+  "instance_id": 57843947,
+  "status": "destroyed_verified",
+  "reported_charge_usd": 0.008,
+  "P7R_subcap_usd": 3.2,
+  "remaining_P7R_subcap_usd": 3.192,
+  "prior_campaign_spend_usd": 4.028,
+  "combined_reported_campaign_spend_usd": 4.036,
+  "training_fits": 0,
+  "cause_observed": "No container; image provisioning stayed at unchanged checksum status. Underlying cause unverified.",
+  "charge": {
+    "amount": 0.008,
+    "description": "Instance 57843947 Charges - 1 day",
+    "end": 1792972800,
+    "items": [
+      {
+        "amount": 0.0,
+        "description": "GPU",
+        "end": 1792972800,
+        "items": [],
+        "metadata": {},
+        "source": null,
+        "start": 1792972800,
+        "type": "gpu"
+      },
+      {
+        "amount": 0.008,
+        "description": "0.168 hours at $0.048/hour",
+        "end": 1792972800,
+        "items": [],
+        "metadata": {},
+        "source": null,
+        "start": 1792972800,
+        "type": "disk"
+      },
+      {
+        "amount": 0.0,
+        "description": "Bandwidth (download)",
+        "end": 1792972800,
+        "items": [],
+        "metadata": {},
+        "source": null,
+        "start": 1792972800,
+        "type": "bwd"
+      },
+      {
+        "amount": 0.0,
+        "description": "Bandwidth (upload)",
+        "end": 1792972800,
+        "items": [],
+        "metadata": {},
+        "source": null,
+        "start": 1792972800,
+        "type": "bwu"
+      }
+    ],
+    "metadata": {
+      "label": "cyp-private-p7r-profile-20261026"
+    },
+    "source": "instance-57843947",
+    "start": 1792972800,
+    "type": "instance"
+  }
+}

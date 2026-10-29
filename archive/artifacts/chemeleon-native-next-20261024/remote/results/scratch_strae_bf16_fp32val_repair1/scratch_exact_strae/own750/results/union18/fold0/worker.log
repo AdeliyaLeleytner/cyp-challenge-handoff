@@ -1,0 +1,81 @@
+Seed set to 42
+{"event": "exact_strae_fold_config", "fold": 0, "criterion_mode": "exact_strae_v1", "fit_statistics": {"primary_indices": [0, 1, 2, 3], "primary_counts": [1498, 942, 1113, 1051], "primary_means": [4.084773266889186, 4.592306529338641, 4.80565911619946, 4.970844518687916], "primary_denominators": [791.1121772439253, 287.9058359665584, 467.0410577395687, 496.923952309333], "mode": "exact_strae_v1", "n_fit_rows": 24736, "n_targets": 18, "target_counts": [1498, 942, 1113, 1051, 3193, 3193, 3193, 3193, 12772, 8519, 6814, 8767, 8831, 12561, 12561, 12561, 12561, 12561], "auxiliary_indices": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], "native_task_weights": [0.740429699420929, 1.18834388256073, 1.0034117698669434, 1.067814588546753, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657], "primary_native_weight_sum": 3.9999999403953552, "auxiliary_head_coefficients": [0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868], "auxiliary_total_nominal_budget": 1.0499999530613415, "scaler_mean": [4.084773264755713, 4.592306533689965, 4.805659119223863, 4.970844514249735, -1.9305355224815155, -0.6947899487858091, -0.43309622929214603, -0.6571984298793505, 5.259290252253063, 5.287261417654006, 5.268475936520719, 5.363722492110107, 5.278118000229222, -39.40848504236086, -32.30859360992323, -22.405426481349544, -45.80035140141, -50.64389563207055], "scaler_scale": [1.096015387450597, 0.768100848782032, 0.9084245791312313, 1.0025457961370492, 1.3579076052819274, 0.46217827573348225, 1.1212608381903877, 0.6922649363465525, 0.6641741667077186, 0.6796218271117668, 0.7619542181736071, 0.6973596180734007, 0.6836470412393164, 38.48633864439671, 42.363680663150454, 32.49791612535807, 37.84592354331698, 50.99447581633049], "per_entry_coefficients": [0.0003463527104553278, 0.0006669722812350792, 0.0004862659096439583, 0.0005043758665073206, 2.3488880879185305e-05, 2.3488880879185305e-05, 2.3488880879185305e-05, 2.3488880879185305e-05, 5.872220219796326e-06, 8.803849823598859e-06, 1.1006750315121614e-05, 8.554807419555e-06, 8.492809041698413e-06, 5.970861925582253e-06, 5.970861925582253e-06, 5.970861925582253e-06, 5.970861925582253e-06, 5.970861925582253e-06], "normalization": "N_fit / B; primary sigma/(J*D_fit); auxiliary native_weight/(sum_primary_native_weights*n_aux_fit)", "qualification": "Preserves nominal native auxiliary head ratios, not native realized label-frequency weighting. Test denominators are unknown."}, "validation_statistics": {"primary_indices": [0, 1, 2, 3], "primary_counts": [322, 192, 230, 211], "primary_means": [3.997177250559006, 4.549866381406249, 4.690669856078261, 4.894790379715641], "primary_denominators": [165.26193621142858, 66.52324747765626, 93.15256610607827, 110.73404966279617]}, "checkpoint_monitor": "val_primary_strae", "bounds_scaling": "same fit-center mean and scale for central/lower/upper; no bound-specific fitting", "native_architecture_and_optimizer_preserved": true, "explicit_changes": ["primary exact interval macro objective", "per-auxiliary-head observed-label mean and nominal author budget", "uniform-row unbiased minibatch estimator", "primary-only validation checkpoint selection", "explicit FP32 validation numerical repair", "explicit configurable training precision"], "training_precision": "bf16-mixed", "validation_precision": "explicit_fp32", "precision": "bf16-mixed training forward; explicit FP32 validation forward and differentiable loss; float64 full-validation official arithmetic", "numerical_repair_note": "FP32 validation matches serving precision. BF16 training, when explicitly selected, is a separate numerical precision repair; no proof of scientific improvement or stability is inferred before replay."}
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [7]
+Loading `train_dataloader` to estimate number of stepping batches.
+/opt/conda/lib/python3.11/site-packages/lightning/pytorch/utilities/model_summary/model_summary.py:231: Precision bf16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
+
+  | Name            | Type               | Params | Mode 
+---------------------------------------------------------------
+0 | message_passing | BondMessagePassing | 1.1 M  | train
+1 | agg             | NormAggregation    | 0      | train
+2 | bn              | BatchNorm1d        | 1.4 K  | train
+3 | predictor       | RegressionFFN      | 306 K  | train
+4 | X_d_transform   | Identity           | 0      | train
+5 | metrics         | ModuleList         | 0      | train
+6 | loss_objective  | ExactSTObjective   | 0      | train
+---------------------------------------------------------------
+1.4 M     Trainable params
+0         Non-trainable params
+1.4 M     Total params
+5.595     Total estimated model params size (MB)
+27        Modules in train mode
+0         Modules in eval mode
+{"event": "exact_strae_epoch", "epoch": 0, "val_primary_strae": 0.9597542983294364, "per_primary_ST_RAE": [0.8678172394001479, 1.0576784722811967, 1.0690640131385447, 0.8444574684978563]}
+{"event": "exact_strae_epoch", "epoch": 1, "val_primary_strae": 1.1536855062987343, "per_primary_ST_RAE": [1.373399942350063, 1.3795945086578036, 0.9528799585067621, 0.9088676156803083]}
+{"event": "exact_strae_epoch", "epoch": 2, "val_primary_strae": 0.7790660781394716, "per_primary_ST_RAE": [0.6502222683773344, 0.676807593455925, 0.9559569497695969, 0.8332775009550304]}
+{"event": "exact_strae_epoch", "epoch": 3, "val_primary_strae": 0.7559360739564163, "per_primary_ST_RAE": [0.6650988579681442, 0.6700326922391139, 0.8900846895993214, 0.7985280560190857]}
+{"event": "exact_strae_epoch", "epoch": 4, "val_primary_strae": 0.7267923776020078, "per_primary_ST_RAE": [0.6260608605633907, 0.6995081926392298, 0.8434638404808368, 0.7381366167245734]}
+{"event": "exact_strae_epoch", "epoch": 5, "val_primary_strae": 0.7542948558262577, "per_primary_ST_RAE": [0.6126574307714348, 0.6739177606051269, 0.9424901065121996, 0.7881141254162698]}
+{"event": "exact_strae_epoch", "epoch": 6, "val_primary_strae": 0.7473454598242995, "per_primary_ST_RAE": [0.6772306076796775, 0.6972670232586872, 0.8334009364113945, 0.7814832719474392]}
+{"event": "exact_strae_epoch", "epoch": 7, "val_primary_strae": 0.7240729941991192, "per_primary_ST_RAE": [0.6009736646990724, 0.7106553059983282, 0.846540188202519, 0.7381228178965574]}
+{"event": "exact_strae_epoch", "epoch": 8, "val_primary_strae": 0.7037827354658948, "per_primary_ST_RAE": [0.5723913114796824, 0.6206052441259375, 0.9033797704617795, 0.7187546157961795]}
+{"event": "exact_strae_epoch", "epoch": 9, "val_primary_strae": 0.6861381916605755, "per_primary_ST_RAE": [0.5120567089375255, 0.645915723639366, 0.8643928850673378, 0.722187448998073]}
+{"event": "exact_strae_epoch", "epoch": 10, "val_primary_strae": 0.6958914747734832, "per_primary_ST_RAE": [0.5301666952820008, 0.5821759092123194, 0.8676843519150195, 0.803538942684593]}
+{"event": "exact_strae_epoch", "epoch": 11, "val_primary_strae": 0.6599565639143534, "per_primary_ST_RAE": [0.5276204037786931, 0.5242246420847401, 0.8254281964181206, 0.7625530133758602]}
+{"event": "exact_strae_epoch", "epoch": 12, "val_primary_strae": 0.709512326969042, "per_primary_ST_RAE": [0.5616301190331102, 0.6156225547973752, 0.8912031751234213, 0.7695934589222617]}
+{"event": "exact_strae_epoch", "epoch": 13, "val_primary_strae": 0.6942923353729162, "per_primary_ST_RAE": [0.5466599984003189, 0.5985008004715032, 0.8484454085149705, 0.7835631341048723]}
+{"event": "exact_strae_epoch", "epoch": 14, "val_primary_strae": 0.6816196316117673, "per_primary_ST_RAE": [0.5554143692208269, 0.5974711082392591, 0.8509695086248484, 0.7226235403621344]}
+{"event": "exact_strae_epoch", "epoch": 15, "val_primary_strae": 0.7038589289819426, "per_primary_ST_RAE": [0.5508072718008787, 0.6078397470773883, 0.9114244520789415, 0.7453642449705618]}
+{"event": "exact_strae_epoch", "epoch": 16, "val_primary_strae": 0.668249248821503, "per_primary_ST_RAE": [0.5329068183813653, 0.5145855856076355, 0.8335225280447313, 0.7919820632522805]}
+{"event": "exact_strae_epoch", "epoch": 17, "val_primary_strae": 0.6829437227941582, "per_primary_ST_RAE": [0.5257291190313537, 0.5556057414563408, 0.8437883955196122, 0.806651635169326]}
+{"event": "exact_strae_epoch", "epoch": 18, "val_primary_strae": 0.685337878833782, "per_primary_ST_RAE": [0.5384308847500809, 0.5646026390424259, 0.8698804741633279, 0.7684375173792934]}
+{"event": "exact_strae_epoch", "epoch": 19, "val_primary_strae": 0.6720105038824701, "per_primary_ST_RAE": [0.5353570866026108, 0.5653584849780863, 0.8293860261063425, 0.7579404178428408]}
+{"event": "exact_strae_epoch", "epoch": 20, "val_primary_strae": 0.7091976743703979, "per_primary_ST_RAE": [0.644028619624257, 0.5796185082720918, 0.8626105961034647, 0.750532973481778]}
+{"event": "exact_strae_epoch", "epoch": 21, "val_primary_strae": 0.6830596634334345, "per_primary_ST_RAE": [0.5920101579534471, 0.5158902452386918, 0.8708278631878476, 0.7535103873537515]}
+{"event": "exact_strae_epoch", "epoch": 22, "val_primary_strae": 0.6785824487179861, "per_primary_ST_RAE": [0.534810392822551, 0.5733598161147779, 0.8450607619756683, 0.7610988239589469]}
+{"event": "exact_strae_epoch", "epoch": 23, "val_primary_strae": 0.689660010893134, "per_primary_ST_RAE": [0.48817206130434915, 0.5722078813777343, 0.935979277461365, 0.7622808234290878]}
+{"event": "exact_strae_epoch", "epoch": 24, "val_primary_strae": 0.7119615195890322, "per_primary_ST_RAE": [0.5489141068485418, 0.5969492602713505, 0.9170923577977915, 0.7848903534384452]}
+{"event": "exact_strae_epoch", "epoch": 25, "val_primary_strae": 0.7043097985498772, "per_primary_ST_RAE": [0.5690698988162088, 0.6204076940568611, 0.9119850096938554, 0.7157765916325833]}
+{"event": "exact_strae_epoch", "epoch": 26, "val_primary_strae": 0.6968974294372065, "per_primary_ST_RAE": [0.5391643630600196, 0.5875961437599996, 0.9239794340900246, 0.7368497768387821]}
+{"event": "exact_strae_epoch", "epoch": 27, "val_primary_strae": 0.6861498436875977, "per_primary_ST_RAE": [0.5453227047747727, 0.5881124401073451, 0.8689627677715911, 0.7422014620966818]}
+{"event": "exact_strae_epoch", "epoch": 28, "val_primary_strae": 0.6993778554380108, "per_primary_ST_RAE": [0.5505199717970997, 0.5698410787430195, 0.8664059511515381, 0.8107444200603858]}
+{"event": "exact_strae_epoch", "epoch": 29, "val_primary_strae": 0.7020569813053146, "per_primary_ST_RAE": [0.5306101002711086, 0.5746368727192934, 0.9100996123552599, 0.7928813398755963]}
+{"event": "exact_strae_epoch", "epoch": 30, "val_primary_strae": 0.7164026725223485, "per_primary_ST_RAE": [0.5329781547052106, 0.592379102076352, 0.9661986003200642, 0.7740548329877671]}
+{"event": "exact_strae_epoch", "epoch": 31, "val_primary_strae": 0.7040759985334861, "per_primary_ST_RAE": [0.5168211626326826, 0.5438014672228605, 0.975913594815394, 0.7797677694630071]}
+{"event": "exact_strae_epoch", "epoch": 32, "val_primary_strae": 0.6959139758837605, "per_primary_ST_RAE": [0.49545862167401356, 0.594540010691079, 0.9439823944522919, 0.7496748767176574]}
+{"event": "exact_strae_epoch", "epoch": 33, "val_primary_strae": 0.7273573279896812, "per_primary_ST_RAE": [0.5195355755639796, 0.6296517242535088, 0.9722638277005258, 0.7879781844407108]}
+{"event": "exact_strae_epoch", "epoch": 34, "val_primary_strae": 0.7273503420458027, "per_primary_ST_RAE": [0.5188783392709532, 0.6537636799457894, 0.9357560559708894, 0.8010032929955792]}
+{"event": "exact_strae_epoch", "epoch": 35, "val_primary_strae": 0.7434437579822313, "per_primary_ST_RAE": [0.565463586662593, 0.602668808465547, 1.0144966089780547, 0.7911460278227304]}
+{"event": "exact_strae_epoch", "epoch": 36, "val_primary_strae": 0.7302219264375709, "per_primary_ST_RAE": [0.5604146166279597, 0.5941377901556327, 0.959637417836861, 0.8066978811298304]}
+{"event": "exact_strae_epoch", "epoch": 37, "val_primary_strae": 0.7211854128835913, "per_primary_ST_RAE": [0.5373170858552803, 0.60376651288813, 0.9861495602455901, 0.757508492545365]}
+{"event": "exact_strae_epoch", "epoch": 38, "val_primary_strae": 0.6985300200199163, "per_primary_ST_RAE": [0.548787423541889, 0.548622721571241, 0.9423951944872803, 0.7543147404792548]}
+{"event": "exact_strae_epoch", "epoch": 39, "val_primary_strae": 0.7141806705121805, "per_primary_ST_RAE": [0.5489259123262805, 0.5881547916573252, 0.9837926369294134, 0.7358493411357027]}
+{"event": "exact_strae_epoch", "epoch": 40, "val_primary_strae": 0.729779063642505, "per_primary_ST_RAE": [0.5715573953785679, 0.6422298073540337, 0.904954387508762, 0.8003746643286568]}
+{"event": "exact_strae_epoch", "epoch": 41, "val_primary_strae": 0.7321331897093422, "per_primary_ST_RAE": [0.5695240591594762, 0.6087077579524074, 0.9796803400664923, 0.7706206016589927]}
+{"event": "exact_strae_epoch", "epoch": 42, "val_primary_strae": 0.70637641197017, "per_primary_ST_RAE": [0.5256627984359671, 0.5497465091322246, 0.976302823894757, 0.7737935164177312]}
+{"event": "exact_strae_epoch", "epoch": 43, "val_primary_strae": 0.7153606389018025, "per_primary_ST_RAE": [0.5426058658248033, 0.5583763850296461, 0.9574438721640345, 0.803016432588726]}
+{"event": "exact_strae_epoch", "epoch": 44, "val_primary_strae": 0.7034016217810942, "per_primary_ST_RAE": [0.5365422581360288, 0.5909137121305426, 0.9182230259143808, 0.7679274909434248]}
+{"event": "exact_strae_epoch", "epoch": 45, "val_primary_strae": 0.7038310396749045, "per_primary_ST_RAE": [0.5417021033271502, 0.604149883136457, 0.9605941417387317, 0.7088780304972788]}
+{"event": "exact_strae_epoch", "epoch": 46, "val_primary_strae": 0.7146699278753692, "per_primary_ST_RAE": [0.5431648006322738, 0.5716573376850577, 0.9723496690139461, 0.7715079041701987]}
+{"event": "exact_strae_epoch", "epoch": 47, "val_primary_strae": 0.6865785315842194, "per_primary_ST_RAE": [0.5515980063224825, 0.505625762708615, 0.9123218350388724, 0.776768522266908]}
+{"event": "exact_strae_epoch", "epoch": 48, "val_primary_strae": 0.7053812171409042, "per_primary_ST_RAE": [0.5459886348051408, 0.589765232603521, 0.9169712587422721, 0.7687997424126829]}
+{"event": "exact_strae_epoch", "epoch": 49, "val_primary_strae": 0.7216373042060016, "per_primary_ST_RAE": [0.5269474150330301, 0.6023084589785337, 0.9476408510951236, 0.809652491717319]}
+{"event": "exact_strae_epoch", "epoch": 50, "val_primary_strae": 0.702219146930524, "per_primary_ST_RAE": [0.5113626776307441, 0.5665504245136912, 0.9411953801027222, 0.7897681054749385]}
+{"event": "exact_strae_epoch", "epoch": 51, "val_primary_strae": 0.7234217881991392, "per_primary_ST_RAE": [0.5392790851972796, 0.5774682971748936, 0.9861234738812378, 0.7908162965431458]}
+{"event": "exact_strae_fold_fit_complete", "fold": 0, "seconds": 265.03658747673035, "best_primary_validation_ST_RAE": 0.6599565744400024, "best_epoch": 11}
+{"event": "native_fold_complete", "member": "union18", "fold": 0, "best_epoch": 11, "seconds": 328.99717450141907}

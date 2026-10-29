@@ -1,0 +1,67 @@
+{
+  "status": "complete",
+  "cell": "zero",
+  "fold": 0,
+  "seconds": 38.1092689037323,
+  "best_epoch": 2,
+  "epochs_run": 3,
+  "raw_strae": 0.7228083532213792,
+  "raw_per_target_strae": [
+    0.7632095671108049,
+    0.6251644082763111,
+    0.8346780425988614,
+    0.6681813948995394
+  ],
+  "raw_metrics": {
+    "ST-RAE": 0.7228083532213792,
+    "MAE": 0.5577967060997528,
+    "R2": 0.3670607906396668,
+    "Pearson": 0.618852580941448,
+    "Spearman": 0.6180632531665934
+  },
+  "raw_per_target_metrics": [
+    {
+      "ST-RAE": 0.7632095671108049,
+      "MAE": 0.6390779606789218,
+      "R2": 0.29676400689545823,
+      "Pearson": 0.5798294012948676,
+      "Spearman": 0.5555772228345583
+    },
+    {
+      "ST-RAE": 0.6251644082763111,
+      "MAE": 0.43577522800914337,
+      "R2": 0.48343870011421464,
+      "Pearson": 0.7088917822290537,
+      "Spearman": 0.6903134276323346
+    },
+    {
+      "ST-RAE": 0.8346780425988614,
+      "MAE": 0.5633790053687655,
+      "R2": 0.18234322489922417,
+      "Pearson": 0.4470045421908228,
+      "Spearman": 0.4790324697301441
+    },
+    {
+      "ST-RAE": 0.6681813948995394,
+      "MAE": 0.5929546303421809,
+      "R2": 0.50569723064977,
+      "Pearson": 0.7396845980510479,
+      "Spearman": 0.7473298924693367
+    }
+  ],
+  "test_not_selection": true,
+  "served_metrics": "not computed in runtime smoke; raw and served must remain separate",
+  "initial_sha256": "080733bb18d2f80eebf6375b24dd7dc77f35ee2567ade4647b03598a79d64a06",
+  "parameter_sha256": "24558cf0b0dec45459feb92e47f5da40877b9494b65ed4b3b23fe4490d05bd97",
+  "prediction_sha256": "10871fc589dd3e02a2a7c66a29119bf6d204693a24ac94f95a656915fd228757",
+  "packages": {
+    "torch": "2.6.0+cu124",
+    "chemprop": "2.2.1",
+    "lightning": "2.5.5",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.16.2",
+    "scikit-learn": "1.7.2",
+    "rdkit": "2026.9.1"
+  }
+}

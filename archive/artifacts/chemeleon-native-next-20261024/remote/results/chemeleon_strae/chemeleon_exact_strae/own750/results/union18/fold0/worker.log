@@ -1,0 +1,90 @@
+Seed set to 42
+Loading foundation model: /workspace/cyp-repro/assets/weights/chemeleon_mp.pt
+  Loaded custom foundation weights (hidden_dim=2048)
+{"event": "exact_strae_fold_config", "fold": 0, "criterion_mode": "exact_strae_v1", "fit_statistics": {"primary_indices": [0, 1, 2, 3], "primary_counts": [1498, 942, 1113, 1051], "primary_means": [4.084773266889186, 4.592306529338641, 4.80565911619946, 4.970844518687916], "primary_denominators": [791.1121772439253, 287.9058359665584, 467.0410577395687, 496.923952309333], "mode": "exact_strae_v1", "n_fit_rows": 24736, "n_targets": 18, "target_counts": [1498, 942, 1113, 1051, 3193, 3193, 3193, 3193, 12772, 8519, 6814, 8767, 8831, 12561, 12561, 12561, 12561, 12561], "auxiliary_indices": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], "native_task_weights": [0.740429699420929, 1.18834388256073, 1.0034117698669434, 1.067814588546753, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657], "primary_native_weight_sum": 3.9999999403953552, "auxiliary_head_coefficients": [0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868], "auxiliary_total_nominal_budget": 1.0499999530613415, "scaler_mean": [4.084773264755713, 4.592306533689965, 4.805659119223863, 4.970844514249735, -1.9305355224815155, -0.6947899487858091, -0.43309622929214603, -0.6571984298793505, 5.259290252253063, 5.287261417654006, 5.268475936520719, 5.363722492110107, 5.278118000229222, -39.40848504236086, -32.30859360992323, -22.405426481349544, -45.80035140141, -50.64389563207055], "scaler_scale": [1.096015387450597, 0.768100848782032, 0.9084245791312313, 1.0025457961370492, 1.3579076052819274, 0.46217827573348225, 1.1212608381903877, 0.6922649363465525, 0.6641741667077186, 0.6796218271117668, 0.7619542181736071, 0.6973596180734007, 0.6836470412393164, 38.48633864439671, 42.363680663150454, 32.49791612535807, 37.84592354331698, 50.99447581633049], "per_entry_coefficients": [0.0003463527104553278, 0.0006669722812350792, 0.0004862659096439583, 0.0005043758665073206, 2.3488880879185305e-05, 2.3488880879185305e-05, 2.3488880879185305e-05, 2.3488880879185305e-05, 5.872220219796326e-06, 8.803849823598859e-06, 1.1006750315121614e-05, 8.554807419555e-06, 8.492809041698413e-06, 5.970861925582253e-06, 5.970861925582253e-06, 5.970861925582253e-06, 5.970861925582253e-06, 5.970861925582253e-06], "normalization": "N_fit / B; primary sigma/(J*D_fit); auxiliary native_weight/(sum_primary_native_weights*n_aux_fit)", "qualification": "Preserves nominal native auxiliary head ratios, not native realized label-frequency weighting. Test denominators are unknown."}, "validation_statistics": {"primary_indices": [0, 1, 2, 3], "primary_counts": [322, 192, 230, 211], "primary_means": [3.997177250559006, 4.549866381406249, 4.690669856078261, 4.894790379715641], "primary_denominators": [165.26193621142858, 66.52324747765626, 93.15256610607827, 110.73404966279617]}, "checkpoint_monitor": "val_primary_strae", "bounds_scaling": "same fit-center mean and scale for central/lower/upper; no bound-specific fitting", "native_architecture_and_optimizer_preserved": true, "explicit_changes": ["primary exact interval macro objective", "per-auxiliary-head observed-label mean and nominal author budget", "uniform-row unbiased minibatch estimator", "primary-only validation checkpoint selection"], "precision": "16-mixed forward; FP32 differentiable loss; float64 full-validation official arithmetic"}
+Using 16bit Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Loading `train_dataloader` to estimate number of stepping batches.
+/opt/conda/lib/python3.11/site-packages/lightning/pytorch/utilities/model_summary/model_summary.py:231: Precision 16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
+
+  | Name            | Type               | Params | Mode 
+---------------------------------------------------------------
+0 | message_passing | BondMessagePassing | 8.7 M  | train
+1 | agg             | MeanAggregation    | 0      | train
+2 | bn              | BatchNorm1d        | 4.1 K  | train
+3 | predictor       | RegressionFFN      | 710 K  | train
+4 | X_d_transform   | Identity           | 0      | train
+5 | metrics         | ModuleList         | 0      | train
+6 | loss_objective  | ExactSTObjective   | 0      | train
+---------------------------------------------------------------
+9.4 M     Trainable params
+0         Non-trainable params
+9.4 M     Total params
+37.715    Total estimated model params size (MB)
+27        Modules in train mode
+0         Modules in eval mode
+{"event": "exact_strae_epoch", "epoch": 0, "val_primary_strae": 0.7852827375494852, "per_primary_ST_RAE": [0.6577920656047288, 0.7124430288947466, 0.9716483929161314, 0.7992474627823339]}
+{"event": "exact_strae_epoch", "epoch": 1, "val_primary_strae": 1.0267161153568267, "per_primary_ST_RAE": [0.8888466435984916, 0.926733560126901, 1.1842986530708206, 1.1069856046310937]}
+[rank: 0] Received SIGTERM: 15
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 598, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1011, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1055, in _run_stage
+    self.fit_loop.run()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/fit_loop.py", line 216, in run
+    self.advance()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/fit_loop.py", line 458, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/training_epoch_loop.py", line 153, in run
+    self.on_advance_end(data_fetcher)
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/training_epoch_loop.py", line 414, in on_advance_end
+    raise SIGTERMException
+lightning.pytorch.utilities.exceptions.SIGTERMException
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/briford_native.py", line 210, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/briford_native.py", line 208, in main
+    if args.worker:return worker(args.worker)
+                          ^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/briford_native.py", line 116, in worker
+    model,valid=train_fn(fs,df.iloc[f['train']].reset_index(drop=True),df.iloc[f['validation']].reset_index(drop=True),y[f['train']],y[f['validation']],fold_idx=job['fold'],checkpoint_dir=str(out/'checkpoints'))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/briford_native.py", line 113, in <lambda>
+    train_fn=lambda *a,**kw:train_exact_strae_fold(core,*a,**kw)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/strae_trainer.py", line 143, in train_exact_strae_fold
+    start = time.time(); trainer.fit(model, train_loader, val_loader)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 560, in fit
+    call._call_and_handle_interrupt(
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 70, in _call_and_handle_interrupt
+    trainer._teardown()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1034, in _teardown
+    self.strategy.teardown()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/strategies/strategy.py", line 539, in teardown
+    self.accelerator.teardown()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/accelerators/cuda.py", line 82, in teardown
+    _clear_cuda_memory()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/fabric/accelerators/cuda.py", line 181, in _clear_cuda_memory
+    torch.cuda.empty_cache()
+  File "/opt/conda/lib/python3.11/site-packages/torch/cuda/memory.py", line 218, in empty_cache
+    torch._C._cuda_emptyCache()
+  File "/opt/conda/lib/python3.11/site-packages/torch/utils/data/_utils/signal_handling.py", line 73, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 119812) is killed by signal: Terminated. 

@@ -1,0 +1,73 @@
+{
+  "utc": "2026-10-26T18:06:11.792068+00:00",
+  "effective_config": {
+    "user": [
+      "root"
+    ],
+    "hostname": [
+      "148.135.39.231"
+    ],
+    "port": [
+      "31692"
+    ],
+    "addressfamily": [
+      "any"
+    ],
+    "batchmode": [
+      "no"
+    ],
+    "canonicalizehostname": [
+      "false"
+    ],
+    "controlmaster": [
+      "false"
+    ],
+    "identitiesonly": [
+      "yes"
+    ],
+    "connectionattempts": [
+      "1"
+    ],
+    "serveralivecountmax": [
+      "3"
+    ],
+    "serveraliveinterval": [
+      "20"
+    ],
+    "identityfile": [
+      "~/.ssh/id_ed25519"
+    ],
+    "connecttimeout": [
+      "15"
+    ]
+  },
+  "key_metadata": {
+    "private_key_exists": true,
+    "private_key_permissions": "-rw-------",
+    "private_key_bytes": 411,
+    "private_key_contents_read": false,
+    "public_key_exists": true,
+    "local_public_key_algorithm": "ssh-ed25519",
+    "local_public_key_fingerprint": "SHA256:tsOWa5/YEVyDf58RCHXfN4dXHtu8y2YwjGbsREjy6h8"
+  },
+  "current_routes_not_historical_proof": {
+    "failed_alternative": {
+      "read_only_local_lookup": true,
+      "exit_code": 0,
+      "route": {
+        "interface": "utun5",
+        "flags": "<UP,DONE,CLONING,STATIC,GLOBAL>"
+      }
+    },
+    "earlier_successful_host": {
+      "read_only_local_lookup": true,
+      "exit_code": 0,
+      "route": {
+        "interface": "utun5",
+        "flags": "<UP,DONE,CLONING,STATIC,GLOBAL>"
+      }
+    }
+  },
+  "local_known_host_entry_present": true,
+  "no_network_probe_to_destroyed_ports": true
+}

@@ -1,0 +1,47 @@
+{
+  "asset_root": "/workspace/cyp-night/assets",
+  "gpus": [
+    "0",
+    "1",
+    "2",
+    "3"
+  ],
+  "models": [
+    {
+      "component": "mtaux8",
+      "include_official_side_rows": true,
+      "kind": "neural",
+      "name": "mtaux8"
+    },
+    {
+      "component": "2d6single",
+      "include_official_side_rows": true,
+      "kind": "neural",
+      "name": "2d6single"
+    },
+    {
+      "component": "union18",
+      "include_official_side_rows": true,
+      "kind": "neural",
+      "name": "union18"
+    },
+    {
+      "component": "2d6isoform6",
+      "include_official_side_rows": true,
+      "kind": "neural",
+      "name": "2d6isoform6"
+    }
+  ],
+  "num_workers": 0,
+  "output_dir": "/workspace/cyp-night/results/FINAL_reference_seed42",
+  "reference_members": [
+    "union18",
+    "mtaux8",
+    "2d6isoform6",
+    "2d6single"
+  ],
+  "seeds": [
+    42
+  ],
+  "torch_num_threads": 4
+}

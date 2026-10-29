@@ -1,0 +1,40 @@
+{
+  "status": "pooled_metrics_independently_verified",
+  "source_test_files": 10,
+  "official_observed_rows": 4905,
+  "all_target_bound_pairs_finite": true,
+  "max_tolerance": 1e-12,
+  "macro": {
+    "fusion": {
+      "ST-RAE": 0.7025708946585573,
+      "MAE": 0.5566781447400604,
+      "R2": 0.3464491464936976,
+      "Spearman": 0.5726050926996441,
+      "Kendall": 0.41095117294611555,
+      "Pearson": 0.5731070436068837
+    },
+    "zero": {
+      "ST-RAE": 0.674456052293359,
+      "MAE": 0.5379139446233633,
+      "R2": 0.3949814244427091,
+      "Spearman": 0.612770868702154,
+      "Kendall": 0.4424800223825792,
+      "Pearson": 0.6172382931206963
+    }
+  },
+  "prediction_hashes": {
+    "recovered/metric-snapshot/zero_f0/test_raw.csv": "850216bdb8f4d1527ba65b0505538a6df6e3dd692b3b6926b78873b766864ce6",
+    "recovered/metric-snapshot/zero_f1/test_raw.csv": "73ff60c747bcd37523017aba572077b5a88ddd5874808b53e37b66a8d9610a46",
+    "recovered/metric-snapshot/zero_f2/test_raw.csv": "06d2693e39e6645292519d2d766465229fbd898ff0579db26c5f6b8308f17511",
+    "recovered/metric-snapshot/zero_f3/test_raw.csv": "dcaa4f76023076231133f1225e72d549f707e2c7cb94941011e10d5ca7319aeb",
+    "recovered/metric-snapshot/zero_f4/test_raw.csv": "10a5a737fd55eb69d9789fddba8b5eb6c682f2fd6f688d39c506151b7879a667",
+    "recovered/metric-snapshot/fusion_f0/test_raw.csv": "a6f1891d6037296628a0cc268c2ced8a85493b5f07c82d9c547b58ddc8a975ab",
+    "recovered/metric-snapshot/fusion_f1/test_raw.csv": "a461965c8171cae90eacd86f019eb8c0f7afa5577e41070af2ec0002e1429132",
+    "recovered/metric-snapshot/fusion_f2/test_raw.csv": "45710f00dec6e858f71d2b36bd6c462ad543e2f82f97e73dc6000edabbdf2626",
+    "recovered/metric-snapshot/fusion_f3/test_raw.csv": "fb602739ab346b3ff62ed0ab3cea4d23c82cfbd2625f095104785c0c1cdf09e1",
+    "recovered/metric-snapshot/fusion_f4/test_raw.csv": "108654a53a3a034574d84f135c4e092225a14f100138223d9dec3cc4201513c6"
+  },
+  "scope": "Pooled fixed-fold OOF, not fresh dense-series or served performance",
+  "no_fits": true,
+  "no_publication": true
+}

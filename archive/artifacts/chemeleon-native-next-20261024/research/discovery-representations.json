@@ -1,0 +1,74 @@
+[
+  {
+    "source": "alphaxiv",
+    "id": "2610.25163",
+    "title": "M-JEPA: Predictive Self-Supervised Learning for Molecular Graphs with Scaffold-Shift Evaluation on Tox21",
+    "abstract": "Self-supervised molecular representation learning is increasingly used to improve transfer on small, label-limited property prediction tasks, yet commonly used contrastive objectives can be sensitive to view construction and are often evaluated with protocols that report only discrimination. We adapt Joint Embedding Predictive Architectures (JEPAs) to molecular graphs by masking chemically coherent connected subgraphs and training a context encoder to regress the masked target embedding produced by an exponential-moving-average (EMA) teacher. To evaluate predictive self-supervision under realistic distribution shift, we introduce a leakage-resistant, compute-matched three-phase protocol: (i) an 80-run objective screening on ESOL with fixed compute budgets, (ii) JEPA-only refinement of masking and augmentation choices, and (iii) per-assay Tox21 evaluation under Bemis-Murcko scaffold splits with joint discrimination-reliability analysis and attribution diagnostics. Under matched compute, M-JEPA achieves substantially lower ESOL proxy RMSE than a compute-matched InfoNCE baseline (mean RMSE 2.12 vs 3.75; mean paired dRMSE 1.61; 95% bootstrap CI [1.52, 1.72]; Wilcoxon p=2.4e-4) and typically completes runs faster (~15-25 min vs ~35-45 min on a single GPU under identical hardware), albeit with higher runtime variance. On Tox21, improvements in ROC-AUC/PR-AUC are assay-dependent and do not uniformly imply better calibration; reliability diagrams and Brier/ECE metrics reveal endpoints where fine-tuning improves ranking but leaves probabilities miscalibrated.",
+    "publicationDate": "2026-10-18T10:39:31.000Z",
+    "votes": 2
+  },
+  {
+    "source": "alphaxiv",
+    "id": "2609.33342",
+    "title": "CalibHyper: Chance-Corrected Relational Hypergraphs for Few-Shot Molecular Property Prediction",
+    "abstract": "Molecular property prediction is central to drug development and materials discovery, but experiments are costly and labeled data are scarce. Context-aware methods use auxiliary assay labels to support few-shot prediction, and recent work supervises property relations with label agreement. However, label agreement is sensitive to class marginals and does not directly capture dependence between properties. We propose CalibHyper, a chance-corrected relational hypergraph method based on the joint label distribution. CalibHyper subtracts an independence baseline from the ordered four-state label distribution and shrinks the residual according to the number of joint observations. A swap-equivariant relation head estimates these residuals, which choose the auxiliary properties for each molecule and set the sign and weight of their hyperedge messages. On thirteen datasets from five benchmarks, in both 1-shot and 10-shot settings, CalibHyper and its ablation settings achieve ROC-AUC competitive with the strongest reported results.",
+    "publicationDate": "2026-09-27T08:15:11.000Z",
+    "votes": 0
+  },
+  {
+    "source": "alphaxiv",
+    "id": "2609.17831",
+    "title": "Procedural Pretraining for Molecular Property Prediction",
+    "abstract": "Molecular property prediction is often limited by the small size of labeled downstream datasets, motivating pretraining on large corpora of unlabeled molecules. In this work, we ask whether useful inductive biases can instead be learned from abstract, procedurally generated data before a model sees any molecular data. We introduce a three-stage training pipeline consisting of procedural pretraining, molecular pretraining on SMILES, and downstream fine-tuning, and evaluate several procedural tasks spanning sequence structure, cellular automata, and graph reasoning. We find that procedural pretraining can improve molecular property prediction even after subsequent molecular pretraining: on Lipophilicity, \\textsc{Reverse} reduces test error by 4.8\\%. For context, the magnitude of this improvement is roughly 90\\% of the performance difference between our 250K-molecule baseline and the publicly released MoLFormer checkpoint pretrained on approximately 100M molecules. Our analysis shows that the benefit is strongest under downstream data scarcity, depends on the structure of the procedural data rather than only surface-level statistics, and does not increase monotonically with additional procedural training. Instead, transfer typically peaks at an intermediate procedural budget and deteriorates as the model approaches convergence on the procedural task. We further find that, for several tasks, much of the transferable information is localized in the attention layers, while feed-forward layers can contribute to over-specialization. These results show that procedural data can provide transferable structure for molecular learning and offer a complementary route to improving performance when labeled molecular data are limited.",
+    "publicationDate": "2026-09-15T20:48:50.000Z",
+    "votes": 2
+  },
+  {
+    "source": "alphaxiv",
+    "id": "2609.15611",
+    "title": "Multi-View Molecular Representation Learning with Hierarchical Graphs and Contextualized Fingerprints",
+    "abstract": "Molecular property prediction requires representations that generalize from limited labeled data to structurally novel compounds. Existing molecular pretraining methods often rely on a single view: graph-based approaches model atom-bond topology but provide limited fragment-level supervision, whereas fingerprint descriptors encode chemical patterns but are typically used as fixed auxiliary features. We propose HiFi-Mol, a multi-view framework that separately pretrains a hierarchical graph encoder and a contextualized fingerprint encoder before downstream integration. The graph branch uses fragment-aware masking with multi-resolution supervision to capture substructure-aware representations, while the fingerprint branch tokenizes active entries from seven fingerprint families and applies masked language modeling to learn contextualized embeddings. During fine-tuning, HiFi-Mol combines projected multi-resolution graph features with fingerprint embeddings for downstream prediction. Evaluated on MoleculeNet benchmarks under the scaffold split, HiFi-Mol achieves a 2.77% improvement in average ROC-AUC over the best baseline across eight classification tasks while maintaining competitive performance on three regression tasks. Further analyses reveal that fragment-aware masking improves graph representation quality, and classification results demonstrate dataset-dependent strengths of the individual graph and fingerprint variants, confirming that the two views provide complementary predictive signals.",
+    "publicationDate": "2026-09-14T14:07:19.000Z",
+    "votes": 1
+  },
+  {
+    "source": "alphaxiv",
+    "id": "2609.04261",
+    "title": "Self-Supervised Pretraining of Molecular Graph Encoders with LeJEPA",
+    "abstract": "Self-supervised pretraining has transformed language and vision, but its value for molecular graph neural networks remains contested. We ask whether pretraining on a large unlabelled corpus improves molecular property prediction. We adapt LeJEPA, a predictor-free joint-embedding predictive architecture regularised by Sketched Isotropic Gaussian Regularisation (SIGReg), to molecular graphs, evaluating GPS and Chemprop-style D-MPNN encoders on the Wong et al. [1] antibiotic-activity dataset and ogbg-molhiv using a multi-seed, bootstrap-based protocol. Pretraining improves learned representations but does not robustly improve finetuning. A frozen probe on pretrained embeddings exceeds random initialisation on both tasks (ogbg-molhiv ROC-AUC 0.788 vs 0.665; +0.123), reaching the published self-supervised band, but this does not translate into finetuning gains. On the antibiotic scaffold split, a canonical partition is significant (delta AUPRC +0.041, p = 0.010), but the effect vanishes across five partitions (pooled +0.013, p = 0.095). Finetuning is null on the random split, ogbg-molhiv, and D-MPNN. The representational edge is nevertheless recoverable. Embeddings saturate at ~16-32 effective dimensions, whereas Morgan fingerprints improve to 1024 bits. At matched dimensionality, fingerprints lead validation (0.799 vs 0.782 at 128 dimensions) but trail shifted test scaffolds (0.759 vs 0.788). Truncating embeddings and combining them with a 1024-bit Morgan fingerprint raises ogbg-molhiv ROC-AUC from 0.805 to 0.832 (delta +0.027; 95% CI [+0.003, +0.054]; p = 0.014); an untrained encoder gains nothing (delta -0.003). Thus, pretraining supplies complementary information best realised through feature-level combination, while finetuning gains are weak and partition-dependent.",
+    "publicationDate": "2026-09-02T12:08:23.000Z",
+    "votes": 0
+  },
+  {
+    "source": "alphaxiv",
+    "id": "2607.21561",
+    "title": "EnsembleEGNN: Set-Based Graph Learning for Thermodynamic Ensembles of Cyclic Peptides",
+    "abstract": "Molecular graph encoding often relies on a single, static structure, ignoring the thermodynamic ensemble of molecules that are present in solution. Here, we introduce EnsembleEGNN, a foundation model that encodes structural ensembles by processing individual conformers through shared equivariant graph neural network layers, pooled with a set attention block, to make property predictions from the whole ensemble. Pretrained on the CREMP cyclic peptide dataset using multi-task self-supervision, the model is trained to encode the conformational variability of each molecule. When predicting membrane permeability from the CycPeptMPDB benchmark, EnsembleEGNN achieves an $R^2$ of $0.477$ under random cross-validation, outperforming a sequence-only BERT baseline ($R^2=0.439$). This representation advantage persists under rigorous out-of-distribution Butina splits ($R^2=0.401$ versus $0.354$). Finally, a hybrid architecture co-training EnsembleEGNN with the BERT model achieves the highest overall accuracy across both random ($R^2=0.538$) and structural holdout evaluations ($R^2=0.444$). These results demonstrate that encoding conformational ensembles into latent representations improves predictions for properties governed by thermodynamics.",
+    "publicationDate": "2026-07-23T17:42:51.000Z",
+    "votes": 7
+  },
+  {
+    "source": "alphaxiv",
+    "id": "2602.02201",
+    "title": "Cardinality-Preserving Attention Channels for Graph Transformers in Molecular Property Prediction",
+    "abstract": "Molecular property prediction is crucial for drug discovery when labeled data are scarce. This work presents CardinalGraphFormer, a graph transformer augmented with a query-conditioned cardinality-preserving attention (CPA) channel that retains dynamic support-size signals complementary to static centrality embeddings. The approach combines structured sparse attention with Graphormer-inspired biases (shortest-path distance, centrality, direct-bond features) and unified dual-objective self-supervised pretraining (masked reconstruction and contrastive alignment of augmented views). Evaluation on 11 public benchmarks spanning MoleculeNet, OGB, and TDC ADMET demonstrates consistent improvements over protocol-matched baselines under matched pretraining, optimization, and hyperparameter tuning. Rigorous ablations confirm CPA's contributions and rule out simple size shortcuts. Code and reproducibility artifacts are provided.",
+    "publicationDate": "2026-02-02T15:05:46.000Z",
+    "votes": 3
+  },
+  {
+    "source": "alphaxiv",
+    "id": "2601.19257",
+    "title": "PCEvo: Path-Consistent Molecular Representation via Virtual Evolutionary",
+    "abstract": "Molecular representation learning aims to learn vector embeddings that capture molecular structure and geometry, thereby enabling property prediction and downstream scientific applications. In many AI for science tasks, labeled data are expensive to obtain and therefore limited in availability. Under the few-shot setting, models trained with scarce supervision often learn brittle structure-property relationships, resulting in substantially higher prediction errors and reduced generalization to unseen molecules. To address this limitation, we propose PCEvo, a path-consistent representation method that learns from virtual paths through dynamic structural evolution. PCEvo enumerates multiple chemically feasible edit paths between retrieved similar molecular pairs under topological dependency constraints. It transforms the labels of the two molecules into stepwise supervision along each virtual evolutionary path. It introduces a path-consistency objective that enforces prediction invariance across alternative paths connecting the same two molecules. Comprehensive experiments on the QM9 and MoleculeNet datasets demonstrate that PCEvo substantially improves the few-shot generalization performance of baseline methods. The code is available at this https URL.",
+    "publicationDate": "2026-01-27T06:40:11.000Z",
+    "votes": 1
+  },
+  {
+    "source": "alphaxiv",
+    "id": "2601.04507",
+    "title": "A Semi-supervised Molecular Learning Framework for Activity Cliff Estimation",
+    "abstract": "Machine learning (ML) enables accurate and fast molecular property predictions, which are of interest in drug discovery and material design. Their success is based on the principle of similarity at its heart, assuming that similar molecules exhibit close properties. However, activity cliffs challenge this principle, and their presence leads to a sharp decline in the performance of existing ML algorithms, particularly graph-based methods. To overcome this obstacle under a low-data scenario, we propose a novel semi-supervised learning (SSL) method dubbed SemiMol, which employs predictions on numerous unannotated data as pseudo-signals for subsequent training. Specifically, we introduce an additional instructor model to evaluate the accuracy and trustworthiness of proxy labels because existing pseudo-labeling approaches require probabilistic outputs to reveal the model's confidence and fail to be applied in regression tasks. Moreover, we design a self-adaptive curriculum learning algorithm to progressively move the target model toward hard samples at a controllable pace. Extensive experiments on 30 activity cliff datasets demonstrate that SemiMol significantly enhances graph-based ML architectures and outpasses state-of-the-art pretraining and SSL baselines.",
+    "publicationDate": "2026-01-08T02:20:25.000Z",
+    "votes": 3
+  }
+]

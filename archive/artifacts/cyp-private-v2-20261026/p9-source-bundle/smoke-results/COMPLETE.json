@@ -1,0 +1,51 @@
+{
+  "status": "pass",
+  "rows": 32,
+  "checks": {
+    "old_postnorm": {
+      "allclose": true,
+      "max_abs": 1.6689300537109375e-06
+    },
+    "pre_slice_matches_direct8": {
+      "allclose": true,
+      "max_abs": 2.9802322387695312e-08
+    },
+    "repeat": {
+      "allclose": true,
+      "max_abs": 0.0
+    },
+    "reorder": {
+      "allclose": true,
+      "max_abs": 1.430511474609375e-06
+    }
+  },
+  "timing_seconds": {
+    "all9_batch8": 19.500223957991693,
+    "direct_pre_block8_batch1": 18.166243709041737,
+    "repeat_all9_batch8": 18.595061625004746,
+    "reordered_all9_batch8": 19.273347374983132
+  },
+  "load_and_inputs_seconds": 0.649580999976024,
+  "selected_pre_vs_old_post_mean_absolute_difference": 0.7658595442771912,
+  "selected_pre_vs_old_post_max_absolute_difference": 6.697150707244873,
+  "runtime_seconds": 76.19688658299856,
+  "source_sha256": "fccac8f7b07230af63ffc0a8ca32dcd8a9a92579f5abfe8aa979764bc4a9cf3a",
+  "config_sha256": "9a75c0ca5b2d8105832ed66aac839ee3fb00b95cc5c47c5ecb6f9b6a1ed35795",
+  "execution": {
+    "device": "cpu",
+    "precision": "fp32",
+    "cuequivariance": false,
+    "compile": false
+  },
+  "packages": {
+    "atom-jepa": "0.3.0",
+    "torch": "2.8.0",
+    "numpy": "2.5.4",
+    "e3nn": "0.6.0",
+    "torch-geometric": "2.8.1"
+  },
+  "coordinates_reused_unchanged": true,
+  "new_geometry_or_CIP_audit": false,
+  "target_labels_used": false,
+  "declared_feature": "block8 beforefinalnorm,degree0,atommean256"
+}

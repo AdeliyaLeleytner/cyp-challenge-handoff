@@ -1,0 +1,138 @@
+{
+  "chembl_rows": 25841,
+  "max_confidence_histogram": {
+    "9": 15319,
+    "8": 10522
+  },
+  "sum_n_measurements": 80926,
+  "published_columns_do_not_retain": [
+    "assay_chembl_id",
+    "document_chembl_id",
+    "standard_type",
+    "standard_relation",
+    "assay_species",
+    "probe",
+    "preincubation",
+    "per_record_confidence"
+  ],
+  "tdi_shift_diagnostics": [
+    {
+      "gene": "cyp1a2",
+      "paired_rows": 1412,
+      "positive_shift_gt_log10two": 56,
+      "negative_shift_lt_minus_log10two": 35,
+      "median_delta": 0.02369959399999977,
+      "paired_direct_ge4": 1180,
+      "negative_shift_ge4": 4
+    },
+    {
+      "gene": "cyp2c9",
+      "paired_rows": 1285,
+      "positive_shift_gt_log10two": 75,
+      "negative_shift_lt_minus_log10two": 59,
+      "median_delta": 0.007363736999999482,
+      "paired_direct_ge4": 1026,
+      "negative_shift_ge4": 17
+    },
+    {
+      "gene": "cyp2d6",
+      "paired_rows": 1493,
+      "positive_shift_gt_log10two": 380,
+      "negative_shift_lt_minus_log10two": 4,
+      "median_delta": 0.1543157930000003,
+      "paired_direct_ge4": 1364,
+      "negative_shift_ge4": 3
+    },
+    {
+      "gene": "cyp3a4",
+      "paired_rows": 2334,
+      "positive_shift_gt_log10two": 1184,
+      "negative_shift_lt_minus_log10two": 60,
+      "median_delta": 0.30743222499999945,
+      "paired_direct_ge4": 1390,
+      "negative_shift_ge4": 6
+    }
+  ],
+  "pubchem": [
+    {
+      "gene": "cyp1a2",
+      "rows": 17107,
+      "unique_cid": 16546,
+      "pic50_finite": 9833,
+      "fit_log_ac50_finite": 9833,
+      "outcomes": {
+        "Inactive": 7236,
+        "Active": 5994,
+        "Inconclusive": 3877
+      },
+      "inactive_with_fitted_pic50": 0,
+      "max_response_lt_minus150": 0,
+      "max_response_gt50": 2,
+      "ac50_sentinel_1e6": 37
+    },
+    {
+      "gene": "cyp2c19",
+      "rows": 17107,
+      "unique_cid": 16546,
+      "pic50_finite": 9544,
+      "fit_log_ac50_finite": 9544,
+      "outcomes": {
+        "Inactive": 7515,
+        "Active": 5902,
+        "Inconclusive": 3690
+      },
+      "inactive_with_fitted_pic50": 0,
+      "max_response_lt_minus150": 515,
+      "max_response_gt50": 397,
+      "ac50_sentinel_1e6": 29
+    },
+    {
+      "gene": "cyp2c9",
+      "rows": 17107,
+      "unique_cid": 16546,
+      "pic50_finite": 8311,
+      "fit_log_ac50_finite": 8311,
+      "outcomes": {
+        "Inactive": 8764,
+        "Inconclusive": 4237,
+        "Active": 4106
+      },
+      "inactive_with_fitted_pic50": 0,
+      "max_response_lt_minus150": 0,
+      "max_response_gt50": 505,
+      "ac50_sentinel_1e6": 20
+    },
+    {
+      "gene": "cyp2d6",
+      "rows": 17107,
+      "unique_cid": 16546,
+      "pic50_finite": 5969,
+      "fit_log_ac50_finite": 5969,
+      "outcomes": {
+        "Inactive": 11118,
+        "Inconclusive": 3223,
+        "Active": 2766
+      },
+      "inactive_with_fitted_pic50": 0,
+      "max_response_lt_minus150": 0,
+      "max_response_gt50": 10,
+      "ac50_sentinel_1e6": 13
+    },
+    {
+      "gene": "cyp3a4",
+      "rows": 17107,
+      "unique_cid": 16546,
+      "pic50_finite": 9377,
+      "fit_log_ac50_finite": 9377,
+      "outcomes": {
+        "Inactive": 7722,
+        "Active": 5263,
+        "Inconclusive": 4122
+      },
+      "inactive_with_fitted_pic50": 0,
+      "max_response_lt_minus150": 0,
+      "max_response_gt50": 279,
+      "ac50_sentinel_1e6": 6
+    }
+  ]
+}

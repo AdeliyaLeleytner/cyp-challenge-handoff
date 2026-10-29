@@ -1,0 +1,110 @@
+{
+  "summary": "No legitimate holdout score exists for the native reproduction: both frozen cohorts are inside the full-data training pools, so the user's question can only be answered by two small per-cohort holdout-excluded retrains (~30–45 min, ~$1 on 8×3090) followed by post-hoc checkpoint inference and official ST-RAE scoring. The critical trap is that holdout structures re-enter the native union pool via tdi/emax, ChEMBL and Veith joins unless all six raw files are purged by connectivity key and normalized parent key. Report raw flat-mean as the faithful score, native board-constant placement only as a labelled transfer diagnostic, and local OOF-only calibration as the comparable lane against the prior adapted .60238/.62678.",
+  "recommendation": "1) Tell the user plainly: the current full-data run trained on all own750/briford529 molecules, so scoring it on those cohorts would be contaminated; a clean number needs two quick retrains. 2) Build per-cohort filtered raw dirs: restrict inhibition/single_concentration/tdi/emax to the cohort's train_ids (dropping parent-purge siblings), and purge chembl/pubchem rows matching held structures by both InChIKey connectivity block and normalize_parent_key; record new raw_sha256. 3) Run native prepare+train unchanged (seed 42, 5 folds, 4 members) per cohort on the 8×3090 offer. 4) Predict holdouts in a separate pass over saved checkpoints (the worker asserts pred.shape==(750,…) and cyp_ensemble_submit validates blinded IDs, so don't route holdouts through the training/submission path); average 5 folds per member, then flat-mean with per-isoform membership (4 members for CYP2D6, 2 otherwise). 5) Score with night/evaluation.score_variants: raw (primary), native place(strae=True)+FLOOR with board constants (labelled transfer diagnostic only), and calibrate_variants fit on cohort train-OOF (comparable to prior adapted scores). 6) Before comparing, pin down whether .60238/.62678 were raw or calibrated and which cohort each is; run evaluation.compare paired against the prior adapted predictions. 7) Extend the native_overlap_audit to assert zero held-structure overlap in every member pool; never submit holdout-excluded outputs. Interim, zero-GPU: flat-mean the existing run's native OOF predictions restricted to holdout IDs as a clearly-labelled rough diagnostic while the retrains run.",
+  "confidence": "high",
+  "files_inspected": [
+    "night/briford_native.py",
+    "vendor/briford_native/cyp_recalibrate.py",
+    "vendor/briford_native/cyp_ensemble_submit.py",
+    "vendor/briford_native/cyp_union_features.py",
+    "night/evaluation.py",
+    "night/runner.py",
+    "night/cohorts.py",
+    "night/briford_submit.py",
+    "night/promotion_gate.py (lines 195-219)",
+    "night/public_data.py (normalize_parent_key)",
+    "official_scoring_functions.py",
+    "data/our-existing-results.json",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/prepared/manifest.json"
+  ],
+  "verified_facts": [
+    "Prepared manifest confirms full-data member pools of 31670/4905/23264/1493 rows (prepared/manifest.json lines 91/161/217/259), matching the brief's claim that holdouts are included in training.",
+    "Holdout structures can re-enter training via cyp_union_features.py even if removed from inhibition.csv: tdi/emax side_only concat (lines 93-100), ChEMBL connectivity-key union (lines 103-120), Veith max_response join (lines 123-143); ChEMBL labels correlate 0.31-0.66 and emax 0.555 with scored targets per the script's own documentation (lines 10, 41-42).",
+    "Native worker hard-asserts blind predictions of shape (750, n_targets) (night/briford_native.py:97) and cyp_ensemble_submit.py asserts N_TEST=750 and validates against blinded IDs (lines 31, 71-72, 90), so holdout inference cannot reuse that path unmodified.",
+    "Native placement constants BLIND_MOMENTS, SOLVED_PEARSON, STRAE_MOMENTS, OOF_TO_BLIND were solved/tuned from scored public-leaderboard submissions of the live blind half (cyp_recalibrate.py:54-104), and placement.json records uses_published_leaderboard_derived_constants=true (night/briford_native.py:144).",
+    "The ensemble is a flat mean with per-isoform membership: 2 members for CYP1A2/2C9/3A4, 4 for CYP2D6 (cyp_ensemble_submit.py:37-42), computed per member as the 5-fold mean (night/briford_native.py:118).",
+    "The prior adapted protocol built per-cohort dev pools excluding the held set plus normalized-parent siblings, used excluded_parent_keys covering ALL official train+test parents for public data, and scored both raw and OOF-only-calibrated variants (night/cohorts.py:16-23,42; night/runner.py:44-57,78-87).",
+    "own750 and briford529 overlap by 143 molecules and are explicitly flagged as not independent replications (night/promotion_gate.py:208-211).",
+    "ST-RAE's denominator is recomputed from the evaluated cohort's own mean and intervals (official_scoring_functions.py:140-145), so levels are not comparable across cohorts or to the leaderboard.",
+    "night/evaluation.py forbids board-derived constants and gate-label calibration for local placement, and provides score_variants/calibrate_variants/compare with OOF-only fitting and frozen selection (lines 15-23, 98-105, 185-219, 221-275).",
+    "Re-run guards exist: prepare and worker raise FileExistsError on existing complete.json (night/briford_native.py:31, 86), protecting the completed full-data run from overwrite."
+  ],
+  "inferences": [
+    "Two per-cohort retrains (40 fold-models) should take roughly the same wall time as the prior 28-minute 20-model run when spread over eight 3090s, costing on the order of $1 at $1.38/hour — inferred from the stated prior runtime, not measured.",
+    "Applying STRAE_MOMENTS (CYP2D6 mean 3.57, sd 0.90) to local holdouts will likely distort scores because those constants target the blind half's distribution; local cohorts drawn from official-train have different endpoint distributions (e.g., our-existing-results.json shows CYP3A4 n=515 of 750).",
+    "The prior adapted scores .60238/.62678 most plausibly came from the night/runner briford_reference per-cohort evaluation (raw or calibrated macro ST-RAE), but their exact variant and cohort assignment is not verifiable from the repository.",
+    "The native scaffold-split OOF predictions restricted to holdout IDs give a usable interim diagnostic from existing artifacts, but understate the 5-fold endpoint ensemble (as the author's own OOF_TO_BLIND commentary notes) and use a different split protocol than the frozen cohorts."
+  ],
+  "opportunities": [
+    {
+      "item": "Interim zero-GPU diagnostic: score the existing run's member OOF predictions (flat mean per isoform) restricted to holdout IDs with night/evaluation.score, clearly labelled as single-fold-model scaffold-OOF, not protocol-comparable.",
+      "importance": "medium",
+      "basis": "collect() already writes per-member oof.csv with predictions for every pool molecule including holdouts (night/briford_native.py:114-117); each molecule's OOF prediction comes from a fold model that excluded its row."
+    },
+    {
+      "item": "Extend the existing native_overlap_audit mechanism to assert zero held-structure overlap (connectivity key AND normalized parent key) in all four member pools after filtered preparation.",
+      "importance": "high",
+      "basis": "The audit pattern already exists for test overlap (night/briford_native.py:71-75); reusing it closes the tdi/emax/ChEMBL/Veith re-entry paths verifiably."
+    },
+    {
+      "item": "Use evaluation.compare for paired candidate-minus-reference deltas against the stored prior adapted predictions on the same cohorts, rather than comparing headline macro numbers.",
+      "importance": "medium",
+      "basis": "compare() provides paired molecule bootstrap CIs on the identical frozen cohorts (night/evaluation.py:221-275), which is far more informative than two point estimates with a 143-molecule cohort overlap."
+    }
+  ],
+  "risks": [
+    {
+      "item": "Scoring the existing full-data 20-model ensemble directly on own750/briford529 to answer the user quickly — the numbers would be contaminated and optimistic since all holdout molecules (and their aux labels) were trained on.",
+      "severity": "high",
+      "basis": "Prepared manifest pool sizes match the full-inclusion claim; pools are built from the complete inhibition.csv plus unions (night/briford_native.py:35,54-56)."
+    },
+    {
+      "item": "Purging only inhibition.csv in the retrain: holdout structures re-enter with correlated labels via tdi/emax side rows, ChEMBL key-matched rows, and Veith rows, silently inflating holdout scores.",
+      "severity": "high",
+      "basis": "cyp_union_features.py lines 93-100, 113-120, 136-143; documented correlations 0.31-0.66 (ChEMBL) and 0.555 (emax vs CYP2D6)."
+    },
+    {
+      "item": "Interpreting the native board-constant placement score on local holdouts as recipe quality, or re-tuning placement constants on holdout labels.",
+      "severity": "medium",
+      "basis": "Constants were solved from the live blind half (cyp_recalibrate.py:54-104); re-tuning on holdout labels is exactly the gate-label leakage the project's evaluation layer forbids (night/evaluation.py:15-23, 159-183)."
+    },
+    {
+      "item": "Comparing holdout macro ST-RAE levels to the leaderboard 0.4378 or between the two cohorts.",
+      "severity": "medium",
+      "basis": "ST-RAE denominator is cohort-specific (official_scoring_functions.py:140-145) and the cohorts share 143 molecules (night/promotion_gate.py:208-211)."
+    },
+    {
+      "item": "Routing holdout queries through the unmodified native worker/ensemble path, which asserts 750 rows and blinded IDs and would fail or require code edits to the pinned recipe.",
+      "severity": "medium",
+      "basis": "night/briford_native.py:97; cyp_ensemble_submit.py:31,71-72,90."
+    },
+    {
+      "item": "Single-seed (42) evaluation cannot separate recipe effects from training-seed noise.",
+      "severity": "low",
+      "basis": "Native recipe fixes seed 42 (briford_submit.py:16); compare()'s own uncertainty note flags that one seed cannot estimate seed variability (night/evaluation.py:274)."
+    }
+  ],
+  "alternatives": [
+    "Single joint retrain excluding the union of both cohorts (20 instead of 40 fold-models): cheaper and one pool, but deviates from the prior per-cohort protocol and slightly shrinks each cohort's training pool, weakening comparability with .60238/.62678.",
+    "Answer with the OOF-based diagnostic only and skip retraining: nearly free and immediate, but systematically understates the 5-fold ensemble and uses the author's scaffold split rather than the frozen cohort protocol — acceptable only as an interim figure, not as the answer."
+  ],
+  "missing_information": [
+    "Exact provenance of the prior adapted scores .60238/.62678: which cohort each belongs to and whether they are raw or OOF-calibrated macro ST-RAE (likely in a prior run's summary.json outside the repo; pin this before any comparison).",
+    "Whether normalize_parent_key and InChIKey connectivity block classify every holdout structure identically — a small divergence set should be computed and the union of both keys used for purging.",
+    "Whether the frozen cohorts' truth columns ({target}_conf_low/high) in the briford-reproduction asset copy of official-train.csv match the overnight assets byte-for-byte (hash both before scoring)."
+  ],
+  "what_would_change_view": [
+    "If the prior .60238/.62678 turn out to have been produced under a different exclusion scheme (e.g., no parent purge, or joint-cohort exclusion), the retrain protocol should mirror that scheme instead of the per-cohort design inferred from night/runner.py.",
+    "If the holdout-exclusion audit shows the member pools lose a large fraction of rows (beyond the holdout structures themselves), per-cohort scores would reflect a materially smaller-data recipe and the comparability claim would need weakening.",
+    "If GPU availability or budget changes, the single joint-exclusion retrain becomes the pragmatic choice despite the protocol deviation."
+  ],
+  "user_escalation_required": false,
+  "escalation_reason": "Retraining and local scoring are already authorized, the cost is trivial (~$1), nothing is irreversible, and no submission dispatch is involved; the holdout-excluded outputs must simply never be submitted.",
+  "_consultation": {
+    "id": "20261024T105326Z-53f5236d",
+    "requested_model": "claude-fable-5",
+    "primary_model": "claude-fable-5",
+    "automatic_fallback_used": false,
+    "explicit_opus": false
+  }
+}

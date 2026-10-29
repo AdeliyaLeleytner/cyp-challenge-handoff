@@ -1,0 +1,70 @@
+{
+  "AssaySummaries": {
+    "AssaySummary": [
+      {
+        "AID": 588342,
+        "SourceName": "NCGC",
+        "SourceID": "FLUC100",
+        "Name": "qHTS profiling assay for firefly luciferase inhibitor/activator using purifed enzyme and Km concentrations of substrates (counterscreen for miR-21 project)",
+        "Description": [
+          "MLPCN Grant: 1 R21 NS059478-01 (miR-21 grant)",
+          "",
+          "Assay Provider: NCGC",
+          "",
+          "NCGC Assay Overview:  ",
+          "",
+          "Firefly (Photinus pyralis) luciferase is one of the most commonly used transcriptional reporters for a number of reasons. It is considered one of the more dynamically responsive reporters -that is, responsive to changes in reporter transcription - as it requires no post-translational modifications and is enzymatically active directly after protein synthesis (Wood, 1998). Additionally, the half-life of the luciferase protein is short relative to other reporter-gene products (Wood, 1995). Whereas reporters with long half-lives potentially allow for increased signal due to accumulation of reporter-gene product, once accumulated in the cell, dynamic changes in reporter-gene expression may be difficult to detect(Fan and Wood, 2007; Almond et al., 2004). It has been shown that wild-type P. pyralis luciferase has a half-life of approximately four hours in mammalian cells (Thompson et al., 1991). Firefly luciferase reporter-gene assays are also generally considered one of the most sensitive assay types (Wood, 1995; Wood, 1998). Although light produced in a bioluminescence reaction is of lower intensity than that produced during fluorescence emission[52], this is offset by little to no background light inherent to luminescent assays. Thus the luciferase reporter can be expressed at much lower levels than fluorescent proteins while still providing robust signal.",
+          "#",
+          "However, it was initially observed, in 1991, by Thompson et al., that compounds that resemble the substrates of firefly luciferase (FLuc) can act as competitive inhibitors of the enzyme, and that these compounds, upon interaction with luciferase in the cell, can actually stabilize the protein and increase its half-life. Accumulated intracellular FLuc protein can be measured as an increase in luminescence signal, upon addition of detection reagents (which contain high concentrations of FLuc substrates) commonly used in high-throughput screening. In cell-based reporter gene assays that use FLuc as the reporter gene to quantitate the potential influence of a given compound against the target biology, this apparent increase in luminescence can mistakenly be interpreted as identification of a compound that is active against the target of interest. This is the case for the miR-21 FLuc reporter gene assay used to identify inhibitors of the miR-21 pathway (PubChem AID 2289) - compounds of interest will inhibit miR-21 biogenesis/expression or activity, and are identified by causing an increase in luminescence, due to increased FLuc translation. However, FLuc inhibitory compounds that stabilize the FLuc protein will give an identical read-out, making it difficult to distinguish compounds that are active against the target from those active against FLuc.",
+          "",
+          "Previous profiling work to determine the prevalence of compounds that affect FLuc enzymatic activity (PubChem AID 411) identified that ~3% of the MLSMR library (then at ~72K) inhibited FLuc. Analysis of cell-based FLuc reporter gene assays posted in PubChem indicated that as many as 60% of the actives identified in a given screen using this type of assay were actually FLuc inhibitors (Auld et al., 2008). Since the MLSMR had grown to ~350K compounds, and since it was expected that a significant percentage of compounds found active in the miR-21 FLuc assay would be FLuc inhibitors, the library was screened for activity against FLuc using a biochemical assay of purified FLuc and KM concentrations of FLuc substrates (D-luciferin and ATP). "
+        ],
+        "Protocol": [
+          "NCGC Assay Protocol Summary:",
+          "",
+          "Reagents: 50mM Tris acetate, pH 7.5; 10mM Mg acetate; 10uM D-luciferin (Sigma #L9504); 10uM ATP; 0.01% Tween-20; 0.05% BSA; 10nM P. pyralis luciferase (Sigma #L9506)",
+          "Control compounds used were two known firefly luciferase inhibitors (compounds (2) and (5) in Auld et al., 2010), and DMSO.",
+          "",
+          "Assay Summary: ",
+          "Three microliters containing firefly luciferase substrates in buffer (final concentrations: 50mM Tris acetate, pH 7.5, 10mM Mg acetate, 0.01% Tween-20, 0.05% BSA, 10uM D-luciferin, and 10uM ATP) are dispensed into each well of a Greiner white, solid-bottom 1536-well format plate using a flying reagent dispenser (FRD). These assay plates were then treated with 23nL of compound or DMSO using a Kalypsys pin tool, which allows for delivery of a 6-point interplate titration of each compound to the assay plate (quantitative HTS), with a final compound concentrations ranging from approximately 60muM to 7pM. One microliter of firefly luciferase in 500mM Tris-acetate buffer was then delivered by FRD to each well for a final enzyme concentration of 10nM. Luciferase activity was then measured using a ViewLux CCD imager (PerkinElmer), with an average exposure time of 2-30 seconds (2X binning, medium/high gain). ",
+          "",
+          "Keywords: NIH Roadmap, MLPCN, MLSMR, qHTS, miR-21, firefly luciferase, FLuc, miRNA."
+        ],
+        "Comment": [
+          "Compound Ranking:",
+          "",
+          "1. Compounds are first classified as having full titration curves, partial modulation, partial curve (weaker actives), single point activity (at highest concentration only), or inactive. See data field \"Curve Description\". For this assay, apparent inhibitors are ranked higher than compounds that showed apparent activation.",
+          "2. For all inactive compounds, PUBCHEM_ACTIVITY_SCORE is 0. For all active compounds, a score range was given for each curve class type given above.  Active compounds have PUBCHEM_ACTIVITY_SCORE between 40 and 100.  Inconclusive compounds have PUBCHEM_ACTIVITY_SCORE between 1 and 39.  Fit_LogAC50 was used for determining relative score and was scaled to each curve class' score range."
+        ],
+        "NumberOfTIDs": 22,
+        "HasScore": true,
+        "Method": "confirmatory",
+        "Target": [
+          {
+            "Accession": "AAA29795",
+            "Name": "Luciferase"
+          }
+        ],
+        "Version": 1,
+        "Revision": 1,
+        "LastDataChange": {
+          "Year": 2011,
+          "Month": 9,
+          "Day": 7
+        },
+        "SIDCountAll": 364105,
+        "SIDCountActive": 25159,
+        "SIDCountInactive": 304600,
+        "SIDCountInconclusive": 34346,
+        "SIDCountUnspecified": 0,
+        "SIDCountProbe": 0,
+        "CIDCountAll": 360853,
+        "CIDCountActive": 25069,
+        "CIDCountInactive": 301913,
+        "CIDCountInconclusive": 34196,
+        "CIDCountUnspecified": 0,
+        "CIDCountProbe": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "weight": [
+    0.5570191240601369,
+    0.3199018742628085,
+    0.309566896461494,
+    0.3440833156285843
+  ],
+  "per_target_fit": {
+    "CYP1A2_pIC50_direct_inhibition": {
+      "native_training_OOF_ST_RAE": 0.7812886640197554,
+      "extra_training_OOF_ST_RAE": 0.7624579352602637,
+      "blend_training_OOF_ST_RAE": 0.7236511238448238,
+      "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+      "fit_scope": "outer training OOF only"
+    },
+    "CYP2C9_pIC50_direct_inhibition": {
+      "native_training_OOF_ST_RAE": 0.5218265524750462,
+      "extra_training_OOF_ST_RAE": 0.5807959364589221,
+      "blend_training_OOF_ST_RAE": 0.5030953107662187,
+      "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+      "fit_scope": "outer training OOF only"
+    },
+    "CYP2D6_pIC50_direct_inhibition": {
+      "native_training_OOF_ST_RAE": 0.8305397457188707,
+      "extra_training_OOF_ST_RAE": 0.8634993811560686,
+      "blend_training_OOF_ST_RAE": 0.8215698884490986,
+      "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+      "fit_scope": "outer training OOF only"
+    },
+    "CYP3A4_pIC50_direct_inhibition": {
+      "native_training_OOF_ST_RAE": 0.43330357521110024,
+      "extra_training_OOF_ST_RAE": 0.4794318413839246,
+      "blend_training_OOF_ST_RAE": 0.41799641517977487,
+      "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+      "fit_scope": "outer training OOF only"
+    }
+  },
+  "fit_scope": "outer training OOF only",
+  "blend_training_OOF_ST_RAE": 0.616578184559979
+}

@@ -1,0 +1,62 @@
+{
+  "status": "official_result_available",
+  "updated_utc": "2026-10-24T00:12:52.661560+00:00",
+  "candidate": "reference_reweight_affine",
+  "n_named_methods": 57,
+  "n_cohort_seed_evaluations": 122,
+  "submission_csv_sha256": "f0e32b5fecab41d9a68c098e0ebe4b0d05cbc61760eb3dbd63c300382945e053",
+  "receipt": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/submission-ledger/attempts/f0e32b5fecab41d9a68c098e0ebe4b0d05cbc61760eb3dbd63c300382945e053/receipt.json",
+  "final_orx_run": "d61f74fa-febd-4384-a381-78c3c79d294a",
+  "final_component_models": 40,
+  "selected_fit_per_seed": {
+    "142": "positive_affine_l1_0",
+    "42": "positive_affine_l1_0"
+  },
+  "all_paid_compute_destroyed": true,
+  "resource_cleanup": {
+    "completed_utc": "2026-10-24T00:12:52.661560+00:00",
+    "campaign_instances": [
+      57424368,
+      57428215
+    ],
+    "both_destroyed_and_absence_verified": true,
+    "unrelated_instance_55892464_untouched": true,
+    "task_ssh_aliases_removed": true,
+    "begin_credit_usd": 12.1682118626,
+    "observed_after_cleanup_credit_usd": 6.796269406639112,
+    "account_credit_decrease_usd": 5.3719424559608875,
+    "billing_note": "Account balance difference is an approximate campaign cost, not an itemized invoice; other preexisting storage and billing settlement can contribute.",
+    "recovery_certificates": [
+      "notes/recovery-host1/recovery-certificate.json",
+      "notes/recovery-host2/recovery-certificate.json"
+    ]
+  },
+  "actual_test_score": 0.7521204949751441,
+  "no_second_submission": true,
+  "latest_official_result_check": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/official_results/20261024T083317Z/result.json",
+    "sha256": "f9cad95e42736d6405378b88822e04687d5a78b8b4b3988b2348d7c068eb7fa5",
+    "status": "visible_result_found"
+  },
+  "task_background_processes_exited": true,
+  "requested_campaign_completed": true,
+  "official_rank": 118,
+  "official_metrics": {
+    "Rank": "118",
+    "Username": "AdeliyaLL-CYP",
+    "Submitted": "2026-10-24 00:10 UTC",
+    "Model Report Link": "Scratch D-MPNN multitask ensemble, 5 folds x 2 seeds, TRAIN-OOF affine stacking; public ChEMBL and PubChem",
+    "MA-ST-RAE": "0.7521204949751441",
+    "MA-ST-RAE std": "0.0283360135193345",
+    "MA-MAE": "0.9284270399024772",
+    "MA-MAE std": "0.017962321066485",
+    "MA-R\u00b2": "0.1686025409018953",
+    "MA-R\u00b2 std": "0.0474484256112416",
+    "MA-Spearman's \u03c1": "0.7563919429600394",
+    "MA-Spearman's \u03c1 std": "0.0139127205017555",
+    "MA-Kendall's \u03c4": "0.57897699517294",
+    "MA-Kendall's \u03c4 std": "0.0124157990571588",
+    "Proprietary Data": "No",
+    "Open Code": "No"
+  }
+}

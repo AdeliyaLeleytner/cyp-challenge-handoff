@@ -1,0 +1,11 @@
+test_locked_recipe_rejects_other_family_mode_or_gpu_runtime (test_locked_h6_models.Tests.test_locked_recipe_rejects_other_family_mode_or_gpu_runtime) ... ok
+test_per_target_decision_is_retained_even_at_boundary (test_locked_h6_models.Tests.test_per_target_decision_is_retained_even_at_boundary) ... {"event": "finalfit_training_OOF_metric", "model": "native", "lane": "training_OOF_raw", "macro": {"ST_RAE": 0.0, "MAE": 0.0, "R2": 1.0, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "lightgbm__adme720__grid0", "lane": "training_OOF_raw", "macro": {"ST_RAE": 0.8035714285714286, "MAE": 3.0, "R2": 0.5178571428571428, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "lightgbm__adme720__native_blend_per_target", "lane": "training_OOF_raw", "macro": {"ST_RAE": 0.0, "MAE": 0.0, "R2": 1.0, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+ok
+test_serialization_reload_reuses_model_without_refit (test_locked_h6_models.Tests.test_serialization_reload_reuses_model_without_refit) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.094s
+
+OK

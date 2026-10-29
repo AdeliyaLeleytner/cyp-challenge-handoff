@@ -1,0 +1,25 @@
+{
+  "interpretation": "Descriptive reproduction check; source author values rounded, historical data/row order/environment cannot be matched byte-for-byte. No new pass/fail threshold or model choice.",
+  "metrics": {
+    "cyp1a2": {
+      "author_reported_oof_pearson": 0.57,
+      "our_native_oof_pearson": 0.5445315784630236,
+      "n": 1412
+    },
+    "cyp2c9": {
+      "author_reported_oof_pearson": 0.681,
+      "our_native_oof_pearson": 0.6803898158810283,
+      "n": 1285
+    },
+    "cyp2d6": {
+      "author_reported_oof_pearson": 0.408,
+      "our_native_oof_pearson": 0.39278208869520465,
+      "n": 1493
+    },
+    "cyp3a4": {
+      "author_reported_oof_pearson": 0.795,
+      "our_native_oof_pearson": 0.7920904127760153,
+      "n": 2335
+    }
+  }
+}

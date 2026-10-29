@@ -1,0 +1,42 @@
+{
+  "model": "Atom-JEPA context encoder (EquiformerV3)",
+  "name": "molecules",
+  "eqv3_cfg": {
+    "num_channels": 256,
+    "pred_num_channels": 128,
+    "num_layers": 8,
+    "pred_num_layers": 3,
+    "lmax": 2,
+    "mmax": 2,
+    "max_radius": 6.0,
+    "num_radial_basis": 128,
+    "max_num_elements": 128,
+    "num_heads": 8,
+    "attn_hidden_channels": 64,
+    "attn_alpha_channels": 64,
+    "attn_value_channels": 16,
+    "ffn_hidden_channels": 512,
+    "edge_channels": 128,
+    "norm_type": "merge_layer_norm",
+    "attn_activation": "sep-merge_gates2_swiglu",
+    "ffn_activation": "sep-merge_gates2_swiglu",
+    "attn_grid_resolution_list": [
+      14,
+      8
+    ],
+    "ffn_grid_resolution_list": [
+      14,
+      14
+    ],
+    "use_envelope": true,
+    "use_grid_mlp": true,
+    "avg_degree": 16.0,
+    "readout_pool": "mean",
+    "dropout": 0.0,
+    "drop_path_rate": 0.05,
+    "predict_irreps": false,
+    "query_radius": 12.0,
+    "grad_checkpointing": true,
+    "pred_grad_checkpointing": true
+  }
+}

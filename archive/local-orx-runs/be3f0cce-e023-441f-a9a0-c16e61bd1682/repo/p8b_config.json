@@ -1,0 +1,38 @@
+{
+  "table": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p7/stage/table.csv",
+  "folds": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p7/stage/fold-manifest.json",
+  "active": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/fullfit-strae-prep/stage/original_full/raw/tdi.csv",
+  "pairs": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/stage/audit/tautomer-pair-chemical-details.csv",
+  "output": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p8b/results",
+  "targets": [
+    "cyp1a2",
+    "cyp2c9",
+    "cyp2d6",
+    "cyp3a4"
+  ],
+  "models": [
+    "mean",
+    "affine_0",
+    "affine_1",
+    "spline_0",
+    "spline_1"
+  ],
+  "knots_quantiles": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "public_writes": false,
+  "input_hashes": {
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p7/stage/table.csv": "da57ea6afdfb061a7f11abcf03216b308d64ee965b9f298c744af6b85befebe2",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p7/stage/fold-manifest.json": "436ec6c3895a3e937ae9fa3debc464b75a9e8dbcf36a7f526da67b74fbad599c",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/fullfit-strae-prep/stage/original_full/raw/tdi.csv": "2ebad28ff5e155dc7de3a7e6e10920e938f559be561ca74f2a7c95dcfdf03a82",
+    "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/stage/audit/tautomer-pair-chemical-details.csv": "a78bfe5d1440c4e601e9f0338dae9e124d28255117c80d2971611658fd0911ec",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p8a/results/membership.csv": "f65df919a28890541a2aeb889202e70b412b6baf26c540782e322f0a04e234af"
+  },
+  "alphas_mean_mse": [
+    0,
+    1
+  ],
+  "p8a_membership": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p8a/results/membership.csv"
+}

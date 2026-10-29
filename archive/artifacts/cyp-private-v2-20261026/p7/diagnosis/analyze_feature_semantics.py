@@ -1,0 +1,33 @@
+from pathlib import Path
+import json,hashlib,re
+import pandas as pd,numpy as np
+from scipy.stats import spearmanr,rankdata
+P=Path(__file__).resolve().parents[2];O=Path(__file__).resolve().parent;S=P/'p7/stage';d=pd.read_csv(S/'table.csv');x=np.load(S/'admet120.npy');m=json.loads((S/'manifest.json').read_text());fold=json.loads((S/'fold-manifest.json').read_text());cols=m['columns'];base=Path('/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-access');schema=json.loads((base/'live-probe/feature-schema.json').read_text());types=json.loads(Path('/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/chemistry-audit/endpoint-types.json').read_text())['entries'];lookup={z['name']:z for z in schema}
+phys={'MW','Vol','Dense','nHA','nHD','TPSA','nRot','nRing','MaxRing','nHet','fChar','nRig','Flex','nStereo'};meddesc={'QED','Synth','Fsp3','MCE-18','Natural Product-likeness'};rules={'Lipinski','Pfizer','GSK','GoldenTriangle','PAINS','Alarm_NMR','BMS','Chelating'};taxonomy=[]
+for col in cols:
+ cat,name=col.split('::')[1:];s=lookup.get(name,{});expl=s.get('explanation','');knownprob=types.get(name,{}).get('kind')=='classification_probability' or bool(re.search('probability',expl,re.I)) and name not in ['Natural Product-likeness'];kind='classification_probability' if knownprob else 'regression_prediction' if types.get(name,{}).get('kind')=='regression' else 'not_classified_by_existing_audit'
+ if name in phys|meddesc:group='structure_derived_descriptors';kind='calculated_descriptor_or_fragment_score'
+ elif name in rules or cat=='toxicityrule':group='structural_alerts_and_filter_rules';kind='match_count_or_rule_value'
+ elif cat=='metabolism' and name.startswith('CYP'):group='predicted_CYP';kind='classification_probability'
+ elif name=='Other_assay_interference':group='unresolved_CSV_extra';kind='numeric_score_not_verified_probability'
+ else:group='other_predicted_ADMET'
+ if group=='other_predicted_ADMET' and not knownprob:kind='regression_prediction' # residual known named continuous models; retained source definitions
+ taxonomy.append({'feature':col,'name':name,'category':cat,'group':group,'value_semantics':kind,'display':s.get('display',''),'official_explanation':expl,'doc_caveat':'substrate display/modeldataset label but live explanation repeats inhibitor text' if name.startswith('CYP') and name.endswith('-sub') else 'No detailed explanation in savedAPI docs; do not assign class semantics from range alone' if name=='Other_assay_interference' else 'bp explanation accidentally says melting point; display and programdataset identify boiling point' if name=='bp' else ''})
+tax=pd.DataFrame(taxonomy);tax.to_csv(O/'feature-taxonomy.csv',index=False);probidx=np.flatnonzero(tax.value_semantics.eq('classification_probability'));stats=[];pairs=[];redundancy=[];signals=[];outliers=[];satur=[]
+for f,ff in enumerate(fold['folds']):
+ tr=np.array(ff['train']);a=x[tr];mu=a.mean(0);sd=a.std(0);z=(a-mu)/np.where(sd==0,1,sd);std=sd>0;corr=np.corrcoef(a[:,std],rowvar=False);rr=np.corrcoef(np.apply_along_axis(rankdata,0,a[:,std]),rowvar=False);ix=np.flatnonzero(std);eig=np.linalg.eigvalsh(corr);eff=float(eig.sum()**2/(eig@eig));redundancy.append({'fold':f,'rows':len(tr),'nonconstant_columns':int(std.sum()),'effective_rank_participation_ratio':eff,'pearson_pairs_abs_ge_095':int((np.triu(abs(corr)>=.95,1)).sum()),'spearman_pairs_abs_ge_095':int((np.triu(abs(rr)>=.95,1)).sum())})
+ for k,j in enumerate(ix):
+  for l in range(k+1,len(ix)):
+   if abs(corr[k,l])>=.95 or abs(rr[k,l])>=.95:pairs.append({'fold':f,'feature1':cols[j],'feature2':cols[ix[l]],'pearson':float(corr[k,l]),'spearman':float(rr[k,l])})
+ for j,col in enumerate(cols):
+  v=a[:,j];uniq,n=np.unique(v,return_counts=True);stats.append({'fold':f,'feature':col,'group':taxonomy[j]['group'],'missing':int((~np.isfinite(v)).sum()),'unique':len(uniq),'modal_fraction':float(n.max()/len(v)),'min':float(v.min()),'q01':float(np.quantile(v,.01)),'median':float(np.median(v)),'q99':float(np.quantile(v,.99)),'max':float(v.max()),'mean':float(mu[j]),'std':float(sd[j]),'max_abs_z':float(abs(z[:,j]).max()),'n_abs_z_gt5':int((abs(z[:,j])>5).sum()),'n_abs_z_gt10':int((abs(z[:,j])>10).sum())})
+  if j in probidx:satur.append({'fold':f,'feature':col,'n':len(v),'min':float(v.min()),'max':float(v.max()),'exact0_fraction':float((v==0).mean()),'exact1_fraction':float((v==1).mean()),'le001_fraction':float((v<=.01).mean()),'ge099_fraction':float((v>=.99).mean()),'grid_0001_fraction':float((abs(v*1000-np.round(v*1000))<1e-8).mean()),'unique':len(uniq)})
+ for j in np.argsort(abs(z).max(0))[-10:]:
+  ii=int(np.argmax(abs(z[:,j])));row=int(tr[ii]);outliers.append({'fold':f,'feature':cols[j],'row_index':row,'molecule_name':d.molecule_name.iloc[row],'request_id':d.request_id.iloc[row],'SMILES':d.smiles.iloc[row],'value':float(a[ii,j]),'z':float(z[ii,j])})
+ for c in ['cyp1a2','cyp2c9','cyp2d6','cyp3a4']:
+  y=d[c+'_pic50_direct_inhibition'].to_numpy(float);mask=np.isfinite(y[tr]);rows=tr[mask];yy=y[rows]
+  for j,t in enumerate(taxonomy):
+   if t['group']=='predicted_CYP' or t['name'] in ['MW','logP','logD','TPSA','nHA','nHD','fChar','pka_basic','pka_acidic']:
+    v=x[rows,j];rho=float(spearmanr(v,yy).statistic) if np.std(v)>0 else None;signals.append({'fold':f,'target':c,'feature':cols[j],'n':len(rows),'spearman':rho,'pearson':float(np.corrcoef(v,yy)[0,1]) if np.std(v)>0 else None,'exact0_fraction':float((v==0).mean()) if j in probidx else None,'exact1_fraction':float((v==1).mean()) if j in probidx else None,'le001_fraction':float((v<=.01).mean()) if j in probidx else None,'ge099_fraction':float((v>=.99).mean()) if j in probidx else None,'distinct_teacher_values':len(np.unique(v))})
+for name,data in [('training-feature-stats',stats),('redundancy-pairs',pairs),('redundancy-summary',redundancy),('training-teacher-signal',signals),('training-extreme-values',outliers),('verified-probability-ranges',satur)]:pd.DataFrame(data).to_csv(O/(name+'.csv'),index=False)
+result={'shape':list(x.shape),'finite_all':bool(np.isfinite(x).all()),'taxonomy_counts':tax.groupby('group').size().to_dict(),'value_semantics_counts':tax.groupby('value_semantics').size().to_dict(),'no_fits':True,'analysis_scope':'postpurge trainingfolds only; association not causal','sources':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in [S/'admet120.npy',S/'manifest.json',S/'fold-manifest.json',S/'table.csv',base/'live-probe/feature-schema.json',base/'webbatch-docs/description.md',Path(__file__)]}};(O/'feature-analysis-receipt.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

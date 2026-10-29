@@ -1,0 +1,154 @@
+{
+  "blind_n": 750,
+  "raw_chEMBL_rows": 25841,
+  "raw_PubChem_rows": 85535,
+  "prepared_source_graphs_outside_request_queue": {
+    "ChEMBL_aggregate": 963,
+    "PubChem_Veith": 871
+  },
+  "blind_coverage": [
+    {
+      "level": "original_exact_isomeric",
+      "source": "ChEMBL_aggregate",
+      "blind_molecules": 0,
+      "source_rows": 0,
+      "source_ids": 0
+    },
+    {
+      "level": "original_exact_isomeric",
+      "source": "PubChem_Veith",
+      "blind_molecules": 1,
+      "source_rows": 5,
+      "source_ids": 5
+    },
+    {
+      "level": "prepared_exact_isomeric",
+      "source": "ChEMBL_aggregate",
+      "blind_molecules": 0,
+      "source_rows": 0,
+      "source_ids": 0
+    },
+    {
+      "level": "prepared_exact_isomeric",
+      "source": "PubChem_Veith",
+      "blind_molecules": 1,
+      "source_rows": 5,
+      "source_ids": 5
+    },
+    {
+      "level": "approved_equivalence_including_exact",
+      "source": "ChEMBL_aggregate",
+      "blind_molecules": 0,
+      "source_rows": 0,
+      "source_ids": 0
+    },
+    {
+      "level": "approved_equivalence_including_exact",
+      "source": "PubChem_Veith",
+      "blind_molecules": 1,
+      "source_rows": 5,
+      "source_ids": 5
+    },
+    {
+      "level": "broader_parent_uncharged_no_stereo",
+      "source": "ChEMBL_aggregate",
+      "blind_molecules": 0,
+      "source_rows": 0,
+      "source_ids": 0
+    },
+    {
+      "level": "broader_parent_uncharged_no_stereo",
+      "source": "PubChem_Veith",
+      "blind_molecules": 1,
+      "source_rows": 5,
+      "source_ids": 5
+    },
+    {
+      "level": "original_broader_parent_uncharged_no_stereo",
+      "source": "ChEMBL_aggregate",
+      "blind_molecules": 0,
+      "source_rows": 0,
+      "source_ids": 0
+    },
+    {
+      "level": "original_broader_parent_uncharged_no_stereo",
+      "source": "PubChem_Veith",
+      "blind_molecules": 1,
+      "source_rows": 5,
+      "source_ids": 5
+    }
+  ],
+  "retained_blind_target_cells_by_level": {
+    "approved_equivalence_including_exact": 5,
+    "broader_parent_uncharged_no_stereo": 5,
+    "prepared_exact_isomeric": 5
+  },
+  "outer_availability": [
+    {
+      "cohort": "own750",
+      "holdout_n": 750,
+      "level": "prepared_exact_isomeric",
+      "heldout_molecules_with_public_aux_in_full_table": 44,
+      "matching_public_rows_in_full_table": 44,
+      "still_retained_in_outer": 0,
+      "purged_from_outer": 44
+    },
+    {
+      "cohort": "own750",
+      "holdout_n": 750,
+      "level": "approved_equivalence_including_exact",
+      "heldout_molecules_with_public_aux_in_full_table": 48,
+      "matching_public_rows_in_full_table": 48,
+      "still_retained_in_outer": 0,
+      "purged_from_outer": 48
+    },
+    {
+      "cohort": "own750",
+      "holdout_n": 750,
+      "level": "broader_parent_uncharged_no_stereo",
+      "heldout_molecules_with_public_aux_in_full_table": 44,
+      "matching_public_rows_in_full_table": 44,
+      "still_retained_in_outer": 0,
+      "purged_from_outer": 44
+    },
+    {
+      "cohort": "briford529",
+      "holdout_n": 529,
+      "level": "prepared_exact_isomeric",
+      "heldout_molecules_with_public_aux_in_full_table": 13,
+      "matching_public_rows_in_full_table": 13,
+      "still_retained_in_outer": 0,
+      "purged_from_outer": 13
+    },
+    {
+      "cohort": "briford529",
+      "holdout_n": 529,
+      "level": "approved_equivalence_including_exact",
+      "heldout_molecules_with_public_aux_in_full_table": 16,
+      "matching_public_rows_in_full_table": 16,
+      "still_retained_in_outer": 0,
+      "purged_from_outer": 16
+    },
+    {
+      "cohort": "briford529",
+      "holdout_n": 529,
+      "level": "broader_parent_uncharged_no_stereo",
+      "heldout_molecules_with_public_aux_in_full_table": 13,
+      "matching_public_rows_in_full_table": 14,
+      "still_retained_in_outer": 0,
+      "purged_from_outer": 14
+    }
+  ],
+  "p4_typed_exact_blind_records": 0,
+  "scope": "existingcachedrecords only; noquery/newdata/inference; broadconnectivity notchemicalidentity; publicvalues nothiddenchallengevalues",
+  "source_hashes": {
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/fullfit-strae-prep/stage/original_full/official-test.csv": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/fullfit-strae-prep/stage/original_full/raw/chembl_all_isoforms.csv": "74a5233890e74e5514a6bbbad25cfe1c365181fb29af01c116e96cc5277b33fc",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/fullfit-strae-prep/stage/original_full/raw/pubchem_all_isoforms.csv": "1465de66ba50c0cda5d7fab3083a8ccdfba4adfbefef8d13a1fedade86b0847b",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p7/stage/table.csv": "da57ea6afdfb061a7f11abcf03216b308d64ee965b9f298c744af6b85befebe2",
+    "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/chemistry-audit/full-pool-preaudit/molecule-input-audit.csv": "e2420453ba35bc80253742724347a3f3c24ca8aebdc5a7cfa42424b9d6a831cc",
+    "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/chemistry-audit/full-pool-preaudit/tautomer-pair-chemical-details.csv": "a78bfe5d1440c4e601e9f0338dae9e124d28255117c80d2971611658fd0911ec",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p4-data/expanded-activity-occurrences.json": "94b834f588e8d85295ad7a03c1b6570be06dd660c9a43a0be682088eb223e36d",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/external-availability/audit_existing_measurements.py": "a068d3d5cd722a373b4cb8a56e5b1f4be43ac2cab590ccc0acf274e83c583323"
+  }
+}

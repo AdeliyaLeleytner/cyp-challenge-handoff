@@ -1,0 +1,586 @@
+{
+  "own750": {
+    "raw": {
+      "corrected": {
+        "macro_ST_RAE": 0.6207769340116913,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "ST_RAE": 0.7248478082546375,
+            "n": 150,
+            "baseline_error_sum": 85.47421287168001,
+            "interval_error_sum": 61.95579586232758,
+            "MAE": 0.6549415528684489,
+            "truth_mean": 4.93254014744,
+            "R2": 0.42989306939828464,
+            "Spearman": 0.6244241966309614,
+            "Kendall": 0.4573601789709172
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "ST_RAE": 0.6310326090216821,
+            "n": 151,
+            "baseline_error_sum": 48.094036301741724,
+            "interval_error_sum": 30.348905205871574,
+            "MAE": 0.46387521553277183,
+            "truth_mean": 4.547822063066225,
+            "R2": 0.4489309600265784,
+            "Spearman": 0.6350400836528406,
+            "Kendall": 0.4597792494481236
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "ST_RAE": 0.7233677213480186,
+            "n": 150,
+            "baseline_error_sum": 65.00516843010001,
+            "interval_error_sum": 47.022640563125606,
+            "MAE": 0.5375629691950322,
+            "truth_mean": 4.768406413979999,
+            "R2": 0.2918333265242893,
+            "Spearman": 0.5868580825814481,
+            "Kendall": 0.4024161073825503
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "ST_RAE": 0.4038595974224268,
+            "n": 515,
+            "baseline_error_sum": 265.2901926370797,
+            "interval_error_sum": 107.13999039852906,
+            "MAE": 0.43732909233663336,
+            "truth_mean": 4.190690702143688,
+            "R2": 0.7112866097956091,
+            "Spearman": 0.8466564111845082,
+            "Kendall": 0.662453250727211
+          }
+        },
+        "defined": true,
+        "scorer": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/chemistry-audit/corrected-native-reference/worktree/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3",
+          "function": "rae_soft_threshold_absolute_error",
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample."
+        },
+        "n_molecules": 750,
+        "macro_metrics": {
+          "ST_RAE": 0.6207769340116913,
+          "MAE": 0.5234272074832216,
+          "R2": 0.4704859914361903,
+          "Spearman": 0.6732446935124395,
+          "Kendall": 0.4955021966322005
+        }
+      },
+      "historical": {
+        "macro_ST_RAE": 0.6262050328671893,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "ST_RAE": 0.7416887245146591,
+            "n": 150,
+            "baseline_error_sum": 85.47421287168001,
+            "interval_error_sum": 63.3952599236908,
+            "MAE": 0.6644473348056221,
+            "truth_mean": 4.93254014744,
+            "R2": 0.4159768644857488,
+            "Spearman": 0.6094261967198543,
+            "Kendall": 0.4426845637583892
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "ST_RAE": 0.6219750113850545,
+            "n": 151,
+            "baseline_error_sum": 48.094036301741724,
+            "interval_error_sum": 29.913288776329036,
+            "MAE": 0.46053113999220524,
+            "truth_mean": 4.547822063066225,
+            "R2": 0.4553151164665248,
+            "Spearman": 0.6417183687696061,
+            "Kendall": 0.46560706401766
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "ST_RAE": 0.7275551654927073,
+            "n": 150,
+            "baseline_error_sum": 65.00516843010001,
+            "interval_error_sum": 47.29484607504273,
+            "MAE": 0.5382290418643504,
+            "truth_mean": 4.768406413979999,
+            "R2": 0.2918439978361542,
+            "Spearman": 0.5856526956753634,
+            "Kendall": 0.396152125279642
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "ST_RAE": 0.4136012300763366,
+            "n": 515,
+            "baseline_error_sum": 265.2901926370797,
+            "interval_error_sum": 109.72435000188446,
+            "MAE": 0.43610822669153354,
+            "truth_mean": 4.190690702143688,
+            "R2": 0.7125025839725075,
+            "Spearman": 0.8462794299685571,
+            "Kendall": 0.6610781610063844
+          }
+        },
+        "defined": true,
+        "scorer": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/chemistry-audit/corrected-native-reference/worktree/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3",
+          "function": "rae_soft_threshold_absolute_error",
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample."
+        },
+        "n_molecules": 750,
+        "macro_metrics": {
+          "ST_RAE": 0.6262050328671893,
+          "MAE": 0.5248289358384278,
+          "R2": 0.4689096406902338,
+          "Spearman": 0.6707691727833452,
+          "Kendall": 0.4913804785155189
+        }
+      },
+      "delta_corrected_minus_historical": {
+        "ST_RAE": -0.005428098855497998,
+        "MAE": -0.0014017283552062443,
+        "R2": 0.001576350745956523,
+        "Spearman": 0.0024755207290942938,
+        "Kendall": 0.004121718116681605
+      },
+      "prediction_sha256": "1051c79df2cc5467fee8dacf8e720e39146b7b3a1ec4111a44ab955943ba05d2",
+      "paired_scaffold_bootstrap": {
+        "seed": 20261026,
+        "groups": 665,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "delta_ST_RAE_95pct_interval": [
+          -0.016806560161948588,
+          0.00684828467694468
+        ],
+        "interpretation": "Conditional on these fitted single-seed models; not training-seed uncertainty or an acceptance threshold."
+      }
+    },
+    "native_published_placement": {
+      "corrected": {
+        "macro_ST_RAE": 1.0584450385024657,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "ST_RAE": 0.8710778871845876,
+            "n": 150,
+            "baseline_error_sum": 85.47421287168001,
+            "interval_error_sum": 74.4546967570287,
+            "MAE": 0.7335818232690012,
+            "truth_mean": 4.93254014744,
+            "R2": 0.28154066595413807,
+            "Spearman": 0.6244241966309614,
+            "Kendall": 0.4573601789709172
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "ST_RAE": 0.8966833391316231,
+            "n": 151,
+            "baseline_error_sum": 48.094036301741724,
+            "interval_error_sum": 43.12512106336327,
+            "MAE": 0.5763126348348392,
+            "truth_mean": 4.547822063066225,
+            "R2": 0.21855489370098424,
+            "Spearman": 0.6350400836528406,
+            "Kendall": 0.4597792494481236
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "ST_RAE": 1.6147419521860478,
+            "n": 150,
+            "baseline_error_sum": 65.00516843010001,
+            "interval_error_sum": 104.96657257300254,
+            "MAE": 0.9153520922175733,
+            "truth_mean": 4.768406413979999,
+            "R2": -0.3712093824896763,
+            "Spearman": 0.5868580825814481,
+            "Kendall": 0.4024161073825503
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "ST_RAE": 0.8512769755076042,
+            "n": 515,
+            "baseline_error_sum": 265.2901926370797,
+            "interval_error_sum": 225.8354328199229,
+            "MAE": 0.7133072408945711,
+            "truth_mean": 4.190690702143688,
+            "R2": 0.3811356754159355,
+            "Spearman": 0.8466564111845082,
+            "Kendall": 0.662453250727211
+          }
+        },
+        "defined": true,
+        "scorer": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/chemistry-audit/corrected-native-reference/worktree/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3",
+          "function": "rae_soft_threshold_absolute_error",
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample."
+        },
+        "n_molecules": 750,
+        "macro_metrics": {
+          "ST_RAE": 1.0584450385024657,
+          "MAE": 0.7346384478039962,
+          "R2": 0.1275054631453454,
+          "Spearman": 0.6732446935124395,
+          "Kendall": 0.4955021966322005
+        }
+      },
+      "historical": {
+        "macro_ST_RAE": 1.06288826786738,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "ST_RAE": 0.8937682427275891,
+            "n": 150,
+            "baseline_error_sum": 85.47421287168001,
+            "interval_error_sum": 76.39413703684532,
+            "MAE": 0.7465496620852546,
+            "truth_mean": 4.93254014744,
+            "R2": 0.23273505207206302,
+            "Spearman": 0.6094261967198543,
+            "Kendall": 0.4426845637583892
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "ST_RAE": 0.9057078352396492,
+            "n": 151,
+            "baseline_error_sum": 48.094036301741724,
+            "interval_error_sum": 43.5591455067876,
+            "MAE": 0.5825756832968301,
+            "truth_mean": 4.547822063066225,
+            "R2": 0.21799263356489362,
+            "Spearman": 0.6417183687696061,
+            "Kendall": 0.46560706401766
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "ST_RAE": 1.6009529594026306,
+            "n": 150,
+            "baseline_error_sum": 65.00516843010001,
+            "interval_error_sum": 104.07021677463507,
+            "MAE": 0.9086637174528566,
+            "truth_mean": 4.768406413979999,
+            "R2": -0.35199071110407476,
+            "Spearman": 0.5856526956753634,
+            "Kendall": 0.396152125279642
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "ST_RAE": 0.8511240340996514,
+            "n": 515,
+            "baseline_error_sum": 265.2901926370797,
+            "interval_error_sum": 225.79485896434494,
+            "MAE": 0.7108720337485825,
+            "truth_mean": 4.190690702143688,
+            "R2": 0.38567295616858865,
+            "Spearman": 0.8462794299685571,
+            "Kendall": 0.6610781610063844
+          }
+        },
+        "defined": true,
+        "scorer": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/chemistry-audit/corrected-native-reference/worktree/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3",
+          "function": "rae_soft_threshold_absolute_error",
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample."
+        },
+        "n_molecules": 750,
+        "macro_metrics": {
+          "ST_RAE": 1.06288826786738,
+          "MAE": 0.737165274145881,
+          "R2": 0.12110248267536763,
+          "Spearman": 0.6707691727833452,
+          "Kendall": 0.4913804785155189
+        }
+      },
+      "delta_corrected_minus_historical": {
+        "ST_RAE": -0.0044432293649143695,
+        "MAE": -0.0025268263418847248,
+        "R2": 0.006402980469977754,
+        "Spearman": 0.0024755207290942938,
+        "Kendall": 0.004121718116681605
+      },
+      "prediction_sha256": "1b037ba6a32264d2b7880cc4a44b5049d7db6bd94a0637b522eb8b196c6d860e"
+    }
+  },
+  "briford529": {
+    "raw": {
+      "corrected": {
+        "macro_ST_RAE": 0.6423089039065255,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "ST_RAE": 0.6658507675071043,
+            "n": 161,
+            "baseline_error_sum": 69.09367569106831,
+            "interval_error_sum": 46.00607698878479,
+            "MAE": 0.5181525128350527,
+            "truth_mean": 4.912084057192547,
+            "R2": 0.3195653976469004,
+            "Spearman": 0.6631182424660687,
+            "Kendall": 0.4841614906832298
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "ST_RAE": 0.5841010342684322,
+            "n": 139,
+            "baseline_error_sum": 34.91425464690647,
+            "interval_error_sum": 20.393452249969485,
+            "MAE": 0.3836772363125462,
+            "truth_mean": 4.6372683617697845,
+            "R2": 0.4384061646982167,
+            "Spearman": 0.6747352428616112,
+            "Kendall": 0.4934834740902929
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "ST_RAE": 0.8230671853840926,
+            "n": 175,
+            "baseline_error_sum": 71.88141153999999,
+            "interval_error_sum": 59.163231077663426,
+            "MAE": 0.5848492584136296,
+            "truth_mean": 4.7568992184,
+            "R2": 0.1728121323057974,
+            "Spearman": 0.5062695924764891,
+            "Kendall": 0.3526436781609195
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "ST_RAE": 0.4962166284664729,
+            "n": 270,
+            "baseline_error_sum": 126.00315617128888,
+            "interval_error_sum": 62.52486133145142,
+            "MAE": 0.4164306547709193,
+            "truth_mean": 4.573013782655556,
+            "R2": 0.6077571159999501,
+            "Spearman": 0.7682443441534785,
+            "Kendall": 0.5784661985405479
+          }
+        },
+        "defined": true,
+        "scorer": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/chemistry-audit/corrected-native-reference/worktree/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3",
+          "function": "rae_soft_threshold_absolute_error",
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample."
+        },
+        "n_molecules": 529,
+        "macro_metrics": {
+          "ST_RAE": 0.6423089039065255,
+          "MAE": 0.47577741558303693,
+          "R2": 0.3846352026627161,
+          "Spearman": 0.6530918554894118,
+          "Kendall": 0.47718871036874755
+        }
+      },
+      "historical": {
+        "macro_ST_RAE": 0.6226551676214216,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "ST_RAE": 0.6320107844826234,
+            "n": 161,
+            "baseline_error_sum": 69.09367569106831,
+            "interval_error_sum": 43.66794817630005,
+            "MAE": 0.5063251645305444,
+            "truth_mean": 4.912084057192547,
+            "R2": 0.3290139379444318,
+            "Spearman": 0.6546756383712906,
+            "Kendall": 0.4818322981366459
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "ST_RAE": 0.5615837150254683,
+            "n": 139,
+            "baseline_error_sum": 34.91425464690647,
+            "interval_error_sum": 19.60727683195496,
+            "MAE": 0.3843814232048876,
+            "truth_mean": 4.6372683617697845,
+            "R2": 0.4391607895362205,
+            "Spearman": 0.6779391393717322,
+            "Kendall": 0.4991137524762798
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "ST_RAE": 0.821540461531614,
+            "n": 175,
+            "baseline_error_sum": 71.88141153999999,
+            "interval_error_sum": 59.05348801211547,
+            "MAE": 0.586050177170675,
+            "truth_mean": 4.7568992184,
+            "R2": 0.1700823093040721,
+            "Spearman": 0.48694133452754146,
+            "Kendall": 0.3384564860426929
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "ST_RAE": 0.47548570944598045,
+            "n": 270,
+            "baseline_error_sum": 126.00315617128888,
+            "interval_error_sum": 59.91270010453796,
+            "MAE": 0.41037139497212055,
+            "truth_mean": 4.573013782655556,
+            "R2": 0.6243541930487514,
+            "Spearman": 0.7824935870176545,
+            "Kendall": 0.5906374776263252
+          }
+        },
+        "defined": true,
+        "scorer": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/chemistry-audit/corrected-native-reference/worktree/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3",
+          "function": "rae_soft_threshold_absolute_error",
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample."
+        },
+        "n_molecules": 529,
+        "macro_metrics": {
+          "ST_RAE": 0.6226551676214216,
+          "MAE": 0.4717820399695569,
+          "R2": 0.39065280745836894,
+          "Spearman": 0.6505124248220547,
+          "Kendall": 0.47751000357048595
+        }
+      },
+      "delta_corrected_minus_historical": {
+        "ST_RAE": 0.019653736285103918,
+        "MAE": 0.003995375613480012,
+        "R2": -0.006017604795652831,
+        "Spearman": 0.0025794306673571077,
+        "Kendall": -0.00032129320173840403
+      },
+      "prediction_sha256": "3a5685bc9e812539a82bd28a0ee16495c3acc187c9ae7ac39660f606319ff86e",
+      "paired_scaffold_bootstrap": {
+        "seed": 20261026,
+        "groups": 474,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "delta_ST_RAE_95pct_interval": [
+          0.0053061041385023015,
+          0.03557182589503565
+        ],
+        "interpretation": "Conditional on these fitted single-seed models; not training-seed uncertainty or an acceptance threshold."
+      }
+    },
+    "native_published_placement": {
+      "corrected": {
+        "macro_ST_RAE": 1.0874662587232864,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "ST_RAE": 0.9631512536206039,
+            "n": 161,
+            "baseline_error_sum": 69.09367569106831,
+            "interval_error_sum": 66.5476603591079,
+            "MAE": 0.6293472194716927,
+            "truth_mean": 4.912084057192547,
+            "R2": 0.04593511897497149,
+            "Spearman": 0.6631215947218148,
+            "Kendall": 0.484257929632353
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "ST_RAE": 0.9707684771536249,
+            "n": 139,
+            "baseline_error_sum": 34.91425464690647,
+            "interval_error_sum": 33.89365781453127,
+            "MAE": 0.48240232148834133,
+            "truth_mean": 4.6372683617697845,
+            "R2": 0.12178706989715726,
+            "Spearman": 0.6747352428616112,
+            "Kendall": 0.4934834740902929
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "ST_RAE": 1.7294291710272016,
+            "n": 175,
+            "baseline_error_sum": 71.88141153999999,
+            "interval_error_sum": 124.3138099718873,
+            "MAE": 0.9345957463905731,
+            "truth_mean": 4.7568992184,
+            "R2": -0.41508035530183474,
+            "Spearman": 0.5062695924764891,
+            "Kendall": 0.3526436781609195
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "ST_RAE": 0.6865161330917148,
+            "n": 270,
+            "baseline_error_sum": 126.00315617128888,
+            "interval_error_sum": 86.50319953206468,
+            "MAE": 0.4992094123491857,
+            "truth_mean": 4.573013782655556,
+            "R2": 0.47641107904287605,
+            "Spearman": 0.7682443441534785,
+            "Kendall": 0.5784661985405479
+          }
+        },
+        "defined": true,
+        "scorer": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/chemistry-audit/corrected-native-reference/worktree/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3",
+          "function": "rae_soft_threshold_absolute_error",
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample."
+        },
+        "n_molecules": 529,
+        "macro_metrics": {
+          "ST_RAE": 1.0874662587232864,
+          "MAE": 0.6363886749249481,
+          "R2": 0.05726322815329252,
+          "Spearman": 0.6530926935533484,
+          "Kendall": 0.47721282010602833
+        }
+      },
+      "historical": {
+        "macro_ST_RAE": 1.0692024542843719,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "ST_RAE": 0.9153923086629032,
+            "n": 161,
+            "baseline_error_sum": 69.09367569106831,
+            "interval_error_sum": 63.24781930485294,
+            "MAE": 0.6024666628790791,
+            "truth_mean": 4.912084057192547,
+            "R2": 0.09033265716686123,
+            "Spearman": 0.6546756383712906,
+            "Kendall": 0.4818322981366459
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "ST_RAE": 0.9188396581075071,
+            "n": 139,
+            "baseline_error_sum": 34.91425464690647,
+            "interval_error_sum": 32.08060180284198,
+            "MAE": 0.469285070419761,
+            "truth_mean": 4.6372683617697845,
+            "R2": 0.16359352137472727,
+            "Spearman": 0.6779391393717322,
+            "Kendall": 0.4991137524762798
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "ST_RAE": 1.7922306701079593,
+            "n": 175,
+            "baseline_error_sum": 71.88141153999999,
+            "interval_error_sum": 128.82807037264018,
+            "MAE": 0.9632846641201317,
+            "truth_mean": 4.7568992184,
+            "R2": -0.48655931293339205,
+            "Spearman": 0.48694133452754146,
+            "Kendall": 0.3384564860426929
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "ST_RAE": 0.6503471802591181,
+            "n": 270,
+            "baseline_error_sum": 126.00315617128888,
+            "interval_error_sum": 81.94579731974702,
+            "MAE": 0.4864422024875177,
+            "truth_mean": 4.573013782655556,
+            "R2": 0.5107781028558562,
+            "Spearman": 0.7824935870176545,
+            "Kendall": 0.5906374776263252
+          }
+        },
+        "defined": true,
+        "scorer": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/chemistry-audit/corrected-native-reference/worktree/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3",
+          "function": "rae_soft_threshold_absolute_error",
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample."
+        },
+        "n_molecules": 529,
+        "macro_metrics": {
+          "ST_RAE": 1.0692024542843719,
+          "MAE": 0.6303696499766224,
+          "R2": 0.06953624211601317,
+          "Spearman": 0.6505124248220547,
+          "Kendall": 0.47751000357048595
+        }
+      },
+      "delta_corrected_minus_historical": {
+        "ST_RAE": 0.01826380443891451,
+        "MAE": 0.006019024948325735,
+        "R2": -0.012273013962720652,
+        "Spearman": 0.002580268731293689,
+        "Kendall": -0.0002971834644576177
+      },
+      "prediction_sha256": "47c3f3e40027cdd86a832556c537b0e52f41fcde4f2bfd78fc1e17042ac80956"
+    }
+  },
+  "limits": [
+    "This is the corrected native reference, not an ADMETlab-feature candidate.",
+    "Outer cohorts remain frozen and overlap; results are not independent replications.",
+    "Broader stereo-related analogs and incomplete tautomer enumerations were not silently equated.",
+    "Native published placement is retained separately and is not a held-out-fitted calibrator."
+  ]
+}

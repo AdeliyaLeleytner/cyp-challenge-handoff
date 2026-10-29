@@ -1,0 +1,932 @@
+{
+  "input_count": 100,
+  "returned_count": 100,
+  "mapped_count": 100,
+  "failed_count": 0,
+  "associations": [
+    {
+      "request_id": "ba1ab2838412d48e9ae64f32458e5550d003a2cc9ff96b1816e5b2f5447fe462",
+      "input_index": 0,
+      "returned_row_index": 0,
+      "raw_smiles": "CCNc1ncc2nc(C)c(=O)n(Cc3ccc(F)cc3)c2n1",
+      "service_smiles": "CCNc1ncc2nc(C)c(=O)n(Cc3ccc(F)cc3)c2n1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba1adc3605252f35eabac792b2b9094c687110b5a724231fa5240a0eaf768263",
+      "input_index": 1,
+      "returned_row_index": 1,
+      "raw_smiles": "COC(=O)c1ccc(C(NC(=O)OCc2ccccc2)/C(F)=C/[C@@H](C)C(=O)N[C@@H](CO)Cc2ccccc2)cc1",
+      "service_smiles": "COC(=O)c1ccc(C(NC(=O)OCc2ccccc2)/C(F)=C/[C@@H](C)C(=O)N[C@@H](CO)Cc2ccccc2)cc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba1d6bd67e24d24d343d4129784fb3adf9d57fefc25efa0fccbb75b1d854a4ad",
+      "input_index": 2,
+      "returned_row_index": 2,
+      "raw_smiles": "Oc1cccc2ccc(SSc3ccc4cccc(O)c4n3)nc12",
+      "service_smiles": "Oc1cccc2ccc(SSc3ccc4cccc(O)c4n3)nc12",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba22f7570034438173bf63886e9c8c24fe06bd3cd8edde7b9ec8eb2b537aef14",
+      "input_index": 3,
+      "returned_row_index": 3,
+      "raw_smiles": "O=C(c1ccncc1)N1CCC2(CC1)CCN(c1ccncc1)CC2",
+      "service_smiles": "O=C(c1ccncc1)N1CCC2(CC1)CCN(c1ccncc1)CC2",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba2379f34bf89893f89bfaba3df234d3e4f1cca45f7e9dbe6f79e19524625908",
+      "input_index": 4,
+      "returned_row_index": 4,
+      "raw_smiles": "CNCCCC(C#N)(c1ccc(OC)c(OC)c1)C(C)C",
+      "service_smiles": "CNCCCC(C#N)(c1ccc(OC)c(OC)c1)C(C)C",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba244d0a46dda32103866dde415883d818a7abfd2a4f7cc753eadd5cc688e56d",
+      "input_index": 5,
+      "returned_row_index": 5,
+      "raw_smiles": "O=C(Nc1ccc(C(F)(F)F)cc1)c1nc(-c2cccc(F)c2)cs1",
+      "service_smiles": "O=C(Nc1ccc(C(F)(F)F)cc1)c1nc(-c2cccc(F)c2)cs1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba261fac3c601abfdcb4e59bfe855b7951b13201859e227cc3420d883b4a1e2d",
+      "input_index": 6,
+      "returned_row_index": 6,
+      "raw_smiles": "Cc1c(-c2ccc(O)cc2)nn(-c2ccc(O)cc2)c1-c1ccc(OCCN2CCCCC2)cc1",
+      "service_smiles": "Cc1c(-c2ccc(O)cc2)nn(-c2ccc(O)cc2)c1-c1ccc(OCCN2CCCCC2)cc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba299aacaa7d35850201ffe4d89b0e04eea8c33c713f78cfa6c96c779a23e72c",
+      "input_index": 7,
+      "returned_row_index": 7,
+      "raw_smiles": "O=C(NCc1ccncn1)c1ccc(Oc2ccc(C#C[C@]3(O)CN4CCC3CC4)cc2)cc1",
+      "service_smiles": "O=C(NCc1ccncn1)c1ccc(Oc2ccc(C#C[C@]3(O)CN4CCC3CC4)cc2)cc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba2d2c756a8fe0cd7c5257c1b7febc72c4c6af01c0ce1848486ea6a24e2db764",
+      "input_index": 8,
+      "returned_row_index": 8,
+      "raw_smiles": "C/C(=N\\Nc1nc2ccccc2n1C1CN(C2CCN(c3cccc4c3C(=O)N(C3CCC(=O)NC3=O)C4=O)CC2)C1)c1ccccn1",
+      "service_smiles": "C/C(=N\\Nc1nc2ccccc2n1C1CN(C2CCN(c3cccc4c3C(=O)N(C3CCC(=O)NC3=O)C4=O)CC2)C1)c1ccccn1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba33f0b5f09a29e501db96eda266e875abc332cb4dcdf2326e25a751ab09b9a5",
+      "input_index": 9,
+      "returned_row_index": 9,
+      "raw_smiles": "C[C@@H]1O[C@@H](n2cc(F)c(=O)[nH]c2=O)[C@H](O)[C@@H]1O",
+      "service_smiles": "C[C@@H]1O[C@@H](n2cc(F)c(=O)[nH]c2=O)[C@H](O)[C@@H]1O",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba376aad1cca003f1235e126a0bbc0ce430e078936ecbe62f677c8fa3250948b",
+      "input_index": 10,
+      "returned_row_index": 10,
+      "raw_smiles": "CCOC(=O)CCn1c(O)c2c(c1O)[C@H]1[C@H](O)[C@H](O)C/C(=N/NC(=O)OCc3ccccc3)[C@@H]1CC2",
+      "service_smiles": "CCOC(=O)CCn1c(O)c2c(c1O)[C@H]1[C@H](O)[C@H](O)C/C(=N/NC(=O)OCc3ccccc3)[C@@H]1CC2",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba382413f8ae43a0327d3e95426b2bc684c3c11b5f756674e3a1d6639eb47980",
+      "input_index": 11,
+      "returned_row_index": 11,
+      "raw_smiles": "CCCNc1ncnc2[nH]ncc12",
+      "service_smiles": "CCCNc1ncnc2[nH]ncc12",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba3912f8cc31b9b25048044c18472e5e98988bd7ecc6d78d378e0f131acb69cf",
+      "input_index": 12,
+      "returned_row_index": 12,
+      "raw_smiles": "CN(c1ccc2[nH]ncc2c1)c1ccn(-c2ccccn2)n1",
+      "service_smiles": "CN(c1ccc2[nH]ncc2c1)c1ccn(-c2ccccn2)n1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba391a979f4aa69dd7878c5c6b919437ae00e37047133dbf211569a72dd4b025",
+      "input_index": 13,
+      "returned_row_index": 13,
+      "raw_smiles": "Fc1ccc(OC(CC2CNC2)c2ccc(Cl)c(F)c2)cc1",
+      "service_smiles": "Fc1ccc(OC(CC2CNC2)c2ccc(Cl)c(F)c2)cc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba3960488e14df01828021be41d0309271da0a3cc5afca736664f7f9d84a3f6a",
+      "input_index": 14,
+      "returned_row_index": 14,
+      "raw_smiles": "FC(F)(F)c1ccc(N(c2cccnc2)C2CCN(Cc3cccc(C(F)(F)F)c3)CC2)cc1",
+      "service_smiles": "FC(F)(F)c1ccc(N(c2cccnc2)C2CCN(Cc3cccc(C(F)(F)F)c3)CC2)cc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba397adb5db93b461da4d21c6df2ddeec0fa778ed633c835e8c17f2e7fd675ce",
+      "input_index": 15,
+      "returned_row_index": 15,
+      "raw_smiles": "CC(C)(O)CC(=O)N[C@@H]1CC[C@@]2(S(=O)(=O)c3ccc(F)cc3)c3ccc(C(F)(C(F)(F)F)C(F)(F)F)nc3CC[C@@H]12",
+      "service_smiles": "CC(C)(O)CC(=O)N[C@@H]1CC[C@@]2(S(=O)(=O)c3ccc(F)cc3)c3ccc(C(F)(C(F)(F)F)C(F)(F)F)nc3CC[C@@H]12",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba399002308873fa277143f1715c361304f4d9123fdb6043196cd9e1ee2c1537",
+      "input_index": 16,
+      "returned_row_index": 16,
+      "raw_smiles": "CCOC(=O)OCC1OC(C#Cc2ccc(F)cc2F)C=CC1OC(=O)OCC",
+      "service_smiles": "CCOC(=O)OCC1OC(C#Cc2ccc(F)cc2F)C=CC1OC(=O)OCC",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba3b172da8b27f1ca76e898752eee6f0da587386b1e7c39d85356a80fcdd4f27",
+      "input_index": 17,
+      "returned_row_index": 17,
+      "raw_smiles": "COc1cccc(Cn2c(=O)c(-c3ccccc3)nc3cncnc32)c1",
+      "service_smiles": "COc1cccc(Cn2c(=O)c(-c3ccccc3)nc3cncnc32)c1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba3d1e7fafa6393284dd12cdca296f31d2eb75ae7566ec257f2ef3de56802346",
+      "input_index": 18,
+      "returned_row_index": 18,
+      "raw_smiles": "O=C(O)c1c[nH]c2cc(C(F)(F)F)ccc2c1=O",
+      "service_smiles": "O=C(O)c1c[nH]c2cc(C(F)(F)F)ccc2c1=O",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba3e5efc8a9fe8139f31c36666f92127654f52b8c2975929fb72b314e8db189d",
+      "input_index": 19,
+      "returned_row_index": 19,
+      "raw_smiles": "CC(C)(O)c1ccccc1CC[C@@H](SCC1(CC(=O)O)CC1)c1cccc(/C=C/c2ccc3ccc(Cl)cc3n2)c1",
+      "service_smiles": "CC(C)(O)c1ccccc1CC[C@@H](SCC1(CC(=O)O)CC1)c1cccc(/C=C/c2ccc3ccc(Cl)cc3n2)c1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba3f09c8e00f1e5532d8c5cfbba96c474abac0cfce722d236bec5073d6ef1e18",
+      "input_index": 20,
+      "returned_row_index": 20,
+      "raw_smiles": "C=CCN1CC(=O)N2[C@@H](Cc3ccc(O)cc3)C(=O)N(Cc3cccc4c(C(=O)Nc5ccc(OCCN(C)C)nc5)cn(C)c34)C[C@@H]2N1C(=O)NCc1ccccc1",
+      "service_smiles": "C=CCN1CC(=O)N2[C@@H](Cc3ccc(O)cc3)C(=O)N(Cc3cccc4c(C(=O)Nc5ccc(OCCN(C)C)nc5)cn(C)c34)C[C@@H]2N1C(=O)NCc1ccccc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba3f820718d6e0e4cd804daea89becb677916561b3774f2b8c8f1acb11315abb",
+      "input_index": 21,
+      "returned_row_index": 21,
+      "raw_smiles": "Cn1cccc1C(=O)N1CCC2(CCN(C(=O)Nc3cccc(C#N)c3)CC2)CC1",
+      "service_smiles": "Cn1cccc1C(=O)N1CCC2(CCN(C(=O)Nc3cccc(C#N)c3)CC2)CC1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba42050c09ad05afd1d98313e8fd607c82d94d9ec8143578696d90f85d4a9907",
+      "input_index": 22,
+      "returned_row_index": 22,
+      "raw_smiles": "CCNC(=O)Nc1ccc(-c2nc3c(c(N4CCOC[C@@H]4C)n2)CN(C2COC2)CC3)cc1",
+      "service_smiles": "CCNC(=O)Nc1ccc(-c2nc3c(c(N4CCOC[C@@H]4C)n2)CN(C2COC2)CC3)cc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba43b2e0d1ace8c9ebc72c46571bf1d8e462cf6193361f009fae7a217e1c8b27",
+      "input_index": 23,
+      "returned_row_index": 23,
+      "raw_smiles": "CN(C)c1ncc2nc(-c3ccc(F)cc3)c(=O)n(CCC#N)c2n1",
+      "service_smiles": "CN(C)c1ncc2nc(-c3ccc(F)cc3)c(=O)n(CCC#N)c2n1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba443742258aa48f6846c932235956471f69bf5f8315cc8c966b0c691c81a85f",
+      "input_index": 24,
+      "returned_row_index": 24,
+      "raw_smiles": "CN[C@@H](C)C(=O)N[C@H]1CN(C(=O)CC(C)C)c2ccccc2N(Cc2c(OC)ccc3ccccc23)C1=O",
+      "service_smiles": "CN[C@@H](C)C(=O)N[C@H]1CN(C(=O)CC(C)C)c2ccccc2N(Cc2c(OC)ccc3ccccc23)C1=O",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba4777dbc1a3347fb05944aab21d97a408679d42cca5e403c4fd8be5dc2585d9",
+      "input_index": 25,
+      "returned_row_index": 25,
+      "raw_smiles": "CNC(=O)C(=O)NCCCC/C=C\\CCCCCCCOCC(=O)O",
+      "service_smiles": "CNC(=O)C(=O)NCCCC/C=C\\CCCCCCCOCC(=O)O",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba4c49073c39f427676faccd1105be2c2c2fdff210296d54cd6291c5d1a1dbe3",
+      "input_index": 26,
+      "returned_row_index": 26,
+      "raw_smiles": "CCCC/C=C/C(NC(=O)C(C)(C)C)c1ccccc1",
+      "service_smiles": "CCCC/C=C/C(NC(=O)C(C)(C)C)c1ccccc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba5368672979b8402ca83d6d0373d16d70a318266a1d952bf95cf4a3cf3b6880",
+      "input_index": 27,
+      "returned_row_index": 27,
+      "raw_smiles": "COc1ccc(C(=O)C(OC(=O)CNC(=O)c2ccco2)c2ccccc2)cc1",
+      "service_smiles": "COc1ccc(C(=O)C(OC(=O)CNC(=O)c2ccco2)c2ccccc2)cc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba53e83b295c26c6471ad70d800bbbefc933882fb87e43b00cc4e6585d8cb595",
+      "input_index": 28,
+      "returned_row_index": 28,
+      "raw_smiles": "C[C@@]12CC[C@H]3[C@@H](CCC4C(=O)C(=O)CC[C@]43C)[C@H]1CCC2=O",
+      "service_smiles": "C[C@@]12CC[C@H]3[C@@H](CCC4C(=O)C(=O)CC[C@]43C)[C@H]1CCC2=O",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba57745640affe360f87d53dc3334b085be90968481009f0a8a08120f810e257",
+      "input_index": 29,
+      "returned_row_index": 29,
+      "raw_smiles": "COC(=O)N1CC[C@@H](NC(=O)Nc2nc(C)c(C(C)=O)s2)[C@H](CN2CCC[C@@H](Cc3ccc(F)cc3)C2)C1",
+      "service_smiles": "COC(=O)N1CC[C@@H](NC(=O)Nc2nc(C)c(C(C)=O)s2)[C@H](CN2CCC[C@@H](Cc3ccc(F)cc3)C2)C1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba59c2005db7073517d3784eee3b1ec9270e69cea4554c4b1b535f074cae56a8",
+      "input_index": 30,
+      "returned_row_index": 30,
+      "raw_smiles": "COc1ccc(/C=C(\\C#N)C(=O)NCC2CCCO2)cc1OC",
+      "service_smiles": "COc1ccc(/C=C(\\C#N)C(=O)NCC2CCCO2)cc1OC",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba5beeb6896daec31f4a95021eb600debf58406129eb7cf43fd5e7c2fc3f5a23",
+      "input_index": 31,
+      "returned_row_index": 31,
+      "raw_smiles": "COc1cc(CNCc2cccs2)ccc1OCC(N)=O",
+      "service_smiles": "COc1cc(CNCc2cccs2)ccc1OCC(N)=O",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba5d0bbf93b8053cdea22a17eb87908be5c58ebf0733957d3db59f56a8617b35",
+      "input_index": 32,
+      "returned_row_index": 32,
+      "raw_smiles": "COc1ccccc1COCCCOc1ccc(N2C(=O)CNC[C@@H]2COc2ccc3c(c2)N(CCOC(=O)C(C)C)CCC3)cc1",
+      "service_smiles": "COc1ccccc1COCCCOc1ccc(N2C(=O)CNC[C@@H]2COc2ccc3c(c2)N(CCOC(=O)C(C)C)CCC3)cc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba61ce7f77673e5f799c9108d0ec5b8c98db4e7dc2a566461f3b03c45bd8ef8c",
+      "input_index": 33,
+      "returned_row_index": 33,
+      "raw_smiles": "COc1ccc2[nH]c(-c3ccccc3)c(CCNC(C)=O)c2c1",
+      "service_smiles": "COc1ccc2[nH]c(-c3ccccc3)c(CCNC(C)=O)c2c1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba65c8a07fa69937b6d65a722dd56e8a27aa5aa21012c01d8a9d8de20c9782cd",
+      "input_index": 34,
+      "returned_row_index": 34,
+      "raw_smiles": "Cc1cc(C)n2nc(-c3sccc3-n3cccc3)cc2n1",
+      "service_smiles": "Cc1cc(C)n2nc(-c3sccc3-n3cccc3)cc2n1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba685b73739ccd2d4692f13965cc8ce8fb5ef66ec7d936d6b6b3f2a6d4f9877b",
+      "input_index": 35,
+      "returned_row_index": 35,
+      "raw_smiles": "C=C=C[C@H]1CC[C@H](c2cc(=O)c3ccc4ccccc4c3o2)CC1",
+      "service_smiles": "C=C=C[C@H]1CC[C@H](c2cc(=O)c3ccc4ccccc4c3o2)CC1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba6e6dd2960d3d66771aff5e30e3319c841b5e993e0c0c1252b038791538d88f",
+      "input_index": 36,
+      "returned_row_index": 36,
+      "raw_smiles": "CN(C)CCCCSC(=N)N",
+      "service_smiles": "CN(C)CCCCSC(=N)N",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba70ed7a8eef6aa7fb3e12fc6f16dedd57cd8a02a2e58c429e5d264d92120c7f",
+      "input_index": 37,
+      "returned_row_index": 37,
+      "raw_smiles": "CC(C)(c1cc(-c2cccc(-c3ccc[n+]([O-])c3)c2)c2ncccc2c1)S(C)(=O)=O",
+      "service_smiles": "CC(C)(c1cc(-c2cccc(-c3ccc[n+]([O-])c3)c2)c2ncccc2c1)S(C)(=O)=O",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba7192eb0814d54abac2990eb07f0fdff1a1e243afe0eafde5819e6c48a41cb9",
+      "input_index": 38,
+      "returned_row_index": 38,
+      "raw_smiles": "Cc1ccc(F)cc1C(C)(C)CC(O)(Cc1[nH]c2cnccc2c1C)C(F)(F)F",
+      "service_smiles": "Cc1ccc(F)cc1C(C)(C)CC(O)(Cc1[nH]c2cnccc2c1C)C(F)(F)F",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba7349c110115ff85c8d3f9873672080ce5dcd9bd4267abc89178aff8c85593d",
+      "input_index": 39,
+      "returned_row_index": 39,
+      "raw_smiles": "O=C(Cn1c(=O)oc2ccc(Cl)cc21)N1CCCC(c2ccccc2)C1CN1CCOCC1",
+      "service_smiles": "O=C(Cn1c(=O)oc2ccc(Cl)cc21)N1CCCC(c2ccccc2)C1CN1CCOCC1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba73906d93e77b57198621611244acb168d1f901208e01df87197fefc53662dd",
+      "input_index": 40,
+      "returned_row_index": 40,
+      "raw_smiles": "c1ccc2nc(COc3ccc4ncn(-c5ccncn5)c4c3)ccc2c1",
+      "service_smiles": "c1ccc2nc(COc3ccc4ncn(-c5ccncn5)c4c3)ccc2c1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba73d04a9787e27305ae4b82f3209da39c390ad1ab95d573d9ec3be746189b33",
+      "input_index": 41,
+      "returned_row_index": 41,
+      "raw_smiles": "CNC[C@]1(OC)Cc2ccccc2[C@@H]1Oc1ccccc1C",
+      "service_smiles": "CNC[C@]1(OC)Cc2ccccc2[C@@H]1Oc1ccccc1C",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba73dde9a7455cce9e996a4f7714a2b5dbef9d1db2e09b01a119084539a5ae11",
+      "input_index": 42,
+      "returned_row_index": 42,
+      "raw_smiles": "Cc1ccccc1OCC(=O)N/N=C1\\CCOc2c(C)cccc21",
+      "service_smiles": "Cc1ccccc1OCC(=O)N/N=C1\\CCOc2c(C)cccc21",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba73f4c497ad2ecd22f460a86caea297c8ee3dc0f90ee92a6c44e4f1902bc94e",
+      "input_index": 43,
+      "returned_row_index": 43,
+      "raw_smiles": "Cc1ccc(C)c(NC(=O)C2(C)CC3c4ccccc4C2c2ccccc23)c1",
+      "service_smiles": "Cc1ccc(C)c(NC(=O)C2(C)CC3c4ccccc4C2c2ccccc23)c1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba7653229ca43b27e0e4b0f6fef624b087ef9ee954fd2fab69722e8211ddd783",
+      "input_index": 44,
+      "returned_row_index": 44,
+      "raw_smiles": "c1ccc2sc(N3CCN(Cc4ccc5c(c4)OCO5)CC3)nc2c1",
+      "service_smiles": "c1ccc2sc(N3CCN(Cc4ccc5c(c4)OCO5)CC3)nc2c1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba771a9a83c14dca25f5d35d56b3479229e470bca2a13684c3928a2c550ba25a",
+      "input_index": 45,
+      "returned_row_index": 45,
+      "raw_smiles": "COc1ccc(N2C(=O)CCC(C(=O)N3CCC(C(N)=O)CC3)C2c2ccc(F)cc2)cc1",
+      "service_smiles": "COc1ccc(N2C(=O)CCC(C(=O)N3CCC(C(N)=O)CC3)C2c2ccc(F)cc2)cc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba7a084a683ee4f19013d06917fcf4249e4d656d026432375505b36697ef63ed",
+      "input_index": 46,
+      "returned_row_index": 46,
+      "raw_smiles": "O=C(N[C@H](Cc1cccc2ccccc12)C(=O)N1CCC(N2CCCCC2)CC1)N1CCC(n2c(=O)[nH]c3ccccc32)CC1",
+      "service_smiles": "O=C(N[C@H](Cc1cccc2ccccc12)C(=O)N1CCC(N2CCCCC2)CC1)N1CCC(n2c(=O)[nH]c3ccccc32)CC1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba7f528cf7ca4dcd60c88d8346672780730eae4cab6e1f9778bf1fa356a38dde",
+      "input_index": 47,
+      "returned_row_index": 47,
+      "raw_smiles": "CS(=O)(=O)c1ccc(NC(=O)N2C[C@H]3C[C@@H](c4ccccc4C(F)(F)F)C[C@H]3C2)c(C(=O)O)c1",
+      "service_smiles": "CS(=O)(=O)c1ccc(NC(=O)N2C[C@H]3C[C@@H](c4ccccc4C(F)(F)F)C[C@H]3C2)c(C(=O)O)c1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba8550da6f6fa618ed3fe22973aed74c3da94506800f5559b914a24d84ae3640",
+      "input_index": 48,
+      "returned_row_index": 48,
+      "raw_smiles": "N[C@@H](Cc1c[nH]c2cc([N+](=O)[O-])ccc12)C(=O)O",
+      "service_smiles": "N[C@@H](Cc1c[nH]c2cc([N+](=O)[O-])ccc12)C(=O)O",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba88ae3ae1972b13a2a3eacbf84b197a2cee79b8602408d05b10d74a0a0ceae6",
+      "input_index": 49,
+      "returned_row_index": 49,
+      "raw_smiles": "C=C1CC[C@H](O)C/C1=C/C=C1\\CCC[C@]2(C)[C@@H]([C@H](C)CCCC(C)C)CC[C@@H]12",
+      "service_smiles": "C=C1CC[C@H](O)C/C1=C/C=C1\\CCC[C@]2(C)[C@@H]([C@H](C)CCCC(C)C)CC[C@@H]12",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba89fd5f75879c21dd6b3b51f9fd7ca68f4e28a86d57c0ae21c6a409d91137f5",
+      "input_index": 50,
+      "returned_row_index": 50,
+      "raw_smiles": "O=C1CC(c2cccc(F)c2)SC(N(c2ccccc2)c2ccccc2)=N1",
+      "service_smiles": "O=C1CC(c2cccc(F)c2)SC(N(c2ccccc2)c2ccccc2)=N1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba8a1b69876ed897762a07fa376315b81324eca9abd7b208d6516685050a4fd9",
+      "input_index": 51,
+      "returned_row_index": 51,
+      "raw_smiles": "Cc1c(Br)c([N+](=O)[O-])nn1CC(=O)NCc1ccccn1",
+      "service_smiles": "Cc1c(Br)c([N+](=O)[O-])nn1CC(=O)NCc1ccccn1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba8b738a78b4aa039490b345dc008bbc348ca3bffbfc9aa59dcf67f238b73aee",
+      "input_index": 52,
+      "returned_row_index": 52,
+      "raw_smiles": "CC(=O)Oc1ccc(Cl)c2cccnc12",
+      "service_smiles": "CC(=O)Oc1ccc(Cl)c2cccnc12",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba8b933b4358526a74e9af63bdda6c216163d9ec725e4aff43964e1a266e8581",
+      "input_index": 53,
+      "returned_row_index": 53,
+      "raw_smiles": "COc1ccc(COc2ccc(Cn3cnc4cc(C#CC5CCNC5)cnc43)cc2OC)cn1",
+      "service_smiles": "COc1ccc(COc2ccc(Cn3cnc4cc(C#CC5CCNC5)cnc43)cc2OC)cn1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba8ddf2ac08a975bae04dfafada5a516e54a9ef8b7c8a671bc623aa664bbd2e6",
+      "input_index": 54,
+      "returned_row_index": 54,
+      "raw_smiles": "CCC1=C2CCc3c(c(O)n(CC)c3O)[C@H]2[C@@]2(Cc3ccccc3)C(=O)N(CC3CC3)C(=O)N2C1=O",
+      "service_smiles": "CCC1=C2CCc3c(c(O)n(CC)c3O)[C@H]2[C@@]2(Cc3ccccc3)C(=O)N(CC3CC3)C(=O)N2C1=O",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba8f5a8078ec31797d48aca710e506370d9d1b87ce3fbe640f7cd22d72b24318",
+      "input_index": 55,
+      "returned_row_index": 55,
+      "raw_smiles": "COc1ncc2cc1NS(=O)(=O)c1cccc(c1)C(=O)NCc1cccc(c1)Cc1cnc3sc-2nn13",
+      "service_smiles": "COc1ncc2cc1NS(=O)(=O)c1cccc(c1)C(=O)NCc1cccc(c1)Cc1cnc3sc-2nn13",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba925ab33e0c24701d853173c472091af14a9b276008556e9b9b84f8ef0f5fc6",
+      "input_index": 56,
+      "returned_row_index": 56,
+      "raw_smiles": "CCC(C)n1ncn(-c2ccc(N3CCN(c4ccc(OC[C@@H]5CO[C@@](Cn6cncn6)(c6ccc(Cl)cc6Cl)O5)cn4)CC3)cc2)c1=O",
+      "service_smiles": "CCC(C)n1ncn(-c2ccc(N3CCN(c4ccc(OC[C@@H]5CO[C@@](Cn6cncn6)(c6ccc(Cl)cc6Cl)O5)cn4)CC3)cc2)c1=O",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba925da0b021dc398941eb3bea97504aa6fdc28f3996906471404b56b981fe14",
+      "input_index": 57,
+      "returned_row_index": 57,
+      "raw_smiles": "Oc1cc(CN2COc3ccccc32)c(O)cc1CNC1CCCCC1",
+      "service_smiles": "Oc1cc(CN2COc3ccccc32)c(O)cc1CNC1CCCCC1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba981fa64a25170e4f945b65e79221d9c8c35d28201f627c26fb1548e96d72d5",
+      "input_index": 58,
+      "returned_row_index": 58,
+      "raw_smiles": "O=C(CSc1nc2ccccc2c(=O)n1CCCC(=O)N1CCCC1)NCc1ccco1",
+      "service_smiles": "O=C(CSc1nc2ccccc2c(=O)n1CCCC(=O)N1CCCC1)NCc1ccco1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba983e7f34ccec3a1c9eb02deb81e2db2e0ac382d767ae43c025420e748a87ca",
+      "input_index": 59,
+      "returned_row_index": 59,
+      "raw_smiles": "CCCCCCCCCCCCCCCCCCOP(=O)(O)CO[C@H](C)Cn1cnc2c(N)ncnc21",
+      "service_smiles": "CCCCCCCCCCCCCCCCCCOP(=O)(O)CO[C@H](C)Cn1cnc2c(N)ncnc21",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba9c6b2bd56785bcdbb1e37945b693d0d8112db19b7b988fe84ac0ceb739f395",
+      "input_index": 60,
+      "returned_row_index": 60,
+      "raw_smiles": "CCc1c(CCCC(=O)O)cccc1-c1cnc(-c2ccc(OC(C)C)c(C#N)c2)s1",
+      "service_smiles": "CCc1c(CCCC(=O)O)cccc1-c1cnc(-c2ccc(OC(C)C)c(C#N)c2)s1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "ba9d436c2b45d778045e7ba5ffcc7ec6d6b55162bbb5b3e4eabb92e5657be645",
+      "input_index": 61,
+      "returned_row_index": 61,
+      "raw_smiles": "Cc1ccn(-c2ccc(C(=O)N3CCC(F)(F)/C(=C\\C(=O)NCCO)c4ccccc43)c(Cl)c2)n1",
+      "service_smiles": "Cc1ccn(-c2ccc(C(=O)N3CCC(F)(F)/C(=C\\C(=O)NCCO)c4ccccc43)c(Cl)c2)n1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "baa25f13a8cfee05ad03341062dea2a6b756a1b1bfad06a014807e9712055ec9",
+      "input_index": 62,
+      "returned_row_index": 62,
+      "raw_smiles": "COC(=O)c1ccc(C(NC(=O)OCc2ccccc2)/C(C)=C/[C@@H](C)C(=O)N2CCN(C)CC2)cc1",
+      "service_smiles": "COC(=O)c1ccc(C(NC(=O)OCc2ccccc2)/C(C)=C/[C@@H](C)C(=O)N2CCN(C)CC2)cc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "baa5f9b4a45083d3bcf2fd915821aedbf7e0a6785e870fd8ce71fa8a9c872d94",
+      "input_index": 63,
+      "returned_row_index": 63,
+      "raw_smiles": "Cc1cn([C@H]2C[C@H](O)[C@@H](COC(N)=O)O2)c(=O)[nH]c1=O",
+      "service_smiles": "Cc1cn([C@H]2C[C@H](O)[C@@H](COC(N)=O)O2)c(=O)[nH]c1=O",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "baa68abf3b2c465b5f713412660d8c274a8ecbe7525e0f284d33ceeca152affe",
+      "input_index": 64,
+      "returned_row_index": 64,
+      "raw_smiles": "Cn1cccc1C(=O)N1CCC2(CC1)CN(C(c1ccccc1)c1ccccc1)C2",
+      "service_smiles": "Cn1cccc1C(=O)N1CCC2(CC1)CN(C(c1ccccc1)c1ccccc1)C2",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "baacb37b639f08af8ac177351d7ec341bcdeb6a33f7ef3db4294f5da0b7970dd",
+      "input_index": 65,
+      "returned_row_index": 65,
+      "raw_smiles": "ClC1=C(Cl)C2(Cl)C3C4C=CC(C4)C3C1(Cl)C2(Cl)Cl",
+      "service_smiles": "ClC1=C(Cl)C2(Cl)C3C4C=CC(C4)C3C1(Cl)C2(Cl)Cl",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bab43ae17624361114c53edb79e83dc27e499151dd68fcfdea90ad74973303e1",
+      "input_index": 66,
+      "returned_row_index": 66,
+      "raw_smiles": "CNC(=O)c1cc(-n2ncc3cc(Nc4ccccc4Cl)cnc32)cs1",
+      "service_smiles": "CNC(=O)c1cc(-n2ncc3cc(Nc4ccccc4Cl)cnc32)cs1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bab535ab5b58faed90822183aa04e1d786be4f51b8d80a0ea35c8e93dd79ac1c",
+      "input_index": 67,
+      "returned_row_index": 67,
+      "raw_smiles": "CCCn1c(=O)[nH]c2[nH]c(-c3ccc(S(=O)(=O)O)cc3)nc2c1=O",
+      "service_smiles": "CCCn1c(=O)[nH]c2[nH]c(-c3ccc(S(=O)(=O)O)cc3)nc2c1=O",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bab6e992243cfadc922643c8b03fec65be35b2ee9ced05abf8662dcccc0b5d24",
+      "input_index": 68,
+      "returned_row_index": 68,
+      "raw_smiles": "NC(=O)c1cc(C(N)=O)n(-c2cccc(-c3cc(C(F)(F)F)ccc3C(F)(F)F)c2)n1",
+      "service_smiles": "NC(=O)c1cc(C(N)=O)n(-c2cccc(-c3cc(C(F)(F)F)ccc3C(F)(F)F)c2)n1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "babbd6d8a2a5d0f8a1176d1a1257f41e18623e5f818bbc345df4c90def6196b9",
+      "input_index": 69,
+      "returned_row_index": 69,
+      "raw_smiles": "COc1ccc(C(=O)N2CCC3(CC2)CN(c2ncccn2)C3)cc1",
+      "service_smiles": "COc1ccc(C(=O)N2CCC3(CC2)CN(c2ncccn2)C3)cc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "babfe6ef8e6513e3543f70e5bb4e5c9b9845bb559fa5940bbd5828006b3bb9c1",
+      "input_index": 70,
+      "returned_row_index": 70,
+      "raw_smiles": "N#Cc1sc2nc(-c3cccs3)cc(-c3ccc(Cl)cc3)c2c1N",
+      "service_smiles": "N#Cc1sc2nc(-c3cccs3)cc(-c3ccc(Cl)cc3)c2c1N",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bac58164d5a7f36ab8d61f8570afd4e0288d1f23d5f5ad8a0c8ba1bb4d31fb88",
+      "input_index": 71,
+      "returned_row_index": 71,
+      "raw_smiles": "C=CCn1c(SCc2ccc(C#N)cc2)nnc1-c1ccc(C)cc1",
+      "service_smiles": "C=CCn1c(SCc2ccc(C#N)cc2)nnc1-c1ccc(C)cc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bac72037aad7f048e34dc8456f0a49f3f3fcd634f428795c7ad4a7b4a47088ca",
+      "input_index": 72,
+      "returned_row_index": 72,
+      "raw_smiles": "CCc1c[nH]c2ncnc(-c3ccc(NC(=O)Nc4cccc(C(=O)NC(C)C)c4)cc3)c12",
+      "service_smiles": "CCc1c[nH]c2ncnc(-c3ccc(NC(=O)Nc4cccc(C(=O)NC(C)C)c4)cc3)c12",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bac74140b967b58f2d807c4fcca247c5315cc154009db40360cd94589c7c554c",
+      "input_index": 73,
+      "returned_row_index": 73,
+      "raw_smiles": "C=C(C)C(=O)Nc1ccc(-c2c(-c3ccc(Oc4nccc(C)n4)c(F)c3)c3c(N)ncnc3n2C)cc1",
+      "service_smiles": "C=C(C)C(=O)Nc1ccc(-c2c(-c3ccc(Oc4nccc(C)n4)c(F)c3)c3c(N)ncnc3n2C)cc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bacdad7c666e1ac6175203dfab1c5cba5eff0a713f679e4d49e550acb624cc24",
+      "input_index": 74,
+      "returned_row_index": 74,
+      "raw_smiles": "COC(=O)[C@@]1(Cc2ccccc2)[C@H]2c3cc(C(=O)N4CCCC4)n(Cc4cc(F)cc5c4OCOC5)c3C[C@H]2CN1C(=O)c1ccccc1",
+      "service_smiles": "COC(=O)[C@@]1(Cc2ccccc2)[C@H]2c3cc(C(=O)N4CCCC4)n(Cc4cc(F)cc5c4OCOC5)c3C[C@H]2CN1C(=O)c1ccccc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bad03f80704fd1a2be44a540174cdfcca27f779931147ffc7a91ec46bf724359",
+      "input_index": 75,
+      "returned_row_index": 75,
+      "raw_smiles": "Cc1cc(C)nc(Nc2n[nH]c(-c3cccc4ccccc34)n2)n1",
+      "service_smiles": "Cc1cc(C)nc(Nc2n[nH]c(-c3cccc4ccccc34)n2)n1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bad095f0a53f3cc43f71e4395e3f3fed1f605c6a6077e3ed1173acf15fd61ba2",
+      "input_index": 76,
+      "returned_row_index": 76,
+      "raw_smiles": "O=C(OC1([C@H]2COC[C@@H](CC3CC3)N2S(=O)(=O)c2ccc(Cl)cc2)CC1)N1CC2CCC(C1)N2CCO",
+      "service_smiles": "O=C(OC1([C@H]2COC[C@@H](CC3CC3)N2S(=O)(=O)c2ccc(Cl)cc2)CC1)N1CC2CCC(C1)N2CCO",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bad1f89f30552aace9ff6c5a5ca774f6fce799d5d2cce6a525450f9fd5def893",
+      "input_index": 77,
+      "returned_row_index": 77,
+      "raw_smiles": "Cc1nc2ccccc2c(=O)n1-n1cnnc1",
+      "service_smiles": "Cc1nc2ccccc2c(=O)n1-n1cnnc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bad357d932d89e3408dd2b87919cac5252a2a0107b41c5894c4747dfa479df10",
+      "input_index": 78,
+      "returned_row_index": 78,
+      "raw_smiles": "CNCC(=O)N[C@@H](CC(C)C)c1cc(F)ccc1N1CCN(C(=O)[C@@H](Cc2ccc(Cl)cc2Cl)N2CCCC2=O)CC1",
+      "service_smiles": "CNCC(=O)N[C@@H](CC(C)C)c1cc(F)ccc1N1CCN(C(=O)[C@@H](Cc2ccc(Cl)cc2Cl)N2CCCC2=O)CC1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bad950ee81a8cd22e52a632b4678705b23c8c75fb0f35327ccd44b9b5041a57a",
+      "input_index": 79,
+      "returned_row_index": 79,
+      "raw_smiles": "C=c1c(=Cc2sc(=S)n(Cc3ccco3)c2O)cc(C)n1-c1cccnc1",
+      "service_smiles": "C=c1c(=Cc2sc(=S)n(Cc3ccco3)c2O)cc(C)n1-c1cccnc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bada176900bdd69371e60768186153da43dec4043a5a4e41740c318bef592ad4",
+      "input_index": 80,
+      "returned_row_index": 80,
+      "raw_smiles": "CC(C)Oc1ccc(S(=O)(=O)Cc2ccc3c(c2)CCNCC3)cn1",
+      "service_smiles": "CC(C)Oc1ccc(S(=O)(=O)Cc2ccc3c(c2)CCNCC3)cn1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bada195416a54a365f976a76a435d48ffb169c85e1a7353e8c91ecef8f0b5c67",
+      "input_index": 81,
+      "returned_row_index": 81,
+      "raw_smiles": "NC[C@@H](Cc1ccccc1O)c1ccc2ccccc2c1",
+      "service_smiles": "NC[C@@H](Cc1ccccc1O)c1ccc2ccccc2c1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bae0724e1f0847174253a862db8e3bf3731f420ef70ad76568701ef175e15cc8",
+      "input_index": 82,
+      "returned_row_index": 82,
+      "raw_smiles": "C[C@@H](O)CNCC(=O)N1CCc2ccc(F)cc2C1C1CCCCC1",
+      "service_smiles": "C[C@@H](O)CNCC(=O)N1CCc2ccc(F)cc2C1C1CCCCC1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bae09de7f2c7c0ec1e40707fe33526e127909c6b736cab99af019d59cede2792",
+      "input_index": 83,
+      "returned_row_index": 83,
+      "raw_smiles": "COc1ccc(COC(=O)N/N=C2/C[C@@H](O)[C@@H](O)[C@@H]3c4c(c(O)n(-c5cccc(Oc6ccccc6)c5)c4O)CC[C@@H]23)cc1",
+      "service_smiles": "COc1ccc(COC(=O)N/N=C2/C[C@@H](O)[C@@H](O)[C@@H]3c4c(c(O)n(-c5cccc(Oc6ccccc6)c5)c4O)CC[C@@H]23)cc1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bae17a9bb112469e062dace7068cbe4452f852a39bfd6095c715bc2696673368",
+      "input_index": 84,
+      "returned_row_index": 84,
+      "raw_smiles": "CCC(C)(C(=O)NC1CCCCC1)N(Cc1ccco1)C(=O)Cc1cccs1",
+      "service_smiles": "CCC(C)(C(=O)NC1CCCCC1)N(Cc1ccco1)C(=O)Cc1cccs1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bae38d9ec13365ab005c1f14f751ec24f240a5b95d07665c3928a25c26bfc679",
+      "input_index": 85,
+      "returned_row_index": 85,
+      "raw_smiles": "COC1=C(C(=O)c2ncc(C)cc2NS(=O)(=O)c2ccc(Cl)c(C(F)(F)F)c2)C2C=CNC2N=C1",
+      "service_smiles": "COC1=C(C(=O)c2ncc(C)cc2NS(=O)(=O)c2ccc(Cl)c(C(F)(F)F)c2)C2C=CNC2N=C1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bae3e08615545d48d7d145034f262310bf1b14ec6aa318694d501ac1bc31b231",
+      "input_index": 86,
+      "returned_row_index": 86,
+      "raw_smiles": "Cc1cnc2c(c1)CCC[C@@H]2N(C)C[C@H]1Cc2c(cccc2N2CCNCC2)CN1",
+      "service_smiles": "Cc1cnc2c(c1)CCC[C@@H]2N(C)C[C@H]1Cc2c(cccc2N2CCNCC2)CN1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bae9c821e47ad97333cf49b1ccb59e469f2ce98b0e3a80f0634b6073531572fc",
+      "input_index": 87,
+      "returned_row_index": 87,
+      "raw_smiles": "COc1ccccc1CNc1ccnc(-c2cccc(NS(C)(=O)=O)c2)n1",
+      "service_smiles": "COc1ccccc1CNc1ccnc(-c2cccc(NS(C)(=O)=O)c2)n1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "baed6cf0a3ec00f19df42ed2b48c40026738995592c7de3a25aa83280f47e674",
+      "input_index": 88,
+      "returned_row_index": 88,
+      "raw_smiles": "Cc1c(-c2noc(-c3ccc(OC(C)C)c(C#N)c3)n2)ccc2c1CCN(C(CO)CO)C2",
+      "service_smiles": "Cc1c(-c2noc(-c3ccc(OC(C)C)c(C#N)c3)n2)ccc2c1CCN(C(CO)CO)C2",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "baf3f556781afe2447b0741f48ed7f76a3349d29e2b4599a2d7e6b230d5372e5",
+      "input_index": 89,
+      "returned_row_index": 89,
+      "raw_smiles": "O=C(N1C[C@@H]2CN(c3ccccn3)C[C@@H]2C1)C12CC3CC(CC(C3)C1)C2",
+      "service_smiles": "O=C(N1C[C@@H]2CN(c3ccccn3)C[C@@H]2C1)C12CC3CC(CC(C3)C1)C2",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "baf4ae381fcf73004389cd55165914a718ce3f92878b0396fd6011ef5b56ecbb",
+      "input_index": 90,
+      "returned_row_index": 90,
+      "raw_smiles": "CCCCCCN1Cc2ccccc2C1",
+      "service_smiles": "CCCCCCN1Cc2ccccc2C1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "baf6f759f95b67cec8fe27bb76e5b79790dd1dabb7b4d20de1693384619ec10b",
+      "input_index": 91,
+      "returned_row_index": 91,
+      "raw_smiles": "Cc1cccc(NC(N)=S)c1",
+      "service_smiles": "Cc1cccc(NC(N)=S)c1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bafa3acf1b2be70994e6b3cfa47b0cc397241bc944681225f941cb4b235474c9",
+      "input_index": 92,
+      "returned_row_index": 92,
+      "raw_smiles": "CCCCNc1c(CN)cnc2cc(Cl)ccc12",
+      "service_smiles": "CCCCNc1c(CN)cnc2cc(Cl)ccc12",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bafba6d689a049a2b49360a76c26d9ab36ce47260f20032e2559279c9d290403",
+      "input_index": 93,
+      "returned_row_index": 93,
+      "raw_smiles": "CCOC(=O)Nc1ccc2c(c1)N(C(=O)CCN1CCOCC1)c1ccccc1S2",
+      "service_smiles": "CCOC(=O)Nc1ccc2c(c1)N(C(=O)CCN1CCOCC1)c1ccccc1S2",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bafbad89fd9da4c3db68d11ac9181224fe3594598608211394fed89a21e8ee91",
+      "input_index": 94,
+      "returned_row_index": 94,
+      "raw_smiles": "CC(C)CC(c1nnnn1C)N(Cc1ccccc1C(F)(F)F)c1ccc(C#N)c(Cl)c1",
+      "service_smiles": "CC(C)CC(c1nnnn1C)N(Cc1ccccc1C(F)(F)F)c1ccc(C#N)c(Cl)c1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "baff2ae474bed229de545bebe7aa3743c37d95e46b765586baf35a00f26f87d0",
+      "input_index": 95,
+      "returned_row_index": 95,
+      "raw_smiles": "Cc1nnc2ccc(N3CC[C@H](c4cc(F)c(F)cc4F)[C@@H](N)C3)nn12",
+      "service_smiles": "Cc1nnc2ccc(N3CC[C@H](c4cc(F)c(F)cc4F)[C@@H](N)C3)nn12",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bb0207cc89742e85afcc7feb9e565b006596b673d594fcab2dfa6adf4be06da2",
+      "input_index": 96,
+      "returned_row_index": 96,
+      "raw_smiles": "CC(C)c1nc(CN(C)C(=O)N[C@@H](CCN)C(=O)N[C@H](CC[C@H](Cc2ccccc2)NC(=O)OCc2cncs2)Cc2ccccc2)cs1",
+      "service_smiles": "CC(C)c1nc(CN(C)C(=O)N[C@@H](CCN)C(=O)N[C@H](CC[C@H](Cc2ccccc2)NC(=O)OCc2cncs2)Cc2ccccc2)cs1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bb0669c661585a1cde9349f55f0b009f0f72f87de619482363a5ea782cc4a082",
+      "input_index": 97,
+      "returned_row_index": 97,
+      "raw_smiles": "CC1(C)[C@@H]2CC[C@@](C)(C2)[C@H]1OC(=O)c1ccccc1C(=O)O",
+      "service_smiles": "CC1(C)[C@@H]2CC[C@@](C)(C2)[C@H]1OC(=O)c1ccccc1C(=O)O",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bb0fa131dfca5575510f0c44ff44ddfa7cdcd539e4ded5fca675f564b619e7b7",
+      "input_index": 98,
+      "returned_row_index": 98,
+      "raw_smiles": "Cn1cnc(CC(=O)N2CCC(c3ccc(NC(=O)c4nc(C#N)c[nH]4)c(C4=CCCCC4)c3)CC2)c1",
+      "service_smiles": "Cn1cnc(CC(=O)N2CCC(c3ccc(NC(=O)c4nc(C#N)c[nH]4)c(C4=CCCCC4)c3)CC2)c1",
+      "association": "exactraw_smiles"
+    },
+    {
+      "request_id": "bb10d786c804a07649661d5bf1133a2187cf9f50feb18cbc5e641fea272fd4ee",
+      "input_index": 99,
+      "returned_row_index": 99,
+      "raw_smiles": "CCCCn1nc2cc(C(=O)NCc3ccc(OC(F)(F)F)cc3)ccc2c1OCC",
+      "service_smiles": "CCCCn1nc2cc(C(=O)NCc3ccc(OC(F)(F)F)cc3)ccc2c1OCC",
+      "association": "exactraw_smiles"
+    }
+  ],
+  "columns": [
+    "raw_smiles",
+    "smiles",
+    "MW",
+    "Vol",
+    "Dense",
+    "nHA",
+    "nHD",
+    "TPSA",
+    "nRot",
+    "nRing",
+    "MaxRing",
+    "nHet",
+    "fChar",
+    "nRig",
+    "Flex",
+    "nStereo",
+    "gasa",
+    "QED",
+    "Synth",
+    "Fsp3",
+    "MCE-18",
+    "Natural Product-likeness",
+    "Alarm_NMR",
+    "BMS",
+    "Chelating",
+    "PAINS",
+    "Lipinski",
+    "Pfizer",
+    "GSK",
+    "GoldenTriangle",
+    "logS",
+    "logD",
+    "logP",
+    "mp",
+    "bp",
+    "pka_acidic",
+    "pka_basic",
+    "caco2",
+    "MDCK",
+    "PAMPA",
+    "pgp_inh",
+    "pgp_sub",
+    "hia",
+    "f20",
+    "f30",
+    "f50",
+    "OATP1B1",
+    "OATP1B3",
+    "BCRP",
+    "BSEP",
+    "BBB",
+    "MRP1",
+    "PPB",
+    "VDss",
+    "Fu",
+    "CYP1A2-inh",
+    "CYP1A2-sub",
+    "CYP2C19-inh",
+    "CYP2C19-sub",
+    "CYP2C9-inh",
+    "CYP2C9-sub",
+    "CYP2D6-inh",
+    "CYP2D6-sub",
+    "CYP3A4-inh",
+    "CYP3A4-sub",
+    "CYP2B6-inh",
+    "CYP2B6-sub",
+    "CYP2C8-inh",
+    "LM-human",
+    "cl-plasma",
+    "t0.5",
+    "BCF",
+    "IGC50",
+    "LC50DM",
+    "LC50FM",
+    "hERG",
+    "hERG-10um",
+    "DILI",
+    "Ames",
+    "ROA",
+    "FDAMDD",
+    "SkinSen",
+    "Carcinogenicity",
+    "EC",
+    "EI",
+    "Respiratory",
+    "H-HT",
+    "Neurotoxicity-DI",
+    "Ototoxicity",
+    "Hematotoxicity",
+    "Nephrotoxicity-DI",
+    "Genotoxicity",
+    "RPMI-8226",
+    "A549",
+    "HEK293",
+    "NR-AhR",
+    "NR-AR",
+    "NR-AR-LBD",
+    "NR-Aromatase",
+    "NR-ER",
+    "NR-ER-LBD",
+    "NR-PPAR-gamma",
+    "SR-ARE",
+    "SR-ATAD5",
+    "SR-HSE",
+    "SR-MMP",
+    "SR-p53",
+    "NonBiodegradable",
+    "NonGenotoxic_Carcinogenicity",
+    "SureChEMBL",
+    "LD50_oral",
+    "Skin_Sensitization",
+    "Acute_Aquatic_Toxicity",
+    "FAF-Drugs4 Rule",
+    "Genotoxic_Carcinogenicity_Mutagenicity",
+    "Aggregators",
+    "Fluc",
+    "Blue_fluorescence",
+    "Green_fluorescence",
+    "Reactive",
+    "Other_assay_interference",
+    "Promiscuous"
+  ]
+}

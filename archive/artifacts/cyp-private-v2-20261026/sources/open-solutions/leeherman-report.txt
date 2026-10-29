@@ -1,0 +1,44 @@
+﻿OpenADMET PXR Methodology Report
+Environment
+Software
+Python in dedicated Conda environments under Windows. Code generated using Google Gemini.
+
+
+Hardware
+Very limited. CPU only, Up to 12Gb available memory (optimistically) out of 32Gb installed. Attempts to use the laptop GPU met with limited success and frequent crashes.
+
+
+Method - Regression
+
+
+The training script implements a Chemprop v2 hybrid architecture optimized for regression using multi-modal feature fusion.
+
+
+1. Things that helped
+* Multitarget models rather than individual models
+* Restrict the training dataset to an explicit molecular weight range of 160 - 600.
+* Augment the graph representation with the Chemeleon fingerprints
+* Weight rows by number of occurrences in that Cyp
+* Apply affine transformation to 2D6 predictions (as per Brian Wylie)
+* Dropout = 0.2
+* CV by structure (Murcko-Bemis scaffolds)
+
+
+
+
+2. Things that didn’t help
+* No dropout
+* Cross validate by average activity over all Cyps
+* Cross validate by molecular weight
+* Use ORGANIC atom featurizatio
+* Overweight 2D6 rows
+* Uncertainty Quantification via Evidential Loss
+* Freeze MPNN for first 10 epochs, then unconstrain, with early stopping (patience = 10 epochs).
+* Hybrid quantile and direct margin ranking loss WITH affine transformation
+
+
+Method - Classification
+
+
+Classification was performed using chemprop and chameleon descriptors using Autogluon classification and the following parameters
+* Best preset mode

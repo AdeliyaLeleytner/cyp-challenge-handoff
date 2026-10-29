@@ -1,0 +1,32 @@
+{
+  "name": "tabpfn_chemeleon_foundation_pca50/briford529/42/1",
+  "asset_root": "/workspace/cyp-night/assets",
+  "output_dir": "/workspace/cyp-night/results/C1_C2_TFM/tabpfn_chemeleon_foundation_pca50/briford529/seed42/fold1",
+  "config": {
+    "kind": "tabular",
+    "num_threads": 4,
+    "device": "cuda",
+    "model_params": {
+      "n_estimators": 8
+    },
+    "name": "tabpfn_chemeleon_foundation_pca50",
+    "model": "tabpfn",
+    "model_asset": {
+      "path": "weights/tabpfn-v3.5-20260909.safetensors",
+      "sha256": "ece4d67eadfea42eb0e610df5189bea60cb7f31073d81e9c7a019b76eacf0be3"
+    },
+    "features": [
+      {
+        "family": "precomputed",
+        "asset_key": "chemeleon_foundation"
+      }
+    ],
+    "preprocessing": {
+      "pca_components": 50,
+      "scale": true
+    },
+    "seed": 42
+  },
+  "cohort": "briford529",
+  "fold": 1
+}

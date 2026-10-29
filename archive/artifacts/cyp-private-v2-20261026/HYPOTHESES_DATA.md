@@ -1,0 +1,55 @@
+# Private, competing biological/data hypotheses
+
+No fits or acquisition beyond the saved bounded metadata/samples have been run. No public write, submission or notification is authorized. These proposals do not attribute the previous leaderboard regression to data biology: the incumbent/base-refit confound must first remain isolated, as required by TASK.md. Root owns literature review; the facts below come from official protocols, data schemas and local tables.
+
+## D1 — Assay context and censoring carry information that pooled “pIC50” discards
+
+**Facts.** The challenge uses recombinant biochemical CYPs, with DBOMF/EOMCC fluorescence for3A4/1A2/2C9 and dextromethorphan parent-depletion MS for2D6. Public Veith/AID1851 uses pro-luciferin substrates and coupled luciferase detection. ChEMBL metadata exposes different probes and HLM/recombinant contexts:11DBOMF versus876midazolam assay descriptions for3A4,491dextromethorphan descriptions for2D6 (assay counts, not independent compounds). A concrete cached cell, CHEMBL10/1A2, is reconstructed as median5.7 and SD0.404145 from AC50=6.2,AC50=5.4 andIC50=5.7. Thus its named“pic50” target combines different endpoint definitions. Thousands of explicit `IC50 > limit` records are present in the raw API but have no pChEMBL value. Human target IDs also return some homolog/nonexperimental records; sampled guinea-pig assays and an in-silico Ki are saved.
+
+**Mechanistic hypothesis.** Apparent inhibition potency changes with the probe, substrate loading, enzyme preparation and free-inhibitor availability. Explicit assay context plus genuine censoring should transfer better than a ligand-level median of heterogeneous potency types. This predicts reduced context-dependent bias, especially for2D6’s drug-probe/MS target and the weak-activity boundary. It does not predict every additional record helps.
+
+**Competing explanation.** Chemical coverage and robust averaging dominate; detailed context is mostly missing or too sparse. Apparent benefit from filtering could instead come from changing compound/scaffold coverage or label distribution.
+
+**Discriminating experiment.** Start with a fixed, modest raw-record panel whose compounds and assays can be traced. On the same compound set compare (a) pooled exact-IC50 labels and (b) assay-conditioned labels, preserving each measurement’s type/probe/preparation. A simple source/probe-intercept model is the practical comparator to compound-by-context interactions. Only after this contrast, add explicitly censored IC50 records as a separate factor. Convert units, not biological estimands: an IC50 greater than100,000nM implies pIC50 less than4 under that assay’s stated definition; it is not an exact4. AC50/Potency/Ki remain separate tasks unless equivalence is established. No universal Cheng–Prusoff correction.
+
+Keep the incumbent predictor/checkpoints unchanged as a fixed expert and fit the new contribution separately. Mask all heldout compounds’ experimental endpoints across sources. Evaluate by endpoint, context proximity, structural neighborhood and weak/informative official intervals, in addition to allfive metrics. Do not interpret a harder/scaffold-distant subset as the actual dense analog-expansion deployment set.
+
+**Falsification/decision.** If gains vanish when chemical membership is matched, the explanation is coverage rather than assay conditioning. If a source intercept matches the richer model, complex mechanistic interactions are unnecessary. If censored records improve only a weak-tail diagnostic while worsening the relevant analog regime, they do not justify promoting the combined recipe.
+
+**Obtainable data/cost.** Saved ChEMBL query URLs/counts and assay IDs provide a bounded retrieval path; no target-wide activity download has happened. A first authorized pilot could retrieve at most1,000–3,000 records from a few declared contexts, then40 small tabular fits (two variants×five folds×four endpoints) using existing structure features. GPU training is not needed for the first discrimination; time the pilot before scaling. Source curation, not a new architecture, is the main cost.
+
+## D2 — The active-preincubation screen reports metabolic fate plus inhibition, not a missing direct-potency label
+
+**Facts.** The primary screen was run in the +NADPH/TDI condition; direct target curves use −NADPH preincubation. Every released single row records4.95049505e-05M, but its nominal/preincubation/reaction relationship is unverified. Emax values are negative, usually near−1, with an unverified normalization equation; they are not directly0–1 efficacy. TDI/direct paired shifts can be positive or negative. The530 direct-only IDs have only3A4 direct labels; absence of a released single measurement does not prove absence of an assay. The earlier Octant release provides measured3A4/2J2 depletion and active-preincubation inhibition, rather than new direct-only IC50s.
+
+**Mechanistic hypothesis.** A signed metabolic-fate component separates a molecule’s direct inhibition from changes during active preincubation: bioactivation can strengthen inhibition, whereas turnover to less inhibitory material can weaken it. A model that learns direct potency, active-preincubation potency and their signed difference could exploit the single/depletion data without imposing false direct bounds.
+
+**Competing explanation.** The apparent shift/auxiliary signal comes mainly from weak-curve estimation, shared fit parameters and plate quality. For example, most negative shifts occur in the low-direct regime; Emax and pIC50 come from the same fitted curve, and single-table `cohens_d` is constant within each plate, not a compound effect.
+
+**Discriminating experiment.** First quantify signed shifts and their interval/plate relationships without fitting. Then compare a fixed-capacity, masked joint learner using condition-correct auxiliary targets with a same-capacity learner using only direct targets plus measurement-quality auxiliaries. Do not impose TDI potency≥direct potency. Keep Emax and single log2fc on their documented native scales with isoform-specific heads; do not invert them into IC50. Use the same frozen incumbent expert in both arms. A subsequent independently authorized factor can add the same-platform depletion labels after exact batch/structure overlap checks.
+
+All true experimental auxiliary labels for heldout molecules must be masked. If auxiliary predictions become model inputs, obtain them out-of-fold for training and from structure for queries: measured Emax/screen values are not released for the blind750.
+
+**Predictions/falsifiers.** A metabolic-fate explanation predicts useful signed-shift structure in informative paired curves, potentially associated with measured turnover; it should not depend entirely on broad, weak-activity posteriors. If CI-width/plate-quality auxiliaries explain the same gain, interpret it as a measurement model benefit, not metabolic mechanism. If the negative-shift signal disappears outside weak uncertain fits, do not build a large “metabolic deactivation” claim on it.
+
+**Obtainable data/cost.** Existing official tables suffice for the first diagnosis. The sibling release’s2,446 reactivity rows and1,340 active-preincubation inhibition summaries are available through verified public schemas, but unique/novel compound overlap is not yet established. First use two small matched auxiliary readouts on existing features; a later joint neural trial would be a separately budgeted paired experiment, not an uncontrolled full base refit.
+
+## D3 — Some cross-source disagreement is reporter interference, not CYP binding
+
+**Facts.** Veith/AID1851 reports pro-luciferin conversion followed by luciferase light detection; the challenge’s readouts differ. Public counter-assays exist: AID411 has72,359 tested SIDs, AID588342 has364,105, and AID1006 has195,634. These are reporter-enzyme measurements, not CYP labels. The cached Veith pool retains large positive and negative Max_Response tails, which the native recipe clips. Positive signal is not automatically fluorescence artifact—the assay is luminescent, and biochemical activation/detection interference remain alternatives.
+
+**Mechanistic hypothesis.** A technology-conditioned nuisance component can separate true CYP-dependent signal from coupled reporter inhibition. It should specifically help transport from luminescent sources to fluorescence/MS endpoints, rather than treating all assay outcomes as the same biological event.
+
+**Competing explanation.** Reporter activity is merely correlated with real promiscuous CYP inhibition or broad physicochemical properties. Deleting reporter-active compounds could remove genuine inhibitors and reduce useful chemical coverage.
+
+**Discriminating experiment.** Retrieve reporter outcomes only for an initial declared overlap subset of the existing public CYP molecules, preserving SID/assay/version. Compare keep-all CYP supervision, a practical reporter-flag filter, and a small technology-conditioned CYP/reporter model with matched compounds/capacity. Retain known dual-activity cases. A deliberately wrong technology loading is a discriminating control: if the same gain occurs when the luciferase component is applied equally to unrelated fluorescence/MS readouts, the benefit is likely generic regularization rather than reporter-specific correction.
+
+**Predictions/falsifiers.** A reporter mechanism predicts concentrated effects in discordant reporter-positive/curve-quality slices and should respect the detection technology. If benefits occur equally across all technologies or disappear under matched chemistry, do not claim interference removal. Luciferase data do not automatically correct fluorescence quenching/autofluorescence; those need their own evidence.
+
+**Obtainable data/cost.** The PubChem summary and filtered-by-CID/SID retrieval routes are verified; no large response table was downloaded. Begin with at most500–1,000 overlapping compounds and CPU readouts, not the whole364k library. If overlap is negligible, stop that branch rather than fill unmeasured reporter outcomes with negatives. No extra ADMET service calls are needed.
+
+## Evidence pointers and common constraints
+
+See `biochem_sources/official-table-audit.json`, `auxiliary-source-diagnostics.json`, `single-plate-QC-diagnostic.json`, `mixed-endpoint-aggregate-proof.json`, `assay-context-query-index.json`, `probe-and-activity-type-counts.json`, and the saved official/PubChem protocols. Sources are linked in BIOCHEM_DATA_AUDIT.md. Counts are evidence, not proof of novel independent training examples. Root should verify literature mechanisms separately; no novelty claim is made here.
+
+Across allthree proposals, preserve exact source structures, stereochemistry, ions/tautomers, units, qualifiers, assay provenance and missingness. Keep experimentally observed, model-fitted, censored and teacher-predicted quantities distinct. Preserve the exact incumbent/base identity and all adverse outcomes. No fixed gain or significance cutoff is invented, and no public dispatch is authorized.

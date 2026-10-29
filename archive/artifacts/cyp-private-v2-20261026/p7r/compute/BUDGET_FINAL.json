@@ -1,0 +1,69 @@
+{
+  "utc": "2026-10-26T22:08:56.010615+00:00",
+  "instance_id": 57857438,
+  "reported_this_lease_usd": 0.64,
+  "prior_P7R_boot_and_diagnostic_usd": 0.073,
+  "reported_P7R_total_usd": 0.713,
+  "P7R_cap_usd": 3.2,
+  "prior_campaign_usd": 4.101,
+  "reported_campaign_total_usd": 4.741,
+  "campaign_cap_usd": 10,
+  "remaining_campaign_usd": 5.259,
+  "charge_rows": [
+    {
+      "amount": 0.64,
+      "description": "Instance 57857438 Charges - 1 day",
+      "end": 1792972800,
+      "items": [
+        {
+          "amount": 0.629,
+          "description": "2.948 hours at $0.213/hour",
+          "end": 1792972800,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1792972800,
+          "type": "gpu"
+        },
+        {
+          "amount": 0.002,
+          "description": "2.948 hours at $0.001/hour",
+          "end": 1792972800,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1792972800,
+          "type": "disk"
+        },
+        {
+          "amount": 0.009,
+          "description": "0.2 GB Downloaded at $0.039/GB",
+          "end": 1792972800,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1792972800,
+          "type": "bwd"
+        },
+        {
+          "amount": 0.0,
+          "description": "Bandwidth (upload)",
+          "end": 1792972800,
+          "items": [],
+          "metadata": {},
+          "source": null,
+          "start": 1792972800,
+          "type": "bwu"
+        }
+      ],
+      "metadata": {
+        "label": "cyp-private-p7r-relay-profile"
+      },
+      "source": "instance-57857438",
+      "start": 1792972800,
+      "type": "instance"
+    }
+  ],
+  "billing_caveat": "Provider-reported rounded charges may have a minor final settlement adjustment",
+  "teardown_verified": true
+}

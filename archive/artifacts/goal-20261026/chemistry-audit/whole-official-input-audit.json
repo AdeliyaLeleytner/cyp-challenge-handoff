@@ -1,0 +1,85 @@
+{
+  "official_rows": 5655,
+  "sources": {
+    "official-train.csv": 4905,
+    "official-test.csv": 750
+  },
+  "errors": [],
+  "exact_isomeric_duplicate_groups": 0,
+  "no_stereochemistry_duplicate_groups": 6,
+  "cross_train_test_no_stereo_groups": {},
+  "all_no_stereo_duplicate_groups": {
+    "C=CC1CN2CCC1CC2C(O)c1ccnc2ccc(OC)cc12": [
+      {
+        "id": "OCNT-0494161",
+        "source": "official-train.csv",
+        "request_smiles": "C=C[C@H]1CN2CC[C@H]1C[C@H]2[C@H](O)c1ccnc2ccc(OC)cc12"
+      },
+      {
+        "id": "OCNT-1911794",
+        "source": "official-train.csv",
+        "request_smiles": "C=C[C@H]1CN2CC[C@H]1C[C@@H]2[C@@H](O)c1ccnc2ccc(OC)cc12"
+      }
+    ],
+    "CCCCN1CCCCC1C(=O)Nc1c(C)cccc1C": [
+      {
+        "id": "OCNT-1965934",
+        "source": "official-train.csv",
+        "request_smiles": "CCCCN1CCCCC1C(=O)Nc1c(C)cccc1C"
+      },
+      {
+        "id": "OCNT-2328651",
+        "source": "official-train.csv",
+        "request_smiles": "CCCCN1CCCC[C@H]1C(=O)Nc1c(C)cccc1C"
+      }
+    ],
+    "Cc1c(OCC(F)(F)F)ccnc1CS(=O)c1nc2ccccc2[nH]1": [
+      {
+        "id": "OCNT-2328781",
+        "source": "official-train.csv",
+        "request_smiles": "Cc1c(OCC(F)(F)F)ccnc1CS(=O)c1nc2ccccc2[nH]1"
+      },
+      {
+        "id": "OCNT-2328911",
+        "source": "official-train.csv",
+        "request_smiles": "Cc1c(OCC(F)(F)F)ccnc1C[S@@](=O)c1nc2ccccc2[nH]1"
+      }
+    ],
+    "CCC(O)CNc1cccc(-n2cnc3ccccc32)n1": [
+      {
+        "id": "OCNT-2395305",
+        "source": "official-train.csv",
+        "request_smiles": "CC[C@H](O)CNc1cccc(-n2cnc3ccccc32)n1"
+      },
+      {
+        "id": "OCNT-2395406",
+        "source": "official-train.csv",
+        "request_smiles": "CCC(O)CNc1cccc(-n2cnc3ccccc32)n1"
+      }
+    ],
+    "O=C(O)C1CCN(C(=O)c2ccc3[nH]ccc3c2)C1": [
+      {
+        "id": "OCNT-2535296",
+        "source": "official-test.csv",
+        "request_smiles": "O=C(O)[C@H]1CCN(C(=O)c2ccc3[nH]ccc3c2)C1"
+      },
+      {
+        "id": "OCNT-2535550",
+        "source": "official-test.csv",
+        "request_smiles": "O=C(O)[C@@H]1CCN(C(=O)c2ccc3[nH]ccc3c2)C1"
+      }
+    ],
+    "O=C(NCc1ccccc1-c1cccnc1)C(O)c1ccccc1": [
+      {
+        "id": "OCNT-2535565",
+        "source": "official-test.csv",
+        "request_smiles": "O=C(NCc1ccccc1-c1cccnc1)[C@@H](O)c1ccccc1"
+      },
+      {
+        "id": "OCNT-2535566",
+        "source": "official-test.csv",
+        "request_smiles": "O=C(NCc1ccccc1-c1cccnc1)[C@H](O)c1ccccc1"
+      }
+    ]
+  }
+}

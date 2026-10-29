@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "candidate_name": "reference_reweight_affine",
+  "qualified_recipe": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/gate_bundle_v1/qualified_recipe.json",
+    "sha256": "78a3d92c074d2ed0f08118b1dacd140aac8fd6ad3f2688e6a95dc7f0eecccb0e"
+  },
+  "gate_certificate": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/gate_bundle_v1/certificate.json",
+    "sha256": "c9c971a6d9f5e9d6f6f86847c31d7e9e56fdadee2526851cb6deb476368718b0"
+  },
+  "final_training_provenance": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/submission_package_v1/final_training_provenance.json",
+    "sha256": "8a6cab0b764e10e01d9c2c55eac59f30d092f8ea48cf596c2330924b9f474ba6"
+  },
+  "submission_csv": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/final_ensemble_v1/submission.csv",
+    "sha256": "f0e32b5fecab41d9a68c098e0ebe4b0d05cbc61760eb3dbd63c300382945e053"
+  },
+  "official_test": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/remote/assets/official-test.csv",
+    "sha256": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9"
+  },
+  "official_validator": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/sources/activity_validation.py",
+    "sha256": "276a53d7f22ff973aaf567e64d977202995e91ba3cef2bbdc4de71c13bdebcb2"
+  },
+  "api_schema": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/sources/presend-20261023T2345/gradio-info.json",
+    "sha256": "0f3126fb555bca4afbb4d8d70859af61f396f9f962428de1a63bb6fc55ec0702"
+  },
+  "source_snapshots": {
+    "app": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/sources/presend-20261023T2345/app.py",
+      "sha256": "18a6181fd0355a5642ade9f5b45c06dcd702321793bcfc29dec5b764b27778b2"
+    },
+    "submission": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/sources/presend-20261023T2345/submission.py",
+      "sha256": "6371f97c9518e5cf5e86ef5a46a302b5b6b802733ac1ad8676e51b6bb00da91e"
+    },
+    "config": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/sources/presend-20261023T2345/config.py",
+      "sha256": "565055de4284f53ee4e185af6189e9a3a31b5fa3a0d79509e0687ae3ad616e13"
+    }
+  },
+  "model_tag": "Scratch D-MPNN multitask ensemble, 5 folds x 2 seeds, TRAIN-OOF affine stacking; public ChEMBL and PubChem",
+  "gradio_client_version": "2.7.2",
+  "disclosures": {
+    "publication_opt_in": false,
+    "used_proprietary_data": false,
+    "open_source_code": false
+  }
+}

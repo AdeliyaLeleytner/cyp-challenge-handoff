@@ -1,0 +1,71 @@
+{
+  "utc": "2026-10-26T11:44:32.706264+00:00",
+  "activity_records": 780,
+  "main_IC50": 773,
+  "control_records": 7,
+  "unique_compound_ids": 628,
+  "unique_isomeric_graphs": 627,
+  "unparseable_records": 1,
+  "assays_with_records": 158,
+  "documents": 122,
+  "missing_assay_metadata": [],
+  "missing_document_metadata": [],
+  "context_counts": {
+    "CHEMBL10_CYP1A2_curation_control": 7,
+    "CYP2D6_bufuralol": 148,
+    "CYP2D6_dextromethorphan": 235,
+    "CYP3A4_DBOMF": 21,
+    "CYP3A4_midazolam": 367,
+    "CYP3A4_paired_probes_CHEMBL1136306": 2
+  },
+  "main_relations": {
+    "=": 459,
+    ">": 261,
+    "<": 29,
+    "missing": 23,
+    ">=": 1
+  },
+  "main_units": {
+    "nM": 750,
+    "missing": 23
+  },
+  "eligibility_reason_counts": {
+    "": 452,
+    "not_exact_relation": 315,
+    "missing_or_invalid_value_unit": 27,
+    "source_validity_flag": 10,
+    "potential_duplicate": 7,
+    "curation_control": 7,
+    "not_IC50": 6,
+    "assay_species_not_confirmed_human": 5,
+    "not_confidence9": 5,
+    "unparseable_structure": 1
+  },
+  "exact_eligible_records": 452,
+  "exact_compound_targets": 442,
+  "exact_cross_probe_compound_targets": 2,
+  "exact_cross_probe_records": 5,
+  "main_graph_overlap": {
+    "queue": 418,
+    "old_chembl": 435,
+    "old_pubchem": 17,
+    "official_train": 16,
+    "official_test": 0,
+    "old_chembl_original": 458,
+    "old_pubchem_original": 17
+  },
+  "main_unique_graphs": 626,
+  "main_new_graphs_beyond_original_sources": 163,
+  "input_sha256": {
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-auto/data/molecules.csv": "ae515913b1bedacd216e424305b57daa3dfce0cf8169352a4f41df36de477493",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/fullfit-strae-prep/stage/original_full/raw/chembl_all_isoforms.csv": "74a5233890e74e5514a6bbbad25cfe1c365181fb29af01c116e96cc5277b33fc",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/fullfit-strae-prep/stage/original_full/raw/pubchem_all_isoforms.csv": "1465de66ba50c0cda5d7fab3083a8ccdfba4adfbefef8d13a1fedade86b0847b",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/fullfit-strae-prep/stage/original_full/raw/inhibition.csv": "95576058689db7537458cde2615f8d72a84748cea9d4a2d73fe3c287f7c1cf0c",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/fullfit-strae-prep/stage/original_full/official-test.csv": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p4-data/expanded-activity-occurrences.json": "94b834f588e8d85295ad7a03c1b6570be06dd660c9a43a0be682088eb223e36d",
+    "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p4-data/audit_panel.py": "64d413c926d748274ed99d02349ddd16bc1cad86ab26bd82b331f8b9bbd63859"
+  },
+  "no_fits": true,
+  "no_automatic_molecule_standardization": true,
+  "eligibility_is_proposal_not_training_authorization": true
+}

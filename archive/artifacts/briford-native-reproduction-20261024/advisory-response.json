@@ -1,0 +1,122 @@
+{
+  "summary": "The bounded native execution is a faithful *recipe-level* reproduction — code is sha-pinned, the 5-fold partition is a true disjoint scaffold partition, and the flat 5-fold mean genuinely matches the author's endpoint semantics (`predict_ensemble` doc, chemprop_utils.py:35-43). The decisive gap-closer, however, is not the models but the board-derived placement in `cyp_recalibrate.py`, which costs nothing and can be applied to existing predictions today; meanwhile the full 20-fold run is at real risk of exceeding the ~$4.5 usable credit at $1.81/h on the 4×4090 offer. I recommend staging: place the existing vector in today's 12:10 window, then gate the expensive members behind a cheap mtaux8 OOF-Pearson check against the author's published 0.570/0.681/0.408/0.795.",
+  "recommendation": "Do not run all 20 folds straight through. (1) Today's 12:10 submission slot: apply `place(..., strae=True)` + `recalibrate` to the prediction vector that scored .7521 — zero GPU cost, rank-preserving, and by the author's own measurements placement alone moved CYP2D6 ST-RAE 0.6944→0.5502 (cyp_recalibrate.py:68-73). This is the highest expected-value-per-dollar action available and it also probes whether BLIND_MOMENTS still describe the currently-scored half. (2) Before that, pull the per-isoform breakdown of the .7521 score; it tells you whether the gap is placement or model, which determines whether the GPU spend is needed at all. (3) When renting, run mtaux8 (4905 rows, cheapest member, already first in the job list at briford_native.py:152) and stop. Compare its OOF Pearson to the author's published OOF for the same model — 0.570/0.681/0.408/0.795 (cyp_recalibrate.py:80-85). That is a falsifiable reproduction gate costing roughly $1: if it matches, the data/environment reproduction worked and union18/2d6isoform6 are worth the remaining credit; if it does not match, the expensive members will not reproduce either and you have saved the budget. (4) Add a wall-clock kill and export-on-completion per fold (the resume logic at briford_native.py:156 already supports this) so budget exhaustion never leaves you with nothing submittable. (5) Add a read-only guard that prints `rho` from `oof_pearson` before submitting and pauses if any isoform exceeds 1.0 — `place()` has no clamp, and OOF_TO_BLIND of 1.32/1.23/1.66 can push a stronger ensemble past 1.0, producing over-spread that hurts both R2 and ST-RAE. For framing to the user: describe the deliverable as a recipe-faithful re-execution with documented substitutions, with an expected score *band* rather than a promised number.",
+  "confidence": "medium",
+  "files_inspected": [
+    "review-code/briford_native.py",
+    "review-code/briford_config.json",
+    "review-code/native/cyp_recalibrate.py",
+    "review-code/native/cyp_ensemble_submit.py",
+    "review-code/native/splits.py",
+    "review-code/native/chemprop_core.py",
+    "review-code/native/chemprop_utils.py",
+    "prepared/manifest.json",
+    "prepared/native_overlap_audit.json",
+    "offers-4090.json"
+  ],
+  "verified_facts": [
+    "The 5-fold split is a true disjoint partition: `group_folds` (splits.py:339-352) assigns each scaffold group to exactly one fold and returns `(rows != f, rows == f)`, so validation folds tile the data and the `oof.index.is_unique` assert at briford_native.py:114 is a meaningful check, not a tautology. `test_size=.2` passed at briford_native.py:65 is ignored for n_splits=5.",
+    "Seed handling matches the brief: `pl.seed_everything(hp['seed'] + fold_idx)` at chemprop_core.py:333, with the docstring at chemprop_core.py:259 stating fold_idx 'offsets the seed so members differ'.",
+    "The flat mean over 5 folds is not a deviation. chemprop_utils.py:35-43 states `predict_ensemble` is the single forward path for \"serving's predict_fn, the training out-of-fold predictions, and the HPO objective\", returns the per-member stack, and that \"regression averages to a prediction\". chemprop_core.py:248 describes train_chemprop_fold as training \"one ensemble member\". So the author's deployed endpoint averages the 5 fold models.",
+    "Module load ordering in `collect()` is correct: `openadmet_validation` is registered (briford_native.py:132) before `cyp_recalibrate` imports it at module top (cyp_recalibrate.py:37), and `cyp_recalibrate` is registered (briford_native.py:133) before `cyp_ensemble_submit` does `from cyp_recalibrate import VALUE_COLUMNS` (cyp_ensemble_submit.py:26).",
+    "`oof_pearson` over all four model names is correct per-isoform: the native `Model.list_inference_runs` adapter (briford_native.py:125) only emits runs for targets present in that member's frame, so the 2D6 specialists contribute to CYP2D6 only — matching MEMBERS in cyp_ensemble_submit.py:37-42.",
+    "`place()` applies no upper clamp to `pearson` (cyp_recalibrate.py:217-228); for non-2D6 isoforms `target_sd = rho * moments['sd']`, so an OOF Pearson above 1/OOF_TO_BLIND yields a target spread wider than the blind label sd.",
+    "Placement is the author's own largest measured lever: cyp_recalibrate.py:68-73 records CYP2D6 board probes at mean 3.11/3.32/3.57/4.35 scoring ST-RAE 0.6944/0.6271/0.5502/0.8558 on one unchanged prediction vector.",
+    "The author's docstring explicitly limits transfer: BLIND_MOMENTS describe \"only the live half\", and \"OpenADMET split the 750-compound test set by chemical series and the other half is never scored until the challenge ends, so these transfer to it only insofar as the two halves share a distribution -- which series splitting is designed to prevent\" (cyp_recalibrate.py:50-53).",
+    "The 4×RTX 4090 offers in offers-4090.json are priced at dph_total 1.8147 / 2.0294 / 2.5350 / 3.0632 USD per hour.",
+    "Per-fold resumability exists: briford_native.py:156 only enqueues folds lacking `complete.json`, and the worker refuses to overwrite a completed directory (briford_native.py:86)."
+  ],
+  "inferences": [
+    "The scored metric is lower-is-better and in the ST-RAE family: briford 0.4378 vs ours 0.7521 with the user wanting to 'get closer', and the author's own ST-RAE probe values (0.5502–0.8558) sit in the same numeric range.",
+    "Budget feasibility is tight. At $1.81/h with ~$4.5 usable after the $1.5 reserve, you have roughly 2.5 wall-clock hours on the 4-GPU box. union18 (31670 rows, batch 64 ≈ 495 steps/epoch, hidden 700, depth 5, 18 heads) plus 2d6isoform6 (23264 rows) are 10 of the 20 folds and are scheduled last (briford_native.py:152); with max_epochs 400 / patience 40 these can plausibly run 20–80 min per fold, i.e. 3 heavy waves that may not fit.",
+    "Running 4 concurrent jobs each with num_workers=2 plus torch.set_num_threads(4) means ≥24 CPU threads contend; if the rented box is CPU-light, the heavy members will be dataloader-bound and the wall-clock estimate degrades further.",
+    "Because the author's three solve entries are all submissions of `cyp-reg-chemprop-mt-aux-100`, reproducing that one model and placing it with SOLVED_PEARSON is the path with the most external validation per dollar — its blind Pearson is already measured, not estimated.",
+    "The task_weights frozen in prepared/manifest.json (e.g. 0.6628257036209106) are exact float32 round-trips, suggesting they were computed at runtime from the current data rather than hardcoded by the author; if so they differ slightly from the author's August values."
+  ],
+  "opportunities": [
+    {
+      "item": "Apply the native placement to the existing .7521 prediction vector in today's 12:10 window. It needs no GPU, is rank-preserving, and by the author's own measurement placement alone is worth ~0.14 ST-RAE on CYP2D6.",
+      "importance": "high",
+      "basis": "cyp_recalibrate.py:68-73 (probe table); cyp_recalibrate.py:206-234 (place is a pure affine map on a submitted CSV, no inference)."
+    },
+    {
+      "item": "Gate the expensive members behind a reproduction check: train mtaux8 only (5 folds, 4905 rows) and compare its per-isoform OOF Pearson against the author's published 0.570 / 0.681 / 0.408 / 0.795. This is a falsifiable test of whether the data and environment substitutions preserved the recipe, for roughly $1 of the $4.5.",
+      "importance": "high",
+      "basis": "cyp_recalibrate.py:80-85 publishes the author's measured OOF for exactly this model; briford_native.py:152 already schedules mtaux8 first."
+    },
+    {
+      "item": "Pull the per-isoform breakdown of the .7521 submission before spending anything. It separates a placement problem (free to fix) from a model problem (expensive to fix) and should drive the whole plan.",
+      "importance": "high",
+      "basis": "The metric is per-isoform (VALUE_COLUMNS, cyp_recalibrate.py:106) and placement acts independently per isoform, so the attribution is directly actionable."
+    },
+    {
+      "item": "Add a wall-clock budget kill plus export after each fold completes, rather than exporting only at the end. The resume logic already supports restarting from partial results.",
+      "importance": "medium",
+      "basis": "briford_native.py:156 and :86; collect() at :110-113 requires all 5 folds of all 4 members, so a truncated run currently yields no submission."
+    },
+    {
+      "item": "The CYP2D6 ST-RAE optimum is explicitly unresolved — the author places it between 3.57 and 4.35 and never probes the interior. A later submission could probe ~3.85. Treat this as board probing to be disclosed, not as a model improvement.",
+      "importance": "medium",
+      "basis": "cyp_recalibrate.py:73-75 states the minimum sits between 3.57 and 4.35 and that the penalty above it is far steeper than the gain below."
+    }
+  ],
+  "risks": [
+    {
+      "item": "The full 20-fold run plausibly exceeds the available credit. ~$4.5 usable at $1.81/h is ~2.5 hours on 4 GPUs; the two large members are 10 folds with max_epochs 400 / patience 40 and are scheduled last, so a budget stop-out leaves you with the cheap members done and no submission, because collect() demands all four members.",
+      "severity": "high",
+      "basis": "offers-4090.json dph_total 1.8147; briford_native.py:152 job order; briford_native.py:110-113 collect() asserts 5 complete folds for every member; hyperparameters in prepared/manifest.json."
+    },
+    {
+      "item": "BLIND_MOMENTS and STRAE_MOMENTS may not describe the half currently being scored. The author warns the constants describe only the live half and that series splitting is designed to prevent the halves from sharing a distribution. If the board rotated halves since those probes, the placement could actively hurt.",
+      "severity": "high",
+      "basis": "cyp_recalibrate.py:50-53, verbatim caveat in the author's own docstring."
+    },
+    {
+      "item": "`place()` does not clamp rho to 1.0. With OOF_TO_BLIND of 1.32/1.23/1.66, a reproduced 4-member ensemble whose OOF Pearson exceeds the author's single-model OOF will be given a target sd wider than the blind label sd, over-spreading and degrading both R2 and ST-RAE. Nothing in the pipeline errors or warns on this.",
+      "severity": "medium",
+      "basis": "cyp_recalibrate.py:198 (raw * OOF_TO_BLIND, no bound) and :224 (target_sd = rho * moments['sd'])."
+    },
+    {
+      "item": "Only one submission per 12h. Committing today's slot to a run that has not finished — or that finishes with unvalidated placement — wastes a full day of the campaign.",
+      "severity": "medium",
+      "basis": "Brief: earliest new send 12:10:10 UTC, 12h cooldown; current local time ~12:25 Moscow."
+    },
+    {
+      "item": "'Точь-в-точь' is not achievable and should not be promised. ChEMBL/PubChem objects were replaced 2026-09-02, historical versions are 403, and no original checkpoints, OOF or container lock exist. Matching row counts (31670) is a consistency signal, not proof of identical bytes.",
+      "severity": "medium",
+      "basis": "prepared/manifest.json known_limits[0]; sources/public-s3-versions-status.json per brief; manifest union18 rows 31670."
+    },
+    {
+      "item": "One public Veith connectivity group overlaps the actual TEST set and is intentionally retained to preserve the native recipe. Effect on 31670 rows is negligible but it must be disclosed alongside any reported score.",
+      "severity": "low",
+      "basis": "prepared/native_overlap_audit.json: 1 row, id VEITH-RWZAIHHFBKOVIK."
+    }
+  ],
+  "alternatives": [
+    "Two-member reproduction (mtaux8 + union18) with 2D6 served by the two multi-isoform models only. The author states the 4-member pool's advantage is CYP2D6-specific and worth ~+0.046 Spearman over the best single member (cyp_ensemble_submit.py:4-8), so dropping the two 2D6 specialists forfeits a known-small, isoform-local gain while removing 10 folds of compute — though 2d6single (1493 rows) is cheap enough to keep.",
+    "mtaux8-only reproduction placed with SOLVED_PEARSON rather than oof_pearson. This is the exact model whose blind Pearson the author solved (0.753/0.838/0.678/0.851), so it removes the OOF_TO_BLIND extrapolation entirely and is the most budget-safe route to a briford-adjacent board position.",
+    "Submit only the placement of existing predictions and defer all rental until the per-isoform breakdown is in hand. If the .7521 is dominated by CYP2D6 mis-placement, the GPU spend may be unnecessary to reach the user's stated goal of 'getting close'."
+  ],
+  "missing_information": [
+    "Per-isoform breakdown of the .7521 submission — without it the placement-vs-model attribution is guesswork and the whole spending decision is unanchored.",
+    "Whether the currently-scored leaderboard half is the same one the author probed in August/September, and whether briford's 0.4378 was scored against that same half.",
+    "Whether the prediction CSV and OOF captures from the .7521 pipeline are still on disk and in the native submission column format, which is the precondition for the zero-cost recalibration.",
+    "Measured per-epoch time for union18 and 2d6isoform6 on a 4090, and the CPU core count of the candidate box. A 10-minute single-fold timing probe would convert the budget risk from speculative to known.",
+    "Whether the task_weights in prepared/manifest.json are runtime-computed or author-literal, and whether the author's blog quotes comparable values — a free faithfulness cross-check."
+  ],
+  "what_would_change_view": [
+    "A per-isoform breakdown showing the .7521 gap is spread evenly and not CYP2D6-dominated would mean placement is not the main lever and the model run is genuinely necessary.",
+    "A measured union18 fold time under ~15 minutes on a 4090 would make the full 20-fold run comfortably affordable and remove my main objection to running it straight through.",
+    "Evidence that the live scored half changed since the author's probes would invalidate BLIND_MOMENTS/STRAE_MOMENTS and make the placement step a liability rather than the main gain.",
+    "Confirmation that the .7521 prediction vector is unavailable would remove the zero-cost option and make the mtaux8-first gate the top recommendation outright."
+  ],
+  "user_escalation_required": false,
+  "escalation_reason": "Renting and submitting are already authorized, and a staged plan fits inside the existing credit without a top-up. Flag to the user only if Codex concludes the full four-member run cannot complete within the ~$4.5 usable budget, since choosing between a partial ensemble and a credit top-up is the user's call.",
+  "_consultation": {
+    "id": "20261024T092102Z-f17534bd",
+    "requested_model": "claude-fable-5",
+    "primary_model": "claude-opus-5",
+    "automatic_fallback_used": true,
+    "explicit_opus": false
+  }
+}

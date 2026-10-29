@@ -1,0 +1,72 @@
+{
+  "status": "complete",
+  "cell": "fusion",
+  "fold": 3,
+  "seconds": 541.0563094615936,
+  "best_epoch": 16,
+  "epochs_run": 47,
+  "raw_strae": 0.7373517663024189,
+  "raw_per_target_strae": [
+    0.9077367728272261,
+    0.6772281935820555,
+    0.8822224353947885,
+    0.4822196634056057
+  ],
+  "raw_metrics": {
+    "ST-RAE": 0.7373517663024189,
+    "MAE": 0.5337799521898641,
+    "R2": 0.2989600899624043,
+    "Pearson": 0.544779156022668,
+    "Spearman": 0.5521744355099487,
+    "Kendall": 0.40081408655799977
+  },
+  "raw_per_target_metrics": [
+    {
+      "ST-RAE": 0.9077367728272261,
+      "MAE": 0.6398764419140491,
+      "R2": 0.07480703380847853,
+      "Pearson": 0.3950777415048999,
+      "Spearman": 0.4669618466864047,
+      "Kendall": 0.33568656786198514
+    },
+    {
+      "ST-RAE": 0.6772281935820555,
+      "MAE": 0.4315800902710733,
+      "R2": 0.38691831849578107,
+      "Pearson": 0.6221859842334668,
+      "Spearman": 0.6181524740237511,
+      "Kendall": 0.4413702239789196
+    },
+    {
+      "ST-RAE": 0.8822224353947885,
+      "MAE": 0.5433842250165574,
+      "R2": 0.14755786680049,
+      "Pearson": 0.392277425864277,
+      "Spearman": 0.35071227119962006,
+      "Kendall": 0.2410338857284195
+    },
+    {
+      "ST-RAE": 0.4822196634056057,
+      "MAE": 0.5202790515577769,
+      "R2": 0.5865571407448678,
+      "Pearson": 0.7695754724880284,
+      "Spearman": 0.772871150130019,
+      "Kendall": 0.5851656686626747
+    }
+  ],
+  "test_not_selection": true,
+  "served_metrics": "not computed in runtime smoke; raw and served must remain separate",
+  "initial_sha256": "f7fe55cc0affe7b22fea1d494c0e7638643d8857346f93901f842bfafb53fa8b",
+  "parameter_sha256": "98785b0471ad6137fc1a6894cdbe97ef9cb3c05123677b91836c4d9992a8475c",
+  "prediction_sha256": "fb602739ab346b3ff62ed0ab3cea4d23c82cfbd2625f095104785c0c1cdf09e1",
+  "packages": {
+    "torch": "2.6.0+cu124",
+    "chemprop": "2.2.1",
+    "lightning": "2.5.5",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.16.2",
+    "scikit-learn": "1.7.2",
+    "rdkit": "2026.9.1"
+  }
+}

@@ -29,5 +29,18 @@ def main():
   with p.open() as f:rows=list(csv.DictReader(f))
   if len(rows)!=750 or [(r['Molecule_Name'],r['SMILES']) for r in rows]!=[(r['Molecule_Name'],r['SMILES']) for r in reference]:errors.append('identity/order '+name)
   if any(not math.isfinite(float(r[c])) for r in rows for c in columns):errors.append('nonfinite '+name)
- print(json.dumps({'status':'fail' if errors else 'pass','checked_files':checked,'deferred_release_paths':deferred,'verified_submission_files':len(hashes),'errors':errors[:30]},indent=2));sys.exit(bool(errors))
+ with (base/'official_train.csv').open() as f:truth={r['Molecule_Name']:r for r in csv.DictReader(f)}
+ mae_checks={}
+ for name,want in [('own750-native-raw.csv',0.5248289358384278),('own750-H6-raw.csv',0.5289842970556098),('own750-anchored-raw.csv',0.529889319656494)]:
+  with (base/name).open() as f:pred=list(csv.DictReader(f))
+  per=[]
+  for c in columns:
+   values=[]
+   for row in pred:
+    raw=truth[row['Molecule_Name']][c]
+    if raw and math.isfinite(float(raw)):values.append(abs(float(raw)-float(row[c])))
+   per.append(sum(values)/len(values))
+  value=sum(per)/len(per);mae_checks[name]=value
+  if abs(value-want)>1e-12:errors.append('MAE mismatch '+name)
+ print(json.dumps({'status':'fail' if errors else 'pass','checked_files':checked,'deferred_release_paths':deferred,'verified_submission_files':len(hashes),'independent_macro_MAE':mae_checks,'errors':errors[:30]},indent=2));sys.exit(bool(errors))
 if __name__=='__main__':main()

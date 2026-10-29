@@ -1,0 +1,32 @@
+{
+  "package": "atom-jepa",
+  "version": "0.3.0",
+  "source_tag": "v0.3.0",
+  "source_revision": "26b6bd9d49989f3af6eb47949c9eeeea353ef5ff",
+  "wheel": {
+    "url": "https://files.pythonhosted.org/packages/3a/74/1dacfafdf39701989cfc47389f35b1566fe0b060b8b91b34a0257f773248/atom_jepa-0.3.0-py3-none-any.whl",
+    "bytes": 78047,
+    "sha256": "b68786d539e6efe1b4ea09fc37b762e4b59fa031f453f3ba4714c9d63e3b9f4a"
+  },
+  "code_license": "MIT",
+  "model_repo": "atom-jepa/atom-jepa",
+  "model_revision": "8f7514f49693d836ca26dfe0bbae10880f75690b",
+  "model_license": "CC-BY-4.0",
+  "weight": {
+    "url": "https://huggingface.co/atom-jepa/atom-jepa/resolve/8f7514f49693d836ca26dfe0bbae10880f75690b/molecules/model.safetensors",
+    "bytes": 156380852,
+    "sha256": "0406152686fbae9f737f2c70c9acaf2da0eba6ad57e530142adfee47df75882f",
+    "content_downloaded": false,
+    "hash_evidence": "OfficialHF LFS metadata; verify content after authorized download"
+  },
+  "config": {
+    "url": "https://huggingface.co/atom-jepa/atom-jepa/resolve/8f7514f49693d836ca26dfe0bbae10880f75690b/molecules/config.json",
+    "sha256": "554fdf12fd72d88ce32e11d463324c1e0a923cdc0ffcd439863041933424782e",
+    "bytes": 1017
+  },
+  "model_card_sha256": "00a5537ed978db24106e03206360bd25729a10469f6b6129bad620dc7abaaf20",
+  "representation": "block8 after finalnorm, mean-pooled invariant degree0,256dims",
+  "geometry": "ETKDGv3 seed42, explicitHs,MMFF94 max500; no normalization/fragment removal",
+  "execution": "explicitCPU fp32, cuequivarianceFalse, compileFalse; local pinnedcheckpoint folder ratherthanmutablealias",
+  "pretraining_card": "Uni-Mol molecular pretraining set,19M molecules,self-supervised; exactcompoundmembership unknown"
+}

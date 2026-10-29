@@ -1,0 +1,2914 @@
+{
+  "PC_AssayContainer": [
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 1508630,
+            "version": 1
+          },
+          "aid_source": {
+            "db": {
+              "name": "NCGC",
+              "source_id": {
+                "str": "SERCaMPGLuc-p1-antagonist"
+              },
+              "date": {
+                "std": {
+                  "year": 2021,
+                  "month": 4,
+                  "day": 16
+                }
+              }
+            }
+          },
+          "name": "Primary qHTS for small molecule stabilizers of the endoplasmic reticulum resident proteome: Secreted ER Calcium Modulated Protein (SERCaMP) assay",
+          "description": [
+            "Assay Provider: Brandon K. Harvey Ph.D.",
+            "National Institute on Drug Abuse, National Institutes of Health, Baltimore, MD",
+            "",
+            "Endoplasmic reticulum (ER) dysregulation is associated with human pathologies including neurodegenerative, cardiovascular, muscular, and diabetic conditions. Maintenance of ER calcium is critical for functions of the ER and its depletion can lead to loss of ER resident proteins, in a process termed exodosis. Therapeutic compounds capable of attenuating the redistribution of ER proteins under pathological conditions may slow or stop disease progression. To identify such compounds, we performed a quantitative high-throughput screen (qHTS) using the SERCaMP assay, which monitors secretion of ER resident proteins triggered by calcium depletion.",
+            "",
+            "SERCaMP was initially developed as a reporter of ER calcium homeostasis using a Gaussia luciferase with a modified signal peptide and carboxy-terminus (GLuc-SERCaMP), modifications that confer secretion of the reporter in response to ER calcium depletion (Henderson et al., 2014). The assay was used to screen 9,501 compounds, including a collection of drugs approved by the FDA (US), EMA (EU), NHI (Japan), and HC (Canada) regulatory agencies (Huang et al., 2011). Since the SERCaMP reporter reflects the exodosis phenomenon (Trychta et al., 2018a), compounds identified in the screen have the potential to prevent exodosis by different mechanisms such as stabilizing ER calcium or augmenting ERS retrieval.",
+            "",
+            "References:",
+            "1. Henderson, M.J., Wires, E.S., Trychta, K.A., Richie, C.T., and Harvey, B.K. (2014). SERCaMP: a carboxy-terminal protein modification that enables monitoring of ER calcium homeostasis. Mol Biol Cell 25, 2828-2839.",
+            "2. Huang, R., Southall, N., Wang, Y., Yasgar, A., Shinn, P., Jadhav, A., Nguyen, D.T., and Austin, C.P. (2011). The NCGC pharmaceutical collection: a comprehensive resource of clinically approved drugs enabling repurposing and chemical genomics. Sci Transl Med 3, 80ps16.",
+            "3. Trychta, K.A., Back, S., Henderson, M.J., and Harvey, B.K. (2018a). KDEL Receptors Are Differentially Regulated to Maintain the ER Proteome under Calcium Deficiency. Cell Rep 25, 1829-1840 e1826."
+          ],
+          "protocol": [
+            "PROTOCOL TABLES ",
+            "SEQUENCE No. (1, 2, 3, etc.); PARAMETER (e.g., Cells, Incubation, Reagent, etc.); VALUE and DESCRIPTION.",
+            "1; Reagent; 5 uL; 1000 SH-SY5Y cells per wells",
+            "2; Time; 5 hour; 37C, 5% CO2",
+            "3; Compound; 23 nL; Control inhibitor / compound library",
+            "4; Time; 16 hour; 37C, 5% CO2",
+            "5; Reagent; 100 nM; Thapsigargin",
+            "6; Time; 4 hour; 37C, 5% CO2",
+            "7; Reagent; 1 uL; 0.5x coelenterazine",
+            "8; Detection; Luminescence; ViewLux imaging system",
+            "",
+            "NOTES (numbers refer to sequence above)",
+            "1; SH-SY5Y human neuroblastoma cells stably expressing GLuc-SERCaMP (SH-SY5Y-GLuc-ASARTDL) cells were seeded in 1,536 well white tissue culture treated plates (Corning, Cat# 7464) in DMEM-high glucose-sodium pyruvate (ThermoFisher Scientific, Cat #10569) supplemented with 10% bovine growth serum (Hyclone), 10 U/ml penicillin (Gibco), 10 ug/ml streptomycin (Gibco), and 20 mM HEPES.",
+            "2; Assay plates were incubated for 5 hour at 37C in a humidified incubator containing 5% CO2.",
+            "3; qHTS libraries (23 nl, final concentrations of 1.53 uM, 7.67 uM, 38.3 uM) or controls (neutral control: DMSO, positive control: dantrolene) were added using a Kalypsis pin-tool Robotic System equipped with 1536 pinheads. ",
+            "4; Cells were then incubated for 16 hours at 37C, 5% CO2. ",
+            "5; Thapsigargin was added at 100 nM to deplete ER calcium stores.",
+            "6; Cells were incubated for 4 hour (37oC, 5% CO2)",
+            "7; Gaussia luciferase in the medium was measured by adding 1 ul of 0.5x coelenterazine (final concentration 0.07x) prepared in Gaussia Luciferase Glow Assay Buffer (Pierce), without addition of the Cell Lysis Buffer Reagent.",
+            "8; Luminescence was measured using a ViewLux high-432 throughput CCD imaging system (Perkin Elmer) equipped with clear filters. Compounds exhibiting inhibitory activity (defined as curve class -1.1, -1.2, -1.3, -1.4, -2.1, -2.2, -2.3, -2.4, -3) were identified by normalizing plate-wise to corresponding intra-plate controls (neutral control = Tg only; positive control (100% inhibition) = DMSO vehicle) with percent activity derived using in-house software (https://tripod.nih.gov/curvefit). The same controls were also used for the calculation of the Z' factor, a measure of assay quality control, as previously described (Zhang et al., 1999). For the initial validation of activity in the SERCaMP assays, hits from the primary screen were assayed again at 11-concentrations (1.3 nM - 76.6 uM). SH-SY5Y-GLuc-SERCaMP cells were assayed for ER Ca2+ depletion as outlined above.",
+            "",
+            "Reference: ",
+            "1. Zhang, J.H., Chung, T.D., and Oldenburg, K.R. (1999). A Simple Statistical Parameter for Use in Evaluation and Validation of High Throughput Screening Assays. J Biomol Screen 4, 67-73."
+          ],
+          "comment": [
+            "Disclaimer:",
+            "Although all reasonable efforts have been made to ensure the accuracy and reliability of the data, caution should be exercised when interpreting the results as artifacts are possible from nonspecific effects such as assay signal interference. The curve fitting and activity calls presented here are based on the NCATS analysis methods. ",
+            "",
+            "Compound Ranking:",
+            "1. Compounds are first classified as having full titration curves, partial modulation, partial curve (weaker actives), single point activity (at highest concentration only), or inactive. For this assay, apparent inhibitors are ranked higher than compounds that showed apparent activation.",
+            "2. For all inactive compounds, with a ratio activity curve class of 4, PUBCHEM_ACTIVITY_SCORE is 0. For all active compounds, a score range was given for each curve class type given above. Active compounds have PUBCHEM_ACTIVITY_SCORE between 40 and 100. For a ratio activity curve class = -1.1, score = 80+abs((log_ac50+4.5)*inf_activity/20). For ratio.curve_class == -1.2 && abs(ratio.max_response) > 6*10, score = 60+abs((log_ac50+4.5)*inf_activity/20). For ratio.curve_class == -2.1 || ( ratio.curve_class==-2.2 && abs(ratio.max_response) > 6*10), score = 40+abs((log_ac50+4.5)*inf_activity/20). For ratio.curve_class == -1.2 || ratio.curve_class == -2.2, score = 20+abs((log_ac50+4.5)*inf_activity/20). Inconclusive compounds, with a donor curve class other than 4, have PUBCHEM_ACTIVITY_SCORE of 10. Inconclusive compounds have PUBCHEM_ACTIVITY_SCORE between 1 and 39."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "pmid": 25031430
+              }
+            },
+            {
+              "xref": {
+                "pmid": 21525397
+              }
+            },
+            {
+              "xref": {
+                "pmid": 30428351
+              }
+            },
+            {
+              "xref": {
+                "pmid": 10838414
+              }
+            },
+            {
+              "xref": {
+                "pmid": 33910017
+              },
+              "type": 1
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "Phenotype",
+              "description": [
+                "Indicates type of activity observed: inhibitor, activator, fluorescent, cytotoxic, inactive, or inconclusive."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 2,
+              "name": "Potency",
+              "description": [
+                "Concentration at which compound exhibits half-maximal efficacy, AC50. Extrapolated AC50s also include the highest efficacy observed and the concentration of compound at which it was observed."
+              ],
+              "type": 1,
+              "unit": 5,
+              "ac": true
+            },
+            {
+              "tid": 3,
+              "name": "Efficacy",
+              "description": [
+                "Maximal efficacy of compound, reported as a percentage of control. These values are estimated based on fits of the Hill equation to the dose-response curves."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 4,
+              "name": "Analysis Comment",
+              "description": [
+                "Annotation/notes on a particular compound's data or its analysis."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 5,
+              "name": "Activity_Score",
+              "description": [
+                "Activity score."
+              ],
+              "type": 2,
+              "unit": 254
+            },
+            {
+              "tid": 6,
+              "name": "Curve_Description",
+              "description": [
+                "A description of dose-response curve quality. A complete curve has two observed asymptotes; a partial curve may not have attained its second asymptote at the highest concentration tested. High efficacy curves exhibit efficacy greater than 80% of control. Partial efficacies are statistically significant, but below 80% of control."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 7,
+              "name": "Fit_LogAC50",
+              "description": [
+                "The logarithm of the AC50 from a fit of the data to the Hill equation (calculated based on Molar Units)."
+              ],
+              "type": 1,
+              "unit": 254
+            },
+            {
+              "tid": 8,
+              "name": "Fit_HillSlope",
+              "description": [
+                "The Hill slope from a fit of the data to the Hill equation."
+              ],
+              "type": 1,
+              "unit": 254
+            },
+            {
+              "tid": 9,
+              "name": "Fit_R2",
+              "description": [
+                "R^2 fit value of the curve. Closer to 1.0 equates to better Hill equation fit."
+              ],
+              "type": 1,
+              "unit": 254
+            },
+            {
+              "tid": 10,
+              "name": "Fit_InfiniteActivity",
+              "description": [
+                "The asymptotic efficacy from a fit of the data to the Hill equation."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 11,
+              "name": "Fit_ZeroActivity",
+              "description": [
+                "Efficacy at zero concentration of compound from a fit of the data to the Hill equation."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 12,
+              "name": "Fit_CurveClass",
+              "description": [
+                "Numerical encoding of curve description for the fitted Hill equation."
+              ],
+              "type": 1,
+              "unit": 254
+            },
+            {
+              "tid": 13,
+              "name": "Excluded_Points",
+              "description": [
+                "Which dose-response titration points were excluded from analysis based on outlier analysis. Each number represents whether a titration point was (1) or was not (0) excluded, for the titration series going from smallest to highest compound concentrations."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 14,
+              "name": "Max_Response",
+              "description": [
+                "Maximum activity observed for compound (usually at highest concentration tested)."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 15,
+              "name": "Activity at 0.0000259387 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 2.59386997640831e-05,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 16,
+              "name": "Activity at 0.0000710850 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 7.10849999450147e-05,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 17,
+              "name": "Activity at 0.0001271514 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000127150997286662,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 18,
+              "name": "Activity at 0.0003024044 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000302403990644962,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 19,
+              "name": "Activity at 0.0005030064 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000503005983773619,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 20,
+              "name": "Activity at 0.0006524306 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000652430986519903,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 21,
+              "name": "Activity at 0.00193 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.00193392997607589,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 22,
+              "name": "Activity at 0.00341 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.00340712000615895,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 23,
+              "name": "Activity at 0.00584 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.00583678996190429,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 24,
+              "name": "Activity at 0.010 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0103075001388788,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 25,
+              "name": "Activity at 0.018 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0175717007368803,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 26,
+              "name": "Activity at 0.052 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0521995984017849,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 27,
+              "name": "Activity at 0.078 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0779626965522766,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 28,
+              "name": "Activity at 0.156 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.156415000557899,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 29,
+              "name": "Activity at 0.276 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.2759889960289,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 30,
+              "name": "Activity at 0.478 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.477829992771149,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 31,
+              "name": "Activity at 0.883 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.882583022117615,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 32,
+              "name": "Activity at 1.507 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 1.50660002231598,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 33,
+              "name": "Activity at 3.884 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 3.88369011878967,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 34,
+              "name": "Activity at 7.354 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 7.353759765625,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 35,
+              "name": "Activity at 12.96 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 12.9559001922607,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 36,
+              "name": "Activity at 21.63 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 21.6259994506836,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 37,
+              "name": "Activity at 38.41 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 38.4140014648438,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 38,
+              "name": "Activity at 76.33 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 76.3276977539063,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 39,
+              "name": "Activity at 137.0 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 137.009002685547,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 40,
+              "name": "Activity at 204.0 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 204,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 41,
+              "name": "Compound QC",
+              "description": [
+                "NCGC designation for data stage: 'qHTS', 'qHTS Verification', 'Secondary Profiling'"
+              ],
+              "type": 4
+            }
+          ],
+          "revision": 4,
+          "activity_outcome_method": 2,
+          "dr": [
+            {
+              "id": 1,
+              "descr": "CR Plot label 1",
+              "dn": "Concentration",
+              "rn": "Response"
+            }
+          ],
+          "project_category": 3,
+          "assay_group": [
+            "ETB-SERCaMP-Harvey"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 1645853,
+            "version": 1
+          },
+          "aid_source": {
+            "db": {
+              "name": "24642",
+              "source_id": {
+                "str": "USP8 FAST DUB HTS Primary"
+              },
+              "date": {
+                "std": {
+                  "year": 2021,
+                  "month": 7,
+                  "day": 1
+                }
+              }
+            }
+          },
+          "name": "USP8 deubiquitinase inhibition: Primary qHTS",
+          "description": [
+            "Purified enzyme biochemical assay to assess inhibitors of the deubiquitinase USP8. USP8 was incubated with compounds from the screening library and a DUB substrate, Ubiquitin-rhodamine. Upon catalytic activity of the enzyme, rhodamine is cleaved from ubiquitin releasing a fluorescent rhodamine species that can be read on a plate reader. Inhibition by compounds prevents catalytic cleavage of the ubiquitin-rhodamine substrate resulting in reduced fluorescence."
+          ],
+          "protocol": [
+            "Deubiquitinases were purified from E. Coli. Ub-Rho substrate was purchased from Boston BioChem (Cat #: U-555). Assay buffer consisted of 50 mM Tris pH 8, 50 mM NaCl, 0.002% Tween20, 5 mM DTT in MilliQ water. Stop buffer consisted of assay buffer + 0.2% trifluoroacetic acid.",
+            "",
+            "Protocol for Inhibitors of USP8: Primary Screen",
+            "1.#Compound, 20 nL of screening compounds (final concentration of 20 uM) to columns 1-46 of a Greiner 1536 well Black, flat bottom, polystyrene microplate (Griener 782076) (columns 45-46: DMSO control)",
+            "2.#Reagent, 2.5 uL of assay buffer to columns 47-48 on all plates (No enzyme control)",
+            "3.#Reagent, 2.5 uL of USP8 in assay buffer (final concentration of 1 nM) to columns 1-46 ",
+            "4.#Reagent, 2.5 uL of Ub-Rho in assay buffer (final concentration of 50 nM) to all wells",
+            "5.#Time, Incubate at room temperature for 30 minutes",
+            "6.#Detection, Fluorescence, PheraStar, FITC Module"
+          ],
+          "comment": [
+            "Normalization of raw data to positive and negative control wells were applied to the data using Helios, a high-throughput screening data analysis program developed at Novartis.(Gubler et al., 2018)",
+            "",
+            "Compounds demonstrating greater than or equal to 30% inhibition of USP8 (USP8_EFFICACY >/= 30) were called as active, compounds demonstrating activity below this threshold were called as inactive."
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "USP8-Efficacy",
+              "description": [
+                "Percent inhibition of USP8 at a compound concentration of 20 micromolar, normalized to assay controls"
+              ],
+              "type": 1,
+              "unit": 15
+            }
+          ],
+          "revision": 3,
+          "target": [
+            {
+              "name": "ubiquitin specific peptidase 8",
+              "mol_id": {
+                "protein_accession": "P40818.1"
+              }
+            }
+          ],
+          "activity_outcome_method": 0,
+          "project_category": 255,
+          "assay_group": [
+            "FAST-DUB-Primary"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 1645854,
+            "version": 1
+          },
+          "aid_source": {
+            "db": {
+              "name": "24642",
+              "source_id": {
+                "str": "USP7 FAST DUB HTS Primary"
+              },
+              "date": {
+                "std": {
+                  "year": 2021,
+                  "month": 7,
+                  "day": 1
+                }
+              }
+            }
+          },
+          "name": "USP7 deubiquitinase inhibition: Primary qHTS",
+          "description": [
+            "Purified enzyme biochemical assay to assess inhibitors of the deubiquitinase USP7. USP7 was incubated with compounds from the screening library and a DUB substrate, Ubiquitin-rhodamine. Upon catalytic activity of the enzyme, rhodamine is cleaved from ubiquitin releasing a fluorescent rhodamine species that can be read on a plate reader. Inhibition by compounds prevents catalytic cleavage of the ubiquitin-rhodamine substrate resulting in reduced fluorescence."
+          ],
+          "protocol": [
+            "Deubiquitinases were purified from E. Coli. Ub-Rho substrate was purchased from Boston BioChem (Cat #: U-555). Assay buffer consisted of 50 mM Tris pH 8, 50 mM NaCl, 0.002% Tween20, 5 mM DTT in MilliQ water. Stop buffer consisted of assay buffer + 0.2% trifluoroacetic acid.",
+            "",
+            "Protocol for Inhibitors of USP7: Primary Screen",
+            "1. Reagent, 2.5 uL of USP7 in assay buffer (final concentration of 4 nM) to columns 1-46 of a Greiner 1536 well Black, flat bottom, polystyrene microplate (Griener 782076)",
+            "2. Compound, 20 nL of screening compounds (final concentration of 20 uM) to columns 1-46 (columns 45-46: DMSO control)",
+            "3. Reagent, 2.5 uL of assay buffer to columns 47-48 on all plates (No enzyme control) ",
+            "4. Time, Incubate at room temperature for 60 minutes",
+            "5. Reagent, 2.5 uL of Ub-Rho in assay buffer (final concentration of 40 nM) to all wells",
+            "6. Time, Incubate at room temperature for 10 minutes",
+            "7. Detection, Fluorescence, PheraStar, FITC Module"
+          ],
+          "comment": [
+            "Normalization of raw data to positive and negative control wells were applied to the data using Helios, a high-throughput screening data analysis program developed at Novartis.(Gubler et al., 2018)",
+            "",
+            "Compounds demonstrating greater than or equal to 30% inhibition of USP7 (USP7_EFFICACY >/= 30) were called as active, compounds demonstrating activity below this threshold were called as inactive."
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "USP7_EFFICACY",
+              "description": [
+                "Percent inhibition of USP7 at a compound concentration of 20 micromolar, normalized to assay controls"
+              ],
+              "type": 1,
+              "unit": 15
+            }
+          ],
+          "revision": 3,
+          "target": [
+            {
+              "name": "ubiquitin specific peptidase 7",
+              "mol_id": {
+                "protein_accession": "NP_003461.2"
+              }
+            }
+          ],
+          "activity_outcome_method": 0,
+          "project_category": 255,
+          "assay_group": [
+            "FAST-DUB-Primary"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 1645855,
+            "version": 1
+          },
+          "aid_source": {
+            "db": {
+              "name": "24642",
+              "source_id": {
+                "str": "USP17 FAST DUB HTS Primary"
+              },
+              "date": {
+                "std": {
+                  "year": 2021,
+                  "month": 7,
+                  "day": 1
+                }
+              }
+            }
+          },
+          "name": "USP17 deubiquitinase inhibition: Primary qHTS",
+          "description": [
+            "Purified enzyme biochemical assay to assess inhibitors of the deubiquitinase USP17. USP17 was incubated with compounds from the screening library and a DUB substrate, Ubiquitin-rhodamine. Upon catalytic activity of the enzyme, rhodamine is cleaved from ubiquitin releasing a fluorescent rhodamine species that can be read on a plate reader. Inhibition by compounds prevents catalytic cleavage of the ubiquitin-rhodamine substrate resulting in reduced fluorescence."
+          ],
+          "protocol": [
+            "Deubiquitinases were purified from E. Coli. Ub-Rho substrate was purchased from Boston BioChem (Cat #: U-555). Assay buffer consisted of 50 mM Tris pH 8, 50 mM NaCl, 0.002% Tween20, 5 mM DTT in MilliQ water. Stop buffer consisted of assay buffer + 0.2% trifluoroacetic acid.",
+            "",
+            "Protocol for Inhibitors of USP17: Primary Screen",
+            "1. Compound, 50 nL of screening compounds (final concentration of 50 uM) to columns 1-46 of a Greiner 1536 well Black, flat bottom, polystyrene microplate (Griener 782076) (columns 45-46: DMSO control)",
+            "2. Reagent, 2.5 uL of assay buffer to columns 47-48 on all plates (No enzyme control)",
+            "3. Reagent, 2.5 uL of USP17 in assay buffer (final concentration of 1 nM) to columns 1-46 ",
+            "4. Reagent, 2.5 uL of Ub-Rho in assay buffer (final concentration of 40 nM) to all wells",
+            "5. Time, Incubate at room temperature for 3 hours",
+            "6. Reagent, 2.5 uL of stop buffer to all wells",
+            "7. Centrifuge plates (5s, 350 rpm)",
+            "8. Detection, Fluorescence, PheraStar, FITC Module"
+          ],
+          "comment": [
+            "Normalization of raw data to positive and negative control wells were applied to the data using Helios, a high-throughput screening data analysis program developed at Novartis.(Gubler et al., 2018)",
+            "",
+            "Compounds demonstrating greater than or equal to 30% inhibition of USP17 (USP17_EFFICACY >/= 30) were called as active, compounds demonstrating activity below this threshold were called as inactive."
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "USP17-Efficacy",
+              "description": [
+                "Percent inhibition of USP17 at a compound concentration of 50 micromolar, normalized to assay controls"
+              ],
+              "type": 1,
+              "unit": 15
+            }
+          ],
+          "revision": 3,
+          "target": [
+            {
+              "name": "ubiquitin specific peptidase 17 like family member 5",
+              "mol_id": {
+                "protein_accession": "A8MUK1.2"
+              }
+            }
+          ],
+          "activity_outcome_method": 0,
+          "project_category": 255,
+          "assay_group": [
+            "FAST-DUB-Primary"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 1645856,
+            "version": 1
+          },
+          "aid_source": {
+            "db": {
+              "name": "24642",
+              "source_id": {
+                "str": "USP10 FAST DUB HTS Primary"
+              },
+              "date": {
+                "std": {
+                  "year": 2021,
+                  "month": 7,
+                  "day": 1
+                }
+              }
+            }
+          },
+          "name": "USP10 deubiquitinase inhibition: Primary qHTS",
+          "description": [
+            "Purified enzyme biochemical assay to assess inhibitors of the deubiquitinase USP10. USP10 was incubated with compounds from the screening library and a DUB substrate, Ubiquitin-rhodamine. Upon catalytic activity of the enzyme, rhodamine is cleaved from ubiquitin releasing a fluorescent rhodamine species that can be read on a plate reader. Inhibition by compounds prevents catalytic cleavage of the ubiquitin-rhodamine substrate resulting in reduced fluorescence."
+          ],
+          "protocol": [
+            "Deubiquitinases were purified from E. Coli. Ub-Rho substrate was purchased from Boston BioChem (Cat #: U-555). Assay buffer consisted of 50 mM Tris pH 8, 50 mM NaCl, 0.002% Tween20, 5 mM DTT in MilliQ water. Stop buffer consisted of assay buffer + 0.2% trifluoroacetic acid.",
+            "",
+            "Protocol for Inhibitors of USP10: Primary Screen",
+            "1. Compound, 20 nL of screening compounds (final concentration of 20 uM) to columns 1-46 of a Greiner 1536 well Black, flat bottom, polystyrene microplate (Griener 782076) (columns 45-46: DMSO control)",
+            "2. Reagent, 2.5 uL of assay buffer to columns 47-48 on all plates (No enzyme control)",
+            "3. Reagent, 2.5 uL of USP10 in assay buffer (final concentration of 15 nM) to columns 1-46 ",
+            "4. Reagent, 2.5 uL of Ub-Rho in assay buffer (final concentration of 15 nM) to all wells",
+            "5. Time, Incubate at room temperature for 60 minutes",
+            "6. Detection, Fluorescence, PheraStar, FITC Module"
+          ],
+          "comment": [
+            "Normalization of raw data to positive and negative control wells were applied to the data using Helios, a high-throughput screening data analysis program developed at Novartis.(Gubler et al., 2018)",
+            "",
+            "Compounds demonstrating greater than or equal to 30% inhibition of USP10 (USP10_EFFICACY >/= 30) were called as active, compounds demonstrating activity below this threshold were called as inactive."
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "USP10-Efficacy",
+              "description": [
+                "Percent inhibition of USP10 at a compound concentration of 20 micromolar, normalized to assay controls"
+              ],
+              "type": 1,
+              "unit": 15
+            }
+          ],
+          "revision": 3,
+          "target": [
+            {
+              "name": "ubiquitin specific peptidase 10",
+              "mol_id": {
+                "protein_accession": "Q14694.2"
+              }
+            }
+          ],
+          "activity_outcome_method": 0,
+          "project_category": 255,
+          "assay_group": [
+            "FAST-DUB-Primary"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 1645857,
+            "version": 1
+          },
+          "aid_source": {
+            "db": {
+              "name": "24642",
+              "source_id": {
+                "str": "USP28 FAST DUB HTS Primary"
+              },
+              "date": {
+                "std": {
+                  "year": 2021,
+                  "month": 7,
+                  "day": 1
+                }
+              }
+            }
+          },
+          "name": "USP28 deubiquitinase inhibition: Primary qHTS",
+          "description": [
+            "Purified enzyme biochemical assay to assess inhibitors of the deubiquitinase USP28. USP28 was incubated with compounds from the screening library and a DUB substrate, Ubiquitin-rhodamine. Upon catalytic activity of the enzyme, rhodamine is cleaved from ubiquitin releasing a fluorescent rhodamine species that can be read on a plate reader. Inhibition by compounds prevents catalytic cleavage of the ubiquitin-rhodamine substrate resulting in reduced fluorescence."
+          ],
+          "protocol": [
+            "Deubiquitinases were purified from E. Coli. Ub-Rho substrate was purchased from Boston BioChem (Cat #: U-555). Assay buffer consisted of 50 mM Tris pH 8, 50 mM NaCl, 0.002% Tween20, 5 mM DTT in MilliQ water. Stop buffer consisted of assay buffer + 0.2% trifluoroacetic acid.",
+            "",
+            "Protocol for Inhibitors of USP28: Primary Screen",
+            "1. Compound, 25 nL of screening compounds (final concentration of 25 uM) to columns 1-46 of a Greiner 1536 well Black, flat bottom, polystyrene microplate (Griener 782076) (columns 45-46: DMSO control)",
+            "2. Reagent, 2.5 uL of assay buffer to columns 47-48 on all plates (No enzyme control)",
+            "3. Reagent, 2.5 uL of USP28 in assay buffer (final concentration of 0.5 nM) to columns 1-46 ",
+            "4. Reagent, 2.5 uL of Ub-Rho in assay buffer (final concentration of 12 nM) to all wells",
+            "5. Time, Incubate at room temperature for 30 minutes",
+            "6. Reagent, 2.5 uL of stop buffer to all wells",
+            "7. Centrifuge plates (5s, 350 rpm)",
+            "8. Detection, Fluorescence, PheraStar, FITC Module"
+          ],
+          "comment": [
+            "Normalization of raw data to positive and negative control wells were applied to the data using Helios, a high-throughput screening data analysis program developed at Novartis.(Gubler et al., 2018)",
+            "",
+            "Compounds demonstrating greater than or equal to 30% inhibition of USP28 (USP28_EFFICACY >/= 30) were called as active, compounds demonstrating activity below this threshold were called as inactive."
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "USP28-Efficacy",
+              "description": [
+                "Percent inhibition of USP28 at a compound concentration of 25 micromolar, normalized to assay controls"
+              ],
+              "type": 1,
+              "unit": 15
+            }
+          ],
+          "revision": 3,
+          "target": [
+            {
+              "name": "ubiquitin specific peptidase 28",
+              "mol_id": {
+                "protein_accession": "Q96RU2.1"
+              }
+            }
+          ],
+          "activity_outcome_method": 0,
+          "project_category": 255,
+          "assay_group": [
+            "FAST-DUB-Primary"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 1645858,
+            "version": 1
+          },
+          "aid_source": {
+            "db": {
+              "name": "24642",
+              "source_id": {
+                "str": "OTUD3 FAST DUB HTS Primary"
+              },
+              "date": {
+                "std": {
+                  "year": 2021,
+                  "month": 7,
+                  "day": 1
+                }
+              }
+            }
+          },
+          "name": "OTUD3 deubiquitinase inhibition: Primary qHTS",
+          "description": [
+            "Purified enzyme biochemical assay to assess inhibitors of the deubiquitinase OTUD3. OTUD3 was incubated with compounds from the screening library and a DUB substrate, Ubiquitin-rhodamine. Upon catalytic activity of the enzyme, rhodamine is cleaved from ubiquitin releasing a fluorescent rhodamine species that can be read on a plate reader. Inhibition by compounds prevents catalytic cleavage of the ubiquitin-rhodamine substrate resulting in reduced fluorescence."
+          ],
+          "protocol": [
+            "Deubiquitinases were purified from E. Coli. Ub-Rho substrate was purchased from Boston BioChem (Cat #: U-555). Assay buffer consisted of 50 mM Tris pH 8, 50 mM NaCl, 0.002% Tween20, 5 mM DTT in MilliQ water. Stop buffer consisted of assay buffer + 0.2% trifluoroacetic acid.",
+            "",
+            "Protocol for Inhibitors of OTUD3: Primary Screen",
+            "1. Compound, 25 nL of screening compounds (final concentration of 25 uM) to columns 1-46 of a Greiner 1536 well Black, flat bottom, polystyrene microplate (Griener 782076) (columns 45-46: DMSO control)",
+            "2. Reagent, 2.5 uL of assay buffer to columns 47-48 on all plates (No enzyme control)",
+            "3. Reagent, 2.5 uL of OTUD3 in assay buffer (final concentration of 12 nM) to columns 1-46 ",
+            "4. Reagent, 2.5 uL of Ub-Rho in assay buffer (final concentration of 40 nM) to all wells",
+            "5. Time, Incubate at room temperature for 2 hours",
+            "6. Reagent, 2.5 uL of stop buffer to all wells",
+            "7. Centrifuge plates (5s, 350 rpm)",
+            "8. Detection, Fluorescence, PheraStar, FITC Module"
+          ],
+          "comment": [
+            "Normalization of raw data to positive and negative control wells were applied to the data using Helios, a high-throughput screening data analysis program developed at Novartis.(Gubler et al., 2018)",
+            "",
+            "Compounds demonstrating greater than or equal to 30% inhibition of OTUD3 (OTUD3_EFFICACY >/= 30) were called as active, compounds demonstrating activity below this threshold were called as inactive."
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "OTUD3-Efficacy",
+              "description": [
+                "Percent inhibition of OTUD3 at a compound concentration of 25 micromolar, normalized to assay controls"
+              ],
+              "type": 1,
+              "unit": 15
+            }
+          ],
+          "revision": 3,
+          "target": [
+            {
+              "name": "OTU deubiquitinase 3",
+              "mol_id": {
+                "protein_accession": "NP_056022.1"
+              }
+            }
+          ],
+          "activity_outcome_method": 0,
+          "project_category": 255,
+          "assay_group": [
+            "FAST-DUB-Primary"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 1645859,
+            "version": 1
+          },
+          "aid_source": {
+            "db": {
+              "name": "24642",
+              "source_id": {
+                "str": "UCHL1 FAST DUB HTS Primary"
+              },
+              "date": {
+                "std": {
+                  "year": 2021,
+                  "month": 7,
+                  "day": 1
+                }
+              }
+            }
+          },
+          "name": "UCHL1 deubiquitinase inhibition: Primary qHTS",
+          "description": [
+            "Purified enzyme biochemical assay to assess inhibitors of the deubiquitinase UCHL1. UCHL1 was incubated with compounds from the screening library and a DUB substrate, Ubiquitin-rhodamine. Upon catalytic activity of the enzyme, rhodamine is cleaved from ubiquitin releasing a fluorescent rhodamine species that can be read on a plate reader. Inhibition by compounds prevents catalytic cleavage of the ubiquitin-rhodamine substrate resulting in reduced fluorescence."
+          ],
+          "protocol": [
+            "Deubiquitinases were purified from E. Coli. Ub-Rho substrate was purchased from Boston BioChem (Cat #: U-555). Assay buffer consisted of 50 mM Tris pH 8, 50 mM NaCl, 0.002% Tween20, 5 mM DTT in MilliQ water. Stop buffer consisted of assay buffer + 0.2% trifluoroacetic acid.",
+            "",
+            "Protocol for Inhibitors of UCHL1: Primary Screen",
+            "1. Reagent, 2.5 uL of UCHL1 in assay buffer (final concentration of 1 nM) to columns 1-46 of a Greiner 1536 well Black, flat bottom, polystyrene microplate (Griener 782076)",
+            "2. Compound, 20 nL of screening compounds (final concentration of 20 uM) to columns 1-46 (columns 45-46: DMSO control)",
+            "3. Reagent, 2.5 uL of assay buffer to columns 47-48 on all plates (No enzyme control)",
+            "4. Time, Incubate at room temperature for 60 minutes",
+            "5. Reagent, 2.5 uL of Ub-Rho in assay buffer (final concentration of 7 nM) to all wells",
+            "6. Time, Incubate at room temperature for 10 minutes",
+            "7. Detection, Fluorescence, PheraStar, FITC Module"
+          ],
+          "comment": [
+            "Normalization of raw data to positive and negative control wells were applied to the data using Helios, a high-throughput screening data analysis program developed at Novartis.(Gubler et al., 2018)",
+            "",
+            "Compounds demonstrating greater than or equal to 30% inhibition of UCHL1 (UCHL1_EFFICACY >/= 30) were called as active, compounds demonstrating activity below this threshold were called as inactive."
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "UCHL1-Efficacy",
+              "description": [
+                "Percent inhibition of UCHL1 at a compound concentration of 20 micromolar, normalized to assay controls"
+              ],
+              "type": 1,
+              "unit": 15
+            }
+          ],
+          "revision": 3,
+          "target": [
+            {
+              "name": "ubiquitin C-terminal hydrolase L1",
+              "mol_id": {
+                "protein_accession": "P09936.2"
+              }
+            }
+          ],
+          "activity_outcome_method": 0,
+          "project_category": 255,
+          "assay_group": [
+            "FAST-DUB-Primary"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 1645860,
+            "version": 1
+          },
+          "aid_source": {
+            "db": {
+              "name": "24642",
+              "source_id": {
+                "str": "USP30 FAST DUB HTS Primary"
+              },
+              "date": {
+                "std": {
+                  "year": 2021,
+                  "month": 7,
+                  "day": 1
+                }
+              }
+            }
+          },
+          "name": "USP30 deubiquitinase inhibition: Primary qHTS",
+          "description": [
+            "Purified enzyme biochemical assay to assess inhibitors of the deubiquitinase USP30. USP30 was incubated with compounds from the screening library and a DUB substrate, Ubiquitin-rhodamine. Upon catalytic activity of the enzyme, rhodamine is cleaved from ubiquitin releasing a fluorescent rhodamine species that can be read on a plate reader. Inhibition by compounds prevents catalytic cleavage of the ubiquitin-rhodamine substrate resulting in reduced fluorescence."
+          ],
+          "protocol": [
+            "Deubiquitinases were purified from E. Coli. Ub-Rho substrate was purchased from Boston BioChem (Cat #: U-555). Assay buffer consisted of 50 mM Tris pH 8, 50 mM NaCl, 0.002% Tween20, 5 mM DTT in MilliQ water. Stop buffer consisted of assay buffer + 0.2% trifluoroacetic acid.",
+            "",
+            "Protocol for Inhibitors of USP30: Primary Screen",
+            "1. Compound, 25 nL of screening compounds (final concentration of 25 uM) to columns 1-46 of a Greiner 1536 well Black, flat bottom, polystyrene microplate (Griener 782076) (columns 45-46: DMSO control)",
+            "2. Reagent, 2.5 uL of assay buffer to columns 47-48 on all plates (No enzyme control)",
+            "3. Reagent, 2.5 uL of USP30 in assay buffer (final concentration of 1 nM) to columns 1-46 ",
+            "4. Reagent, 2.5 uL of Ub-Rho in assay buffer (final concentration of 12 nM) to all wells",
+            "5. Time, Incubate at room temperature for 2 hours",
+            "6. Reagent, 2.5 uL of stop buffer to all wells",
+            "7. Centrifuge plates (5s, 350 rpm)",
+            "8. Detection, Fluorescence, PheraStar, FITC Module"
+          ],
+          "comment": [
+            "Normalization of raw data to positive and negative control wells were applied to the data using Helios, a high-throughput screening data analysis program developed at Novartis.(Gubler et al., 2018)",
+            "",
+            "Compounds demonstrating greater than or equal to 30% inhibition of USP30 (USP30_EFFICACY >/= 30) were called as active, compounds demonstrating activity below this threshold were called as inactive."
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "USP30-Efficacy",
+              "description": [
+                "Percent inhibition of USP30 at a compound concentration of 25 micromolar, normalized to assay controls"
+              ],
+              "type": 1,
+              "unit": 15
+            }
+          ],
+          "revision": 3,
+          "target": [
+            {
+              "name": "ubiquitin specific peptidase 30",
+              "mol_id": {
+                "protein_accession": "Q70CQ3.1"
+              }
+            }
+          ],
+          "activity_outcome_method": 0,
+          "project_category": 255,
+          "assay_group": [
+            "FAST-DUB-Primary"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 1671188,
+            "version": 1
+          },
+          "aid_source": {
+            "db": {
+              "name": "NCGC",
+              "source_id": {
+                "str": "TRND-GPT2-p1"
+              },
+              "date": {
+                "std": {
+                  "year": 2021,
+                  "month": 8,
+                  "day": 16
+                }
+              }
+            }
+          },
+          "name": "Primary qHTS assay for inhibitors of Glutamate pyruvate transaminase 2 (GPT2)",
+          "description": [
+            "Assay Provider: Zhenghe John Wang Ph.D.",
+            "Case Western Reserve University, Cleveland OH",
+            "",
+            "Glutamate pyruvate transaminase 2 (GPT2) catalyzes the reversible transamination of glutamate and pyruvate to provide a-ketoglutarate and alanine.  We have optimized an assay for GPT2 enzymatic activity that couples pyruvate formation to detection of fluorescence using an established pyruvate oxidase/horseradish peroxidase / Amplex Red system.",
+            "",
+            "Screening conditions were 250uM a-KG, 2mM L-alanine, and 10ng/uL GPT2 in 80uL of solution; 10uL of Amplex reaction mix (outlined below) were added so that final concentrations of Amplex reagents in 50uL were 0.2mM ThPP, 0.2U/mL PO and HRP, and 50uM Amplex."
+          ],
+          "protocol": [
+            "NOTE: The volume of GPT2 in the system depends on the activity of it. The activity is different every batch. You need to test the activity before the assay. For full plate assay with automation, plate 20uL of GPT2 buffer to pin into, then add 10uL of GPT2 dilution followed immediately by 10uL of substrate dilution.  2 Columns of the plate were devoted to GPT2 buffer (50 uM HEPES PH7.5, 0.0001% Tween) + 50uM AOA (known GPT2 inhibitor) to serve as a positive control. Complete the assay as normal. Amplex-red buffer: 50 uM HEPES PH7.5, 1 mM EDTA, 1 mM MgCl2.",
+            "",
+            "1. Combine a-KG and L-alanine at desired concentrations and incubate for at least 10 minutes at 37C. Stocks of L-alanine and a-KG are diluted in distilled water. However, the stocks were diluted in GPT2 buffer for the assay.",
+            "2. Prepare GPT2 dilution at the desired concentration in GPT2 buffer.",
+            "3. Plate 40uL of GPT2 dilution with 40uL of substrate dilution and let incubate for 30 minutes at room temperature.",
+            "4. Add 20uL of Amplex reaction mix prepared as follows: 1.5uL 200U/mL Horseradish Peroxidase, 200mM Thiamine Pyrophosphate, 200U/mL Pyruvate Oxidase; 7.5uL 10mM Amplex Red; 288uL Amplex Buffer.",
+            "5. Incubate for 30 minutes at room temperature in the dark, then image using AM_Amplex_Fluorescence on plate reader nearest the window."
+          ],
+          "comment": [
+            "Disclaimer:",
+            "Although all reasonable efforts have been made to ensure the accuracy and reliability of the data, caution should be exercised when interpreting the results as artifacts are possible from nonspecific effects such as assay signal interference. The curve fitting and activity calls presented here are based on the NCATS analysis methods. ",
+            "",
+            "Compound Ranking:",
+            "1. Compounds are first classified as having full titration curves, partial modulation, partial curve (weaker actives), single point activity (at highest concentration only), or inactive. For this assay, apparent inhibitors are ranked higher than compounds that showed apparent activation.",
+            "2. For all inactive compounds, with a ratio activity curve class of 4, PUBCHEM_ACTIVITY_SCORE is 0. For all active compounds, a score range was given for each curve class type given above. Active compounds have PUBCHEM_ACTIVITY_SCORE between 40 and 100. For a ratio activity curve class = -1.1, score = 80+abs((log_ac50+4.5)*inf_activity/20). For ratio.curve_class == -1.2 && abs(ratio.max_response) > 6*10, score = 60+abs((log_ac50+4.5)*inf_activity/20). For ratio.curve_class == -2.1 || ( ratio.curve_class==-2.2 && abs(ratio.max_response) > 6*10), score = 40+abs((log_ac50+4.5)*inf_activity/20). For ratio.curve_class == -1.2 || ratio.curve_class == -2.2, score = 20+abs((log_ac50+4.5)*inf_activity/20). Inconclusive compounds, with a donor curve class other than 4, have PUBCHEM_ACTIVITY_SCORE of 10. Inconclusive compounds have PUBCHEM_ACTIVITY_SCORE between 1 and 39."
+          ],
+          "xref": [
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "Phenotype",
+              "description": [
+                "Indicates type of activity observed: inhibitor, activator, fluorescent, cytotoxic, inactive, or inconclusive."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 2,
+              "name": "Potency",
+              "description": [
+                "Concentration at which compound exhibits half-maximal efficacy, AC50. Extrapolated AC50s also include the highest efficacy observed and the concentration of compound at which it was observed."
+              ],
+              "type": 1,
+              "unit": 5,
+              "ac": true
+            },
+            {
+              "tid": 3,
+              "name": "Efficacy",
+              "description": [
+                "Maximal efficacy of compound, reported as a percentage of control. These values are estimated based on fits of the Hill equation to the dose-response curves."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 4,
+              "name": "Analysis Comment",
+              "description": [
+                "Annotation/notes on a particular compound's data or its analysis."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 5,
+              "name": "Activity_Score",
+              "description": [
+                "Activity score."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 6,
+              "name": "Curve_Description",
+              "description": [
+                "A description of dose-response curve quality. A complete curve has two observed asymptotes; a partial curve may not have attained its second asymptote at the highest concentration tested. High efficacy curves exhibit efficacy greater than 80% of control. Partial efficacies are statistically significant, but below 80% of control."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 7,
+              "name": "Fit_LogAC50",
+              "description": [
+                "The logarithm of the AC50 from a fit of the data to the Hill equation (calculated based on Molar Units)."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "Fit_HillSlope",
+              "description": [
+                "The Hill slope from a fit of the data to the Hill equation."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "Fit_R2",
+              "description": [
+                "R^2 fit value of the curve. Closer to 1.0 equates to better Hill equation fit."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 10,
+              "name": "Fit_InfiniteActivity",
+              "description": [
+                "The asymptotic efficacy from a fit of the data to the Hill equation."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 11,
+              "name": "Fit_ZeroActivity",
+              "description": [
+                "Efficacy at zero concentration of compound from a fit of the data to the Hill equation."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 12,
+              "name": "Fit_CurveClass",
+              "description": [
+                "Numerical encoding of curve description for the fitted Hill equation."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 13,
+              "name": "Excluded_Points",
+              "description": [
+                "Which dose-response titration points were excluded from analysis based on outlier analysis. Each number represents whether a titration point was (1) or was not (0) excluded, for the titration series going from smallest to highest compound concentrations."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 14,
+              "name": "Max_Response",
+              "description": [
+                "Maximum activity observed for compound (usually at highest concentration tested)."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 15,
+              "name": "Activity at 0.0000389080 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 3.89080014429055e-05,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 16,
+              "name": "Activity at 0.0001066275 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000106628001958597,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 17,
+              "name": "Activity at 0.0001907270 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000190727005247027,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 18,
+              "name": "Activity at 0.0004536066 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000453607004601508,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 19,
+              "name": "Activity at 0.0007545096 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000754509994294494,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 20,
+              "name": "Activity at 0.0009784757 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000978476018644869,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 21,
+              "name": "Activity at 0.00290 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.00290152011439204,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 22,
+              "name": "Activity at 0.00502 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.00502274977043271,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 23,
+              "name": "Activity at 0.00876 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.00875553023070097,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 24,
+              "name": "Activity at 0.015 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0154611999168992,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 25,
+              "name": "Activity at 0.026 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0263842009007931,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 26,
+              "name": "Activity at 0.052 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0522777996957302,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 27,
+              "name": "Activity at 0.082 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0821098014712334,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 28,
+              "name": "Activity at 0.226 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.226199001073837,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 29,
+              "name": "Activity at 0.459 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.458566009998322,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 30,
+              "name": "Activity at 0.698 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.698315024375916,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 31,
+              "name": "Activity at 1.217 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 1.21679997444153,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 32,
+              "name": "Activity at 2.304 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 2.30351996421814,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 33,
+              "name": "Activity at 3.849 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 3.84907007217407,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 34,
+              "name": "Activity at 11.46 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 11.4624996185303,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 35,
+              "name": "Activity at 17.15 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 17.1485996246338,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 36,
+              "name": "Activity at 27.30 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 27.298900604248,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 37,
+              "name": "Activity at 57.67 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 57.6699981689453,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 38,
+              "name": "Activity at 88.51 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 88.5078964233398,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 39,
+              "name": "Activity at 191.8 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 191.822998046875,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 40,
+              "name": "Activity at 288.0 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 288,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 41,
+              "name": "Compound QC",
+              "description": [
+                "NCGC designation for data stage: 'qHTS', 'qHTS Verification', 'Secondary Profiling'"
+              ],
+              "type": 4
+            }
+          ],
+          "revision": 2,
+          "target": [
+            {
+              "name": "",
+              "mol_id": {
+                "protein_accession": "Q8TD30.1"
+              }
+            },
+            {
+              "name": "",
+              "mol_id": {
+                "gene_id": 84706
+              }
+            }
+          ],
+          "activity_outcome_method": 2,
+          "dr": [
+            {
+              "id": 1,
+              "descr": "CR Plot label 1",
+              "dn": "Concentration",
+              "rn": "Response"
+            }
+          ],
+          "project_category": 3,
+          "assay_group": [
+            "TRND-GPT2-Wang"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 1671193,
+            "version": 1
+          },
+          "aid_source": {
+            "db": {
+              "name": "NCGC",
+              "source_id": {
+                "str": "SNCA-p-viability-GF-AFC"
+              },
+              "date": {
+                "std": {
+                  "year": 2021,
+                  "month": 9,
+                  "day": 1
+                }
+              }
+            }
+          },
+          "name": "GF-AFC viability counterscreen for inhibitors of alpha-synuclein gene (SNCA) expression",
+          "description": [
+            "Assay Submitter (PI): Daniel R. Scoles Ph.D.",
+            "Department of Neurology, University of Utah, Salt Lake City, Utah",
+            "",
+            "Accumulation of alpha-synuclein is a main underlying pathological feature of Parkinson's disease (PD) and alpha-synucleinopathies, for which lowering expression of the alpha-synuclein gene (SNCA) is a potential therapeutic avenue. Using a cell-based luciferase reporter of SNCA expression we performed a quantitative high throughput screen (qHTS) of 155,885 compounds in dose response. The screening assay was generated using genome editing to insert the luciferase gene downstream and in frame of the SNCA gene in HEK-293 cells (1). A viability counterscreen using GF-AFC was used to eliminate cytotoxic and false positive compounds. After in silico analysis (clustering, removal of frequent hitter nuisance chemotypes), inhibitor compounds from the primary screen were selected for follow up and re-tested at 11-doses in the SNCA-luc cells (luciferase and GF-AFC confirmation), and in CMV-luc expressing cell line to flag general transcriptional repressors.",
+            "",
+            "Described herein are the results of the GF-AFC viability counterscreen for SNCA inhibitors; inactivity (no decrease in fluorescence signal, not cytotoxic) is the desired output for this assay.",
+            "",
+            "Reference:",
+            "1. Dansithong, W., Paul, S., Scoles, D. R., Pulst, S. M., and Huynh, D. P. (2015) Generation of SNCA Cell Models Using Zinc Finger Nuclease (ZFN) Technology for Efficient High-Throughput Drug Screening. PLoS ONE 10, e0136930."
+          ],
+          "protocol": [
+            "PROTOCOL TABLE",
+            "SEQUENCE No. (e.g., 1, 2, 3, etc.); PARAMETER (e.g., Cells, Incubation, Reagent, etc.); VALUE; DESCRIPTION",
+            "",
+            "1; Cells; 4 uL; Dispense 1500 HEK-293-SNCA-luc cells/well into Greiner 1536-well white / solid bottom tissue culture treated plate. The plate was covered with metal lids with gas-exchange holes.",
+            "2; Incubate; 24 hours; Incubate at 37C, 5% CO2, 95% RH.",
+            "3; Compounds; 23 nL; Compounds and controls were transferred via a Kalypsys Pin Tool (Wako USA) equipped with a 1536-slotted pin array. The plate was covered with metal lids with gas-exchange holes.",
+            "4; Incubate; 24 hours; Incubate at 37C, 5% CO2, 95% RH.",
+            "5; Dispense; 1 uL; Dispense Gly-Phe-7-amino-4-trifluoromethylcoumarin (GF-AFC, prepared at 125 uM in PBS) was added. The plate was covered with metal lids with gas-exchange holes.",
+            "6; Incubate; 30 min; Incubate at 37C, 5% CO2.",
+            "7; Detector; Fluorescence; Measure fluorescence with ViewLux microplate reader (PerkinElmer) equipped with 405/10 excitation and 540/25 emission filters. ",
+            "8; Dispense; 3 uL; Dispense ONE-Glo (PerkinElmer) lucifase detection reagent was added to each well. Plates were covered with metal lids with gas-exchange holes.",
+            "9; Incubate; 15 min; Incubate at room temperature.",
+            "10; Detector; Luminescence; Measure luminescence with ViewLux microplate reader (PerkinElmer) equipped with clear filters. ",
+            "",
+            "NOTES (numbers refer to sequence above)",
+            "1; HEK-293-SNCA-luc were cultured and suspended in phenol-red free DMEM (4.5 g/L glucose, 25 mM HEPES, cat #21063 (Thermo)). ",
+            "3; Compounds were added to the assay plate in an 11-point intra plate dose response, 1:3 titration in DMSO with a final concentration range of xxx - yyy uM. Vehicle-only plates, with DMSO being pin-transferred to every well, were inserted at the beginning of screening runs to confirm expected assay performance. Activity was normalized to wells containing medium only (-100% activity, full inhibition) and SNCA-luc cells treated with DMSO vehicle control (0% activity), contained on the same plate as test samples.",
+            "10; Signals were analyzed, and dose-response curves were fit using the Hill equation. Compounds in curve classes -1.1, -1.2, -2.1, -2.2 in the SNCA-luc assay were considered active. Compounds were eliminated from further consideration if also active (curve class -1.1, -1.2, -1.3, -1.4, -2.1, -2.2, -2.3, -2.4) in the GF-AFC cytotoxicity assay."
+          ],
+          "comment": [
+            "Disclaimer:",
+            "Although all reasonable efforts have been made to ensure the accuracy and reliability of the data, caution should be exercised when interpreting the results as artifacts are possible from nonspecific effects such as assay signal interference. The curve fitting and activity calls presented here are based on the NCATS analysis methods. ",
+            "",
+            "Compound Ranking:",
+            "1. Compounds are first classified as having full titration curves, partial modulation, partial curve (weaker actives), single point activity (at highest concentration only), or inactive. For this assay, apparent cytotoxic compounds are ranked higher than compounds that showed no activity.",
+            "2. For all inactive compounds, with a ratio activity curve class of 4, PUBCHEM_ACTIVITY_SCORE is 0. For all active compounds, a score range was given for each curve class type given above. Active compounds have PUBCHEM_ACTIVITY_SCORE between 40 and 100. For a ratio activity curve class = -1.1, score = 80+abs((log_ac50+4.5)*inf_activity/20). For ratio.curve_class == -1.2 && abs(ratio.max_response) > 6*10, score = 60+abs((log_ac50+4.5)*inf_activity/20). For ratio.curve_class == -2.1 || ( ratio.curve_class==-2.2 && abs(ratio.max_response) > 6*10), score = 40+abs((log_ac50+4.5)*inf_activity/20). For ratio.curve_class == -1.2 || ratio.curve_class == -2.2, score = 20+abs((log_ac50+4.5)*inf_activity/20). Inconclusive compounds, with a donor curve class other than 4, have PUBCHEM_ACTIVITY_SCORE of 10. Inconclusive compounds have PUBCHEM_ACTIVITY_SCORE between 1 and 39."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "pmid": 26317803
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "Phenotype",
+              "description": [
+                "Indicates type of activity observed: inhibitor, activator, fluorescent, cytotoxic, inactive, or inconclusive."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 2,
+              "name": "Potency",
+              "description": [
+                "Concentration at which compound exhibits half-maximal efficacy, AC50. Extrapolated AC50s also include the highest efficacy observed and the concentration of compound at which it was observed."
+              ],
+              "type": 1,
+              "unit": 5,
+              "ac": true
+            },
+            {
+              "tid": 3,
+              "name": "Efficacy",
+              "description": [
+                "Maximal efficacy of compound, reported as a percentage of control. These values are estimated based on fits of the Hill equation to the dose-response curves."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 4,
+              "name": "Analysis Comment",
+              "description": [
+                "Annotation/notes on a particular compound's data or its analysis."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 5,
+              "name": "Activity_Score",
+              "description": [
+                "Activity score."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 6,
+              "name": "Curve_Description",
+              "description": [
+                "A description of dose-response curve quality. A complete curve has two observed asymptotes; a partial curve may not have attained its second asymptote at the highest concentration tested. High efficacy curves exhibit efficacy greater than 80% of control. Partial efficacies are statistically significant, but below 80% of control."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 7,
+              "name": "Fit_LogAC50",
+              "description": [
+                "The logarithm of the AC50 from a fit of the data to the Hill equation (calculated based on Molar Units)."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "Fit_HillSlope",
+              "description": [
+                "The Hill slope from a fit of the data to the Hill equation."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "Fit_R2",
+              "description": [
+                "R^2 fit value of the curve. Closer to 1.0 equates to better Hill equation fit."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 10,
+              "name": "Fit_InfiniteActivity",
+              "description": [
+                "The asymptotic efficacy from a fit of the data to the Hill equation."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 11,
+              "name": "Fit_ZeroActivity",
+              "description": [
+                "Efficacy at zero concentration of compound from a fit of the data to the Hill equation."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 12,
+              "name": "Fit_CurveClass",
+              "description": [
+                "Numerical encoding of curve description for the fitted Hill equation."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 13,
+              "name": "Excluded_Points",
+              "description": [
+                "Which dose-response titration points were excluded from analysis based on outlier analysis. Each number represents whether a titration point was (1) or was not (0) excluded, for the titration series going from smallest to highest compound concentrations."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 14,
+              "name": "Max_Response",
+              "description": [
+                "Maximum activity observed for compound (usually at highest concentration tested)."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 15,
+              "name": "Activity at 0.0000091400 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 9.13999974727631e-06,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 16,
+              "name": "Activity at 0.0000392290 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 3.92289985029493e-05,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 17,
+              "name": "Activity at 0.0000936611 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 9.36611031647772e-05,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 18,
+              "name": "Activity at 0.0002156927 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000215692998608574,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 19,
+              "name": "Activity at 0.0004492838 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000449284008936957,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 20,
+              "name": "Activity at 0.0009453573 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000945357023738325,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 21,
+              "name": "Activity at 0.00165 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.00165211001876742,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 22,
+              "name": "Activity at 0.00325 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.00325063010677695,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 23,
+              "name": "Activity at 0.00789 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.00789001025259495,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 24,
+              "name": "Activity at 0.011 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0106261000037193,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 25,
+              "name": "Activity at 0.021 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0214211996644735,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 26,
+              "name": "Activity at 0.051 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0511373989284039,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 27,
+              "name": "Activity at 0.087 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0873451009392738,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 28,
+              "name": "Activity at 0.225 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.224994003772736,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 29,
+              "name": "Activity at 0.457 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.457260996103287,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 30,
+              "name": "Activity at 0.751 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.750992000102997,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 31,
+              "name": "Activity at 1.964 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 1.96378004550934,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 32,
+              "name": "Activity at 2.507 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 2.50722002983093,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 33,
+              "name": "Activity at 5.556 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 5.55590009689331,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 34,
+              "name": "Activity at 12.46 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 12.4553003311157,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 35,
+              "name": "Activity at 23.92 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 23.9195003509521,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 36,
+              "name": "Activity at 57.07 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 57.0718002319336,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 37,
+              "name": "Activity at 87.57 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 87.5726013183594,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 38,
+              "name": "Activity at 183.4 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 183.416000366211,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 39,
+              "name": "Activity at 286.0 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 286,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 40,
+              "name": "Compound QC",
+              "description": [
+                "NCGC designation for data stage: 'qHTS', 'qHTS Verification', 'Secondary Profiling'"
+              ],
+              "type": 4
+            }
+          ],
+          "revision": 2,
+          "activity_outcome_method": 2,
+          "dr": [
+            {
+              "id": 1,
+              "descr": "CR Plot label 1",
+              "dn": "Concentration",
+              "rn": "Response"
+            }
+          ],
+          "project_category": 3,
+          "assay_group": [
+            "ETB-SNCA-Scoles"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 1671194,
+            "version": 1
+          },
+          "aid_source": {
+            "db": {
+              "name": "NCGC",
+              "source_id": {
+                "str": "SNCA-p-activity-luciferase"
+              },
+              "date": {
+                "std": {
+                  "year": 2021,
+                  "month": 9,
+                  "day": 1
+                }
+              }
+            }
+          },
+          "name": "Primary qHTS assay for inhibitors of alpha-synuclein gene (SNCA) expression",
+          "description": [
+            "Assay Submitter (PI): Daniel R. Scoles Ph.D.",
+            "Department of Neurology, University of Utah, Salt Lake City, Utah",
+            "",
+            "Accumulation of alpha-synuclein is a main underlying pathological feature of Parkinson's disease (PD) and alpha-synucleinopathies, for which lowering expression of the alpha-synuclein gene (SNCA) is a potential therapeutic avenue. Using a cell-based luciferase reporter of SNCA expression we performed a quantitative high throughput screen (qHTS) of 155,885 compounds in dose response. The screening assay was generated using genome editing to insert the luciferase gene downstream and in frame of the SNCA gene in HEK-293 cells (1). A viability counterscreen using GF-AFC was used to eliminate cytotoxic and false positive compounds. After in silico analysis (clustering, removal of frequent hitter nuisance chemotypes), inhibitor compounds from the primary screen were selected for follow up and re-tested at 11-doses in the SNCA-luc cells (luciferase and GF-AFC confirmation), and in CMV-luc expressing cell line to flag general transcriptional repressors.",
+            "",
+            "Described herein are the results of the primary screen for SNCA inhibitors; decrease in luciferase signal (inhibition of the SNCA gene expression) is the desired output for this assay. ",
+            "",
+            "References:",
+            "1. Dansithong, W., Paul, S., Scoles, D. R., Pulst, S. M., and Huynh, D. P. (2015) Generation of SNCA Cell Models Using Zinc Finger Nuclease (ZFN) Technology for Efficient High-Throughput Drug Screening. PLoS ONE 10, e0136930."
+          ],
+          "protocol": [
+            "PROTOCOL TABLE",
+            "SEQUENCE No. (e.g., 1, 2, 3, etc.); PARAMETER (e.g., Cells, Incubation, Reagent, etc.); VALUE; DESCRIPTION",
+            "",
+            "1; Cells; 4 uL; Dispense 1500 HEK-293-SNCA-luc cells/well into Greiner 1536-well white / solid bottom tissue culture treated plate. The plate was covered with metal lids with gas-exchange holes.",
+            "2; Incubate; 24 hours; Incubate at 37C, 5% CO2, 95% RH.",
+            "3; Compounds; 23 nL; Compounds and controls were transferred via a Kalypsys Pin Tool (Wako USA) equipped with a 1536-slotted pin array. The plate was covered with metal lids with gas-exchange holes.",
+            "4; Incubate; 24 hours; Incubate at 37C, 5% CO2, 95% RH.",
+            "5; Dispense; 1 uL; Dispense Gly-Phe-7-amino-4-trifluoromethylcoumarin (GF-AFC, prepared at 125 uM in PBS) was added. The plate was covered with metal lids with gas-exchange holes.",
+            "6; Incubate; 30 min; Incubate at 37C, 5% CO2.",
+            "7; Detector; Fluorescence; Measure fluorescence with ViewLux microplate reader (PerkinElmer) equipped with 405/10 excitation and 540/25 emission filters. ",
+            "8; Dispense; 3 uL; Dispense ONE-Glo (PerkinElmer) lucifase detection reagent was added to each well. Plates were covered with metal lids with gas-exchange holes.",
+            "9; Incubate; 15 min; Incubate at room temperature.",
+            "10; Detector; Luminescence; Measure luminescence with ViewLux microplate reader (PerkinElmer) equipped with clear filters. ",
+            "",
+            "NOTES (numbers refer to sequence above)",
+            "1; HEK-293-SNCA-luc were cultured and suspended in phenol-red free DMEM (4.5 g/L glucose, 25 mM HEPES, cat #21063 (Thermo)). ",
+            "3; Compounds were added to the assay plate in an 11-point intra plate dose response, 1:3 titration in DMSO with a final concentration range of xxx - yyy uM. Vehicle-only plates, with DMSO being pin-transferred to every well, were inserted at the beginning of screening runs to confirm expected assay performance. Activity was normalized to wells containing medium only (-100% activity, full inhibition) and SNCA-luc cells treated with DMSO vehicle control (0% activity), contained on the same plate as test samples.",
+            "10; Signals were analyzed, and dose-response curves were fit using the Hill equation. Compounds in curve classes -1.1, -1.2, -2.1, -2.2 in the SNCA-luc assay were considered active. Compounds were eliminated from further consideration if also active (curve class -1.1, -1.2, -1.3, -1.4, -2.1, -2.2, -2.3, -2.4) in the GF-AFC cytotoxicity assay."
+          ],
+          "comment": [
+            "Disclaimer:",
+            "Although all reasonable efforts have been made to ensure the accuracy and reliability of the data, caution should be exercised when interpreting the results as artifacts are possible from nonspecific effects such as assay signal interference. The curve fitting and activity calls presented here are based on the NCATS analysis methods. ",
+            "",
+            "Compound Ranking:",
+            "1. Compounds are first classified as having full titration curves, partial modulation, partial curve (weaker actives), single point activity (at highest concentration only), or inactive. For this assay, apparent inhibitors are ranked higher than compounds that showed apparent activation.",
+            "2. For all inactive compounds, with a ratio activity curve class of 4, PUBCHEM_ACTIVITY_SCORE is 0. For all active compounds, a score range was given for each curve class type given above. Active compounds have PUBCHEM_ACTIVITY_SCORE between 40 and 100. For a ratio activity curve class = -1.1, score = 80+abs((log_ac50+4.5)*inf_activity/20). For ratio.curve_class == -1.2 && abs(ratio.max_response) > 6*10, score = 60+abs((log_ac50+4.5)*inf_activity/20). For ratio.curve_class == -2.1 || ( ratio.curve_class==-2.2 && abs(ratio.max_response) > 6*10), score = 40+abs((log_ac50+4.5)*inf_activity/20). For ratio.curve_class == -1.2 || ratio.curve_class == -2.2, score = 20+abs((log_ac50+4.5)*inf_activity/20). Inconclusive compounds, with a donor curve class other than 4, have PUBCHEM_ACTIVITY_SCORE of 10. Inconclusive compounds have PUBCHEM_ACTIVITY_SCORE between 1 and 39."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "pmid": 26317803
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "Phenotype",
+              "description": [
+                "Indicates type of activity observed: inhibitor, activator, fluorescent, cytotoxic, inactive, or inconclusive."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 2,
+              "name": "Potency",
+              "description": [
+                "Concentration at which compound exhibits half-maximal efficacy, AC50. Extrapolated AC50s also include the highest efficacy observed and the concentration of compound at which it was observed."
+              ],
+              "type": 1,
+              "unit": 5,
+              "ac": true
+            },
+            {
+              "tid": 3,
+              "name": "Efficacy",
+              "description": [
+                "Maximal efficacy of compound, reported as a percentage of control. These values are estimated based on fits of the Hill equation to the dose-response curves."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 4,
+              "name": "Analysis Comment",
+              "description": [
+                "Annotation/notes on a particular compound's data or its analysis."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 5,
+              "name": "Activity_Score",
+              "description": [
+                "Activity score."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 6,
+              "name": "Curve_Description",
+              "description": [
+                "A description of dose-response curve quality. A complete curve has two observed asymptotes; a partial curve may not have attained its second asymptote at the highest concentration tested. High efficacy curves exhibit efficacy greater than 80% of control. Partial efficacies are statistically significant, but below 80% of control."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 7,
+              "name": "Fit_LogAC50",
+              "description": [
+                "The logarithm of the AC50 from a fit of the data to the Hill equation (calculated based on Molar Units)."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "Fit_HillSlope",
+              "description": [
+                "The Hill slope from a fit of the data to the Hill equation."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "Fit_R2",
+              "description": [
+                "R^2 fit value of the curve. Closer to 1.0 equates to better Hill equation fit."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 10,
+              "name": "Fit_InfiniteActivity",
+              "description": [
+                "The asymptotic efficacy from a fit of the data to the Hill equation."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 11,
+              "name": "Fit_ZeroActivity",
+              "description": [
+                "Efficacy at zero concentration of compound from a fit of the data to the Hill equation."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 12,
+              "name": "Fit_CurveClass",
+              "description": [
+                "Numerical encoding of curve description for the fitted Hill equation."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 13,
+              "name": "Excluded_Points",
+              "description": [
+                "Which dose-response titration points were excluded from analysis based on outlier analysis. Each number represents whether a titration point was (1) or was not (0) excluded, for the titration series going from smallest to highest compound concentrations."
+              ],
+              "type": 4
+            },
+            {
+              "tid": 14,
+              "name": "Max_Response",
+              "description": [
+                "Maximum activity observed for compound (usually at highest concentration tested)."
+              ],
+              "type": 1,
+              "unit": 15
+            },
+            {
+              "tid": 15,
+              "name": "Activity at 0.0000386857 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 3.86856991099194e-05,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 16,
+              "name": "Activity at 0.0001060182 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.00010601800022414,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 17,
+              "name": "Activity at 0.0001896372 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000189636994036846,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 18,
+              "name": "Activity at 0.0004510146 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000451014988357201,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 19,
+              "name": "Activity at 0.0007501981 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000750198028981686,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 20,
+              "name": "Activity at 0.0009728036 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.000972803973127156,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 21,
+              "name": "Activity at 0.00288 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.00288494001142681,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 22,
+              "name": "Activity at 0.00508 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.00508147990331054,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 23,
+              "name": "Activity at 0.00871 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.00871240999549627,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 24,
+              "name": "Activity at 0.015 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0153729002922773,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 25,
+              "name": "Activity at 0.026 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0262544993311167,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 26,
+              "name": "Activity at 0.053 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0530721992254257,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 27,
+              "name": "Activity at 0.079 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.0794973969459534,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 28,
+              "name": "Activity at 0.232 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.23174099624157,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 29,
+              "name": "Activity at 0.457 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.457011014223099,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 30,
+              "name": "Activity at 0.692 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 0.691811978816986,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 31,
+              "name": "Activity at 1.068 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 1.06839001178741,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 32,
+              "name": "Activity at 2.292 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 2.29163002967834,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 33,
+              "name": "Activity at 3.859 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 3.85943007469177,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 34,
+              "name": "Activity at 11.39 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 11.3908996582031,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 35,
+              "name": "Activity at 17.02 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 17.0245990753174,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 36,
+              "name": "Activity at 25.62 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 25.6180992126465,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 37,
+              "name": "Activity at 57.25 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 57.2495002746582,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 38,
+              "name": "Activity at 87.55 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 87.5506973266602,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 39,
+              "name": "Activity at 183.4 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 183.416000366211,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 40,
+              "name": "Activity at 286.0 uM",
+              "description": [
+                "% Activity at given concentration."
+              ],
+              "type": 1,
+              "unit": 15,
+              "tc": {
+                "concentration": 286,
+                "unit": 5,
+                "dr_id": 1
+              }
+            },
+            {
+              "tid": 41,
+              "name": "Compound QC",
+              "description": [
+                "NCGC designation for data stage: 'qHTS', 'qHTS Verification', 'Secondary Profiling'"
+              ],
+              "type": 4
+            }
+          ],
+          "revision": 2,
+          "target": [
+            {
+              "name": "",
+              "mol_id": {
+                "protein_accession": "P37840"
+              }
+            },
+            {
+              "name": "",
+              "mol_id": {
+                "gene_id": 6622
+              }
+            }
+          ],
+          "activity_outcome_method": 2,
+          "dr": [
+            {
+              "id": 1,
+              "descr": "CR Plot label 1",
+              "dn": "Concentration",
+              "rn": "Response"
+            }
+          ],
+          "project_category": 3,
+          "assay_group": [
+            "ETB-SNCA-Scoles"
+          ]
+        }
+      }
+    }
+  ]
+}

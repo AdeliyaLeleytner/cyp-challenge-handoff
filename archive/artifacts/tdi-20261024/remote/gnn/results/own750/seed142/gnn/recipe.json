@@ -1,0 +1,45 @@
+{
+  "recipe": {
+    "initialization": "generic CheMeleon foundation only",
+    "targets": [
+      "CYP2D6_is_TDI",
+      "CYP3A4_is_TDI"
+    ],
+    "aggregation": "MeanAggregation",
+    "ffn_hidden": 512,
+    "ffn_layers": 2,
+    "ffn_dropout": 0.1,
+    "batch_norm": false,
+    "max_epochs": 50,
+    "early_stopping_patience": 8,
+    "batch_size": 128,
+    "optimizer": "Chemprop native Adam",
+    "init_lr": 1e-05,
+    "max_lr": 0.0001,
+    "final_lr": 1e-05,
+    "warmup_epochs": 2,
+    "primary_weight": "inverse finite-label counts within fitting fold, mean-normalized",
+    "proposal_revision": "Two provided binary endpoints only; tentative four-head design withdrawn because 1A2/2C9 labels are not provided",
+    "checkpoint_monitor": "val_loss",
+    "checkpoint_mode": "min",
+    "query_prediction": "equal mean of five best-checkpoint fold probabilities",
+    "full_query_alias": "query_full is an alias of query_bag; no sixth full-data fit"
+  },
+  "cohort": "own750",
+  "seed": 142,
+  "device": "cuda",
+  "foundation_sha256": "c376624d3407204e780a0ed13a9ac097cc9bb1c13ef89cdbc633c1715c183651",
+  "implementation_sha256": "8bf2b0033146893c577d045a5b139384a2131fe59fe466c30a11333d96e4b23c",
+  "train_csv_sha256": "19bba34f0c1115ed9b030177b39ffefbc900c96ea862ad0705bc355fa51c0a9c",
+  "test_csv_sha256": "7fd661745023c083fe5c970db77db2e3ff95c131d3e260c12464d5ca4171e1b4",
+  "dev_indices_sha256": "870761bd3a220da4e7bc2ff374194b722f61cd8206c78d027eb06de219eb77fc",
+  "query_indices_sha256": "74655975c91bbfd02875d9a086c66809d66e3fe06a2bbdd0047ebbc24a539361",
+  "folds_sha256": "05e8e9e79a5bf12f3dc5c5e52acbf887199de6b8d7010981df124d481b371420",
+  "packages": {
+    "torch": "2.6.0+cu124",
+    "chemprop": "2.2.1",
+    "lightning": "2.5.5",
+    "numpy": "2.2.6",
+    "rdkit": "2026.9.1"
+  }
+}

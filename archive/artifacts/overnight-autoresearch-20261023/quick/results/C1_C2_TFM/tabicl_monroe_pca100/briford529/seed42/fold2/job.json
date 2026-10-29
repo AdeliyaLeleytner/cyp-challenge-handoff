@@ -1,0 +1,32 @@
+{
+  "name": "tabicl_monroe_pca100/briford529/42/2",
+  "asset_root": "/workspace/cyp-night/assets",
+  "output_dir": "/workspace/cyp-night/results/C1_C2_TFM/tabicl_monroe_pca100/briford529/seed42/fold2",
+  "config": {
+    "kind": "tabular",
+    "num_threads": 4,
+    "device": "cuda",
+    "model_params": {
+      "n_estimators": 8
+    },
+    "name": "tabicl_monroe_pca100",
+    "model": "tabicl",
+    "model_asset": {
+      "path": "weights/tabicl-regressor-v2-20260212.ckpt",
+      "sha256": "0db9cb538f114e79026bf08f45f41ad8dd7ad2de2aaca9a5ca8cd3bd9748ae7a"
+    },
+    "features": [
+      {
+        "family": "precomputed",
+        "asset_key": "monroe"
+      }
+    ],
+    "preprocessing": {
+      "pca_components": 100,
+      "scale": true
+    },
+    "seed": 42
+  },
+  "cohort": "briford529",
+  "fold": 2
+}

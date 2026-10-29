@@ -1,0 +1,95 @@
+{
+  "updated_utc": "2026-10-24T16:32:43.205050+00:00",
+  "chemeleon_mae": {
+    "state": "completed",
+    "raw": {
+      "own750": 0.6654510632616522,
+      "briford529": 0.6290158599029851
+    },
+    "placed": {
+      "own750": 1.132700868762372,
+      "briford529": 1.11807868569454
+    },
+    "same_native_optimizer_settings": true
+  },
+  "precision_diagnostic": {
+    "state": "completed",
+    "four_epoch_fp16_and_bf16_finite": true,
+    "does_not_establish_earlier_stop_cause": true
+  },
+  "scratch_strae": {
+    "state": "completed",
+    "first_run": "746993ba-f312-4c95-8955-4dd79c54ba01",
+    "next_precision": "bf16 training + FP32 validation",
+    "run": "f5c62524-8f5b-4848-b37a-93262629b793",
+    "commit": "2bcc4ba52347bcc2fb24ef999c901e7b6915dfa1",
+    "output": "scratch_strae_bf16_fp32val_repair1",
+    "raw": {
+      "own750": 0.6572122340215811,
+      "briford529": 0.6900334698293056
+    },
+    "placed": {
+      "own750": 1.1153653602919236,
+      "briford529": 1.1437294094274773
+    },
+    "models": 40,
+    "decision": "Not promoted: worse than native MAE control on both outer cohorts and both output lanes."
+  },
+  "chemeleon_strae": {
+    "state": "completed",
+    "first_run": "7c1316bc-a786-4b98-8876-c4e7ca89912c",
+    "next_precision": "bf16 training + FP32 validation",
+    "run": "3568687e-a9d3-4f04-a047-43b8c6e9af0b",
+    "commit": "2e57a25",
+    "output": "chemeleon_strae_bf16",
+    "raw": {
+      "own750": 0.6745289505922472,
+      "briford529": 0.7129009871046873
+    },
+    "placed": {
+      "own750": 1.1185856924350346,
+      "briford529": 1.172854758706413
+    },
+    "models": 40,
+    "decision": "Not promoted: worse than native MAE control on both outer cohorts and both output lanes."
+  },
+  "admetlab_all": {
+    "state": "blocked_on_batch_service_429",
+    "bulk_started": true,
+    "last_probe_utc": "2026-10-24T15:57:18+00:00",
+    "retry_after_header": null,
+    "queue_rows": 32421,
+    "core_rows": 5655,
+    "complete_client_ready": true,
+    "features_helper_ready": true,
+    "same_ip_nitrobenzene_api_success": true,
+    "web_batch_3_smiles_success": true,
+    "bulk_completed": false,
+    "feature_model_trained": false,
+    "failed_batch_size": 100,
+    "last_batch_attempt_utc": "2026-10-24T16:27:51.744+00:00",
+    "source_mode": "web_default",
+    "actual_endpoint_count": 120,
+    "successful_contract_probe_molecules": 3,
+    "failed_batch_http_status": 429,
+    "cheap_instances_destroyed": [
+      57536384,
+      57536719
+    ],
+    "evidence": "admetlab-access/ACQUISITION_FINAL_STATUS.json",
+    "client_commit": "fe3a466",
+    "acquisition_run": "5e2b8ae7-9a5a-427b-939e-e6a6a229c589",
+    "feature_experiment": "2f30a207-f250-49aa-8f8a-73b2c417d824",
+    "feature_commit": "4ab5b103dc5961bce6c1a93b78b428708b9fc1a2"
+  },
+  "gpu_instance": null,
+  "gpu_retention_reason": null,
+  "gpu_teardown": {
+    "instance": 57522066,
+    "destroyed_and_absent": true,
+    "verified_utc": "2026-10-24T16:24:35.223333+00:00",
+    "recovery_certificate": "recovery-certificate.json",
+    "separate_task_instance_preserved": 57536719
+  },
+  "remaining_work": "Obtain complete consistent web_default ADMETlab matrix, then execute prepared 40-model feature comparison. No rented instance remains for this campaign."
+}

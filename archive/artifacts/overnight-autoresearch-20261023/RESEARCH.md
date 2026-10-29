@@ -1,0 +1,4 @@
+# Decision layer
+Primarysourceholdoutreference: briford strongestdeclaredopencodeentry .4378live; published529analogholdoutreconstructed fromsame4905officialinputs, oldsource/data vintagedifferencesdeclared. Train-onlyfreshreferenceonown750and529required; sourceboard-informedplacementexcluded.
+Mostpromisingdiversefamilies: frozenMonroe+TFM; TabICLv2onlowdimensionalfeatures; multifamilyfingerprints withCatBoost/ExtraTrees/kernel; expandedbiochemicalCYPqHTS/BindingDBaux; interval/MAEloss andsampling;localOOFresidualtransfer. Sourcesandlimitations DEEPRESEARCH.md. No modelresultassumedfrompapers.
+No submissionyet. Officialphase2 permitsuploads,12hcooldown,closeNov3. HFaccountverified; optionalidentityfields canstayempty. ActualblindedTESTpipelineandvalidation stillneeded.

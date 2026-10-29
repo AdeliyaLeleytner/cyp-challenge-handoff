@@ -1,0 +1,38 @@
+{
+  "outcome": "HTTP429",
+  "actual_molecule_posts": 1,
+  "batch_size": 50,
+  "successful_rows": 0,
+  "transport": "curl through HTTP Shifter proxy gateway using protected credentials and a sticky session",
+  "availability_recovery": "First session stopped on stalled GET before any POST; second session loaded form and submitted50 once. No session rotation after429.",
+  "next100": "not submitted because50 failed",
+  "records": [
+    {
+      "utc": "2026-10-25T20:53:06.914785+00:00",
+      "method": "GET",
+      "http_status": 0,
+      "curl_exit": -15,
+      "local_ip": null,
+      "remote_ip": null,
+      "interface": "shifter_sticky"
+    },
+    {
+      "utc": "2026-10-25T20:53:21.875364+00:00",
+      "method": "GET",
+      "http_status": 200,
+      "curl_exit": 0,
+      "local_ip": "192.168.0.16",
+      "remote_ip": "201.79.5.23",
+      "interface": "shifter_sticky"
+    },
+    {
+      "utc": "2026-10-25T20:53:23.291805+00:00",
+      "method": "POST",
+      "http_status": 429,
+      "curl_exit": 0,
+      "local_ip": "192.168.0.16",
+      "remote_ip": "201.79.5.23",
+      "interface": "shifter_sticky"
+    }
+  ]
+}

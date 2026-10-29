@@ -1,0 +1,87 @@
+{
+  "schema": "source-bundle-endpoint-PCA128-profile-v1",
+  "output": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9-source-bundle/profile-results",
+  "deps_target": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9-tabicl/isolated-deps",
+  "files": {
+    "table": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p7/stage/table.csv",
+      "sha256": "da57ea6afdfb061a7f11abcf03216b308d64ee965b9f298c744af6b85befebe2"
+    },
+    "folds": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p7/stage/fold-manifest.json",
+      "sha256": "436ec6c3895a3e937ae9fa3debc464b75a9e8dbcf36a7f526da67b74fbad599c"
+    },
+    "official": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-admet500-pilot-20261025/stage/official-train.csv",
+      "sha256": "b8f79addd266fb6f9f4c222c5e4e73d926362328b6a8d2841871a54e46bd2278"
+    },
+    "adme": {
+      "path": "/Users/adeliyaleleytner/.local/share/cyp-inhibition/reciprocal-comparison-20261023/full/prepared/adme_pretrain.npy",
+      "sha256": "e0216aeaad3f8b9a34ea124b0eb90bd36ae671ae79b1d30268feccf5f8731378"
+    },
+    "adme_rows": {
+      "path": "/Users/adeliyaleleytner/.local/share/cyp-inhibition/reciprocal-comparison-20261023/full/prepared/challenge.csv",
+      "sha256": "b7391fb28af2972a7f5070f253ee914dc4baef010177adaa87489673e23350fe"
+    },
+    "tabicl_weight": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9-tabicl/assets/tabicl-regressor-v2-20260212.ckpt",
+      "sha256": "0db9cb538f114e79026bf08f45f41ad8dd7ad2de2aaca9a5ca8cd3bd9748ae7a"
+    },
+    "pins": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/representation-prep/tabicl/PINS.json",
+      "sha256": "a97b71d8ea91933ad504e43f25dc89001fdb97a8b41a977a00fbcc35eb643481"
+    },
+    "einops_receipt": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9-tabicl/einops-receipt.json",
+      "sha256": "d934a7c87ee47800b528efa08d0c3543d1f5b4935561732aa0ffcaacb28108c6"
+    },
+    "outer_manifest": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9-tabicl/stage/outer-cohorts.json",
+      "sha256": "f188adc71c370fd3cb357645ef8dc5ae549be4676bf901113630ae0cc5ab2738"
+    },
+    "source_fidelity": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/representation-prep/ATOM_JEPA_SOURCE_FIDELITY.json",
+      "sha256": "6e6e0e268e85f662c50ff178e1e26f6653e68826bc9a44721b9b82623cdf17c4"
+    },
+    "bank_config": {
+      "path": "/Users/adeliyaleleytner/.cache/cyp-inhibition/orx-store/local-runs/4a8f3cf4-d5fe-43a7-aa26-327c6304e210/repo/source_encoder_config.json",
+      "sha256": "e77ebd2d0b5e827c8c4e1da5213bc0162b9d1bf7d0fc02a672b027570e6c19e9"
+    }
+  },
+  "bank_complete": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9-source-bundle/bank-lean-results/COMPLETE.json",
+    "sha256": "cea62d97364b7d21aca6a764eb0ac93d7256776a327dc92e114d205d82dff5b2"
+  },
+  "bank_rows": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9-source-bundle/bank-lean-results/rows.csv",
+    "sha256": "541530de65e3311bc481db985033632456b2096a8cc4f8942eba525358317950"
+  },
+  "bank_features": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9-source-bundle/bank-lean-results/last-pre-norm.npy",
+    "sha256": "108551d476f865611f3be9da90c46e7c4d18943d2ea365b80b7a8e95099d62ea"
+  },
+  "pca": 128,
+  "seed": 42,
+  "folds": [],
+  "targets": [
+    3
+  ],
+  "threads": 4,
+  "timeout_seconds": 600,
+  "memory_max_bytes": 4294967296,
+  "no_external_label_objective": true,
+  "expected_calls": 2,
+  "outer_cohorts": [
+    "briford529"
+  ],
+  "bank_audit": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9b-resume/COORDINATE_AUDIT.json",
+    "sha256": "46f52a8b02464a7b852aecc53dc4ac16970230eed2b7c12b289d128da94fa2c2"
+  },
+  "aggregate": false,
+  "feature_label": "atomjepa_block8_pre_finalnorm",
+  "preprocessing": "unscaled_float32_endpoint_labeled_context_PCA128_auto",
+  "bank_expected_worker_sha256": "65a0802bf8ed296ceef650fd8bf064896d5f7c230814bea2c76bbda5d73c798d",
+  "bank_run": "4a8f3cf4-d5fe-43a7-aa26-327c6304e210",
+  "bank_source_commit": "eaa4f2ec03cc4ee0216868b943bc9e01be946f17"
+}

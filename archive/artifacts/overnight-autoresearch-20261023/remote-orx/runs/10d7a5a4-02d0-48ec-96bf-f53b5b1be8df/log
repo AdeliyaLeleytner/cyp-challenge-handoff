@@ -1,0 +1,16 @@
+Pinned asset hashes verified
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/root/.orx/runs/10d7a5a4-02d0-48ec-96bf-f53b5b1be8df/repo/night/audit_monroe_pcba.py", line 352, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/.orx/runs/10d7a5a4-02d0-48ec-96bf-f53b5b1be8df/repo/night/audit_monroe_pcba.py", line 345, in main
+    try:return run_audit(args)
+               ^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/10d7a5a4-02d0-48ec-96bf-f53b5b1be8df/repo/night/audit_monroe_pcba.py", line 261, in run_audit
+    parquet,source_meta=stage_parquet(args.cache_root,args.zip_sha256)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/10d7a5a4-02d0-48ec-96bf-f53b5b1be8df/repo/night/audit_monroe_pcba.py", line 81, in stage_parquet
+    raise ValueError('Downloaded ZIP differs from pinned Zenodo size/MD5')
+ValueError: Downloaded ZIP differs from pinned Zenodo size/MD5

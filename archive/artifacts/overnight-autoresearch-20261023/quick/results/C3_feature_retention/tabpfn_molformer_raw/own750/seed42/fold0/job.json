@@ -1,0 +1,31 @@
+{
+  "name": "tabpfn_molformer_raw/own750/42/0",
+  "asset_root": "/workspace/cyp-night/assets",
+  "output_dir": "/workspace/cyp-night/results/C3_feature_retention/tabpfn_molformer_raw/own750/seed42/fold0",
+  "config": {
+    "kind": "tabular",
+    "num_threads": 4,
+    "device": "cuda",
+    "model_params": {
+      "n_estimators": 8
+    },
+    "name": "tabpfn_molformer_raw",
+    "model": "tabpfn",
+    "model_asset": {
+      "path": "weights/tabpfn-v3.5-20260909.safetensors",
+      "sha256": "ece4d67eadfea42eb0e610df5189bea60cb7f31073d81e9c7a019b76eacf0be3"
+    },
+    "features": [
+      {
+        "family": "precomputed",
+        "asset_key": "molformer"
+      }
+    ],
+    "preprocessing": {
+      "scale": false
+    },
+    "seed": 42
+  },
+  "cohort": "own750",
+  "fold": 0
+}

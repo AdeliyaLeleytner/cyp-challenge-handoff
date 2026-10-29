@@ -1,0 +1,194 @@
+{
+  "info": {
+    "_id": "6a29d16a6766c5fc6dca1fa4",
+    "id": "openadmet/cyp1a2-cyp2d6-cyp3a4-cyp2c9-chemeleon-v1",
+    "private": false,
+    "tags": [
+      "chemistry",
+      "biology",
+      "en",
+      "license:apache-2.0",
+      "region:us"
+    ],
+    "downloads": 30,
+    "likes": 2,
+    "modelId": "openadmet/cyp1a2-cyp2d6-cyp3a4-cyp2c9-chemeleon-v1",
+    "author": "openadmet",
+    "sha": "ef24cf941ae21c7d7a64df378a846bd2066eceda",
+    "lastModified": "2026-06-16T19:17:19.000Z",
+    "gated": false,
+    "disabled": false,
+    "model-index": null,
+    "config": {},
+    "cardData": {
+      "license": "apache-2.0",
+      "language": [
+        "en"
+      ],
+      "tags": [
+        "chemistry",
+        "biology"
+      ]
+    },
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "anvil_training/anvil_recipe.yaml"
+      },
+      {
+        "rfilename": "anvil_training/data/X_train.csv"
+      },
+      {
+        "rfilename": "anvil_training/data/y_train.csv"
+      },
+      {
+        "rfilename": "anvil_training/model.json"
+      },
+      {
+        "rfilename": "anvil_training/model.pth"
+      },
+      {
+        "rfilename": "anvil_training/recipe_components/data.yaml"
+      },
+      {
+        "rfilename": "anvil_training/recipe_components/eval.yaml"
+      },
+      {
+        "rfilename": "anvil_training/recipe_components/metadata.yaml"
+      },
+      {
+        "rfilename": "anvil_training/recipe_components/procedure.yaml"
+      },
+      {
+        "rfilename": "compounds_for_inference.csv"
+      },
+      {
+        "rfilename": "meta.yaml"
+      },
+      {
+        "rfilename": "run_model_inference.sh"
+      }
+    ],
+    "spaces": [
+      "openadmet/prediction_portal",
+      "jir322/prediction_portal"
+    ],
+    "createdAt": "2026-06-10T21:04:42.000Z",
+    "usedStorage": 92838622
+  },
+  "tree": [
+    {
+      "type": "directory",
+      "oid": "790b46500c95649bd3689a8581875c37a7b2d8a4",
+      "size": 0,
+      "path": "anvil_training"
+    },
+    {
+      "type": "directory",
+      "oid": "5848f9ca46cad42f91d6b7bff85c35b392061ccd",
+      "size": 0,
+      "path": "anvil_training/data"
+    },
+    {
+      "type": "directory",
+      "oid": "3b3822a37171ca20242a7fea2254448f216d343a",
+      "size": 0,
+      "path": "anvil_training/recipe_components"
+    },
+    {
+      "type": "file",
+      "oid": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "size": 1519,
+      "path": ".gitattributes"
+    },
+    {
+      "type": "file",
+      "oid": "208e877083539a2f5351ee147b909a5620e953af",
+      "size": 4852,
+      "path": "README.md"
+    },
+    {
+      "type": "file",
+      "oid": "018d5807335286f4723996b62dd2ca568b8e8d6e",
+      "size": 1830,
+      "path": "anvil_training/anvil_recipe.yaml"
+    },
+    {
+      "type": "file",
+      "oid": "e5013323b96a3064925d9ce9890fb79a476867ad",
+      "size": 527901,
+      "path": "anvil_training/data/X_train.csv"
+    },
+    {
+      "type": "file",
+      "oid": "0052205c335f1d7f0e77da0ab3b1ac587d93dff0",
+      "size": 77940,
+      "path": "anvil_training/data/y_train.csv"
+    },
+    {
+      "type": "file",
+      "oid": "bfc06ff2d6dde24f7d11c981d6d27ace4c96c5f2",
+      "size": 311,
+      "path": "anvil_training/model.json"
+    },
+    {
+      "type": "file",
+      "oid": "d2c7469f8c3812a6fdf0f619b779ebb5d65a44a8",
+      "size": 51669359,
+      "lfs": {
+        "oid": "81d15cc43a3608f1aab465b1e690d86fd41c420615094cca1439c2e52f3b4e7b",
+        "size": 51669359,
+        "pointerSize": 133
+      },
+      "xetHash": "f872805f3240fc5f9695704f1930662257391e13f3238f7b199ffd8c7575535f",
+      "path": "anvil_training/model.pth"
+    },
+    {
+      "type": "file",
+      "oid": "b1854cf64b1b236c1ddf5c4de1e4eab1e16a77e8",
+      "size": 399,
+      "path": "anvil_training/recipe_components/data.yaml"
+    },
+    {
+      "type": "file",
+      "oid": "5e35965d720827bf249a6d39cf9e0a96230733ac",
+      "size": 9,
+      "path": "anvil_training/recipe_components/eval.yaml"
+    },
+    {
+      "type": "file",
+      "oid": "014c0c4ed674ab9eeb2760f347ae53dee95cbfc6",
+      "size": 282,
+      "path": "anvil_training/recipe_components/metadata.yaml"
+    },
+    {
+      "type": "file",
+      "oid": "b86869270318acf8dee01e9ddde6f0f364fc8d60",
+      "size": 947,
+      "path": "anvil_training/recipe_components/procedure.yaml"
+    },
+    {
+      "type": "file",
+      "oid": "74ff9c425ee0c6abc56fcba1a62094040c894e02",
+      "size": 924403,
+      "path": "compounds_for_inference.csv"
+    },
+    {
+      "type": "file",
+      "oid": "4e673f482b49ff7cbbd6d46e730b26d8c04b9b29",
+      "size": 50,
+      "path": "meta.yaml"
+    },
+    {
+      "type": "file",
+      "oid": "c91634f8a4079f7ebaf885705423f9adbbbbec2e",
+      "size": 442,
+      "path": "run_model_inference.sh"
+    }
+  ]
+}

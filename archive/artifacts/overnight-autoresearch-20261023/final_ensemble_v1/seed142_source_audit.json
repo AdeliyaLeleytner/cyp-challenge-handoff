@@ -1,0 +1,127 @@
+{
+  "aggregates": {
+    "2d6isoform6": {
+      "aggregate_sha256": "4bd48e470bcd53230a994a93d777e144705d92f6558569f93f56ed4452150964",
+      "fold_job_sha256": [
+        "25989552029e4cd3c7465b1321b9862f69c0354ee406f9cfd37f78173e87b7d1",
+        "31952dd5594ca6f09e36829c929fb333ac45e136b1e22910687168e3d02cf1bb",
+        "81fb2f1681ba127edfa73fa355c32d67a6851e5de82295e90f7b5f1d8abc7904",
+        "1a993e051893d0059a2fdd9ee03be7182783655c99998f36464e880ef500be47",
+        "b6cd6eeda9c925348c91e7fccf87d40dc45d0809d27c957f4532ae9e68f4003c"
+      ],
+      "oof_sha256": "b91a110cab3fb37e60e76952c28ca8222ca0320f532884d7ec75edbc1943476b",
+      "test_raw_sha256": "3d57bf64f4c31470fbd42160a6262968dcf9d97a9310d5a2104828a23fcfae50"
+    },
+    "2d6single": {
+      "aggregate_sha256": "fd41b1419765644fd574f3c0830c831694ffcfe031f6dbc55285c29d302f406f",
+      "fold_job_sha256": [
+        "b0f4272e7bc302f10c0771b48b6b986c01de69500db38c3c54845803a61dbc45",
+        "d3b4d2e121b7c8c0cd10337f6e420597b3c333ee5093c8885d798883cb341228",
+        "790b054cab869fc23ed8d7da357cd4424c4112a733052b79333cd8a12562cdeb",
+        "154597de2db3ccd6e796c52888bb4393ad0412eeac60a9ffed118e88174f5637",
+        "83b61d55cde4def1ba3d0109c03f5daa4aaa99add8ed259d88f6af55161570ed"
+      ],
+      "oof_sha256": "745cb301cb0947fadd92e7121f4d650394f89a3c0861b105222cd359a27ed1f0",
+      "test_raw_sha256": "5243824908c056f137edb97975aa054ae39734d406874de370d4766b5d7fcffa"
+    },
+    "briford_reference": {
+      "aggregate_sha256": "44bf7bac011d3cc039c7d116b742d3a49bc0dad9f7e2efafbc8d1a1b502bd4f3",
+      "oof_sha256": "682712e43555c38d41a0019451403a7cfdda794aa0ff27b9f327ab951b15bd42",
+      "test_raw_sha256": "fa25bfbdf8448b48d87c72befa3e18dbdfee8c0d5b7d01a00b4e8769b42ec6d6"
+    },
+    "mtaux8": {
+      "aggregate_sha256": "0191d1df8022499982125983a8b226d2211a7662f0cffbd601bb1157493272e2",
+      "fold_job_sha256": [
+        "ead7f589cb48da4fe836d64fad8b6c63fa06a5104a889eef5e59ef6027e9c774",
+        "b859d27ed9e39f02575a4076d49ddd7b80f254cbcf980150d0765099637987de",
+        "c88d3e43695fb759db2902f7fa3ae0cff9c88ecc2df60749e515ca405de45392",
+        "7dbb3951157189016e41e2ca4108894cbe790d2b8e9ceef9e18feef2c57a71be",
+        "661477375f9f60bc8874fbbe4b15837f61c4dc4c33f49bf2735813ee4a349d96"
+      ],
+      "oof_sha256": "1590afe15fe26142c46bfa16f4e60c87aeb83f946e601e2742a08c9916bee3fc",
+      "test_raw_sha256": "bf92e2e917d09955815a3859807401e48bca3406cc8ab627e124921ce2d9ddd6"
+    },
+    "union18": {
+      "aggregate_sha256": "9f416a1d7a7b887aa07881ab9584be32ba1ff946e64a6ccb1fa06550d6c77198",
+      "fold_job_sha256": [
+        "bec8904d2d892105b5bd9910168c6aba5bbf6ccc647bbc9e7e66e125168a6021",
+        "9f34ba311180cd69bb753897133e23721002b706e73b08f2cbb1614f8d514a2e",
+        "282d579c7d713b2b922a6b0cd5b0d26052d3b28e9ab8c936a175cd7c1429b01d",
+        "4301b9b2ad715faabc6ad386fb5440ba6c99f9fcc37c1f2564f2e83bdb0845a4",
+        "35a080af9c61605371a43f859ea76cfd22e05cb934221713f6a1fb7148c63e6c"
+      ],
+      "oof_sha256": "68758d48f9f63cbec3d7646d0a4b2ed7243a8c961fb2d679f430ad18705ee5f0",
+      "test_raw_sha256": "319e0c73b3d66d5cfd4890fa02917f99f9b62359d5850a3a5ca603d6ba304bd7"
+    }
+  },
+  "completion_sha256": "3028a5c6655c4c4665d4466c2c2441ba07665178e297f43e96e612f26546601f",
+  "folds_sha256": "427ada6a8ddf255fb23e2750cf8f8f04a5e456ed582007c4967cb32c109dd19e",
+  "model_configs": {
+    "2d6isoform6": {
+      "component": "2d6isoform6",
+      "include_official_side_rows": true,
+      "kind": "neural",
+      "name": "2d6isoform6"
+    },
+    "2d6single": {
+      "component": "2d6single",
+      "include_official_side_rows": true,
+      "kind": "neural",
+      "name": "2d6single"
+    },
+    "mtaux8": {
+      "component": "mtaux8",
+      "include_official_side_rows": true,
+      "kind": "neural",
+      "name": "mtaux8"
+    },
+    "union18": {
+      "component": "union18",
+      "include_official_side_rows": true,
+      "kind": "neural",
+      "name": "union18"
+    }
+  },
+  "recorded_relative_source_hashes": {
+    "night/cohorts.py": "7d2439abcc523805037f1318a7fcd830409de8dc1a60a53f8489a347edd4e49d",
+    "night/evaluation.py": "f674c658e44baf14b442c6a0d4aa7c0c1a54538437e498cf8ced337e3a47d963",
+    "night/features.py": "ce4c52b94ab28e70ddc53d2ab574309a9a8043ef9afc756f6c8190b427344989",
+    "night/final_training.py": "0422b1d0ad5212015d1f6e32160656e13e65078597f89d99dc9c76479bcafaeb",
+    "night/neural.py": "015c91cc8e43a186bf0a9ed9bf99a313cbb242a76d76b79d7d52bf228ca1fc6a",
+    "night/public_data.py": "c91d5a3268cd3b0ea0e96fbbe601524333d62804c8985f7641382968bb560968",
+    "night/reference.py": "dd10a6be65a813e9ea2b76a4afc15806f0de1a64d809da42f3e8171c40ea3320",
+    "night/runner.py": "1d1b05798ce3b97be8f385e39c999ab616a1af1049799a4cb22ad96a8e641ad7",
+    "night/tabular.py": "6db69b2e54e25138ce929796f582abcaa6cb633a2932b93a01e0be595d9fbc73",
+    "official_scoring_functions.py": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+  },
+  "run_manifest_sha256": "7ebec321db44fbbaf55251b1f4f653da8060ff4bf1da2dedc647dfb0d0c8ede6",
+  "run_sha256": "d3a2ea5d65dea863c438fc005b20f9c2f791839f60265813aa74ff0c6b8d1b25",
+  "seed": 142,
+  "training_packages": {
+    "catboost": "1.2.8",
+    "chemprop": "2.2.1",
+    "lightgbm": null,
+    "lightning": "2.5.5",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "rdkit": "2026.9.1",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.16.2",
+    "tabicl": null,
+    "tabpfn": null,
+    "torch": "2.8.0+cu128"
+  },
+  "training_source_revision": "72dc8a7",
+  "verified_asset_hashes": {
+    "asset_manifest.json": "e157ff478f0e4675400caa56942138fd966ccd52c78967b37c90f7454844c243",
+    "cohorts.json": "eee1078503c7793f8f1c1fcc788dd4db9225a6d682202930f9bb972bbe6bd82a",
+    "official-test.csv": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9",
+    "official-train.csv": "b8f79addd266fb6f9f4c222c5e4e73d926362328b6a8d2841871a54e46bd2278",
+    "reference/public_data/chembl_all_isoforms.csv": "74a5233890e74e5514a6bbbad25cfe1c365181fb29af01c116e96cc5277b33fc",
+    "reference/public_data/emax.csv": "06562915e3cd7ff7e6970e621ae4d709fe3f4b08fce3f29a8acafc96f4403bd7",
+    "reference/public_data/inhibition.csv": "95576058689db7537458cde2615f8d72a84748cea9d4a2d73fe3c287f7c1cf0c",
+    "reference/public_data/pubchem_all_isoforms.csv": "1465de66ba50c0cda5d7fab3083a8ccdfba4adfbefef8d13a1fedade86b0847b",
+    "reference/public_data/single_concentration.csv": "5bf429cb438a730d364309394aba8276725b76a70906761cc631a4e2aa31bf80",
+    "reference/public_data/tdi.csv": "2ebad28ff5e155dc7de3a7e6e10920e938f559be561ca74f2a7c95dcfdf03a82"
+  }
+}

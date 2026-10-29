@@ -1,0 +1,26 @@
+{
+  "name": "krr_count_a10.0/briford529/42/0",
+  "asset_root": "/workspace/cyp-night/assets",
+  "output_dir": "/workspace/cyp-night/results/B0_G0_structure/krr_count_a10.0/briford529/seed42/fold0",
+  "config": {
+    "name": "krr_count_a10.0",
+    "kind": "tabular",
+    "model": "krr",
+    "num_threads": 4,
+    "features": [
+      {
+        "family": "morgan_counts",
+        "n_bits": 4096,
+        "include_chirality": true
+      }
+    ],
+    "model_params": {
+      "alpha": 10.0,
+      "kernel": "tanimoto",
+      "center_target": true
+    },
+    "seed": 42
+  },
+  "cohort": "briford529",
+  "fold": 0
+}

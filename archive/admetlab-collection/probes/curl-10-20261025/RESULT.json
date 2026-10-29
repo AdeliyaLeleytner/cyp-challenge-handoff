@@ -1,0 +1,53 @@
+{
+  "utc": "2026-10-25T20:10:13.634962+00:00",
+  "outcome": "success",
+  "curl_post_rows": 10,
+  "validated_rows": 10,
+  "endpoints": 120,
+  "seconds_between_500_failure_and_10_post": 245.53,
+  "main_queue_unchanged": true,
+  "main_scheduler": "paused",
+  "first_successful_curl_prediction_batch": true,
+  "combined_unique_rows": 2010,
+  "combined_file": "/Users/adeliyaleleytner/Downloads/ADMETlab-Chrome-direct-500/results/all-collected-with-probe-2010.csv",
+  "combined_sha256": "3386771ac78d8c256d9dc6a237030b8942b4cfd45a8b5717466b325e5d2649c8",
+  "interpretation": "Curl can calculate molecules successfully. A10-molecule batch succeeded about4minutes after a500-molecule429. This supports investigating batch size but does not isolate it from changing server conditions.",
+  "http": [
+    {
+      "utc": "2026-10-25T20:09:26.254313+00:00",
+      "method": "GET",
+      "url": "https://admetlab3.scbdd.com/server/screening",
+      "http_status": 200,
+      "curl_exit": 0,
+      "local_ip": "192.168.0.16",
+      "remote_ip": "121.40.210.46"
+    },
+    {
+      "utc": "2026-10-25T20:09:34.231630+00:00",
+      "method": "POST",
+      "url": "https://admetlab3.scbdd.com/server/screeningCal",
+      "http_status": 302,
+      "curl_exit": 0,
+      "local_ip": "192.168.0.16",
+      "remote_ip": "121.40.210.46"
+    },
+    {
+      "utc": "2026-10-25T20:09:35.983879+00:00",
+      "method": "GET",
+      "url": "https://admetlab3.scbdd.com/server/result/f884b0d6d2489e4f1792958967",
+      "http_status": 200,
+      "curl_exit": 0,
+      "local_ip": "192.168.0.16",
+      "remote_ip": "121.40.210.46"
+    },
+    {
+      "utc": "2026-10-25T20:09:36.904417+00:00",
+      "method": "GET",
+      "url": "https://admetlab3.scbdd.com/server/result/f884b0d6d2489e4f1792958967/download/csv",
+      "http_status": 200,
+      "curl_exit": 0,
+      "local_ip": "192.168.0.16",
+      "remote_ip": "121.40.210.46"
+    }
+  ]
+}

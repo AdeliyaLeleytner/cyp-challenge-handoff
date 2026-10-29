@@ -1,0 +1,1043 @@
+                                        Deep Learning Foundation Models from Classical
+                                                    Molecular Descriptors
+
+                                                  Jackson W. Burns1† , Akshat Shirish Zalte1† ,
+                                           Charlles R. A. Abreu1 , Jochen Sieg2 , Christian Feldmann2 ,
+                                                      Miriam Mathea2 , William H. Green1*
+                                        1 Department of Chemical Engineering, MIT, Cambridge, Massachusetts,
+
+
+
+
+arXiv:2506.15792v2 [cs.LG] 9 Feb 2026
+                                                                               USA.
+                                                            2 BASF SE, Ludwigshafen, Germany.
+
+
+
+
+                                                *Corresponding author(s). E-mail(s): whgreen@mit.edu;
+                                                   † These authors contributed equally to this work.
+
+
+
+                                                                             Abstract
+                                          Fast and accurate data-driven prediction of molecular properties is pivotal to
+                                          scientiﬁc advancements across myriad chemical domains. Deep learning methods
+                                          have recently garnered much attention, despite their inability to outperform clas-
+                                          sical machine learning methods when tested on practical, real-world benchmarks
+                                          with limited training data. This study seeks to bridge this gap with CheMeleon,
+                                          a O(10M ) parameter foundation model that enables directed message-passing
+                                          neural networks to ﬁnally exceed the performance of classical methods. Evalu-
+                                          ated on 58 benchmark datasets from Polaris and MoleculeACE, CheMeleon
+                                          achieves a win rate of 75% on Polaris tasks, outperforming baselines like Ran-
+                                          dom Forest (68%), fastprop (36%), and Chemprop (32%), and a 97% win rate
+                                          on MoleculeACE assays, surpassing Random Forest (50%) and other foundation
+                                          models. Unlike conventional pre-training approaches that rely on noisy exper-
+                                          imental data or biased quantum mechanical simulations, CheMeleon utilizes
+                                          low-noise molecular descriptors to learn rich and highly transferable molecular
+                                          representations, suggesting a new avenue for foundation model pre-training.
+
+                                          Keywords: foundation models, descriptors, chemistry
+
+
+
+
+                                                                                  1
+Fast and accurate prediction of molecular properties is a shared challenge pivotal
+to advancements across diverse scientiﬁc domains. In recent years, artiﬁcial intelli-
+gence (AI) and deep learning (DL) have emerged as transformative tools for this
+task. By providing rapid surrogates for resource-intensive experiments or complex
+quantum mechanics (QM) simulations, these data-driven approaches oﬀer the poten-
+tial to signiﬁcantly accelerate the iterative process of discovering molecules with
+desirable properties. The success of these methods relies heavily on their ability
+to map molecular structures to their functional properties. Historically, this chal-
+lenge has been approached through two distinct paradigms: classical methods based
+on ﬁxed representations, and modern deep learning approaches based on learned
+representations.
+    The ﬁeld of cheminformatics has long relied on eﬀective classical methods that
+utilize molecular representations derived from expert chemical knowledge. Molecular
+ﬁngerprints, such as Morgan ﬁngerprints [1], encode structural substructures into bit
+vectors, while molecular descriptors, like those from Mordred [2], provide dense sum-
+maries of topological and physicochemical properties. Classical models train a Random
+Forest or feed-forward neural network (FNN) on these expert-crafted features and are
+robust baselines, often outperforming modern deep learning architectures on practical
+benchmarks where data is scarce [3, 4].
+    In contrast, graph neural networks (GNNs), such as the directed message passing
+neural network (D-MPNN) [5], aim to learn optimal representations directly from the
+molecular graph. This approach oﬀers a ﬂexible and generalizable framework that
+has been successfully applied to predict a wide range of molecular properties [6–12].
+While theoretically more powerful, these learned-representation models struggle in the
+low-data regime (. O(1,000) training samples) typical of drug discovery campaigns.
+Without large datasets to guide them, they fail to simultaneously learn meaningful
+molecular features and the complex correlations with target properties, often leading
+to poorer performance when compared to classical methods.
+    To bridge this gap and unlock the potential of deep learning for chemistry, the
+ﬁeld has increasingly turned to foundation models. Mirroring the revolution in natural
+language processing (NLP) and computer vision, driven by models like GPT [13],
+these large neural networks are pre-trained on vast datasets to learn generalizable
+representations that can be ﬁne-tuned for various prediction tasks. A comprehensive
+review of models by Choi et al. [14] highlights the evolution and impact of these
+approaches.
+    Early eﬀorts adapted techniques from NLP to textual representations of molecules,
+such as SMILES or SELFIES [15]. Models like ChemBERTa [16] and MoLFormer
+[17] treat chemical strings as language, employing masked language modeling to learn
+syntax and grammar from vast compound collections. Recent models have shifted
+toward graph-based architectures, which oﬀer a stronger inductive bias for molecular
+topology. These approaches typically employ self-supervised learning strategies such
+as contrastive learning [18], context prediction [19], or motif-level prediction tasks [20–
+23] to capture structural similarity and chemically meaningful substructures. While
+promising, these methods often rely on proxy tasks that may not directly align with
+the physicochemical properties relevant to downstream applications.
+
+
+
+                                            2
+    Alternatively, supervised pre-training has emerged as a powerful framework.
+Therein, models are pre-trained to predict speciﬁc molecular properties. Recent mod-
+els, such as minimol [24], MolGPS [25], and GraphQPT [26], demonstrate that
+pre-training on labeled data can yield powerful foundation models that often out-
+perform their self-supervised counterparts. However, this approach faces a critical
+bottleneck: the quality and availability of ground truth labels. Experimental labels
+are often sparse and noisy, suﬀering from signiﬁcant inter-laboratory variability [27],
+which introduces both stochastic and systematic error into the pre-training process.
+Labels derived from QM simulations, while more abundant, can be computationally
+expensive to generate at scale and are often prone to systematic biases or limited
+to speciﬁc regions of chemical space. Consequently, existing foundation models must
+trade oﬀ between the scale of unlabeled data and the quality of labeled data.
+    In this study, we explore a third, underutilized source of ground truth: easy-to-
+calculate classical molecular descriptors. Unlike experimental measurements or QM
+simulations, descriptors are deterministic, low-noise, and computationally inexpen-
+sive to generate for any valid molecular structure. We hypothesize that pre-training a
+model to predict these classical descriptors compels it to internalize the rich, expert-
+derived chemical knowledge they contain, ranging from simple atom counts to complex
+topological indices and additive physicochemical property estimators. This approach
+eﬀectively combines the strengths of classical cheminformatics with modern deep learn-
+ing: the model learns to construct a representation that encodes the dense information
+of descriptors, but does so within a ﬂexible, diﬀerentiable neural network architecture
+that allows for end-to-end ﬁne-tuning on speciﬁc downstream tasks.
+
+
+
+
+                                           3
+                                                                         -.-/'# ,%+ !%
+     4"$'"%()()&                             !)#,$)%'# ,%+ !%                                                                  %
+                                                  ,),$) !%
+                                                                                                *+%,()&
+                                                     !"#"$#                                 -()*!"(.%'(!)
+             ,%"&$5                                                                    /%*0()&
+                 #%'%*$'
+                                                                                            
+
+
+
+                                                             &!'()#*#)                                        L 65/%*0$#578
+                                      !"# $%#
+                                                           # #+                                       +#)4# 6##%%!%
+                N
+      O                    O                                                                          +%#', !!"7$ #'8,),$) #'
+                                                       N
+                                            O                    O                                     '# ,%+ !% 5 6'##+9(:;<<
+                                                                           12$$,$!)
+      CN1C(=O)CCC1=O                                                       $/3$##()&
+                                      &!'"# $%#                          012(3!
+
+
+     ;<=>5/!,$+:,$*
+      ?"!/5:312$/                                             %&&"$&%'(!)
+                                                                                             
+
+                                                                                           +%#', '# ,%+ !%
+
+
+
+
+     9)$':)()&                               4%"%/$'$"5*2%"()&
+                                      )4#$ +%# %#'5#6
+                                                                                                                                    3
+
+               */%,,5                                    %&&"$&%'(!)
+                                                                                             
+                 #%'%*$'*
+                                                                                            +%#', +%!+#% =
+      ;<=@>5/!,$+:,$*
+
+    )&#)#'5 6'*#% #
+      %#!"+%!+#% #                                                                                         L 655785!"5A18
+   7&!, * => !)$&) =>???8
+                                                                          %# +%!+#% =
+
+
+Fig. 1: Workﬂow for the present study. (a) A large corpus of unlabeled SMILES are
+randomly selected from PubChem [28] and each is featurized into a vector of molecular
+descriptors using Mordred [2]. Chemprop is used to train a directed message passing
+neural network [5, 29] (D-MPNN) to predict these descriptors using a masked loss
+analogous to ChemBERTa’s as a form of regularization [16]. (b) The resulting D-
+MPNN is then reused for subsequent ﬁne-tuning on smaller downstream datasets
+labeled with quantities of interest, such as bioactivity.
+
+
+   We introduce CheMeleon, a foundation model pre-trained on 1 million molecules
+from PubChem [28] to predict their computed Mordred descriptors using a D-
+MPNN architecture. Figure 1 outlines the pre-training and ﬁne-tuning workﬂow
+of CheMeleon. By utilizing descriptors as targets, the model learns robust and
+chemically-informed representations free from the confounding eﬀects of label noise.
+With end-to-end ﬁne-tuning, CheMeleon consistently outperforms strong classical
+baselines like Random Forest (RF) as well as existing foundation models when bench-
+marked on 58 practically relevant tasks covering properties like solubility, lipophilicity,
+and bioactivity. We also present an analysis of CheMeleon’s learned ﬁngerprint,
+
+
+
+                                                                     4
+demonstrating its ability to capture chemically meaningful relationships and gener-
+alize across diverse molecular spaces. Crucially, this state-of-the-art performance is
+achieved with an oﬀ-the-shelf model architecture and descriptor set, demonstrating
+the eﬀectiveness of our pre-training method.
+
+1 Results
+We present summary statistics and key graphical results following the procedures
+described in Section 3. For clarity, only a representative subset is shown here, while the
+complete set of results and all analysis code are available in the Supporting Information
+and at the source code repository (see Section 3.5).
+
+1.1 Pre-training
+CheMeleon was constructed using the D-MPNN architecture implemented in
+Chemprop. Following Chemprop conventions, the message-passing portion of the
+network is of dimension 2048, containing 8.7 million parameters. The number of mes-
+sage passing iterations (depth) was set to 6 and mean aggregation was used to yield
+the molecular embedding. The subsequent two-layer FNN of the same dimension maps
+this representation to the molecular descriptors for a total parameter count of 12.9
+million. After pre-training, the test root mean squared error (RMSE) was 0.14, aver-
+aged across all 1613 Mordred descriptors, where each descriptor was rescaled to have
+zero mean and unit variance and Winsorized to six standard deviations.
+
+1.2 Polaris Benchmarks
+Figure 2 shows the results for a select set of benchmarks covering particularly relevant
+tasks and a span of dataset sizes. This diagram follows the conventions of Ash et al.
+[30], with the best performing model according to the indicated metric shown in blue,
+statistically indistinguishable models shown in gray, and statistically inferior models
+shown in red (see Section 3 for further information).
+
+
+
+
+                                            5
+                                    tdcommons                           polaris
+                                      ld50-zhu                    adme-fang-solu-1
+                                 Train Size: 5,907                Train Si,e: 1,578
+                                Metric: scaled_mae                 Metric: pearsonr
+             minimol
+             fastprop
+                   RF
+              MolCLR
+          MoLFormer
+           Chemprop
+          CheMeleon
+                        0.2     0.4    0.6    0.8    1.0   0.5           0.6          0.7
+                                    tdcommons                        tdcommons
+                                   caco2-wang                           herg
+                                  Train Si,e: 728                  Train Si,e: 523
+                                Metric: scaled_mae                 Metric: roc_auc
+             minimol
+             fastprop
+                   RF
+              MolCLR
+          MoLFormer
+           Chemprop
+          CheMeleon
+                              0.4     0.6    0.8    1.0          0.7           0.8      0.9
+                                       polaris                         polaris
+                                p is2-egfr-wt-reg-v2             adme-fang-rppb-1
+                                   Train Si,e: 496                 Train Si,e: 111
+                                Metric: scaled_mse                Metric: pearsonr
+             minimol
+             fastprop
+                   RF
+              MolCLR
+          MoLFormer
+           Chemprop
+          CheMeleon
+                        0.00 0.25 0.50 0.75 1.00           0.00 0.25 0.50 0.75 1.00
+
+Fig. 2: Performance of all of the tested models across a set of diﬀerent common
+molecular machine learning tasks. The origin of each benchmark set is shown as the
+ﬁrst line of each subplot title, followed by the name of the dataset (which indicates the
+task), the size of the training data, and the metric used to evaluate model performance.
+Benchmarks are sorted by training size in decreasing order. Models shown in blue are
+the absolute highest performers on the given benchmark, while models shown in gray
+are not practically diﬀerent from the best performer according to the Tukey Honestly
+Signiﬁcant Diﬀerence test (α = 0.05) based on the variance in test set performance
+across ﬁve repetitions, as laid out in Section 3.2. Models shown in red are practically
+worse performers and are considered to have “lost” on the indicated benchmark.
+
+
+
+
+                                                       6
+    For a complete diagram showing all of the Polaris benchmarks, see Supporting
+Information S1. These results are summarized in Table 1. Models achieving the best
+or statistically indistinguishable performance relative to the best are given a “win”
+on each benchmark, reﬂecting their overall performance across this range of relevant
+tasks.
+
+
+                    Table 1: Model performance comparison on
+                    Polaris benchmarks.
+                     Model          Win Count     Win Rate (%)
+                     CheMeleon           21             75
+                     minimol             20             71
+                     RF                  19             68
+                     MoLFormer           11             39
+                     fastprop            10             36
+                     Chemprop            9              32
+                     MolCLR              4              14
+
+
+
+
+1.3 MoleculeACE Benchmarks
+Figure 3 shows the three best-performing models from the Polaris benchmark set
+evaluated on the MoleculeACE benchmark set. This challenging task tests a model’s
+capacity to consistently predict biological activity when small structural modiﬁcations
+cause unexpectedly large activity diﬀerences.
+   This ﬁgure is inspired by that in the original study [31], but modiﬁed to show both
+the per-model statistical tests or consistency and the intra-model test for absolute
+performance. The RMSE diﬀerence between activity cliﬀ subgroups is shown on the
+horizontal axis across all assays in the MoleculeACE study on the vertical axis. Filled
+markers indicate the statistically best models (according to the procedure described in
+Figure 2) and blue and yellow indicate models which are consistent and inconsistent,
+respectively, between cliﬀ and noncliﬀ compounds.
+   Section 3 provides further information about the construction of these diagrams.
+The results for all models are shown in Supporting Information Section S1.
+
+
+
+
+                                          7
+                                                CheMe eon                      minimo                      RF
+                                   _Ki
+                            2823053_Kii
+                            4871_Ki
+                            1204_K0
+                                EC5 i
+                         23290_34_5K0
+                                EC i
+                         23450_05__KKi
+
+
+
+
+ ChEMBL Assay Number
+                              27114_Ki
+                            29236_Kii
+                                     K
+                              24343__Ki
+                              237_Ki
+                              264_Ki
+                              231_Ki
+                              2 EC50
+                              _ 0
+                       4621367_E8C_5Ki
+                              2219_Ki
+                              2 EC50
+                                       i
+                         2182_62__KKi
+                              28E7C50
+                              _ Ki
+                       3979238C_50
+                            7 _E Ki
+                       20447927__Ki
+                            218462_Kii
+                            1234_K
+                                              0.0           0.5          0.0            0.5         0.0           0.5
+                                           RMSEcliff − RMSEnoncliff   RMSEc iff − RMSEnonc iff   RMSEc iff − RMSEnonc iff
+
+Fig. 3: Performance of models across the ChEMBL assays [32] curated as part of the
+MoleculeACE study [31]. Each marker indicates the diﬀerence in Root Mean Squared
+Error (RMSE) of predictions between molecules in the cliﬀ set and those not in the cliﬀ
+set (noncliﬀ), for the speciﬁed assay. Five-fold cross validation was performed accord-
+ing to the procedure described in Section 3.4, enabling a one-sided t-test to check if
+this performance diﬀerence was statistically greater than zero (conﬁdence interval for
+this test is shown as horizontal error bars, α = 0.05). Markers shown in blue are not
+practically diﬀerent from zero, a positive result indicating that the model performance
+on the two sets is indistinguishable. Marker ﬁlling reﬂects the absolute performance of
+the models relative to one another following the same statistical procedure as Figure
+2. Filled markers indicate that the given model was statistically the best or indistin-
+guishable from the best performer in terms of RMSE for the entire test set; hollow
+markers indicate statistically signiﬁcant worse performance. Absolute, overall perfor-
+mances results are also presented in Supporting Information Figure S2 in the style of
+Figure 2.
+
+
+   Following the conventions of Table 1, summary statistics for all models performance
+on activity prediction are presented in Table 2. Win Count and Rate are reported for
+the entire test set and the cliﬀ set separately.
+
+
+
+
+                                                                         8
+      Table 2: Model performance comparison on MoleculeACE benchmarks.
+                           Entire Test Set              Cliﬀ Subset Only
+      Model         Win Count     Win Rate (%)     Win Count    Win Rate (%)
+      CheMeleon          29             97             30             100
+      RF                 15             50             20              67
+      minimol            12             40             20              67
+      fastprop            5             17             12              40
+      MoLFormer           5             17             10              33
+      Chemprop            0             0               4              13
+      MolCLR              0             0               2               7
+
+
+1.4 k-Nearest Neighbors Representation Probing
+CheMeleon’s learned molecular representation was evaluated through a set of k-
+Nearest Neighbors (kNN) probing experiments on 20 challenging toxicity classiﬁcation
+endpoints [33]. This evaluation is conceptually related to read-across approaches, in
+which the known toxicity proﬁles of chemically similar compounds are used to support
+or refute toxicity predictions for a query molecule.
+    The embeddings were learned by training or ﬁne-tuning the models (Chemprop
+and CheMeleon) on the ToxCast training datasets and compared with ﬁxed
+descriptor- and ﬁngerprint-based representations. Performance was quantiﬁed using
+balanced accuracy, sensitivity, and speciﬁcity, with results obtained from ﬁve-fold
+cross-validation using random and agglomerative cluster splits. Figure 4 summarizes
+the kNN probing results on a random split averaged across all endpoints, as well
+as results for Nuclear Receptor-Estrogen Receptor (NR-ER), an example endpoint
+measuring estrogen receptor activation, which is widely used in regulatory toxicol-
+ogy. Similar trends are observed under agglomerative clustering-based splits (see
+Supporting Information Section S2), also of interest in this domain.
+
+
+
+
+                                         9
+                                                                   (a) Average (All Datasets)
+                               Sensitivity                                             S ecificity                                       Balanced Accuracy
+           1.0                                                    1.0                                                     1.0
+
+
+           0.8                                                    0.8                                                     0.8
+
+
+
+
+Metric Value
+           0.6                                                    0.6                                                     0.6
+
+
+           0.4                                                    0.4                                                     0.4
+
+
+           0.2                                                    0.2                                                     0.2
+
+
+           0.0                                                    0.0                                                     0.0
+                 0   25   50   75   100   125   150   175   200         0    25   50   75   100   125   150   175   200         0   25    50   75   100   125   150   175   200
+                                    k                                                        k                                                      k
+                                                                            (b) NR-ER Endpoint
+                               Sensitivity                                             S ecificity                                       Balanced Accuracy
+           1.0                                                    1.0                                                     1.0
+
+
+           0.8                                                    0.8                                                     0.8
+
+
+
+
+Metric Value
+           0.6                                                    0.6                                                     0.6
+
+
+           0.4                                                    0.4                                                     0.4
+
+
+           0.2                                                    0.2                                                     0.2
+
+
+           0.0                                                    0.0                                                     0.0
+                 0   25   50   75   100   125   150   175   200         0    25   50   75   100   125   150   175   200         0   25    50   75   100   125   150   175   200
+                                    k                                                        k                                                      k
+                                          CheMeleon (fine-tuned)                             Chem ro (large)                             Mordred
+                                          Chem ro (default)                                  Morgan
+Fig. 4: kNN probing of ﬁxed and learned molecule representations. Upper row shows
+average results over 20 ToxCast endpoints. Lower row shows the results on the NR-
+ER endpoint, which was also used in the comparison by Ball et al. [34]. The results
+were obtained with a 5-fold cross validation using a random split, representing the
+read-across scenario.
+
+
+2 Discussion
+Our results show that pre-training on classical molecular descriptors enables the
+model to learn representations that not only reﬂect underlying chemical struc-
+ture, but also translate into improved performance on practical property prediction
+tasks. CheMeleon’s RMSE of 0.14 achieved during pre-training was mentioned
+in Section 1.1 for completeness rather than its importance. The model is never
+actually deployed to calculate these descriptors, especially given that they can be
+calculated exactly using Mordred. While it is important that the pre-training perfor-
+mance improve continuously throughout training and thereby avoid overﬁtting, the
+importance of the actual performance metric is a question left for future work.
+
+
+
+
+                                                                                        10
+    As shown in Figure 2, in many cases there are multiple winning models and in some
+cases, all models achieve statistically indistinguishable performance, generally includ-
+ing CheMeleon. CheMeleon narrowly outperforms the next best model minimol
+on this subset of benchmarks, achieving a Win Rate of 75%. This demonstrates the
+eﬀectiveness of molecular descriptors for pre-training. Without the need for combin-
+ing noisy experimental assays or running expensive QM simulations, CheMeleon is
+able to achieve state-of-the-art performance.
+    Also noteworthy is the relative strength of the Random Forest baseline model
+when compared against deep models when focusing on relevant benchmarks. Many-
+parameter, well-known foundation models such as MoLFormer and MolCLR
+fare surprisingly poorly. MoLFormer reaches roughly equivalent performance to
+scratch-trained methods like fastprop and Chemprop, while MolCLR performs
+signiﬁcantly worse.
+    Most promising here is the performance improvement that CheMeleon provides
+to Chemprop. On its own, Chemprop falls below all but one of the tested meth-
+ods, including the baseline Random Forest. Given the ease of pre-training using the
+CheMeleon approach, it is reasonable to believe that future studies could use it to
+improve other model architectures in a similar manner.
+    When shifting focus to the MoleculeACE benchmarks, CheMeleon is statistically
+the best on 29 of the 30 benchmarks as shown in Table 2. When narrowing in on the cliﬀ
+molecules CheMeleon achieves a perfect win rate. This is a dramatic improvement
+over the next-best RF model, with only 15 wins and a 67% win rate, respectively. Like
+in the Polaris benchmark set, CheMeleon has again provided an enormous improve-
+ment over Chemprop. Without the use of CheMeleon pre-training, the Chemprop
+model fails to achieve the highest performance in any of the test benchmarks.
+    While CheMeleon, RF, and minimol are the best-performing models overall, in
+most cases they fail to simultaneously achieve top overall performance and statistically
+similar performance on cliﬀ and noncliﬀ compounds. These cases are indicated by the
+ﬁlled blue markers in Figure 3. Across the tested benchmarks, CheMeleon does so
+only four times, while the next best model (minimol) does so only twice.
+    The apparent diﬃculty of this benchmark for all tested models suggests that
+foundation modeling, while able to improve the absolute performance, does not reli-
+ably discern the presence of activity cliﬀs. As shown in Supporting Information S3,
+CheMeleon learns a representation that maps structurally similar molecules into the
+same feature space, hampering eﬀorts to distinguish them during ﬁne-tuning on this
+task in particular. Given the comparatively poor performance of the other tested foun-
+dation models MoLFormer and minimol, this challenge seems to be endemic to the
+ﬁeld.
+    Finally, in the kNN probing study CheMeleon achieves the highest average bal-
+anced accuracy among all evaluated representations across endpoints and exhibits a
+pronounced increase in sensitivity relative to both Chemprop and ﬁxed representa-
+tions. Because kNN predictions are determined solely by local neighborhood structure,
+this improvement indicates that CheMeleon organizes chemically and biologically sim-
+ilar compounds more eﬀectively in the embedding space. The gain in sensitivity is
+
+
+
+
+                                          11
+achieved at only a modest reduction in speciﬁcity, yielding a favorable trade-oﬀ for
+toxicity prediction tasks.
+    We also sought to validate that performance improvements were not simply due to
+the increased number of parameters. To that end, the ablated D-MPNN Chemprop
+(large) is identical in size to CheMeleon but is trained from random initializa-
+tion. It performs substantially worse, particularly for small k. This demonstrates that
+the improved embedding quality arises speciﬁcally from descriptor-based pre-training
+rather than architectural bias. Similar trends are observed in this test when using
+an agglomerative clustering-based split (see Supporting Information Figure S4) fur-
+ther aﬃrming the applicability of CheMeleon to similarity driven applications in
+industrial and regulatory settings.
+    In conclusion, we have combined classical descriptor-based representations with
+state-of-the-art deep learning approaches to develop CheMeleon, a foundation model
+which provides statistically signiﬁcant improvements to the underlying architecture
+relative to the best baselines in the literature. CheMeleon is a powerful demonstra-
+tion that its simple pre-training approach can improve existing modeling approaches
+and push the boundaries of chemical property prediction. CheMeleon is open source,
+permissively licensed, and readily accessible via the Chemprop machine learning
+package [35].
+
+3 Methods
+3.1 CheMeleon Pre-training
+Figure 1 visualizes the workﬂow for the present study. The pre-training dataset was
+developed by randomly selecting 1 million molecules from PubChem [28] and cal-
+culating their molecular descriptors using Mordred [2]. Each descriptor represents a
+deterministic algorithm operating on the molecular graph. These can be as simple
+as counting the presence of common functional groups and as complex as perform-
+ing repeated shortest-path graph navigation, as in the Wiener index [36]. There are
+also parameterized descriptors based on externally estimated sub-properties, such as
+atomic volume, as used in the molecular McGowan Volume descriptor [37]. The result-
+ing dataset was stored in the Zarr format [38] to enable eﬃcient, high-throughput
+loading during training and has been made publicly available (see Section 3.5).
+    For the model architecture, we employed a large D-MPNN implemented within the
+Chemprop framework [5]. The D-MPNN learns a molecular representation that is fed
+into a FNN to predict the computed descriptors. To prevent overﬁtting and encourage
+robust feature learning, we applied a dynamic masking strategy where 85% of the
+descriptor targets are randomly masked in the loss function. The entire network was
+trained end-to-end to minimize the mean-squared error on the unmasked descriptors.
+    For downstream tasks, we initialize the model with the pre-trained D-MPNN
+weights while discarding the pre-trained FNN. A fresh, task-speciﬁc FNN with ran-
+dom initial weights is then attached, and the entire model — including the pre-trained
+encoder — is ﬁne-tuned end-to-end using stochastic gradient descent. See Support-
+ing Information Section S4 for complete details on the model hyperparameters and
+training procedure.
+
+
+                                          12
+3.2 Benchmark Datasets
+The Polaris benchmarking suite is a collection of expert-curated datasets covering a
+broad range of molecular property prediction targets [30]. Users have also made avail-
+able the datasets from the Therapeutic Data Commons (TDC) [39]. For this study,
+we selected a set of 28 unique benchmarks covering relevant targets such as solubility,
+physiology, and biophysics from both Polaris and TDC. A subset of particularly rele-
+vant benchmarks whose performance across models is representative of the entire set
+has been shown in Figure 2. Each benchmark uses a diﬀerent metric, automatically
+calculated by Polaris, all of which are either naturally scaled or rescaled (as done here)
+to range from zero to one, with one being the best.
+    The remaining 29 benchmarks are a set curated in the MoleculeACE study [31],
+each of which is an assay measuring the activity of small molecules against a biolog-
+ically relevant target. MoleculeACE evaluates model performance on activity cliﬀs.
+Molecules are grouped into chemical series with small structural changes. Most changes
+lead to smooth activity variations (noncliﬀ molecules), but occasionally a small mod-
+iﬁcation causes a sharp decrease (i.e., ”falls oﬀ a cliﬀ”) in activity; these cases are
+activity cliﬀs, and the corresponding compounds are labeled as cliﬀ molecules.
+    van Tilborg et al. [31] partition these chemical series in whole into either training
+or testing sets. This allows calculation of the RMSE of test set activity predictions for
+the cliﬀ and noncliﬀ molecules. These RMSEs are directly used for absolute perfor-
+mance comparisons. The diﬀerence in RMSE between the cliﬀ and noncliﬀ molecules’
+predictions is checked via a one-sided, one-sample t-test (α = 0.05) to see if the model
+performs the same in both subgroups. This is then summarized across all assays as
+the “consistency rate”, a percentage reﬂecting the frequency with which the model
+maintains the same performance across activity cliﬀs.
+    Across all of these benchmarks we only perform single-task regression or classiﬁca-
+tion. Although multitask has been shown to improve performance in chemical datasets
+[40], we seek to demonstrate performance in individual tasks to better facilitate com-
+parisons; all of the present models can be used in a multitask ﬁtting approach. The
+present procedure enables us to quantify the performance of the models subject to
+the most signiﬁcant source of uncontrollable, stochastic error. Towards that same end,
+we do not perform hyperparameter optimization for any model on any benchmark
+dataset. Such a procedure is known to lead to overﬁtting [41], particularly on the small
+datasets used in this study.
+    Although not central to the present work, we have provided performance results
+on the MoleculeNet benchmark collection [42] to facilitate comparisons with historical
+models (see Supporting Information Section S1.1). As discussed at length by Walters
+[43], many of the benchmarks included in this collection cover irrelevant or poorly
+deﬁned tasks and contain data curation errors. The physical chemistry, biophysics,
+and physiology categories from MoleculeNet are still represented in our selected bench-
+marks, but with the introduction of Polaris they are now more curated, standardized,
+and easier to access.
+    Finally, we sought a non-modeling-based evaluation method to provide founda-
+tional insights into the learned representation of CheMeleon. To that end, we
+reproduce the “Single Assay” benchmark from O’Boyle and Sayle [44] in Supporting
+
+
+                                           13
+Information Section S3, which enables quantitative comparisons of arbitrary molecu-
+lar ﬁngerprints’ capacity to reproduce human-deﬁned sorting order across thousands
+of series of small molecules.
+
+3.3 Reference Models
+We compare CheMeleon against a diverse set of methods, ranging from classical
+baselines to state-of-the-art foundation models.
+• Random Forest [45, 46]: A strong industrial baseline method. The present conﬁg-
+  uration (RF) is trained on Morgan count ﬁngerprints (dimension 2048, radius 2)
+  [1, 47] augmented with physicochemical descriptors from the RDKit [48]. Despite
+  the prevalence of deep learning, such classical methods remain highly competitive
+  and often outperform complex architectures in practical, low-data scenarios [3],
+  representing a realistic industrial standard.
+• fastprop [4]: A shallow FNN trained directly on Mordred descriptors [2]. This
+  serves to evaluate the predictive power of the descriptor set when used directly in
+  a standard supervised learning framework.
+• Chemprop [5]: A standard D-MPNN initialized with random weights. This model
+  serves as a direct baseline to evaluate the impact of our pre-training methodology
+  on the same core architecture.
+• minimol [24]: A parameter-eﬃcient foundation model based on a GNN architecture
+  similar to Chemprop. It is pre-trained in a multitask setting on the Graphium
+  LargeMix dataset [49], where biological and quantum labels are sparsely annotated
+  across molecules. It serves as a strong supervised learning baseline with a comparable
+  parameter count to our method.
+• MoLFormer [17]: A large-scale chemical language model based on the Trans-
+  former architecture. Pre-trained on 1.1 billion SMILES strings via masked language
+  modeling, it represents the state-of-the-art in sequence-based representations.
+• MolCLR [18]: A foundation model utilizing a GNN backbone to learn generalized
+  representations via contrastive learning on 2D molecular graphs without any labels.
+   These models represent the state-of-the-art in learning from graphs, text, and
+descriptors, with Random Forest included to provide a strong classical baseline.
+
+3.4 Model Comparisons
+For all benchmarks, we use a single ﬁxed test set as deﬁned by the original dataset
+creators. This approach ensures compatibility with previous studies and facilitates
+rigorous statistical comparisons between our tested models. To generate the necessary
+replicate measurements for statistical analysis, we adopt the following procedure for
+each benchmark:
+1. Select a random seed for the current repetition.
+2. Based on the model architecture, use this random seed to:
+  (a) (for deep models) deﬁne the validation split for early stopping to prevent
+      overﬁtting.
+  (b) (for RF) initialize the feature bagging.
+
+
+                                          14
+3. Train the model on the training set, using the validation set for early stopping
+   where applicable.
+4. Evaluate the trained model on held-out test set.
+    We compare the performance of all models simultaneously using the Tukey Hon-
+estly Signiﬁcant Diﬀerence (HSD) test [30, 50] (α = 0.05). This procedure controls the
+family-wise error rate to account for multiple comparisons. For a given benchmark,
+the top-performing model and any models statistically indistinguishable from it are
+designated as winners. This is aggregated across all benchmarks to arrive at a win
+count and win rate.
+
+3.5 k-Nearest Neighbors Representation Probing
+An eﬀective molecular representation should encode chemically meaningful struc-
+ture such that distances in the embedding space reﬂect molecular similarity and,
+ideally, similarity in molecular properties. To evaluate the suitability of diﬀerent
+molecular representations, we employ k-Nearest Neighbor (kNN) probing [51–53]. This
+analysis compares embeddings learned by neural models such as CheMeleon and
+Chemprop with traditional ﬁxed molecular representations, including count-based
+Morgan ﬁngerprints and physicochemical descriptors as used in RF.
+    We applied kNN probing to 20 challenging endpoints (balanced accuracies between
+∼0.6 and 0.8) from ToxCast Database, reﬂecting real-world scenarios [54]. The Tox-
+Cast Database is a public resource containing in vitro screening assay data produced
+by the U.S. Environmental Protection Agency’s Toxicity Forecaster program [33]. In
+this work, we used the ToxCast datasets made available via MoleculeNet [42].
+    In addition, we followed the read-across evaluation protocol of Ball et al. [34] for
+all the endpoints including NR-ER. These assays measure a compound’s potential
+to interact with the estrogen receptor, a key mechanism in endocrine disruption and
+regulatory toxicology. Read-across is a similarity-based inference strategy in which
+the activity of a query compound is inferred from structurally or chemically similar
+compounds, making it particularly sensitive to the quality of the underlying molecular
+representation.
+    For CheMeleon and Chemprop, molecular embeddings were obtained by ﬁrst
+ﬁne-tuning on the training set and then generating embeddings for both train and test
+sets for kNN analysis. Compound preprocessing, descriptor calculation, and neural
+ﬁngerprint extraction followed the procedures described in Feldmann et al. [54]. All
+experiments were conducted using ﬁve-fold cross-validation under both random and
+agglomerative clustering-based splits.
+
+Data Availability
+All datasets used in this work are available from their respective authors via Polaris
+or GitHub. Molecule descriptors calculated from the publicly available PubChem
+structures have been made available on Zenodo with accession code 10.5281/zen-
+odo.15733574 [55]. The CheMeleon model weights have been made available on
+
+
+
+
+                                          15
+Zenodo with accession code 10.5281/zenodo.15426600 [56]. Code for automatic down-
+loading and usage of weights is available with the source code and has been integrated
+into the Chemprop software package as of version 2.2.0.
+
+Code Availability
+The source code associated with this study, including pre-training, ﬁne-
+tuning, numerical results, and visualization of the same, is available at
+GitHub.com/JacksonBurns/CheMeleon.
+
+
+
+
+                                         16
+References
+ [1] Morgan, H.L.: The generation of a unique machine description for chemical
+     structures-a technique developed at chemical abstracts service. Journal of Chem-
+     ical Documentation 5(2), 107–113 (1965) https://doi.org/10.1021/c160017a018
+
+ [2] Moriwaki, H., Tian, Y.-S., Kawashita, N., Takagi, T.: Mordred: a molecular
+     descriptor calculator. Journal of Cheminformatics 10(1) (2018) https://doi.org/
+     10.1186/s13321-018-0258-y
+
+ [3] Xia, J., Zhang, L., Zhu, X., Li, S.Z.: Why Deep Models Often cannot Beat Non-
+     deep Counterparts on Molecular Property Prediction? (2023). https://arxiv.org/
+     abs/2306.17702
+
+ [4] Burns, J.W., Green, W.H.: Generalizable, fast, and accurate DeepQSPR with fast-
+     prop. Journal of Cheminformatics 17(1) (2025) https://doi.org/10.1186/s13321-
+     025-01013-4
+
+ [5] Yang, K., Swanson, K., Jin, W., Coley, C., Eiden, P., Gao, H., Guzman-Perez, A.,
+     Hopper, T., Kelley, B., Mathea, M., Palmer, A., Settels, V., Jaakkola, T., Jensen,
+     K., Barzilay, R.: Analyzing learned molecular representations for property pre-
+     diction. Journal of Chemical Information and Modeling 59(8), 3370–3388 (2019)
+     https://doi.org/10.1021/acs.jcim.9b00237
+
+ [6] Stokes, J.M., Yang, K., Swanson, K., Jin, W., Cubillos-Ruiz, A., Donghia, N.M.,
+     MacNair, C.R., French, S., Carfrae, L.A., Bloom-Ackermann, Z., Tran, V.M.,
+     Chiappino-Pepe, A., Badran, A.H., Andrews, I.W., Chory, E.J., Church, G.M.,
+     Brown, E.D., Jaakkola, T.S., Barzilay, R., Collins, J.J.: A deep learning approach
+     to antibiotic discovery. Cell 180(4), 688–70213 (2020) https://doi.org/10.1016/j.
+     cell.2020.01.021
+
+ [7] Greenman, K.P., Green, W.H., Gómez-Bombarelli, R.: Multi-ﬁdelity prediction of
+     molecular optical peaks with deep learning. Chemical Science 13(4), 1152–1162
+     (2022) https://doi.org/10.1039/d1sc05677h
+
+ [8] Swanson, K., Walther, P., Leitz, J., Mukherjee, S., Wu, J.C., Shivnaraine, R.V.,
+     Zou, J.: ADMET-AI: a machine learning ADMET platform for evaluation of large-
+     scale chemical libraries. Bioinformatics 40(7) (2024) https://doi.org/10.1093/
+     bioinformatics/btae416
+
+ [9] Attia, L., Burns, J.W., Doyle, P.S., Green, W.H.: Data-driven organic solubility
+     prediction at the limit of aleatoric uncertainty. Nature Communications 16, 7497
+     (2025) https://doi.org/10.1038/s41467-025-62717-7
+
+[10] Zalte, A.S., Pang, H.-W., Doner, A.C., Green, W.H.: Rigr: Resonance-invariant
+     graph representation for molecular property prediction. Journal of Chemical
+     Information and Modeling 65(20), 10832–10843 (2025) https://doi.org/10.1021/
+
+
+                                          17
+    acs.jcim.5c00495 https://doi.org/10.1021/acs.jcim.5c00495
+
+[11] Al Ibrahim, E., Morgan, N., Müller, S., Motati, S., Green, W.H.: Accurately
+     predicting solubility curves via a thermodynamic cycle, machine learning, and
+     solvent ensembles. Journal of the American Chemical Society 147(49), 45057–
+     45069 (2025) https://doi.org/10.1021/jacs.5c13746
+
+[12] Liao, H.C., Lin, Y.H., Peng, C.H., Li, Y.P.: Directed message passing neural
+     networks for accurate prediction of polymer–solvent interaction parameters. ACS
+     Engineering Au (2025) https://doi.org/10.1021/acsengineeringau.5c00027
+
+[13] Brown, T.B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P.,
+     Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss,
+     A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D.M., Wu, J.,
+     Winter, C., Hesse, C., Chen, M., Sigler, E., Litwin, M., Gray, S., Chess, B.,
+     Clark, J., Berner, C., McCandlish, S., Radford, A., Sutskever, I., Amodei, D.:
+     Language models are few-shot learners (2020) https://doi.org/10.48550/ARXIV.
+     2005.14165
+
+[14] Choi, J., Nam, G., Choi, J., Jung, Y.: A perspective on foundation models
+     in chemistry. JACS Au 5(4), 1499–1518 (2025) https://doi.org/10.1021/jacsau.
+     4c01160
+
+[15] Krenn, M., Häse, F., Nigam, A., Friederich, P., Aspuru-Guzik, A.: Self-referencing
+     embedded strings (SELFIES): A 100% robust molecular string representation.
+     Machine Learning: Science and Technology 1(4), 045024 (2020) https://doi.org/
+     10.1088/2632-2153/aba947
+
+[16] Chithrananda, S., Grand, G., Ramsundar, B.: ChemBERTa: Large-scale self-
+     supervised pretraining for molecular property prediction (2020) https://doi.org/
+     10.48550/ARXIV.2010.09885
+
+[17] Ross, J., Belgodere, B., Chenthamarakshan, V., Padhi, I., Mroueh, Y., Das, P.:
+     Large-scale chemical language representations capture molecular structure and
+     properties. Nature Machine Intelligence 4(12), 1256–1264 (2022) https://doi.org/
+     10.1038/s42256-022-00580-7
+
+[18] Wang, Y., Wang, J., Cao, Z., Barati Farimani, A.: Molecular contrastive learning
+     of representations via graph neural networks. Nature Machine Intelligence 4(3),
+     279–287 (2022) https://doi.org/10.1038/s42256-022-00447-x
+
+[19] Hu, W., Liu, B., Gomes, J., Zitnik, M., Liang, P., Pande, V., Leskovec,
+     J.: Strategies for pre-training graph neural networks. In: International Con-
+     ference on Learning Representations (2020). https://openreview.net/forum?
+     id=HJlWWjR5TE
+
+
+
+
+                                          18
+[20] Rong, Y., Bian, Y., Xu, T., Xie, W., Wei, Y., Huang, W., Huang, J.: Self-
+     supervised graph transformer on large-scale molecular data (2020) https://doi.
+     org/10.48550/ARXIV.2007.02835
+
+[21] Adrian, M., Chung, Y., Boyd, K., Paliwal, S., Veccham, S.P., Cheng, A.C.: Multi-
+     task ﬁnetuning and acceleration of chemical pretrained models for small molecule
+     drug property prediction (2025) https://doi.org/10.48550/ARXIV.2510.12719
+
+[22] Méndez-Lucio, O., Nicolaou, C.A., Earnshaw, B.: MolE: a foundation model for
+     molecular graphs using disentangled attention. Nature Communications 15(1)
+     (2024) https://doi.org/10.1038/s41467-024-53751-y
+
+[23] Liu, Z., Wang, C., Zheng, S., Wu, C., Feng, H., Xu, L., et al.: Molecular motif
+     learning as a pretraining objective for molecular property prediction. Nature
+     Communications (2025) https://doi.org/10.1038/s41467-025-66685-w
+
+[24] Kläser, K., Banaszewski, B., Maddrell-Mander, S., McLean, C., Müller, L., Parviz,
+     A., Huang, S., Fitzgibbon, A.: MiniMol: A parameter-eﬃcient foundation model
+     for molecular learning (2024) https://doi.org/10.48550/ARXIV.2404.14986
+
+[25] Sypetkowski, M., Wenkel, F., Poursafaei, F., Dickson, N., Suri, K., Fradkin, P.,
+     Beaini, D.: On the scalability of GNNs for molecular graphs. In: The Thirty-eighth
+     Annual Conference on Neural Information Processing Systems (2024). https://
+     openreview.net/forum?id=klqhrq7fvB
+
+[26] Fallani, A., Nugmanov, R., Arjona-Medina, J., Wegner, J.K., Tkatchenko, A.,
+     Chernichenko, K.: Pretraining graph transformers with atom-in-a-molecule quan-
+     tum properties for improved admet modeling. Journal of Cheminformatics 17(1)
+     (2025) https://doi.org/10.1186/s13321-025-00970-0
+
+[27] Landrum, G.A., Riniker, S.: Combining ic50 or ki values from diﬀerent sources
+     is a source of signiﬁcant noise. Journal of Chemical Information and Modeling
+     64(5), 1560–1567 (2024) https://doi.org/10.1021/acs.jcim.4c00049
+
+[28] Kim, S., Chen, J., Cheng, T., Gindulyte, A., He, J., He, S., Li, Q., Shoemaker,
+     B.A., Thiessen, P.A., Yu, B., Zaslavsky, L., Zhang, J., Bolton, E.E.: PubChem
+     2023 update. Nucleic Acids Research 51(D1), 1373–1380 (2022) https://doi.org/
+     10.1093/nar/gkac956
+
+[29] Heid, E., Greenman, K.P., Chung, Y., Li, S.-C., Graﬀ, D.E., Vermeire, F.H.,
+     Wu, H., Green, W.H., McGill, C.J.: Chemprop: A machine learning package for
+     chemical property prediction. Journal of Chemical Information and Modeling
+     64(1), 9–17 (2023) https://doi.org/10.1021/acs.jcim.3c01250
+
+[30] Ash, J.R., Wognum, C., Rodrı́guez-Pérez, R., Aldeghi, M., Cheng, A.C., Clevert,
+     D.-A., Engkvist, O., Fang, C., Price, D.J., Hughes-Oliver, J.M., Walters, W.P.:
+     Practically signiﬁcant method comparison protocols for machine learning in small
+
+
+                                          19
+    molecule drug discovery. Journal of Chemical Information and Modeling 65(18),
+    9398–9411 (2025) https://doi.org/10.1021/acs.jcim.5c01609
+
+[31] Tilborg, D., Alenicheva, A., Grisoni, F.: Exposing the limitations of molecu-
+     lar machine learning with activity cliﬀs. Journal of Chemical Information and
+     Modeling 62(23), 5938–5951 (2022) https://doi.org/10.1021/acs.jcim.2c01073
+
+[32] Gaulton, A., Bellis, L.J., Bento, A.P., Chambers, J., Davies, M., Hersey, A., Light,
+     Y., McGlinchey, S., Michalovich, D., Al-Lazikani, B., Overington, J.P.: Chembl:
+     a large-scale bioactivity database for drug discovery. Nucleic Acids Research
+     40(D1), 1100–1107 (2011) https://doi.org/10.1093/nar/gkr777
+
+[33] Richard, A.M., Judson, R.S., Houck, K.A., Grulke, C.M., Volarath, P.,
+     Thillainadarajah, I., Yang, C., Rathman, J., Martin, M.T., Wambaugh, J.F.,
+     Knudsen, T.B., Kancherla, J., Mansouri, K., Patlewicz, G., Williams, A.J., Little,
+     S.B., Crofton, K.M., Thomas, R.S.: Toxcast chemical landscape: Paving the road
+     to 21st century toxicology. Chemical Research in Toxicology 29(8), 1225–1251
+     (2016) https://doi.org/10.1021/acs.chemrestox.6b00135
+
+[34] Ball, N., Madden, J., Paini, A., Mathea, M., Palmer, A.D., Sperber, S., Har-
+     tung, T., Ravenzwaay, B.: Key read across framework components and biology
+     based improvements. Mutation Research/Genetic Toxicology and Environmen-
+     tal Mutagenesis 853, 503172 (2020) https://doi.org/10.1016/j.mrgentox.2020.
+     503172
+
+[35] Graﬀ, D.E., Shaidani, A.A., Yang, K., Coley, C.W., Green, W.H., Heid, E.:
+     Chemprop v2: A modular, scalable, and extensible framework for molecular
+     property prediction. ChemRxiv (2024) https://doi.org/10.26434/chemrxiv-2024-
+     3121p . preprint
+
+[36] Wiener, H.: Structural determination of paraﬃn boiling points. Journal of
+     the American Chemical Society 69(1), 17–20 (1947) https://doi.org/10.1021/
+     ja01193a005
+
+[37] McGowan, J.C.: Estimates of the properties of liquids. Journal of Chemical Tech-
+     nology and Biotechnology 28(9), 599–607 (1978) https://doi.org/10.1002/jctb.
+     5700280902
+
+[38] Deakin, L.: zarrs: A High-Performance Rust Library for the Zarr Array Storage
+     Format. Zenodo (2025). https://doi.org/10.5281/ZENODO.12719776
+
+[39] Huang, K., Fu, T., Gao, W., Zhao, Y., Roohani, Y., Leskovec, J., Coley, C.W.,
+     Xiao, C., Sun, J., Zitnik, M.: Therapeutics Data Commons: Machine learning
+     datasets and tasks for drug discovery and development (2021) https://doi.org/
+     10.48550/ARXIV.2102.09548
+
+[40] Capela, F., Nouchi, V., Deursen, R.V., Tetko, I.V., Godin, G.: Multitask Learning
+
+
+                                           20
+    On Graph Neural Networks Applied To Molecular Property Predictions (2019).
+    https://arxiv.org/abs/1910.13124
+
+[41] Tetko, I.V., Deursen, R., Godin, G.: Be aware of overﬁtting by hyperparameter
+     optimization! Journal of Cheminformatics 16(1) (2024) https://doi.org/10.1186/
+     s13321-024-00934-w
+
+[42] Wu, Z., Ramsundar, B., Feinberg, E.N., Gomes, J., Geniesse, C., Pappu, A.S.,
+     Leswing, K., Pande, V.: Moleculenet: a benchmark for molecular machine learn-
+     ing. Chemical Science 9(2), 513–530 (2018) https://doi.org/10.1039/c7sc02664a
+
+[43] Walters, P.: We Need Better Benchmarks for Machine Learning in Drug Discov-
+     ery — practicalcheminformatics.blogspot.com. https://practicalcheminformatics.
+     blogspot.com/2023/08/we-need-better-benchmarks-for-machine.html. [Accessed
+     13-05-2025]
+
+[44] O’Boyle, N.M., Sayle, R.A.: Comparing structural ﬁngerprints using a literature-
+     based similarity benchmark. Journal of Cheminformatics 8(1) (2016) https://doi.
+     org/10.1186/s13321-016-0148-0
+
+[45] Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O.,
+     Blondel, M., Müller, A., Nothman, J., Louppe, G., Prettenhofer, P., Weiss, R.,
+     Dubourg, V., Vanderplas, J., Passos, A., Cournapeau, D., Brucher, M., Perrot,
+     M., Duchesnay, E.: Scikit-learn: Machine learning in python (2012) https://doi.
+     org/10.48550/ARXIV.1201.0490
+
+[46] Bjerrum, E.J., Bachorz, R.A., Bitton, A., Choung, O.-h., Chen, Y., Esposito,
+     C., Ha, S.V., Poehlmann, A.: Scikit-Mol brings cheminformatics to Scikit-Learn.
+     ChemRxiv (2023) https://doi.org/10.26434/chemrxiv-2023-fzqwd . preprint.
+     Accessed 2023-12-06
+
+[47] Feldmann, C.W., Sieg, J., Mathea, M.: Analysis of uncertainty of neural
+     ﬁngerprint-based models. Faraday Discussions 256, 551–567 (2025) https://doi.
+     org/10.1039/d4fd00095a
+
+[48] Landrum, G.: rdkit. Zenodo (2025). https://doi.org/10.5281/ZENODO.591637 .
+     https://zenodo.org/doi/10.5281/zenodo.591637
+
+[49] Beaini, D., Huang, S., Cunha, J.A., Li, Z., Moisescu-Pareja, G., Dymov, O.,
+     Maddrell-Mander, S., McLean, C., Wenkel, F., Müller, L., Mohamud, J.H., Parviz,
+     A., Craig, M., Koziarski, M., Lu, J., Zhu, Z., Gabellini, C., Klaser, K., Dean,
+     J., Wognum, C., Sypetkowski, M., Rabusseau, G., Rabbany, R., Tang, J., Mor-
+     ris, C., Ravanellu, M., Wolf, G., Tossou, P., Mary, H., Bois, T., Fitzgibbon,
+     A., Banaszewski, B., Martin, C., Masters, D.: Towards foundational models for
+     molecular learning on large-scale multi-task datasets. In: International Conference
+     on Learning Representations (ICLR) (2024). https://proceedings.iclr.cc/paper/
+     2024/hash/163fe46f86117af62214170c5651536e-Abstract.html
+
+
+                                          21
+[50] Seabold, S., Perktold, J.: Statsmodels: Econometric and statistical modeling with
+     python, 92–96 (2010) https://doi.org/10.25080/majora-92bf1922-011
+
+[51] Praski, M., Adamczyk, J., Czech, W.: Benchmarking pretrained molecular embed-
+     ding models for molecular representation learning (2025) https://doi.org/10.
+     48550/ARXIV.2508.06199
+
+[52] Wu, Z., Xiong, Y., Yu, S., Lin, D.: Unsupervised Feature Learning via
+     Non-Parametric Instance-level Discrimination. arXiv (2018). https://doi.org/10.
+     48550/ARXIV.1805.01978
+
+[53] Caron, M., Touvron, H., Misra, I., Jégou, H., Mairal, J., Bojanowski, P., Joulin,
+     A.: Emerging Properties in Self-Supervised Vision Transformers. arXiv (2021).
+     https://doi.org/10.48550/ARXIV.2104.14294
+
+[54] Feldmann, C.W., Sieg, J., Mathea, M.: Analysis of uncertainty of neural
+     ﬁngerprint-based models. Faraday Discussions 256, 551–567 (2025) https://doi.
+     org/10.1039/d4fd00095a
+
+[55] Zalte, A.S., Burns, J., Green, W.: CheMeleon Training Data. Zenodo (2025).
+     https://doi.org/10.5281/ZENODO.15733574
+
+[56] Burns, J.: CheMeleon Foundation Model. Zenodo (2025). https://doi.org/10.
+     5281/ZENODO.15426600
+
+Acknowledgments
+JWB acknowledges that this material is based upon work supported by the U.S.
+Department of Energy, Oﬃce of Science, Oﬃce of Advanced Scientiﬁc Computing
+Research, Department of Energy Computational Science Graduate Fellowship under
+Award Number DE-SC0023112. ASZ acknowledges the fellowship support from Math-
+Works. CRAA and WHG gratefully acknowledge ﬁnancial support from the Machine
+Learning for Pharmaceutical Discovery and Synthesis consortium. Finally, the authors
+thank Shih-Cheng Li, Prof. Connor Coley, and Prof. Markus Kraft for their valuable
+comments and suggestions.
+
+Author Contributions Statement
+JWB: conceptualization (equal); methodology (equal); formal analysis (equal); soft-
+ware (lead); writing - original draft (lead); review and editing (equal). ASZ: conceptu-
+alization (equal); methodology (equal); formal analysis (equal); software (supporting);
+writing - original draft (supporting); review and editing (equal). CRAA: methodology
+(supporting); software (supporting); formal analysis (supporting); writing - origi-
+nal draft (supporting); review and editing (equal). JS: formal analysis (supporting);
+software (supporting); writing - original draft (supporting); review and editing (sup-
+porting). CF: formal analysis (supporting); software (supporting); writing - original
+draft (supporting); review and editing (supporting). MM: formal analysis (supporting);
+
+
+                                          22
+software (supporting); writing - original draft (supporting); review and editing (sup-
+porting). WHG: supervision (lead); formal analysis (supporting); review and editing
+(supporting).
+
+Competing Interests Statement
+The authors declare no competing interests.
+
+
+
+
+                                         23
+

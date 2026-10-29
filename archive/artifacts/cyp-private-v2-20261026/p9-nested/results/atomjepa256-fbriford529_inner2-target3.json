@@ -1,0 +1,44 @@
+{
+  "representation": "atomjepa256",
+  "fold": "briford529_inner2",
+  "target": "cyp3a4_pic50_direct_inhibition",
+  "train_feature_rows": 3502,
+  "train_observed_labels": 1621,
+  "test_rows": 873,
+  "test_observed_labels": 444,
+  "preprocessing_seconds": 0.03333766700234264,
+  "fit_seconds": 0.31964212498860434,
+  "predict_seconds": 15.007439167005941,
+  "rss_bytes": 1465581568,
+  "metrics": {
+    "ST-RAE": 0.6098805831817438,
+    "MAE": 0.5838950085325532,
+    "R2": 0.4634660499187042,
+    "Spearman": 0.6889350760454317,
+    "Kendall": 0.5054603135867244,
+    "RMSE": 0.7773432017039172
+  },
+  "prediction_sha256": "59a3ba1cabddc2e57fdf661acd92a5b6e8021d9adf0c32d3be4b6a789e82b7bb",
+  "params": {
+    "n_estimators": 2,
+    "norm_methods": [
+      "none",
+      "power"
+    ],
+    "feat_shuffle_method": "latin",
+    "outlier_threshold": 4.0,
+    "batch_size": 2,
+    "kv_cache": false,
+    "model_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9-tabicl/assets/tabicl-regressor-v2-20260212.ckpt",
+    "allow_auto_download": false,
+    "checkpoint_version": "tabicl-regressor-v2-20260212.ckpt",
+    "device": "cpu",
+    "use_amp": false,
+    "use_fa3": false,
+    "offload_mode": false,
+    "random_state": 42,
+    "n_jobs": 1,
+    "verbose": false
+  },
+  "feature_count": 96
+}

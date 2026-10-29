@@ -1,0 +1,222 @@
+Pinned asset hashes verified
+Collecting torch-geometric==2.7.0
+  Downloading torch_geometric-2.7.0-py3-none-any.whl.metadata (63 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.7/63.7 kB 826.1 kB/s eta 0:00:00
+Collecting transformers==5.12.1
+  Downloading transformers-5.12.1-py3-none-any.whl.metadata (33 kB)
+Collecting tabicl==2.2.0
+  Downloading tabicl-2.2.0-py3-none-any.whl.metadata (38 kB)
+Collecting datamol==0.12.5
+  Downloading datamol-0.12.5-py3-none-any.whl.metadata (8.0 kB)
+Collecting wandb==0.22.2
+  Downloading wandb-0.22.2-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (10 kB)
+Collecting pyarrow==21.0.0
+  Downloading pyarrow-21.0.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Requirement already satisfied: aiohttp in /opt/conda/lib/python3.11/site-packages (from torch-geometric==2.7.0) (3.14.5)
+Requirement already satisfied: fsspec in /opt/conda/lib/python3.11/site-packages (from torch-geometric==2.7.0) (2025.7.0)
+Requirement already satisfied: jinja2 in /opt/conda/lib/python3.11/site-packages (from torch-geometric==2.7.0) (3.1.6)
+Requirement already satisfied: numpy in /opt/conda/lib/python3.11/site-packages (from torch-geometric==2.7.0) (2.2.6)
+Requirement already satisfied: psutil>=5.8.0 in /opt/conda/lib/python3.11/site-packages (from torch-geometric==2.7.0) (7.0.0)
+Requirement already satisfied: pyparsing in /opt/conda/lib/python3.11/site-packages (from torch-geometric==2.7.0) (3.3.3)
+Requirement already satisfied: requests in /opt/conda/lib/python3.11/site-packages (from torch-geometric==2.7.0) (2.32.4)
+Requirement already satisfied: tqdm in /opt/conda/lib/python3.11/site-packages (from torch-geometric==2.7.0) (4.67.1)
+Collecting xxhash (from torch-geometric==2.7.0)
+  Downloading xxhash-4.0.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (17 kB)
+Collecting huggingface-hub<2.0,>=1.5.0 (from transformers==5.12.1)
+  Downloading huggingface_hub-1.33.0-py3-none-any.whl.metadata (16 kB)
+Requirement already satisfied: packaging>=20.0 in /opt/conda/lib/python3.11/site-packages (from transformers==5.12.1) (25.0)
+Requirement already satisfied: pyyaml>=5.1 in /opt/conda/lib/python3.11/site-packages (from transformers==5.12.1) (6.0.2)
+Collecting regex>=2025.10.22 (from transformers==5.12.1)
+  Downloading regex-2026.9.29-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.6/40.6 kB 4.7 MB/s eta 0:00:00
+Collecting tokenizers<=0.23.0,>=0.22.0 (from transformers==5.12.1)
+  Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+Collecting typer (from transformers==5.12.1)
+  Downloading typer-0.27.3-py3-none-any.whl.metadata (16 kB)
+Collecting safetensors>=0.4.3 (from transformers==5.12.1)
+  Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+Collecting einops>=0.7 (from tabicl==2.2.0)
+  Downloading einops-0.8.2-py3-none-any.whl.metadata (13 kB)
+Requirement already satisfied: scikit-learn>=1.3.0 in /opt/conda/lib/python3.11/site-packages (from tabicl==2.2.0) (1.7.2)
+Requirement already satisfied: scipy in /opt/conda/lib/python3.11/site-packages (from tabicl==2.2.0) (1.16.2)
+Requirement already satisfied: torch>=2.2 in /opt/conda/lib/python3.11/site-packages (from tabicl==2.2.0) (2.8.0+cu128)
+Collecting loguru (from datamol==0.12.5)
+  Downloading loguru-0.7.3-py3-none-any.whl.metadata (22 kB)
+Requirement already satisfied: joblib in /opt/conda/lib/python3.11/site-packages (from datamol==0.12.5) (1.6.0)
+Requirement already satisfied: pandas in /opt/conda/lib/python3.11/site-packages (from datamol==0.12.5) (2.3.3)
+Requirement already satisfied: matplotlib in /opt/conda/lib/python3.11/site-packages (from datamol==0.12.5) (3.11.2)
+Requirement already satisfied: pillow in /opt/conda/lib/python3.11/site-packages (from datamol==0.12.5) (11.0.0)
+Collecting selfies (from datamol==0.12.5)
+  Downloading selfies-2.2.0-py3-none-any.whl.metadata (14 kB)
+Requirement already satisfied: platformdirs in /opt/conda/lib/python3.11/site-packages (from datamol==0.12.5) (4.3.8)
+Requirement already satisfied: typing-extensions in /opt/conda/lib/python3.11/site-packages (from datamol==0.12.5) (4.16.0)
+Collecting importlib-resources (from datamol==0.12.5)
+  Downloading importlib_resources-7.1.0-py3-none-any.whl.metadata (4.0 kB)
+Requirement already satisfied: rdkit in /opt/conda/lib/python3.11/site-packages (from datamol==0.12.5) (2026.9.1)
+Requirement already satisfied: click>=8.0.1 in /opt/conda/lib/python3.11/site-packages (from wandb==0.22.2) (8.5.0)
+Collecting gitpython!=3.1.29,>=1.0.0 (from wandb==0.22.2)
+  Downloading gitpython-3.2.1-py3-none-any.whl.metadata (13 kB)
+Collecting protobuf!=4.21.0,!=5.28.0,<7,>=3.19.0 (from wandb==0.22.2)
+  Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+Collecting pydantic<3 (from wandb==0.22.2)
+  Downloading pydantic-2.14.1-py3-none-any.whl.metadata (133 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.0/133.0 kB 2.2 MB/s eta 0:00:00
+Collecting sentry-sdk>=2.0.0 (from wandb==0.22.2)
+  Downloading sentry_sdk-2.73.0-py3-none-any.whl.metadata (11 kB)
+Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.29,>=1.0.0->wandb==0.22.2)
+  Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+Requirement already satisfied: filelock>=3.10.0 in /opt/conda/lib/python3.11/site-packages (from huggingface-hub<2.0,>=1.5.0->transformers==5.12.1) (3.18.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.6.0 in /opt/conda/lib/python3.11/site-packages (from huggingface-hub<2.0,>=1.5.0->transformers==5.12.1) (1.7.0)
+Collecting httpx<1,>=0.23.0 (from huggingface-hub<2.0,>=1.5.0->transformers==5.12.1)
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting annotated-types>=0.6.0 (from pydantic<3->wandb==0.22.2)
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.50.1 (from pydantic<3->wandb==0.22.2)
+  Downloading pydantic_core-2.50.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.5 kB)
+Collecting typing-inspection>=0.4.4 (from pydantic<3->wandb==0.22.2)
+  Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Requirement already satisfied: charset_normalizer<4,>=2 in /opt/conda/lib/python3.11/site-packages (from requests->torch-geometric==2.7.0) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in /opt/conda/lib/python3.11/site-packages (from requests->torch-geometric==2.7.0) (3.20)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /opt/conda/lib/python3.11/site-packages (from requests->torch-geometric==2.7.0) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/conda/lib/python3.11/site-packages (from requests->torch-geometric==2.7.0) (2025.8.3)
+Requirement already satisfied: threadpoolctl>=3.1.0 in /opt/conda/lib/python3.11/site-packages (from scikit-learn>=1.3.0->tabicl==2.2.0) (3.7.0)
+Requirement already satisfied: cloudpickle>=3.0 in /opt/conda/lib/python3.11/site-packages (from joblib->datamol==0.12.5) (3.1.2)
+Requirement already satisfied: sympy>=1.13.3 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (1.14.0)
+Requirement already satisfied: networkx in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (3.5)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.93 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (12.8.93)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.90 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (12.8.90)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.90 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (12.8.90)
+Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (9.10.2.21)
+Requirement already satisfied: nvidia-cublas-cu12==12.8.4.1 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (12.8.4.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.3.83 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (11.3.3.83)
+Requirement already satisfied: nvidia-curand-cu12==10.3.9.90 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (10.3.9.90)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.3.90 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (11.7.3.90)
+Requirement already satisfied: nvidia-cusparse-cu12==12.5.8.93 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (12.5.8.93)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (0.7.1)
+Requirement already satisfied: nvidia-nccl-cu12==2.27.3 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (2.27.3)
+Requirement already satisfied: nvidia-nvtx-cu12==12.8.90 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (12.8.90)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.93 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (12.8.93)
+Requirement already satisfied: nvidia-cufile-cu12==1.13.1.3 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (1.13.1.3)
+Requirement already satisfied: triton==3.4.0 in /opt/conda/lib/python3.11/site-packages (from torch>=2.2->tabicl==2.2.0) (3.4.0)
+Requirement already satisfied: setuptools>=40.8.0 in /workspace/cyp-night/feature-venv/lib/python3.11/site-packages (from triton==3.4.0->torch>=2.2->tabicl==2.2.0) (65.5.0)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /opt/conda/lib/python3.11/site-packages (from aiohttp->torch-geometric==2.7.0) (2.7.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /opt/conda/lib/python3.11/site-packages (from aiohttp->torch-geometric==2.7.0) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in /opt/conda/lib/python3.11/site-packages (from aiohttp->torch-geometric==2.7.0) (25.3.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /opt/conda/lib/python3.11/site-packages (from aiohttp->torch-geometric==2.7.0) (1.8.0)
+Requirement already satisfied: multidict<8.0,>=4.5 in /opt/conda/lib/python3.11/site-packages (from aiohttp->torch-geometric==2.7.0) (7.1.0)
+Requirement already satisfied: propcache>=0.2.0 in /opt/conda/lib/python3.11/site-packages (from aiohttp->torch-geometric==2.7.0) (0.5.4)
+Requirement already satisfied: yarl<2.0,>=1.25.1 in /opt/conda/lib/python3.11/site-packages (from aiohttp->torch-geometric==2.7.0) (1.25.1)
+Requirement already satisfied: MarkupSafe>=2.0 in /opt/conda/lib/python3.11/site-packages (from jinja2->torch-geometric==2.7.0) (3.0.2)
+Requirement already satisfied: contourpy>=1.0.1 in /opt/conda/lib/python3.11/site-packages (from matplotlib->datamol==0.12.5) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /opt/conda/lib/python3.11/site-packages (from matplotlib->datamol==0.12.5) (0.12.1)
+Requirement already satisfied: fonttools>=4.28.2 in /opt/conda/lib/python3.11/site-packages (from matplotlib->datamol==0.12.5) (4.67.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /opt/conda/lib/python3.11/site-packages (from matplotlib->datamol==0.12.5) (1.5.1)
+Requirement already satisfied: python-dateutil>=2.7 in /opt/conda/lib/python3.11/site-packages (from matplotlib->datamol==0.12.5) (3.0.0)
+Requirement already satisfied: pytz>=2020.1 in /opt/conda/lib/python3.11/site-packages (from pandas->datamol==0.12.5) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /opt/conda/lib/python3.11/site-packages (from pandas->datamol==0.12.5) (2026.5)
+Collecting shellingham>=1.3.0 (from typer->transformers==5.12.1)
+  Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+Requirement already satisfied: rich>=13.8.0 in /opt/conda/lib/python3.11/site-packages (from typer->transformers==5.12.1) (15.0.0)
+Collecting annotated-doc>=0.0.2 (from typer->transformers==5.12.1)
+  Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb==0.22.2)
+  Downloading smmap-5.0.3-py3-none-any.whl.metadata (4.6 kB)
+Requirement already satisfied: anyio in /opt/conda/lib/python3.11/site-packages (from httpx<1,>=0.23.0->huggingface-hub<2.0,>=1.5.0->transformers==5.12.1) (4.15.1)
+Collecting httpcore==1.* (from httpx<1,>=0.23.0->huggingface-hub<2.0,>=1.5.0->transformers==5.12.1)
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Requirement already satisfied: h11>=0.16 in /opt/conda/lib/python3.11/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->huggingface-hub<2.0,>=1.5.0->transformers==5.12.1) (0.16.0)
+Requirement already satisfied: six>=1.6 in /opt/conda/lib/python3.11/site-packages (from python-dateutil>=2.7->matplotlib->datamol==0.12.5) (1.17.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /opt/conda/lib/python3.11/site-packages (from rich>=13.8.0->typer->transformers==5.12.1) (4.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /opt/conda/lib/python3.11/site-packages (from rich>=13.8.0->typer->transformers==5.12.1) (2.19.2)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /opt/conda/lib/python3.11/site-packages (from sympy>=1.13.3->torch>=2.2->tabicl==2.2.0) (1.3.0)
+Requirement already satisfied: mdurl~=0.1 in /opt/conda/lib/python3.11/site-packages (from markdown-it-py>=2.2.0->rich>=13.8.0->typer->transformers==5.12.1) (0.1.2)
+Downloading torch_geometric-2.7.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 9.6 MB/s eta 0:00:00
+Downloading transformers-5.12.1-py3-none-any.whl (11.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 39.2 MB/s eta 0:00:00
+Downloading tabicl-2.2.0-py3-none-any.whl (310 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.4/310.4 kB 147.3 MB/s eta 0:00:00
+Downloading datamol-0.12.5-py3-none-any.whl (495 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 495.4/495.4 kB 110.2 MB/s eta 0:00:00
+Downloading wandb-0.22.2-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (19.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.9/19.9 MB 64.7 MB/s eta 0:00:00
+Downloading pyarrow-21.0.0-cp311-cp311-manylinux_2_28_x86_64.whl (42.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.8/42.8 MB 66.0 MB/s eta 0:00:00
+Downloading einops-0.8.2-py3-none-any.whl (65 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.6/65.6 kB 150.7 MB/s eta 0:00:00
+Downloading gitpython-3.2.1-py3-none-any.whl (231 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 231.5/231.5 kB 186.9 MB/s eta 0:00:00
+Downloading huggingface_hub-1.33.0-py3-none-any.whl (846 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 846.4/846.4 kB 107.0 MB/s eta 0:00:00
+Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 323.4/323.4 kB 143.8 MB/s eta 0:00:00
+Downloading pydantic-2.14.1-py3-none-any.whl (488 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 488.1/488.1 kB 122.2 MB/s eta 0:00:00
+Downloading pydantic_core-2.50.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 91.1 MB/s eta 0:00:00
+Downloading regex-2026.9.29-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (804 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 805.0/805.0 kB 106.8 MB/s eta 0:00:00
+Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 516.0/516.0 kB 111.3 MB/s eta 0:00:00
+Downloading sentry_sdk-2.73.0-py3-none-any.whl (549 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 549.0/549.0 kB 120.1 MB/s eta 0:00:00
+Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 89.8 MB/s eta 0:00:00
+Downloading importlib_resources-7.1.0-py3-none-any.whl (37 kB)
+Downloading loguru-0.7.3-py3-none-any.whl (61 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.6/61.6 kB 139.3 MB/s eta 0:00:00
+Downloading selfies-2.2.0-py3-none-any.whl (36 kB)
+Downloading typer-0.27.3-py3-none-any.whl (123 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 123.3/123.3 kB 144.7 MB/s eta 0:00:00
+Downloading xxhash-4.0.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (260 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 261.0/261.0 kB 149.1 MB/s eta 0:00:00
+Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 135.3 MB/s eta 0:00:00
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 133.7 MB/s eta 0:00:00
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 143.4 MB/s eta 0:00:00
+Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Downloading smmap-5.0.3-py3-none-any.whl (24 kB)
+Installing collected packages: xxhash, typing-inspection, smmap, shellingham, sentry-sdk, selfies, safetensors, regex, pydantic-core, pyarrow, protobuf, loguru, importlib-resources, httpcore, einops, annotated-types, annotated-doc, pydantic, httpx, gitdb, typer, torch-geometric, huggingface-hub, gitpython, datamol, wandb, tokenizers, tabicl, transformers
+  Attempting uninstall: huggingface-hub
+    Found existing installation: huggingface_hub 2.3.0
+    Not uninstalling huggingface-hub at /opt/conda/lib/python3.11/site-packages, outside environment /workspace/cyp-night/feature-venv
+    Can't uninstall 'huggingface_hub'. No files were found to uninstall.
+Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 datamol-0.12.5 einops-0.8.2 gitdb-4.0.12 gitpython-3.2.1 httpcore-1.0.9 httpx-0.28.1 huggingface-hub-1.33.0 importlib-resources-7.1.0 loguru-0.7.3 protobuf-6.33.6 pyarrow-21.0.0 pydantic-2.14.1 pydantic-core-2.50.1 regex-2026.9.29 safetensors-0.8.0 selfies-2.2.0 sentry-sdk-2.73.0 shellingham-1.5.4 smmap-5.0.3 tabicl-2.2.0 tokenizers-0.22.2 torch-geometric-2.7.0 transformers-5.12.1 typer-0.27.3 typing-inspection-0.4.4 wandb-0.22.2 xxhash-4.0.2
+
+[notice] A new release of pip is available: 24.0 -> 26.2.2
+[notice] To update, run: python -m pip install --upgrade pip
+{"status": "completed", "asset_key": "chemeleon_foundation", "shape": [5655, 2048], "failed_rows": 0}
+{"event": "asset_downloaded", "file": "/workspace/cyp-night/assets/weights/tabicl-regressor-v2-20260212.ckpt", "bytes": 114324594, "sha256": "0db9cb538f114e79026bf08f45f41ad8dd7ad2de2aaca9a5ca8cd3bd9748ae7a"}
+{"event": "asset_downloaded", "file": "/workspace/cyp-night/assets/weights/molformer/config.json", "bytes": 1015, "sha256": "3ef9eaac8c7ca6282fd6256ed038d151bd4ff42a4ff855367e0d7197bbc1c284"}
+{"event": "asset_downloaded", "file": "/workspace/cyp-night/assets/weights/molformer/configuration_molformer.py", "bytes": 7101, "sha256": "b88ea8d4b7b5e54f4f186cc7a230eff308928020a030f153a038fd12c05e3bed"}
+{"event": "asset_downloaded", "file": "/workspace/cyp-night/assets/weights/molformer/convert_molformer_original_checkpoint_to_pytorch.py", "bytes": 3545, "sha256": "4ba7b844fe5430bfe8dcd12617156254746f0fded36b350166b544b17b178170"}
+{"event": "asset_downloaded", "file": "/workspace/cyp-night/assets/weights/molformer/model.safetensors", "bytes": 187248784, "sha256": "0795977fe7192c4acdaf052f0e8464af57bc4bb59211271c5e61aaba2637b9c6"}
+{"event": "asset_downloaded", "file": "/workspace/cyp-night/assets/weights/molformer/modeling_molformer.py", "bytes": 36884, "sha256": "6f1ef72022de2c69e95661899422a7bb39a40a2cc5a6cb6216f14e9b7d84559c"}
+{"event": "asset_downloaded", "file": "/workspace/cyp-night/assets/weights/molformer/tokenizer.json", "bytes": 54010, "sha256": "3df1f2219653c44fac9fa03b7f788b372eb2544ecc176737bb9aca8411b471a5"}
+{"event": "asset_downloaded", "file": "/workspace/cyp-night/assets/weights/molformer/tokenizer_config.json", "bytes": 1132, "sha256": "56f93dc43e4383fcfc6342e09d782ef38d48ef227215a4a92ff8762fd5b8ff3e"}
+Loading weights:   0%|          | 0/207 [00:00<?, ?it/s]Loading weights: 100%|██████████| 207/207 [00:00<00:00, 8064.62it/s]
+[transformers] [1mMolformerModel LOAD REPORT[0m from: /workspace/cyp-night/assets/weights/molformer
+Key                                | Status     |  | 
+-----------------------------------+------------+--+-
+lm_head.transform.LayerNorm.weight | UNEXPECTED |  | 
+lm_head.transform.LayerNorm.bias   | UNEXPECTED |  | 
+lm_head.transform.dense.bias       | UNEXPECTED |  | 
+lm_head.decoder.weight             | UNEXPECTED |  | 
+lm_head.transform.dense.weight     | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+{"status": "completed", "asset_key": "molformer", "shape": [5655, 768], "failed_rows": 0}
+{"event": "asset_downloaded", "file": "/workspace/cyp-night/assets/sources/Monroe-de075eabe98e4adbbedbc86ca9e877f4bfd9b629.tar.gz", "bytes": 810503, "sha256": "15328a90c9dc351ec93b2e6563666801400f6cea28358bda0fb764fd851d75a8"}
+{"event": "asset_downloaded", "file": "/workspace/cyp-night/assets/weights/monroe/weights.pt", "bytes": 300057823, "sha256": "df996e8e98b12a3cda5fe5acbef3e1e9a4ea31946d3736461cd07e53a5bf205a"}
+{"event": "asset_downloaded", "file": "/workspace/cyp-night/assets/weights/monroe/config.json", "bytes": 1192, "sha256": "35417d83c1dac08fb1178cc65fe440b8ab785bd61ad67c0f83c7371b10aa4fe5"}
+/workspace/cyp-night/feature-venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py:2346: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+/workspace/cyp-night/feature-venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py:2346: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+{"status": "completed", "asset_key": "monroe", "shape": [5655, 720], "failed_rows": 0}

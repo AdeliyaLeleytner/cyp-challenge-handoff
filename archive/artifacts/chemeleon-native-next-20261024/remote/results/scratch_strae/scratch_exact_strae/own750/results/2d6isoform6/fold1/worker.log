@@ -1,0 +1,70 @@
+Seed set to 43
+{"event": "exact_strae_fold_config", "fold": 1, "criterion_mode": "exact_strae_v1", "fit_statistics": {"primary_indices": [0], "primary_counts": [1087], "primary_means": [4.774023794422264], "primary_denominators": [445.7139890268906], "mode": "exact_strae_v1", "n_fit_rows": 18202, "n_targets": 6, "target_counts": [1087, 3133, 1091, 1087, 6795, 12795], "auxiliary_indices": [1, 2, 3, 4, 5], "native_task_weights": [1.0, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896], "primary_native_weight_sum": 1.0, "auxiliary_head_coefficients": [0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896], "auxiliary_total_nominal_budget": 1.5000000596046448, "scaler_mean": [4.774023801335087, -0.41635915823819597, 5.037981334353236, -1.016076847568168, 5.256988966859729, -21.92072545718509], "scaler_scale": [0.9067210340023857, 1.1089020339241802, 0.7669799571278162, 0.03256580202953501, 0.7486138729871363, 32.35467140295901], "per_entry_coefficients": [0.0020343113663136157, 9.575487134405648e-05, 0.0002749770961695041, 0.0002759889714083983, 4.41501121296437e-05, 2.344665978280023e-05], "normalization": "N_fit / B; primary sigma/(J*D_fit); auxiliary native_weight/(sum_primary_native_weights*n_aux_fit)", "qualification": "Preserves nominal native auxiliary head ratios, not native realized label-frequency weighting. Test denominators are unknown."}, "validation_statistics": {"primary_indices": [0], "primary_counts": [256], "primary_means": [4.836674994886718], "primary_denominators": [114.51443270909375]}, "checkpoint_monitor": "val_primary_strae", "bounds_scaling": "same fit-center mean and scale for central/lower/upper; no bound-specific fitting", "native_architecture_and_optimizer_preserved": true, "explicit_changes": ["primary exact interval macro objective", "per-auxiliary-head observed-label mean and nominal author budget", "uniform-row unbiased minibatch estimator", "primary-only validation checkpoint selection"], "precision": "16-mixed forward; FP32 differentiable loss; float64 full-validation official arithmetic"}
+Using 16bit Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [7]
+Loading `train_dataloader` to estimate number of stepping batches.
+/opt/conda/lib/python3.11/site-packages/lightning/pytorch/utilities/model_summary/model_summary.py:231: Precision 16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
+
+  | Name            | Type               | Params | Mode 
+---------------------------------------------------------------
+0 | message_passing | BondMessagePassing | 1.1 M  | train
+1 | agg             | NormAggregation    | 0      | train
+2 | bn              | BatchNorm1d        | 1.4 K  | train
+3 | predictor       | RegressionFFN      | 302 K  | train
+4 | X_d_transform   | Identity           | 0      | train
+5 | metrics         | ModuleList         | 0      | train
+6 | loss_objective  | ExactSTObjective   | 0      | train
+---------------------------------------------------------------
+1.4 M     Trainable params
+0         Non-trainable params
+1.4 M     Total params
+5.580     Total estimated model params size (MB)
+27        Modules in train mode
+0         Modules in eval mode
+/opt/conda/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:227: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn(
+{"event": "exact_strae_epoch", "epoch": 0, "val_primary_strae": 0.9972346689880128, "per_primary_ST_RAE": [0.9972346689880128]}
+{"event": "exact_strae_epoch", "epoch": 1, "val_primary_strae": 0.9591643165031389, "per_primary_ST_RAE": [0.9591643165031389]}
+{"event": "exact_strae_epoch", "epoch": 2, "val_primary_strae": 1.0896751188157954, "per_primary_ST_RAE": [1.0896751188157954]}
+{"event": "exact_strae_epoch", "epoch": 3, "val_primary_strae": 1.0171217646955915, "per_primary_ST_RAE": [1.0171217646955915]}
+[rank: 0] Received SIGTERM: 15
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f9683637880>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1618, in __del__
+    self._shutdown_workers()
+  File "/opt/conda/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1564, in _shutdown_workers
+    self._pin_memory_thread.join()
+  File "/opt/conda/lib/python3.11/threading.py", line 1119, in join
+    self._wait_for_tstate_lock()
+  File "/opt/conda/lib/python3.11/threading.py", line 1139, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torch/utils/data/_utils/signal_handling.py", line 73, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 118814) is killed by signal: Terminated. 
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f9683637880>
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1618, in __del__
+    self._shutdown_workers()
+  File "/opt/conda/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1582, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/opt/conda/lib/python3.11/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/multiprocessing/connection.py", line 948, in wait
+    ready = selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torch/utils/data/_utils/signal_handling.py", line 73, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 118771) is killed by signal: Terminated. 
+Exception in thread Thread-10 (_pin_memory_loop):

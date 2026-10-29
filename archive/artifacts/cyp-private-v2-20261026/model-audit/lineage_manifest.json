@@ -1,0 +1,1867 @@
+{
+  "predictions": {
+    "incumbent": {
+      "raw": {
+        "original": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/cyp-ensemble_activity_submission_native_raw.csv",
+          "sha256": "12ead8a35815dbb8be3ef4febb97cb6d67265577ec0ff91206291492e4ffba17",
+          "bytes": 99289
+        },
+        "private_frozen_copy": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/frozen-predictions/incumbent_raw.csv",
+          "sha256": "12ead8a35815dbb8be3ef4febb97cb6d67265577ec0ff91206291492e4ffba17",
+          "bytes": 99289
+        }
+      },
+      "placed": {
+        "original": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/cyp-ensemble_activity_submission_native_raw_native_strae.csv",
+          "sha256": "349165ecf50906e43a27f12dee97891a92cda59e798db614ef27a7c920c38a37",
+          "bytes": 99633
+        },
+        "private_frozen_copy": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/frozen-predictions/incumbent_placed.csv",
+          "sha256": "349165ecf50906e43a27f12dee97891a92cda59e798db614ef27a7c920c38a37",
+          "bytes": 99633
+        }
+      }
+    },
+    "corrected_native": {
+      "raw": {
+        "original": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/cyp-ensemble_activity_submission_native_raw.csv",
+          "sha256": "a06808ca09635dcaeda471372c60da6f0db5821bff185fdde744ef873dddc199",
+          "bytes": 99269
+        },
+        "private_frozen_copy": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/frozen-predictions/corrected_native_raw.csv",
+          "sha256": "a06808ca09635dcaeda471372c60da6f0db5821bff185fdde744ef873dddc199",
+          "bytes": 99269
+        }
+      },
+      "placed": {
+        "original": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/cyp-ensemble_activity_submission_native_raw_native_strae.csv",
+          "sha256": "95897f449e10899abc24c4c9c432a72b29e9a890b3208112e97cd9aa3006eaa8",
+          "bytes": 99648
+        },
+        "private_frozen_copy": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/frozen-predictions/corrected_native_placed.csv",
+          "sha256": "95897f449e10899abc24c4c9c432a72b29e9a890b3208112e97cd9aa3006eaa8",
+          "bytes": 99648
+        }
+      }
+    },
+    "H6": {
+      "raw": {
+        "original": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-test-raw.csv",
+          "sha256": "32611df9d03977c1dc57fa489a9d440a75c0332be334c017b6bd83f41583bc88",
+          "bytes": 101725
+        },
+        "private_frozen_copy": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/frozen-predictions/H6_raw.csv",
+          "sha256": "32611df9d03977c1dc57fa489a9d440a75c0332be334c017b6bd83f41583bc88",
+          "bytes": 101725
+        }
+      },
+      "placed": {
+        "original": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-test-placed.csv",
+          "sha256": "91fa8bf0870f68071b04183166b1507c20001d04f3ae3fb5f4d055618fff98c7",
+          "bytes": 101682
+        },
+        "private_frozen_copy": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/frozen-predictions/H6_placed.csv",
+          "sha256": "91fa8bf0870f68071b04183166b1507c20001d04f3ae3fb5f4d055618fff98c7",
+          "bytes": 101682
+        }
+      }
+    }
+  },
+  "official_train": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-admet500-pilot-20261025/stage/official-train.csv",
+    "sha256": "b8f79addd266fb6f9f4c222c5e4e73d926362328b6a8d2841871a54e46bd2278",
+    "bytes": 653407
+  },
+  "official_test": {
+    "path": "/Users/adeliyaleleytner/.local/share/openresearch/projects/cyp-chemeleon-baseline-20261023/data/official-test.csv",
+    "sha256": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9",
+    "bytes": 44935
+  },
+  "native_components": {
+    "incumbent": {
+      "union18": {
+        "folds": [
+          {
+            "fold": 0,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold0/complete.json",
+              "sha256": "16b2c3ebd5c64c4138ec3ef7f2f32cc4710c8f9d3974fb63dd55a472a6abe36d",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold0/job.json",
+                "sha256": "58448a9d512ad3a769e164499cd6a641fb610fa02078c8e2e47f713d5f3ec8bd",
+                "bytes": 227
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold0/oof.csv",
+                "sha256": "e4c39e4eea3873b925e06b3be776cf571695e7de93495bf710f0a7618eb5714f",
+                "bytes": 2323208
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold0/test.csv",
+                "sha256": "0c8e0ec06e245e848c7ae827161bb0834564d0e5a08679f8a3281d0cba0da40a",
+                "bytes": 272478
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold0/metadata.json",
+                "sha256": "21243d9b8a8c165a0047680733b9f975b87d48f33fc7ca468f2b20d27730c390",
+                "bytes": 1605
+              },
+              "checkpoints/best_0.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold0/checkpoints/best_0.ckpt",
+                "sha256": "b197282d38dc9d1836681159c5fa12423b51703050da5eda0b6e86a7cd7e2c8d",
+                "bytes": 16817622
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold1/complete.json",
+              "sha256": "918b4edf035c75f50f0a859b9aa214d6bb9cfa6168ce85f7cdba99897e91ab19",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold1/job.json",
+                "sha256": "cc8022efa6169786d8dc49e195d8378403d8cac8a03df75e521f537f78dc9775",
+                "bytes": 227
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold1/oof.csv",
+                "sha256": "584f19fd824b37d4bfa45c8a5ed6ecfe00f7ab602f61050e0998d17705bd9238",
+                "bytes": 2306990
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold1/test.csv",
+                "sha256": "6b303491308961bd519559d679ef5dbd94fa418034928ed0b67ba07a6a5ce42f",
+                "bytes": 272772
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold1/metadata.json",
+                "sha256": "7a4b7cba36ac20aa3563dd12eeec9568f39b3799a7c23db98b5215ee7204dae7",
+                "bytes": 1605
+              },
+              "checkpoints/best_1.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold1/checkpoints/best_1.ckpt",
+                "sha256": "158fc50b7e713402fc57b27e5bf5f88250f3e19e17fe7d6fd0ad502f1ede2269",
+                "bytes": 16817622
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold2/complete.json",
+              "sha256": "b4833651ecf3dfb150be450dfe6d22975e52ea30d202b4c66b4ebdd553685fa3",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold2/job.json",
+                "sha256": "83d85499259294f42d49677710b86eb05a56817fd1c0a58a0600008ec80f2490",
+                "bytes": 227
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold2/oof.csv",
+                "sha256": "8e5b92a527d6a621c71ae0b25f0ca07db216bb055ea376578316291cb68a9998",
+                "bytes": 2304072
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold2/test.csv",
+                "sha256": "97000bf980dbdee3129e224069b93be642c5f2e58f344b4d5d1d862d4b3b2215",
+                "bytes": 272571
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold2/metadata.json",
+                "sha256": "143089d30a0fdb7e4520b017170d63fc3bc5b34e1346e1dac29ca89d2a5ad9c6",
+                "bytes": 1605
+              },
+              "checkpoints/best_2.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold2/checkpoints/best_2.ckpt",
+                "sha256": "1ef0e8d901e120796ef7dded994f5736512e9d80f92f3fbd8d4e8fd115d49611",
+                "bytes": 16817622
+              }
+            }
+          },
+          {
+            "fold": 3,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold3/complete.json",
+              "sha256": "e06dd3fcf034a0a118c274d1e0612102633b63ceee33ad7a7f7a288472ab108b",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold3/job.json",
+                "sha256": "39b6c52b8f97d9d56abef47f52e3794aa8376024ba7dfbafb44ae486edacea15",
+                "bytes": 227
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold3/oof.csv",
+                "sha256": "bae1f4bcfa62b3e74ccbbf8b0b04cde804965199ada54ee2fd5c91a25049c2a5",
+                "bytes": 2306269
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold3/test.csv",
+                "sha256": "4f50fd80d7c19f4bddd908ba419f6e2367d4cabb719ca9433bdb364fff2530e6",
+                "bytes": 272457
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold3/metadata.json",
+                "sha256": "11fa51692a20b641abbc04fff6772896c5ddcab8e8c414e7ca2d25b016514616",
+                "bytes": 1605
+              },
+              "checkpoints/best_3.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold3/checkpoints/best_3.ckpt",
+                "sha256": "8f7ba4217c9e10db77cd3cd6064b6dd47310d110e793ca293fa2f596395aa25c",
+                "bytes": 16817622
+              }
+            }
+          },
+          {
+            "fold": 4,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold4/complete.json",
+              "sha256": "3659d2bd660c0861fad37fa099725e0453059ec0d2eb78641c3e1fb87f271b6f",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold4/job.json",
+                "sha256": "edb50b9136aca8a349a09dfecdb412b437767da59954c31e17a89d0d36e7279e",
+                "bytes": 227
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold4/oof.csv",
+                "sha256": "f9614f783aab009a40e40eb0ff8074512a0073461ce0b1c8e326e275c51c0af5",
+                "bytes": 2305993
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold4/test.csv",
+                "sha256": "ec3655156d9ae04107e1e3adc45f7fac44741591bfc25b0b807e26c1e8de61dd",
+                "bytes": 272588
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold4/metadata.json",
+                "sha256": "5fe872576c0fd73b2101c7000be4681d8cb5555bc3f6966676f869e39a68f309",
+                "bytes": 1605
+              },
+              "checkpoints/best_4.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/fold4/checkpoints/best_4.ckpt",
+                "sha256": "5bf4db1ad87126103c7efc712f8ee21cf02c7ed0ee6b55feee77416c770427df",
+                "bytes": 16817622
+              }
+            }
+          }
+        ],
+        "oof": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/oof.csv",
+          "sha256": "a0d1149fb67f160231a3aaeecf5395e3d6939d366993d20b5d33b2a95e340f2a",
+          "bytes": 14655579
+        },
+        "query": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/union18/test_raw.csv",
+          "sha256": "11eec45fd734d4c0bf6ad4246b4256d8ee0b783b83113a529be114bb609ed1e7",
+          "bytes": 272825
+        }
+      },
+      "mtaux8": {
+        "folds": [
+          {
+            "fold": 0,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold0/complete.json",
+              "sha256": "b6da2cc3f80787938cf7e1745692846168ba8bd488b23987cd53108ffe09fcde",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold0/job.json",
+                "sha256": "6838d4cd472b42fbb5500711ed887d2b5c7491543909f3e3ab2e208788a01023",
+                "bytes": 225
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold0/oof.csv",
+                "sha256": "3f43e4d409b874ed3095d39243cec74aa5f524376c8e832de7a612e053fe20b6",
+                "bytes": 167343
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold0/test.csv",
+                "sha256": "65119fdc513c1940bfc59940f5a8791caaf47913653572ff7a8b6b7025d456d3",
+                "bytes": 127524
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold0/metadata.json",
+                "sha256": "53b2bff971ba5dadf5b424d1635c697a8b3bf80628401ab946b65880ca526810",
+                "bytes": 1333
+              },
+              "checkpoints/best_0.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold0/checkpoints/best_0.ckpt",
+                "sha256": "e509fba9f5596d9a9cbd11a2500f31f167d511f7c1241d8e68a52c5619455e2c",
+                "bytes": 16780182
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold1/complete.json",
+              "sha256": "241f1d784aae4a6e6052002b2bdab00d9d13a0710af1d78f8e7e6e32d616af73",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold1/job.json",
+                "sha256": "a8a3fa6ee1a9fd6e9ea59b12f1bc4d2f38a90d4b331550ccec23ff075a7174bc",
+                "bytes": 225
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold1/oof.csv",
+                "sha256": "625e635731b069db6d5ae7bc6bc6c56dcff07200ca51c87895a89ceb59698b28",
+                "bytes": 167190
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold1/test.csv",
+                "sha256": "f9ff450d50de453f555c14f745ff032c98420ba7ea77458ba09551acd9c62f8d",
+                "bytes": 127529
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold1/metadata.json",
+                "sha256": "8821e7182e413a6fe22e30f918bd33274fa07f62857b5462b5a78e23a1393277",
+                "bytes": 1333
+              },
+              "checkpoints/best_1.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold1/checkpoints/best_1.ckpt",
+                "sha256": "abb57788c7ad3a6267bcda573a88383f8bcfdb96f936c69010ea68895c570a7c",
+                "bytes": 16780182
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold2/complete.json",
+              "sha256": "ff81bf7cc9528fda84f586a592727653823542a2fc015a720fbdcbd75e286f75",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold2/job.json",
+                "sha256": "13ecdf42bc6447d65ed44118fe264d16e5c6506fb07c074ee3812eb93bd7381e",
+                "bytes": 225
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold2/oof.csv",
+                "sha256": "5a7734ff2a8970e398eef77c716d9286dddb045fcfae341e6064b12402cec524",
+                "bytes": 167132
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold2/test.csv",
+                "sha256": "c1af5ae541adde20c2c74ed82baa14ad14150062d5518f02ae69ef6c7b24efcd",
+                "bytes": 127627
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold2/metadata.json",
+                "sha256": "a2a8a7e164c48a95df70b90fdf23be51ef510d555e94c846ae09721256666db7",
+                "bytes": 1333
+              },
+              "checkpoints/best_2.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold2/checkpoints/best_2.ckpt",
+                "sha256": "3a69f88b64b6a929f58b432d6b345854bb6e1ad11b263b412231b2534de6230d",
+                "bytes": 16780182
+              }
+            }
+          },
+          {
+            "fold": 3,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold3/complete.json",
+              "sha256": "5ec500cb250bbea10cbf3b6eb1cddd1a4733ca9bb864ac444e947fffca414b2b",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold3/job.json",
+                "sha256": "a7988c58254968b940f536b540e7547be2300e10ec5b041be63f02311632c1ba",
+                "bytes": 225
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold3/oof.csv",
+                "sha256": "b39a23bffe36ddda3327c4af969cd8d6c221b731c95469f457da69835589c2b2",
+                "bytes": 167149
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold3/test.csv",
+                "sha256": "42dbacd34de6661c730034deb974a40e2b133256ed3a6d13fdaa4c5d12aec8ec",
+                "bytes": 127442
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold3/metadata.json",
+                "sha256": "79e1834f58aeb5d3e7060bc5ea6e38059680b68a0c76e876285261ba79a5952e",
+                "bytes": 1332
+              },
+              "checkpoints/best_3.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold3/checkpoints/best_3.ckpt",
+                "sha256": "442f38adc3a510a274b8a80d654e9e741d1fbd2e967fd359d97584a9e0e3c3fe",
+                "bytes": 16780182
+              }
+            }
+          },
+          {
+            "fold": 4,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold4/complete.json",
+              "sha256": "ac501056b8ef7b2fccd6084eb8d8f1d655cba1a12e43e05528ff84cf2b8fe7be",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold4/job.json",
+                "sha256": "cfe83f30be9aa2b45d094eaf7370ce7ebb17e3d85bd683f1e7ba14aa6946cc4c",
+                "bytes": 225
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold4/oof.csv",
+                "sha256": "fafce462b451495e872b2443b7a275d51cd2186e49c38e51f46426433a5243f4",
+                "bytes": 167406
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold4/test.csv",
+                "sha256": "e2f8b460c0263671cc305c4061d43a64ed5f0607bf129c2d587a21f8bc7ba415",
+                "bytes": 127607
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold4/metadata.json",
+                "sha256": "43d9c6ecbc04a505b5312536cf24db171043abf86569c4140ae21c19ed886413",
+                "bytes": 1332
+              },
+              "checkpoints/best_4.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/fold4/checkpoints/best_4.ckpt",
+                "sha256": "d7e52b020addf5cd68f1753eb7bdafcceba5eefe5fc5b0e3d14d773c1602dc82",
+                "bytes": 16780182
+              }
+            }
+          }
+        ],
+        "oof": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/oof.csv",
+          "sha256": "ae8afeee65b2f17de0d74cf7c7bd40990e468b775e2ae474bb863d783bd2ff32",
+          "bytes": 1295384
+        },
+        "query": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/mtaux8/test_raw.csv",
+          "sha256": "f52758b219c98529c0fe712a491338c5b8cf374b1e1f7bd90b76ae31f10f4c7e",
+          "bytes": 127621
+        }
+      },
+      "2d6isoform6": {
+        "folds": [
+          {
+            "fold": 0,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold0/complete.json",
+              "sha256": "83f0f045a15c97622f350b2a5627c091b034b6346353b9c6c1dd58e015e7710a",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold0/job.json",
+                "sha256": "9a3af12d22b6652c24b3f03e3c997f52bfe7b9c65489c7bb23e59c94f3af6a5b",
+                "bytes": 235
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold0/oof.csv",
+                "sha256": "3619554a3b8868c6da58ab0c2d4f12ed2a9d0ab24d26390c26118e8a49690da7",
+                "bytes": 608641
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold0/test.csv",
+                "sha256": "f17ad701ca765ad8050480aeaf872ff2611b152ba771b108e45ee7a00b80a78e",
+                "bytes": 97385
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold0/metadata.json",
+                "sha256": "0a78330eea638e58935b2663c4a41f17c7224634944c68236f466791521a3bcc",
+                "bytes": 1194
+              },
+              "checkpoints/best_0.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold0/checkpoints/best_0.ckpt",
+                "sha256": "cc7ffed4cf2e90f36016e2c9cabf561311b6a2e8a314513f8f08937869d52f0c",
+                "bytes": 16772630
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold1/complete.json",
+              "sha256": "366a667b312ad2eff10c9a54886ac0bdf0bdc2d714cb4b61c344ab608b9a8e53",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold1/job.json",
+                "sha256": "5e19545d946ca98484afeb63cffe1c9b12d40caf8f810645b16552de8a48aac9",
+                "bytes": 235
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold1/oof.csv",
+                "sha256": "717cd8679f69b4cbb038fa16dc0908ae3c8688607fa58e215d4ab9505d76916f",
+                "bytes": 608822
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold1/test.csv",
+                "sha256": "00960f9fb2609335f36ec7a6b8d9ca2c4be120817227518f7f1abffeb5dfecd1",
+                "bytes": 97390
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold1/metadata.json",
+                "sha256": "e278e4340f99cdf2c731ecc144403e4936cd150cf72bb1b6d5ad9a1c3f5b30fa",
+                "bytes": 1193
+              },
+              "checkpoints/best_1.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold1/checkpoints/best_1.ckpt",
+                "sha256": "6da57c9a685f37b664f46118b7b325d25fdb996f0ce481a55529d92ce2e57080",
+                "bytes": 16772630
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold2/complete.json",
+              "sha256": "bb475008d2b55204e7d44ffd30ac3f91964445d7cecbf6040e04a6b7f0642327",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold2/job.json",
+                "sha256": "a041743ba0a7d89475525995b3bc6c593a80f88410d10aa193009d451f0b6f77",
+                "bytes": 235
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold2/oof.csv",
+                "sha256": "74a22be447868550d82812a51ce9a958a31a8829c87417e8fbfa94ca53390279",
+                "bytes": 607869
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold2/test.csv",
+                "sha256": "7db36d9919cc9ff4e72c12172e22eb51fe9b9bdade318dc45fb5df5b57ada449",
+                "bytes": 97346
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold2/metadata.json",
+                "sha256": "2fa10e289bc76e2f007cb5e1f7c5a2f4e898823f087702f3e7b02da26e27a831",
+                "bytes": 1193
+              },
+              "checkpoints/best_2.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold2/checkpoints/best_2.ckpt",
+                "sha256": "1d3f72f4a08d3962c0fc8aac6d37f272bef21888b11c70943ba81e817f0eb94c",
+                "bytes": 16772630
+              }
+            }
+          },
+          {
+            "fold": 3,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold3/complete.json",
+              "sha256": "19432b45def10b3b6dc21e89ad8608b3a88ae5a79f2f9c1453e9b2d999fb6aee",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold3/job.json",
+                "sha256": "12fc4392c95a59c220922089fa8ac05af4dede51185cf26bd5db7318ac7c7545",
+                "bytes": 235
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold3/oof.csv",
+                "sha256": "9bb2c4fe151500595cd090fcacf372fc08ee435f74e00f9ab2fcc65d77623fcf",
+                "bytes": 610691
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold3/test.csv",
+                "sha256": "1e7e170b3c59b8382400c716c4a969a2622234d60ccbfbf4dae5152b95e5cd42",
+                "bytes": 97453
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold3/metadata.json",
+                "sha256": "9206b5769e2e45d3f7551964a131be8986f7cf134618ebc0ebf08817cfb49038",
+                "bytes": 1193
+              },
+              "checkpoints/best_3.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold3/checkpoints/best_3.ckpt",
+                "sha256": "f3ee3ef785068231ccae872e753cc26da06d7971bc7564b184f4d43e93289b35",
+                "bytes": 16772630
+              }
+            }
+          },
+          {
+            "fold": 4,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold4/complete.json",
+              "sha256": "370fe2835d333fac21d30220b2df7c29e3cdb244ccbdd5ca3fdf26893e19472d",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold4/job.json",
+                "sha256": "47204c80790c5f373b01c35bd264b5bfe962d7ef02048a2d4710b7a31e0b1a4a",
+                "bytes": 235
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold4/oof.csv",
+                "sha256": "18a9a727143b8080a65afd85663c558a19485040d3f23707ab7001a0c38a4f94",
+                "bytes": 608736
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold4/test.csv",
+                "sha256": "26815e79cd0107c70b3b2cef8f8fd207479289e38e7d45c961efac92e6224f0d",
+                "bytes": 97400
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold4/metadata.json",
+                "sha256": "e98dda091d1c1d310a7fe1cb9475ef803e3b689a91fed55c936d1c53efefaa25",
+                "bytes": 1193
+              },
+              "checkpoints/best_4.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/fold4/checkpoints/best_4.ckpt",
+                "sha256": "7ecc14d62a2548434d4d1179e33957cb26cecee7377cb667a9daf260597156fa",
+                "bytes": 16772630
+              }
+            }
+          }
+        ],
+        "oof": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/oof.csv",
+          "sha256": "1669efa56d954c98b019c2cf9fa734502fbf0a398e6ff4cf94572880cb413949",
+          "bytes": 3718852
+        },
+        "query": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6isoform6/test_raw.csv",
+          "sha256": "04166a1ab76a096ac7575da8e3f8c7d436a7e02aee621d390e0f99a6a787e7f9",
+          "bytes": 97448
+        }
+      },
+      "2d6single": {
+        "folds": [
+          {
+            "fold": 0,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold0/complete.json",
+              "sha256": "995ce629213f14ff0830298d042487f58cb21badf773adc97c3edf1e47c5fb22",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold0/job.json",
+                "sha256": "694130306d9bbc624582cdcdce0e2514119216de45717e2e45d7a23eb74564ed",
+                "bytes": 231
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold0/oof.csv",
+                "sha256": "a0590322dc88ad31c2b7484c74e9465b41ddf323e321cf1b72bcf12294d4b578",
+                "bytes": 9573
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold0/test.csv",
+                "sha256": "9c82d19c82cf647ad67ec1cd8140c6e14280affa409b61b58ccb808d3289d874",
+                "bytes": 23956
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold0/metadata.json",
+                "sha256": "a31c984788fecdc37d54b5247e0d01d91358019506f95041db3749e289e3dec9",
+                "bytes": 1121
+              },
+              "checkpoints/best_0.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold0/checkpoints/best_0.ckpt",
+                "sha256": "bc59f39de37094ae89859aeca6ca6fab0e0a519c9eb2b25e7db09ced60c36cff",
+                "bytes": 16753942
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold1/complete.json",
+              "sha256": "71b1312bb37ceac960b2ef0f83536909b09a1dc7b3118c0e9ec33cb74530fb66",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold1/job.json",
+                "sha256": "ddfcc7656647ae8261c1fa8fedb2278516b11c1f5bf2846f9b498ec54bc2ba53",
+                "bytes": 231
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold1/oof.csv",
+                "sha256": "6cd350e74d24dff8448fb8aa9f4c8c29b4bc5350e7de4a6ee6f3f7c38a53827a",
+                "bytes": 9580
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold1/test.csv",
+                "sha256": "4ffaf1ab6c6f7dee431776604ab12cbf65c95907c4c8862ff1ae5759f9435386",
+                "bytes": 23951
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold1/metadata.json",
+                "sha256": "0f8f8a13d475e467699dee5ea708ea2d6c58d47cd55ed78ded74d3f171018877",
+                "bytes": 1121
+              },
+              "checkpoints/best_1.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold1/checkpoints/best_1.ckpt",
+                "sha256": "4ff2d65359750f724fbb237d85ede7f17e4deb98de8bc9e46e38e454498933b3",
+                "bytes": 16753942
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold2/complete.json",
+              "sha256": "0322f21b0404bdfcca12ad1d6f81d46b73fd3f4faff3421fbeaaecf6daa35c41",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold2/job.json",
+                "sha256": "9ef2200a79b021f7400093bf2078c44eb38831a20320a35de204304e0daf1789",
+                "bytes": 231
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold2/oof.csv",
+                "sha256": "bfb59330686d8fbbaee9255756c9263a5f4cab574bf13933ec6ddca77e4a040b",
+                "bytes": 9586
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold2/test.csv",
+                "sha256": "a5d18ba78f9cac85f7dd608a133aaf838b6361ea164f7cfa7c37ba992b805f14",
+                "bytes": 23953
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold2/metadata.json",
+                "sha256": "83ba87dc0fff9101ee42cf46c0f16189defb67d675dde476867c1830d4a0362d",
+                "bytes": 1120
+              },
+              "checkpoints/best_2.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold2/checkpoints/best_2.ckpt",
+                "sha256": "9e3e47a25cd688305cf6ab0ebac58651253b7c9396527d275235907750a0c9b6",
+                "bytes": 16753942
+              }
+            }
+          },
+          {
+            "fold": 3,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold3/complete.json",
+              "sha256": "5ebbc7ad6eb142b82a90fd474bdb00cc1becd95e475d287122331e2c02fcfcc6",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold3/job.json",
+                "sha256": "b792685235fb57f5788ec7c8f4cdb5b91bfb5b1e9a6765b335ba251bf5eac451",
+                "bytes": 231
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold3/oof.csv",
+                "sha256": "ab180abceed95d8402b7e1f6b22e74faa8da64e131adfe261b96f429114e57c6",
+                "bytes": 9557
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold3/test.csv",
+                "sha256": "14f5819ed432660a7a8053f0a11050ff93634eb7ea86d915736a1c52a4c7b4c0",
+                "bytes": 23951
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold3/metadata.json",
+                "sha256": "e25facec95bd920ec0b9480cb362834af2c7ee108356d006500ba9cf49b31989",
+                "bytes": 1121
+              },
+              "checkpoints/best_3.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold3/checkpoints/best_3.ckpt",
+                "sha256": "62bebc1cb607ecdb21f79cd6a432ef3c97d96c0869afb1e3407556fd3a0a5510",
+                "bytes": 16754006
+              }
+            }
+          },
+          {
+            "fold": 4,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold4/complete.json",
+              "sha256": "b06afc6c2ae81050a85cab121868d229bfb30e867f10f649250e3337c8e3b303",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold4/job.json",
+                "sha256": "f3fc041ea7205948511436f7fc2e6519eabdfffd249c0d2882ea1300f90f56b7",
+                "bytes": 231
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold4/oof.csv",
+                "sha256": "2fe826ea46c00af318ef240802495d8b6afaeb4ebbf36e1bc71a961a9430a77c",
+                "bytes": 9547
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold4/test.csv",
+                "sha256": "1c153629dca361e8b4382408a451d7234bbf91348c519ee272b3135cddcd45a9",
+                "bytes": 23967
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold4/metadata.json",
+                "sha256": "de00b8cbbc803fd87b486e5457246d545dbe151c74f5dcfa096c869f2c24ba54",
+                "bytes": 1121
+              },
+              "checkpoints/best_4.ckpt": {
+                "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/fold4/checkpoints/best_4.ckpt",
+                "sha256": "d79d02cb7a35b75d41ee71e1aaf013ad994e96d4f4f27dffd1ffc23879fd83c2",
+                "bytes": 16753942
+              }
+            }
+          }
+        ],
+        "oof": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/oof.csv",
+          "sha256": "07a5bc3463b861c6f1a57cea06159bb2ff7f1a9b474c78ddaef351119a0cbe20",
+          "bytes": 75287
+        },
+        "query": {
+          "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/2d6single/test_raw.csv",
+          "sha256": "2ef0547ff078ca679cd23010ce4cb4aab84c2beddd2569de560b90c406832d5d",
+          "bytes": 23953
+        }
+      }
+    },
+    "corrected_native": {
+      "union18": {
+        "folds": [
+          {
+            "fold": 0,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold0/complete.json",
+              "sha256": "69b217b71f93bc08a8307ab589f47d0da0c38d90d54fceb8bc9001b6d4f8bd6b",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold0/job.json",
+                "sha256": "719775f213592d8a15f60129e9ffc81e9bfd6ac86323ab30613098290bd5eaeb",
+                "bytes": 253
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold0/oof.csv",
+                "sha256": "5782dd6fffb4393fb960e095fce7baebafaf4b504d6c5fabd070793e6f210ccb",
+                "bytes": 2322624
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold0/test.csv",
+                "sha256": "270fec7ac0c5286d1651c68083bd3730d3762b6536847023c99d431414a3dd71",
+                "bytes": 272683
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold0/metadata.json",
+                "sha256": "5fb523b5c5e78fc2ca9da73c652ad5a1c89bc742200bb1a9aaf48027e1fe2b72",
+                "bytes": 1604
+              },
+              "checkpoints/best_0.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold0/checkpoints/best_0.ckpt",
+                "sha256": "1124f10357ef75d18636e1bfad9c838f9a53791f2a93031498ea4453185eef73",
+                "bytes": 16817622
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold1/complete.json",
+              "sha256": "dfe815f9be925637f34592c57b35f68e38b3f019c7ed547b8d13442c82ea8680",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold1/job.json",
+                "sha256": "2a456da7b3af37ac8d9ad6b439189f0dd5d5c5a3bd9946c083c4fa14fb397496",
+                "bytes": 253
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold1/oof.csv",
+                "sha256": "a343f79c3fe25a7b307b581e62841c157ea29980ece1ebaccb5e703234fedd72",
+                "bytes": 2306778
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold1/test.csv",
+                "sha256": "fcfa71d68d20ee76a1eac92737a3b18018bcbf788f5e2370c73fd57db9cac664",
+                "bytes": 272601
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold1/metadata.json",
+                "sha256": "f693cbd76321725ff2cf740f615798666e3ef1b05a2c5d243b9d3599507a3ab0",
+                "bytes": 1606
+              },
+              "checkpoints/best_1.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold1/checkpoints/best_1.ckpt",
+                "sha256": "affce80bf3edb989882c7dca3791865aafa46ce48af7a386d5800d5459880789",
+                "bytes": 16817622
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold2/complete.json",
+              "sha256": "fb8259902ff80e1d081777f1c2bf88f476e02680fa9955f9e9fda6330bc9fed6",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold2/job.json",
+                "sha256": "d2eb093c276d7dbe43c6db2b71c6ea4908777e19f084c3d409a547343c59fa2f",
+                "bytes": 253
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold2/oof.csv",
+                "sha256": "4becf915da79d30caa229662ff787cba4fede563752f2b22476aa751d46d7abe",
+                "bytes": 2304924
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold2/test.csv",
+                "sha256": "a34e93628a5056c804d7d7bcccdede8c8786dac920553979733ed7adacf1c0c0",
+                "bytes": 272713
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold2/metadata.json",
+                "sha256": "12d2fbcab31eb58b1c27a8af220165fd18aeb6ead1a413340af6a741544caead",
+                "bytes": 1606
+              },
+              "checkpoints/best_2.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold2/checkpoints/best_2.ckpt",
+                "sha256": "32b0c7f623715d4a7cf51b053716d934c3021fe0b98eb830785bcc27ea9aabc9",
+                "bytes": 16817622
+              }
+            }
+          },
+          {
+            "fold": 3,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold3/complete.json",
+              "sha256": "ebb5bed2670227c744e44527a2d5b508379ea78f30fe44b3cd11b33516f84b20",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold3/job.json",
+                "sha256": "ddbf278e9bb4454c15b8f22ff37252731583f5ff863e3ef74e213abdcbf3c996",
+                "bytes": 253
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold3/oof.csv",
+                "sha256": "9fa037e190c9d383629c6913718d7c55d7632cf46ae6e5f66b1ab7968bf6d905",
+                "bytes": 2307320
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold3/test.csv",
+                "sha256": "914a84b561b825998b3c4e3b890ad6cd70cce778d5fe81e42a47e0b749225d42",
+                "bytes": 272736
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold3/metadata.json",
+                "sha256": "b3552a1a69a9898864a05c3efe4dee030f1ed44d14b7468a3eaec8ea0d9dbdd8",
+                "bytes": 1606
+              },
+              "checkpoints/best_3.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold3/checkpoints/best_3.ckpt",
+                "sha256": "0a5fad41316de094e9bb2af9837b2f1df08ee6d1f95d286d8a56f146749e2fa0",
+                "bytes": 16817622
+              }
+            }
+          },
+          {
+            "fold": 4,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold4/complete.json",
+              "sha256": "ccfeecd4bea08222869361704c1a41c9302c492a72b7e1837376c55da120aa36",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold4/job.json",
+                "sha256": "02867d58b940cd2524460502b1a109d0ae2e8a9ddd241df415fc9a0d569d2385",
+                "bytes": 253
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold4/oof.csv",
+                "sha256": "9acda889875b30d07d125269de527194a224c2536c18246d494ea34486e76f0d",
+                "bytes": 2306648
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold4/test.csv",
+                "sha256": "5a736a1dd24292e5e2fb7f30dfbc5210b438de795ca50d4f91e09a327e65bbfd",
+                "bytes": 272690
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold4/metadata.json",
+                "sha256": "6ce3257a685b712d9db2b411cb93f3e0eff54ee150649dd6a141145ed843bf05",
+                "bytes": 1605
+              },
+              "checkpoints/best_4.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/fold4/checkpoints/best_4.ckpt",
+                "sha256": "4ec3ae1673aa155062857618b5305e8154c854f149a5b8cf1c96b7a493e85ae1",
+                "bytes": 16817622
+              }
+            }
+          }
+        ],
+        "oof": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/oof.csv",
+          "sha256": "8af0b9865224f243a87522270ad48bee5f57b69bf68c8a181a39cbb8b3b63838",
+          "bytes": 14656372
+        },
+        "query": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/test_raw.csv",
+          "sha256": "c312f0469c8e99894b6d3df51bd4f058849c524349b58ca66c3e3dc1db0e5ce9",
+          "bytes": 272811
+        }
+      },
+      "mtaux8": {
+        "folds": [
+          {
+            "fold": 0,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold0/complete.json",
+              "sha256": "b6da2cc3f80787938cf7e1745692846168ba8bd488b23987cd53108ffe09fcde",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold0/job.json",
+                "sha256": "6838d4cd472b42fbb5500711ed887d2b5c7491543909f3e3ab2e208788a01023",
+                "bytes": 225
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold0/oof.csv",
+                "sha256": "3f43e4d409b874ed3095d39243cec74aa5f524376c8e832de7a612e053fe20b6",
+                "bytes": 167343
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold0/test.csv",
+                "sha256": "65119fdc513c1940bfc59940f5a8791caaf47913653572ff7a8b6b7025d456d3",
+                "bytes": 127524
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold0/metadata.json",
+                "sha256": "53b2bff971ba5dadf5b424d1635c697a8b3bf80628401ab946b65880ca526810",
+                "bytes": 1333
+              },
+              "checkpoints/best_0.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold0/checkpoints/best_0.ckpt",
+                "sha256": "e509fba9f5596d9a9cbd11a2500f31f167d511f7c1241d8e68a52c5619455e2c",
+                "bytes": 16780182
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold1/complete.json",
+              "sha256": "241f1d784aae4a6e6052002b2bdab00d9d13a0710af1d78f8e7e6e32d616af73",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold1/job.json",
+                "sha256": "a8a3fa6ee1a9fd6e9ea59b12f1bc4d2f38a90d4b331550ccec23ff075a7174bc",
+                "bytes": 225
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold1/oof.csv",
+                "sha256": "625e635731b069db6d5ae7bc6bc6c56dcff07200ca51c87895a89ceb59698b28",
+                "bytes": 167190
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold1/test.csv",
+                "sha256": "f9ff450d50de453f555c14f745ff032c98420ba7ea77458ba09551acd9c62f8d",
+                "bytes": 127529
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold1/metadata.json",
+                "sha256": "8821e7182e413a6fe22e30f918bd33274fa07f62857b5462b5a78e23a1393277",
+                "bytes": 1333
+              },
+              "checkpoints/best_1.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold1/checkpoints/best_1.ckpt",
+                "sha256": "abb57788c7ad3a6267bcda573a88383f8bcfdb96f936c69010ea68895c570a7c",
+                "bytes": 16780182
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold2/complete.json",
+              "sha256": "ff81bf7cc9528fda84f586a592727653823542a2fc015a720fbdcbd75e286f75",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold2/job.json",
+                "sha256": "13ecdf42bc6447d65ed44118fe264d16e5c6506fb07c074ee3812eb93bd7381e",
+                "bytes": 225
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold2/oof.csv",
+                "sha256": "5a7734ff2a8970e398eef77c716d9286dddb045fcfae341e6064b12402cec524",
+                "bytes": 167132
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold2/test.csv",
+                "sha256": "c1af5ae541adde20c2c74ed82baa14ad14150062d5518f02ae69ef6c7b24efcd",
+                "bytes": 127627
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold2/metadata.json",
+                "sha256": "a2a8a7e164c48a95df70b90fdf23be51ef510d555e94c846ae09721256666db7",
+                "bytes": 1333
+              },
+              "checkpoints/best_2.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold2/checkpoints/best_2.ckpt",
+                "sha256": "3a69f88b64b6a929f58b432d6b345854bb6e1ad11b263b412231b2534de6230d",
+                "bytes": 16780182
+              }
+            }
+          },
+          {
+            "fold": 3,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold3/complete.json",
+              "sha256": "5ec500cb250bbea10cbf3b6eb1cddd1a4733ca9bb864ac444e947fffca414b2b",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold3/job.json",
+                "sha256": "a7988c58254968b940f536b540e7547be2300e10ec5b041be63f02311632c1ba",
+                "bytes": 225
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold3/oof.csv",
+                "sha256": "b39a23bffe36ddda3327c4af969cd8d6c221b731c95469f457da69835589c2b2",
+                "bytes": 167149
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold3/test.csv",
+                "sha256": "42dbacd34de6661c730034deb974a40e2b133256ed3a6d13fdaa4c5d12aec8ec",
+                "bytes": 127442
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold3/metadata.json",
+                "sha256": "79e1834f58aeb5d3e7060bc5ea6e38059680b68a0c76e876285261ba79a5952e",
+                "bytes": 1332
+              },
+              "checkpoints/best_3.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold3/checkpoints/best_3.ckpt",
+                "sha256": "442f38adc3a510a274b8a80d654e9e741d1fbd2e967fd359d97584a9e0e3c3fe",
+                "bytes": 16780182
+              }
+            }
+          },
+          {
+            "fold": 4,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold4/complete.json",
+              "sha256": "ac501056b8ef7b2fccd6084eb8d8f1d655cba1a12e43e05528ff84cf2b8fe7be",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold4/job.json",
+                "sha256": "cfe83f30be9aa2b45d094eaf7370ce7ebb17e3d85bd683f1e7ba14aa6946cc4c",
+                "bytes": 225
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold4/oof.csv",
+                "sha256": "fafce462b451495e872b2443b7a275d51cd2186e49c38e51f46426433a5243f4",
+                "bytes": 167406
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold4/test.csv",
+                "sha256": "e2f8b460c0263671cc305c4061d43a64ed5f0607bf129c2d587a21f8bc7ba415",
+                "bytes": 127607
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold4/metadata.json",
+                "sha256": "43d9c6ecbc04a505b5312536cf24db171043abf86569c4140ae21c19ed886413",
+                "bytes": 1332
+              },
+              "checkpoints/best_4.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/fold4/checkpoints/best_4.ckpt",
+                "sha256": "d7e52b020addf5cd68f1753eb7bdafcceba5eefe5fc5b0e3d14d773c1602dc82",
+                "bytes": 16780182
+              }
+            }
+          }
+        ],
+        "oof": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/oof.csv",
+          "sha256": "ae8afeee65b2f17de0d74cf7c7bd40990e468b775e2ae474bb863d783bd2ff32",
+          "bytes": 1295384
+        },
+        "query": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/test_raw.csv",
+          "sha256": "f52758b219c98529c0fe712a491338c5b8cf374b1e1f7bd90b76ae31f10f4c7e",
+          "bytes": 127621
+        }
+      },
+      "2d6isoform6": {
+        "folds": [
+          {
+            "fold": 0,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold0/complete.json",
+              "sha256": "d06b5a210755fa293e46964612302d7d7232741a6273faec096bc5558d3a2a61",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold0/job.json",
+                "sha256": "df3f51eb0fe4a3ee8d82cd9ccdb138ba374a1fb7fe4e86ba47db08b15f42ce74",
+                "bytes": 261
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold0/oof.csv",
+                "sha256": "6a73e950e213ec0a85793c1db5fff0036993df67d07df3e31db3101175739e3b",
+                "bytes": 608726
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold0/test.csv",
+                "sha256": "d06abdbd737b58a0df8ed2980c0ee68c63d408e319387e8dd1c576940c29577d",
+                "bytes": 97359
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold0/metadata.json",
+                "sha256": "b00f3b35ff1b9868776ae4af583927f2737d43106ae9efed558560884d7ad42d",
+                "bytes": 1194
+              },
+              "checkpoints/best_0.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold0/checkpoints/best_0.ckpt",
+                "sha256": "de8225f44ba916f465b12b83509ccb27937c7e3f9679e54b68943bff1d9656c0",
+                "bytes": 16772630
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold1/complete.json",
+              "sha256": "b7991761b9cf43b2552b013d40d739518c99eaa5440c3c2a3181083a108b9dab",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold1/job.json",
+                "sha256": "c832f4b03f47602a139548ac82b62b81d217d93044fcb02a507256314e854da2",
+                "bytes": 261
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold1/oof.csv",
+                "sha256": "918ebcec05623f12fc286c8050df3554b483d52a8aad546158082979db429a57",
+                "bytes": 608847
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold1/test.csv",
+                "sha256": "1fb502c8598ce7576182ab8c54f54487af5d7be87d460408c8192bb2ed1231bc",
+                "bytes": 97357
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold1/metadata.json",
+                "sha256": "a70f635defaaa62b4a84ba2c8411dd2d768097077a679905fcf1a9b7717c70f6",
+                "bytes": 1193
+              },
+              "checkpoints/best_1.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold1/checkpoints/best_1.ckpt",
+                "sha256": "39003bd85d5316a0dc164922e237c99ba9c5e617f67d94e7e5acf9de3d6661a0",
+                "bytes": 16772630
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold2/complete.json",
+              "sha256": "b336dbb8711bf7c7148577e2118b829ce2ca3b93fd1bb2b8fa15f823ae751073",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold2/job.json",
+                "sha256": "eadb4b7309490e5220619aa4c7c7321d214290c397ef3ac2ac5bd3695226f0e6",
+                "bytes": 261
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold2/oof.csv",
+                "sha256": "294b73f65d2dd16d6f0a28b62cc2166f0facfc9d8608d4818b105ecaebb7b45a",
+                "bytes": 608401
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold2/test.csv",
+                "sha256": "5d4852cb6a64a5ae8b9dcce0e74c0c9b7d48357653162efdfadb1386879c453f",
+                "bytes": 97470
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold2/metadata.json",
+                "sha256": "4be96d257288305c9be1cb718d140c2a3226c126e9d3fa7807358ab1594170d9",
+                "bytes": 1193
+              },
+              "checkpoints/best_2.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold2/checkpoints/best_2.ckpt",
+                "sha256": "602078222a9b1f7c7382616ec0b663f00a67c183b496baaaa787ae29edc63963",
+                "bytes": 16772630
+              }
+            }
+          },
+          {
+            "fold": 3,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold3/complete.json",
+              "sha256": "6fa3688a29ac94a908ebe0b31c0d22fb47cc6963a9bfa95443e1f6d630675b6a",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold3/job.json",
+                "sha256": "b210d1f8b620c9449d831c4f58f7162dffd567b58195b7af9df9ccc3abe7e11f",
+                "bytes": 261
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold3/oof.csv",
+                "sha256": "b0452642dbeb55c19a58cc68aeed6f8c2124fb1d3f7cf4c18526c298c9e6a332",
+                "bytes": 610891
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold3/test.csv",
+                "sha256": "7e80120b85201f95c1800ffa7c35c76b0d38da4c9ab45f562f3550ef2263d206",
+                "bytes": 97392
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold3/metadata.json",
+                "sha256": "f9849ab3a30757e9cea4cab3f32b693614e784d0c7fd830739de407fabfcf1cf",
+                "bytes": 1193
+              },
+              "checkpoints/best_3.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold3/checkpoints/best_3.ckpt",
+                "sha256": "04b4b2e946468db44444d41381500270c62a2579a4eba9d4ab49570e0f7e4809",
+                "bytes": 16772630
+              }
+            }
+          },
+          {
+            "fold": 4,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold4/complete.json",
+              "sha256": "070187e85c8c1289fa31cf0f8ac94ec1b39498ddd50681b9f5a6e78c9b5c3b30",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold4/job.json",
+                "sha256": "d3613d9560451532a40d24ead884b814a787032e2fcec0b6b0ba0b1a0e920b99",
+                "bytes": 261
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold4/oof.csv",
+                "sha256": "9a5b65a9c5ca2b4c817a1abe0a07217c430bd72d36155f349b28c1304f957200",
+                "bytes": 608857
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold4/test.csv",
+                "sha256": "908eecd5183dcf1ce5520f356ce00709e3d83c27380648c51620fe0581221e54",
+                "bytes": 97431
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold4/metadata.json",
+                "sha256": "3ba7d614d274849852e922a9cd26ea7804815a0269264e4c1df8a12edcc252e5",
+                "bytes": 1192
+              },
+              "checkpoints/best_4.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/fold4/checkpoints/best_4.ckpt",
+                "sha256": "e88eb827f35a69ab950807bccd82b21a28bc05056b5cade70792190834dd7896",
+                "bytes": 16772630
+              }
+            }
+          }
+        ],
+        "oof": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/oof.csv",
+          "sha256": "3f5daba713aa73447bee2b924fa2bd1a0f898bcca865b0d5a34f7697fed5d582",
+          "bytes": 3719694
+        },
+        "query": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/test_raw.csv",
+          "sha256": "f070b1125ccd0e0890954195d2ef3b3680c127b88148041a7804e6821ab3b6e6",
+          "bytes": 97473
+        }
+      },
+      "2d6single": {
+        "folds": [
+          {
+            "fold": 0,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold0/complete.json",
+              "sha256": "995ce629213f14ff0830298d042487f58cb21badf773adc97c3edf1e47c5fb22",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold0/job.json",
+                "sha256": "694130306d9bbc624582cdcdce0e2514119216de45717e2e45d7a23eb74564ed",
+                "bytes": 231
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold0/oof.csv",
+                "sha256": "a0590322dc88ad31c2b7484c74e9465b41ddf323e321cf1b72bcf12294d4b578",
+                "bytes": 9573
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold0/test.csv",
+                "sha256": "9c82d19c82cf647ad67ec1cd8140c6e14280affa409b61b58ccb808d3289d874",
+                "bytes": 23956
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold0/metadata.json",
+                "sha256": "a31c984788fecdc37d54b5247e0d01d91358019506f95041db3749e289e3dec9",
+                "bytes": 1121
+              },
+              "checkpoints/best_0.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold0/checkpoints/best_0.ckpt",
+                "sha256": "bc59f39de37094ae89859aeca6ca6fab0e0a519c9eb2b25e7db09ced60c36cff",
+                "bytes": 16753942
+              }
+            }
+          },
+          {
+            "fold": 1,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold1/complete.json",
+              "sha256": "71b1312bb37ceac960b2ef0f83536909b09a1dc7b3118c0e9ec33cb74530fb66",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold1/job.json",
+                "sha256": "ddfcc7656647ae8261c1fa8fedb2278516b11c1f5bf2846f9b498ec54bc2ba53",
+                "bytes": 231
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold1/oof.csv",
+                "sha256": "6cd350e74d24dff8448fb8aa9f4c8c29b4bc5350e7de4a6ee6f3f7c38a53827a",
+                "bytes": 9580
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold1/test.csv",
+                "sha256": "4ffaf1ab6c6f7dee431776604ab12cbf65c95907c4c8862ff1ae5759f9435386",
+                "bytes": 23951
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold1/metadata.json",
+                "sha256": "0f8f8a13d475e467699dee5ea708ea2d6c58d47cd55ed78ded74d3f171018877",
+                "bytes": 1121
+              },
+              "checkpoints/best_1.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold1/checkpoints/best_1.ckpt",
+                "sha256": "4ff2d65359750f724fbb237d85ede7f17e4deb98de8bc9e46e38e454498933b3",
+                "bytes": 16753942
+              }
+            }
+          },
+          {
+            "fold": 2,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold2/complete.json",
+              "sha256": "0322f21b0404bdfcca12ad1d6f81d46b73fd3f4faff3421fbeaaecf6daa35c41",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold2/job.json",
+                "sha256": "9ef2200a79b021f7400093bf2078c44eb38831a20320a35de204304e0daf1789",
+                "bytes": 231
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold2/oof.csv",
+                "sha256": "bfb59330686d8fbbaee9255756c9263a5f4cab574bf13933ec6ddca77e4a040b",
+                "bytes": 9586
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold2/test.csv",
+                "sha256": "a5d18ba78f9cac85f7dd608a133aaf838b6361ea164f7cfa7c37ba992b805f14",
+                "bytes": 23953
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold2/metadata.json",
+                "sha256": "83ba87dc0fff9101ee42cf46c0f16189defb67d675dde476867c1830d4a0362d",
+                "bytes": 1120
+              },
+              "checkpoints/best_2.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold2/checkpoints/best_2.ckpt",
+                "sha256": "9e3e47a25cd688305cf6ab0ebac58651253b7c9396527d275235907750a0c9b6",
+                "bytes": 16753942
+              }
+            }
+          },
+          {
+            "fold": 3,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold3/complete.json",
+              "sha256": "5ebbc7ad6eb142b82a90fd474bdb00cc1becd95e475d287122331e2c02fcfcc6",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold3/job.json",
+                "sha256": "b792685235fb57f5788ec7c8f4cdb5b91bfb5b1e9a6765b335ba251bf5eac451",
+                "bytes": 231
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold3/oof.csv",
+                "sha256": "ab180abceed95d8402b7e1f6b22e74faa8da64e131adfe261b96f429114e57c6",
+                "bytes": 9557
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold3/test.csv",
+                "sha256": "14f5819ed432660a7a8053f0a11050ff93634eb7ea86d915736a1c52a4c7b4c0",
+                "bytes": 23951
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold3/metadata.json",
+                "sha256": "e25facec95bd920ec0b9480cb362834af2c7ee108356d006500ba9cf49b31989",
+                "bytes": 1121
+              },
+              "checkpoints/best_3.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold3/checkpoints/best_3.ckpt",
+                "sha256": "62bebc1cb607ecdb21f79cd6a432ef3c97d96c0869afb1e3407556fd3a0a5510",
+                "bytes": 16754006
+              }
+            }
+          },
+          {
+            "fold": 4,
+            "complete": {
+              "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold4/complete.json",
+              "sha256": "b06afc6c2ae81050a85cab121868d229bfb30e867f10f649250e3337c8e3b303",
+              "bytes": 1638
+            },
+            "files": {
+              "job.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold4/job.json",
+                "sha256": "f3fc041ea7205948511436f7fc2e6519eabdfffd249c0d2882ea1300f90f56b7",
+                "bytes": 231
+              },
+              "oof.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold4/oof.csv",
+                "sha256": "2fe826ea46c00af318ef240802495d8b6afaeb4ebbf36e1bc71a961a9430a77c",
+                "bytes": 9547
+              },
+              "test.csv": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold4/test.csv",
+                "sha256": "1c153629dca361e8b4382408a451d7234bbf91348c519ee272b3135cddcd45a9",
+                "bytes": 23967
+              },
+              "metadata.json": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold4/metadata.json",
+                "sha256": "de00b8cbbc803fd87b486e5457246d545dbe151c74f5dcfa096c869f2c24ba54",
+                "bytes": 1121
+              },
+              "checkpoints/best_4.ckpt": {
+                "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/fold4/checkpoints/best_4.ckpt",
+                "sha256": "d79d02cb7a35b75d41ee71e1aaf013ad994e96d4f4f27dffd1ffc23879fd83c2",
+                "bytes": 16753942
+              }
+            }
+          }
+        ],
+        "oof": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/oof.csv",
+          "sha256": "07a5bc3463b861c6f1a57cea06159bb2ff7f1a9b474c78ddaef351119a0cbe20",
+          "bytes": 75287
+        },
+        "query": {
+          "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/test_raw.csv",
+          "sha256": "2ef0547ff078ca679cd23010ce4cb4aab84c2beddd2569de560b90c406832d5d",
+          "bytes": 23953
+        }
+      }
+    }
+  },
+  "no_fits": true,
+  "no_hidden_labels_loaded": true,
+  "no_external_calls": true,
+  "incumbent_exact_artifact_copy": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/incumbent-artifact-copy",
+  "H6_heads": {
+    "CYP1A2_pIC50_direct_inhibition": {
+      "head.joblib": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP1A2_pIC50_direct_inhibition/head.joblib",
+        "sha256": "d453d4b88347676f4f6aebd2e5a93af035a1b92f88af6bfdaa354c3e972d39ad",
+        "bytes": 152319
+      },
+      "receipt.json": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP1A2_pIC50_direct_inhibition/receipt.json",
+        "sha256": "cbe900d0b59455610ab1dcdc32522594ccf800c2ad7e241064f8d070f12a4421",
+        "bytes": 55089
+      },
+      "feature-order.json": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP1A2_pIC50_direct_inhibition/feature-order.json",
+        "sha256": "02e188c3fa0f6f1df7e79b559c91c051c1205e9cfaa4bb30bf9c7ebe7c27bac6",
+        "bytes": 21677
+      },
+      "query-predictions.npy": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP1A2_pIC50_direct_inhibition/query-predictions.npy",
+        "sha256": "41d99100622f532b1e5fed3fb86d5750ecec07a618716730b72fb3ce185d9f10",
+        "bytes": 6128
+      },
+      "booster.txt": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP1A2_pIC50_direct_inhibition/booster.txt",
+        "sha256": "379b604819660c5917c192f37fdd16c7bca6d6bf23ec6face97fa2ce337be078",
+        "bytes": 358426
+      }
+    },
+    "CYP2C9_pIC50_direct_inhibition": {
+      "head.joblib": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP2C9_pIC50_direct_inhibition/head.joblib",
+        "sha256": "6dfc56f0c1ad0d5e9c2c47f386693ae605c9f0795ba51a06d323d74823ce50d6",
+        "bytes": 150441
+      },
+      "receipt.json": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP2C9_pIC50_direct_inhibition/receipt.json",
+        "sha256": "d6a7c6871f0a7e62592548b6fe4240e8b38ddd68951b98609b8f62e35ae2a6a4",
+        "bytes": 53583
+      },
+      "feature-order.json": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP2C9_pIC50_direct_inhibition/feature-order.json",
+        "sha256": "02e188c3fa0f6f1df7e79b559c91c051c1205e9cfaa4bb30bf9c7ebe7c27bac6",
+        "bytes": 21677
+      },
+      "query-predictions.npy": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP2C9_pIC50_direct_inhibition/query-predictions.npy",
+        "sha256": "4db35187e022e1b61d366a34a54cd2ee9e5dab9f712af700368aac786ae99b7b",
+        "bytes": 6128
+      },
+      "booster.txt": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP2C9_pIC50_direct_inhibition/booster.txt",
+        "sha256": "d7b63daafa8903ef9ed888561cc53ffda393be8afdc76934c85b14131010f852",
+        "bytes": 353715
+      }
+    },
+    "CYP2D6_pIC50_direct_inhibition": {
+      "head.joblib": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP2D6_pIC50_direct_inhibition/head.joblib",
+        "sha256": "919b8aaadf77abbefe7f3289332839007491663fdd053d9032fc869e15fee2c0",
+        "bytes": 149566
+      },
+      "receipt.json": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP2D6_pIC50_direct_inhibition/receipt.json",
+        "sha256": "6fe322b3399896cdf5f82f9f8e00b5cccf2e9a14b8c5fc129376dc8643274333",
+        "bytes": 56010
+      },
+      "feature-order.json": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP2D6_pIC50_direct_inhibition/feature-order.json",
+        "sha256": "02e188c3fa0f6f1df7e79b559c91c051c1205e9cfaa4bb30bf9c7ebe7c27bac6",
+        "bytes": 21677
+      },
+      "query-predictions.npy": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP2D6_pIC50_direct_inhibition/query-predictions.npy",
+        "sha256": "9147c507604b17f1ddd093bb6db24a3ae55ada5922b16acb0c2126acbb190447",
+        "bytes": 6128
+      },
+      "booster.txt": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP2D6_pIC50_direct_inhibition/booster.txt",
+        "sha256": "eb0a3689abaec1db2c232888ec02bffd7d2cb9d2d47871a1f3dd1fef6a5a1d90",
+        "bytes": 354338
+      }
+    },
+    "CYP3A4_pIC50_direct_inhibition": {
+      "head.joblib": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP3A4_pIC50_direct_inhibition/head.joblib",
+        "sha256": "f1f65f1f83c6b037007579c416c562ec4ce51251ff08c2838c73a6f763ef563d",
+        "bytes": 154049
+      },
+      "receipt.json": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP3A4_pIC50_direct_inhibition/receipt.json",
+        "sha256": "5a55abc7b373632a076a92a3ffb476948affe79f4322463517047b70046e151e",
+        "bytes": 66098
+      },
+      "feature-order.json": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP3A4_pIC50_direct_inhibition/feature-order.json",
+        "sha256": "02e188c3fa0f6f1df7e79b559c91c051c1205e9cfaa4bb30bf9c7ebe7c27bac6",
+        "bytes": 21677
+      },
+      "query-predictions.npy": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP3A4_pIC50_direct_inhibition/query-predictions.npy",
+        "sha256": "3b1bd01095a8b7befc4d8e9958a7459d844d10c46795e1b8097b8d8bd6262a1e",
+        "bytes": 6128
+      },
+      "booster.txt": {
+        "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-models/CYP3A4_pIC50_direct_inhibition/booster.txt",
+        "sha256": "df952268a7158b2df90e8a3acc60f6b9c76001215fda025a292a3fff2122e59c",
+        "bytes": 360579
+      }
+    }
+  },
+  "evidence": {
+    "original_final_complete": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/final_complete.json",
+      "sha256": "fc0c562740249f7ff796f293de0b75f83bc19569805058ff4fec38cc444d9fd6",
+      "bytes": 2921
+    },
+    "original_placement": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/placement.json",
+      "sha256": "4f21c36afc2d9dfb399f78c89aa34a6769c69cdadef046b46994387209428f10",
+      "bytes": 1141
+    },
+    "corrected_certificate": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/FULLFIT_REFERENCE_CERTIFICATE.json",
+      "sha256": "94ab14077f80747fbab9af41f4742612bd98219ef3436b8cd86f4ad3f2a3ef3f",
+      "bytes": 11170
+    },
+    "corrected_purge": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/stage/purge-and-reuse-manifest.json",
+      "sha256": "9a0d90b9b6ffae37db2f38fc899bbb262f954339658e12ea5674921e55aed91d",
+      "bytes": 42279
+    },
+    "H6_complete": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/complete.json",
+      "sha256": "41960157a21b8352eafafda7baf8433d00c6282ba2fadaec2fc58c3a35f03780",
+      "bytes": 15052
+    },
+    "H6_selection": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/full-data-selection.json",
+      "sha256": "a17a596d25e1edfc339db882e9d2e252c31b0fe80124b4ebfb25a3f0889f26aa",
+      "bytes": 15889
+    },
+    "H6_placement": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/final-locked-h6-output/final-placement.json",
+      "sha256": "9ed4d70a722261b2307dfa02ff7a391e5df5b17ac24a77d3590c0043aa5dc80c",
+      "bytes": 1052
+    },
+    "H6_actual_run": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/submission-transport/final-run.json",
+      "sha256": "f41da159d30e0e2e01f33a3b667a83fa52596e7f92beea55c6c04e788d4e43e5",
+      "bytes": 10146
+    },
+    "published_score_receipt": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/submission-transport/processed-result.json",
+      "sha256": "40fd04bbac7db92ef24beed86888c6fe04fd971ce1ba718d6b6e85816f5656f0",
+      "bytes": 1884
+    }
+  },
+  "orx_runs": [
+    {
+      "id": "654431aa-d8a4-4eb1-a00c-67f74d2fe040",
+      "experiment_id": "3218eedb-29ef-4af5-8c82-c166279d0bf3",
+      "status": "done",
+      "command": "bash run.sh",
+      "commit_sha": "d4c1a31c2952f8d933ce035a1cab04417f46cb76",
+      "created_at": 1792834930555,
+      "ended_at": 1792836623170
+    },
+    {
+      "id": "e3272d02-19cd-4b6d-ac87-fdc822d8e3bb",
+      "experiment_id": "8421e31b-790d-4c13-9f29-d3b9bdc1ee59",
+      "status": "failed",
+      "command": "bash run.sh",
+      "commit_sha": "a07f336687211ec207ad8ec27285a3196a612da4",
+      "created_at": 1792986875498,
+      "ended_at": 1792987133744
+    },
+    {
+      "id": "91132654-801e-4d65-af63-84e014955d15",
+      "experiment_id": "8421e31b-790d-4c13-9f29-d3b9bdc1ee59",
+      "status": "done",
+      "command": "bash run.sh",
+      "commit_sha": "ed1ab38328eb9d088d785f90d4f96b99d95712e3",
+      "created_at": 1792987168330,
+      "ended_at": 1792988577118
+    },
+    {
+      "id": "adf173dc-4754-4383-8016-3d57cbd3fb11",
+      "experiment_id": "b64f3a0f-3bb5-4e17-95c1-3fff9342a6a9",
+      "status": "done",
+      "command": "bash run.sh",
+      "commit_sha": "7a62af907462847097a9ce4cf05921af404f6776",
+      "created_at": 1792996210363,
+      "ended_at": 1792996290454
+    }
+  ],
+  "original_training_source": "d4c1a31c2952f8d933ce035a1cab04417f46cb76",
+  "original_finalized_serving_source": "38fe110e5a8d17a7bfb48ac78fe12e425da8deeb",
+  "observed_live_scores": {
+    "incumbent": {
+      "MA-Kendall's \u03c4": 0.5775,
+      "MA-MAE": 0.6365,
+      "MA-R\u00b2": 0.6171,
+      "MA-ST-RAE": 0.4425,
+      "MA-Spearman's \u03c1": 0.7546,
+      "Rank": 24
+    },
+    "H6": {
+      "MA-Kendall's \u03c4": 0.5698,
+      "MA-MAE": 0.6479,
+      "MA-R\u00b2": 0.6044,
+      "MA-ST-RAE": 0.4616,
+      "MA-Spearman's \u03c1": 0.7482,
+      "Rank": 38
+    },
+    "corrected_native_alone": "not submitted/scored; outcome unknown"
+  },
+  "files": {
+    "per_molecule_prediction_drift.csv": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/per_molecule_prediction_drift.csv",
+      "sha256": "cdaa88f22649927706309cfb41ab66266022db1f3fbfb0f89ba08cb3171c49da",
+      "bytes": 2221689
+    },
+    "placement_path_decomposition.csv": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/placement_path_decomposition.csv",
+      "sha256": "096c77c3138b515e979c1b59f5c3f4725d22d5e85c8c69808ab77cc40e1c8753",
+      "bytes": 3287
+    },
+    "unlabeled_prediction_drift.csv": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/unlabeled_prediction_drift.csv",
+      "sha256": "d7c6b8543f00280068cfb94796baea366f1a7d4f8b3d669ae1d436d44dd5b435",
+      "bytes": 6053
+    },
+    "checkpoint_reuse.csv": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/checkpoint_reuse.csv",
+      "sha256": "fc50649a4a660f5e1db7b9e732131db7abb40038fea14d8d25b773b47630d0c0",
+      "bytes": 603
+    },
+    "prediction_and_placement_statistics.csv": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/prediction_and_placement_statistics.csv",
+      "sha256": "49e5fa4aaaed162572555d4a17cddeafe8077196fa76767928c9ffc2ec541164",
+      "bytes": 2257
+    },
+    "native_component_drift.csv": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/native_component_drift.csv",
+      "sha256": "34b653ee7811e5092c603c13796ae0f36996e584f59920b0aa0fda9764c7e56d",
+      "bytes": 1798
+    },
+    "strict_inner_exclusion_label_support.csv": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/strict_inner_exclusion_label_support.csv",
+      "sha256": "e6809c92e4b446acc772d709a4eb7f9602ea2959b44cd59a9772fcf144e4d60f",
+      "bytes": 6004
+    }
+  }
+}

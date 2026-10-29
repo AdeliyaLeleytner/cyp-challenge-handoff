@@ -1,0 +1,16 @@
+{
+  "consultation_id": "20261023T232552Z-aa1b8c3e",
+  "exit_code": 0,
+  "requested_model": "claude-fable-5",
+  "actual_primary_model": "claude-opus-5",
+  "automatic_fallback_used": true,
+  "recommendation": "One authorized submission after full fits; inspect weights, raw input bridge, and candidate/reference TEST shifts. Describe reconstruction comparison and uncertainty.",
+  "codex_verified": [
+    "Gate numerical condition holds on both cohorts and seeds.",
+    "Raw oof.csv and test_raw.csv are used directly by final_ensemble, with reconstruction and hashes; no test_calibrated bridge.",
+    "Certificate hash binds gate manifest, which binds exact recipe SHA.",
+    "Agent audit of all four gated fits: own750 both seeds calibration only; briford529 both seeds component reweighting plus intercept. Advisor calibration-only interpretation was limited to one inspected fit.",
+    "Qualified recipe freezes the crossfit selection procedure over L1 grid, not its fitted lambda; own750 selected .01 and briford529 selected 0 already in passed gate. Full-TRAIN refit can legitimately select within same grid."
+  ],
+  "codex_decision": "Proceed with gate-bound refit and one authorized submission after completed source/evidence/schema checks. No invented coefficient or significance cutoffs. Verify fitted TEST deltas and disclose them; no claim of beating historical public score until actual official evaluation."
+}

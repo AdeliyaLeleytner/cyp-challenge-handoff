@@ -1,0 +1,139 @@
+{
+  "criterion_mode": "exact_strae_v1",
+  "fit_statistics": {
+    "primary_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "primary_counts": [
+      1488,
+      919,
+      1040,
+      1019
+    ],
+    "primary_means": [
+      4.071445174857526,
+      4.583585655267683,
+      4.808162426046153,
+      4.953186315696762
+    ],
+    "primary_denominators": [
+      786.9861077350486,
+      286.8650346599335,
+      437.1589575523077,
+      499.99094570720314
+    ],
+    "mode": "exact_strae_v1",
+    "n_fit_rows": 3324,
+    "n_targets": 8,
+    "target_counts": [
+      1488,
+      919,
+      1040,
+      1019,
+      3085,
+      3085,
+      3085,
+      3085
+    ],
+    "auxiliary_indices": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "native_task_weights": [
+      0.740429699420929,
+      1.18834388256073,
+      1.0034117698669434,
+      1.067814588546753,
+      0.29999998211860657,
+      0.29999998211860657,
+      0.29999998211860657,
+      0.29999998211860657
+    ],
+    "primary_native_weight_sum": 3.9999999403953552,
+    "auxiliary_head_coefficients": [
+      0.07499999664723868,
+      0.07499999664723868,
+      0.07499999664723868,
+      0.07499999664723868
+    ],
+    "auxiliary_total_nominal_budget": 0.2999999865889547,
+    "scaler_mean": [
+      4.071445169548194,
+      4.583585656895601,
+      4.808162431189647,
+      4.953186311478469,
+      -1.9119354721776292,
+      -0.6892509981317123,
+      -0.40845360254674146,
+      -0.6508357748079809
+    ],
+    "scaler_scale": [
+      1.0997854986875144,
+      0.7771897102967857,
+      0.9110193618213801,
+      1.0274003167932118,
+      1.361125478499332,
+      0.4626020103341901,
+      1.1107497680428173,
+      0.6808046313919782
+    ],
+    "per_entry_coefficients": [
+      0.0003493662365440937,
+      0.0006773130360921397,
+      0.0005209886164304281,
+      0.0005137094609483498,
+      2.431118205745176e-05,
+      2.431118205745176e-05,
+      2.431118205745176e-05,
+      2.431118205745176e-05
+    ],
+    "normalization": "N_fit / B; primary sigma/(J*D_fit); auxiliary native_weight/(sum_primary_native_weights*n_aux_fit)",
+    "qualification": "Preserves nominal native auxiliary head ratios, not native realized label-frequency weighting. Test denominators are unknown."
+  },
+  "validation_statistics": {
+    "primary_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "primary_counts": [
+      332,
+      215,
+      303,
+      243
+    ],
+    "primary_means": [
+      4.05955122979518,
+      4.591683156632558,
+      4.709781320594059,
+      4.9788539241399175
+    ],
+    "primary_denominators": [
+      169.83859360372293,
+      67.91611792449302,
+      122.26417696178217,
+      108.43202602058437
+    ]
+  },
+  "checkpoint_monitor": "val_primary_strae",
+  "bounds_scaling": "same fit-center mean and scale for central/lower/upper; no bound-specific fitting",
+  "native_architecture_and_optimizer_preserved": true,
+  "explicit_changes": [
+    "primary exact interval macro objective",
+    "per-auxiliary-head observed-label mean and nominal author budget",
+    "uniform-row unbiased minibatch estimator",
+    "primary-only validation checkpoint selection",
+    "explicit FP32 validation numerical repair",
+    "explicit configurable training precision"
+  ],
+  "training_precision": "bf16-mixed",
+  "validation_precision": "explicit_fp32",
+  "precision": "bf16-mixed training forward; explicit FP32 validation forward and differentiable loss; float64 full-validation official arithmetic",
+  "numerical_repair_note": "FP32 validation matches serving precision. BF16 training, when explicitly selected, is a separate numerical precision repair; no proof of scientific improvement or stability is inferred before replay."
+}

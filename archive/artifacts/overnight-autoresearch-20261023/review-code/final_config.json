@@ -1,0 +1,45 @@
+{
+  "asset_root": "/workspace/cyp-night/assets",
+  "models": [
+    {
+      "name": "mtaux8",
+      "kind": "neural",
+      "component": "mtaux8",
+      "include_official_side_rows": true
+    },
+    {
+      "name": "2d6single",
+      "kind": "neural",
+      "component": "2d6single",
+      "include_official_side_rows": true
+    },
+    {
+      "name": "union18",
+      "kind": "neural",
+      "component": "union18",
+      "include_official_side_rows": true
+    },
+    {
+      "name": "2d6isoform6",
+      "kind": "neural",
+      "component": "2d6isoform6",
+      "include_official_side_rows": true
+    }
+  ],
+  "output_dir": "/workspace/cyp-night/results/FINAL_reference_seed42",
+  "seeds": [
+    42
+  ],
+  "gpus": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "reference_members": [
+    "union18",
+    "mtaux8",
+    "2d6isoform6",
+    "2d6single"
+  ]
+}

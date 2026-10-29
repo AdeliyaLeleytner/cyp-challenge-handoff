@@ -1,0 +1,20 @@
+OpenSSH_9.9p2, LibreSSL 3.3.6
+debug1: Reading configuration data /Users/adeliyaleleytner/.ssh/config
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 21: include /etc/ssh/ssh_config.d/* matched no files
+debug1: /etc/ssh/ssh_config line 54: Applying options for *
+debug2: resolve_canonicalize: hostname 122.51.254.66 is address
+debug1: Authenticator provider $SSH_SK_PROVIDER did not resolve; disabling
+debug3: channel_clear_timeouts: clearing
+debug3: ssh_connect_direct: entering
+debug1: Connecting to 122.51.254.66 [122.51.254.66] port 29010.
+debug3: set_sock_tos: set socket 3 IP_TOS 0x48
+debug2: fd 3 setting O_NONBLOCK
+debug1: fd 3 clearing O_NONBLOCK
+debug1: Connection established.
+debug3: timeout: 12000 ms remain after connect
+debug1: identity file /Users/adeliyaleleytner/.ssh/id_ed25519 type 3
+debug1: identity file /Users/adeliyaleleytner/.ssh/id_ed25519-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_9.9
+Connection timed out during banner exchange
+Connection to 122.51.254.66 port 29010 timed out

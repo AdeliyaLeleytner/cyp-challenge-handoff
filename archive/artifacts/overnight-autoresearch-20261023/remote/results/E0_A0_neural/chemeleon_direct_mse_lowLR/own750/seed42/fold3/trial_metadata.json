@@ -1,0 +1,130 @@
+{
+  "component": {
+    "component": "direct",
+    "source_commits": {
+      "union18": "971f6a7f24d86e59bab219347c3e14c006ae4e35",
+      "framework_and_specialists": "8c72c7559471febaf0962fd551b4eaab8db3a136"
+    },
+    "supplied_official_rows": 3324,
+    "primary_fraction": null,
+    "primary_fraction_note": "Historical source has no primary_fraction sampler parameter.",
+    "deviations": [
+      "Fixed caller official folds with external auxiliary rows in every fit, rather than author CV over each union.",
+      "Task weights recomputed on the supplied training partition, rather than full-source counts.",
+      "Public CSVs are current pinned snapshots; historical trained model/OOF artifacts are unavailable.",
+      "External structures use normalized neutral nonstereo parents and exclude all provided official train/test parents."
+    ],
+    "train_rows": 3324,
+    "dropped_all_unknown_rows": 0,
+    "target_counts": {
+      "cyp3a4_pic50_direct_inhibition": 1455,
+      "cyp2c9_pic50_direct_inhibition": 895,
+      "cyp2d6_pic50_direct_inhibition": 1102,
+      "cyp1a2_pic50_direct_inhibition": 1012
+    },
+    "task_weights": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "weighted_label_mass": 4464.0,
+    "target_order": [
+      "cyp3a4_pic50_direct_inhibition",
+      "cyp2c9_pic50_direct_inhibition",
+      "cyp2d6_pic50_direct_inhibition",
+      "cyp1a2_pic50_direct_inhibition"
+    ]
+  },
+  "initialization": {
+    "initialization": "chemeleon",
+    "checkpoint_sha256": "c376624d3407204e780a0ed13a9ac097cc9bb1c13ef89cdbc633c1715c183651",
+    "checkpoint_path": "/workspace/cyp-night/assets/weights/chemeleon_mp.pt",
+    "encoder_hyperparameters": {
+      "d_v": 72,
+      "d_e": 14,
+      "d_h": 2048,
+      "bias": false,
+      "depth": 6,
+      "dropout": 0.0,
+      "activation": "relu",
+      "undirected": false,
+      "d_vd": null,
+      "V_d_transform": null,
+      "graph_transform": null
+    }
+  },
+  "effective_config": {
+    "hidden_dim": 700,
+    "depth": 5,
+    "dropout": 0.0,
+    "ffn_hidden_dim": 300,
+    "ffn_num_layers": 1,
+    "batch_norm": false,
+    "aggregation": "mean",
+    "loss": "mse",
+    "max_epochs": 100,
+    "patience": 15,
+    "batch_size": 64,
+    "warmup_epochs": 2,
+    "init_lr": 1e-05,
+    "max_lr": 0.0001,
+    "final_lr": 1e-05,
+    "seed": 42,
+    "min_epochs": 20,
+    "kind": "neural",
+    "initialization": "chemeleon",
+    "component": "direct",
+    "name": "chemeleon_direct_mse_lowLR",
+    "fold_index": 3,
+    "torch_num_threads": 4,
+    "num_workers": 0
+  },
+  "excluded_parent_keys_count": 5649,
+  "target_order": [
+    "cyp3a4_pic50_direct_inhibition",
+    "cyp2c9_pic50_direct_inhibition",
+    "cyp2d6_pic50_direct_inhibition",
+    "cyp1a2_pic50_direct_inhibition"
+  ],
+  "output_mapping": {
+    "cyp3a4_pic50_direct_inhibition": "CYP3A4_pIC50_direct_inhibition",
+    "cyp2c9_pic50_direct_inhibition": "CYP2C9_pIC50_direct_inhibition",
+    "cyp2d6_pic50_direct_inhibition": "CYP2D6_pIC50_direct_inhibition",
+    "cyp1a2_pic50_direct_inhibition": "CYP1A2_pIC50_direct_inhibition"
+  },
+  "supplied_train_id_sha256": "c849dd6881141a1896099beea7e8ac549f5edcf4690f91daafe74f257ebd6f76",
+  "fit_id_sha256": "c849dd6881141a1896099beea7e8ac549f5edcf4690f91daafe74f257ebd6f76",
+  "validation_id_sha256": "0ee97faea4d047dbc71cccd169d1ab085e1bc0dbb0eddd475a00718450e8d9b0",
+  "query_id_sha256": "ac68b5042934eae15e9d4cd022f26a6435142a205e15a366931b84ecef064d9b",
+  "validation_query_overlap": 831,
+  "query_labels_used": false,
+  "scaler_mean": [
+    4.085179071655798,
+    4.589854476971333,
+    4.774910502014056,
+    4.953083449201621
+  ],
+  "scaler_scale": [
+    1.088115513435751,
+    0.778721404123184,
+    0.9257803735140159,
+    1.0202796292185694
+  ],
+  "accelerator": "gpu",
+  "precision": "16-mixed",
+  "seed": 45,
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "chemprop": "2.2.1",
+    "lightning": "2.5.5",
+    "rdkit": "2026.9.1",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3"
+  },
+  "best_epoch": 7,
+  "best_val_loss": 0.5761750340461731,
+  "elapsed_epochs": 23,
+  "best_checkpoint": "/workspace/cyp-night/results/E0_A0_neural/chemeleon_direct_mse_lowLR/own750/seed42/fold3/checkpoints/best.ckpt",
+  "trainable_parameters": 9330144
+}

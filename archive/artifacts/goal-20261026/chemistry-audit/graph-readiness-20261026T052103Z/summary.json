@@ -1,0 +1,39 @@
+{
+  "snapshot_utc": "2026-10-26T05:19:17.877046+00:00",
+  "snapshot_rows": 30860,
+  "requested_pool_size": 32421,
+  "pending_at_snapshot": 1561,
+  "final_full_audit_claimed": false,
+  "stable_raw_and_features_sha_verified": true,
+  "raw_sha256": "389fe7f8e54c2006a68437327a63bb6b05f15452253fa426e3fa31280d3e8752",
+  "features_sha256": "cc5d624a02aba87b2f0abe00793430051919d5dce1e160154a594522e8fb1578",
+  "policy_sha256": "b9d1562a710e5e0d112cf8336240774ad87bef942937a5e5f587865da95fb78d",
+  "binding_sha256": "af5b68ab851423403bf6e89779a57f8cc88f3fc5eb040070a72c40584f0386aa",
+  "map_sha256": "7849899d79cb16d17deac9ed854c000383275c75bac5ae61d5a5c9355e95f231",
+  "cohort_definition_sha256": "eee1078503c7793f8f1c1fcc788dd4db9225a6d682202930f9bb972bbe6bd82a",
+  "status_counts": {
+    "numeric_returned": 30857,
+    "numeric_returned_unresolved_service_structure": 1,
+    "service_rejected": 2
+  },
+  "strict_relation_counts": {
+    "same_isomeric_graph": 30843,
+    "strict_stereo_charge_protonation": 10,
+    "strict_stereo_functional_normalization": 3,
+    "exact_reviewed_exception": 1,
+    "not_predicted": 2,
+    "unresolved_difference": 1
+  },
+  "literal_smiles_differences": 53,
+  "request_exact_isomeric_collision_groups": 0,
+  "service_exact_isomeric_collision_groups": 0,
+  "unlisted_gate_issue_rows": 1,
+  "chemistry_eligible_rows": 30856,
+  "official_eligible_counts": {
+    "official-train.csv": 4905,
+    "official-test.csv": 750
+  },
+  "rows_preserved_no_merging": true,
+  "no_api_requests_models_rentals": true,
+  "action_before_remaining_acquisition": "Review exact saved issues/collisions; no automatic merge/approval."
+}

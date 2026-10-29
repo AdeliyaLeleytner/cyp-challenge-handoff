@@ -1,0 +1,33 @@
+{
+  "actual_test_scored": false,
+  "aggregation": "Equal weight among available member predictions for each target",
+  "caveats": [
+    "Neural OOF rows participated in epoch selection; not independent of that selection.",
+    "Each OOF row uses one fold model; actual TEST uses five-fold averaging, so prediction variance can differ.",
+    "Development calibration selection scores are not independent estimates of final TEST performance."
+  ],
+  "members": [
+    "union18",
+    "mtaux8",
+    "2d6isoform6",
+    "2d6single"
+  ],
+  "model": "briford_reference",
+  "output_sha256": {
+    "oof.csv": "744e5d97bb009d12fdfee51366131ab3f79f11881a3f8d79a346ea34de225c7c",
+    "test_calibrated.csv": "1d6fc2ba3506b77faacfffb8e0f5d89698e57b1df46ef353b534c3aca18d9444",
+    "test_placement_oof_lp.csv": "1d6fc2ba3506b77faacfffb8e0f5d89698e57b1df46ef353b534c3aca18d9444",
+    "test_placement_oof_r2.csv": "fb098e6d70a1e4ef0f6243c862cb2779341094a25a9325b984f3868b1f7774c3",
+    "test_placement_raw.csv": "914d775f507d499198daed3453dfba24cf3402e832973ce50b5c04c002afd0b5",
+    "test_raw.csv": "914d775f507d499198daed3453dfba24cf3402e832973ce50b5c04c002afd0b5"
+  },
+  "run_sha256": "6e040739fb6b40bba6da7cdef99a8d2bcbcd5bfa5bf19f86e7e3499ec9409289",
+  "seed": 42,
+  "selected_calibration": "oof_lp",
+  "targets": [
+    "CYP1A2_pIC50_direct_inhibition",
+    "CYP2C9_pIC50_direct_inhibition",
+    "CYP2D6_pIC50_direct_inhibition",
+    "CYP3A4_pIC50_direct_inhibition"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "status": "complete",
+  "cell": "mae_uniform",
+  "fold": 0,
+  "seconds": 37.432493448257446,
+  "best_epoch": 2,
+  "epochs_run": 3,
+  "raw_strae": 0.6610574594310306,
+  "raw_per_target_strae": [
+    0.7571120896615129,
+    0.5408582260395306,
+    0.8319043552159986,
+    0.5143551668070805
+  ],
+  "test_not_selection": true,
+  "served_metrics": "not computed in runtime smoke; raw and served must remain separate",
+  "initial_sha256": "60be6e96b74693357e24736d33328afe27e51dbbd5b692d0f5b2cff54a52a146",
+  "prediction_sha256": "805874fd64be8a7dfa4c72f0cc486b66a503468b43bcb742ba3230eefb4c851e",
+  "packages": {
+    "torch": "2.6.0+cu124",
+    "chemprop": "2.2.1",
+    "lightning": "2.5.5",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.16.2",
+    "scikit-learn": "1.7.2",
+    "rdkit": "2026.9.1"
+  }
+}

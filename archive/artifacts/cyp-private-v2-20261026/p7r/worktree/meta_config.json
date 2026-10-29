@@ -1,0 +1,139 @@
+{
+  "asset_root": "/workspace/cyp-night/assets",
+  "output_dir": "/workspace/cyp-night/results/M1_reference_reweight",
+  "cohorts": [
+    "own750",
+    "briford529"
+  ],
+  "seeds": [
+    42
+  ],
+  "methods": [
+    {
+      "name": "reference_reweight_simplex",
+      "type": "stack",
+      "models": {
+        "briford_reference": "/workspace/cyp-night/results/R0_reference_seed42/briford_reference/{cohort}/seed{seed}",
+        "union18": "/workspace/cyp-night/results/R0_reference_seed42/union18/{cohort}/seed{seed}",
+        "mtaux8": "/workspace/cyp-night/results/R0_reference_seed42/mtaux8/{cohort}/seed{seed}",
+        "specialist_single_view": "/workspace/cyp-night/results/M1_reference_views/specialist_single_view/{cohort}/seed{seed}",
+        "specialist_aux_view": "/workspace/cyp-night/results/M1_reference_views/specialist_aux_view/{cohort}/seed{seed}"
+      },
+      "config": {
+        "model_names": [
+          "briford_reference",
+          "union18",
+          "mtaux8",
+          "specialist_single_view",
+          "specialist_aux_view"
+        ],
+        "reference_model": "briford_reference",
+        "weight_constraint": "simplex"
+      }
+    },
+    {
+      "name": "reference_reweight_affine",
+      "type": "stack",
+      "models": {
+        "briford_reference": "/workspace/cyp-night/results/R0_reference_seed42/briford_reference/{cohort}/seed{seed}",
+        "union18": "/workspace/cyp-night/results/R0_reference_seed42/union18/{cohort}/seed{seed}",
+        "mtaux8": "/workspace/cyp-night/results/R0_reference_seed42/mtaux8/{cohort}/seed{seed}",
+        "specialist_single_view": "/workspace/cyp-night/results/M1_reference_views/specialist_single_view/{cohort}/seed{seed}",
+        "specialist_aux_view": "/workspace/cyp-night/results/M1_reference_views/specialist_aux_view/{cohort}/seed{seed}"
+      },
+      "config": {
+        "model_names": [
+          "briford_reference",
+          "union18",
+          "mtaux8",
+          "specialist_single_view",
+          "specialist_aux_view"
+        ],
+        "reference_model": "briford_reference",
+        "weight_constraint": "positive_affine"
+      }
+    },
+    {
+      "name": "reference_plus_tox21_affine",
+      "type": "stack",
+      "models": {
+        "briford_reference": "/workspace/cyp-night/results/R0_reference_seed42/briford_reference/{cohort}/seed{seed}",
+        "union18": "/workspace/cyp-night/results/R0_reference_seed42/union18/{cohort}/seed{seed}",
+        "mtaux8": "/workspace/cyp-night/results/R0_reference_seed42/mtaux8/{cohort}/seed{seed}",
+        "specialist_single_view": "/workspace/cyp-night/results/M1_reference_views/specialist_single_view/{cohort}/seed{seed}",
+        "specialist_aux_view": "/workspace/cyp-night/results/M1_reference_views/specialist_aux_view/{cohort}/seed{seed}",
+        "chemeleon_official_plus_tox21": "/workspace/cyp-night/results/D0_D1_public_r1/chemeleon_official_plus_tox21/{cohort}/seed{seed}"
+      },
+      "config": {
+        "model_names": [
+          "briford_reference",
+          "union18",
+          "mtaux8",
+          "specialist_single_view",
+          "specialist_aux_view",
+          "chemeleon_official_plus_tox21"
+        ],
+        "reference_model": "briford_reference",
+        "weight_constraint": "positive_affine"
+      }
+    },
+    {
+      "name": "reference_plus_clean23_affine",
+      "type": "stack",
+      "models": {
+        "briford_reference": "/workspace/cyp-night/results/R0_reference_seed42/briford_reference/{cohort}/seed{seed}",
+        "union18": "/workspace/cyp-night/results/R0_reference_seed42/union18/{cohort}/seed{seed}",
+        "mtaux8": "/workspace/cyp-night/results/R0_reference_seed42/mtaux8/{cohort}/seed{seed}",
+        "specialist_single_view": "/workspace/cyp-night/results/M1_reference_views/specialist_single_view/{cohort}/seed{seed}",
+        "specialist_aux_view": "/workspace/cyp-night/results/M1_reference_views/specialist_aux_view/{cohort}/seed{seed}",
+        "extratrees_morgan_fcfp": "/workspace/cyp-night/results/B0_G0_structure/extratrees_morgan_fcfp/{cohort}/seed{seed}",
+        "catboost_descriptors_mae": "/workspace/cyp-night/results/B0_G0_structure/catboost_descriptors_mae/{cohort}/seed{seed}",
+        "krr_count_a0.1": "/workspace/cyp-night/results/B0_G0_structure/krr_count_a0.1/{cohort}/seed{seed}",
+        "krr_count_a1.0": "/workspace/cyp-night/results/B0_G0_structure/krr_count_a1.0/{cohort}/seed{seed}",
+        "krr_count_a10.0": "/workspace/cyp-night/results/B0_G0_structure/krr_count_a10.0/{cohort}/seed{seed}",
+        "extratrees_path_atompair": "/workspace/cyp-night/results/B0_G0_structure/extratrees_path_atompair/{cohort}/seed{seed}",
+        "tabicl_foundation_pca50": "/workspace/cyp-night/results/C0_TabICL/tabicl_foundation_pca50/{cohort}/seed{seed}",
+        "tabicl_foundation_pca100": "/workspace/cyp-night/results/C0_TabICL/tabicl_foundation_pca100/{cohort}/seed{seed}",
+        "tabicl_rdkit_pca100": "/workspace/cyp-night/results/C0_TabICL/tabicl_rdkit_pca100/{cohort}/seed{seed}",
+        "tabicl_morgan_pca100": "/workspace/cyp-night/results/C0_TabICL/tabicl_morgan_pca100/{cohort}/seed{seed}",
+        "tabicl_molformer_pca100": "/workspace/cyp-night/results/C1_C2_TFM/tabicl_molformer_pca100/{cohort}/seed{seed}",
+        "tabpfn_chemeleon_foundation_pca50": "/workspace/cyp-night/results/C1_C2_TFM/tabpfn_chemeleon_foundation_pca50/{cohort}/seed{seed}",
+        "tabpfn_chemeleon_foundation_pca100": "/workspace/cyp-night/results/C1_C2_TFM/tabpfn_chemeleon_foundation_pca100/{cohort}/seed{seed}",
+        "tabpfn_molformer_pca100": "/workspace/cyp-night/results/C1_C2_TFM/tabpfn_molformer_pca100/{cohort}/seed{seed}",
+        "tabpfn_morgan_rdkit_pca100": "/workspace/cyp-night/results/C1_C2_TFM/tabpfn_morgan_rdkit_pca100/{cohort}/seed{seed}",
+        "chemeleon_official_plus_tox21": "/workspace/cyp-night/results/D0_D1_public_r1/chemeleon_official_plus_tox21/{cohort}/seed{seed}",
+        "chemeleon_official_plus_bindingdb": "/workspace/cyp-night/results/D0_D1_public_r1/chemeleon_official_plus_bindingdb/{cohort}/seed{seed}",
+        "chemeleon_official_plus_both": "/workspace/cyp-night/results/D0_D1_public_r1/chemeleon_official_plus_both/{cohort}/seed{seed}"
+      },
+      "config": {
+        "model_names": [
+          "briford_reference",
+          "union18",
+          "mtaux8",
+          "specialist_single_view",
+          "specialist_aux_view",
+          "extratrees_morgan_fcfp",
+          "catboost_descriptors_mae",
+          "krr_count_a0.1",
+          "krr_count_a1.0",
+          "krr_count_a10.0",
+          "extratrees_path_atompair",
+          "tabicl_foundation_pca50",
+          "tabicl_foundation_pca100",
+          "tabicl_rdkit_pca100",
+          "tabicl_morgan_pca100",
+          "tabicl_molformer_pca100",
+          "tabpfn_chemeleon_foundation_pca50",
+          "tabpfn_chemeleon_foundation_pca100",
+          "tabpfn_molformer_pca100",
+          "tabpfn_morgan_rdkit_pca100",
+          "chemeleon_official_plus_tox21",
+          "chemeleon_official_plus_bindingdb",
+          "chemeleon_official_plus_both"
+        ],
+        "reference_model": "briford_reference",
+        "weight_constraint": "positive_affine"
+      }
+    }
+  ]
+}

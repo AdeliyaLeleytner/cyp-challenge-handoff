@@ -1,0 +1,472 @@
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="/rwd/bind/bdbstyles.css" />
+  <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C5ZFVSV64Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C5ZFVSV64Q');
+</script>
+    <meta name="author" content="Tiqing Liu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Biomolecule Binding Database" />
+    <meta name="keywords" content="chemical biology, medicinal chemistry, docking, ligand, affinity, free energy, virtual screening, computational chemistry, validation, binding affinity, binding free energy, drug design, drug discovery, article, publication, pharmaceutical, ucsd, target, small molecule, compound, chemical, download, SAR, structure activity relationship, docking, pubchem, chembl, enzyme inhibition" />
+    <meta name="robots" content="index,follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Info</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/9fa68aceeb.js" crossorigin="anonymous"></script>
+    <script>
+      let ki_max = '40000';
+      let ki_pairs = '-24.00 0 -23.75 0 -23.50 0 -23.25 0 -23.00 0 -22.75 0 -22.50 0 -22.25 0 -22.00 0 -21.75 0 -21.50 0 -21.25 0 -21.00 0 -20.75 1 -20.50 0 -20.25 0 -20.00 0 -19.75 1 -19.50 1 -19.25 2 -19.00 0 -18.75 0 -18.50 4 -18.25 1 -18.00 3 -17.75 5 -17.50 6 -17.25 2 -17.00 5 -16.75 3 -16.50 14 -16.25 19 -16.00 18 -15.75 30 -15.50 43 -15.25 317 -15.00 181 -14.75 223 -14.50 284 -14.25 638 -14.00 574 -13.75 1908 -13.50 1533 -13.25 1846 -13.00 3135 -12.75 3425 -12.50 6838 -12.25 6956 -12.00 8545 -11.75 13419 -11.50 12639 -11.25 17195 -11.00 19097 -10.75 18590 -10.50 25014 -10.25 24434 -10.00 28234 -9.75 27766 -9.50 26340 -9.25 31214 -9.00 26665 -8.75 30532 -8.50 25507 -8.25 24794 -8.00 29728 -7.75 22513 -7.50 29241 -7.25 19388 -7.00 18332 -6.75 19191 -6.50 13489 -6.25 34783 -6.00 9674 -5.75 6798 -5.50 7161 -5.25 3608 -5.00 7642 -4.75 2382 -4.50 1814 -4.25 1636 -4.00 1090 -3.75 1933 -3.50 652 -3.25 461 -3.00 490 -2.75 348 -2.50 483 -2.25 258 -2.00 274 -1.75 257 -1.50 157 -1.25 147 -1.00 190 -0.75 85 -0.50 38 -0.25 31 0.00 0'.split( ' ' );
+      let ic50_max = '200000';
+      let ic50_pairs = '-24.00 0 -23.75 0 -23.50 0 -23.25 0 -23.00 0 -22.75 1 -22.50 0 -22.25 0 -22.00 1 -21.75 0 -21.50 1 -21.25 0 -21.00 0 -20.75 0 -20.50 36 -20.25 0 -20.00 0 -19.75 0 -19.50 0 -19.25 0 -19.00 0 -18.75 0 -18.50 0 -18.25 1 -18.00 0 -17.75 1 -17.50 1 -17.25 7 -17.00 0 -16.75 5 -16.50 98 -16.25 201 -16.00 30 -15.75 34 -15.50 67 -15.25 32 -15.00 146 -14.75 226 -14.50 139 -14.25 347 -14.00 642 -13.75 975 -13.50 1535 -13.25 2188 -13.00 4274 -12.75 5690 -12.50 10678 -12.25 11892 -12.00 16694 -11.75 25363 -11.50 26352 -11.25 44306 -11.00 49163 -10.75 48302 -10.50 73699 -10.25 62744 -10.00 107811 -9.75 90784 -9.50 82445 -9.25 117423 -9.00 82302 -8.75 157219 -8.50 88775 -8.25 85352 -8.00 120917 -7.75 71833 -7.50 109059 -7.25 73582 -7.00 71049 -6.75 85941 -6.50 58047 -6.25 129103 -6.00 61098 -5.75 53060 -5.50 60749 -5.25 28314 -5.00 54963 -4.75 12648 -4.50 7513 -4.25 7167 -4.00 2851 -3.75 6275 -3.50 1491 -3.25 851 -3.00 857 -2.75 625 -2.50 1773 -2.25 288 -2.00 247 -1.75 241 -1.50 161 -1.25 260 -1.00 132 -0.75 117 -0.50 145 -0.25 102 0.00 0'.split( ' ' );
+      let itc_max = '30';
+      let itc_pairs = '-24.00 5 -23.75 7 -23.50 9 -23.25 7 -23.00 10 -22.75 10 -22.50 6 -22.25 8 -22.00 9 -21.75 10 -21.50 7 -21.25 14 -21.00 8 -20.75 8 -20.50 6 -20.25 6 -20.00 3 -19.75 4 -19.50 18 -19.25 13 -19.00 9 -18.75 4 -18.50 4 -18.25 5 -18.00 4 -17.75 4 -17.50 6 -17.25 5 -17.00 7 -16.75 13 -16.50 19 -16.25 12 -16.00 8 -15.75 6 -15.50 5 -15.25 9 -15.00 15 -14.75 12 -14.50 10 -14.25 20 -14.00 9 -13.75 5 -13.50 5 -13.25 10 -13.00 20 -12.75 11 -12.50 8 -12.25 11 -12.00 13 -11.75 11 -11.50 17 -11.25 8 -11.00 22 -10.75 20 -10.50 24 -10.25 13 -10.00 14 -9.75 6 -9.50 10 -9.25 10 -9.00 7 -8.75 10 -8.50 10 -8.25 6 -8.00 13 -7.75 6 -7.50 7 -7.25 10 -7.00 7 -6.75 9 -6.50 9 -6.25 8 -6.00 5 -5.75 6 -5.50 5 -5.25 4 -5.00 4 -4.75 0 -4.50 1 -4.25 1 -4.00 2 -3.75 3 -3.50 1 -3.25 1 -3.00 1 -2.75 0 -2.50 1 -2.25 0 -2.00 0 -1.75 0 -1.50 0 -1.25 0 -1.00 0 -0.75 0 -0.50 0 -0.25 0 0.00 0'.split( ' ' );
+      $(document).ready(function () {
+        if( ! $("outline > ul").length ) {
+          $("#oldata").css("display","none");
+        }
+        $('#content > aside > ul > li > a').click(function(){
+          if ($(this).attr('class') != 'active'){
+            $('#content aside ul li ul').slideUp();
+            $(this).next().slideToggle();
+            $('#content aside ul li a').removeClass('active');
+            $(this).addClass('active');
+          }
+          else {
+            $('#content aside ul li ul').slideUp();
+            $('#content aside ul li a').removeClass('active');
+          }
+        });
+        $('#hamb').click(function(){
+          cacss =$('#content aside').css( "display" );
+          if( cacss == 'none' ) {
+            $('#content aside').css( "display", "block" );
+          }
+          else $('#content aside').css( "display", "none" );
+        });
+        draw();
+      });
+      function draw() {
+        var canvas = document.getElementById( "BDBhist" );
+        var ctx = canvas.getContext("2d");
+        // Draw three squares
+        ctx.font = '12px seris';
+        ctx.strokeRect(  28,6,160,160);
+        ctx.strokeRect( 224,6,160,160);
+        ctx.fillText(  'IC50', 354, 20 );
+        ctx.strokeRect( 420,6,160,160);
+        ctx.fillText(  'ITC', 554, 20 );
+        // Ki x scale
+        ctx.font = '12px seris';
+        ctx.fillText(  'Ki', 170, 20 );
+        ctx.font = '10px seris';
+        ctx.fillText( '-24', 22, 176 );
+        ctx.fillText( '-18', 62, 176 );
+        ctx.moveTo( 68, 166 );
+        ctx.lineTo( 68, 163 );
+        ctx.fillText( '-12', 102, 176 );
+        ctx.moveTo( 108, 166 );
+        ctx.lineTo( 108, 163 );
+        ctx.fillText( '-6', 142, 176 );
+        ctx.moveTo( 148, 166 );
+        ctx.lineTo( 148, 163 );
+        ctx.fillText( '0', 182, 176 );
+        ctx.stroke();
+        ctx.fillText( 'RTln(Ki/M) (Kcal/mol)', 63, 188 ); 
+        // Ki y scale
+        let tinu = ki_max / 5;
+        for( let i = 0; i <= 5; i++ ) {
+          let tmp = ki_max - tinu * i;
+          let coor_x = 0;
+          let coor_y = 6 + 32 * i;
+          let coor_Y = coor_y + 4;
+          ctx.fillText( tmp, coor_x, coor_Y );
+          if( i > 0 && i < 5 ) {
+            ctx.moveTo( 28, coor_y ); 
+            ctx.lineTo( 31, coor_y ); 
+          }
+        }
+        ctx.stroke();
+        // ki histograms
+        ctx.fillStyle = 'rgb(0, 0, 200)';
+        let x_width = 0.25 / 24 * 160;
+        for( let i = 0; i < ki_pairs.length; i += 2 ) {
+          let x = ki_pairs[ i ];
+          x = nosition( x, -24, 0, 160 ) + 28;
+          let y = ki_pairs[ i + 1 ];
+          y = nosition( y, 0, ki_max, 160 );
+          let y_width = y;
+          y = 160 - y + 6;
+          ctx.fillRect( x,y,x_width,y_width);
+        }
+        ctx.fillStyle = 'rgb(0, 0, 0)';
+
+        // IC50 x scale
+        ctx.fillText( '-24', 218, 176 );
+        ctx.fillText( '-18', 258, 176 );
+        ctx.moveTo( 264, 166 );
+        ctx.lineTo( 264, 163 );
+        ctx.fillText( '-12', 298, 176 );
+        ctx.moveTo( 304, 166 );
+        ctx.lineTo( 304, 163 );
+        ctx.fillText( '-6', 338, 176 );
+        ctx.moveTo( 344, 166 );
+        ctx.lineTo( 344, 163 );
+        ctx.fillText( '0', 378, 176 );
+        ctx.stroke();
+        ctx.fillText( 'RTln(IC50/M) (Kcal/mol)', 254, 188 ); 
+        // IC50 y scale
+        tinu = ic50_max / 5;
+        for( let i = 0; i <= 5; i++ ) {
+          let tmp = ic50_max - tinu * i;
+          let coor_x = 196;
+          let coor_y = 6 + 32 * i;
+          let coor_Y = coor_y + 4;
+          ctx.fillText( tmp, coor_x, coor_Y );
+          if( i > 0 && i < 5 ) {
+            ctx.moveTo( 224, coor_y ); 
+            ctx.lineTo( 227, coor_y ); 
+          }
+        }
+        ctx.stroke();
+        // ic50 histograms
+        ctx.fillStyle = 'rgb(200, 0, 0)';
+        for( let i = 0; i < ic50_pairs.length; i += 2 ) {
+          let x = ic50_pairs[ i ];
+          x = nosition( x, -24, 0, 160 ) + 224;
+          let y = ic50_pairs[ i + 1 ];
+          y = nosition( y, 0, ic50_max, 160 );
+          let y_width = y;
+          y = 160 - y + 6;
+          ctx.fillRect( x,y,x_width,y_width);
+        }
+        ctx.fillStyle = 'rgb(0, 0, 0)';
+        // ITC x scale
+        ctx.fillText( '-24', 414, 176 );
+        ctx.fillText( '-18', 454, 176 );
+        ctx.moveTo( 460, 166 );
+        ctx.lineTo( 460, 163 );
+        ctx.fillText( '-12', 494, 176 );
+        ctx.moveTo( 500, 166 );
+        ctx.lineTo( 500, 163 );
+        ctx.fillText( '-6', 534, 176 );
+        ctx.moveTo( 540, 166 );
+        ctx.lineTo( 540, 163 );
+        ctx.fillText( '0', 574, 176 );
+        ctx.stroke();
+        ctx.fillText( '\u0394G\u00b0 (Kcal/mol)', 470, 188 ); 
+        // ITC y scale
+        tinu = itc_max / 5;
+        for( let i = 0; i <= 5; i++ ) {
+          let tmp = itc_max - tinu * i;
+          let coor_x = 405;
+          let coor_y = 6 + 32 * i;
+          let coor_Y = coor_y + 4;
+          ctx.fillText( tmp, coor_x, coor_Y );
+          if( i > 0 && i < 5 ) {
+            ctx.moveTo( 420, coor_y ); 
+            ctx.lineTo( 423, coor_y ); 
+          }
+        }
+        ctx.stroke();
+        // itc histograms
+        ctx.fillStyle = 'rgb(0, 200, 0)';
+        for( let i = 0; i < itc_pairs.length; i += 2 ) {
+          let x = itc_pairs[ i ];
+          x = nosition( x, -24, 0, 160 ) + 420;
+          let y = itc_pairs[ i + 1 ];
+          y = nosition( y, 0, itc_max, 160 );
+          let y_width = y;
+          y = 160 - y + 6;
+          ctx.fillRect( x,y,x_width,y_width);
+        }
+        ctx.fillStyle = 'rgb(0, 0, 0)';
+
+      //ctx.beginPath();
+      //ctx.closePath();
+      }
+      function nosition( x, bot, top, range ) {
+        let y = x - bot;
+        y /= ( top - bot );
+        y *= range;
+        return y;
+      }
+    </script>
+    <style>
+      div.main ul {
+        list-style: none;
+        line-height: 1.5em;
+        margin: 0 0 0 1.5em;
+        padding: 0 0 0 1.5em;
+      }
+      div.main p {
+        line-height: 1.5em;
+        margin: 1.25em 0.0125em;
+        padding: 1.25em 0.0125em;
+      }
+      div.main ul li:before {
+        content: "\2022";
+        padding-right: 0.5em;
+      }
+      div.main p span {
+        display: block;
+        font-weight: bold; 
+      }
+      div.main ul li {
+        margin: 0.25em 0.5em;
+        padding: 0.25em 0.5em;
+      }
+      #BDBhist {
+        background-color: rgb(243,245,244);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <nav>
+        <img src="/images/BDB-banner-1a.png" alt="SSPPS at UCSD" />
+<section>
+  <ul>
+    <!--li><a href="https://twitter.com/BindingDb"><i class="fa fa-twitter" style="font-size:1.25em;color:#48d1cc"></i></a></li-->
+    <!--li><a href="https://mstdn.science/@bindingdb"><i class="fab fa-mastodon" style="font-size:1.25em;color:#ffffff"></i></a></li-->
+    <li><a href="/rwd/bind/index.jsp">Home</a></li>
+    <li><a href="/rwd/bind/aboutus.jsp">About</a></li>
+    <li><a href="/rwd/bind/info.jsp">Info</a></li>
+    <li><a href="/rwd/bind/chemsearch/marvin/Download.jsp">Download</a></li>
+    <li><a href="/rwd/bind/BindingDBRESTfulAPI.jsp">WebServices</a></li>
+    <!--li><a href="/rwd/bind/contributedata.jsp">Contribute&nbsp;Data</a></li-->
+    <li><a href="/rwd/bind/sendmail.jsp">Contact</a></li>
+    <!--li><a id="old" href="/bind">Classic Site</a></li-->
+  </ul>
+</section>
+<aside>
+   <div>
+     <a href="/rwd/bind/" id="hama">BindingDB</a>
+     <ul class="mbh">
+       <!--li><a href="/rwd/bind/index.jsp">Home</a></li-->
+       <li><a href="/rwd/bind/aboutus.jsp">About</a></li>
+       <li><a href="/rwd/bind/info.jsp">Info</a></li>
+       <li><a href="/rwd/bind/chemsearch/marvin/Download.jsp">Download</a></li>
+     </ul>
+     <ul class="mbh">
+       <li><a href="/rwd/bind/BindingDBRESTfulAPI.jsp">WebServices</a></li>
+       <!--li><a href="/rwd/bind/contributedata.jsp">Contribute&nbsp;Data</a></li-->
+       <li><a href="/rwd/bind/sendmail.jsp">Contact</a></li>
+     </ul>
+     <a href="#" id="hamb">&#9776;</a>
+     <!--a href="#" id="hamb"><i class="fa fa-bars" aria-hidden="true" style="font-size:1.25em;color:#ffffff"></i></a-->
+   </div>
+</aside>
+<!--a id="twt" href="https://twitter.com/BindingDb"><i class="fa fa-twitter" style="font-size:2.00em;color:#48d1cc"></i></a-->
+
+      </nav>
+      <header>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div>
+    <div class="section">
+      <!--a href="/rwd/bind/index.jsp" title="Home"><img border="0" src="/images/rwdlogo.png" alt="BindingDB Home" title="BDB" /></a-->
+      <a href="/rwd/bind/index.jsp" title="Home">BindingDB</a>
+    </div>
+    <div class="aside">
+      <div class="row">
+        <div class="column"><p>The first public molecular recognition database, BindingDB supports research, education and practice in drug discovery, pharmacology and related fields.</p></div>
+        <div class="tbl"><p>BindingDB contains 3.2M data for 1.4M Compounds and 11.5K Targets. Of those, 1.6M data for 780K Compounds and 4.8K Targets were curated by BindingDB curators. BindingDB is a <a href="https://fairsharing.org/FAIRsharing.3b36hk">FAIRsharing</a> resource.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="don">
+    <div class="row">
+      <div class="column"><p class="m1fontSize">If BindingDB was of value to your research, please take a moment to donate to this nonprofit project.  Your donation will let us provide you with more data and improved service.</p></div>
+      <div class="tbl"><a href="https://giveto.ucsd.edu/giving/home/gift-referral/8fb1363a-50c6-4633-8888-f4ddd067da8d">Donate&nbsp;Now</a></div>
+    </div>
+  </div>
+  <form method="get" action="/rwd/bind/tabLuceneResult.jsp">
+    
+    <label for="thisInput">Simple Search</label>
+    <input type="text" id="thisInput" name="thisInput" placeholder="DNA-binding protein" />
+    <button>GO</button>
+  </form>
+  <div class="don">
+    <div class="row">
+      <div class="column"><p class="m1fontSize">To help with training and testing AI and other models, BindingDB downloads and search results now provide the publication date and BindingDB curation date of each measurement.</p></div>
+      <div class="tbl"><a href="/rwd/bind/as.jsp">Advanced&nbsp;Search</a></div>
+    </div>
+  </div>
+
+
+      </header>
+      <div id="content">
+        <section>
+          <div class="main">
+            <h2>Info</h2>
+            <!--hr class="title" /-->
+<p>BindingDB is a public, web-accessible database of measured binding affinities, focusing chiefly on the interactions of proteins considered to be candidate drug-targets with ligands that are small, drug-like molecules. BindingDB supports medicinal chemistry and drug discovery via literature awareness and development of structure-activity relations (SAR and QSAR); validation of computational chemistry and molecular modeling approaches such as docking, scoring and free energy methods; chemical biology and chemical genomics; and basic studies of the physical chemistry of molecular recognition. BindingDB also includes a small collection of host-guest binding data of interest to chemists studying supramolecular systems.
+</p>
+<p>The data collection derives from a variety of measurement techniques, including enzyme inhibition and kinetics, isothermal titration calorimetry, NMR, and radioligand and competition assays. BindingDB includes data extracted from the literature and patents by the BindingDB project, selected PubChem confirmatory BioAssays, and ChEMBL entries for which a well defined protein target ("TARGET_TYPE='PROTEIN'") is provided. Data extracted by BindingDB typically includes more details regarding experimental conditions, etc.  BindingDB currently contains about 3,246,374 binding data for 11,519 proteins and over 1,447,830 drug-like molecules.  Data imported from ChEMBL are provided under their <a href="https://www.ebi.ac.uk/chembl/about">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.  All data curated by BindingDB staff are provided under the <a href="https://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 License</a>. 
+</p>
+
+            <ul>
+  <li><a href="/rwd/bind/BindingDB-Intro2a.pdf">Background on Proteins, Small Molecules, and Binding</a></li>
+  <li><a href="FAQ2.jsp">How to Use BindingDB</a></li>
+  <li><a href="glossary.jsp">Glossary</a></li>
+  <li><a href="SearchTemplates.jsp">Search Templates in BindingDB</a></li>
+  <li>Documentation of BindingDB's <a href="/rwd/bind/chemsearch/marvin/BindingDB-SDfile-Specification.pdf">SDfile</a> and <a href="/rwd/bind/chemsearch/marvin/BindingDB-TSV-Format.pdf">TSV</a> formats </li>
+  <li><a href="caveat_sequences.jsp">A caveat regarding protein Target sequences</a></li>
+  <li><a href="IiBSDFile.jsp">Important information about a BindingDB SDfile</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/BindingDB">BindingDB Page on Wikipedia</a></li>
+</ul>
+    <!--  <p style="text-align: center"> <b>What's new:</b> <a href="/bind/ByRecent.jsp"><b>data entered within the last 30 days</a></b></p> -->
+<p><span>BindingDB Affinity Statistics</span>
+<br />
+<canvas id="BDBhist" width="585px" height="190px"></canvas>
+</p>
+<!--  <p style="text-align: center"><b>Monthly Growth of Data Holdings</b></p>
+<p style="text-align: center"> <a href="/bind/BDBplot_info.jsp"><img border="0" src="/img/BDBplot.gif" height="200" width="240" /></a></p> -->
+<p><span>References</span>
+<ul>
+  <li class="reference">Liu,T., Hwang, L., Burley,S.K., Nitsche,C.I., Southan,C., Walters,W.P., and Gilson,M.K. <i>BindingDB in 2024: a FAIR knowledgebase of protein-small molecule binding data</i> Nucleic Acids Research <i>53:D1633-D1644</i> (2025).<a href="/rwd/bind/gkae1075.pdf">[pdf]</a></li>
+  <li class="reference">Gilson,M.K., Liu,T., Baitaluk,M., Nicola,G., Hwang, L. and Chong,J. <i>BindingDB in 2015: A public database for medicinal chemistry, computational chemistry and systems pharmacology</i> Nucleic Acids Research <i>44:D1045-D1053</i> (2015).<a href="/rwd/bind/gkv1072.pdf">[pdf]</a></li>
+  <li class="reference">Liu,T., Lin,Y., Wen,X., Jorrisen, R.N. and Gilson,M.K. <i>BindingDB: a web-accessible database of experimentally determined protein-ligand binding affinities</i> Nucleic Acids Research <i>35:D198-D201</i> (2007).<a href="/rwd/bind/bindingdb-nar-2007.pdf">[pdf]</a></li>
+  <li class="reference">Chen,X., Lin,Y. and Gilson,M.K. <i>The Binding Database: Overview and User's Guide</i> Biopolymers Nucleic Acid Sci. <i>61:127-141</i> (2002).<a href="/rwd/bind/bindingdb-bnas-2002.pdf">[pdf]</a></li>
+  <li class="reference">Chen,X., Lin,Y., Liu,M. and Gilson,M.K. <i>The Binding Database: Data Management and Interface Design</i> Bioinformatics <i>18:130-139</i>(2002).<a href="/rwd/bind/bindingdb-bif-2002.pdf">[pdf]</a></li>
+  <li class="reference">Chen,X., Liu,M., and Gilson,M.K. <i>Binding DB: A web-accessible molecular recognition database</i> J. Combi. Chem. High-Throughput Screen <i>4:719-725</i>(2001).<a href="/rwd/bind/bindingdb-jcchts-2001.pdf">[pdf]</a></li>
+</ul>
+</p>
+
+          </div>
+        </section>
+        <aside>
+          <!--ul class="mbh">
+  <li><a href="/rwd/bind/index.jsp">Home</a></li>
+  <li><a href="/rwd/bind/aboutus.jsp">About</a></li>
+  <li><a href="/rwd/bind/info.jsp">Info</a></li>
+  <li><a href="/rwd/bind/chemsearch/marvin/SDFdownload.jsp?all_download=yes">Downloads</a></li>
+</ul>
+<ul class="mbh">
+  <li><a href="/rwd/bind/BindingDBRESTfulAPI.jsp">WebServices</a></li>
+  <li><a href="/rwd/bind/contributedata.jsp">Contribute&nbsp;Data</a></li>
+  <li><a href="/rwd/bind/sendmail.jsp">Contact&nbsp;us</a></li>
+</ul-->
+<ul>
+  <li>&nbsp;</li>
+  <li><a href="#">Targets<span class="ablue">&#9660;</span></a>
+    <ul>
+      <li><a href="/rwd/bind/BySequence.jsp">Sequence</a></li>
+      <li><a href="/rwd/bind/ByTargetNames.jsp">Name</a></li>
+      <li><a href="/rwd/bind/ByKI.jsp?specified=KI">Ki</a> <a href="/rwd/bind/ByKI.jsp?specified=IC50">IC50</a> <a href="/rwd/bind/ByKI.jsp?specified=Kd">Kd</a> <a href="/rwd/bind/ByKI.jsp?specified=EC50">EC50</a></li>
+      <li><a href="/rwd/bind/ByKI.jsp?specified=Kn">Rate Constant</a></li>
+      <li><a href="/rwd/bind/ByG.jsp?specified=G">&Delta;G&#176;</a> <a href="/rwd/bind/ByG.jsp?specified=H">&Delta;H&#176;</a> <a  href="/rwd/bind/ByG.jsp?specified=S">-T&Delta;S&#176;</a></li>
+      <li><a href="/rwd/bind/ByKI.jsp?specified=pH">pH (Enzymatic Assay)</a></li>
+      <li><a href="/rwd/bind/ByG.jsp?specified=pH">pH (ITC)</a></li>
+      <li><a href="/rwd/bind/ByEnzymeSubstrate.jsp">Substrate or Competitor</a></li>
+      <li><a href="/rwd/bind/ByMolWeight.jsp">Compound Mol. Wt.</a></li>
+      <li><a href="/rwd/bind/chemsearch/marvin/index.jsp">Chemical Structure</a></li>
+      <li><a href="/rwd/Pathways/pathways.jsp">Pathways</a></li>
+      <li><a href="/rwd/bind/BySourceOrganism.jsp">Source Organism</a></li>
+      <li><a href="/rwd/bind/ByMonomersTarget.jsp">Number of Compounds</a></li>
+      <li><a href="/rwd/bind/ByTargetMonomers.jsp">Monomer List in csv</a></li>
+      <li><a href="/rwd/bind/ByTargetHets.jsp">HET groups from PDB</a></li>
+    </ul>
+  </li>	
+  <li><a href="#">Compounds<span class="ablue">&#9660;</span></a>
+    <ul>
+      <li><a href="/rwd/bind/ByFDAdrugs.jsp">FDA Drugs</a></li>
+      <li><a href="/rwd/bind/BindingX.jsp">Important&nbsp;Compounds</a></li>
+      <li><a href="/rwd/bind/chemsearch/marvin/index.jsp">Chemical Structure</a></li>
+      <li><a href="/rwd/bind/ByLigandName.jsp">Name</a></li>
+      <li><a href="/rwd/bind/BySmiles.jsp">SMILES</a></li>
+      <li><a href="/rwd/bind/ByDataLigand.jsp">Data/Compound</a></li>
+      <li><a href="/rwd/bind/ByTargetsLigand.jsp">Targets/Compound</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Publications<span class="ablue">&#9660;</span></a>
+    <ul>
+      <li><a href="/rwd/bind/ByAuthor.jsp">Author</a></li>
+      <li><a href="/rwd/bind/ByJournal.jsp">Journal/Citation</a></li>
+      <li><a href="/rwd/bind/ByInstitution.jsp">Institution</a></li>
+      <li><a href="/rwd/bind/ByPubMed.jsp">PubMed</a></li>
+      <li><a href="/rwd/bind/ByPCBioAssay.jsp">PubChem BioAssay</a></li>
+      <li><a href="/rwd/bind/ByPatent.jsp">US Patent</a></li>
+      <li><a href="/rwd/bind/ByWIPO.jsp">WIPO Patent</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Special Datasets<span class="ablue">&#9660;</span></a>
+    <ul>
+      <li><a href="/rwd/bind/Covid19.jsp">Coronavirus Data</a></li>
+      <li><a href="/rwd/bind/ByD3R.jsp">D3R &amp; CSAR</a></li>
+      <li><a href="/rwd/bind/HostGuest.jsp">Host Guest Systems</a></li>
+      <li><a href="/rwd/validation_sets/index.jsp">Prot-Lig Validation Sets</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Special Tools<span class="ablue">&#9660;</span></a>
+    <ul>
+      <li><a href="/rwd/bind/surflex_entry.jsp">3D Structure Series</a></li>
+      <li><a href="/rwd/bind/chemsearch/marvin/FMCT.jsp">Find My Compound's Targets</a></li>
+      <li><a href="/rwd/bind/as.jsp?opt=target_sequence">Find Compounds for My Targets</a></li>
+      <!--li><a href="/rwd/bind/vsOverview.jsp">Do Virtual Screening</a></li-->
+      <!--li><a href="/rwd/SCOP/scop.jsp">SCOP</a></li-->
+    </ul>
+  </li>			  
+  <li><a href="#">Other Databases<span class="ablue">&#9660;</span></a>
+    <ul>
+      <li>PDB <a href="/rwd/bind/ByPDBids.jsp">85%</a>&nbsp;<a href="/rwd/bind/ByPDBids_100.jsp">100%</a> Seq ID</li>
+      <li><a href="/rwd/bind/ByUniProtids.jsp">UniProtKB/Swiss-Prot</a></li>
+      <li><a href="/rwd/bind/ByTrembleids.jsp">UniProtKB/TrEMBL</a></li>
+      <li><a href="/rwd/bind/ByPubMed.jsp">PubMed</a></li>
+    </ul>
+  </li>
+  <li><a href="/rwd/bind/tutorials.jsp">Tutorials</a>
+  </li>
+  <li><a href="/rwd/mybdb/login.jsp">myBDB</a>
+  </li>
+  <!--li id="oldata" onclick="datanalysis()">Filter Results
+  </li-->
+</ul>
+
+        </aside>
+      </div>
+      <footer>
+      </footer>
+    </div>
+  </body>
+</html>

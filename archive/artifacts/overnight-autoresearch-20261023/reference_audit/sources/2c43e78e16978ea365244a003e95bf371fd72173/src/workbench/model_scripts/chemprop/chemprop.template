@@ -1,0 +1,1060 @@
+# vim: set ft=python:
+
+# ChemProp Model Template for Workbench:
+#
+# This template handles molecular property prediction using ChemProp 2.x MPNN with:
+# - K-fold cross-validation ensemble training (or single train/val split)
+# - Multi-task regression support
+# - Extra descriptors (SMILES + molecular descriptors)
+# - Classification (single-target only)
+#
+# NOTE: Imports are structured to minimize serverless endpoint startup time.
+# Heavy imports (lightning, sklearn, awswrangler) are deferred to training time.
+
+import json
+import logging
+import os
+import time
+
+# Template revision marker — bump on edits so log output identifies the script
+# version independent of the training image's installed workbench version.
+TEMPLATE_REVISION = "2026-09-23a"
+
+# Startup diagnostic prints (flush=True so we don't lose them if a downstream
+# step hangs/crashes before its buffer flushes). The bare-import phase below
+# is the most common source of silent inference-container startup hangs.
+# CloudWatch attaches its own timestamps, but the AWS console and default
+# `aws logs get-log-events` text output strip them — inline HH:MM:SS so we can
+# read raw log text without an extra round-trip.
+print(f"[{time.strftime('%H:%M:%S')}] [startup] chemprop template revision: {TEMPLATE_REVISION}", flush=True)
+print(f"[{time.strftime('%H:%M:%S')}] [startup] importing heavy deps...", flush=True)
+
+import joblib
+import numpy as np
+import pandas as pd
+import torch
+from rdkit import RDLogger
+
+RDLogger.logger().setLevel(RDLogger.ERROR)
+
+import chemprop
+from chemprop import models
+
+from workbench.endpoints.inference import (
+    compress_std_outliers,
+    expand_proba_column,
+    save_output,
+)
+from workbench.endpoints.inference import input_fn, output_fn  # noqa: F401 (re-exported for the serving harness)
+from workbench.endpoints.uq_harness import (
+    apply_classification_confidence,
+    compute_vgmu_confidence,
+    load_classification_uq,
+)
+from workbench.endpoints.chemprop_utils import (
+    create_molecule_datapoints,
+    find_smiles_column,
+    predict_ensemble,
+)
+from workbench.endpoints.uq_regression import load_regression_uq, uq_query_df
+
+print(
+    f"[{time.strftime('%H:%M:%S')}] [startup] heavy deps imported "
+    f"(chemprop {chemprop.__version__}, torch {torch.__version__})",
+    flush=True,
+)
+
+log = logging.getLogger("workbench")
+
+# =============================================================================
+# Default Hyperparameters
+# =============================================================================
+DEFAULT_HYPERPARAMETERS = {
+    # Training
+    "n_folds": 5,
+    "max_epochs": 400,
+    "patience": 40,
+    "batch_size": 64,
+    # Message Passing (ignored when using foundation model)
+    "hidden_dim": 700,
+    "depth": 5,
+    "dropout": 0.1,  # Lower dropout - ensemble provides regularization
+    # FFN. ffn_hidden_dim accepts a single int (uniform width, repeated
+    # ffn_num_layers times) or an explicit per-layer shape — a dash-string
+    # ("1024-256-64", the pytorch `layers` convention) or a list of ints. For a
+    # shape, ffn_num_layers is ignored and depth is taken from its length.
+    "ffn_hidden_dim": 300,
+    "ffn_num_layers": 2,
+    # Defaults match chemprop's own
+    "warmup_epochs": 2,
+    "init_lr": 1e-4,
+    "max_lr": 1e-3,
+    "final_lr": 1e-4,
+    # Loss function for regression (mae, mse)
+    "criterion": "mae",
+    # Bounded loss for censored targets. When True, the trainer reads
+    # per-target boolean columns "{target}_gt" / "{target}_lt" from the
+    # FeatureSet and swaps the criterion for its Bounded* variant so that
+    # censored rows only contribute loss when the prediction crosses the
+    # bound. Default False ignores these columns even if present.
+    "bounded_loss": False,
+    # Split strategy: "scaffold" (default), "butina", or "random"
+    # - scaffold: Bemis-Murcko scaffold-based grouping (requires 'smiles' column in data).
+    #     Falls back to random with a warning if no SMILES column is present.
+    # - butina: Morgan fingerprint clustering (more stringent than scaffold,
+    #     O(n^2) compute — prefer for smaller datasets)
+    # - random: Standard random split (use only for non-molecular data or quick baselines)
+    "split_strategy": "scaffold",
+    "butina_cutoff": 0.4,  # Tanimoto distance cutoff for Butina clustering
+    # Random seed
+    "seed": 42,
+    # Foundation model support
+    # - "CheMeleon": Load CheMeleon pretrained weights (auto-downloads on first use)
+    # - Path to .pt file: Load custom pretrained Chemprop model
+    # - None: Train from scratch (default)
+    "from_foundation": None,
+    # Freeze MPNN for N epochs, then unfreeze (0 = no freezing, train all params from start)
+    # Recommended: 5-20 epochs when using foundation models to stabilize FFN before fine-tuning MPNN
+    "freeze_mpnn_epochs": 0,
+    # Per-task loss weights for multi-task regression: list[float] of length
+    # n_targets, or None for no weighting. See
+    # workbench.utils.multi_task.compute_inverse_count_task_weights for one
+    # common scheme. Ignored when n_targets == 1.
+    "task_weights": None,
+    # UQ version to use as the primary confidence source at inference:
+    #   "v0": isotonic on (prediction, std), no neighborhood required
+    #   "v1" (default): proximity-augmented RandomForest error model
+    #   "v2": pure applicability-domain confidence from neighbors
+    # v1/v2 need a proximity reference set: a 'smiles' column gives structure-based
+    # neighborhoods, otherwise the model's own features do. All fittable versions are
+    # saved when regression UQ is enabled, so the other versions stay available for
+    # comparison via Model.uq_model(version=...).
+    "uq_version": "v1",
+}
+
+# Template parameters (filled in by Workbench)
+TEMPLATE_PARAMS = {
+    "model_type": "{{model_type}}",
+    "targets": "{{target_column}}",
+    "feature_list": "{{feature_list}}",
+    "id_column": "{{id_column}}",
+    "model_metrics_path": "{{model_metrics_path}}",
+    "hyperparameters": json.loads("{{hyperparameters}}"),
+}
+
+
+# =============================================================================
+# Model Loading (for SageMaker inference)
+# =============================================================================
+def model_fn(model_dir: str) -> dict:
+    """Load ChemProp MPNN ensemble from the specified directory.
+
+    Optimized for serverless cold starts - uses direct PyTorch inference
+    instead of Lightning Trainer to minimize startup time.
+    """
+    print(f"[model_fn] loading from {model_dir}", flush=True)
+    metadata = joblib.load(os.path.join(model_dir, "ensemble_metadata.joblib"))
+    print(f"[model_fn] metadata loaded, n_ensemble={metadata['n_ensemble']}", flush=True)
+
+    # Load all ensemble models (keep on CPU for serverless compatibility)
+    # ChemProp handles device placement internally
+    ensemble_models = []
+    for i in range(metadata["n_ensemble"]):
+        print(f"[model_fn] loading chemprop_model_{i}.pt...", flush=True)
+        model = models.MPNN.load_from_file(os.path.join(model_dir, f"chemprop_model_{i}.pt"))
+        model.eval()
+        ensemble_models.append(model)
+    print(f"[model_fn] all {len(ensemble_models)} models loaded", flush=True)
+
+    # Regression UQ — load the active version per hyperparameters.json.
+    uq_model = load_regression_uq(model_dir)
+
+    classification_uq = None
+    if os.path.exists(os.path.join(model_dir, "classification_uq.json")):
+        classification_uq = load_classification_uq(model_dir)
+
+    active_uq = uq_model.UQ_VERSION if uq_model is not None else "none"
+    print(f"Loaded {len(ensemble_models)} model(s), targets={metadata['target_columns']}, " f"active_uq={active_uq}")
+    return {
+        "ensemble_models": ensemble_models,
+        "n_ensemble": metadata["n_ensemble"],
+        "target_columns": metadata["target_columns"],
+        "uq_model": uq_model,
+        "classification_uq": classification_uq,
+    }
+
+
+# =============================================================================
+# Inference (for SageMaker inference)
+# =============================================================================
+def predict_fn(df: pd.DataFrame, model_dict: dict) -> pd.DataFrame:
+    """Make predictions with ChemProp MPNN ensemble.
+
+    Uses direct PyTorch inference (no Lightning Trainer) for fast serverless inference.
+    """
+    model_type = TEMPLATE_PARAMS["model_type"]
+    model_dir = os.environ.get("SM_MODEL_DIR", "/opt/ml/model")
+
+    ensemble_models = model_dict["ensemble_models"]
+    target_columns = model_dict["target_columns"]
+
+    # Load artifacts
+    label_encoder = None
+    encoder_path = os.path.join(model_dir, "label_encoder.joblib")
+    if os.path.exists(encoder_path):
+        label_encoder = joblib.load(encoder_path)
+
+    feature_metadata = None
+    feature_path = os.path.join(model_dir, "feature_metadata.joblib")
+    if os.path.exists(feature_path):
+        feature_metadata = joblib.load(feature_path)
+        print(f"Extra descriptors: {len(feature_metadata['extra_feature_cols'])} features")
+
+    # Find SMILES column and validate
+    smiles_column = find_smiles_column(df.columns.tolist())
+    smiles_list = df[smiles_column].tolist()
+
+    valid_mask = np.array([bool(s and isinstance(s, str) and s.strip()) for s in smiles_list])
+    valid_smiles = [s.strip() for i, s in enumerate(smiles_list) if valid_mask[i]]
+    print(f"Valid SMILES: {sum(valid_mask)} / {len(smiles_list)}")
+
+    # Initialize output columns
+    if model_type == "classifier":
+        df["prediction"] = pd.Series([None] * len(df), dtype=object)
+    else:
+        for tc in target_columns:
+            df[f"{tc}_pred"] = np.nan
+            df[f"{tc}_pred_std"] = np.nan
+
+    # Prepare extra features (raw, unscaled - model handles scaling)
+    extra_features = None
+    if feature_metadata is not None:
+        extra_cols = feature_metadata["extra_feature_cols"]
+        col_means = np.array(feature_metadata["col_means"])
+        valid_indices = np.where(valid_mask)[0]
+
+        extra_features = np.zeros((len(valid_indices), len(extra_cols)), dtype=np.float32)
+        for j, col in enumerate(extra_cols):
+            if col in df.columns:
+                values = df.iloc[valid_indices][col].values.astype(np.float32)
+                values[np.isnan(values)] = col_means[j]
+                extra_features[:, j] = values
+            else:
+                extra_features[:, j] = col_means[j]
+
+    # Create datapoints and predict. A batch with no parseable molecules runs the output
+    # code below on an empty stack, so it returns the same columns as any other batch.
+    datapoints, rdkit_valid = create_molecule_datapoints(valid_smiles, extra_descriptors=extra_features)
+    if datapoints:
+        # The shared forward pass — training out-of-fold predictions and the HPO objective run
+        # this same function, so a model is scored on the code path it serves on.
+        all_preds = predict_ensemble(ensemble_models, datapoints)
+    else:
+        n_outputs = len(label_encoder.classes_) if label_encoder is not None else len(target_columns)
+        all_preds = np.empty((len(ensemble_models), 0, n_outputs))
+
+    preds = np.mean(all_preds, axis=0)
+    preds_std = compress_std_outliers(np.std(all_preds, axis=0))
+
+    print(f"Inference complete: {preds.shape[0]} predictions")
+
+    # Map predictions back to valid positions
+    valid_positions = np.where(valid_mask)[0][rdkit_valid]
+    valid_mask = np.zeros(len(df), dtype=bool)
+    valid_mask[valid_positions] = True
+
+    if model_type == "classifier" and label_encoder is not None:
+        if preds.shape[1] > 1:
+            avg_probs = preds
+        else:
+            # Binary with single sigmoid — derive 2-class probabilities
+            sigmoid_probs = preds.flatten()
+            avg_probs = np.column_stack([1 - sigmoid_probs, sigmoid_probs])
+
+        class_preds = np.argmax(avg_probs, axis=1)
+        df.loc[valid_mask, "prediction"] = label_encoder.inverse_transform(class_preds)
+        proba = pd.Series([None] * len(df), dtype=object)
+        proba.loc[valid_mask] = [p.tolist() for p in avg_probs]
+        df["pred_proba"] = proba
+        df = expand_proba_column(df, label_encoder.classes_)
+
+        # VGMU classification confidence
+        classification_uq = model_dict.get("classification_uq")
+        if classification_uq and "classification_confidence" in classification_uq:
+            all_probs_stack = all_preds
+            if all_probs_stack.shape[2] == 1:
+                # Binary sigmoid → expand to 2-class for each model
+                all_probs_stack = np.concatenate([1 - all_probs_stack, all_probs_stack], axis=2)
+            raw_conf = compute_vgmu_confidence(avg_probs, all_probs_stack)
+            conf_values = apply_classification_confidence(raw_conf, classification_uq["classification_confidence"])
+            df["confidence"] = np.nan
+            df.loc[valid_mask, "confidence"] = conf_values
+    else:
+        for t_idx, tc in enumerate(target_columns):
+            df.loc[valid_mask, f"{tc}_pred"] = preds[:, t_idx]
+            df.loc[valid_mask, f"{tc}_pred_std"] = preds_std[:, t_idx]
+        # FIXME: Multi-target models don't have a "primary target" — aliasing to the first
+        #  target here is a shortcut so the web UI (which expects a single "prediction" column)
+        #  continues to work. Per-target columns ({target}_pred, {target}_pred_std) are the
+        #  real source of truth.
+        df["prediction"] = df[f"{target_columns[0]}_pred"]
+        df["prediction_std"] = df[f"{target_columns[0]}_pred_std"]
+
+        # UQModel UQ, scored per target off the shared proximity index. Each target
+        # gets {target}_confidence / {target}_expected_residual / {target}_q_*, and the
+        # primary is aliased to the unprefixed names alongside prediction/prediction_std.
+        uq_model = model_dict.get("uq_model")
+        if uq_model is not None:
+            # V1/V2 ask their proximity backend what to send; V0 takes None.
+            query_df = uq_query_df(uq_model, df.loc[valid_mask])
+            if query_df is not None or uq_model.UQ_VERSION == "v0":
+                for tc in target_columns:
+                    uq_out = uq_model.predict(
+                        query_df,
+                        df.loc[valid_mask, f"{tc}_pred"].values,
+                        df.loc[valid_mask, f"{tc}_pred_std"].values,
+                        target=tc,
+                    )
+                    for col in uq_out.columns:
+                        df[f"{tc}_{col}"] = np.nan
+                        df.loc[valid_mask, f"{tc}_{col}"] = uq_out[col].values
+                        if tc == target_columns[0]:
+                            df[col] = df[f"{tc}_{col}"]
+            else:
+                print("[uq] Skipping UQModel inference: batch can't satisfy the proximity backend.")
+
+    return df
+
+
+# =============================================================================
+# Training
+# =============================================================================
+if __name__ == "__main__":
+    _run_t0 = time.time()  # [timing] start of training-mode execution
+    # -------------------------------------------------------------------------
+    # Training-only imports (deferred to reduce serverless startup time)
+    # -------------------------------------------------------------------------
+    import argparse
+    import glob
+
+    from sklearn.preprocessing import LabelEncoder
+
+    # Enable Tensor Core optimization for GPUs that support it
+    torch.set_float32_matmul_precision("medium")
+
+    # Device for post-training inference (prediction_std, calibration). These manual
+    # loops bypass Lightning, so they must move model + batches to the GPU explicitly
+    # or they silently run on CPU (was the single largest cost before this fix).
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    from workbench.endpoints.inference import (
+        check_dataframe,
+        compute_classification_metrics,
+        compute_regression_metrics,
+        print_classification_metrics,
+        print_confusion_matrix,
+        print_regression_metrics,
+    )
+    from workbench.endpoints.uq_harness import (
+        calibrate_classification_confidence,
+        save_classification_uq,
+    )
+    from workbench.endpoints.uq_regression import fit_regression_uq, save_regression_uq
+    from workbench.training.chemprop_core import FoldSpec, resolve_ffn_shape, train_chemprop_fold
+
+    # -------------------------------------------------------------------------
+    # Setup: Parse arguments and load data
+    # -------------------------------------------------------------------------
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model-dir", type=str, default=os.environ.get("SM_MODEL_DIR", "/opt/ml/model"))
+    parser.add_argument("--train", type=str, default=os.environ.get("SM_CHANNEL_TRAIN", "/opt/ml/input/data/train"))
+    parser.add_argument(
+        "--output-data-dir", type=str, default=os.environ.get("SM_OUTPUT_DATA_DIR", "/opt/ml/output/data")
+    )
+    args = parser.parse_args()
+
+    # Extract template parameters
+    target_columns = TEMPLATE_PARAMS["targets"]
+    model_type = TEMPLATE_PARAMS["model_type"]
+    feature_list = TEMPLATE_PARAMS["feature_list"]
+    id_column = TEMPLATE_PARAMS["id_column"]
+    model_metrics_path = TEMPLATE_PARAMS["model_metrics_path"]
+    hyperparameters = {**DEFAULT_HYPERPARAMETERS, **(TEMPLATE_PARAMS["hyperparameters"] or {})}
+
+    # A shaped ffn_hidden_dim (dash-string or list) sets the FFN layer count directly
+    # (chemprop ignores ffn_num_layers in that case). Keep ffn_num_layers consistent so
+    # the recorded/printed hyperparameters reflect the actual model.
+    ffn_shape = resolve_ffn_shape(hyperparameters.get("ffn_hidden_dim"))
+    if isinstance(ffn_shape, list):
+        hyperparameters["ffn_num_layers"] = len(ffn_shape)
+
+    # butina_cutoff only applies to the butina split; null it otherwise so the
+    # recorded hyperparameters don't imply an inactive knob is in effect.
+    if hyperparameters.get("split_strategy") != "butina":
+        hyperparameters["butina_cutoff"] = None
+
+    if not target_columns or not isinstance(target_columns, list):
+        raise ValueError("'targets' must be a non-empty list of target column names")
+    n_targets = len(target_columns)
+
+    smiles_column = find_smiles_column(feature_list)
+    extra_feature_cols = [f for f in feature_list if f != smiles_column]
+    use_extra_features = len(extra_feature_cols) > 0
+
+    print(f"Target columns ({n_targets}): {target_columns}")
+    print(f"SMILES column: {smiles_column}")
+    print(f"Extra features: {extra_feature_cols if use_extra_features else 'None (SMILES only)'}")
+    print(f"Hyperparameters: {hyperparameters}")
+
+    # Log foundation model configuration
+    if hyperparameters.get("from_foundation"):
+        freeze_epochs = hyperparameters.get("freeze_mpnn_epochs", 0)
+        freeze_msg = f"MPNN frozen for {freeze_epochs} epochs" if freeze_epochs > 0 else "no freezing"
+        print(f"Foundation model: {hyperparameters['from_foundation']} ({freeze_msg})")
+    else:
+        print("Foundation model: None (training from scratch)")
+
+    # Load training data
+    training_files = [os.path.join(args.train, f) for f in os.listdir(args.train) if f.endswith(".csv")]
+    print(f"Training Files: {training_files}")
+    all_df = pd.concat([pd.read_csv(f, engine="python") for f in training_files])
+    check_dataframe(all_df, "training_df")
+
+    # Clean data
+    initial_count = len(all_df)
+    all_df = all_df.dropna(subset=[smiles_column])
+    all_df = all_df[all_df[target_columns].notna().any(axis=1)]
+    if len(all_df) < initial_count:
+        print(f"Dropped {initial_count - len(all_df)} rows with missing SMILES/targets")
+
+    print(f"Data shape: {all_df.shape}")
+
+    # Route held-out validation rows out of training BEFORE label encoding / feature-mean fitting,
+    # so nothing downstream (CV/UQ/SHAP) sees them. They're scored held-out just before save.
+    from workbench.training.splits import get_split_indices
+    from workbench.training.validation import split_validation_set
+
+    totals = all_df[target_columns].notna().sum()
+    all_df, holdout_df = split_validation_set(all_df)
+    if len(holdout_df):
+        print(f"Held-out validation set: {len(holdout_df)} rows (excluded from training/CV/UQ)")
+    # Counts are per-target TRAINING support: what each head actually learns from.
+    for tc in target_columns:
+        print(f"  {tc}: {all_df[tc].notna().sum()} training samples ({totals[tc]} total)")
+
+    # A target the training split left unlabeled cannot be learned -- it scales to a NaN
+    # mean/std and its head predicts NaN for every molecule. Catch it here, before the folds.
+    starved = [t for t in target_columns if all_df[t].notna().sum() == 0]
+    if starved:
+        raise ValueError(
+            f"No training rows for target(s) {starved} -- every labeled row landed in the "
+            f"held-out validation set. Check the validation_ids / temporal split."
+        )
+
+    # -------------------------------------------------------------------------
+    # Classification setup
+    # -------------------------------------------------------------------------
+    label_encoder = None
+    num_classes = None
+    if model_type == "classifier":
+        if n_targets > 1:
+            raise ValueError(
+                f"Multi-task classification (got {n_targets} target columns) is not implemented in "
+                "workbench's chemprop wrapper. This is a workbench limitation, not a chemprop one: "
+                "chemprop supports it via BinaryClassificationFFN(n_tasks=N) and "
+                "MulticlassClassificationFFN(n_classes=C, n_tasks=N). Workarounds: use a single target "
+                "column, or train one single-task classifier per target."
+            )
+        label_encoder = LabelEncoder()
+        all_df[target_columns[0]] = label_encoder.fit_transform(all_df[target_columns[0]])
+        num_classes = len(label_encoder.classes_)
+        print(f"Classification: {num_classes} classes: {label_encoder.classes_}")
+
+    # -------------------------------------------------------------------------
+    # Prepare features
+    # -------------------------------------------------------------------------
+    task = "classification" if model_type == "classifier" else "regression"
+    n_extra = len(extra_feature_cols) if use_extra_features else 0
+
+    all_extra_features, col_means = None, None
+    if use_extra_features:
+        all_extra_features = all_df[extra_feature_cols].values.astype(np.float32)
+        col_means = np.nanmean(all_extra_features, axis=0)
+        for i in range(all_extra_features.shape[1]):
+            all_extra_features[np.isnan(all_extra_features[:, i]), i] = col_means[i]
+
+    all_targets = all_df[target_columns].values.astype(np.float32)
+
+    # ---------------------------------------------------------------------
+    # Bounded-loss masks (regression only). Opt-in via hyperparameter
+    # `bounded_loss=True`. By convention reads per-target boolean columns
+    # {target}_gt (right-censored, true value >= y) and {target}_lt
+    # (left-censored, true value <= y). When `bounded_loss` is False (the
+    # default), these columns are ignored even if present in the data --
+    # this keeps baseline-vs-bounded A/B comparisons clean against the
+    # same FeatureSet.
+    # NOTE: validation metrics and UQ calibration currently treat the
+    # bound value as exact truth, which slightly understates accuracy on
+    # censored rows. Revisit when adding censored-aware metrics.
+    # ---------------------------------------------------------------------
+    # Per-row loss weights. The training view always carries `sample_weight`, so a model
+    # built without them trains on a column of 1.0 and behaves as before.
+    all_sample_weight = None
+    if "sample_weight" in all_df.columns:
+        w = pd.to_numeric(all_df["sample_weight"], errors="coerce").fillna(1.0).to_numpy(dtype=np.float64)
+        if not np.allclose(w, 1.0):
+            all_sample_weight = w
+            print(
+                f"Sample weights: min={w.min():.2f} max={w.max():.2f} mean={w.mean():.2f}, "
+                f"{int((w != 1.0).sum()):,} of {len(w):,} rows reweighted"
+            )
+
+    all_gt_mask, all_lt_mask = None, None
+    use_bounded_loss = bool(hyperparameters.get("bounded_loss", False)) and model_type != "classifier"
+    resolved_bound_columns: dict = {}
+    if use_bounded_loss:
+        gt_arr = np.zeros((len(all_df), n_targets), dtype=bool)
+        lt_arr = np.zeros((len(all_df), n_targets), dtype=bool)
+        for t_idx, t_name in enumerate(target_columns):
+            gt_col, lt_col = f"{t_name}_gt", f"{t_name}_lt"
+            target_meta: dict = {}
+            if gt_col in all_df.columns:
+                gt_arr[:, t_idx] = all_df[gt_col].fillna(0).astype(bool).values
+                target_meta["gt"] = gt_col
+            if lt_col in all_df.columns:
+                lt_arr[:, t_idx] = all_df[lt_col].fillna(0).astype(bool).values
+                target_meta["lt"] = lt_col
+            if target_meta:
+                resolved_bound_columns[t_name] = target_meta
+        if not resolved_bound_columns:
+            raise ValueError(
+                f"bounded_loss=True but no bound columns found. Expected one or more of: "
+                f"{[f'{t}_gt or {t}_lt' for t in target_columns]} in training data."
+            )
+        all_gt_mask, all_lt_mask = gt_arr, lt_arr
+        for t_name, cols in resolved_bound_columns.items():
+            t_idx = target_columns.index(t_name)
+            gt_n = int(gt_arr[:, t_idx].sum())
+            lt_n = int(lt_arr[:, t_idx].sum())
+            print(f"Bounded loss for '{t_name}': gt={gt_n} ({cols.get('gt', '-')}), lt={lt_n} ({cols.get('lt', '-')})")
+        print(f"Criterion -> bounded variant ({hyperparameters.get('criterion', 'mae')}).")
+
+    # Filter invalid SMILES
+    _, valid_indices = create_molecule_datapoints(all_df[smiles_column].tolist(), all_targets, all_extra_features)
+    all_df = all_df.iloc[valid_indices].reset_index(drop=True)
+    if all_sample_weight is not None:
+        all_sample_weight = all_sample_weight[valid_indices]
+    all_targets = all_targets[valid_indices]
+    if all_extra_features is not None:
+        all_extra_features = all_extra_features[valid_indices]
+    if all_gt_mask is not None:
+        all_gt_mask = all_gt_mask[valid_indices]
+    if all_lt_mask is not None:
+        all_lt_mask = all_lt_mask[valid_indices]
+    print(f"Data after SMILES validation: {all_df.shape}")
+
+    task_weights = None
+    if n_targets > 1:
+        user_weights = hyperparameters.get("task_weights")
+        if user_weights is not None:
+            if len(user_weights) != n_targets:
+                raise ValueError(f"task_weights length ({len(user_weights)}) must match n_targets ({n_targets})")
+            task_weights = np.asarray(user_weights, dtype=np.float32)
+            print(f"Task weights: {dict(zip(target_columns, task_weights.round(3).tolist()))}")
+
+    # -------------------------------------------------------------------------
+    # Hyperparameter search (phase 1)
+    # -------------------------------------------------------------------------
+    # When an `hpo` block is present, search for the best config (pooled out-of-fold MAE
+    # over scaffold splits) and train the winner below. Trials run in-process and
+    # ephemerally — no Workbench models/endpoints are created for them.
+    # An empty block is a real request: it asks for a search on every default.
+    hpo_block = hyperparameters.get("hpo")
+    if hpo_block is not None and model_type == "classifier":
+        print("[hpo] NOTE: hyperparameter search is regression-only (v1); ignoring the `hpo` block.")
+        hpo_block = None
+    if hpo_block is not None:
+        from workbench.training.chemprop_hpo import run_chemprop_hpo
+
+        hyperparameters = run_chemprop_hpo(
+            all_df,
+            hyperparameters,
+            hpo_block,
+            target_columns=target_columns,
+            smiles_column=smiles_column,
+            task=task,
+            model_type=model_type,
+            num_classes=num_classes,
+            task_weights=task_weights,
+            output_dir=args.output_data_dir,
+        )
+
+    # -------------------------------------------------------------------------
+    # Cross-validation setup
+    # -------------------------------------------------------------------------
+    n_folds = hyperparameters["n_folds"]
+
+    # Get split strategy parameters
+    split_strategy = hyperparameters.get("split_strategy", "scaffold")
+    butina_cutoff = hyperparameters.get("butina_cutoff", 0.4)
+
+    # Split into folds (unified interface auto-detects 'smiles' for scaffold/butina)
+    target_col = target_columns[0] if model_type == "classifier" else None
+    folds = get_split_indices(
+        all_df,
+        n_splits=n_folds,
+        strategy=split_strategy,
+        target_column=target_col,
+        test_size=0.2,
+        random_state=hyperparameters["seed"],
+        butina_cutoff=butina_cutoff,
+    )
+    print(f"Split strategy: {split_strategy}")
+
+    print(f"[timing] setup (imports + data load + scaffold split): {time.time() - _run_t0:.1f}s", flush=True)
+    print(f"Training {'single model' if n_folds == 1 else f'{n_folds}-fold ensemble'}...")
+    _train_t0 = time.time()  # [timing] total training across all folds
+
+    # -------------------------------------------------------------------------
+    # Training loop
+    # -------------------------------------------------------------------------
+    oof_predictions = np.full((len(all_df), n_targets), np.nan, dtype=np.float64)
+    oof_proba = (
+        np.full((len(all_df), num_classes), np.nan, dtype=np.float64)
+        if model_type == "classifier" and num_classes
+        else None
+    )
+
+    fold_spec = FoldSpec(
+        hyperparameters=hyperparameters,
+        task=task,
+        model_type=model_type,
+        smiles_column=smiles_column,
+        n_targets=n_targets,
+        target_columns=target_columns,
+        num_classes=num_classes,
+        n_extra_descriptors=n_extra,
+        task_weights=task_weights,
+        use_bounded_loss=use_bounded_loss,
+        use_extra_features=use_extra_features,
+    )
+
+    ensemble_models = []
+    for fold_idx, (train_idx, val_idx) in enumerate(folds):
+        print(f"\n{'='*50}")
+        print(f"Fold {fold_idx + 1}/{len(folds)} - Train: {len(train_idx)}, Val: {len(val_idx)}")
+        print(f"{'='*50}")
+
+        # val_extra is copied before training: normalize_inputs scales the descriptor rows
+        # in place, and prediction needs them unscaled.
+        val_extra = all_extra_features[val_idx] if all_extra_features is not None else None
+        mpnn, fold_preds = train_chemprop_fold(
+            fold_spec,
+            all_df.iloc[train_idx].reset_index(drop=True),
+            all_df.iloc[val_idx].reset_index(drop=True),
+            all_targets[train_idx],
+            all_targets[val_idx],
+            fold_idx=fold_idx,
+            checkpoint_dir=args.model_dir,
+            train_extra=all_extra_features[train_idx] if all_extra_features is not None else None,
+            val_extra=val_extra,
+            val_extra_raw=val_extra.copy() if val_extra is not None else None,
+            train_gt=all_gt_mask[train_idx] if all_gt_mask is not None else None,
+            train_lt=all_lt_mask[train_idx] if all_lt_mask is not None else None,
+            val_gt=all_gt_mask[val_idx] if all_gt_mask is not None else None,
+            val_lt=all_lt_mask[val_idx] if all_lt_mask is not None else None,
+            train_sample_weight=all_sample_weight[train_idx] if all_sample_weight is not None else None,
+        )
+        ensemble_models.append(mpnn)
+        print(f"Fold {fold_idx + 1} OOF predictions complete.", flush=True)
+
+        if model_type == "classifier" and fold_preds.ndim == 2:
+            oof_predictions[val_idx, 0] = np.argmax(fold_preds, axis=1)
+            if oof_proba is not None:
+                oof_proba[val_idx] = fold_preds
+        else:
+            if fold_preds.ndim == 1:
+                fold_preds = fold_preds.reshape(-1, 1)
+            oof_predictions[val_idx] = fold_preds
+
+    print(f"[timing] total training ({len(ensemble_models)} folds): {time.time() - _train_t0:.1f}s", flush=True)
+    _post_t0 = time.time()  # [timing] post-training: std + UQ + SHAP + save
+    print(f"\nTraining complete! Trained {len(ensemble_models)} model(s).", flush=True)
+
+    # -------------------------------------------------------------------------
+    # Prepare validation results
+    # -------------------------------------------------------------------------
+    if n_folds == 1:
+        oof_mask = ~np.isnan(oof_predictions).all(axis=1)
+        df_oof = all_df[oof_mask].copy()
+        preds = oof_predictions[oof_mask]
+        y_oof = all_targets[oof_mask]
+        if oof_proba is not None:
+            oof_proba = oof_proba[oof_mask]
+        oof_extra_features = all_extra_features[oof_mask] if all_extra_features is not None else None
+        in_model_mask = ~oof_mask  # single split: these rows never trained the model
+    else:
+        df_oof = all_df.copy()
+        preds = oof_predictions
+        y_oof = all_targets
+        oof_extra_features = all_extra_features
+        in_model_mask = np.ones(len(all_df), dtype=bool)  # CV: every row trained in k-1 folds
+
+    # -------------------------------------------------------------------------
+    # Compute metrics and prepare output
+    # -------------------------------------------------------------------------
+    if model_type == "classifier":
+        class_preds = preds[:, 0].astype(int)
+        target_name = target_columns[0]
+        y_true_decoded = label_encoder.inverse_transform(y_oof[:, 0].astype(int))
+        preds_decoded = label_encoder.inverse_transform(class_preds)
+
+        score_df = compute_classification_metrics(y_true_decoded, preds_decoded, label_encoder.classes_, target_name)
+        print_classification_metrics(score_df, target_name, label_encoder.classes_)
+        print_confusion_matrix(y_true_decoded, preds_decoded, label_encoder.classes_)
+
+        # Decode target column back to string labels (was encoded for training)
+        df_oof[target_name] = y_true_decoded
+        df_oof["prediction"] = preds_decoded
+        if oof_proba is not None:
+            df_oof["pred_proba"] = [p.tolist() for p in oof_proba]
+            df_oof = expand_proba_column(df_oof, label_encoder.classes_)
+
+        # Calibrate VGMU classification confidence from ensemble probabilities
+        if len(ensemble_models) > 1:
+            val_dps, _ = create_molecule_datapoints(df_oof[smiles_column].tolist(), None, oof_extra_features)
+            all_probs_stack = predict_ensemble(ensemble_models, val_dps, device=device)
+            if all_probs_stack.shape[2] == 1:
+                # Binary sigmoid → expand to 2-class for each model
+                all_probs_stack = np.concatenate([1 - all_probs_stack, all_probs_stack], axis=2)
+            avg_probs = np.mean(all_probs_stack, axis=0)
+            raw_conf = compute_vgmu_confidence(avg_probs, all_probs_stack)
+            classification_uq = calibrate_classification_confidence(raw_conf, y_true_decoded, preds_decoded)
+            df_oof["confidence"] = apply_classification_confidence(
+                raw_conf, classification_uq["classification_confidence"]
+            )
+        else:
+            classification_uq = None
+        uq_model = None
+        # No regression UQ on classification tasks (save_regression_uq accepts None)
+        uq_dict = None
+    else:
+        classification_uq = None
+        preds_std = None
+        if len(ensemble_models) > 1:
+            _std_t0 = time.time()
+            print(f"Computing prediction_std from {len(ensemble_models)} models...", flush=True)
+            val_dps, _ = create_molecule_datapoints(df_oof[smiles_column].tolist(), y_oof, oof_extra_features)
+            all_ens_preds = predict_ensemble(
+                ensemble_models, val_dps, num_workers=min(os.cpu_count() or 4, 8), device=device
+            )
+            print(f"[timing] prediction_std (ensemble inference): {time.time() - _std_t0:.1f}s", flush=True)
+            preds_std = compress_std_outliers(np.std(all_ens_preds, axis=0))
+
+        print(f"[timing] post-training elapsed before metrics: {time.time() - _post_t0:.1f}s", flush=True)
+        print("\n--- Per-target metrics ---")
+        for t_idx, t_name in enumerate(target_columns):
+            valid_mask = ~np.isnan(y_oof[:, t_idx])
+            if valid_mask.sum() > 0:
+                metrics = compute_regression_metrics(y_oof[valid_mask, t_idx], preds[valid_mask, t_idx])
+                if not metrics:
+                    raise ValueError(f"Out-of-fold predictions for '{t_name}' are all NaN.")
+                print_regression_metrics(metrics)
+
+            df_oof[f"{t_name}_pred"] = preds[:, t_idx]
+            df_oof[f"{t_name}_pred_std"] = preds_std[:, t_idx] if preds_std is not None else 0.0
+
+        # Calibrate UQ for every target off the out-of-fold predictions. One shared
+        # proximity index serves all of them; each target contributes only its own
+        # labeled rows, so a target's confidence reflects that target's data.
+        print("\n" + "=" * 50)
+        print(f"Fitting UQ models on {len(target_columns)} target(s)")
+        print("=" * 50)
+
+        primary = target_columns[0]
+        df_oof["prediction"] = df_oof[f"{primary}_pred"]
+        df_oof["prediction_std"] = df_oof[f"{primary}_pred_std"]
+
+        uq_dict = None  # set in the valid-rows branch below; save handles None
+
+        # A target with no out-of-fold labels can't be calibrated; skip it and say so.
+        per_target = {}
+        for t_name in target_columns:
+            valid = df_oof[t_name].notna()
+            if valid.sum() == 0:
+                log.warning(f"[uq] No valid rows for target '{t_name}'; skipping its UQ calibration.")
+                continue
+            per_target[t_name] = {
+                "ids": df_oof.loc[valid, id_column].tolist(),
+                "y_true": df_oof.loc[valid, t_name].values,
+                "y_pred": df_oof.loc[valid, f"{t_name}_pred"].values,
+                "y_std": df_oof.loc[valid, f"{t_name}_pred_std"].values,
+            }
+
+        if per_target:
+            # V1/V2 need a fingerprint proximity set (smiles); with smiles we fit all
+            # three, otherwise just V0 (fit_regression_uq handles the prox_df=None case).
+            if smiles_column in all_df.columns:
+                prox_df = all_df[[id_column, smiles_column] + list(per_target)].copy()
+                prox_df = prox_df.rename(columns={smiles_column: "smiles"})
+                prox_df["in_model"] = in_model_mask  # see XGB template for rationale on CV folds
+            else:
+                prox_df = None
+                log.warning(f"No '{smiles_column}' column: fitting UQ V0 only (V1/V2 need fingerprints)")
+
+            uq_dict = fit_regression_uq(
+                per_target=per_target,
+                prox_df=prox_df,
+                id_column=id_column,
+                active_version=hyperparameters.get("uq_version", "v1"),
+            )
+
+            # Apply active UQ to df_oof columns for oof_predictions.csv. Each target
+            # gets {target}_-prefixed outputs; the primary is aliased unprefixed to
+            # match prediction / prediction_std.
+            for t_name in per_target:
+                valid = df_oof[t_name].notna()
+                uq_out = uq_dict["oof_outputs"][t_name]
+                for col in uq_out.columns:
+                    df_oof[f"{t_name}_{col}"] = np.nan
+                    df_oof.loc[valid, f"{t_name}_{col}"] = uq_out[col].values
+                    if t_name == primary:
+                        df_oof[col] = df_oof[f"{t_name}_{col}"]
+        else:
+            print("[uq] No valid target rows; skipping UQ fits.")
+
+    # -------------------------------------------------------------------------
+    # Compute SHAP values for feature importance
+    # -------------------------------------------------------------------------
+    # Uses PermutationExplainer with custom featurizers to measure the importance
+    # of each atom/bond feature type (e.g., atomic_num, degree, bond_type).
+    # Output format matches XGB/PyTorch templates: shap_importance.json,
+    # shap_values.csv, and shap_feature_values.csv.
+    # -------------------------------------------------------------------------
+    _shap_t0 = time.time()  # [timing] SHAP phase
+    print("\n" + "=" * 50, flush=True)
+    print("Computing SHAP Values", flush=True)
+    print("=" * 50, flush=True)
+    from workbench.endpoints.chemprop_shap_utils import compute_chemprop_shap, format_shap_results
+
+    print("[timing] SHAP imports loaded", flush=True)
+
+    shap_values_array, shap_feature_names, shap_indices, shap_fractions = compute_chemprop_shap(
+        model=ensemble_models[0],
+        smiles=df_oof[smiles_column].tolist(),
+        extra_descriptors=oof_extra_features if use_extra_features else None,
+        extra_feature_names=extra_feature_cols if use_extra_features else None,
+        is_classifier=model_type == "classifier",
+    )
+    sample_ids = df_oof.iloc[shap_indices][id_column].reset_index(drop=True) if id_column in df_oof.columns else None
+
+    # Multiclass classification: shap_values_array is (n_samples, n_classes, n_features)
+    # Regression (single or multi-target): shap_values_array is (n_samples, n_features)
+    is_multiclass_shap = shap_values_array.ndim == 3 and model_type == "classifier"
+    n_shap_classes = shap_values_array.shape[1] if is_multiclass_shap else 1
+
+    # Limit detailed SHAP CSVs to top N features (shap_importance.json retains all)
+    shap_top_n = 20
+
+    if is_multiclass_shap:
+        # Compute importance averaged across classes (matches XGB/PyTorch)
+        mean_abs_shap = np.mean(np.abs(shap_values_array), axis=(0, 1))
+        shap_importance = sorted(
+            [(shap_feature_names[i], round(float(mean_abs_shap[i]), 6)) for i in range(len(shap_feature_names))],
+            key=lambda x: x[1],
+            reverse=True,
+        )
+        print(f"Top 5 SHAP features: {shap_importance[:5]}")
+
+        # Save per-class SHAP CSVs (matches XGB/PyTorch pattern)
+        class_labels = label_encoder.classes_.tolist()
+        top_n_features = [f[0] for f in shap_importance[:shap_top_n]]
+        top_n_indices = [shap_feature_names.index(f) for f in top_n_features]
+        for class_idx, class_label in enumerate(class_labels):
+            class_shap = shap_values_array[:, class_idx, :][:, top_n_indices]
+            shap_df = pd.DataFrame(class_shap, columns=top_n_features)
+            if sample_ids is not None:
+                shap_df.insert(0, id_column, sample_ids)
+            save_output(shap_df, f"{model_metrics_path}/shap_values_{class_label}.csv")
+        print(f"Saved SHAP values for {len(class_labels)} classes")
+
+        # Save feature values for SHAP plots
+        # Use feature fractions (chemprop-specific) since features are atom/bond bits
+        active_fractions = shap_fractions[:, top_n_indices]
+        feature_vals_df = pd.DataFrame(active_fractions, columns=top_n_features)
+        if sample_ids is not None:
+            feature_vals_df.insert(0, id_column, sample_ids)
+        save_output(feature_vals_df, f"{model_metrics_path}/shap_feature_values.csv")
+    else:
+        shap_importance, shap_values_df, feature_vals_df = format_shap_results(
+            shap_values_array,
+            shap_feature_names,
+            shap_fractions,
+            sample_ids=sample_ids,
+            id_column=id_column,
+            top_n=shap_top_n,
+        )
+        print(f"Top 5 SHAP features: {shap_importance[:5]}")
+        save_output(shap_values_df, f"{model_metrics_path}/shap_values.csv")
+        save_output(feature_vals_df, f"{model_metrics_path}/shap_feature_values.csv")
+
+    save_output(shap_importance, f"{model_metrics_path}/shap_importance.json")
+    print(f"Saved SHAP artifacts ({len(shap_indices)} samples, {len(shap_importance)} features)")
+    print(f"[timing] SHAP: {time.time() - _shap_t0:.1f}s", flush=True)
+
+    # -------------------------------------------------------------------------
+    # Score the held-out validation set (honest, never-trained rows)
+    # -------------------------------------------------------------------------
+    # The OOF rows above are per-fold single-model predictions; held-out rows are scored
+    # by the full ensemble. The two estimators are saved to separate files; primary-target
+    # held-out MAE prints as `holdout_mae`. Starts as an empty frame with the OOF columns
+    # so val_predictions.csv always has a header row.
+    df_val = df_oof.iloc[:0].copy()
+    if len(holdout_df):
+        print("\n" + "=" * 50)
+        print(f"Scoring held-out validation set ({len(holdout_df)} rows)")
+        print("=" * 50)
+
+        # Clean held-out rows the same way training data was cleaned
+        h_df = holdout_df.dropna(subset=[smiles_column]).copy()
+        h_df = h_df[h_df[target_columns].notna().any(axis=1)]
+
+        # Extra features: raw + imputed with TRAINING col_means (model's x_d_transform scales)
+        h_extra = None
+        if use_extra_features:
+            h_extra = h_df[extra_feature_cols].values.astype(np.float32)
+            for i in range(h_extra.shape[1]):
+                h_extra[np.isnan(h_extra[:, i]), i] = col_means[i]
+
+        h_dps, h_valid = create_molecule_datapoints(h_df[smiles_column].tolist(), None, h_extra)
+        h_df = h_df.iloc[h_valid].reset_index(drop=True)
+
+        if len(h_dps):
+            all_ens = predict_ensemble(ensemble_models, h_dps, device=device)
+            h_preds = np.mean(all_ens, axis=0)
+            h_std = compress_std_outliers(np.std(all_ens, axis=0))
+
+            if model_type == "classifier":
+                all_probs_stack = all_ens  # (n_models, n_samples, n_classes or 1 sigmoid)
+                if all_probs_stack.shape[2] == 1:
+                    all_probs_stack = np.concatenate([1 - all_probs_stack, all_probs_stack], axis=2)
+                avg_probs = np.mean(all_probs_stack, axis=0)
+                h_pred = label_encoder.inverse_transform(np.argmax(avg_probs, axis=1))
+                y_h_true = h_df[target_columns[0]].values
+                score_df = compute_classification_metrics(y_h_true, h_pred, label_encoder.classes_, target_columns[0])
+                print_classification_metrics(score_df, target_columns[0], label_encoder.classes_)
+                df_val = pd.DataFrame(
+                    {id_column: h_df[id_column].values, target_columns[0]: y_h_true, "prediction": h_pred}
+                )
+                # Carry per-class probabilities (+ confidence) — the downstream ROC-AUC read requires them.
+                df_val["pred_proba"] = [p.tolist() for p in avg_probs]
+                df_val = expand_proba_column(df_val, label_encoder.classes_)
+                if classification_uq and "classification_confidence" in classification_uq:
+                    raw_conf = compute_vgmu_confidence(avg_probs, all_probs_stack)
+                    df_val["confidence"] = apply_classification_confidence(
+                        raw_conf, classification_uq["classification_confidence"]
+                    )
+            else:
+                df_val = pd.DataFrame({id_column: h_df[id_column].values})
+                print("Held-out validation metrics (per target):")
+                for t_idx, t_name in enumerate(target_columns):
+                    df_val[t_name] = h_df[t_name].values
+                    df_val[f"{t_name}_pred"] = h_preds[:, t_idx]
+                    df_val[f"{t_name}_pred_std"] = h_std[:, t_idx]
+                    mask = h_df[t_name].notna().values
+                    if mask.sum() > 0:
+                        metrics = compute_regression_metrics(h_df[t_name].values[mask], h_preds[mask, t_idx])
+                        if not metrics:
+                            raise ValueError(
+                                f"Held-out predictions for '{t_name}' are all NaN ({int(mask.sum())} labeled rows)."
+                            )
+                        print_regression_metrics(metrics)
+                        if t_idx == 0:
+                            print(f"holdout_mae: {metrics['mae']:.3f}")
+                df_val["prediction"] = df_val[f"{target_columns[0]}_pred"]
+                df_val["prediction_std"] = df_val[f"{target_columns[0]}_pred_std"]
+
+            # Held-out rows are novel to the UQ proximity reference (they were split
+            # out before it was built), so score them the way inference scores a new
+            # molecule. V0 needs no query payload; V1/V2 need smiles.
+            if uq_dict is not None and model_type != "classifier":
+                if uq_dict["uq_model"].UQ_VERSION == "v0":
+                    uq_query = None
+                else:
+                    uq_query = h_df[[smiles_column]].rename(columns={smiles_column: "smiles"})
+                val_uq = uq_dict["uq_model"].predict(
+                    uq_query, df_val["prediction"].values, df_val["prediction_std"].values
+                )
+                for col in val_uq.columns:
+                    df_val[col] = val_uq[col].values
+
+    # -------------------------------------------------------------------------
+    # Save out-of-fold and held-out validation predictions to S3
+    # -------------------------------------------------------------------------
+    output_columns = [id_column] + target_columns
+    output_columns += [f"{t}_pred" for t in target_columns] + [f"{t}_pred_std" for t in target_columns]
+    output_columns += ["prediction", "prediction_std"]
+    # UQ outputs: unprefixed for the primary target, {target}_-prefixed for every target
+    uq_names = [c for c in df_oof.columns if c.startswith("q_") or c in ("confidence", "expected_residual")]
+    output_columns += uq_names
+    output_columns += [f"{t}_{c}" for t in target_columns for c in uq_names]
+    output_columns += [c for c in df_oof.columns if c.endswith("_proba")]
+    output_columns = [c for c in output_columns if c in df_oof.columns]
+
+    # Both files carry the same columns; reindex covers anything the held-out path
+    # didn't produce (e.g. UQ columns when the active version needs fingerprints).
+    save_output(df_oof[output_columns], f"{model_metrics_path}/oof_predictions.csv")
+    save_output(df_val.reindex(columns=output_columns), f"{model_metrics_path}/val_predictions.csv")
+
+    # -------------------------------------------------------------------------
+    # Save model artifacts
+    # -------------------------------------------------------------------------
+    print(f"[timing] post-training elapsed before model save: {time.time() - _post_t0:.1f}s", flush=True)
+    for idx, m in enumerate(ensemble_models):
+        # Move back to CPU before saving so the artifact loads on CPU-only endpoints
+        # (post-training inference above may have moved the model to GPU).
+        models.save_model(os.path.join(args.model_dir, f"chemprop_model_{idx}.pt"), m.cpu())
+    print(f"Saved {len(ensemble_models)} model(s)")
+
+    # Clean up checkpoints
+    for ckpt in glob.glob(os.path.join(args.model_dir, "best_*.ckpt")):
+        os.remove(ckpt)
+
+    ensemble_metadata = {
+        "n_ensemble": len(ensemble_models),
+        "n_folds": n_folds,
+        "target_columns": target_columns,
+        # Foundation model provenance (for tracking/reproducibility)
+        "from_foundation": hyperparameters.get("from_foundation", None),
+        "freeze_mpnn_epochs": hyperparameters.get("freeze_mpnn_epochs", 0),
+        # Bounded-loss censoring config (None when no mask columns were found)
+        "bound_columns": resolved_bound_columns if use_bounded_loss else None,
+    }
+    joblib.dump(ensemble_metadata, os.path.join(args.model_dir, "ensemble_metadata.joblib"))
+
+    # Save both UQ artifacts when fitted — bundle carries V0 + V1 side-by-side.
+    save_regression_uq(uq_dict, args.model_dir)
+    if classification_uq is not None:
+        save_classification_uq(classification_uq, args.model_dir)
+
+    with open(os.path.join(args.model_dir, "hyperparameters.json"), "w") as f:
+        json.dump(hyperparameters, f, indent=2)
+
+    # Also write to the metrics path so the Model loads hyperparameters from meta
+    # (a cheap tag read) instead of downloading + extracting the full model artifact.
+    save_output(hyperparameters, f"{model_metrics_path}/hyperparameters.json")
+
+    if label_encoder:
+        joblib.dump(label_encoder, os.path.join(args.model_dir, "label_encoder.joblib"))
+
+    if use_extra_features:
+        joblib.dump(
+            {"extra_feature_cols": extra_feature_cols, "col_means": col_means.tolist()},
+            os.path.join(args.model_dir, "feature_metadata.joblib"),
+        )
+        print(f"Saved feature metadata for {len(extra_feature_cols)} extra features")
+
+    print(f"[timing] total post-training: {time.time() - _post_t0:.1f}s", flush=True)
+    print(f"[timing] total run: {time.time() - _run_t0:.1f}s", flush=True)
+
+    print(f"\nModel training complete! Artifacts saved to {args.model_dir}")

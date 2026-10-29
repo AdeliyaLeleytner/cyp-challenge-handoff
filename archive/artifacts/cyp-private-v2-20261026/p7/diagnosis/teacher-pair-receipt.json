@@ -1,0 +1,18 @@
+{
+  "pairs": 120,
+  "teacher_pair_rows": 240,
+  "input_pair_sha256": "19dbb88889b6ba71b434bda011a029535548132e04552c415700b5208f632ae0",
+  "source_sha256": "493fd7931b356ff5fbe7728b4c609747264c91cdd433319b78d6cddef955a3f9",
+  "pair_convention": "model_audit suppliedsameOOFtestfold sameCYP measuredlabels;Cleanup+FragmentParent onlyforgeometry;Morganradius2/2048/nochirality,Tanimoto>=.7;noidentitymerge",
+  "no_fits": true,
+  "no_independent_pair_significance_claim": true,
+  "diagnostic_thresholds": {
+    "near_boundary": [
+      0.01,
+      0.99
+    ],
+    "small_absolute_teacher_delta": 0.01,
+    "point10fold": "abs observed pIC50 difference>=1",
+    "interval_supported": "provided marginal interval gap>=1; not joint posterior claim"
+  }
+}

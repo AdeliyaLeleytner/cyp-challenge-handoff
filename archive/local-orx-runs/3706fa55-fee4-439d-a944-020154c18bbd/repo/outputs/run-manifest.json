@@ -1,0 +1,63 @@
+{
+  "weight_sha256": "c376624d3407204e780a0ed13a9ac097cc9bb1c13ef89cdbc633c1715c183651",
+  "weight_source": "https://zenodo.org/records/15460715/files/chemeleon_mp.pt",
+  "encoder_hyperparameters": {
+    "d_v": 72,
+    "d_e": 14,
+    "d_h": 2048,
+    "bias": false,
+    "depth": 6,
+    "dropout": 0.0,
+    "activation": "relu",
+    "undirected": false,
+    "d_vd": null,
+    "V_d_transform": null,
+    "graph_transform": null
+  },
+  "encoder_tensors_loaded": 4,
+  "trainable_parameters": 9330144,
+  "encoder_parameters": 8714240,
+  "output_tasks": 4,
+  "configuration": {
+    "seed": 20261023,
+    "accelerator": "mps",
+    "batch_size": 64,
+    "min_epochs": 20,
+    "max_epochs": 60,
+    "patience": 10,
+    "warmup_epochs": 2,
+    "init_lr": 0.0001,
+    "max_lr": 0.001,
+    "final_lr": 0.0001,
+    "loss": "Chemprop default masked MSE on train-scaled targets",
+    "checkpoint_selection": "minimum inner-validation scaled MSE",
+    "bootstrap_samples": 1000,
+    "holdout_policy": "predict once after checkpoint selection; no feedback-based changes",
+    "max_wall_hours": 3,
+    "resume_checkpoint": "/Users/adeliyaleleytner/.cache/cyp-inhibition/orx-store/local-runs/29aded1f-734b-4282-b111-e0923870d7a6/repo/outputs/checkpoints/last.ckpt",
+    "resume_checkpoint_sha256": "4f85eafda82c82a4b96635f0e403150001becdf6559de11f7c59ac11bc7c2afb",
+    "previous_run_directory": "/Users/adeliyaleleytner/.cache/cyp-inhibition/orx-store/local-runs/29aded1f-734b-4282-b111-e0923870d7a6/repo",
+    "prior_best_checkpoint": "/Users/adeliyaleleytner/.cache/cyp-inhibition/orx-store/local-runs/29aded1f-734b-4282-b111-e0923870d7a6/repo/outputs/checkpoints/best-epoch=002-val_loss=0.53734.ckpt",
+    "prior_best_validation_loss": 0.5373409390449524,
+    "prior_training_seconds": 186.43548179099162,
+    "resume_note": "Technical disk-space recovery from epoch6 checkpoint; optimizer/scheduler restored. Data-loader RNG restarts from configured seed; no claim of bitwise uninterrupted replay."
+  },
+  "torch": "2.8.0",
+  "chemprop": "2.2.1",
+  "lightning": "2.5.5",
+  "python": "3.12.11",
+  "n_train": 3805,
+  "n_validation": 350,
+  "target_means": [
+    4.956572193946409,
+    4.5876498565564,
+    4.792559466996235,
+    4.071752532861274
+  ],
+  "target_scales": [
+    1.0172269209489053,
+    0.7755855978013289,
+    0.9318320493037021,
+    1.0901081912696942
+  ]
+}

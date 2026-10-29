@@ -1,0 +1,48 @@
+[project]
+name = "cyp-challenge"
+version = "0.1.0"
+description = "OpenADMET CYP Inhibition Blind Challenge: predicting CYP1A2/2C9/2D6/3A4 inhibition from SMILES"
+readme = "README.md"
+requires-python = "==3.12.*"
+
+# The scikit-learn ceiling is not caution, it is a measured boundary. Every version from
+# 1.3.2 through 1.8.0 regenerates results/preds/oof.json bit for bit (max |delta| = 0);
+# 1.9.0 does not - it moves every prediction by ~0.135 pIC50, shifts macro ST-RAE by
+# 0.003 and doubles the measured effect of the mechanistic block (-0.0056 -> -0.0113).
+# That is small against the 0.016 seed-to-seed spread, so the conclusions survive, but
+# the document quotes four decimals and they would all move.
+#
+# numpy is deliberately NOT pinned: 1.26.4 and 2.5.2 both reproduce exactly, so the
+# earlier suspicion that numpy 2 was involved was wrong. Only scikit-learn matters.
+#
+# Raising the ceiling means re-running the whole pipeline and updating docs/.
+dependencies = [
+    "numpy>=1.26",
+    "scikit-learn>=1.3,<1.9",
+    "pandas>=2.0,<3",
+    "scipy>=1.11,<2",
+    "rdkit>=2023.9",
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+    # 2.x is the only line still on PyPI and the only one exposing protonate_smiles(),
+    # which src/feats.py calls.
+    "dimorphite-dl>=2.0.2",
+    "torch>=2.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.uv]
+# A collection of one-shot scripts, not an installable package.
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"

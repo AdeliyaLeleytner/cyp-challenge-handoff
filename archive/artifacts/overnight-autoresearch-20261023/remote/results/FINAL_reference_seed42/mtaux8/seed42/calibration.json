@@ -1,0 +1,695 @@
+{
+  "development_scores": {
+    "oof_lp": {
+      "defined": true,
+      "endpoints": {
+        "CYP1A2_pIC50_direct_inhibition": {
+          "MAE": 0.6316572514808648,
+          "ST_RAE": 0.7667734355924591,
+          "baseline_error_sum": 694.0464937478519,
+          "interval_error_sum": 532.1764144719406,
+          "n": 1412,
+          "truth_mean": 4.95541032675425
+        },
+        "CYP2C9_pIC50_direct_inhibition": {
+          "MAE": 0.4450648564614307,
+          "ST_RAE": 0.5784754110279134,
+          "baseline_error_sum": 403.15059234205444,
+          "interval_error_sum": 233.21270461121674,
+          "n": 1285,
+          "truth_mean": 4.58073792014786
+        },
+        "CYP2D6_pIC50_direct_inhibition": {
+          "MAE": 0.5754806409631726,
+          "ST_RAE": 0.8758452984079027,
+          "baseline_error_sum": 625.365891461621,
+          "interval_error_sum": 547.7237758213275,
+          "n": 1493,
+          "truth_mean": 4.784202026339584
+        },
+        "CYP3A4_pIC50_direct_inhibition": {
+          "MAE": 0.5396955453754922,
+          "ST_RAE": 0.4567681555982837,
+          "baseline_error_sum": 1223.2994357089558,
+          "interval_error_sum": 558.764226993201,
+          "n": 2335,
+          "truth_mean": 4.096054449714775
+        }
+      },
+      "macro_ST_RAE": 0.6694655751566398,
+      "n_molecules": 4905,
+      "scorer": {
+        "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample.",
+        "function": "rae_soft_threshold_absolute_error",
+        "path": "/root/.orx/runs/164ab051-2fe9-4c7e-8402-b844870a02e0/repo/official_scoring_functions.py",
+        "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+      }
+    },
+    "oof_r2": {
+      "defined": true,
+      "endpoints": {
+        "CYP1A2_pIC50_direct_inhibition": {
+          "MAE": 0.6333813868444669,
+          "ST_RAE": 0.7907540626842806,
+          "baseline_error_sum": 694.0464937478519,
+          "interval_error_sum": 548.820084622894,
+          "n": 1412,
+          "truth_mean": 4.95541032675425
+        },
+        "CYP2C9_pIC50_direct_inhibition": {
+          "MAE": 0.43905499070988935,
+          "ST_RAE": 0.6068815028120317,
+          "baseline_error_sum": 403.15059234205444,
+          "interval_error_sum": 244.66463734010676,
+          "n": 1285,
+          "truth_mean": 4.58073792014786
+        },
+        "CYP2D6_pIC50_direct_inhibition": {
+          "MAE": 0.579413040474771,
+          "ST_RAE": 0.8868693654351445,
+          "baseline_error_sum": 625.365891461621,
+          "interval_error_sum": 554.6178513253512,
+          "n": 1493,
+          "truth_mean": 4.784202026339584
+        },
+        "CYP3A4_pIC50_direct_inhibition": {
+          "MAE": 0.5157852607974887,
+          "ST_RAE": 0.4869177069521405,
+          "baseline_error_sum": 1223.2994357089558,
+          "interval_error_sum": 595.6461561512522,
+          "n": 2335,
+          "truth_mean": 4.096054449714775
+        }
+      },
+      "macro_ST_RAE": 0.6928556594708992,
+      "n_molecules": 4905,
+      "scorer": {
+        "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample.",
+        "function": "rae_soft_threshold_absolute_error",
+        "path": "/root/.orx/runs/164ab051-2fe9-4c7e-8402-b844870a02e0/repo/official_scoring_functions.py",
+        "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+      }
+    },
+    "raw": {
+      "defined": true,
+      "endpoints": {
+        "CYP1A2_pIC50_direct_inhibition": {
+          "MAE": 0.6356369802216714,
+          "ST_RAE": 0.8087766646133819,
+          "baseline_error_sum": 694.0464937478519,
+          "interval_error_sum": 561.3286083,
+          "n": 1412,
+          "truth_mean": 4.95541032675425
+        },
+        "CYP2C9_pIC50_direct_inhibition": {
+          "MAE": 0.440577947492607,
+          "ST_RAE": 0.6224608164213846,
+          "baseline_error_sum": 403.15059234205444,
+          "interval_error_sum": 250.94544685000002,
+          "n": 1285,
+          "truth_mean": 4.58073792014786
+        },
+        "CYP2D6_pIC50_direct_inhibition": {
+          "MAE": 0.5841209375733423,
+          "ST_RAE": 0.8981338765330942,
+          "baseline_error_sum": 625.365891461621,
+          "interval_error_sum": 561.6622923499999,
+          "n": 1493,
+          "truth_mean": 4.784202026339584
+        },
+        "CYP3A4_pIC50_direct_inhibition": {
+          "MAE": 0.511023760549893,
+          "ST_RAE": 0.47989635396159136,
+          "baseline_error_sum": 1223.2994357089558,
+          "interval_error_sum": 587.056939,
+          "n": 2335,
+          "truth_mean": 4.096054449714775
+        }
+      },
+      "macro_ST_RAE": 0.702316927882363,
+      "n_molecules": 4905,
+      "scorer": {
+        "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample.",
+        "function": "rae_soft_threshold_absolute_error",
+        "path": "/root/.orx/runs/164ab051-2fe9-4c7e-8402-b844870a02e0/repo/official_scoring_functions.py",
+        "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+      }
+    }
+  },
+  "n_calibration_folds": 5,
+  "parameters": {
+    "oof_lp": {
+      "allowed_fit_ids_checked": true,
+      "fit_ids_sha256": "81bab99de8ca82a8a991afd149bc977e9b9daf976a78c6b61b0abcc5f64b4d67",
+      "fit_score_warning": "These are apparent calibration fit scores; use development calibration folds for method selection.",
+      "forbidden_fit_ids_checked": true,
+      "method": "oof_lp",
+      "n_fit_molecules": 4905,
+      "oof_calibration_fit_score": {
+        "defined": true,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "MAE": 0.6302220123194093,
+            "ST_RAE": 0.7637967741653536,
+            "baseline_error_sum": 694.0464937478519,
+            "interval_error_sum": 530.1104730453835,
+            "n": 1412,
+            "truth_mean": 4.95541032675425
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "MAE": 0.44329410910227196,
+            "ST_RAE": 0.5745960777707942,
+            "baseline_error_sum": 403.15059234205444,
+            "interval_error_sum": 231.64874911071686,
+            "n": 1285,
+            "truth_mean": 4.58073792014786
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "MAE": 0.5728183684078232,
+            "ST_RAE": 0.870378996181868,
+            "baseline_error_sum": 625.365891461621,
+            "interval_error_sum": 544.3053368567447,
+            "n": 1493,
+            "truth_mean": 4.784202026339584
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "MAE": 0.5376402070698507,
+            "ST_RAE": 0.4521097360461118,
+            "baseline_error_sum": 1223.2994357089558,
+            "interval_error_sum": 553.0655849837335,
+            "n": 2335,
+            "truth_mean": 4.096054449714775
+          }
+        },
+        "macro_ST_RAE": 0.6652203960410319,
+        "n_molecules": 4905,
+        "scorer": {
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample.",
+          "function": "rae_soft_threshold_absolute_error",
+          "path": "/root/.orx/runs/164ab051-2fe9-4c7e-8402-b844870a02e0/repo/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+        }
+      },
+      "oof_provenance": "Runner must establish each prediction was made without its own molecule in fit.",
+      "oof_raw_score": {
+        "defined": true,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "MAE": 0.6356369802216714,
+            "ST_RAE": 0.8087766646133819,
+            "baseline_error_sum": 694.0464937478519,
+            "interval_error_sum": 561.3286083,
+            "n": 1412,
+            "truth_mean": 4.95541032675425
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "MAE": 0.440577947492607,
+            "ST_RAE": 0.6224608164213846,
+            "baseline_error_sum": 403.15059234205444,
+            "interval_error_sum": 250.94544685000002,
+            "n": 1285,
+            "truth_mean": 4.58073792014786
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "MAE": 0.5841209375733423,
+            "ST_RAE": 0.8981338765330942,
+            "baseline_error_sum": 625.365891461621,
+            "interval_error_sum": 561.6622923499999,
+            "n": 1493,
+            "truth_mean": 4.784202026339584
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "MAE": 0.511023760549893,
+            "ST_RAE": 0.47989635396159136,
+            "baseline_error_sum": 1223.2994357089558,
+            "interval_error_sum": 587.056939,
+            "n": 2335,
+            "truth_mean": 4.096054449714775
+          }
+        },
+        "macro_ST_RAE": 0.702316927882363,
+        "n_molecules": 4905,
+        "scorer": {
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample.",
+          "function": "rae_soft_threshold_absolute_error",
+          "path": "/root/.orx/runs/164ab051-2fe9-4c7e-8402-b844870a02e0/repo/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+        }
+      },
+      "per_target": {
+        "CYP1A2_pIC50_direct_inhibition": {
+          "intercept": 1.6377027157448736,
+          "interval_absolute_error_sum": 530.1104730453835,
+          "method": "oof_lp",
+          "n_fit": 1412,
+          "oof_r2_standin": {
+            "intercept": 0.7556657830918816,
+            "method": "oof_r2",
+            "negative_slope_constrained": false,
+            "slope": 0.8493466746306206
+          },
+          "optimizer": "scipy.optimize.linprog/highs",
+          "prediction_mean_fit": 4.944676501487252,
+          "prediction_std_fit": 0.6766645172752198,
+          "rank_collapsed": false,
+          "slope": 0.6925433738395601,
+          "status": 0
+        },
+        "CYP2C9_pIC50_direct_inhibition": {
+          "intercept": 1.1398975726101908,
+          "interval_absolute_error_sum": 231.64874911071675,
+          "method": "oof_lp",
+          "n_fit": 1285,
+          "oof_r2_standin": {
+            "intercept": 0.5893949772923133,
+            "method": "oof_r2",
+            "negative_slope_constrained": false,
+            "slope": 0.8731185886036935
+          },
+          "optimizer": "scipy.optimize.linprog/highs",
+          "prediction_mean_fit": 4.571364067782101,
+          "prediction_std_fit": 0.6006774210811917,
+          "rank_collapsed": false,
+          "slope": 0.7753053249930142,
+          "status": 0
+        },
+        "CYP2D6_pIC50_direct_inhibition": {
+          "intercept": 1.497826049441592,
+          "interval_absolute_error_sum": 544.3053368567449,
+          "method": "oof_lp",
+          "n_fit": 1493,
+          "oof_r2_standin": {
+            "intercept": 0.6781627868773548,
+            "method": "oof_r2",
+            "negative_slope_constrained": false,
+            "slope": 0.8554305567078577
+          },
+          "optimizer": "scipy.optimize.linprog/highs",
+          "prediction_mean_fit": 4.799967931078365,
+          "prediction_std_fit": 0.41884198187962074,
+          "rank_collapsed": false,
+          "slope": 0.6895949672907066,
+          "status": 0
+        },
+        "CYP3A4_pIC50_direct_inhibition": {
+          "intercept": 0.939144622093151,
+          "interval_absolute_error_sum": 553.0655849837332,
+          "method": "oof_lp",
+          "n_fit": 2335,
+          "oof_r2_standin": {
+            "intercept": 0.27554966634026146,
+            "method": "oof_r2",
+            "negative_slope_constrained": false,
+            "slope": 0.9240334041285773
+          },
+          "optimizer": "scipy.optimize.linprog/highs",
+          "prediction_mean_fit": 4.134595964068523,
+          "prediction_std_fit": 0.9255246555830781,
+          "rank_collapsed": false,
+          "slope": 0.8038176596378593,
+          "status": 0
+        }
+      },
+      "query_labels_used": false,
+      "query_moments_used": false,
+      "source_audit": {
+        "claim": "Reconstructed recipe with independent local calibration, not reproduction of historical leaderboard 0.4378.",
+        "excluded_constants": [
+          "BLIND_MOMENTS",
+          "SOLVED_PEARSON",
+          "STRAE_MOMENTS",
+          "OOF_TO_BLIND"
+        ],
+        "local_adaptation": "Fit an affine map using development training OOF only; do not use query moments, target labels, or the source floor.",
+        "oof_pearson_board_dependency": "Lines 197-198 multiply measured OOF Pearson by OOF_TO_BLIND, itself derived from board measurements.",
+        "place_board_dependency": "Lines 217-227 use BLIND_MOMENTS; lines 220-222 optionally substitute board-tuned STRAE_MOMENTS.",
+        "source": "https://github.com/SuperCowPowers/workbench/blob/8c72c7559471febaf0962fd551b4eaab8db3a136/ml_pipelines/OpenADMET/cyp/scripts/cyp_recalibrate.py"
+      },
+      "targets": [
+        "CYP1A2_pIC50_direct_inhibition",
+        "CYP2C9_pIC50_direct_inhibition",
+        "CYP2D6_pIC50_direct_inhibition",
+        "CYP3A4_pIC50_direct_inhibition"
+      ]
+    },
+    "oof_r2": {
+      "allowed_fit_ids_checked": true,
+      "fit_ids_sha256": "81bab99de8ca82a8a991afd149bc977e9b9daf976a78c6b61b0abcc5f64b4d67",
+      "fit_score_warning": "These are apparent calibration fit scores; use development calibration folds for method selection.",
+      "forbidden_fit_ids_checked": true,
+      "method": "oof_r2",
+      "n_fit_molecules": 4905,
+      "oof_calibration_fit_score": {
+        "defined": true,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "MAE": 0.6301842703764243,
+            "ST_RAE": 0.7837176963521671,
+            "baseline_error_sum": 694.0464937478519,
+            "interval_error_sum": 543.9365192413652,
+            "n": 1412,
+            "truth_mean": 4.95541032675425
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "MAE": 0.43574222024711984,
+            "ST_RAE": 0.6006057725262864,
+            "baseline_error_sum": 403.15059234205444,
+            "interval_error_sum": 242.1345729580296,
+            "n": 1285,
+            "truth_mean": 4.58073792014786
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "MAE": 0.5764627787864903,
+            "ST_RAE": 0.8804204872070909,
+            "baseline_error_sum": 625.365891461621,
+            "interval_error_sum": 550.5849428433371,
+            "n": 1493,
+            "truth_mean": 4.784202026339584
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "MAE": 0.5123010604617078,
+            "ST_RAE": 0.4817796992665698,
+            "baseline_error_sum": 1223.2994357089558,
+            "interval_error_sum": 589.3608342488253,
+            "n": 2335,
+            "truth_mean": 4.096054449714775
+          }
+        },
+        "macro_ST_RAE": 0.6866309138380285,
+        "n_molecules": 4905,
+        "scorer": {
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample.",
+          "function": "rae_soft_threshold_absolute_error",
+          "path": "/root/.orx/runs/164ab051-2fe9-4c7e-8402-b844870a02e0/repo/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+        }
+      },
+      "oof_provenance": "Runner must establish each prediction was made without its own molecule in fit.",
+      "oof_raw_score": {
+        "defined": true,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "MAE": 0.6356369802216714,
+            "ST_RAE": 0.8087766646133819,
+            "baseline_error_sum": 694.0464937478519,
+            "interval_error_sum": 561.3286083,
+            "n": 1412,
+            "truth_mean": 4.95541032675425
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "MAE": 0.440577947492607,
+            "ST_RAE": 0.6224608164213846,
+            "baseline_error_sum": 403.15059234205444,
+            "interval_error_sum": 250.94544685000002,
+            "n": 1285,
+            "truth_mean": 4.58073792014786
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "MAE": 0.5841209375733423,
+            "ST_RAE": 0.8981338765330942,
+            "baseline_error_sum": 625.365891461621,
+            "interval_error_sum": 561.6622923499999,
+            "n": 1493,
+            "truth_mean": 4.784202026339584
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "MAE": 0.511023760549893,
+            "ST_RAE": 0.47989635396159136,
+            "baseline_error_sum": 1223.2994357089558,
+            "interval_error_sum": 587.056939,
+            "n": 2335,
+            "truth_mean": 4.096054449714775
+          }
+        },
+        "macro_ST_RAE": 0.702316927882363,
+        "n_molecules": 4905,
+        "scorer": {
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample.",
+          "function": "rae_soft_threshold_absolute_error",
+          "path": "/root/.orx/runs/164ab051-2fe9-4c7e-8402-b844870a02e0/repo/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+        }
+      },
+      "per_target": {
+        "CYP1A2_pIC50_direct_inhibition": {
+          "intercept": 0.7556657830918816,
+          "method": "oof_r2",
+          "n_fit": 1412,
+          "negative_slope_constrained": false,
+          "oof_r2_standin": {
+            "intercept": 0.7556657830918816,
+            "method": "oof_r2",
+            "negative_slope_constrained": false,
+            "slope": 0.8493466746306206
+          },
+          "slope": 0.8493466746306206
+        },
+        "CYP2C9_pIC50_direct_inhibition": {
+          "intercept": 0.5893949772923133,
+          "method": "oof_r2",
+          "n_fit": 1285,
+          "negative_slope_constrained": false,
+          "oof_r2_standin": {
+            "intercept": 0.5893949772923133,
+            "method": "oof_r2",
+            "negative_slope_constrained": false,
+            "slope": 0.8731185886036935
+          },
+          "slope": 0.8731185886036935
+        },
+        "CYP2D6_pIC50_direct_inhibition": {
+          "intercept": 0.6781627868773548,
+          "method": "oof_r2",
+          "n_fit": 1493,
+          "negative_slope_constrained": false,
+          "oof_r2_standin": {
+            "intercept": 0.6781627868773548,
+            "method": "oof_r2",
+            "negative_slope_constrained": false,
+            "slope": 0.8554305567078577
+          },
+          "slope": 0.8554305567078577
+        },
+        "CYP3A4_pIC50_direct_inhibition": {
+          "intercept": 0.27554966634026146,
+          "method": "oof_r2",
+          "n_fit": 2335,
+          "negative_slope_constrained": false,
+          "oof_r2_standin": {
+            "intercept": 0.27554966634026146,
+            "method": "oof_r2",
+            "negative_slope_constrained": false,
+            "slope": 0.9240334041285773
+          },
+          "slope": 0.9240334041285773
+        }
+      },
+      "query_labels_used": false,
+      "query_moments_used": false,
+      "source_audit": {
+        "claim": "Reconstructed recipe with independent local calibration, not reproduction of historical leaderboard 0.4378.",
+        "excluded_constants": [
+          "BLIND_MOMENTS",
+          "SOLVED_PEARSON",
+          "STRAE_MOMENTS",
+          "OOF_TO_BLIND"
+        ],
+        "local_adaptation": "Fit an affine map using development training OOF only; do not use query moments, target labels, or the source floor.",
+        "oof_pearson_board_dependency": "Lines 197-198 multiply measured OOF Pearson by OOF_TO_BLIND, itself derived from board measurements.",
+        "place_board_dependency": "Lines 217-227 use BLIND_MOMENTS; lines 220-222 optionally substitute board-tuned STRAE_MOMENTS.",
+        "source": "https://github.com/SuperCowPowers/workbench/blob/8c72c7559471febaf0962fd551b4eaab8db3a136/ml_pipelines/OpenADMET/cyp/scripts/cyp_recalibrate.py"
+      },
+      "targets": [
+        "CYP1A2_pIC50_direct_inhibition",
+        "CYP2C9_pIC50_direct_inhibition",
+        "CYP2D6_pIC50_direct_inhibition",
+        "CYP3A4_pIC50_direct_inhibition"
+      ]
+    },
+    "raw": {
+      "allowed_fit_ids_checked": true,
+      "fit_ids_sha256": "81bab99de8ca82a8a991afd149bc977e9b9daf976a78c6b61b0abcc5f64b4d67",
+      "fit_score_warning": "These are apparent calibration fit scores; use development calibration folds for method selection.",
+      "forbidden_fit_ids_checked": true,
+      "method": "raw",
+      "n_fit_molecules": 4905,
+      "oof_calibration_fit_score": {
+        "defined": true,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "MAE": 0.6356369802216714,
+            "ST_RAE": 0.8087766646133819,
+            "baseline_error_sum": 694.0464937478519,
+            "interval_error_sum": 561.3286083,
+            "n": 1412,
+            "truth_mean": 4.95541032675425
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "MAE": 0.440577947492607,
+            "ST_RAE": 0.6224608164213846,
+            "baseline_error_sum": 403.15059234205444,
+            "interval_error_sum": 250.94544685000002,
+            "n": 1285,
+            "truth_mean": 4.58073792014786
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "MAE": 0.5841209375733423,
+            "ST_RAE": 0.8981338765330942,
+            "baseline_error_sum": 625.365891461621,
+            "interval_error_sum": 561.6622923499999,
+            "n": 1493,
+            "truth_mean": 4.784202026339584
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "MAE": 0.511023760549893,
+            "ST_RAE": 0.47989635396159136,
+            "baseline_error_sum": 1223.2994357089558,
+            "interval_error_sum": 587.056939,
+            "n": 2335,
+            "truth_mean": 4.096054449714775
+          }
+        },
+        "macro_ST_RAE": 0.702316927882363,
+        "n_molecules": 4905,
+        "scorer": {
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample.",
+          "function": "rae_soft_threshold_absolute_error",
+          "path": "/root/.orx/runs/164ab051-2fe9-4c7e-8402-b844870a02e0/repo/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+        }
+      },
+      "oof_provenance": "Runner must establish each prediction was made without its own molecule in fit.",
+      "oof_raw_score": {
+        "defined": true,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "MAE": 0.6356369802216714,
+            "ST_RAE": 0.8087766646133819,
+            "baseline_error_sum": 694.0464937478519,
+            "interval_error_sum": 561.3286083,
+            "n": 1412,
+            "truth_mean": 4.95541032675425
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "MAE": 0.440577947492607,
+            "ST_RAE": 0.6224608164213846,
+            "baseline_error_sum": 403.15059234205444,
+            "interval_error_sum": 250.94544685000002,
+            "n": 1285,
+            "truth_mean": 4.58073792014786
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "MAE": 0.5841209375733423,
+            "ST_RAE": 0.8981338765330942,
+            "baseline_error_sum": 625.365891461621,
+            "interval_error_sum": 561.6622923499999,
+            "n": 1493,
+            "truth_mean": 4.784202026339584
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "MAE": 0.511023760549893,
+            "ST_RAE": 0.47989635396159136,
+            "baseline_error_sum": 1223.2994357089558,
+            "interval_error_sum": 587.056939,
+            "n": 2335,
+            "truth_mean": 4.096054449714775
+          }
+        },
+        "macro_ST_RAE": 0.702316927882363,
+        "n_molecules": 4905,
+        "scorer": {
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample.",
+          "function": "rae_soft_threshold_absolute_error",
+          "path": "/root/.orx/runs/164ab051-2fe9-4c7e-8402-b844870a02e0/repo/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+        }
+      },
+      "per_target": {
+        "CYP1A2_pIC50_direct_inhibition": {
+          "intercept": 0.0,
+          "method": "raw",
+          "n_fit": 1412,
+          "oof_r2_standin": {
+            "intercept": 0.7556657830918816,
+            "method": "oof_r2",
+            "negative_slope_constrained": false,
+            "slope": 0.8493466746306206
+          },
+          "slope": 1.0
+        },
+        "CYP2C9_pIC50_direct_inhibition": {
+          "intercept": 0.0,
+          "method": "raw",
+          "n_fit": 1285,
+          "oof_r2_standin": {
+            "intercept": 0.5893949772923133,
+            "method": "oof_r2",
+            "negative_slope_constrained": false,
+            "slope": 0.8731185886036935
+          },
+          "slope": 1.0
+        },
+        "CYP2D6_pIC50_direct_inhibition": {
+          "intercept": 0.0,
+          "method": "raw",
+          "n_fit": 1493,
+          "oof_r2_standin": {
+            "intercept": 0.6781627868773548,
+            "method": "oof_r2",
+            "negative_slope_constrained": false,
+            "slope": 0.8554305567078577
+          },
+          "slope": 1.0
+        },
+        "CYP3A4_pIC50_direct_inhibition": {
+          "intercept": 0.0,
+          "method": "raw",
+          "n_fit": 2335,
+          "oof_r2_standin": {
+            "intercept": 0.27554966634026146,
+            "method": "oof_r2",
+            "negative_slope_constrained": false,
+            "slope": 0.9240334041285773
+          },
+          "slope": 1.0
+        }
+      },
+      "query_labels_used": false,
+      "query_moments_used": false,
+      "source_audit": {
+        "claim": "Reconstructed recipe with independent local calibration, not reproduction of historical leaderboard 0.4378.",
+        "excluded_constants": [
+          "BLIND_MOMENTS",
+          "SOLVED_PEARSON",
+          "STRAE_MOMENTS",
+          "OOF_TO_BLIND"
+        ],
+        "local_adaptation": "Fit an affine map using development training OOF only; do not use query moments, target labels, or the source floor.",
+        "oof_pearson_board_dependency": "Lines 197-198 multiply measured OOF Pearson by OOF_TO_BLIND, itself derived from board measurements.",
+        "place_board_dependency": "Lines 217-227 use BLIND_MOMENTS; lines 220-222 optionally substitute board-tuned STRAE_MOMENTS.",
+        "source": "https://github.com/SuperCowPowers/workbench/blob/8c72c7559471febaf0962fd551b4eaab8db3a136/ml_pipelines/OpenADMET/cyp/scripts/cyp_recalibrate.py"
+      },
+      "targets": [
+        "CYP1A2_pIC50_direct_inhibition",
+        "CYP2C9_pIC50_direct_inhibition",
+        "CYP2D6_pIC50_direct_inhibition",
+        "CYP3A4_pIC50_direct_inhibition"
+      ]
+    }
+  },
+  "selected_name": "oof_lp",
+  "selection_scope": "cross-fitted development training OOF only",
+  "source_audit": {
+    "claim": "Reconstructed recipe with independent local calibration, not reproduction of historical leaderboard 0.4378.",
+    "excluded_constants": [
+      "BLIND_MOMENTS",
+      "SOLVED_PEARSON",
+      "STRAE_MOMENTS",
+      "OOF_TO_BLIND"
+    ],
+    "local_adaptation": "Fit an affine map using development training OOF only; do not use query moments, target labels, or the source floor.",
+    "oof_pearson_board_dependency": "Lines 197-198 multiply measured OOF Pearson by OOF_TO_BLIND, itself derived from board measurements.",
+    "place_board_dependency": "Lines 217-227 use BLIND_MOMENTS; lines 220-222 optionally substitute board-tuned STRAE_MOMENTS.",
+    "source": "https://github.com/SuperCowPowers/workbench/blob/8c72c7559471febaf0962fd551b4eaab8db3a136/ml_pipelines/OpenADMET/cyp/scripts/cyp_recalibrate.py"
+  }
+}

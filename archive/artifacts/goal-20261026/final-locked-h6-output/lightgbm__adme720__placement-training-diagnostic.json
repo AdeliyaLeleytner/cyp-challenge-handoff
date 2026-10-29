@@ -1,0 +1,32 @@
+{
+  "defined": true,
+  "diagnostic_only": true,
+  "uses_published_leaderboard_derived_constants": true,
+  "fit_outer_labels": false,
+  "per_cyp": {
+    "CYP1A2_pIC50_direct_inhibition": {
+      "oof_to_blind_pearson": 0.754410318996283,
+      "scale": 2.3886159316156386,
+      "offset": -0.31013386571108814,
+      "floor_count": 11
+    },
+    "CYP2C9_pIC50_direct_inhibition": {
+      "oof_to_blind_pearson": 0.8408956090484913,
+      "scale": 2.0596073842172515,
+      "offset": 0.28994267492299475,
+      "floor_count": 0
+    },
+    "CYP2D6_pIC50_direct_inhibition": {
+      "oof_to_blind_pearson": 0.7385265214126207,
+      "scale": 4.361972430485785,
+      "offset": -1.0857776757999509,
+      "floor_count": 0
+    },
+    "CYP3A4_pIC50_direct_inhibition": {
+      "oof_to_blind_pearson": 0.8521945159208645,
+      "scale": 1.4729841709390528,
+      "offset": 0.5969730410922498,
+      "floor_count": 0
+    }
+  }
+}

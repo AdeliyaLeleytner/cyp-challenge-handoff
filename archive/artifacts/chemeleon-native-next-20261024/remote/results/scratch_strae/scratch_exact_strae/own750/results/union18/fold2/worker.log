@@ -1,0 +1,86 @@
+Seed set to 44
+{"event": "exact_strae_fold_config", "fold": 2, "criterion_mode": "exact_strae_v1", "fit_statistics": {"primary_indices": [0, 1, 2, 3], "primary_counts": [1451, 912, 1065, 1011], "primary_means": [4.068395400028946, 4.583914631018639, 4.780267648249765, 4.982158093262116], "primary_denominators": [759.8597491929951, 288.19881633655825, 441.4606309939925, 477.5813849823344], "mode": "exact_strae_v1", "n_fit_rows": 24736, "n_targets": 18, "target_counts": [1451, 912, 1065, 1011, 3063, 3063, 3063, 3063, 12544, 8449, 6719, 8769, 8830, 13070, 13070, 13070, 13070, 13070], "auxiliary_indices": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], "native_task_weights": [0.740429699420929, 1.18834388256073, 1.0034117698669434, 1.067814588546753, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657], "primary_native_weight_sum": 3.9999999403953552, "auxiliary_head_coefficients": [0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868], "auxiliary_total_nominal_budget": 1.0499999530613415, "scaler_mean": [4.0683953963338215, 4.583914633644254, 4.78026765053261, 4.982158088424675, -1.9140055803193832, -0.6901832902097172, -0.4229795415239058, -0.6600554983151237, 5.248136169828323, 5.287484912452422, 5.253648611029835, 5.350288527546675, 5.279546438446132, -37.43245222232354, -30.539883922468036, -21.074638432579853, -44.646501683928946, -48.0166165497972], "scaler_scale": [1.0955255378287672, 0.7760753114025003, 0.9184667665876803, 0.9918816711425266, 1.3578328038464533, 0.46333023369374876, 1.1104816045902977, 0.6850246230389745, 0.6653589706718148, 0.6887730196136272, 0.7552034683291857, 0.7010419258615449, 0.6887933824555783, 38.06508317273969, 42.13014660766638, 32.0360340046135, 37.60196462479425, 51.44386934524856], "per_entry_coefficients": [0.0003604367578991597, 0.000673211744298249, 0.0005201294872657507, 0.0005192212795203566, 2.448579714242203e-05, 2.448579714242203e-05, 2.448579714242203e-05, 2.448579714242203e-05, 5.9789538143525735e-06, 8.876789755857343e-06, 1.1162374854478149e-05, 8.552856271779985e-06, 8.493770854726918e-06, 5.7383318016249945e-06, 5.7383318016249945e-06, 5.7383318016249945e-06, 5.7383318016249945e-06, 5.7383318016249945e-06], "normalization": "N_fit / B; primary sigma/(J*D_fit); auxiliary native_weight/(sum_primary_native_weights*n_aux_fit)", "qualification": "Preserves nominal native auxiliary head ratios, not native realized label-frequency weighting. Test denominators are unknown."}, "validation_statistics": {"primary_indices": [0, 1, 2, 3], "primary_counts": [369, 222, 278, 251], "primary_means": [4.072736322596206, 4.590076362063063, 4.807797186482015, 4.86134074491235], "primary_denominators": [196.83258416826558, 66.59299107779279, 119.24847960260432, 131.41706186122315]}, "checkpoint_monitor": "val_primary_strae", "bounds_scaling": "same fit-center mean and scale for central/lower/upper; no bound-specific fitting", "native_architecture_and_optimizer_preserved": true, "explicit_changes": ["primary exact interval macro objective", "per-auxiliary-head observed-label mean and nominal author budget", "uniform-row unbiased minibatch estimator", "primary-only validation checkpoint selection"], "precision": "16-mixed forward; FP32 differentiable loss; float64 full-validation official arithmetic"}
+Using 16bit Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [6]
+Loading `train_dataloader` to estimate number of stepping batches.
+/opt/conda/lib/python3.11/site-packages/lightning/pytorch/utilities/model_summary/model_summary.py:231: Precision 16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
+
+  | Name            | Type               | Params | Mode 
+---------------------------------------------------------------
+0 | message_passing | BondMessagePassing | 1.1 M  | train
+1 | agg             | NormAggregation    | 0      | train
+2 | bn              | BatchNorm1d        | 1.4 K  | train
+3 | predictor       | RegressionFFN      | 306 K  | train
+4 | X_d_transform   | Identity           | 0      | train
+5 | metrics         | ModuleList         | 0      | train
+6 | loss_objective  | ExactSTObjective   | 0      | train
+---------------------------------------------------------------
+1.4 M     Trainable params
+0         Non-trainable params
+1.4 M     Total params
+5.595     Total estimated model params size (MB)
+27        Modules in train mode
+0         Modules in eval mode
+/opt/conda/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:227: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn(
+{"event": "exact_strae_epoch", "epoch": 0, "val_primary_strae": 0.9035451719096181, "per_primary_ST_RAE": [0.7815478541901617, 0.8522543546308411, 1.0521962938304468, 0.9281821849870225]}
+{"event": "exact_strae_epoch", "epoch": 1, "val_primary_strae": 0.9076519033041066, "per_primary_ST_RAE": [0.8365420054679165, 0.9717876456023612, 0.9816931199465212, 0.8405848421996276]}
+{"event": "exact_strae_epoch", "epoch": 2, "val_primary_strae": 0.8901079264523353, "per_primary_ST_RAE": [0.7453458180250299, 0.9901662691892009, 0.9154774204315689, 0.9094421981635415]}
+{"event": "exact_strae_epoch", "epoch": 3, "val_primary_strae": 0.7561440698374068, "per_primary_ST_RAE": [0.6655958635097878, 0.6547219301893227, 0.9041795581893725, 0.800078927461144]}
+{"event": "exact_strae_epoch", "epoch": 4, "val_primary_strae": 0.7182603013291782, "per_primary_ST_RAE": [0.5243837473819736, 0.6409460531328544, 0.9379317941372839, 0.769779610664601]}
+{"event": "exact_strae_epoch", "epoch": 5, "val_primary_strae": 0.6907273361082744, "per_primary_ST_RAE": [0.5045124177120808, 0.5703598306817721, 0.8870362620059603, 0.8010008340332843]}
+{"event": "exact_strae_epoch", "epoch": 6, "val_primary_strae": 0.7424456456851151, "per_primary_ST_RAE": [0.5858572650844398, 0.6520377991001526, 0.8818105141492913, 0.8500770044065765]}
+{"event": "exact_strae_epoch", "epoch": 7, "val_primary_strae": 0.6819675253999892, "per_primary_ST_RAE": [0.4775230052410072, 0.5590459914419419, 0.8997507889350261, 0.7915503159819816]}
+{"event": "exact_strae_epoch", "epoch": 8, "val_primary_strae": 0.6736797095607692, "per_primary_ST_RAE": [0.4654564134392592, 0.5796455603329294, 0.8952043473075504, 0.7544125171633378]}
+{"event": "exact_strae_epoch", "epoch": 9, "val_primary_strae": 0.668024570530757, "per_primary_ST_RAE": [0.47316109512517707, 0.5636440503918547, 0.8954050377749788, 0.7398880988310176]}
+{"event": "exact_strae_epoch", "epoch": 10, "val_primary_strae": 0.6756123840468727, "per_primary_ST_RAE": [0.4629753302510462, 0.5409041713293069, 0.9138356622408249, 0.7847343723663127]}
+{"event": "exact_strae_epoch", "epoch": 11, "val_primary_strae": 0.6808559243101298, "per_primary_ST_RAE": [0.4978492866544869, 0.5268477802128474, 0.9570310479685821, 0.741695582404603]}
+{"event": "exact_strae_epoch", "epoch": 12, "val_primary_strae": 0.6728949979364601, "per_primary_ST_RAE": [0.48131589732764873, 0.5257626304567371, 0.9260590632125006, 0.7584424007489541]}
+{"event": "exact_strae_epoch", "epoch": 13, "val_primary_strae": 0.6815762032475748, "per_primary_ST_RAE": [0.48886042046771816, 0.553011320409742, 0.9049813166047795, 0.7794517555080597]}
+{"event": "exact_strae_epoch", "epoch": 14, "val_primary_strae": 0.6598450645723353, "per_primary_ST_RAE": [0.43368620806634156, 0.5655686804984837, 0.891626633007335, 0.7484987367171806]}
+{"event": "exact_strae_epoch", "epoch": 15, "val_primary_strae": 0.6770813221142453, "per_primary_ST_RAE": [0.43412222780708404, 0.5372513652865772, 0.9509026941694246, 0.7860490011938955]}
+{"event": "exact_strae_epoch", "epoch": 16, "val_primary_strae": 0.6846245837596576, "per_primary_ST_RAE": [0.45029986620373796, 0.5657549097675956, 0.9158126759740112, 0.806630883093286]}
+{"event": "exact_strae_epoch", "epoch": 17, "val_primary_strae": 0.6738849250520087, "per_primary_ST_RAE": [0.468053957211777, 0.5516341566273294, 0.9241619174492804, 0.7516896689196478]}
+{"event": "exact_strae_epoch", "epoch": 18, "val_primary_strae": 0.7002961341841188, "per_primary_ST_RAE": [0.47196442651939446, 0.5279974496681618, 0.9723128289598966, 0.8289098315890228]}
+{"event": "exact_strae_epoch", "epoch": 19, "val_primary_strae": 0.690041406339268, "per_primary_ST_RAE": [0.4614661063360203, 0.5651721216736451, 0.9405370086157904, 0.7929903887316164]}
+{"event": "exact_strae_epoch", "epoch": 20, "val_primary_strae": 0.6959188431770329, "per_primary_ST_RAE": [0.47269364087321786, 0.6198289663343307, 0.9338066289167009, 0.7573461365838818]}
+{"event": "exact_strae_epoch", "epoch": 21, "val_primary_strae": 0.7014782114158071, "per_primary_ST_RAE": [0.4489805713708996, 0.6203197254296862, 0.9437919801892554, 0.7928205686733875]}
+{"event": "exact_strae_epoch", "epoch": 22, "val_primary_strae": 0.7007442418839889, "per_primary_ST_RAE": [0.46046648377031396, 0.6657543309716477, 0.9210178675554672, 0.7557382852385267]}
+{"event": "exact_strae_epoch", "epoch": 23, "val_primary_strae": 0.7019706240296533, "per_primary_ST_RAE": [0.47983819480283113, 0.6038072442238746, 0.9458591730417537, 0.7783778840501541]}
+{"event": "exact_strae_epoch", "epoch": 24, "val_primary_strae": 0.7072319449192787, "per_primary_ST_RAE": [0.4495344120069234, 0.6279627695670095, 0.9567009319907798, 0.7947296661124019]}
+{"event": "exact_strae_epoch", "epoch": 25, "val_primary_strae": 0.6891670964149091, "per_primary_ST_RAE": [0.44935472814998917, 0.5894471577784608, 0.9611102333078022, 0.7567562664233843]}
+{"event": "exact_strae_epoch", "epoch": 26, "val_primary_strae": 0.6676452382463122, "per_primary_ST_RAE": [0.4554994892413639, 0.5766212090698297, 0.8956204096931286, 0.7428398449809265]}
+{"event": "exact_strae_epoch", "epoch": 27, "val_primary_strae": 0.6988825440664985, "per_primary_ST_RAE": [0.46910733464020893, 0.5703015518139246, 0.9631082408939476, 0.7930130489179132]}
+{"event": "exact_strae_epoch", "epoch": 28, "val_primary_strae": 0.7039904813600477, "per_primary_ST_RAE": [0.4585235270723366, 0.5996497296276418, 0.9732957835743523, 0.7844928851658599]}
+{"event": "exact_strae_epoch", "epoch": 29, "val_primary_strae": 0.6835303452090435, "per_primary_ST_RAE": [0.4573179775664265, 0.5721587593562368, 0.9503726772943829, 0.7542719666191282]}
+{"event": "exact_strae_epoch", "epoch": 30, "val_primary_strae": 0.7359587323227996, "per_primary_ST_RAE": [0.4740521128576122, 0.6983099002840817, 0.9892330939346384, 0.782239822214866]}
+{"event": "exact_strae_epoch", "epoch": 31, "val_primary_strae": 0.7176750126337925, "per_primary_ST_RAE": [0.45897242225863183, 0.6404177339344268, 0.9696802371795975, 0.8016296571625138]}
+{"event": "exact_strae_epoch", "epoch": 32, "val_primary_strae": 0.7403481560442137, "per_primary_ST_RAE": [0.47293775334555255, 0.7277831292590958, 0.9701303510107634, 0.7905413905614428]}
+{"event": "exact_strae_epoch", "epoch": 33, "val_primary_strae": 0.7414343149075435, "per_primary_ST_RAE": [0.4734948505259731, 0.6385694811685597, 1.0335134838384599, 0.8201594440971817]}
+{"event": "exact_strae_epoch", "epoch": 34, "val_primary_strae": 0.712846168337232, "per_primary_ST_RAE": [0.47881724210282894, 0.5955424851749634, 1.0133002689687136, 0.7637246771024219]}
+{"event": "exact_strae_epoch", "epoch": 35, "val_primary_strae": 0.7254554757542117, "per_primary_ST_RAE": [0.5049830549210764, 0.671327597266635, 0.9590099022921942, 0.7665013485369409]}
+{"event": "exact_strae_epoch", "epoch": 36, "val_primary_strae": 0.6982159122963656, "per_primary_ST_RAE": [0.4663885761004819, 0.6453961407663444, 0.9475893204182665, 0.7334896119003694]}
+{"event": "exact_strae_epoch", "epoch": 37, "val_primary_strae": 0.6969510808908048, "per_primary_ST_RAE": [0.4531166313334936, 0.6093167918856837, 0.9905810243288173, 0.7347898760152252]}
+{"event": "exact_strae_epoch", "epoch": 38, "val_primary_strae": 0.6993171586879321, "per_primary_ST_RAE": [0.4541820591674534, 0.6122530066480247, 0.9761285076855671, 0.7547050612506833]}
+{"event": "exact_strae_epoch", "epoch": 39, "val_primary_strae": 0.7180560735855307, "per_primary_ST_RAE": [0.47857010514339426, 0.6505702883315734, 0.9635141097560225, 0.7795697911111327]}
+{"event": "exact_strae_epoch", "epoch": 40, "val_primary_strae": 0.7030330203528865, "per_primary_ST_RAE": [0.46975300708145823, 0.6388576491007698, 0.9456069695913938, 0.7579144556379241]}
+{"event": "exact_strae_epoch", "epoch": 41, "val_primary_strae": 0.7014921597069669, "per_primary_ST_RAE": [0.4707104334223891, 0.6096842739206348, 0.9422970511264541, 0.783276880358389]}
+{"event": "exact_strae_epoch", "epoch": 42, "val_primary_strae": 0.71236887241663, "per_primary_ST_RAE": [0.4787004073632458, 0.7020047325373285, 0.9022906277450784, 0.7664797220208673]}
+{"event": "exact_strae_epoch", "epoch": 43, "val_primary_strae": 0.6978979081949832, "per_primary_ST_RAE": [0.4364988464018174, 0.5975604118661136, 0.9710033067180462, 0.7865290677939557]}
+{"event": "exact_strae_epoch", "epoch": 44, "val_primary_strae": 0.7002041854144972, "per_primary_ST_RAE": [0.4769416351511311, 0.6008515818828541, 0.941003160906409, 0.7820203637175948]}
+{"event": "exact_strae_epoch", "epoch": 45, "val_primary_strae": 0.725989298293862, "per_primary_ST_RAE": [0.511345674038236, 0.6502830055318347, 0.9531230413187226, 0.789205472286655]}
+{"event": "exact_strae_epoch", "epoch": 46, "val_primary_strae": 0.7143613989913824, "per_primary_ST_RAE": [0.5023452654505846, 0.6224978569389105, 0.9592594519690945, 0.7733430216069401]}
+{"event": "exact_strae_epoch", "epoch": 47, "val_primary_strae": 0.7152684135617552, "per_primary_ST_RAE": [0.46889086839221844, 0.6961725612972314, 0.9364875747732062, 0.759522649784365]}
+{"event": "exact_strae_epoch", "epoch": 48, "val_primary_strae": 0.7059061854324216, "per_primary_ST_RAE": [0.4838290901791247, 0.6322670987813607, 0.9278400966778765, 0.7796884560913242]}
+{"event": "exact_strae_epoch", "epoch": 49, "val_primary_strae": 0.6844293096177813, "per_primary_ST_RAE": [0.45645803404336077, 0.6232756751752718, 0.9189430862810545, 0.7390404429714378]}
+{"event": "exact_strae_epoch", "epoch": 50, "val_primary_strae": 0.7040725516407595, "per_primary_ST_RAE": [0.4753271999895597, 0.6802468606559801, 0.9383328418025029, 0.7223833041149955]}
+{"event": "exact_strae_epoch", "epoch": 51, "val_primary_strae": 0.6992841856191857, "per_primary_ST_RAE": [0.49033401632272444, 0.6196774203491894, 0.9270591964120729, 0.7600661093927559]}
+{"event": "exact_strae_epoch", "epoch": 52, "val_primary_strae": 0.7232389414145066, "per_primary_ST_RAE": [0.5217361146329451, 0.6769988121751518, 0.9401262225305725, 0.7540946163193569]}
+{"event": "exact_strae_epoch", "epoch": 53, "val_primary_strae": 0.7016957974265505, "per_primary_ST_RAE": [0.49966929202413224, 0.6100726392338355, 0.9394679029482595, 0.7575733554999753]}
+{"event": "exact_strae_epoch", "epoch": 54, "val_primary_strae": 0.6940267237392646, "per_primary_ST_RAE": [0.48315661808775595, 0.5843631182332978, 0.9370233159902426, 0.7715638426457615]}
+{"event": "exact_strae_fold_fit_complete", "fold": 2, "seconds": 288.95030188560486, "best_primary_validation_ST_RAE": 0.6598450541496277, "best_epoch": 14}
+{"event": "native_fold_complete", "member": "union18", "fold": 2, "best_epoch": 14, "seconds": 356.54395723342896}

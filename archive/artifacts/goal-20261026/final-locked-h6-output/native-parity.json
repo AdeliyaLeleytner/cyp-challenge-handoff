@@ -1,0 +1,36 @@
+{
+  "max_abs_difference": 2.6645352591003757e-15,
+  "placement": {
+    "defined": true,
+    "diagnostic_only": true,
+    "uses_published_leaderboard_derived_constants": true,
+    "fit_outer_labels": false,
+    "per_cyp": {
+      "CYP1A2_pIC50_direct_inhibition": {
+        "oof_to_blind_pearson": 0.7780251168245269,
+        "scale": 1.622426980969747,
+        "offset": -0.4419166523615523,
+        "floor_count": 2
+      },
+      "CYP2C9_pIC50_direct_inhibition": {
+        "oof_to_blind_pearson": 0.8929187337582557,
+        "scale": 1.3664030951484847,
+        "offset": -0.020765694936116574,
+        "floor_count": 0
+      },
+      "CYP2D6_pIC50_direct_inhibition": {
+        "oof_to_blind_pearson": 0.7677482533870689,
+        "scale": 2.548602743602436,
+        "offset": -1.0998204194704697,
+        "floor_count": 0
+      },
+      "CYP3A4_pIC50_direct_inhibition": {
+        "oof_to_blind_pearson": 0.8753026455940927,
+        "scale": 1.1629682867652948,
+        "offset": 0.16065130790074633,
+        "floor_count": 0
+      }
+    }
+  },
+  "native_component_folds_are_not_shared": true
+}

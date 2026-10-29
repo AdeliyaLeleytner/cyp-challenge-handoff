@@ -1,0 +1,38 @@
+{
+  "previous_run": "9f152720-d5bb-479c-8b24-1f584e0ddb21",
+  "failure": "postnorm numerical parity guard",
+  "failed_entries": [
+    {
+      "row": 400,
+      "id": "OCNT-2309100",
+      "feature": 229,
+      "reference": -0.038360610604286194,
+      "batch8": -0.038371793925762177,
+      "abs_difference": 1.1183321475982666e-05,
+      "allowed_difference": 1.0383605513197836e-05
+    },
+    {
+      "row": 400,
+      "id": "OCNT-2309100",
+      "feature": 231,
+      "reference": -0.1664704978466034,
+      "batch8": -0.1664586216211319,
+      "abs_difference": 1.1876225471496582e-05,
+      "allowed_difference": 1.1664704288705252e-05
+    },
+    {
+      "row": 400,
+      "id": "OCNT-2309100",
+      "feature": 232,
+      "reference": 0.05852599814534187,
+      "batch8": 0.05854061245918274,
+      "abs_difference": 1.4614313840866089e-05,
+      "allowed_difference": 1.0585259587969631e-05
+    }
+  ],
+  "affected_rows": [
+    400
+  ],
+  "tolerance_unchanged": true,
+  "no_model_labels_used": true
+}

@@ -1,0 +1,30 @@
+{
+  "actual_test_scored": false,
+  "caveats": [
+    "Neural OOF rows participated in epoch selection; not independent of that selection.",
+    "Each OOF row uses one fold model; actual TEST uses five-fold averaging, so prediction variance can differ.",
+    "Development calibration selection scores are not independent estimates of final TEST performance."
+  ],
+  "fold_job_sha256": [
+    "d671a863399e50251559ff6d1e661b840b9eb66f536b39d9c568434c12a0d6e7",
+    "ac542093a6b7a06ba19b8070cf6fd9e9b14da0a54ae2102b38b03cba22a26d93",
+    "680b16dd5c2e948550b4d99cc7b0e0fb30639e45ad1b380d7c6db6b02c3c6f4a",
+    "081bf7ed97e7e658f0920b59cc68c657cbaa0270ed4e5eaba9111553ab980de7",
+    "65a7e66bef19cfdee2064ea40ce1bc66b06146f9165488da297d4a5aa566e7f6"
+  ],
+  "model": "2d6isoform6",
+  "output_sha256": {
+    "oof.csv": "f749dfe34ce518363a0cdf77881f023e4790ee150096f412ec5ea212847f246d",
+    "test_calibrated.csv": "ece2dab024dea60ebf33cbf5a2352e29689b2adc9f06c4f931192fe7ce644f17",
+    "test_placement_oof_lp.csv": "ece2dab024dea60ebf33cbf5a2352e29689b2adc9f06c4f931192fe7ce644f17",
+    "test_placement_oof_r2.csv": "b321c0967c92893d21ae4ec66fcd3d109d43021404242ce635787570cdfcc2db",
+    "test_placement_raw.csv": "662c67e653a2a305532750dd64d8676bdcd3f4a5bfe26ae79de80f83e548a5a2",
+    "test_raw.csv": "662c67e653a2a305532750dd64d8676bdcd3f4a5bfe26ae79de80f83e548a5a2"
+  },
+  "run_sha256": "6e040739fb6b40bba6da7cdef99a8d2bcbcd5bfa5bf19f86e7e3499ec9409289",
+  "seed": 42,
+  "selected_calibration": "oof_lp",
+  "targets": [
+    "CYP2D6_pIC50_direct_inhibition"
+  ]
+}

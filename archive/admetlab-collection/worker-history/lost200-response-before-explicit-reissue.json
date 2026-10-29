@@ -1,0 +1,30 @@
+{
+  "status": "needs_attention",
+  "pid": 36836,
+  "started_at": "2026-10-25T23:22:11.271531+00:00",
+  "max_runtime_seconds": 21600,
+  "minimum_http_start_interval_seconds": 4,
+  "batch_size": 200,
+  "prediction_transport": "Shifter curl, new session per request",
+  "download_transport": "direct Wi-Fi",
+  "active_folder": "/Users/adeliyaleleytner/Downloads/ADMETlab-Chrome-direct-500/probes/shifter-continuous-20261025T232211-0003",
+  "new_molecules_this_run": 400,
+  "posts": 4,
+  "requests": 10,
+  "source_sha256": {
+    "continuous_shifter.py": "b766863e6bdf5bde72e84d6a3fb7970e7d201968c2016981a7a87be8dbc637c2",
+    "scheduled_queue.py": "26bdbbd2b2c076fab35024d9438234d92ff8969443c05db0ef00c2d81fc73b05",
+    "parsing.py": "7809ebe15c6e12cb23ef52d126d7e57e7b2d261cca76bea2df76276445e0117a",
+    "direct_http.py": "5d95da48fa982a42bfa86beebe15dc6f106fefa7d97fe77c07889f8dedf88b74",
+    "shifter_transport.py": "0bc68758330a36bdcdfc32994dc109668409075519dfb14a83179468b369bb19"
+  },
+  "total_collected": 4260,
+  "remaining": 28161,
+  "reserved_uncertain_molecules": 400,
+  "current_batch_molecules": 200,
+  "updated_at": "2026-10-25T23:33:07.114624+00:00",
+  "last_success_at": "2026-10-25T23:23:53.484768+00:00",
+  "last_error": "Ошибка прямого соединения: curl: (56) Recv failure: Operation timed out",
+  "consecutive_errors": 2,
+  "last_error_at": "2026-10-25T23:33:07.113333+00:00"
+}

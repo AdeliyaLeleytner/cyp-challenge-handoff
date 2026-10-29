@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-23T21:37:58.410488+00:00",
+  "sources": [
+    "bindingdb_patents"
+  ],
+  "config": {
+    "release": "202610",
+    "join_assays": true
+  },
+  "official_exclusions": {
+    "cohorts_sha256": "eee1078503c7793f8f1c1fcc788dd4db9225a6d682202930f9bb972bbe6bd82a",
+    "excluded_parent_count": 5649,
+    "official_files": {
+      "official-train.csv": {
+        "sha256": "b8f79addd266fb6f9f4c222c5e4e73d926362328b6a8d2841871a54e46bd2278",
+        "rows": 4905,
+        "parents": 4901
+      },
+      "official-test.csv": {
+        "sha256": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9",
+        "rows": 750,
+        "parents": 748
+      }
+    }
+  },
+  "source_audit": {
+    "raw_rows": 1343070,
+    "extra_chain_tail_rows": 0,
+    "selected_target_rows": 4102,
+    "excluded_multichain_rows": 21,
+    "excluded_nonhuman_rows": 0,
+    "excluded_imported_source_rows": 0,
+    "unsupported_target_rows": 1338947,
+    "invalid_numeric_cells": 0,
+    "measurements_missing_patent_number": 0,
+    "parsed_patent_measurements": 4101,
+    "patent_document_count": 142,
+    "original_source_counts": {
+      "US Patent": 4101
+    },
+    "assay_mapped_measurements": 4093,
+    "assay_unmapped_measurements": 8,
+    "assay_descriptions_found": 162,
+    "release": "202610",
+    "archive_filename": "BindingDB_Patents_202610_tsv.zip",
+    "source_policy": "Dedicated patent archive plus explicit patent number; exact human CYP accessions and single-chain targets",
+    "endpoint_policy": "IC50, Ki, Kd, EC50 retained separately in nM; relation reversed on p transform"
+  },
+  "exclusion_audit": {
+    "input_records": 4101,
+    "invalid_structure_records": 1,
+    "excluded_official_parent_records": 21,
+    "excluded_official_parent_count": 9,
+    "retained_records": 4079
+  },
+  "exact_duplicate_records_removed": 0,
+  "retained_unique_parents": 1719,
+  "endpoint_counts": {
+    "IC50": 4079
+  },
+  "table": {
+    "path": "/workspace/cyp-night/assets/new_public_patents/measurements.csv",
+    "sha256": "5c4f01e0b2492a0e7869ee9ae4cdbdd7a3048450ce94e9938c996e5f2889980d",
+    "rows": 4079
+  },
+  "parquet": {
+    "status": "optional_engine_unavailable",
+    "reason": "Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.\nA suitable version of pyarrow or fastparquet is required for parquet support.\nTrying to import the above resulted in these errors:\n - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.\n - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet."
+  },
+  "auxiliary_heads": [
+    "aux_bindingdb_patents_CYP1A2_IC50_69a0503d496c",
+    "aux_bindingdb_patents_CYP2C9_IC50_4fe765c75083",
+    "aux_bindingdb_patents_CYP2D6_IC50_bc76ba8cf071",
+    "aux_bindingdb_patents_CYP3A4_IC50_876d78c9e0f8"
+  ],
+  "head_metadata": {
+    "records_used": 1822,
+    "molecules": 1129,
+    "heads": {
+      "aux_bindingdb_patents_CYP1A2_IC50_69a0503d496c": {
+        "source": "bindingdb_patents",
+        "target": "CYP1A2",
+        "endpoint": "IC50"
+      },
+      "aux_bindingdb_patents_CYP2C9_IC50_4fe765c75083": {
+        "source": "bindingdb_patents",
+        "target": "CYP2C9",
+        "endpoint": "IC50"
+      },
+      "aux_bindingdb_patents_CYP3A4_IC50_876d78c9e0f8": {
+        "source": "bindingdb_patents",
+        "target": "CYP3A4",
+        "endpoint": "IC50"
+      },
+      "aux_bindingdb_patents_CYP2D6_IC50_bc76ba8cf071": {
+        "source": "bindingdb_patents",
+        "target": "CYP2D6",
+        "endpoint": "IC50"
+      }
+    },
+    "group_by": [
+      "source",
+      "target",
+      "endpoint"
+    ],
+    "aggregation": "median within normalized isomeric identity and specified head; equality-only"
+  },
+  "auxiliary_wide_sha256": "fb720d5986bda6a763868faa2199b070013cc01ba15c5be82a113b32ed8b1f10",
+  "downloads": [
+    {
+      "url": "https://www.bindingdb.org/rwd/bind/downloads/BindingDB_Patents_202610_tsv.md5",
+      "method": "GET",
+      "request_sha256": "54a5743e98f63db4b5ac9c24b30ba8887ef39f411d5089728621d23bc69fd98d",
+      "retrieved_utc": "2026-10-23T21:32:38.958177+00:00",
+      "sha256": "fac81ec31745426d455d2db6b4756143a811d304d6b3b0c6d5c61b00480fee75",
+      "bytes": 32,
+      "path": "/workspace/cyp-night/assets/public_data/cache/bindingdb/202610/BindingDB_Patents_202610_tsv.zip.md5",
+      "content_type": null
+    },
+    {
+      "url": "https://www.bindingdb.org/rwd/bind/downloads/BindingDB_Patents_202610_tsv.zip",
+      "method": "GET",
+      "request_sha256": "49d7dfaf0a28e37930e3fd8ab6768051f3a58e19738703b35e1d0011591d6d8f",
+      "retrieved_utc": "2026-10-23T21:36:35.538132+00:00",
+      "sha256": "6b7a6bbcfdcc1874323a8a33fc0b150b4059edf8162ea4c83acf2b1806969e09",
+      "bytes": 171600536,
+      "path": "/workspace/cyp-night/assets/public_data/cache/bindingdb/202610/BindingDB_Patents_202610_tsv.zip",
+      "content_type": "application/zip"
+    },
+    {
+      "url": "https://www.bindingdb.org/rwd/bind/downloads/BindingDB_rsid_eaids_202610_tsv.md5",
+      "method": "GET",
+      "request_sha256": "713ca23f9029f24b594fcdcb3ba3b9b3a06fd0e4b5213d778291b71aa110b9ab",
+      "retrieved_utc": "2026-10-23T21:18:49.945441+00:00",
+      "sha256": "6c5a2e94f97aef7856d5042d246285b23499690c3105e928fbed1aed521ebb44",
+      "bytes": 32,
+      "path": "/workspace/cyp-night/assets/public_data/cache/bindingdb/202610/BindingDB_rsid_eaids_202610_tsv.zip.md5",
+      "content_type": null
+    },
+    {
+      "url": "https://www.bindingdb.org/rwd/bind/downloads/BindingDB_rsid_eaids_202610_tsv.zip",
+      "method": "GET",
+      "request_sha256": "f5ec670de7c5aaa2dc0ca2b2f9aaf1173617ac7afb523bfea20607125761122f",
+      "retrieved_utc": "2026-10-23T21:18:55.248524+00:00",
+      "sha256": "c13f48505fd60a4b50b7d35465dc45068ac16488279a349e836f25b9a9a78e92",
+      "bytes": 7556077,
+      "path": "/workspace/cyp-night/assets/public_data/cache/bindingdb/202610/BindingDB_rsid_eaids_202610_tsv.zip",
+      "content_type": "application/zip"
+    },
+    {
+      "url": "https://www.bindingdb.org/rwd/bind/downloads/BindingDB_Assays_202610_tsv.md5",
+      "method": "GET",
+      "request_sha256": "307df899c7c487c1f66b969c5984ae89195e2ee942bf05148dc8885a266aae08",
+      "retrieved_utc": "2026-10-23T21:18:55.689101+00:00",
+      "sha256": "f378166b935f5b1522fa7797d41cda00dbdc25e86da7154d2162241753588286",
+      "bytes": 32,
+      "path": "/workspace/cyp-night/assets/public_data/cache/bindingdb/202610/BindingDB_Assays_202610_tsv.zip.md5",
+      "content_type": null
+    },
+    {
+      "url": "https://www.bindingdb.org/rwd/bind/downloads/BindingDB_Assays_202610_tsv.zip",
+      "method": "GET",
+      "request_sha256": "017ba197a8cb027c6903f47afc3ba43fbf1814d7487a89a822004a81e918d034",
+      "retrieved_utc": "2026-10-23T21:19:09.511883+00:00",
+      "sha256": "0fcb268c52aec04ccf500c6ea3ef82e24a640ebe95c1ff4d40ca764f756cac8e",
+      "bytes": 10120429,
+      "path": "/workspace/cyp-night/assets/public_data/cache/bindingdb/202610/BindingDB_Assays_202610_tsv.zip",
+      "content_type": "application/zip"
+    }
+  ],
+  "data_quality": {
+    "status": "pass",
+    "passed": true,
+    "failures": [],
+    "source": "bindingdb_patents",
+    "records": 4079,
+    "eligible_ic50_records": 1822,
+    "excluded_parent_overlap_count": 0,
+    "interpretation": "Schema/identity gate only; does not establish source-domain equivalence or model improvement"
+  },
+  "implementation_sha256": {
+    "bindingdb_patents.py": "7231938ba352eeaf497b40dfdfdad4536341f16e5add62c8d3af0d81cb85398d",
+    "public_data.py": "c91d5a3268cd3b0ea0e96fbbe601524333d62804c8985f7641382968bb560968"
+  }
+}

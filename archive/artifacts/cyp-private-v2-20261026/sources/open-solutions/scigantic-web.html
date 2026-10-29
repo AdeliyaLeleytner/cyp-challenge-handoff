@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en" translate="no">
+  <head>
+    <!-- Disable browser/Google Translate. The app ships its own JA/EN i18n, so
+         browser translation is redundant AND breaks it: Google Translate wraps
+         text in <font> tags, which makes the live DOM diverge from React's tree
+         and crashes any re-render with "NotFoundError: insertBefore ... not a
+         child of this node" (e.g. clicking Launch on the KEK Japanese pages).
+         Users switch language with the in-app 日本語/English toggle instead. -->
+    <meta name="google" content="notranslate" />
+    <script>
+      const hostname = window.location.hostname;
+      const measurementId =
+        hostname === 'scigantic.com' || hostname === 'www.scigantic.com'
+          ? 'G-05G67VN67H'
+          : hostname === 'staging.scigantic.com'
+            ? 'G-VEDGXYZ4KS'
+            : null;
+
+      if (measurementId) {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        window.gtag = window.gtag || gtag;
+        gtag('js', new Date());
+        gtag('config', measurementId);
+      }
+    </script>
+
+    <script>
+      // Warm the API connection. The API is a SEPARATE origin from this CDN, so
+      // the first data fetch (archive metadata + the /sample notebook) otherwise
+      // pays a cold DNS+TCP+TLS handshake before the request even starts. Resolve
+      // the right host here (mirrors getApiUrl() in src/utils/api.ts) and inject
+      // a preconnect during head parse. crossorigin=anonymous so the warmed
+      // socket is actually reused by the CORS fetch().
+      (function () {
+        var h = window.location.hostname;
+        var api =
+          h === 'scigantic.com' || h === 'www.scigantic.com'
+            ? 'https://api.scigantic.com'
+            : h === 'staging.scigantic.com'
+              ? 'https://staging-api.scigantic.com'
+              : null;
+        if (api) {
+          var pre = document.createElement('link');
+          pre.rel = 'preconnect';
+          pre.href = api;
+          pre.crossOrigin = '';
+          document.head.appendChild(pre);
+          var dns = document.createElement('link');
+          dns.rel = 'dns-prefetch';
+          dns.href = api;
+          document.head.appendChild(dns);
+        }
+      })();
+    </script>
+
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>A scored blind-challenge entry, rebuilt — Scigantic</title>
+    <meta name="description" content="Rebuild a scored OpenADMET CYP submission from twelve frozen models, see where its error sits, then refit the weights yourself." />
+    <meta name="keywords" content="scientific data, data discovery, data collaboration, research data, JupyterHub, AI notebooks, cloud storage, AWS S3, Google Cloud, Azure, open science, data sharing, reproducible research, genomics, neuroscience, climate data" />
+    <meta name="author" content="Scigantic" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://scigantic.com/sample/chem-cyp-challenge" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://scigantic.com/sample/chem-cyp-challenge" />
+    <meta property="og:title" content="A scored blind-challenge entry, rebuilt — Scigantic" />
+    <meta property="og:description" content="Rebuild a scored OpenADMET CYP submission from twelve frozen models, see where its error sits, then refit the weights yourself." />
+    <meta property="og:image" content="https://scigantic.com/og/sample/chem-cyp-challenge.jpg?v=8" />
+    <meta property="og:image:secure_url" content="https://scigantic.com/og/sample/chem-cyp-challenge.jpg?v=8" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta property="og:image:alt" content="Crystal structure of human cytochrome P450 3A4 (PDB 1TQN), the enzyme at the centre of the challenge, with its heme cofactor visible in the active site" />
+    <meta property="og:site_name" content="Scigantic" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A scored blind-challenge entry, rebuilt — Scigantic" />
+    <meta name="twitter:description" content="Rebuild a scored OpenADMET CYP submission from twelve frozen models, see where its error sits, then refit the weights yourself." />
+    <meta name="twitter:image" content="https://scigantic.com/og/sample/chem-cyp-challenge.jpg?v=8" />
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="application-name" content="Scigantic" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Scigantic" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Scigantic",
+      "url": "https://scigantic.com",
+      "logo": "https://scigantic.com/favicon.svg",
+      "description": "A platform for scientific data discovery and collaboration. Share, explore, and analyze data archives with interactive JupyterHub notebooks.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@scigantic.com",
+        "contactType": "customer support",
+        "url": "https://scigantic.com/contact"
+      },
+      "sameAs": []
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Scigantic",
+      "url": "https://scigantic.com",
+      "description": "Scientific data discovery and collaboration platform",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://scigantic.com/explore?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Scigantic",
+      "url": "https://scigantic.com",
+      "applicationCategory": "ScienceApplication",
+      "operatingSystem": "Web",
+      "description": "Share, explore, and analyze scientific data archives with interactive JupyterHub notebooks.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free tier with unlimited public archives"
+      },
+      "featureList": [
+        "Cloud storage integration (AWS S3, GCS, Azure)",
+        "Interactive JupyterHub notebooks",
+        "Semantic and lexical search",
+        "Role-based access control",
+        "FUSE mount data access",
+        "Organization collaboration",
+        "Docker image validation",
+        "Citation generation (APA, BibTeX, Chicago)"
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/assets/index-Bzp2eKwr.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DL2V-FjB.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

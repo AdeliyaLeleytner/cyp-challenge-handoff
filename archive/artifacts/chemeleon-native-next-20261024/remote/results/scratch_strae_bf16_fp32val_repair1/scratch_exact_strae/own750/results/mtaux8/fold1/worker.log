@@ -1,0 +1,84 @@
+Seed set to 43
+{"event": "exact_strae_fold_config", "fold": 1, "criterion_mode": "exact_strae_v1", "fit_statistics": {"primary_indices": [0, 1, 2, 3], "primary_counts": [1488, 919, 1040, 1019], "primary_means": [4.071445174857526, 4.583585655267683, 4.808162426046153, 4.953186315696762], "primary_denominators": [786.9861077350486, 286.8650346599335, 437.1589575523077, 499.99094570720314], "mode": "exact_strae_v1", "n_fit_rows": 3324, "n_targets": 8, "target_counts": [1488, 919, 1040, 1019, 3085, 3085, 3085, 3085], "auxiliary_indices": [4, 5, 6, 7], "native_task_weights": [0.740429699420929, 1.18834388256073, 1.0034117698669434, 1.067814588546753, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657, 0.29999998211860657], "primary_native_weight_sum": 3.9999999403953552, "auxiliary_head_coefficients": [0.07499999664723868, 0.07499999664723868, 0.07499999664723868, 0.07499999664723868], "auxiliary_total_nominal_budget": 0.2999999865889547, "scaler_mean": [4.071445169548194, 4.583585656895601, 4.808162431189647, 4.953186311478469, -1.9119354721776292, -0.6892509981317123, -0.40845360254674146, -0.6508357748079809], "scaler_scale": [1.0997854986875144, 0.7771897102967857, 0.9110193618213801, 1.0274003167932118, 1.361125478499332, 0.4626020103341901, 1.1107497680428173, 0.6808046313919782], "per_entry_coefficients": [0.0003493662365440937, 0.0006773130360921397, 0.0005209886164304281, 0.0005137094609483498, 2.431118205745176e-05, 2.431118205745176e-05, 2.431118205745176e-05, 2.431118205745176e-05], "normalization": "N_fit / B; primary sigma/(J*D_fit); auxiliary native_weight/(sum_primary_native_weights*n_aux_fit)", "qualification": "Preserves nominal native auxiliary head ratios, not native realized label-frequency weighting. Test denominators are unknown."}, "validation_statistics": {"primary_indices": [0, 1, 2, 3], "primary_counts": [332, 215, 303, 243], "primary_means": [4.05955122979518, 4.591683156632558, 4.709781320594059, 4.9788539241399175], "primary_denominators": [169.83859360372293, 67.91611792449302, 122.26417696178217, 108.43202602058437]}, "checkpoint_monitor": "val_primary_strae", "bounds_scaling": "same fit-center mean and scale for central/lower/upper; no bound-specific fitting", "native_architecture_and_optimizer_preserved": true, "explicit_changes": ["primary exact interval macro objective", "per-auxiliary-head observed-label mean and nominal author budget", "uniform-row unbiased minibatch estimator", "primary-only validation checkpoint selection", "explicit FP32 validation numerical repair", "explicit configurable training precision"], "training_precision": "bf16-mixed", "validation_precision": "explicit_fp32", "precision": "bf16-mixed training forward; explicit FP32 validation forward and differentiable loss; float64 full-validation official arithmetic", "numerical_repair_note": "FP32 validation matches serving precision. BF16 training, when explicitly selected, is a separate numerical precision repair; no proof of scientific improvement or stability is inferred before replay."}
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [3]
+Loading `train_dataloader` to estimate number of stepping batches.
+/opt/conda/lib/python3.11/site-packages/lightning/pytorch/utilities/model_summary/model_summary.py:231: Precision bf16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
+
+  | Name            | Type               | Params | Mode 
+---------------------------------------------------------------
+0 | message_passing | BondMessagePassing | 1.1 M  | train
+1 | agg             | NormAggregation    | 0      | train
+2 | bn              | BatchNorm1d        | 1.4 K  | train
+3 | predictor       | RegressionFFN      | 303 K  | train
+4 | X_d_transform   | Identity           | 0      | train
+5 | metrics         | ModuleList         | 0      | train
+6 | loss_objective  | ExactSTObjective   | 0      | train
+---------------------------------------------------------------
+1.4 M     Trainable params
+0         Non-trainable params
+1.4 M     Total params
+5.583     Total estimated model params size (MB)
+27        Modules in train mode
+0         Modules in eval mode
+{"event": "exact_strae_epoch", "epoch": 0, "val_primary_strae": 0.9544753452751471, "per_primary_ST_RAE": [0.8813104607487909, 0.9458424567203764, 1.0276700338951459, 0.9630784297362753]}
+{"event": "exact_strae_epoch", "epoch": 1, "val_primary_strae": 0.8646570752758439, "per_primary_ST_RAE": [0.8208631419328082, 0.7742987717412473, 1.0068430464929112, 0.8566233409364088]}
+{"event": "exact_strae_epoch", "epoch": 2, "val_primary_strae": 1.1790591598575433, "per_primary_ST_RAE": [1.3354042666574006, 1.5008506147035015, 1.0169662213958737, 0.8630155366733975]}
+{"event": "exact_strae_epoch", "epoch": 3, "val_primary_strae": 0.8990746598555891, "per_primary_ST_RAE": [1.1450748191775546, 0.6476075312918121, 0.9708360993156383, 0.8327801896373512]}
+{"event": "exact_strae_epoch", "epoch": 4, "val_primary_strae": 0.8707064298874194, "per_primary_ST_RAE": [0.7721748527026268, 0.8210997688129011, 1.0525586808871548, 0.8369924171469948]}
+{"event": "exact_strae_epoch", "epoch": 5, "val_primary_strae": 0.7029652611699782, "per_primary_ST_RAE": [0.5410565551654419, 0.5283071482183579, 0.9312645163577317, 0.8112328249383812]}
+{"event": "exact_strae_epoch", "epoch": 6, "val_primary_strae": 0.7060244388281055, "per_primary_ST_RAE": [0.5223219161507535, 0.4969854079972564, 0.919893642576485, 0.884896788587927]}
+{"event": "exact_strae_epoch", "epoch": 7, "val_primary_strae": 0.7187519529049591, "per_primary_ST_RAE": [0.519857341896287, 0.5587396961576448, 0.969430966892622, 0.8269798066732825]}
+{"event": "exact_strae_epoch", "epoch": 8, "val_primary_strae": 0.7131435948785227, "per_primary_ST_RAE": [0.48767550579208263, 0.4908621679385263, 1.012450463460788, 0.8615862423226939]}
+{"event": "exact_strae_epoch", "epoch": 9, "val_primary_strae": 0.6991878553974914, "per_primary_ST_RAE": [0.5281806783608475, 0.4845506884469958, 0.9685292190132737, 0.8154908357688485]}
+{"event": "exact_strae_epoch", "epoch": 10, "val_primary_strae": 0.7831343333563495, "per_primary_ST_RAE": [0.7025197229570732, 0.6593103431245027, 0.9630100514690378, 0.8076972158747843]}
+{"event": "exact_strae_epoch", "epoch": 11, "val_primary_strae": 0.7190970978203763, "per_primary_ST_RAE": [0.4998927783733943, 0.5703512140661842, 0.9515758134202216, 0.8545685854217051]}
+{"event": "exact_strae_epoch", "epoch": 12, "val_primary_strae": 0.7209355277500218, "per_primary_ST_RAE": [0.4859693432124111, 0.5026403811327005, 1.0198813819976302, 0.8752510046573452]}
+{"event": "exact_strae_epoch", "epoch": 13, "val_primary_strae": 0.7074827700871322, "per_primary_ST_RAE": [0.5052325770965838, 0.510144882703732, 0.9440577401715603, 0.8704958803766532]}
+{"event": "exact_strae_epoch", "epoch": 14, "val_primary_strae": 0.6877771731276976, "per_primary_ST_RAE": [0.5059252341178885, 0.49668459846263113, 0.959873411370838, 0.7886254485594324]}
+{"event": "exact_strae_epoch", "epoch": 15, "val_primary_strae": 0.7126679661317917, "per_primary_ST_RAE": [0.5016569938291894, 0.49522002703327267, 0.9939929271447738, 0.859801916519931]}
+{"event": "exact_strae_epoch", "epoch": 16, "val_primary_strae": 0.7224884102367883, "per_primary_ST_RAE": [0.47941921354677736, 0.5353986974263752, 1.0031730802634065, 0.8719626497105943]}
+{"event": "exact_strae_epoch", "epoch": 17, "val_primary_strae": 0.7054607469645486, "per_primary_ST_RAE": [0.4655629881710199, 0.5208627408648924, 0.9972015131756777, 0.8382157456466046]}
+{"event": "exact_strae_epoch", "epoch": 18, "val_primary_strae": 0.7518055759439028, "per_primary_ST_RAE": [0.4820483881490447, 0.5959081249499906, 1.0154642700969363, 0.9138015205796404]}
+{"event": "exact_strae_epoch", "epoch": 19, "val_primary_strae": 0.764295914306572, "per_primary_ST_RAE": [0.6102627924580141, 0.6044233046749398, 0.9501992722426214, 0.8922982878507124]}
+{"event": "exact_strae_epoch", "epoch": 20, "val_primary_strae": 0.788498536053055, "per_primary_ST_RAE": [0.6099676888603438, 0.6081353355163598, 1.0322697623541044, 0.9036213574814116]}
+{"event": "exact_strae_epoch", "epoch": 21, "val_primary_strae": 0.7204324394273368, "per_primary_ST_RAE": [0.46532987693325767, 0.4855159346362762, 1.0672326729062713, 0.8636512732335418]}
+{"event": "exact_strae_epoch", "epoch": 22, "val_primary_strae": 0.7210807626507427, "per_primary_ST_RAE": [0.5104447533844942, 0.5197144516580354, 0.9987666177030938, 0.8553972278573474]}
+{"event": "exact_strae_epoch", "epoch": 23, "val_primary_strae": 0.7234304838834014, "per_primary_ST_RAE": [0.4928888027667416, 0.5282110107811162, 1.0281336426219123, 0.8444884793638356]}
+{"event": "exact_strae_epoch", "epoch": 24, "val_primary_strae": 0.7205991663761733, "per_primary_ST_RAE": [0.5128352344414523, 0.4994653928904473, 1.0486829622086151, 0.8214130759641787]}
+{"event": "exact_strae_epoch", "epoch": 25, "val_primary_strae": 0.7464215211932994, "per_primary_ST_RAE": [0.5454316976222001, 0.5091737600582207, 1.073149623607341, 0.8579310034854358]}
+{"event": "exact_strae_epoch", "epoch": 26, "val_primary_strae": 0.7543465823548582, "per_primary_ST_RAE": [0.5325808798477262, 0.545465411486973, 1.09958539169256, 0.8397546463921738]}
+{"event": "exact_strae_epoch", "epoch": 27, "val_primary_strae": 0.7257020417771458, "per_primary_ST_RAE": [0.4683334320225344, 0.49641967817855326, 1.0841605409056634, 0.8538945160018321]}
+{"event": "exact_strae_epoch", "epoch": 28, "val_primary_strae": 0.7301295339025571, "per_primary_ST_RAE": [0.5016256156028828, 0.48622684309566283, 1.0610951675989055, 0.8715705093127772]}
+{"event": "exact_strae_epoch", "epoch": 29, "val_primary_strae": 0.8001087842417866, "per_primary_ST_RAE": [0.4982192423139499, 0.6103629329421013, 1.1509412475778313, 0.9409117141332639]}
+{"event": "exact_strae_epoch", "epoch": 30, "val_primary_strae": 0.7207255589079679, "per_primary_ST_RAE": [0.4689517687266644, 0.5413750500115216, 1.0178076695825602, 0.8547677473111254]}
+{"event": "exact_strae_epoch", "epoch": 31, "val_primary_strae": 0.7642482869541499, "per_primary_ST_RAE": [0.5115325182744166, 0.5635361943072148, 1.1252925249302292, 0.8566319103047388]}
+{"event": "exact_strae_epoch", "epoch": 32, "val_primary_strae": 0.743916823878708, "per_primary_ST_RAE": [0.46452747186129445, 0.5000590163400279, 1.0690417717091871, 0.9420390356043222]}
+{"event": "exact_strae_epoch", "epoch": 33, "val_primary_strae": 0.7966434070456377, "per_primary_ST_RAE": [0.5123018298463805, 0.6307896490131586, 1.1370647813256258, 0.906417367997386]}
+{"event": "exact_strae_epoch", "epoch": 34, "val_primary_strae": 0.7435535288821292, "per_primary_ST_RAE": [0.49545407875297554, 0.513227106830759, 1.060935125045014, 0.9045978048997684]}
+{"event": "exact_strae_epoch", "epoch": 35, "val_primary_strae": 0.7652792488974901, "per_primary_ST_RAE": [0.4842640295255373, 0.5633858467741915, 1.1474529624655752, 0.8660141568246568]}
+{"event": "exact_strae_epoch", "epoch": 36, "val_primary_strae": 0.7704721165347108, "per_primary_ST_RAE": [0.5634572955077076, 0.5662903631359457, 1.0640742705925907, 0.888066536902599]}
+{"event": "exact_strae_epoch", "epoch": 37, "val_primary_strae": 0.7327861120659334, "per_primary_ST_RAE": [0.49773343706683865, 0.5124917379106229, 1.0631473779591984, 0.8577718953270732]}
+{"event": "exact_strae_epoch", "epoch": 38, "val_primary_strae": 0.7386073930539775, "per_primary_ST_RAE": [0.48956074917315545, 0.49021350586567725, 1.109514243588086, 0.8651410735889914]}
+{"event": "exact_strae_epoch", "epoch": 39, "val_primary_strae": 0.7318825257709589, "per_primary_ST_RAE": [0.4630552566924072, 0.5137824114122301, 1.0788020712470616, 0.8718903637321366]}
+{"event": "exact_strae_epoch", "epoch": 40, "val_primary_strae": 0.7510914867775403, "per_primary_ST_RAE": [0.48349739123730134, 0.5194634141033123, 1.112553402383515, 0.8888517393860328]}
+{"event": "exact_strae_epoch", "epoch": 41, "val_primary_strae": 0.7652162182427649, "per_primary_ST_RAE": [0.5050039420280578, 0.5561779094449802, 1.1188662517840713, 0.8808167697139503]}
+{"event": "exact_strae_epoch", "epoch": 42, "val_primary_strae": 0.7377087532249608, "per_primary_ST_RAE": [0.4971355563635539, 0.5216948976817319, 1.0585716559853868, 0.8734329028691703]}
+{"event": "exact_strae_epoch", "epoch": 43, "val_primary_strae": 0.7533278868418529, "per_primary_ST_RAE": [0.5142589378052017, 0.5191721572530067, 1.0698180225887983, 0.9100624297204051]}
+{"event": "exact_strae_epoch", "epoch": 44, "val_primary_strae": 0.7373128518659686, "per_primary_ST_RAE": [0.48965546315369035, 0.49028299269097525, 1.0776216637688945, 0.8916912878503144]}
+{"event": "exact_strae_epoch", "epoch": 45, "val_primary_strae": 0.7185869294447671, "per_primary_ST_RAE": [0.4882825224760193, 0.5076037145312617, 1.020072656222578, 0.8583888245492094]}
+{"event": "exact_strae_epoch", "epoch": 46, "val_primary_strae": 0.7625625170751483, "per_primary_ST_RAE": [0.5206840344906627, 0.5396975487307756, 1.0867348098064968, 0.9031336752726581]}
+{"event": "exact_strae_epoch", "epoch": 47, "val_primary_strae": 0.7337555408183504, "per_primary_ST_RAE": [0.4868770166204165, 0.4889596000673927, 1.0650019446306296, 0.8941836019549626]}
+{"event": "exact_strae_epoch", "epoch": 48, "val_primary_strae": 0.7647203510463636, "per_primary_ST_RAE": [0.5483843850360826, 0.5539243783296365, 1.0998876461099338, 0.8566849947098014]}
+{"event": "exact_strae_epoch", "epoch": 49, "val_primary_strae": 0.736594306923289, "per_primary_ST_RAE": [0.4799443308320833, 0.5163251070534262, 1.0498201598317307, 0.9002876299759157]}
+{"event": "exact_strae_epoch", "epoch": 50, "val_primary_strae": 0.7446823856451754, "per_primary_ST_RAE": [0.5038992837300865, 0.5050692345845162, 1.0844018384194918, 0.8853591858466073]}
+{"event": "exact_strae_epoch", "epoch": 51, "val_primary_strae": 0.7397659298275606, "per_primary_ST_RAE": [0.49151490640111445, 0.5457589147721786, 1.0853220192425377, 0.8364678788944119]}
+{"event": "exact_strae_epoch", "epoch": 52, "val_primary_strae": 0.7241500398632635, "per_primary_ST_RAE": [0.4810895326198635, 0.5190788716950249, 1.0596520486919054, 0.8367797064462601]}
+{"event": "exact_strae_epoch", "epoch": 53, "val_primary_strae": 0.7254249463199068, "per_primary_ST_RAE": [0.4947735248042029, 0.4881144540049197, 1.0319681788861705, 0.8868436275843341]}
+{"event": "exact_strae_epoch", "epoch": 54, "val_primary_strae": 0.730374481135661, "per_primary_ST_RAE": [0.49527934244213856, 0.5189488538472782, 1.0811749110037319, 0.8260948172494953]}
+{"event": "exact_strae_fold_fit_complete", "fold": 1, "seconds": 53.95908880233765, "best_primary_validation_ST_RAE": 0.6877772212028503, "best_epoch": 14}
+{"event": "native_fold_complete", "member": "mtaux8", "fold": 1, "best_epoch": 14, "seconds": 66.61562752723694}

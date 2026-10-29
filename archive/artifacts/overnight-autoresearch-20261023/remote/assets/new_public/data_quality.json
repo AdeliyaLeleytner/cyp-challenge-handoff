@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "passed": true,
+  "failures": [],
+  "excluded_parent_overlap_count": 0,
+  "source_counts": {
+    "tox21_cyp": {
+      "records": 133572,
+      "eligible_ic50_ac50_records": 50931,
+      "targets": [
+        "CYP1A2",
+        "CYP2C9",
+        "CYP2D6",
+        "CYP3A4"
+      ]
+    },
+    "bindingdb_native_articles": {
+      "records": 157,
+      "eligible_ic50_ac50_records": 102,
+      "targets": [
+        "CYP1A2",
+        "CYP2C9",
+        "CYP2D6",
+        "CYP3A4"
+      ]
+    }
+  },
+  "interpretation": "Pass means reproducible usable source/identity/label schema, not challenge-domain equivalence or model improvement"
+}

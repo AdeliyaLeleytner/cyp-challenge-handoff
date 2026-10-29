@@ -1,0 +1,58 @@
+[
+  {
+    "source": "alphaxiv",
+    "id": "2610.25163",
+    "title": "M-JEPA: Predictive Self-Supervised Learning for Molecular Graphs with Scaffold-Shift Evaluation on Tox21",
+    "abstract": "Self-supervised molecular representation learning is increasingly used to improve transfer on small, label-limited property prediction tasks, yet commonly used contrastive objectives can be sensitive to view construction and are often evaluated with protocols that report only discrimination. We adapt Joint Embedding Predictive Architectures (JEPAs) to molecular graphs by masking chemically coherent connected subgraphs and training a context encoder to regress the masked target embedding produced by an exponential-moving-average (EMA) teacher. To evaluate predictive self-supervision under realistic distribution shift, we introduce a leakage-resistant, compute-matched three-phase protocol: (i) an 80-run objective screening on ESOL with fixed compute budgets, (ii) JEPA-only refinement of masking and augmentation choices, and (iii) per-assay Tox21 evaluation under Bemis-Murcko scaffold splits with joint discrimination-reliability analysis and attribution diagnostics. Under matched compute, M-JEPA achieves substantially lower ESOL proxy RMSE than a compute-matched InfoNCE baseline (mean RMSE 2.12 vs 3.75; mean paired dRMSE 1.61; 95% bootstrap CI [1.52, 1.72]; Wilcoxon p=2.4e-4) and typically completes runs faster (~15-25 min vs ~35-45 min on a single GPU under identical hardware), albeit with higher runtime variance. On Tox21, improvements in ROC-AUC/PR-AUC are assay-dependent and do not uniformly imply better calibration; reliability diagrams and Brier/ECE metrics reveal endpoints where fine-tuning improves ranking but leaves probabilities miscalibrated.",
+    "publicationDate": "2026-10-18T10:39:31.000Z",
+    "votes": 2
+  },
+  {
+    "source": "alphaxiv",
+    "id": "2610.07997",
+    "title": "Can phenotypic activity be predicted without experimental readouts?",
+    "abstract": "Molecular encoders contrastively pretrained on paired molecule-morphology data, such as CLOOME and CellCLIP, have been proposed as cheap surrogates for phenotypic prediction, avoiding the need to run a Cell Painting assay. We evaluate this idea for these molecular encoders under a protocol designed to control for two confounds that can inflate apparent performance: leakage across an encoder's own pretraining boundary, and the correlation between phenotypic activity and cytotoxicity. Testing six representations, including a non-pretrained MLP control matching CLOOME's input and layer count, on two distinct Cell Painting screens, we find that once these confounds are controlled for, the pretrained molecular encoders show no clear advantage over plain physicochemical descriptors, and that toxicity is generally easier to predict than phenotypic activity across representations. Our results suggest leakage-aware, confound-controlled evaluation should be standard practice before phenotype-pretrained encoders are trusted as surrogates for phenotypic drug discovery.",
+    "publicationDate": "2026-10-06T08:56:23.000Z",
+    "votes": 2
+  },
+  {
+    "source": "alphaxiv",
+    "id": "2609.37285",
+    "title": "AssayRouter: Historical Utility Priors for Frozen Molecular Predictor Routing",
+    "abstract": "Laboratories often face a new molecular assay with 16-64 labels and a bank of predictors whose training data and parameters are unavailable. The practical question is which frozen outputs to include in a small local model. AssayRouter treats completed assays as pseudo-targets and labels each candidate by its post-fit utility: the reduction in held-out discovery loss when the candidate is added to the local target predictor. A shared regressor learns to predict this utility from candidate behavior on the support set, without source identity; on a new assay, one frozen ranking selects four sources and separate labels fit a convex combiner. We train only on completed ChEMBL-MT assays and evaluate 24 external regression assays across six frozen interface families. AssayRouter-C lowers strict four-call negative log-likelihood (NLL) by 0.0409 relative to Support-CV@4. Frozen candidate-label permutations confirm that candidate-utility correspondence carries the transferred information, and leave-one-interface-out training shows that the mapping generalizes to unseen predictor families. Completed assays therefore provide transferable supervision for scarce-label routing through frozen prediction interfaces.",
+    "publicationDate": "2026-09-29T11:27:45.000Z",
+    "votes": 1
+  },
+  {
+    "source": "alphaxiv",
+    "id": "2610.13037",
+    "title": "Quantum-Circuit Residuals for Receptor Functional Potency Prediction: Predictive Gains and Quadratic Structure",
+    "abstract": "The predictive performance of neural networks for receptor functional potency modeling depends on both molecular representations and prediction-head design. Using GLP-1R cAMP-related pEC50 prediction as the primary task, we jointly train a classical molecular encoder with a linear base head and a shallow quantum-circuit residual head that share the learned molecular representation. We evaluate the models using random and structure-group splits, include tuned Chemprop as a domain reference, and extend the evaluation to ADRB2 and MC4R. Under the GLP-1R structure-group split, the quantum-residual models reduce mean absolute error relative to the corresponding base models from 0.677 to 0.639 with a multilayer perceptron (MLP) encoder and from 0.680 to 0.641 with a graph neural network (GNN) encoder. In structural control experiments, a parameter-count-matched real-orthogonal control achieves similar predictive performance, suggesting that some quantum-residual gains may be associated with structured quadratic feature interactions. By combining receptor functional potency prediction with structural analysis of the quantum residual, this study provides empirical evidence to inform compact residual-head design and highlights the potential of quantum-circuit parameterizations for this task.",
+    "publicationDate": "2026-10-09T05:48:38.000Z",
+    "votes": 0
+  },
+  {
+    "source": "alphaxiv",
+    "id": "2609.33342",
+    "title": "CalibHyper: Chance-Corrected Relational Hypergraphs for Few-Shot Molecular Property Prediction",
+    "abstract": "Molecular property prediction is central to drug development and materials discovery, but experiments are costly and labeled data are scarce. Context-aware methods use auxiliary assay labels to support few-shot prediction, and recent work supervises property relations with label agreement. However, label agreement is sensitive to class marginals and does not directly capture dependence between properties. We propose CalibHyper, a chance-corrected relational hypergraph method based on the joint label distribution. CalibHyper subtracts an independence baseline from the ordered four-state label distribution and shrinks the residual according to the number of joint observations. A swap-equivariant relation head estimates these residuals, which choose the auxiliary properties for each molecule and set the sign and weight of their hyperedge messages. On thirteen datasets from five benchmarks, in both 1-shot and 10-shot settings, CalibHyper and its ablation settings achieve ROC-AUC competitive with the strongest reported results.",
+    "publicationDate": "2026-09-27T08:15:11.000Z",
+    "votes": 0
+  },
+  {
+    "source": "alphaxiv",
+    "id": "2609.05381",
+    "title": "Molecular Déjà Vu: Digit-Level Retrieval of Molecular Properties in Frontier Language Models",
+    "abstract": "Large language models (LLMs) are increasingly employed to predict molecular properties. However, prediction error alone cannot distinguish prediction from retrieval of published values. We audit 22 frontier models on 12 molecular regression datasets in a zero-shot setting, assessed against a molecule-blind reference derived from each dataset's labels. Significant retrieval is concentrated on 5 datasets, with isolated flagged LLMs elsewhere. Increasing the reasoning setting raises the number of flagged model--dataset combinations from 47 to 89 of 264. An in-context blinding experiment reduces retrieval but leaves a quarter of the combinations flagged. Blinding changes model rankings and increases errors. Because blinding also removes chemically interpretable structure, the error increase can only be partially attributed to reduced retrieval.",
+    "publicationDate": "2026-09-04T17:32:48.000Z",
+    "votes": 3
+  },
+  {
+    "source": "alphaxiv",
+    "id": "2608.08078",
+    "title": "PATH: Next-Interval Prediction via Autoregressive Tree Hierarchy on Tabular Data",
+    "abstract": "Interval prediction aims to achieve a target coverage level while producing intervals that are as short as possible. Many conformal regression pipelines first predict an uncertainty surrogate and then convert it into an interval through calibration or selection. This separation supports coverage calibration, but post hoc rules largely determine the final interval and do not fully use the learned output distribution. We observe that the resulting intervals have inherently hierarchical geometry: an interval can be recursively refined into nested subintervals, and binary trees naturally represent this structure. We formulate this hierarchy as next-interval prediction and propose PATH, which learns how probability mass flows from each interval to its next nested subintervals. PATH predicts a base leaf distribution and uses an autoregressive decoder to refine branch probabilities. Matching the distribution to the interval hierarchy aligns learning with extraction: PATH accumulates probability over adjacent output intervals and returns the shortest contiguous range reaching a selected mass. We compare PATH with 24 baselines for interval prediction on PATHBench, comprising 56 OpenML regression datasets. PATH substantially shortens the resulting intervals, achieving the lowest mean normalized length, 0.1473, while maintaining mean coverage of 0.9144. These results establish hierarchical output modeling as an effective approach for compact interval prediction on tabular data. Code is publicly available at this https URL.",
+    "publicationDate": "2026-08-08T11:57:20.000Z",
+    "votes": 3
+  }
+]

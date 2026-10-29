@@ -1,0 +1,34 @@
+{
+  "status": "complete",
+  "seconds": 56.583130836486816,
+  "models": [
+    "extratrees__structure",
+    "extratrees__admet",
+    "extratrees__augmented",
+    "lightgbm__structure",
+    "lightgbm__admet",
+    "lightgbm__augmented",
+    "kernel__structure",
+    "kernel__admet",
+    "kernel__augmented",
+    "chemeleon_ridge__structure",
+    "chemeleon_ridge__augmented",
+    "lightgbm__no_cyp"
+  ],
+  "cv_seeds": [
+    42,
+    142
+  ],
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.6.0",
+    "chemprop": "2.2.1",
+    "torch": "2.8.0",
+    "rdkit": "2026.9.1"
+  },
+  "no_new_labels_acquired": true,
+  "no_hidden_test_labels": true,
+  "no_submission": true
+}

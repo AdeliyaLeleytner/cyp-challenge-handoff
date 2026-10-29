@@ -1,0 +1,95 @@
+{
+  "signature": {
+    "csv_sha256": {
+      "train": "19bba34f0c1115ed9b030177b39ffefbc900c96ea862ad0705bc355fa51c0a9c",
+      "test": "7fd661745023c083fe5c970db77db2e3ff95c131d3e260c12464d5ca4171e1b4"
+    },
+    "checkpoints": {
+      "adme": {
+        "filename": "chemprop_medium.pt",
+        "sha256": "b8137a0d202669baa9747f21eac4ef78b000afe68a3f100d25c849c41ad8a3d5"
+      },
+      "chemeleon_adme": {
+        "filename": "chemprop_chemeleon.pt",
+        "sha256": "b2b3ce2d5a40c46c4dbae1e553ce63d3c0e6a15abe800fde18b8b8814e2f7cc6"
+      },
+      "foundation": {
+        "filename": "chemeleon_foundation.pt",
+        "sha256": "c376624d3407204e780a0ed13a9ac097cc9bb1c13ef89cdbc633c1715c183651"
+      }
+    },
+    "batch_size": 128,
+    "torch_threads": 4,
+    "foundation_device": "cpu",
+    "adme_device": "cpu",
+    "implementation_sha256": "634ecb7f989c740ab43bc9ff7b19d8b936ea526f87e4c8728983b382234327fe",
+    "jeremy_source_sha256": "4daa3b30ffe8becd09e6533a331f7ac1d7f8984e7bed46de590698ecaf378c2c",
+    "versions": {
+      "torch": "2.6.0+cu124",
+      "chemprop": "2.2.1",
+      "rdkit": "2026.9.1",
+      "numpy": "2.2.6"
+    }
+  },
+  "audits": {
+    "adme": {
+      "shape": [
+        6895,
+        600
+      ],
+      "dtype": "float32",
+      "duplicate_smiles_pairs": 0,
+      "duplicate_max_absolute_difference": 0.0,
+      "duplicate_tolerance": {
+        "rtol": 0.0001,
+        "atol": 2e-05
+      }
+    },
+    "chemeleon_adme": {
+      "shape": [
+        6895,
+        2048
+      ],
+      "dtype": "float32",
+      "duplicate_smiles_pairs": 0,
+      "duplicate_max_absolute_difference": 0.0,
+      "duplicate_tolerance": {
+        "rtol": 0.0001,
+        "atol": 2e-05
+      }
+    },
+    "foundation": {
+      "shape": [
+        6895,
+        2048
+      ],
+      "dtype": "float32",
+      "duplicate_smiles_pairs": 0,
+      "duplicate_max_absolute_difference": 0.0,
+      "duplicate_tolerance": {
+        "rtol": 0.0001,
+        "atol": 2e-05
+      }
+    }
+  },
+  "output_sha256": {
+    "X_adme_train.npy": "7dc867887a330b78b5307a8b3254de2f7b7022f3cfe73734345148ebcbe70cd8",
+    "X_adme_test.npy": "fe139a7d4a3dcb513848b61a904052e60505fd7d0d6c20e82e505e55fa2026ed",
+    "X_chemeleon_adme_train.npy": "ea3bbbd5feb6cf5e9b36b9f3a8bdb6d85344ae9eeffcdd0df4ae626974f16586",
+    "X_chemeleon_adme_test.npy": "0d4121867b66eb8e5c431ce2aa82f7b8e72654ad450175ad6967b97a3d09b5a3",
+    "X_foundation_train.npy": "8ba7d3c0c37ebc3017f4e37a20fe96b9df6c98dd1ba6257f329ff699e4ffc408",
+    "X_foundation_test.npy": "676777cabeb24819c97091f5eaa8865b32d5d34e900da62f52700cbdf28bcaec",
+    "embedding_ids_train.csv": "9064cd6f7f90b76754bdf18f10c532e785fc7a48846780c1f77dfade526cf4fd",
+    "embedding_ids_test.csv": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9"
+  },
+  "train_rows": 6145,
+  "test_rows": 750,
+  "operation": "Frozen encoders only; no labels read by extraction; no parameter fitting",
+  "reference_path": "CPU map_location loader adapter -> unchanged Jeremy embed_with_model -> model.fingerprint",
+  "reference_adaptation": [
+    "CUDA-serialized checkpoint tensors relocated to CPU",
+    "Module-local torch DataLoader plus Chemprop collate_batch preserves explicit drop_last=False intent"
+  ],
+  "foundation_path": "BondMessagePassing(strict checkpoint) -> MeanAggregation",
+  "joint_order": "train.csv rows followed by test.csv rows; split only after extraction"
+}

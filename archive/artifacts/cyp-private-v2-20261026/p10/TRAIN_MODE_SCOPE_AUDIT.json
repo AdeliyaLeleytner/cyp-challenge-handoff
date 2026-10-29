@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "finding": "New P10 epoch-zero diagnostics introduced the missing train-mode restoration. Earlier P3/P7/P7R do not share this train-entry defect. No earlier negative result is reinterpreted from this bug.",
+  "sources": {
+    "p3": {
+      "commit": "562d9b6a8c3bae49a7a95b2f2465f51cb0810a37",
+      "runner_sha256": "39370b52eda49aa8c994a6867a8003e55297b9f106a980de861cea2a073261dc",
+      "actual_worker_logs_checked": 20,
+      "eval_mode_training_warnings": [],
+      "train_entry": "fresh constructor, no pre-fit eval call",
+      "last_prefit_eval_offset": -1,
+      "last_prefit_train_offset": -1
+    },
+    "p7": {
+      "commit": "608449972f080760c867ba04cb2de747d4d31a04",
+      "runner_sha256": "87f04bbe13658e85b0e49130681eeffdc45c42fea8bd22d48e8cba53cba8cc6f",
+      "actual_worker_logs_checked": 10,
+      "eval_mode_training_warnings": [],
+      "train_entry": "probe eval followed by explicit model.train() before gradient probe and fit; no subsequent pre-fit eval",
+      "last_prefit_eval_offset": 4174,
+      "last_prefit_train_offset": 4307
+    },
+    "p7r": {
+      "commit": "8fad9cdf0aba0e1974eba3e7a8e11c6b3b42ce41",
+      "runner_sha256": "d58438d6631ee52ff8108e9cdf78fa43cb0252769421333a75f7778027329929",
+      "actual_worker_logs_checked": 20,
+      "eval_mode_training_warnings": [],
+      "train_entry": "probe eval followed by explicit model.train() before gradient probe and fit; no subsequent pre-fit eval",
+      "last_prefit_eval_offset": 5195,
+      "last_prefit_train_offset": 5328
+    }
+  },
+  "new_invalid_run": "fc0ad05e-b580-4194-ae87-9cb2fc353a17",
+  "repaired_profile": "261b7aec-4577-4a8c-ba7a-0651b33e2336"
+}

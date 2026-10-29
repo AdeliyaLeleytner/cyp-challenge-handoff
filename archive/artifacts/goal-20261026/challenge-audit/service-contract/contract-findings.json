@@ -1,0 +1,80 @@
+{
+  "scope": "Read-only service-contract audit. No prediction requests, proxy requests, or acquisition runs. One public OpenAPI document GET only.",
+  "source_files": [
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-access/live-probe/openapi.txt",
+      "sha256": "35bbe69850c637e09eb3f395a70f9438a4647d999e56772f43c25ed27d127008"
+    },
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-access/live-probe/two.md",
+      "sha256": "e17650e313772373e4b4df6829939b8e3f4d8b1676fbbe8a005afc13fcafcbfa"
+    },
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-access/live-probe/three.md",
+      "sha256": "a68ce5eaf3bfe2fa564c318979fb533e4060aebe87d97e2c3f43366a54f97454"
+    },
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-access/live-probe/smoke-meta.json",
+      "sha256": "24ca1e78aaa2d364e5bf48c6901bdb6ff6d264c851aafc0c0a38a317158958e1"
+    },
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-access/live-probe/smoke-response.bin",
+      "sha256": "45ab983707a8aee5adb79f94be4e8b65f3b162f914b854a06f8640a6f4f50ef1"
+    },
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-access/live-probe/smoke-csv-response.bin",
+      "sha256": "0a49a636203b2ced72ac4cdd43b1a57d1f14a7a07d9ad293e87eed332683bd4c"
+    },
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-access/cooldown-probe-45min/metadata.json",
+      "sha256": "22623541bdffa96051e01ffc81ce2d8bc30ee629cde2ee60204e5807ea194523"
+    },
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-access/cooldown-probe-45min/response.bin",
+      "sha256": "ca7396bd5acfc5c035cbecfe66f0781b2f8e8b86ebe349cd8476fc6fa081efbd"
+    },
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-access/webbatch-three-probe/api-web-comparison.json",
+      "sha256": "9f80499c752bf14419a5ca2cf5b47aa0943570bdd7d0288adc7ddf3fd4c34477"
+    },
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-access/webbatch-three-probe/download.csv",
+      "sha256": "4ec6f443a2af50a457fbf4974219049673b3c74568c6f0505b5777d9f32267c2"
+    },
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-access/WEB_BATCH_ACCESS.md",
+      "sha256": "58f2d56d5922aefc257b2a37947fbc5a9a6c981ec8d2d774fa004d688eb23103"
+    },
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-browser/REPORT.md",
+      "sha256": "18c1c31cc7b60b7b964af5ab880e7579372a43436f1f4227c9c22b05c64f8ec7"
+    },
+    {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/admetlab-auto/page-code-audit/screening.txt",
+      "sha256": "4850ad688378324c66b00e1858824e6bd9ebb6de877a23b8a246b86dde2093e5"
+    }
+  ],
+  "current_openapi": {
+    "utc": "2026-10-25T23:42:57.896329+00:00",
+    "url": "https://admetlab3.scbdd.com/api/openapi.json",
+    "method": "GET",
+    "prediction_request": false,
+    "http_status": 200,
+    "sha256": "35bbe69850c637e09eb3f395a70f9438a4647d999e56772f43c25ed27d127008",
+    "same_as_saved_oct24_json": true,
+    "paths": [
+      "/api/single/admet",
+      "/api/single/admetFile",
+      "/api/single/admetPDF",
+      "/api/uploadfile",
+      "/api/molsvg",
+      "/api/washmol",
+      "/api/admetCSV"
+    ]
+  },
+  "documented_async_alternative": false,
+  "async_absence_scope": "No early-ack/poll interface in inspected current OpenAPI, legacy public Markdown, or web frontend; not a claim about undisclosed private server routes.",
+  "feature_false_web_equivalence": "unproven; no successful feature=False paired response in saved evidence",
+  "feature_true_web_equivalence": "contradicted by saved paired outputs",
+  "production_recommendation": "Retain web_default120; do not merge API rows based on schema resemblance."
+}

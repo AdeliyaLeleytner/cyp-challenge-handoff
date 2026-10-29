@@ -1,0 +1,58 @@
+{
+  "estimated_blind_pearson": {
+    "CYP1A2": 0.722866918384891,
+    "CYP2C9": 0.8396958728922717,
+    "CYP2D6": 0.7482175717630765,
+    "CYP3A4": 0.8256143623941459
+  },
+  "calibration": {
+    "CYP1A2": {
+      "offset": -0.6006628548977284,
+      "scale": 2.3408395137377873
+    },
+    "CYP2C9": {
+      "offset": -0.15340619962472335,
+      "scale": 1.9738874135932483
+    },
+    "CYP2D6": {
+      "offset": -1.2058229689246542,
+      "scale": 2.8665392518973665
+    },
+    "CYP3A4": {
+      "offset": 0.01590863972395251,
+      "scale": 1.7411756810650667
+    }
+  },
+  "BLIND_MOMENTS": {
+    "CYP1A2": {
+      "mean": 4.412,
+      "sd": 1.553
+    },
+    "CYP2C9": {
+      "mean": 4.83,
+      "sd": 1.101
+    },
+    "CYP2D6": {
+      "mean": 3.107,
+      "sd": 1.599
+    },
+    "CYP3A4": {
+      "mean": 4.88,
+      "sd": 1.272
+    }
+  },
+  "OOF_TO_BLIND": {
+    "CYP1A2": 1.32,
+    "CYP2C9": 1.23,
+    "CYP2D6": 1.66,
+    "CYP3A4": 1.07
+  },
+  "STRAE_MOMENTS": {
+    "CYP2D6": {
+      "mean": 3.57,
+      "sd": 0.9
+    }
+  },
+  "uses_published_leaderboard_derived_constants": true,
+  "not_an_independent_hidden_test_evaluation": true
+}

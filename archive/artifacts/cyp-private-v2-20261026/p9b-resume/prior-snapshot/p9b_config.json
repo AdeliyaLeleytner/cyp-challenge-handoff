@@ -1,0 +1,58 @@
+{
+  "schema": "p9b-fullbank-v1",
+  "output": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9b/results",
+  "deps_target": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9a/isolated-deps",
+  "checkpoint": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9a/assets/checkpoint",
+  "task_root": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9b",
+  "files": {
+    "rows": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9a/next-stage/official5655-structures.csv",
+      "sha256": "541530de65e3311bc481db985033632456b2096a8cc4f8942eba525358317950"
+    },
+    "dependencies": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9a/dependencies.json",
+      "sha256": "bd9b4b622577935292362af247505c944a3116b2a0bb0315d4d6cf8581f1e38a"
+    },
+    "weight": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9a/assets/checkpoint/model.safetensors",
+      "sha256": "0406152686fbae9f737f2c70c9acaf2da0eba6ad57e530142adfee47df75882f"
+    },
+    "model_config": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9a/assets/checkpoint/config.json",
+      "sha256": "554fdf12fd72d88ce32e11d463324c1e0a923cdc0ffcd439863041933424782e"
+    },
+    "pins": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/representation-prep/ATOM_JEPA_PINS.json",
+      "sha256": "c7bc481f4fe977588ae805a0299f0154deb9ae2760d00c950eb440427b912fc4"
+    },
+    "download_receipt": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9a/weight-download-receipt.json",
+      "sha256": "25c0bd2ea399511b20235f48f1cd1034e8c2c3f0f25ba1edcb78830349146546"
+    },
+    "official_train": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-admet500-pilot-20261025/stage/official-train.csv",
+      "sha256": "b8f79addd266fb6f9f4c222c5e4e73d926362328b6a8d2841871a54e46bd2278"
+    },
+    "official_test": {
+      "path": "/Users/adeliyaleleytner/.local/share/openresearch/projects/cyp-chemeleon-baseline-20261023/data/official-test.csv",
+      "sha256": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9"
+    },
+    "smoke_rows": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9a/assets/smoke-rows.csv",
+      "sha256": "3d9c6f8c1e90421f7a3ce0dfe855e9e7fd30f65b6e41cbca2ecc02bdf9fd1904"
+    },
+    "smoke_embeddings": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9a/results/embeddings.npy",
+      "sha256": "ab30163a96a5263a3a4b7fa0057ffc6b67d8d7f96f68b78b08f2d6088f1ba5c7"
+    }
+  },
+  "timeout_seconds": 5400,
+  "threads": 4,
+  "batch_size": 1,
+  "seed": 42,
+  "max_iters": 500,
+  "dimensions": 256,
+  "atol": 1e-05,
+  "rtol": 1e-05,
+  "expected_rows": 5655
+}

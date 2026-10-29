@@ -1,0 +1,178 @@
+Collecting chemprop==2.2.1
+  Downloading chemprop-2.2.1-py3-none-any.whl.metadata (9.5 kB)
+Collecting lightning==2.5.5
+  Downloading lightning-2.5.5-py3-none-any.whl.metadata (39 kB)
+Collecting rdkit==2026.9.1
+  Downloading rdkit-2026.9.1-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting pandas==2.3.3
+  Downloading pandas-2.3.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (91 kB)
+Collecting numpy==2.2.6
+  Downloading numpy-2.2.6-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+Collecting scipy==1.16.2
+  Downloading scipy-1.16.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (62 kB)
+Collecting scikit-learn==1.7.2
+  Downloading scikit_learn-1.7.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (11 kB)
+Requirement already satisfied: torch>=2.1 in /opt/conda/lib/python3.11/site-packages (from chemprop==2.2.1) (2.6.0+cu124)
+Collecting astartes[molecules] (from chemprop==2.2.1)
+  Downloading astartes-1.3.3-py3-none-any.whl.metadata (26 kB)
+Collecting ConfigArgParse (from chemprop==2.2.1)
+  Downloading configargparse-1.8.0-py3-none-any.whl.metadata (23 kB)
+Collecting rich (from chemprop==2.2.1)
+  Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting descriptastorus (from chemprop==2.2.1)
+  Downloading descriptastorus-2.8.0-py3-none-any.whl.metadata (364 bytes)
+Requirement already satisfied: PyYAML<8.0,>5.4 in /opt/conda/lib/python3.11/site-packages (from lightning==2.5.5) (6.0.2)
+Requirement already satisfied: fsspec<2027.0,>=2022.5.0 in /opt/conda/lib/python3.11/site-packages (from fsspec[http]<2027.0,>=2022.5.0->lightning==2.5.5) (2024.12.0)
+Collecting lightning-utilities<2.0,>=0.10.0 (from lightning==2.5.5)
+  Downloading lightning_utilities-0.15.3-py3-none-any.whl.metadata (5.5 kB)
+Requirement already satisfied: packaging<27.0,>=20.0 in /opt/conda/lib/python3.11/site-packages (from lightning==2.5.5) (24.2)
+Collecting torchmetrics<3.0,>0.7.0 (from lightning==2.5.5)
+  Downloading torchmetrics-1.9.0-py3-none-any.whl.metadata (23 kB)
+Requirement already satisfied: tqdm<6.0,>=4.57.0 in /opt/conda/lib/python3.11/site-packages (from lightning==2.5.5) (4.67.1)
+Requirement already satisfied: typing-extensions<6.0,>4.5.0 in /opt/conda/lib/python3.11/site-packages (from lightning==2.5.5) (4.12.2)
+Collecting pytorch-lightning (from lightning==2.5.5)
+  Downloading pytorch_lightning-2.6.6-py3-none-any.whl.metadata (21 kB)
+Requirement already satisfied: Pillow in /opt/conda/lib/python3.11/site-packages (from rdkit==2026.9.1) (11.0.0)
+Collecting python-dateutil>=2.8.2 (from pandas==2.3.3)
+  Downloading python_dateutil-3.0.0-py2.py3-none-any.whl.metadata (8.2 kB)
+Requirement already satisfied: pytz>=2020.1 in /opt/conda/lib/python3.11/site-packages (from pandas==2.3.3) (2024.2)
+Collecting tzdata>=2022.7 (from pandas==2.3.3)
+  Downloading tzdata-2026.5-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting joblib>=1.2.0 (from scikit-learn==1.7.2)
+  Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting threadpoolctl>=3.1.0 (from scikit-learn==1.7.2)
+  Downloading threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+Collecting aiohttp!=4.0.0a0,!=4.0.0a1 (from fsspec[http]<2027.0,>=2022.5.0->lightning==2.5.5)
+  Downloading aiohttp-3.14.5-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+Collecting cloudpickle>=3.0 (from joblib>=1.2.0->scikit-learn==1.7.2)
+  Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+Requirement already satisfied: six>=1.6 in /opt/conda/lib/python3.11/site-packages (from python-dateutil>=2.8.2->pandas==2.3.3) (1.17.0)
+Requirement already satisfied: filelock in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (3.17.0)
+Requirement already satisfied: networkx in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (3.4.2)
+Requirement already satisfied: jinja2 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (3.1.5)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.4.127 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (12.4.127)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.4.127 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (12.4.127)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.4.127 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (12.4.127)
+Requirement already satisfied: nvidia-cudnn-cu12==9.1.0.70 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (9.1.0.70)
+Requirement already satisfied: nvidia-cublas-cu12==12.4.5.8 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (12.4.5.8)
+Requirement already satisfied: nvidia-cufft-cu12==11.2.1.3 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (11.2.1.3)
+Requirement already satisfied: nvidia-curand-cu12==10.3.5.147 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (10.3.5.147)
+Requirement already satisfied: nvidia-cusolver-cu12==11.6.1.9 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (11.6.1.9)
+Requirement already satisfied: nvidia-cusparse-cu12==12.3.1.170 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (12.3.1.170)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.6.2 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (0.6.2)
+Requirement already satisfied: nvidia-nccl-cu12==2.21.5 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (2.21.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.4.127 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (12.4.127)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.4.127 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (12.4.127)
+Requirement already satisfied: triton==3.2.0 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (3.2.0)
+Requirement already satisfied: sympy==1.13.1 in /opt/conda/lib/python3.11/site-packages (from torch>=2.1->chemprop==2.2.1) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /opt/conda/lib/python3.11/site-packages (from sympy==1.13.1->torch>=2.1->chemprop==2.2.1) (1.3.0)
+Collecting tabulate (from astartes[molecules]->chemprop==2.2.1)
+  Downloading tabulate-0.10.0-py3-none-any.whl.metadata (40 kB)
+Collecting aimsim_core (from astartes[molecules]->chemprop==2.2.1)
+  Downloading aimsim_core-2.2.3-py3-none-any.whl.metadata (15 kB)
+Collecting pandas-flavor (from descriptastorus->chemprop==2.2.1)
+  Downloading pandas_flavor-0.8.1-py3-none-any.whl.metadata (6.6 kB)
+Collecting markdown-it-py>=2.2.0 (from rich->chemprop==2.2.1)
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /opt/conda/lib/python3.11/site-packages (from rich->chemprop==2.2.1) (2.19.1)
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2027.0,>=2022.5.0->lightning==2.5.5)
+  Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+Collecting aiosignal>=1.4.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2027.0,>=2022.5.0->lightning==2.5.5)
+  Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+Requirement already satisfied: attrs>=17.3.0 in /opt/conda/lib/python3.11/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2027.0,>=2022.5.0->lightning==2.5.5) (25.1.0)
+Collecting frozenlist>=1.1.1 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2027.0,>=2022.5.0->lightning==2.5.5)
+  Downloading frozenlist-1.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+Collecting multidict<8.0,>=4.5 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2027.0,>=2022.5.0->lightning==2.5.5)
+  Downloading multidict-7.2.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (6.1 kB)
+Collecting propcache>=0.2.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2027.0,>=2022.5.0->lightning==2.5.5)
+  Downloading propcache-0.5.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (25 kB)
+Collecting yarl<2.0,>=1.25.1 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2027.0,>=2022.5.0->lightning==2.5.5)
+  Downloading yarl-1.25.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (111 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->chemprop==2.2.1)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Requirement already satisfied: psutil in /opt/conda/lib/python3.11/site-packages (from aimsim_core->astartes[molecules]->chemprop==2.2.1) (6.1.1)
+Collecting padelpy (from aimsim_core->astartes[molecules]->chemprop==2.2.1)
+  Downloading padelpy-0.1.17-py3-none-any.whl.metadata (6.5 kB)
+Collecting mhfp (from aimsim_core->astartes[molecules]->chemprop==2.2.1)
+  Downloading mhfp-1.9.6-py3-none-any.whl.metadata (9.0 kB)
+Collecting mordredcommunity (from aimsim_core->astartes[molecules]->chemprop==2.2.1)
+  Downloading mordredcommunity-2.0.7-py3-none-any.whl.metadata (6.3 kB)
+Collecting multiprocess>=0.70 (from aimsim_core->astartes[molecules]->chemprop==2.2.1)
+  Downloading multiprocess-0.70.19-py311-none-any.whl.metadata (7.5 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in /opt/conda/lib/python3.11/site-packages (from jinja2->torch>=2.1->chemprop==2.2.1) (3.0.2)
+Collecting xarray (from pandas-flavor->descriptastorus->chemprop==2.2.1)
+  Downloading xarray-2026.9.0-py3-none-any.whl.metadata (12 kB)
+Collecting dill>=0.4.1 (from multiprocess>=0.70->aimsim_core->astartes[molecules]->chemprop==2.2.1)
+  Downloading dill-0.4.1-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: idna>=2.0 in /opt/conda/lib/python3.11/site-packages (from yarl<2.0,>=1.25.1->aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<2027.0,>=2022.5.0->lightning==2.5.5) (3.10)
+Downloading chemprop-2.2.1-py3-none-any.whl (144 kB)
+Downloading lightning-2.5.5-py3-none-any.whl (828 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 828.5/828.5 kB 151.7 kB/s eta 0:00:00
+Downloading rdkit-2026.9.1-cp311-cp311-manylinux_2_28_x86_64.whl (31.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 31.8/31.8 MB 820.5 kB/s eta 0:00:00
+Downloading pandas-2.3.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 765.1 kB/s eta 0:00:00
+Downloading numpy-2.2.6-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 1.2 MB/s eta 0:00:00
+Downloading scipy-1.16.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (35.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.9/35.9 MB 826.1 kB/s eta 0:00:00
+Downloading scikit_learn-1.7.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 602.6 kB/s eta 0:00:00
+Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+Downloading lightning_utilities-0.15.3-py3-none-any.whl (31 kB)
+Downloading python_dateutil-3.0.0-py2.py3-none-any.whl (94 kB)
+Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+Downloading torchmetrics-1.9.0-py3-none-any.whl (983 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 983.4/983.4 kB 931.2 kB/s eta 0:00:00
+Downloading tzdata-2026.5-py2.py3-none-any.whl (347 kB)
+Downloading configargparse-1.8.0-py3-none-any.whl (34 kB)
+Downloading descriptastorus-2.8.0-py3-none-any.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 654.3 kB/s eta 0:00:00
+Downloading pytorch_lightning-2.6.6-py3-none-any.whl (853 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 853.0/853.0 kB 666.2 kB/s eta 0:00:00
+Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Downloading aiohttp-3.14.5-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 704.2 kB/s eta 0:00:00
+Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Downloading aimsim_core-2.2.3-py3-none-any.whl (187 kB)
+Downloading astartes-1.3.3-py3-none-any.whl (38 kB)
+Downloading pandas_flavor-0.8.1-py3-none-any.whl (8.5 kB)
+Downloading tabulate-0.10.0-py3-none-any.whl (39 kB)
+Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Downloading frozenlist-1.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (231 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading multidict-7.2.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (509 kB)
+Downloading multiprocess-0.70.19-py311-none-any.whl (144 kB)
+Downloading propcache-0.5.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (235 kB)
+Downloading yarl-1.25.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (117 kB)
+Downloading mhfp-1.9.6-py3-none-any.whl (9.7 kB)
+Downloading mordredcommunity-2.0.7-py3-none-any.whl (176 kB)
+Downloading padelpy-0.1.17-py3-none-any.whl (20.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20.9/20.9 MB 642.2 kB/s eta 0:00:00
+Downloading xarray-2026.9.0-py3-none-any.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 697.2 kB/s eta 0:00:00
+Downloading dill-0.4.1-py3-none-any.whl (120 kB)
+Installing collected packages: mhfp, tzdata, threadpoolctl, tabulate, propcache, padelpy, numpy, multidict, mdurl, lightning-utilities, frozenlist, dill, ConfigArgParse, cloudpickle, aiohappyeyeballs, yarl, scipy, rdkit, python-dateutil, multiprocess, markdown-it-py, joblib, aiosignal, scikit-learn, rich, pandas, mordredcommunity, aiohttp, xarray, torchmetrics, astartes, aimsim_core, pytorch-lightning, pandas-flavor, lightning, descriptastorus, chemprop
+  Attempting uninstall: numpy
+    Found existing installation: numpy 2.2.2
+    Uninstalling numpy-2.2.2:
+      Successfully uninstalled numpy-2.2.2
+Successfully installed ConfigArgParse-1.8.0 aimsim_core-2.2.3 aiohappyeyeballs-2.7.1 aiohttp-3.14.5 aiosignal-1.4.0 astartes-1.3.3 chemprop-2.2.1 cloudpickle-3.1.2 descriptastorus-2.8.0 dill-0.4.1 frozenlist-1.8.0 joblib-1.6.0 lightning-2.5.5 lightning-utilities-0.15.3 markdown-it-py-4.2.0 mdurl-0.1.2 mhfp-1.9.6 mordredcommunity-2.0.7 multidict-7.2.0 multiprocess-0.70.19 numpy-2.2.6 padelpy-0.1.17 pandas-2.3.3 pandas-flavor-0.8.1 propcache-0.5.4 python-dateutil-3.0.0 pytorch-lightning-2.6.6 rdkit-2026.9.1 rich-15.0.0 scikit-learn-1.7.2 scipy-1.16.2 tabulate-0.10.0 threadpoolctl-3.7.0 torchmetrics-1.9.0 tzdata-2026.5 xarray-2026.9.0 yarl-1.25.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+{"event": "native_runtime", "cuda": true, "torch": "2.6.0+cu124", "packages": {"chemprop": "2.2.1", "lightning": "2.5.5", "rdkit": "2026.9.1", "pandas": "2.3.3", "numpy": "2.2.6", "scipy": "1.16.2", "scikit-learn": "1.7.2"}}
+Native prepared data/folds/validator hashes verified
+Found 18767 unique scaffolds from 30920 molecules
+Found 3963 unique scaffolds from 4155 molecules
+Found 14652 unique scaffolds from 22746 molecules
+Found 1315 unique scaffolds from 1343 molecules
+{"event": "outer_pool_prepared", "cohort": "own750", "rows": {"union18": 30920, "mtaux8": 4155, "2d6isoform6": 22746, "2d6single": 1343}, "holdout_rows": 750}
+Found 18867 unique scaffolds from 31140 molecules
+Found 4076 unique scaffolds from 4375 molecules
+Found 14686 unique scaffolds from 22833 molecules
+Found 1276 unique scaffolds from 1317 molecules
+{"event": "outer_pool_prepared", "cohort": "briford529", "rows": {"union18": 31140, "mtaux8": 4375, "2d6isoform6": 22833, "2d6single": 1317}, "holdout_rows": 529}
+{"event": "outer_training_complete", "config": "/workspace/cyp-repro/holdouts/own750/config.json"}
+{"event": "outer_training_complete", "config": "/workspace/cyp-repro/holdouts/briford529/config.json"}
+{"event": "outer_holdout_scores", "scores": {"own750": {"raw": {"macro_ST_RAE": 0.6262050328671893, "endpoints": {"CYP1A2_pIC50_direct_inhibition": {"ST_RAE": 0.741688724514659, "n": 150, "baseline_error_sum": 85.47421287168001, "interval_error_sum": 63.395259923690794, "MAE": 0.664447334805622, "truth_mean": 4.93254014744}, "CYP2C9_pIC50_direct_inhibition": {"ST_RAE": 0.6219750113850545, "n": 151, "baseline_error_sum": 48.094036301741724, "interval_error_sum": 29.913288776329036, "MAE": 0.46053113999220524, "truth_mean": 4.547822063066225}, "CYP2D6_pIC50_direct_inhibition": {"ST_RAE": 0.7275551654927073, "n": 150, "baseline_error_sum": 65.00516843010001, "interval_error_sum": 47.29484607504273, "MAE": 0.5382290418643504, "truth_mean": 4.768406413979999}, "CYP3A4_pIC50_direct_inhibition": {"ST_RAE": 0.4136012300763366, "n": 515, "baseline_error_sum": 265.2901926370797, "interval_error_sum": 109.72435000188446, "MAE": 0.43610822669153354, "truth_mean": 4.190690702143688}}, "defined": true, "scorer": {"path": "/root/.orx/runs/bad1ee83-ca85-4459-890f-c8b720d88ab6/repo/official_scoring_functions.py", "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3", "function": "rae_soft_threshold_absolute_error", "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample."}, "n_molecules": 750}, "native_published_placement": {"macro_ST_RAE": 1.06288826786738, "endpoints": {"CYP1A2_pIC50_direct_inhibition": {"ST_RAE": 0.8937682427275891, "n": 150, "baseline_error_sum": 85.47421287168001, "interval_error_sum": 76.39413703684532, "MAE": 0.7465496620852546, "truth_mean": 4.93254014744}, "CYP2C9_pIC50_direct_inhibition": {"ST_RAE": 0.9057078352396492, "n": 151, "baseline_error_sum": 48.094036301741724, "interval_error_sum": 43.5591455067876, "MAE": 0.5825756832968301, "truth_mean": 4.547822063066225}, "CYP2D6_pIC50_direct_inhibition": {"ST_RAE": 1.6009529594026306, "n": 150, "baseline_error_sum": 65.00516843010001, "interval_error_sum": 104.07021677463507, "MAE": 0.9086637174528566, "truth_mean": 4.768406413979999}, "CYP3A4_pIC50_direct_inhibition": {"ST_RAE": 0.8511240340996514, "n": 515, "baseline_error_sum": 265.2901926370797, "interval_error_sum": 225.79485896434494, "MAE": 0.7108720337485825, "truth_mean": 4.190690702143688}}, "defined": true, "scorer": {"path": "/root/.orx/runs/bad1ee83-ca85-4459-890f-c8b720d88ab6/repo/official_scoring_functions.py", "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3", "function": "rae_soft_threshold_absolute_error", "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample."}, "n_molecules": 750}}, "briford529": {"raw": {"macro_ST_RAE": 0.6226551676214216, "endpoints": {"CYP1A2_pIC50_direct_inhibition": {"ST_RAE": 0.6320107844826234, "n": 161, "baseline_error_sum": 69.09367569106831, "interval_error_sum": 43.66794817630005, "MAE": 0.5063251645305444, "truth_mean": 4.912084057192547}, "CYP2C9_pIC50_direct_inhibition": {"ST_RAE": 0.5615837150254683, "n": 139, "baseline_error_sum": 34.91425464690647, "interval_error_sum": 19.60727683195496, "MAE": 0.3843814232048876, "truth_mean": 4.6372683617697845}, "CYP2D6_pIC50_direct_inhibition": {"ST_RAE": 0.821540461531614, "n": 175, "baseline_error_sum": 71.88141153999999, "interval_error_sum": 59.05348801211547, "MAE": 0.586050177170675, "truth_mean": 4.7568992184}, "CYP3A4_pIC50_direct_inhibition": {"ST_RAE": 0.4754857094459805, "n": 270, "baseline_error_sum": 126.00315617128888, "interval_error_sum": 59.91270010453797, "MAE": 0.4103713949721206, "truth_mean": 4.573013782655556}}, "defined": true, "scorer": {"path": "/root/.orx/runs/bad1ee83-ca85-4459-890f-c8b720d88ab6/repo/official_scoring_functions.py", "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3", "function": "rae_soft_threshold_absolute_error", "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample."}, "n_molecules": 529}, "native_published_placement": {"macro_ST_RAE": 1.0692024542843719, "endpoints": {"CYP1A2_pIC50_direct_inhibition": {"ST_RAE": 0.9153923086629032, "n": 161, "baseline_error_sum": 69.09367569106831, "interval_error_sum": 63.24781930485294, "MAE": 0.6024666628790791, "truth_mean": 4.912084057192547}, "CYP2C9_pIC50_direct_inhibition": {"ST_RAE": 0.9188396581075073, "n": 139, "baseline_error_sum": 34.91425464690647, "interval_error_sum": 32.08060180284199, "MAE": 0.469285070419761, "truth_mean": 4.6372683617697845}, "CYP2D6_pIC50_direct_inhibition": {"ST_RAE": 1.7922306701079593, "n": 175, "baseline_error_sum": 71.88141153999999, "interval_error_sum": 128.82807037264018, "MAE": 0.9632846641201317, "truth_mean": 4.7568992184}, "CYP3A4_pIC50_direct_inhibition": {"ST_RAE": 0.6503471802591181, "n": 270, "baseline_error_sum": 126.00315617128888, "interval_error_sum": 81.94579731974702, "MAE": 0.4864422024875178, "truth_mean": 4.573013782655556}}, "defined": true, "scorer": {"path": "/root/.orx/runs/bad1ee83-ca85-4459-890f-c8b720d88ab6/repo/official_scoring_functions.py", "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3", "function": "rae_soft_threshold_absolute_error", "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample."}, "n_molecules": 529}}}}

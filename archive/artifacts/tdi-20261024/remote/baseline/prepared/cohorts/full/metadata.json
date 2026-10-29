@@ -1,0 +1,18 @@
+{
+  "train_rows": 6145,
+  "query_rows": 750,
+  "query_table": "../../test.csv",
+  "query_matrix": "../../X_test.npy",
+  "labels": {
+    "CYP2D6_is_TDI": {
+      "positive": 324,
+      "negative": 1173,
+      "missing": 4648
+    },
+    "CYP3A4_is_TDI": {
+      "positive": 764,
+      "negative": 2820,
+      "missing": 2561
+    }
+  }
+}

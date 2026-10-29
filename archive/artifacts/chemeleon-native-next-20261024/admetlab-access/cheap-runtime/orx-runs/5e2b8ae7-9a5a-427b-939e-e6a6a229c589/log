@@ -1,0 +1,17 @@
+{"event": "admetlab_status", "status": "stopped_partial", "updated_utc": "2026-10-24T16:27:52.672992+00:00", "queue_size": 32421, "successes": 0, "cached_successes": 0, "new_successes": 0, "remaining": 32421, "requests_started": 2, "error_events": 0, "endpoint_names_observed": 0, "feature_columns": 0, "elapsed_seconds": 2.017801243811846, "new_successes_per_second": 0.0, "estimated_remaining_seconds": null, "circuit_reason": "WebError: HTTP429forPOSThttps://admetlab3.scbdd.com/server/screeningCal;noretry", "queue_sha256": "ae515913b1bedacd216e424305b57daa3dfce0cf8169352a4f41df36de477493", "feature": "web_default", "global_requests_per_second": 1.0, "max_inflight": 1, "official_requests_per_second_limit": 5.0}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/root/.orx/runs/5e2b8ae7-9a5a-427b-939e-e6a6a229c589/repo/night/admetlab_web.py", line 180, in <module>
+    report=run(json.loads(Path('admetlab_web_config.json').read_text()));sys.exit(0 if report['status']=='complete' else 2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/5e2b8ae7-9a5a-427b-939e-e6a6a229c589/repo/night/admetlab_web.py", line 157, in run
+    t=time.monotonic();success,failed,association=client.batch(batch,root/'batches'/f'{index:04d}',cfg)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/5e2b8ae7-9a5a-427b-939e-e6a6a229c589/repo/night/admetlab_web.py", line 111, in batch
+    meta,body=self.fetch('form-post',req,folder)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/5e2b8ae7-9a5a-427b-939e-e6a6a229c589/repo/night/admetlab_web.py", line 92, in fetch
+    self.reason=f'HTTP{status}for{req.get_method()}{url};noretry';raise WebError(self.reason)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+WebError: HTTP429forPOSThttps://admetlab3.scbdd.com/server/screeningCal;noretry

@@ -1,0 +1,19 @@
+{
+  "stage": "executable_scratch_feature_runner_requires_complete_cache",
+  "feature_table": "/workspace/cyp-repro/admetlab_web_all/features.csv",
+  "feature_schema": "/workspace/cyp-repro/admetlab_web_all/feature-schema.json",
+  "id_map": "/workspace/cyp-repro/assets/admetlab-id-map.csv",
+  "recipe_output_root": "/workspace/cyp-repro/results/scratch_mae_admetlab_web_all",
+  "feature_selection": "all manifest-listed numerical endpoint, computed, rule and available uncertainty columns; retain all CYP outputs",
+  "value_imputation": "inner-fold training median",
+  "missing_indicators": "one per declared source feature, always retained",
+  "scaling": "only native train_chemprop_fold descriptor scaling",
+  "initialization_first_control": "same encoder checkpoint/scratch initialization and matched fresh graph FFN; copy graph columns and zero appended descriptor columns, same data/folds/training recipe",
+  "initialization_optional_continuation": "paired graph-only and descriptor continuations from the same trained checkpoint; copy existing first-layer graph columns and zero added descriptor columns; reset optimizer in both arms",
+  "external_teacher_training_membership": "unknown; do not claim complete end-to-end label independence",
+  "actual_runner_config": "admet_feature_config.json",
+  "first_backbone": "native scratch MAE champion; CheMeleon feature continuation requires its own child",
+  "source_mode": "web_default",
+  "backend": "documented_web_batch",
+  "api_probe_vectors_used": false
+}

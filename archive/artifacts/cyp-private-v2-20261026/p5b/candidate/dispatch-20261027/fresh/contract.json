@@ -1,0 +1,141 @@
+{
+  "api_schema": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/candidate/dispatch-20261027/fresh/private/api-info.json",
+    "sha256": "0f3126fb555bca4afbb4d8d70859af61f396f9f962428de1a63bb6fc55ec0702"
+  },
+  "api_signature": {
+    "api_name": "/submit_predictions",
+    "components": [
+      "Textbox",
+      "Textbox",
+      "Checkbox",
+      "Textbox",
+      "Textbox",
+      "Textbox",
+      "Textbox",
+      "Textbox",
+      "Checkbox",
+      "Checkbox",
+      "Checkbox",
+      "Radio",
+      "File"
+    ],
+    "defaults": {
+      "anon_checkbox": true,
+      "open_code_checkbox": false,
+      "paper_checkbox": false,
+      "proprietary_data_checkbox": false
+    },
+    "parameters": [
+      "username",
+      "user_alias",
+      "anon_checkbox",
+      "participant_name",
+      "discord_username",
+      "email",
+      "affiliation",
+      "model_tag",
+      "paper_checkbox",
+      "proprietary_data_checkbox",
+      "open_code_checkbox",
+      "track_select",
+      "file_input"
+    ],
+    "returns": [
+      "Textbox"
+    ],
+    "track_choices": [
+      "Regression Prediction",
+      "Classification Prediction",
+      "Structure Prediction"
+    ]
+  },
+  "conservative_public_cooldown_until_utc": "2026-10-26T19:11:00+00:00",
+  "cooldown_hours_per_track": 12,
+  "external_data_pretrained_models_allowed": true,
+  "final_deadline_utc": "2026-11-03T23:59:00+00:00",
+  "gradio_config": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/candidate/dispatch-20261027/fresh/private/gradio-config.json",
+    "sha256": "b16343420fee9341807f7f2178f2789e1759da2682a4d391ecccfc037b65bb66"
+  },
+  "identity_policy": "Preserve recorded prior identity and explicit consent flags; no inferred opt-ins",
+  "last_public_submission_utc_minute": "2026-10-26T07:10:00+00:00",
+  "last_public_user_submission": {
+    "MA-Kendall's \u03c4": 0.5698,
+    "MA-MAE": 0.6479,
+    "MA-R\u00b2": 0.6044,
+    "MA-ST-RAE": 0.4616,
+    "MA-Spearman's \u03c1": 0.7482,
+    "Model Report Link": "<a target=\"_blank\" href=\"https://gist.github.com/AdeliyaLeleytner/2de496977bc84f006cc73d384430788d\" style=\"color: var(--link-text-color); text-decoration: underline;text-decoration-style: dotted;\">link</a>",
+    "Open Code": "No",
+    "Proprietary Data": "No",
+    "Rank": 38,
+    "Submitted": "2026-10-26 07:10 UTC",
+    "Username": "AdeliyaLL-CYP"
+  },
+  "last_submission_evidence_limit": "Fresh public scored row plus local ledger; private pending submissions outside that ledger cannot be observed. Server cooldown remains authoritative.",
+  "latest_valid_submission_counts": true,
+  "leaderboard_ancestry": [
+    "",
+    "",
+    "\ud83c\udfce\ufe0f Live Leaderboard",
+    "",
+    "Direct Inhibition Prediction (Regression)",
+    "",
+    "\ud83c\udfc6 Overall",
+    ""
+  ],
+  "leaderboard_refresh_endpoint": "/partial_9",
+  "leaderboard_snapshot": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/candidate/dispatch-20261027/fresh/private/live-regression-overall.json",
+    "sha256": "3637168ecf86f6589dcd3599f56fd10824bad5cb5e05aaecc3585efcc07737ff"
+  },
+  "minimum_sample_std_per_endpoint": 0.01,
+  "phase": 2,
+  "public_https_model_report_required": true,
+  "required_columns": [
+    "SMILES",
+    "Molecule_Name",
+    "CYP1A2_pIC50_direct_inhibition",
+    "CYP2C9_pIC50_direct_inhibition",
+    "CYP2D6_pIC50_direct_inhibition",
+    "CYP3A4_pIC50_direct_inhibition"
+  ],
+  "rows": 750,
+  "schema_version": 2,
+  "server_processing_message": "Accepted submissions should appear within2hours; this is a server expectation, not proof of scoring.",
+  "source_snapshots": {
+    "app": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/candidate/dispatch-20261027/fresh/private/app.py",
+      "sha256": "18a6181fd0355a5642ade9f5b45c06dcd702321793bcfc29dec5b764b27778b2"
+    },
+    "config": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/candidate/dispatch-20261027/fresh/private/config.py",
+      "sha256": "565055de4284f53ee4e185af6189e9a3a31b5fa3a0d79509e0687ae3ad616e13"
+    },
+    "leaderboards": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/candidate/dispatch-20261027/fresh/private/leaderboards.py",
+      "sha256": "dfbb07b3219e7fb378d896039b8e58d64b91a30d5679a94ba8d33d10c580d1c2"
+    },
+    "models": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/candidate/dispatch-20261027/fresh/private/models.py",
+      "sha256": "6834f9254bf09a9bbc19419fd16dd814bfa72225c6e9511dc2e97423e700bed0"
+    },
+    "submission": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/candidate/dispatch-20261027/fresh/private/submission.py",
+      "sha256": "6371f97c9518e5cf5e86ef5a46a302b5b6b802733ac1ad8676e51b6bb00da91e"
+    },
+    "utils": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/candidate/dispatch-20261027/fresh/private/utils.py",
+      "sha256": "a5923f19d88e41fd268eaba0a802c249813e896b118103095933d0f112f8121f"
+    }
+  },
+  "space_metadata": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/candidate/dispatch-20261027/fresh/private/space-metadata.json",
+    "sha256": "1c39af4c0d731d0bdc5c1f4e1778943eed71ffbdfcfa63131762259a4ba68dea"
+  },
+  "space_revision": "1cc588d3177ebf761ab1b32eeab3eee735068668",
+  "space_url": "https://openadmet-cyp-challenge.hf.space",
+  "track": "Regression Prediction",
+  "verified_at_utc": "2026-10-27T05:50:01.539193+00:00"
+}

@@ -1,0 +1,31 @@
+diff --git a/night/audit_monroe_pcba.py b/night/audit_monroe_pcba.py
+index 7ec8689..71551ec 100644
+--- a/night/audit_monroe_pcba.py
++++ b/night/audit_monroe_pcba.py
+@@ -255,6 +255,8 @@ def run_audit(args):
+     frames=[]; official_sources={}
+     for split,path in [('train',args.official_train),('test',args.official_test)]:
+         frame=pd.read_csv(path,usecols=['Molecule_Name','SMILES'],dtype=str);frame['split']=split
++        if len(frame) != {'train':4905,'test':750}[split]:
++            raise ValueError(f'Expected full official {split} cohort; got {len(frame)} rows')
+         frames.append(frame);official_sources[split]={'path':str(Path(path).resolve()),'sha256':_hash(path),'rows':len(frame)}
+     official=pd.concat(frames,ignore_index=True)
+     if official.Molecule_Name.isna().any() or official.Molecule_Name.duplicated().any():raise ValueError('Official IDs must be unique and nonmissing across train/test')
+@@ -312,12 +314,17 @@ def run_audit(args):
+             'exact_inchi_CYP_label_overlap':sum(bool(r['exact_inchi_CYP_assays']) for r in part),
+             'normalized_parent_CYP_label_overlap':sum(bool(r['normalized_parent_CYP_assays']) for r in part)}
+     audit={'status':'completed_audit_membership_unresolved','created_utc':datetime.now(timezone.utc).isoformat(),
++        'audit_source_sha256':_hash(Path(__file__)),
++        'identity_normalization':{'source_sha256':_hash(Path(__file__).with_name('public_data.py')),
++            'exact':'RDKit standard InChI of original parsed SMILES',
++            'parent':'Existing FragmentParent + Uncharger + removal of stereochemistry; no tautomer canonicalization'},
+         'monroe_revision':MONROE_REVISION,'monroe_source_hashes':SOURCE_HASHES,'source':source_meta,
+         'official_sources':official_sources,'raw_pcba_rows':schema['rows'],'raw_pcba_assays':len(assays),
+         'matched_pcba_rows':len(matches),'official_overlap':summary,'identity_failures':identity_failures,
+         'assay_metadata':metadata_status,'conditional_split':split_audit,
+         'potential_CYP_raw_assays':[v for v in descriptors.values() if v['present_in_raw_pcba'] and (v['potential_CYP_text'] or v['known_CYP_assay'])],
+         'published_filter':{'training_only':True,'min_pos':100,'min_neg':100,'min_valid':1000,'reported_retained_heads':1089,
++            'raw_assays_passing_necessary_thresholds':sum(x['raw_counts_pass_necessary_thresholds'] for x in stats),
+             'reconstructed_exactly':False,'raw_count_note':'Failure on full raw counts proves failure on every training subset; passing raw counts does not establish historical head retention.'},
+         'eligibility':'unresolved_requires_root_review_no_clean_pretraining_claim',
+         'qualifications':[

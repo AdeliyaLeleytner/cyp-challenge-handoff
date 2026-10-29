@@ -1,0 +1,118 @@
+{
+  "source_historical_float_precision": "inverse-count uses float32, then Python list; mean-normalized to1",
+  "primary_order": [
+    "CYP3A4_pIC50_direct_inhibition",
+    "CYP2C9_pIC50_direct_inhibition",
+    "CYP2D6_pIC50_direct_inhibition",
+    "CYP1A2_pIC50_direct_inhibition"
+  ],
+  "primary_full_data_weights": [
+    0.6628257036209106,
+    1.2044342756271362,
+    1.0366363525390625,
+    1.0961034297943115
+  ],
+  "primary_purged_training_weights": [
+    0.6643903851509094,
+    1.1971782445907593,
+    1.0417358875274658,
+    1.0966956615447998
+  ],
+  "primary_fraction": "No primary_fraction parameter in inspected historical/current scripts, template or core. Effective weighted-label mass is data-dependent; no enforced primary minibatch fraction.",
+  "template_defaults": {
+    "n_folds": 5,
+    "max_epochs": 400,
+    "patience": 40,
+    "batch_size": 64,
+    "hidden_dim": 700,
+    "depth": 5,
+    "dropout": 0.1,
+    "ffn_hidden_dim": 300,
+    "ffn_num_layers": 2,
+    "warmup_epochs": 2,
+    "init_lr": 0.0001,
+    "max_lr": 0.001,
+    "final_lr": 0.0001,
+    "criterion": "mae",
+    "bounded_loss": false,
+    "split_strategy": "scaffold",
+    "seed": 42,
+    "from_foundation": null,
+    "freeze_mpnn_epochs": 0,
+    "batch_norm": true,
+    "aggregation": "NormAggregation",
+    "precision": "16-mixed",
+    "fold_seed": "42+fold_idx",
+    "checkpoint": "best validation loss"
+  },
+  "explicit_member_overrides": {
+    "union18p30": {
+      "task_weights": [
+        0.6628257036209106,
+        1.2044342756271362,
+        1.0366363525390625,
+        1.0961034297943115,
+        0.29999998211860657,
+        0.29999998211860657,
+        0.29999998211860657,
+        0.29999998211860657,
+        0.29999998211860657,
+        0.29999998211860657,
+        0.29999998211860657,
+        0.29999998211860657,
+        0.29999998211860657,
+        0.29999998211860657,
+        0.29999998211860657,
+        0.29999998211860657,
+        0.29999998211860657,
+        0.29999998211860657
+      ],
+      "uq_version": "v1",
+      "heads": "4direct+4log2fc+5ChEMBLpotency+5Veithmax_response",
+      "source_commit": "971f6a7f24d86e59bab219347c3e14c006ae4e35"
+    },
+    "mtaux8": {
+      "task_weights": [
+        0.6628257036209106,
+        1.2044342756271362,
+        1.0366363525390625,
+        1.0961034297943115,
+        0.29999998211860657,
+        0.29999998211860657,
+        0.29999998211860657,
+        0.29999998211860657
+      ],
+      "uq_version": "v1",
+      "heads": "4direct+4log2fc"
+    },
+    "2d6isoform6": {
+      "task_weights": [
+        1.0,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3
+      ],
+      "uq_version": "v1",
+      "heads": [
+        "direct2D6",
+        "log2fc2D6",
+        "TDI-condition2D6",
+        "directEmax2D6",
+        "ChEMBL2D6",
+        "Veithmax_response2D6"
+      ]
+    },
+    "2d6single": {
+      "uq_version": "v1",
+      "task_weights_effective": null,
+      "heads": [
+        "direct2D6"
+      ]
+    }
+  },
+  "historical_combination": "Flatmean2members for1A2/2C9/3A4; flatmean4members for2D6. Each member itself5foldensemble.",
+  "current_cross_fold_inference": "Retrieves training-time OOF captures through chemprop_pull_cv; does not create fresh splits or retrain.",
+  "calibration": "Historical leaderboard entry applies board-derived placement; do not import these constants into a train-only local reference. Define calibration on internal training data separately."
+}

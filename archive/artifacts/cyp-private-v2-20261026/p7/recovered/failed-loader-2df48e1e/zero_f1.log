@@ -1,0 +1,21 @@
+Seed set to 43
+Seed set to 43
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/root/.orx/runs/2df48e1e-f6f9-4596-b1ae-b7f51098d04d/repo/night/p7_runner.py", line 97, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/.orx/runs/2df48e1e-f6f9-4596-b1ae-b7f51098d04d/repo/night/p7_runner.py", line 78, in main
+    if '--worker' in sys.argv:worker(cfg,sys.argv[-2],int(sys.argv[-1]));return
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/2df48e1e-f6f9-4596-b1ae-b7f51098d04d/repo/night/p7_runner.py", line 60, in worker
+    trainer.fit(model,data.build_dataloader(train,batch_size=128,num_workers=2),data.build_dataloader(stop,batch_size=128,num_workers=2,shuffle=False,drop_last=False))
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/chemprop/data/dataloader.py", line 81, in build_dataloader
+    return DataLoader(
+           ^^^^^^^^^^^
+TypeError: torch.utils.data.dataloader.DataLoader() got multiple values for keyword argument 'drop_last'

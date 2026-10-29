@@ -1,0 +1,503 @@
+{
+  "queue_path": "/workspace/cyp-repro/assets/admetlab-queue.csv",
+  "queue_sha256": "ae515913b1bedacd216e424305b57daa3dfce0cf8169352a4f41df36de477493",
+  "id_map_path": "/workspace/cyp-repro/assets/admetlab-id-map.csv",
+  "id_map_sha256": "7849899d79cb16d17deac9ed854c000383275c75bac5ae61d5a5c9355e95f231",
+  "output_dir": "/workspace/cyp-repro/admetlab_browser_all",
+  "source_mode": "web_default",
+  "backend": "documented_web_batch",
+  "api_probe_vectors_used": false,
+  "batch_size": 1000,
+  "pilot_size": 100,
+  "minimum_request_gap_seconds": 1.0,
+  "official_requests_per_second_limit": 5.0,
+  "maximum_runtime_seconds": 36000,
+  "http_timeout_seconds": 300,
+  "forbidden_api_legacy_columns": [
+    "cl-int",
+    "LM-mouse",
+    "LM-rat"
+  ],
+  "web_column_to_endpoint": {
+    "MW": [
+      "physicochemical",
+      "MW"
+    ],
+    "Vol": [
+      "physicochemical",
+      "Vol"
+    ],
+    "Dense": [
+      "physicochemical",
+      "Dense"
+    ],
+    "nHA": [
+      "physicochemical",
+      "nHA"
+    ],
+    "nHD": [
+      "physicochemical",
+      "nHD"
+    ],
+    "nRot": [
+      "physicochemical",
+      "nRot"
+    ],
+    "nRing": [
+      "physicochemical",
+      "nRing"
+    ],
+    "MaxRing": [
+      "physicochemical",
+      "MaxRing"
+    ],
+    "nHet": [
+      "physicochemical",
+      "nHet"
+    ],
+    "fChar": [
+      "physicochemical",
+      "fChar"
+    ],
+    "nRig": [
+      "physicochemical",
+      "nRig"
+    ],
+    "Flex": [
+      "physicochemical",
+      "Flex"
+    ],
+    "nStereo": [
+      "physicochemical",
+      "nStereo"
+    ],
+    "TPSA": [
+      "physicochemical",
+      "TPSA"
+    ],
+    "logS": [
+      "physicochemical",
+      "logS"
+    ],
+    "logP": [
+      "physicochemical",
+      "logP"
+    ],
+    "logD": [
+      "physicochemical",
+      "logD"
+    ],
+    "pka_acidic": [
+      "physicochemical",
+      "pka_acidic"
+    ],
+    "pka_basic": [
+      "physicochemical",
+      "pka_basic"
+    ],
+    "mp": [
+      "physicochemical",
+      "mp"
+    ],
+    "bp": [
+      "physicochemical",
+      "bp"
+    ],
+    "QED": [
+      "medchem",
+      "QED"
+    ],
+    "Synth": [
+      "medchem",
+      "Synth"
+    ],
+    "gasa": [
+      "medchem",
+      "gasa"
+    ],
+    "Fsp3": [
+      "medchem",
+      "Fsp3"
+    ],
+    "MCE-18": [
+      "medchem",
+      "MCE-18"
+    ],
+    "Natural Product-likeness": [
+      "medchem",
+      "Natural Product-likeness"
+    ],
+    "Lipinski": [
+      "medchem",
+      "Lipinski"
+    ],
+    "Pfizer": [
+      "medchem",
+      "Pfizer"
+    ],
+    "GSK": [
+      "medchem",
+      "GSK"
+    ],
+    "GoldenTriangle": [
+      "medchem",
+      "GoldenTriangle"
+    ],
+    "PAINS": [
+      "medchem",
+      "PAINS"
+    ],
+    "Alarm_NMR": [
+      "medchem",
+      "Alarm_NMR"
+    ],
+    "BMS": [
+      "medchem",
+      "BMS"
+    ],
+    "Chelating": [
+      "medchem",
+      "Chelating"
+    ],
+    "Aggregators": [
+      "medchem",
+      "Aggregators"
+    ],
+    "Fluc": [
+      "medchem",
+      "Fluc"
+    ],
+    "Blue_fluorescence": [
+      "medchem",
+      "Blue_fluorescence"
+    ],
+    "Green_fluorescence": [
+      "medchem",
+      "Green_fluorescence"
+    ],
+    "Reactive": [
+      "medchem",
+      "Reactive"
+    ],
+    "Promiscuous": [
+      "medchem",
+      "Promiscuous"
+    ],
+    "caco2": [
+      "absorption",
+      "caco2"
+    ],
+    "MDCK": [
+      "absorption",
+      "MDCK"
+    ],
+    "PAMPA": [
+      "absorption",
+      "PAMPA"
+    ],
+    "pgp_inh": [
+      "absorption",
+      "pgp_inh"
+    ],
+    "pgp_sub": [
+      "absorption",
+      "pgp_sub"
+    ],
+    "hia": [
+      "absorption",
+      "hia"
+    ],
+    "f20": [
+      "absorption",
+      "f20"
+    ],
+    "f30": [
+      "absorption",
+      "f30"
+    ],
+    "f50": [
+      "absorption",
+      "f50"
+    ],
+    "PPB": [
+      "distribution",
+      "PPB"
+    ],
+    "VDss": [
+      "distribution",
+      "VDss"
+    ],
+    "BBB": [
+      "distribution",
+      "BBB"
+    ],
+    "Fu": [
+      "distribution",
+      "Fu"
+    ],
+    "OATP1B1": [
+      "distribution",
+      "OATP1B1"
+    ],
+    "OATP1B3": [
+      "distribution",
+      "OATP1B3"
+    ],
+    "BCRP": [
+      "distribution",
+      "BCRP"
+    ],
+    "MRP1": [
+      "distribution",
+      "MRP1"
+    ],
+    "BSEP": [
+      "distribution",
+      "BSEP"
+    ],
+    "CYP1A2-inh": [
+      "metabolism",
+      "CYP1A2-inh"
+    ],
+    "CYP1A2-sub": [
+      "metabolism",
+      "CYP1A2-sub"
+    ],
+    "CYP2C19-inh": [
+      "metabolism",
+      "CYP2C19-inh"
+    ],
+    "CYP2C19-sub": [
+      "metabolism",
+      "CYP2C19-sub"
+    ],
+    "CYP2C9-inh": [
+      "metabolism",
+      "CYP2C9-inh"
+    ],
+    "CYP2C9-sub": [
+      "metabolism",
+      "CYP2C9-sub"
+    ],
+    "CYP2D6-inh": [
+      "metabolism",
+      "CYP2D6-inh"
+    ],
+    "CYP2D6-sub": [
+      "metabolism",
+      "CYP2D6-sub"
+    ],
+    "CYP3A4-inh": [
+      "metabolism",
+      "CYP3A4-inh"
+    ],
+    "CYP3A4-sub": [
+      "metabolism",
+      "CYP3A4-sub"
+    ],
+    "CYP2B6-inh": [
+      "metabolism",
+      "CYP2B6-inh"
+    ],
+    "CYP2B6-sub": [
+      "metabolism",
+      "CYP2B6-sub"
+    ],
+    "CYP2C8-inh": [
+      "metabolism",
+      "CYP2C8-inh"
+    ],
+    "LM-human": [
+      "metabolism",
+      "LM-human"
+    ],
+    "cl-plasma": [
+      "excretion",
+      "cl-plasma"
+    ],
+    "t0.5": [
+      "excretion",
+      "t0.5"
+    ],
+    "hERG": [
+      "toxicity",
+      "hERG"
+    ],
+    "hERG-10um": [
+      "toxicity",
+      "hERG-10um"
+    ],
+    "DILI": [
+      "toxicity",
+      "DILI"
+    ],
+    "Ames": [
+      "toxicity",
+      "Ames"
+    ],
+    "ROA": [
+      "toxicity",
+      "ROA"
+    ],
+    "FDAMDD": [
+      "toxicity",
+      "FDAMDD"
+    ],
+    "SkinSen": [
+      "toxicity",
+      "SkinSen"
+    ],
+    "Carcinogenicity": [
+      "toxicity",
+      "Carcinogenicity"
+    ],
+    "EC": [
+      "toxicity",
+      "EC"
+    ],
+    "EI": [
+      "toxicity",
+      "EI"
+    ],
+    "Respiratory": [
+      "toxicity",
+      "Respiratory"
+    ],
+    "H-HT": [
+      "toxicity",
+      "H-HT"
+    ],
+    "Nephrotoxicity-DI": [
+      "toxicity",
+      "Nephrotoxicity-DI"
+    ],
+    "Neurotoxicity-DI": [
+      "toxicity",
+      "Neurotoxicity-DI"
+    ],
+    "Ototoxicity": [
+      "toxicity",
+      "Ototoxicity"
+    ],
+    "Hematotoxicity": [
+      "toxicity",
+      "Hematotoxicity"
+    ],
+    "Genotoxicity": [
+      "toxicity",
+      "Genotoxicity"
+    ],
+    "RPMI-8226": [
+      "toxicity",
+      "RPMI-8226"
+    ],
+    "A549": [
+      "toxicity",
+      "A549"
+    ],
+    "HEK293": [
+      "toxicity",
+      "HEK293"
+    ],
+    "BCF": [
+      "toxicity",
+      "BCF"
+    ],
+    "IGC50": [
+      "toxicity",
+      "IGC50"
+    ],
+    "LC50DM": [
+      "toxicity",
+      "LC50DM"
+    ],
+    "LC50FM": [
+      "toxicity",
+      "LC50FM"
+    ],
+    "NR-AhR": [
+      "tox21",
+      "NR-AhR"
+    ],
+    "NR-AR": [
+      "tox21",
+      "NR-AR"
+    ],
+    "NR-AR-LBD": [
+      "tox21",
+      "NR-AR-LBD"
+    ],
+    "NR-Aromatase": [
+      "tox21",
+      "NR-Aromatase"
+    ],
+    "NR-ER": [
+      "tox21",
+      "NR-ER"
+    ],
+    "NR-ER-LBD": [
+      "tox21",
+      "NR-ER-LBD"
+    ],
+    "NR-PPAR-gamma": [
+      "tox21",
+      "NR-PPAR-gamma"
+    ],
+    "SR-ARE": [
+      "tox21",
+      "SR-ARE"
+    ],
+    "SR-ATAD5": [
+      "tox21",
+      "SR-ATAD5"
+    ],
+    "SR-HSE": [
+      "tox21",
+      "SR-HSE"
+    ],
+    "SR-MMP": [
+      "tox21",
+      "SR-MMP"
+    ],
+    "SR-p53": [
+      "tox21",
+      "SR-p53"
+    ],
+    "Acute_Aquatic_Toxicity": [
+      "toxicityrule",
+      "Acute_Aquatic_Toxicity"
+    ],
+    "Genotoxic_Carcinogenicity_Mutagenicity": [
+      "toxicityrule",
+      "Genotoxic_Carcinogenicity_Mutagenicity"
+    ],
+    "NonGenotoxic_Carcinogenicity": [
+      "toxicityrule",
+      "NonGenotoxic_Carcinogenicity"
+    ],
+    "Skin_Sensitization": [
+      "toxicityrule",
+      "Skin_Sensitization"
+    ],
+    "LD50_oral": [
+      "toxicityrule",
+      "LD50_oral"
+    ],
+    "NonBiodegradable": [
+      "toxicityrule",
+      "NonBiodegradable"
+    ],
+    "SureChEMBL": [
+      "toxicityrule",
+      "SureChEMBL"
+    ],
+    "FAF-Drugs4 Rule": [
+      "toxicityrule",
+      "Toxicophores"
+    ],
+    "Other_assay_interference": [
+      "csv_extra",
+      "Other_assay_interference"
+    ]
+  }
+}

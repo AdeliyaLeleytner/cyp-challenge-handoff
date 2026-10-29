@@ -1,0 +1,54 @@
+{
+  "method": "width_catboost",
+  "type": "width",
+  "cohort": "briford529",
+  "seed": 42,
+  "score": {
+    "macro_ST_RAE": 0.7472733577031094,
+    "endpoints": {
+      "CYP1A2_pIC50_direct_inhibition": {
+        "ST_RAE": 0.772504727275512,
+        "n": 161,
+        "baseline_error_sum": 69.09367569106831,
+        "interval_error_sum": 53.3751910961914,
+        "MAE": 0.5816127847002406,
+        "truth_mean": 4.912084057192547
+      },
+      "CYP2C9_pIC50_direct_inhibition": {
+        "ST_RAE": 0.5926624263924005,
+        "n": 139,
+        "baseline_error_sum": 34.91425464690647,
+        "interval_error_sum": 20.692366874717735,
+        "MAE": 0.4002209437995438,
+        "truth_mean": 4.6372683617697845
+      },
+      "CYP2D6_pIC50_direct_inhibition": {
+        "ST_RAE": 0.8994560477189011,
+        "n": 175,
+        "baseline_error_sum": 71.88141153999999,
+        "interval_error_sum": 64.6541703282242,
+        "MAE": 0.6172866479177836,
+        "truth_mean": 4.7568992184
+      },
+      "CYP3A4_pIC50_direct_inhibition": {
+        "ST_RAE": 0.724470229425624,
+        "n": 270,
+        "baseline_error_sum": 126.00315617128888,
+        "interval_error_sum": 91.28553545976638,
+        "MAE": 0.5399140295934709,
+        "truth_mean": 4.573013782655556
+      }
+    },
+    "defined": true,
+    "scorer": {
+      "path": "/root/.orx/runs/83491c31-bb88-48c1-8cb0-24a1ca1e02dd/repo/official_scoring_functions.py",
+      "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3",
+      "function": "rae_soft_threshold_absolute_error",
+      "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample."
+    },
+    "n_molecules": 529
+  },
+  "seconds": 111.40627742401557,
+  "prediction_sha256": "47e5f466cdc9c5f7227ca2601a5b19890800a2315027aa626555b8cd7f45a8e5",
+  "output_dir": "/workspace/cyp-night/results/M0_structure_meta/width_catboost/briford529/seed42"
+}

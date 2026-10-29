@@ -1,0 +1,1554 @@
+{
+  "assay_metadata": {
+    "absence_claim_permitted": false,
+    "all_raw_assays_queried": true,
+    "failures": [],
+    "note": "CYP regex is a broad retrieval flag, not an endpoint classification. Missing/failed descriptions remain unknown.",
+    "requested": 1332,
+    "retrieved": 1332
+  },
+  "audit_source_sha256": "b0b0f733dc71e64c8c2eb159a850ea03c642a8679fbabe13f772ca5ed78e3f24",
+  "conditional_split": {
+    "historical_split_reconstructed": false,
+    "reason": "DuckDB not installed; optional conditional hash check skipped."
+  },
+  "created_utc": "2026-10-23T22:17:30.411623+00:00",
+  "eligibility": "unresolved_requires_root_review_no_clean_pretraining_claim",
+  "identity_failures": {
+    "examples": [],
+    "inchi_failed": 0,
+    "parent_failed": 0
+  },
+  "identity_normalization": {
+    "exact": "RDKit standard InChI of original parsed SMILES",
+    "parent": "Existing FragmentParent + Uncharger + removal of stereochemistry; no tautomer canonicalization",
+    "source_sha256": "c91d5a3268cd3b0ea0e96fbbe601524333d62804c8985f7641382968bb560968"
+  },
+  "matched_pcba_rows": 1381,
+  "monroe_revision": "de075eabe98e4adbbedbc86ca9e877f4bfd9b629",
+  "monroe_source_hashes": {
+    "monroe/assets/polaris_benchmarks.json": "0ce4f733fd85dddf8b3eb560d715c06a746f0b4580a5994ad4110fcd2dcbb770",
+    "monroe/preprocessing/pcba_prep.py": "16536ae6b33404618b02f538dbc4ea8b98b629f26755c1bbfea0ddf825e1a026",
+    "monroe/preprocessing/pm6_prep.py": "4acb6b644ff3e37a311983b639504ec9e245451a73ed7af85302e283ab2245b6"
+  },
+  "official_overlap": {
+    "test": {
+      "any_bioassay_label_overlap": 35,
+      "exact_inchi_CYP_label_overlap": 25,
+      "exact_inchi_overlap": 35,
+      "normalized_parent_CYP_label_overlap": 25,
+      "normalized_parent_overlap": 35,
+      "potential_CYP_label_overlap": 25
+    },
+    "train": {
+      "any_bioassay_label_overlap": 367,
+      "exact_inchi_CYP_label_overlap": 279,
+      "exact_inchi_overlap": 354,
+      "normalized_parent_CYP_label_overlap": 324,
+      "normalized_parent_overlap": 352,
+      "potential_CYP_label_overlap": 334
+    }
+  },
+  "official_sources": {
+    "test": {
+      "path": "/workspace/cyp-night/assets/official-test.csv",
+      "rows": 750,
+      "sha256": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9"
+    },
+    "train": {
+      "path": "/workspace/cyp-night/assets/official-train.csv",
+      "rows": 4905,
+      "sha256": "b8f79addd266fb6f9f4c222c5e4e73d926362328b6a8d2841871a54e46bd2278"
+    }
+  },
+  "output_files": {
+    "assay_descriptions.json": {
+      "bytes": 1441136,
+      "sha256": "8d187f3671c151e19e7b343496f826deb18a75ab3f468f4120fb6ae85337d4d1"
+    },
+    "assay_metadata_status.json": {
+      "bytes": 259,
+      "sha256": "d33dac7cb470a21d2c01205f1721e477198960f6c4705e1ab61d741d462d46d1"
+    },
+    "assay_raw_counts.json": {
+      "bytes": 345378,
+      "sha256": "49022fadf6df4638472769c7d05a3096d6694172ff33616a424443c32c1554bf"
+    },
+    "failure.json": {
+      "bytes": 120,
+      "sha256": "adb4b2cf37aa7a85ff429bb327da66aee7a192ed86d4081b7933f43fc563e2a3"
+    },
+    "matched_identities.json": {
+      "bytes": 606678,
+      "sha256": "760a6a8632dee9c6af12ee98acaaec0e88789544f76b8d828c8f54196be9fe2e"
+    },
+    "matched_official_summary.csv": {
+      "bytes": 335701,
+      "sha256": "d3087e62359b5d2423bad9646c9269fdbb61c630789b358cf5bc376f88b7a96d"
+    },
+    "matched_rows.jsonl.gz": {
+      "bytes": 545951,
+      "sha256": "eb9b26bb677a2503a84950d51e9e0fea1e90155c69af82ed72e8ca765ced841f"
+    },
+    "schema.json": {
+      "bytes": 28739,
+      "sha256": "75f123d64608ac077d0b711fa358038d9c0cf7f251077d23fb09f5440002b260"
+    }
+  },
+  "potential_CYP_raw_assays": [
+    {
+      "CYP_text_hits": [
+        "CYP",
+        "CYP1A2",
+        "CYP2",
+        "CYP2C19",
+        "CYP2C9",
+        "CYP2D6",
+        "CYP3A4",
+        "Cytochrome",
+        "P450"
+      ],
+      "aid": 1851,
+      "assay_id": "assayID-1851",
+      "description_excerpt": "NCGC Assay Overview:  The P450 gene superfamily is involved in the metabolism and clearance of xenobiotics. This assay used various human CYP P450 isozymes to measure the dealkylation of various pro-luciferin substrates to luciferin. The luciferin is then measured by luminescence after the addition of a luciferase detection reagent. Pro-luciferin substrate concentration in the assay was equal to its KM for its CYP P450 isozyme. Inhibitors and some substrates limit the production of luciferin, and decrease measured luminescence.",
+      "known_CYP_assay": true,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "e4130ad89ca61563a789a784390883d519529be4d917f4d1aa19818fca79bd34",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1851,1671196,1671198,1671199,1671201,1,3,5,7,9,11,13,15,17,19,21,23,25,27,29/description/JSON",
+      "status": "retrieved",
+      "target": [],
+      "title": "Cytochrome panel assay with activity outcomes"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP1A2",
+        "P450",
+        "cyp1a2",
+        "cytochrome",
+        "p450"
+      ],
+      "aid": 410,
+      "assay_id": "assayID-410",
+      "description_excerpt": "NCGC Assay Overview:  The P450 gene superfamily is involved in metabolism and the clearance of xenobiotics. This assay used human CYP1A2 to measure the demethylation of luciferin 6' methyl ether (Luciferin-ME; Promega-Glo) to luciferin. The luciferin is then measured by luminescence after the addition of a luciferase detection regeant.  Luciferin-ME concentration in the assay was equal to its Km for CYP1A2.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "0331ebcd240ff7793e945ed963f9676c9239f7c022a962f608547676f10efc89",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/292,296,328,330,342,357,360,361,368,372,373,374,410,411,422,425,429,430,431,432/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_000752.2"
+          },
+          "name": "cytochrome P450, family 1, subfamily A, polypeptide 2 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "p450-cyp1a2"
+    },
+    {
+      "CYP_text_hits": [
+        "P450"
+      ],
+      "aid": 522,
+      "assay_id": "assayID-522",
+      "description_excerpt": "Source (MLSCN Center Name): The Scripps Research Institute Molecular Screening Center Center Affiliation: The Scripps Research Institute, TSRI Assay Provider: Orphagen Pharmaceuticals, San Diego, CA Network: Molecular Library Screening Center Network (MLSCN) Grant Proposal Number: 1X01-MH077624-01  External Assay ID: SF1_AG_LUMI_1536_%ACT  Name: Primary Cell-based High Throughput Screening assay for activators of the nuclear receptor Steroidogenic Factor 1 (SF-1)  Description:  Nuclear receptors are a family of small molecule and hormone-regulated transcription factors that share conserved DNA-binding and ligand-binding domains.  Small pharmacological compounds able to bind to the cleft of the ligand-binding domain could alter its conformation and subsequently modify transcription of target genes.  Such ligand agonists and/or antagonists have already been successfully designed for 23 nuclear receptors among the 48 previously identified in the human genome [1-3].  The nuclear receptor SF-1 (steroidogenic factor-1) belongs to the class of \"unexplored\" orphan nuclear receptors that have been poorly investigated at a pharmacological level.  SF-1 is expressed in the pituitary, testes, ovaries, and adrenal gland and regulates steroid hormone production at many levels, including direct regulation of expression of major P450 enzymes involved in steroid hormone synthesis [4].  To explore the potential of SF-1 as novel drug target, small molecule ligands have to be identified. To this end, we screened the MLSCN library via a cell-based assay developed by Orphagen Pharmaceuticals (San Diego, CA).  Ligands for SF-1 may have clinical applications as modulators of adrenal steroid synthesis, and also as modulators of energy metabolism and obesity through the regulation of the ventromedial hypothalamus (VMH) [5].",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "d0a5d4c2a00efa21c7742b443b4dfadea6383f051337fe2510ab56588f2d7d05",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/483,485,487,488,501,518,521,522,524,525,527,529,530,538,539,552,555,556,559,560/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_004950.2"
+          },
+          "name": "nuclear receptor subfamily 5, group A, member 1 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "Primary Cell-based High Throughput Screening assay for activators of the nuclear receptor Steroidogenic Factor 1 (SF-1)"
+    },
+    {
+      "CYP_text_hits": [
+        "P450"
+      ],
+      "aid": 525,
+      "assay_id": "assayID-525",
+      "description_excerpt": "Source (MLSCN Center Name): The Scripps Research Institute Molecular Screening Center Center Affiliation: The Scripps Research Institute, TSRI Assay Provider: Orphagen Pharmaceuticals, San Diego, CA Network: Molecular Library Screening Center Network (MLSCN) Grant Proposal Number: 1X01-MH077624-01  Description:  Nuclear receptors are a family of small molecule and hormone-regulated transcription factors that share conserved DNA-binding and ligand-binding domains. Small pharmacological compounds able to bind to the cleft of the ligand-binding domain could alter its conformation and subsequently modify transcription of target genes. Such ligand agonists and/or antagonists have already been successfully designed for 23 nuclear receptors among the 48 previously identified in the human genome [1-3]. The nuclear receptor SF-1 (steroidogenic factor-1) belongs to the class of \"unexplored\" orphan nuclear receptors that have been poorly investigated at a pharmacological level. SF-1 is expressed in the pituitary, testes, ovaries, and adrenal gland and regulates steroid hormone production at many levels, including direct regulation of expression of major P450 enzymes involved in steroid hormone synthesis [4]. To explore the potential of SF-1 as novel drug target, small molecule ligands have to be identified. To this end, we screened the MLSCN library via a cell-based assay developed by Orphagen Pharmaceuticals (San Diego, CA). Ligands for SF-1 may have clinical applications as modulators of adrenal steroid synthesis. In particular, a properly designed antagonist to SF-1 is predicted to have therapeutic utility in the treatment of metastatic prostate cancer though suppression of both adrenal androgen and gonadal testosterone synthesis. Another potential benefit of this effort could be the identification of SF-1 ligands that could become a novel class of centrally acting small molecules that regulate energy metabolism and obesity. Indeed, SF-1 is also a potential therapeutic target for the regulation of the ventromedial hypothalamus (VMH), known to process peripheral metabolic input and regulate energy homeostasis [5].  References: [1] Evans RM. The nuclear receptor superfamily: a rosetta stone for physiology. Mol Endocrinol 19:1429-1438, 2005. [2] Kliewer SA, Lehmann JM, and Willson TM. Orphan nuclear receptors: shifting endocrinology into reverse. Science 284: 757-760, 1999. [3] Li Y, Lambert MH, and Xu HE. Activation of nuclear receptors: a perspective from structural genomics. Structure (Camb) 11: 741-746., 2003. [4] Hammer GD and Ingraham HA. Steroidogenic Factor-1: Its role in endocrine organ development and differentiation. Frontiers in Neuroendocrinology 20: 199-223, 1999. [5] Majdic G, Young M, Gomez-Sanchez E, Anderson P, Szczepaniak LS, Dobbins RL, McGarry JD, and Parker KL. Knockout mice lacking steroidogenic factor 1 are a novel genetic model of hypothalamic obesity. Endocrinology 143: 607-614., 2002.  Keywords: steroidogenic factor, SF-1, nuclear",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "d0a5d4c2a00efa21c7742b443b4dfadea6383f051337fe2510ab56588f2d7d05",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/483,485,487,488,501,518,521,522,524,525,527,529,530,538,539,552,555,556,559,560/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_004950.2"
+          },
+          "name": "nuclear receptor subfamily 5, group A, member 1 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "Primary Cell-based High Throughput Screening assay for inhibitors of the nuclear receptor Steroidogenic Factor 1 (SF-1)"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP2C9",
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 777,
+      "assay_id": "assayID-777",
+      "description_excerpt": "Sanford-Burnham Center for Chemical Genomics (SBCCG) Sanford-Burnham Medical Research Institute (SBMRI, San Diego, CA) NIH Molecular Libraries Screening Centers Network (MLSCN)  The cytochrome P450 enzymes represent a diverse superfamily of hemoproteins present in eukaryotic, bacterial, and archaean systems. The primary function of these enzymes is in the metabolism and clearance of both endogenous and exogenous (xenobiotic) compounds due to their propensity to metabolize multiple substrates through the catalysis of a range of reactions. CYP2C9 is an important enzyme in this superfamily in its ability to metabolize a diverse range of substrates including non-steroidal anti-infammatory drugs (NSAIDS) and sulfonylureas. In this assay, we tested the ability of test compounds to inhibit the 2C9 conversion of the substrate luciferin-H to luciferin.  The assay was performed at Sanford-Burnham Center for Chemical Genomics, part of MLSCN, as Library Characterization Assay. In the assay, we tested the ability of compounds from MLSMR compound collection to inhibit the 2C9 conversion of the substrate luciferin-H EGE to luciferin EGE.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "b077bbc637f38b2a1a7f9b4e2c081e6037eb2bb01e8d22f0da0c3973ac714da0",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/740,745,746,748,750,751,757,758,759,760,761,764,774,775,777,778,781,782,784,793/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_000762.2"
+          },
+          "name": "cytochrome P450, family 2, subfamily C, polypeptide 9 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "CYP2C9 Assay"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP2C19",
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 778,
+      "assay_id": "assayID-778",
+      "description_excerpt": "Sanford-Burnham Center for Chemical Genomics (SBCCG) Sanford-Burnham Medical Research Institute (SBMRI, San Diego, CA) NIH Molecular Libraries Screening Centers Network (MLSCN)  The cytochrome P450 enzymes represent a diverse superfamily of hemoproteins present in eukaryotic, bacterial, and archaean systems. The primary function of these enzymes is in the metabolism and clearance of both endogenous and exogenous (xenobiotic) compounds due to their propensity to metabolize multiple substrates through the catalysis of a range of reactions. CYP2C19 is an important enzyme in this superfamily in its ability to metabolize several important groups of drugs including antiepileptics and many proton-pump inhibitors.   The assay was performed at Sanford-Burnham Center for Chemical Genomics, part of MLSCN, as Library Characterization assay. In the assay, we tested the ability of compounds from MLSMR compound collection to inhibit the 2C19 conversion of the substrate luciferin-H EGE to luciferin EGE.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "b077bbc637f38b2a1a7f9b4e2c081e6037eb2bb01e8d22f0da0c3973ac714da0",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/740,745,746,748,750,751,757,758,759,760,761,764,774,775,777,778,781,782,784,793/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_000760.1"
+          },
+          "name": "cytochrome P450, family 2, subfamily C, polypeptide 19 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "CYP2C19 Assay"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP2C9",
+        "Cytochrome",
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 883,
+      "assay_id": "assayID-883",
+      "description_excerpt": "NIH Molecular Libraries Screening Centers Network [MLSCN] NIH Chemical Genomics Center [NCGC]  MLSCN Grant: None  NCGC Assay Overview:  The P450 gene superfamily is involved in the metabolism and clearance of xenobiotics. This assay used human CYP2C9 to measure the hydroxylation of deoxyluciferin (Luciferin-H; P450 Glo-Buffer) to luciferin. The luciferin is then measured by luminescence after the addition of a luciferase detection reagent. Luciferin-H concentration in the assay was equal to its Michaelis constant KM for CYP2C9. Inhibitors and some substrates limit the production of luciferin, and decrease measured luminescence.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "4517f3792dc8f1c1889d556f734031714e318e7544ca4fd97661eb1b9ca2166c",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/834,836,841,845,847,848,853,861,862,868,871,873,875,878,880,881,883,884,885,886/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_000762.2"
+          },
+          "name": "cytochrome P450, family 2, subfamily C, polypeptide 9 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "qHTS Assay for Inhibitors and Substrates of Cytochrome P450 2C9"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP3A4",
+        "Cytochrome",
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 884,
+      "assay_id": "assayID-884",
+      "description_excerpt": "NIH Molecular Libraries Screening Centers Network [MLSCN] NIH Chemical Genomics Center [NCGC]  MLSCN Grant: None  NCGC Assay Overview:  The P450 gene superfamily is involved in the metabolism and clearance of xenobiotics. This assay used human CYP3A4 to measure the dealkylation of luciferin-6' phenylpiperazinylyl (Luciferin-PPXE; luciferin detection buffer) to luciferin. The luciferin is then measured by luminescence after the addition of a luciferase detection reagent. Luciferin-PPXE concentration in the assay was equal to its KM for CYP3A4. Inhibitors and some substrates limit the production of luciferin, and decrease measured luminescence.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "4517f3792dc8f1c1889d556f734031714e318e7544ca4fd97661eb1b9ca2166c",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/834,836,841,845,847,848,853,861,862,868,871,873,875,878,880,881,883,884,885,886/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_059488.2"
+          },
+          "name": "cytochrome P450, subfamily IIIA, polypeptide 4 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "qHTS Assay for Inhibitors and Substrates of Cytochrome P450 3A4"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP2D6",
+        "CYP3A4",
+        "Cytochrome",
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 885,
+      "assay_id": "assayID-885",
+      "description_excerpt": "NIH Molecular Libraries Screening Centers Network [MLSCN] NIH Chemical Genomics Center [NCGC]  MLSCN Grant: None  NCGC Assay Overview:  The P450 gene superfamily is involved in the metabolism and clearance of xenobiotics. This assay used human CYP3A4 to measure the dealkylation of luciferin-6' phenylpiperazinylyl (Luciferin-PPXE; luciferin detection buffer) to luciferin. The luciferin is then measured by luminescence after the addition of a luciferase detection reagent. Luciferin-PPXE concentration in the assay was equal to its KM for CYP3A4. Inhibitors and some substrates limit the production of luciferin, and decrease measured luminescence; activators increase the production of luciferin and luminescence.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "4517f3792dc8f1c1889d556f734031714e318e7544ca4fd97661eb1b9ca2166c",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/834,836,841,845,847,848,853,861,862,868,871,873,875,878,880,881,883,884,885,886/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_059488.2"
+          },
+          "name": "cytochrome P450, subfamily IIIA, polypeptide 4 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "qHTS Assay for Activators of Cytochrome P450 3A4"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP2D6",
+        "Cytochrome",
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 891,
+      "assay_id": "assayID-891",
+      "description_excerpt": "NIH Molecular Libraries Screening Centers Network [MLSCN] NIH Chemical Genomics Center [NCGC]  MLSCN Grant: None.  NCGC Assay Overview:  The P450 gene superfamily is involved in the metabolism and clearance of xenobiotics. This assay used human CYP2D6 to measure the demethylation of ethylene glycol ester of luciferin 6' methyl ether (Luciferin-ME EGE; luciferin detection buffer) to luciferin. The luciferin is then measured by luminescence after the addition of a luciferase detection reagent. Luciferin-ME EGE concentration in the assay was equal to its Km for CYP2D6. Inhibitors and some substrates limit the production of luciferin, and decrease measured luminescence.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "471d714213a280e617aa505d3accf3d1b79071c3882bf9fbb836f7c6b268ccaf",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/887,889,891,892,893,894,898,899,900,902,903,904,912,914,915,920,923,924,925,926/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_000097.2"
+          },
+          "name": "cytochrome P450, family 2, subfamily D, polypeptide 6 isoform 1 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "qHTS Assay for Inhibitors and Substrates of Cytochrome P450 2D6"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP2C19",
+        "Cytochrome",
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 899,
+      "assay_id": "assayID-899",
+      "description_excerpt": "NIH Molecular Libraries Screening Centers Network [MLSCN] NIH Chemical Genomics Center [NCGC]  MLSCN Grant: None  NCGC Assay Overview:  The P450 gene superfamily is involved in the metabolism and clearance of xenobiotics. This assay used human CYP2C19 to measure the hydroxylation of ethylene glycol ester of 6' deoxyluciferin (Luciferin-H EGE; luciferin detection buffer) to luciferin. The luciferin is then measured by luminescence after the addition of a luciferase detection reagent. Luciferin-H EGE concentration in the assay was equal to its KM for CYP2C19. Inhibitors and some substrates limit the production of luciferin, and decrease measured luminescence.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "471d714213a280e617aa505d3accf3d1b79071c3882bf9fbb836f7c6b268ccaf",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/887,889,891,892,893,894,898,899,900,902,903,904,912,914,915,920,923,924,925,926/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_000760.1"
+          },
+          "name": "cytochrome P450, family 2, subfamily C, polypeptide 19 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "qHTS Assay for Inhibitors and Substrates of Cytochrome P450 2C19"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP450",
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 1020,
+      "assay_id": "assayID-1020",
+      "description_excerpt": "Data Source: Sanford-Burnham Center for Chemical Genomics (SBCCG) Source Affiliation: Sanford-Burnham Medical Research Institute (SBMRI, San Diego, CA) Network: NIH Molecular Libraries Screening Centers Network (MLSCN)  This functional assay was developed for detection of compounds inhibiting glucose-6-phosphate dehydrogenase (G6PDH) from Leuconostoc mesenteroides. These compounds would be observed as false positives of assays employing G6PDH, e.g. cytochrome P450 enzyme assays where G6PDH is utilized in the NADPH-regenerating system. The knowledge of compounds behavior in the GAPDH assay is required for characterization of their effect in CYP450 systems. ",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "f4f5d357d348c2d280b9ce790b02437ae50856c6a4749d59920c83f2b7be0e7e",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/927,932,938,940,950,951,952,995,1001,1006,1007,1008,1009,1010,1012,1016,1018,1020,1021,1022/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "AAA25265.1"
+          },
+          "name": "glucose-6-phosphate dehydrogenase [Leuconostoc mesenteroides]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 1245
+                  }
+                }
+              ],
+              "taxname": "Leuconostoc mesenteroides"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "Counter Screen for Glucose-6-Phosphate Dehydrogenase-based Primary Assay"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP",
+        "CYP2C9",
+        "Cytochrome",
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 1024,
+      "assay_id": "assayID-1024",
+      "description_excerpt": "Sanford-Burnham Center for Chemical Genomics (SBCCG) Sanford-Burnham Medical Research Institute (SBMRI, San Diego, CA) NIH Molecular Libraries Screening Centers Network (MLSCN) Grant Number: None   The cytochrome P450 enzymes represent a diverse superfamily of hemoproteins present in eukaryotic, bacterial, and archaean systems. The primary function of these enzymes is in the metabolism and clearance of both endogenous and exogenous (xenobiotic) compounds due to their propensity to metabolize multiple substrates through the catalysis of a range of reactions. CYP2C9 is an important enzyme in this superfamily in its ability to metabolize a diverse range of substrates including non-steroidal anti-infammatory drugs (NSAIDS) and sulfonylureas.   There is a growing body of the evidence that CYP isoforms have multiple compound-binding interacting sites that influence the specific activity of the enzyme. A crystal structure of CYP2C9 in the presence of warfarin demonstrated its binding in a novel allosteric site (Williams et al, (2003), Nature 424, 464-468; PMID: 12861225). Compounds activating CYP2C9 could stimulate metabolism of natural substrates of the enzyme and therefore, could provide valuable tools for their characterization.   The assay was performed at Sanford-Burnham Center for Chemical Genomics, part of MLSCN, as Library Characterization Assay. In the assay, we tested the ability of compounds from MLSMR compound collection to activate the 2C9-catalyzed conversion of the substrate luciferin-H EGE to luciferin EGE detected using luciferase reaction.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "83fa3e1664cb149bc8c60a70339deffcbb0c504d98b8789f266355457595412b",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1024,1029,1030,1032,1040,1044,1046,1048,1049,1051,1063,1066,1085,1135,1203,1209,1214,1216,1217,1220/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_000762.2"
+          },
+          "name": "cytochrome P450, family 2, subfamily C, polypeptide 9 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "HTS Assay for Activators of Cytochrome P450 2A9"
+    },
+    {
+      "CYP_text_hits": [
+        "CyP-40"
+      ],
+      "aid": 1381,
+      "assay_id": "assayID-1381",
+      "description_excerpt": "Excerpts from the R21NS057026 Application - Dr. Billy Day University of Pittsburgh.  Cytoplasmic dynein is the molecular motor that carries cargo to the minus ends of microtubules (MTs) (e.g., from the cytoplasm to the nucleus), and provides the mechancial force for many other important fuctions, including nuclear envelope breakdown and sister chromatid exchange at mitosis. Unlike the numerous MT plus end-directed molecular motors, the kinesins, no specific small molecule inhibitors of dynein are known. Weak and nonspecific redox perturbers and nonspecific mimics of ATP (e.g., EHNA) or phosphate anion (e.g., vanadate) are the only known dynein inhibitors. New inhibitors with potency and specificity would be invaluable cell biology tools. This void in our chemical biology toolbox is due in large part to both the large size of the work-performing component of the complex, dynein heavy chain (DYNC1H1) and the working complex itself, as well as the relative difficulty of working with functional dynein from biological systems. The overall goal of this work is to develop a refined suite of high throughput cell and biochemical assays for screening of chemical libraries to find experimentally useful inhibitors of cellular cytoplasmic dynein.  The bidirectionality of MTs provides for intracellular shuttling of intracellular components. Two major types of ATP-driven motor proteins deliver proteins, vesicles and organelles (\"cargos\") between the cell membrane, the endoplasmic reticulum and the nucleus: dyneins and kinesins. Dyneins are molecular motor complexes (dynein + dynactin + adaptor proteins) that generate force towards the minus ends of MTs. Cytoplasmic dynein is a multisubunit, ca. 2 MDa protein complex made up of two or three, enormous (4600 amino acid, ~500 kDa) heavy chains containing the motor domain (DYNC1H1) complexed with intermediate and light chains responsible for subcellular localization and recognizing and binding the various forms of cargo carried by dynein. Molecular motors contain a motor, cargo-binding and regulatory components, and utilize the hydrolysis of ATP to ADP + Pi to power their steps along MTs. DYNC1H1 consists of an N-terminal stem, which binds cargo and interacts with other dynein components, and a head or motor domain. The motor contains six tandemly-linked AAA domains in the head, which form a ring. A stalk-like structure (formed by two of the coiled coil domains) protrudes between AAA 4 and AAA 5 and terminates in a MT-binding site. There are four well-conserved and two non-conserved ATPase sites, one per AAA domain. Probably only one of these (within AAA 1) actually hydrolyzes ATP, with the others likely serving a regulatory function].  Cytoplasmic dynein is involved in vesicular return to the MT organizing center, as well as the retention of the vesicles at this subcellular locale. Cytoplasmic dynein is intricately involved in the maintenance of the Golgi apparatus and the trafficking of membrane-encapsulated vesic",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "9d02fa45e5d282d9ab23b3014f84a636f4de3608816be502986dadec96977c3b",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1377,1379,1381,1385,1415,1416,1422,1423,1424,1430,1434,1439,1441,1443,1445,1446,1448,1452,1454,1456/description/JSON",
+      "status": "retrieved",
+      "target": [],
+      "title": "HCS to Identify Inhibitors of Dynein Mediated Cargo Transport on Microtubules."
+    },
+    {
+      "CYP_text_hits": [
+        "cytochrome"
+      ],
+      "aid": 1792,
+      "assay_id": "assayID-1792",
+      "description_excerpt": "Source (MLPCN Center Name): The Scripps Research Institute Molecular Screening Center (SRIMSC) Affiliation: The Scripps Research Institute, TSRI Assay Provider: Gary Bokoch, TSRI Network: Molecular Library Probe Production Centers Network (MLPCN) Grant Proposal Number: 1 R03 MH083264-01A1 Grant Proposal PI: Gary Bokoch External Assay ID: NOX1_INH_LUMI_384_%INH  Name: Luminescence-based primary cell-based high throughput screening assay to identify inhibitors of NADPH oxidase 1 (Nox1): Maybridge Library  Description:   Host defense mechanisms are diverse and include receptor-initiated signaling pathways, antibody and cytokine production, and the generation of reactive oxygen species (ROS) such as hydroxyl radical and hypochlorus acid to kill microorganisms (1). In activated phagocytic cells, the membrane integrated protein gp91phox serves as the catalytic cytochrome b subunit of the respiratory burst oxidase used to generate superoxide in an NADPH-dependent manner for host defense (2). Generation of ROS has also been identified in non-phagocytic cells (3). One important enzyme involved in ROS production in non-leukocyte tissues is NADPH oxidase 1 (Nox1), a homolog of gp91phox. Nox1 is highly expressed in colon epithelial cells where it can generate ROS to interact with normal and pathogenic bacteria (3-5). However, excess ROS production is associated with damage to the intestinal mucosa, particularly in mucosal lesions of inflammatory bowel disease (IBD) (4). Studies showing that Nox1 levels are increased in human prostate cancer (6) and that cells overexpressing Nox1 have a transformed appearance, exhibit anchorage-independent growth, and induce vascularized tumor formation in athymic mice (3, 7), suggest that Nox1 may also play a role in angiogenesis, cell growth, and tumor pathogenesis (8, 9). The identification of inhibitors of Nox1 may lead to potential candidates for excess cell proliferation, cancer, and IBD.  References:  1. Takeya, R. and Sumimoto, H., Molecular mechanism for activation of superoxide-producing NADPH oxidases. Mol Cells, 2003. 16(3): p. 271-7. 2. Cheng, G., Cao, Z., Xu, X., van Meir, E.G., and Lambeth, J.D., Homologs of gp91phox: cloning and tissue expression of Nox3, Nox4, and Nox5. Gene, 2001. 269(1-2): p. 131-40. 3. Suh, Y.A., Arnold, R.S., Lassegue, B., Shi, J., Xu, X., Sorescu, D., Chung, A.B., Griendling, K.K., and Lambeth, J.D., Cell transformation by the superoxide-generating oxidase Mox1. Nature, 1999. 401(6748): p. 79-82. 4. Szanto, I., Rubbia-Brandt, L., Kiss, P., Steger, K., Banfi, B., Kovari, E., Herrmann, F., Hadengue, A., and Krause, K.H., Expression of NOX1, a superoxide-generating NADPH oxidase, in colon cancer and inflammatory bowel disease. J Pathol, 2005. 207(2): p. 164-76. 5. Rokutan, K., Kawahara, T., Kuwano, Y., Tominaga, K., Nishida, K., and Teshima-Kondo, S., Nox enzymes and oxidative stress in the immunopathology of the gastrointestinal tract. Semin Immunopathol, 2008. 30(3): p. 315-27. 6. Lim, S.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "897f483321bf1b2b63f561e40f3d3af97a1be0392b1e20b59dc392cfe26ab1df",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1631,1634,1654,1656,1662,1663,1665,1672,1688,1700,1706,1721,1768,1775,1776,1777,1778,1779,1789,1792/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "descr": "NADPH oxidase 1 [Homo sapiens]",
+          "mol_id": {
+            "protein_accession": "ABC40742.1"
+          },
+          "name": "NADPH oxidase 1 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "Luminescence-based primary cell-based high throughput screening assay to identify inhibitors of NADPH oxidase 1 (Nox1): Maybridge Library"
+    },
+    {
+      "CYP_text_hits": [
+        "cytochrome"
+      ],
+      "aid": 1823,
+      "assay_id": "assayID-1823",
+      "description_excerpt": "Source (MLPCN Center Name): The Scripps Research Institute Molecular Screening Center (SRIMSC) Affiliation: The Scripps Research Institute, TSRI Assay Provider: Gary Bokoch, TSRI Network: Molecular Library Probe Production Centers Network (MLPCN) Grant Proposal Number: 1 R03 MH083264-01A1 Grant Proposal PI: Gary Bokoch External Assay ID: LUMINOL_INH_LUMI_384_%INH  Name: Luminescence-based counterscreen for inhibitors of NADPH oxidase 1 (Nox1): biochemical high throughput screening assay to identify inhibitors of luminol (Maybridge Library)  Description: Host defense mechanisms are diverse and include receptor-initiated signaling pathways, antibody and cytokine production, and the generation of reactive oxygen species (ROS) such as hydroxyl radical and hypochlorus acid to kill microorganisms (1). In activated phagocytic cells, the membrane integrated protein gp91phox serves as the catalytic cytochrome b subunit of the respiratory burst oxidase used to generate superoxide in an NADPH-dependent manner for host defense (2). Generation of ROS has also been identified in non-phagocytic cells (3). One important enzyme involved in ROS production in non-leukocyte tissues is NADPH oxidase 1 (Nox1), a homolog of gp91phox. Nox1 is highly expressed in colon epithelial cells where it can generate ROS to interact with normal and pathogenic bacteria (3-5). However, excess ROS production is associated with damage to the intestinal mucosa, particularly in mucosal lesions of inflammatory bowel disease (IBD) (4). Studies showing that Nox1 levels are increased in human prostate cancer (6) and that cells overexpressing Nox1 have a transformed appearance, exhibit anchorage-independent growth, and induce vascularized tumor formation in athymic mice (3, 7), suggest that Nox1 may also play a role in angiogenesis, cell growth, and tumor pathogenesis (8, 9). The identification of inhibitors of Nox1 may lead to potential candidates for excess cell proliferation, cancer, and IBD.  References: 1. Takeya, R. and Sumimoto, H., Molecular mechanism for activation of superoxide-producing NADPH oxidases. Mol Cells, 2003. 16(3): p. 271-7. 2. Cheng, G., Cao, Z., Xu, X., van Meir, E.G., and Lambeth, J.D., Homologs of gp91phox: cloning and tissue expression of Nox3, Nox4, and Nox5. Gene, 2001. 269(1-2): p. 131-40. 3. Suh, Y.A., Arnold, R.S., Lassegue, B., Shi, J., Xu, X., Sorescu, D., Chung, A.B., Griendling, K.K., and Lambeth, J.D., Cell transformation by the superoxide-generating oxidase Mox1. Nature, 1999. 401(6748): p. 79-82. 4. Szanto, I., Rubbia-Brandt, L., Kiss, P., Steger, K., Banfi, B., Kovari, E., Herrmann, F., Hadengue, A., and Krause, K.H., Expression of NOX1, a superoxide-generating NADPH oxidase, in colon cancer and inflammatory bowel disease. J Pathol, 2005. 207(2): p. 164-76. 5. Rokutan, K., Kawahara, T., Kuwano, Y., Tominaga, K., Nishida, K., and Teshima-Kondo, S., Nox enzymes and oxidative stress in the immunopathology of the gastrointestinal tract. Semin Immunopathol,",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "ffab977968881d7e49896c08e34db68540424f3f3335b0fb52b7937ea81a04bd",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1800,1813,1814,1817,1822,1823,1825,1832,1845,1850,1861,1863,1865,1868,1875,1885,1899,1903,1906,1910/description/JSON",
+      "status": "retrieved",
+      "target": [],
+      "title": "Luminescence-based counterscreen for inhibitors of NADPH oxidase 1 (Nox1): biochemical high throughput screening assay to identify inhibitors of luminol (Maybridge Library)"
+    },
+    {
+      "CYP_text_hits": [
+        "cytochrome"
+      ],
+      "aid": 2071,
+      "assay_id": "assayID-2071",
+      "description_excerpt": "Data Source: Sanford-Burnham Center for Chemical Genomics (SBCCG) Source Affiliation: Sanford-Burnham Medical Research Institute (SBMRI, San Diego, CA) Network: NIH Molecular Libraries Production Centers Network (MLPCN) Grant Number:  1 R03 MH086463-01 Assay Provider: Dr. John C. Reed, Sanford-Burham Medical Research Institute, San Diego CA  NLR family proteins are an important component of the innate immune system of vertebrates.  These proteins possess a nucleotide-binding oligomerization domain, called NACHT, in combination with variable numbers of Leucine-Rich Repeat (LRR) domains that bind molecules produced by pathogens and probably also products of tissue injury. Among the effector mechanisms of NLR family proteins is activation of Caspase-1, which cleaves and activates pro-inflammatory cytokines. We present here a unique primary assay, in which we have reconstituted the mammalian Caspase mediated IL-1 activation pathway consisting of NLRP1 (NALP1), ASC, and Caspase-1 in Saccharomyces cerevisiae.  The assay, conducted in liquid culture and formatted into microtiter plates, utilizes a cleavable chimeric transcription factor initially inserted into the cell membrane that upon specific proteolysis by activated Caspase-1 separates from the cell membrane and enters the nucleus to drive the expression of selectable marker genes and expression of beta-galactosidase.  The activity of beta-galactosidase upon addition of the colorimetric substrate X-gal forms the basis for a colorimetric readout proportional to Caspase activity.   Inhibition of any of the activities of the upstream components such as the oligimerization of NALP1 and ASC to form a complex with Caspase-1 or the direct inhibition of the Caspase-1 will result in a positive phenotype.  REFERENCES  1. Lopez-Otin C, Overall CM. Protease degradomics: a new challenge for proteomics. Nat Rev Mol Cell Biol 2002;3(7):509-19. 2. Reed JC. Caspases and cytokines: roles in inflammation and autoimmunity. Adv Immunol 1999;73:265-99. 3. Talanian R, Quinlan C, Trautz S, et al. Substrate specificities of caspase family proteases. J Biol Chem 1997;272:9677-82. 4. Timmer JC, Salvesen GS. Caspase substrates. Cell Death Differ 2007;14(1):66-72. 5. Salvesen GS, Renatus M. Apoptosome: The seven-spoked death machine. Develop Cell 2002;2:256-7. 6. Martinon F, Burns K, Tschopp J. The Inflammasome: A molecular platform triggering activation of inflammatory caspases and processing of proIL-1b. Mol Cell 2002;10:417-26. 7. Faustin B, Lartigue L, Bruey JM, et al. Reconstituted NALP1 inflammasome reveals two-step mechanism of Caspase-1 activation. Molecular Cell 2007;25(5):713-24. 8. Stehlik C, Reed JC. The PYRIN connection: novel players in innate immunity and inflammation. J Exp Med 2004;200:551-8. 9. Martinon F, Tschopp J. NLRs join TLRs as innate sensors of pathogens. Trends Immunol 2005;26:447-54. 10. Church L, Cook, G, McDermott, M.  Primer: inflammasomes and interleukin 1beta in inflammatory disorders.  Nat Cli",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "2830f4e02c679f3199fc7b48314bee542bf8cceec53f4b8d3b68455791a113a7",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/2023,2025,2029,2052,2057,2058,2066,2071,2073,2094,2097,2098,2099,2100,2101,2107,2112,2129,2130,2147/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_127497.1"
+          },
+          "name": "NLR family, pyrin domain containing 1 isoform 1 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "Colorimetric  Assay for Inhibitors for NALP1"
+    },
+    {
+      "CYP_text_hits": [
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 2796,
+      "assay_id": "assayID-2796",
+      "description_excerpt": "Source (MLPCN Center Name): The Scripps Research Institute Molecular Screening Center (SRIMSC) Center Affiliation: The Scripps Research Institute (TSRI) Assay Provider: Michael Denison, University of California, Davis Network: Molecular Libraries Probe Production Centers Network (MLPCN) Grant Proposal Number: 1-X01-DA026558-01 Grant Proposal PI: Michael Denison External Assay ID: AHR_ACT_LUMI_1X%INH  Name: Luminescence-based primary cell-based high throughput screening assay to identify activators of the Aryl Hydrocarbon Receptor (AHR).  Description:  Transcription factors are critical regulators of gene expression (1). Under conditions such as environmental stress and exposure to endogenous toxins, transcription factors can rapidly modulate the transcription of genes whose products regulate cell proliferation and metabolism. The aryl hydrocarbon receptor (AHR) is a ligand-activated transcription factor of the basic helix-loop-helix protein superfamily involved in the biological response to aromatic hydrocarbons, and regulates the expression of xenobiotic-metabolizing enzymes such as cytochrome P450, aldehyde dehydrogenase, quinone reductase, and other phase I and phase II detoxification genes (2, 3). In response to various compounds, including the environmental pollutants dioxins, benzo(a)pyrene, dietary contaminants, grapefruit juice, endogenous toxins, and plant products such as carotinoids, nicotine and caffeine (2, 4-6), cytosolic AHR complexes with chaperones hsp90, p23, and XAP2, translocates to the nucleus where it dimerizes with the AHR nuclear translocator (ARNT) to influence target gene transcription (7, 8). Gain-of-function studies in mice reveal the oncogenic potential of AHR (9), while other reports show roles for AHR in diverse biologic events such as organ development (10, 11), immune function and allergy (12), and estrogen responsiveness (13). The identification of agonists of AHR will provide useful tools to elucidate the roles of this receptor in cell metabolism, transcriptional control, and tumor formation.  References:  1. Ptashne, M., Regulation of transcription: from lambda to eukaryotes. Trends Biochem Sci, 2005. 30(6): p. 275-9. 2. McMillan, B.J. and Bradfield, C.A., The aryl hydrocarbon receptor sans xenobiotics: endogenous function in genetic model systems. Mol Pharmacol, 2007. 72(3): p. 487-98. 3. Puga, A., Tomlinson, C.R., and Xia, Y., Ah receptor signals cross-talk with multiple developmental pathways. Biochem Pharmacol, 2005. 69(2): p. 199-207. 4. Bock, K.W. and Kohle, C., Ah receptor: dioxin-mediated toxic responses as hints to deregulated physiologic functions. Biochem Pharmacol, 2006. 72(4): p. 393-404. 5. Denison, M.S. and Nagy, S.R., Activation of the aryl hydrocarbon receptor by structurally diverse exogenous and endogenous chemicals. Annu Rev Pharmacol Toxicol, 2003. 43: p. 309-34. 6. de Waard, P.W., Peijnenburg, A.A., Baykus, H., Aarts, J.M., Hoogenboom, R.L., van Schooten, F.J., and de Kok, T.M., A human in",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "46c29b411cbe159c07fa3895aab224cd1326b83dcb86b966ef490051f551983d",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/2685,2690,2716,2717,2718,2732,2751,2796,2797,2805,2806,2825,2842,434955,434959,434961,434962,434970,434971,434973/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_001612.1"
+          },
+          "name": "aryl hydrocarbon receptor precursor [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "Luminescence-based primary cell-based high throughput screening assay to identify activators of the Aryl Hydrocarbon Receptor (AHR)"
+    },
+    {
+      "CYP_text_hits": [
+        "cytochrome"
+      ],
+      "aid": 2825,
+      "assay_id": "assayID-2825",
+      "description_excerpt": "Data Source: Sanford-Burnham Center for Chemical Genomics (SBCCG) Source Affiliation: Sanford-Burnham Medical Research Institute (SBMRI, San Diego, CA) Network: NIH Molecular Libraries Probe Production Centers Network (MLPCN) Grant Number:  1 U01 AI078048 Assay Provider: Dr. John C. Reed, Sanford-Burnham Medical Research Institute, San Diego, CA  NLR family proteins are an important component of the innate immune system of vertebrates.  These proteins possess a nucleotide-binding oligomerization domain, called NACHT, in combination with variable numbers of Leucine-Rich Repeat (LRR) domains that bind molecules produced by pathogens and probably also products of tissue injury. Among the effector mechanisms of NLR family proteins is activation of Caspase-1, which cleaves and activates pro-inflammatory cytokines. We present here a unique primary assay, in which we have reconstituted the mammalian Caspase mediated IL-1 activation pathway consisting of NLRP3 (NALP3), ASC, and Caspase-1 in Saccharomyces cerevisiae. The assay, conducted in liquid culture and formatted into microtiter plates, utilizes a cleavable chimeric transcription factor initially inserted into the cell membrane that upon specific proteolysis by activated Caspase-1 separates from the cell membrane and enters the nucleus to drive the expression of selectable marker genes and expression of b-galactosidase. Inhibition of any of the activities of the upstream components such as the oligimerization of NAPL3 and ASC to form a complex with Caspase-1 or the direct inhibition of the Caspase-1 will result in a positive phenotype.  REFERENCES  1. Lopez-Otin C, Overall CM. Protease degradomics: a new challenge for proteomics. Nat Rev Mol Cell Biol 2002;3(7):509-19. 2. Reed JC. Caspases and cytokines: roles in inflammation and autoimmunity. Adv Immunol 1999;73:265-99. 3. Talanian R, Quinlan C, Trautz S, et al. Substrate specificities of caspase family proteases. J Biol Chem 1997;272:9677-82. 4. Timmer JC, Salvesen GS. Caspase substrates. Cell Death Differ 2007;14(1):66-72. 5. Salvesen GS, Renatus M. Apoptosome: The seven-spoked death machine. Develop Cell 2002;2:256-7. 6. Martinon F, Burns K, Tschopp J. The Inflammasome: A molecular platform triggering activation of inflammatory caspases and processing of proIL-1b. Mol Cell 2002;10:417-26. 7. Faustin B, Lartigue L, Bruey JM, et al. Reconstituted NALP1 inflammasome reveals two-step mechanism of Caspase-1 activation. Molecular Cell 2007;25(5):713-24. 8. Stehlik C, Reed JC. The PYRIN connection: novel players in innate immunity and inflammation. J Exp Med 2004;200:551-8. 9. Martinon F, Tschopp J. NLRs join TLRs as innate sensors of pathogens. Trends Immunol 2005;26:447-54. 10. Church L, Cook, G, McDermott, M.  Primer: inflammasomes and interleukin 1beta in inflammatory disorders.  Nat Clin Pract Rheumatol 2008;4(1):34-42 11. Slee E, Harte M, Kluck R, et al. Ordering the cytochrome c-initiated caspase cascade: Hierarchic activation of caspases -2,-3,",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "46c29b411cbe159c07fa3895aab224cd1326b83dcb86b966ef490051f551983d",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/2685,2690,2716,2717,2718,2732,2751,2796,2797,2805,2806,2825,2842,434955,434959,434961,434962,434970,434971,434973/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "AAI43360.1"
+          },
+          "name": "NLRP3 protein [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "uHTS Luminescent assay for identification of inhibitors of NALP3 in yeast"
+    },
+    {
+      "CYP_text_hits": [
+        "cytochrome"
+      ],
+      "aid": 485298,
+      "assay_id": "assayID-485298",
+      "description_excerpt": "NIH Chemical Genomics Center [NCGC] NIH Molecular Libraries Probe Production centers Network [MLPCN]  MLPCN Grant: MH081279-01 Assay Submitter (PI): Jodi M. Nunnari  NCGC Assay Overview:  The budding yeast S. cerevisiae is a powerful system to study mitochondrial fusion. Unlike other organisms, yeast cells without functional mitochondrial DNA (mtDNA) can be propagated and studied as long as they maintain a mitochondrial compartment and are provided with a fermentable carbon source. When mitochondrial fusion is blocked in yeast, mitochondrial tubules rapidly fragment and division continues unopposed. Under conditions where fusion is compromised in mammalian cells, nearly identical changes in mitochondrial structure have been observed. Thus, these findings indicate that steady state mitochondrial structure in cells is a characteristic and specific indicator of fusion activity.   Mounting evidence has pointed to a connection between mitochondrial dynamics and apoptosis in mammalian cells. These studies indicate that in mammalian cells mitochondrial dynamics are more integrated into cellular processes than in yeast cells and have evolved not only to distribute the organelle but also to aid in the regulation of cellular homeostasis. Mitochondrial fusion proteins attenuate apoptosis by inhibiting the release of cytochrome c from mitochondria, in part by controlling cristae structures. Thus, small molecules that inhibit mitochondrial fusion may promote apoptosis and potentially act as novel chemotherapeutics and stimulation of apoptosis has become an attractive target of anti-cancer therapies. To identify inhibitors of mitochondrial division, we exploit the growth phenotypes of mitochondrial fusion-defective mutants. The temperature sensitive fusion alleles, such as fzo1-1 and mgm1-5, cause mitochondrial membranes to fragment in cells under non-permissive conditions and cells lose mtDNA, and are unable to grow in the presence of non-fermentable carbon source glycerol.  Inhibiting mitochondrial division rescues growth.  We have developed and optimized a luminescence cell viability assay in 1536 well format for the identification of inhibitors in the yeast mitochondrial fusion-defective assay. ",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "3065003e16169f4b9b7d2c37693a09430de6e9bd14fe6c3ff05bcd8a30dcc25c",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/463187,463190,463193,463195,463210,463212,463213,463254,485270,485272,485273,485275,485281,485290,485294,485297,485298,485313,485314,485317/description/JSON",
+      "status": "retrieved",
+      "target": [],
+      "title": "qHTS Assay for Small Molecule Inhibitors of Mitochondrial Division or Activators of Mitochondrial Fusion"
+    },
+    {
+      "CYP_text_hits": [
+        "Cytochrome",
+        "cytochrome"
+      ],
+      "aid": 489030,
+      "assay_id": "assayID-489030",
+      "description_excerpt": "Data Source: Sanford-Burnham Center for Chemical Genomics (SBCCG) Source Affiliation: Sanford-Burnham Medical Research Institute (SBIMR, San Diego, CA) Network: NIH Molecular Libraries Probe Production Centers Network (MLPCN) Grant Number: R01 CA136513 Assay Provider: Dr. Xuejun Jiang, Sloan-Kettering Institute for Cancer Research, New York, NY  Apoptosis is a major form of programmed cell death that multicellular organisms utilize to maintain tissue homeostasis and to eliminate unwanted or damaged cells. It plays a critical role in development, immune responses and many other physiological events. In mammals, the mitochondrial cytochrome c-mediated apoptotic pathway is initiated by cytochrome c release from mitochondria. Deregulation of the cytochrome c apoptotic pathway can lead to diseases such as cancer, immune disorders, and neurodegenerative diseases.   The overall goal of this project is to identify Apaf-1 inhibitors by high throughput screening. Apaf-1 is the essential mediator of the mitochondrial cytochrome c-mediated caspase activation pathway. In this pathway, various apoptotic stimuli can cause cytochrome c release from mitochondria. The released cytochrome c binds to and activates Apaf-1 to trigger formation of the multiprotein complex, the apoptosome. Apoptosome complex subsequently induces activation of caspases, the executioners of apoptosis. Therefore inhibition of Apaf-1 function can block caspase activation in the upstream of the pathway.   In this biochemical fluorescent assay, the Apaf-dependent activation of caspase-9 and consequently caspase-3 is detected based on ability of the activated caspase-3 to cleave a fluorogenic rhodamine 110 -labeled DEVD tetra-peptide, generating a strongly fluorescent Rh110 that is monitored fluorimetrically.   References: 1. Jiang X, Wang X. Cytochrome c Promotes Caspase-9 Activation by Inducing Nucleotide Binding to Apaf-1. J. Biol. Chem. 2000 (275): 31199-31203. 2. Acehan D, Jiang X, Morgan DG, Heuser JE, Wang X, Akey CW. Three-Dimensional Structure of the Apoptosome: Implications for Assembly, Procaspase-9 Binding, and Activation. Molecular Cell 2002 (9): 423-432. 3. Jiang X, Kim H, Shu H, Zhao Y, Zhang H, Kofron J, Donnelly J, Burns D, Ng S, Rosenberg S, Wang X. Distinctive Roles of PHAP Proteins and Prothymosin-a in a Death Regulatory Pathway. Science 2003 (299): 223-226. 4. Yin Q, Park HH, Chung JY, Lin SC, Lo YC, da Graca LS, Jiang X, Wu H. Caspase-9 holoenzyme is a specific and optimal pro-caspase-3 processing machine. Molecular Cell 2006 (22) 259-268. 5. Gao Z, Tian Y, Wang J, Yin Q, Wu H, Li Y, Jiang X. A Dimeric Smac/Diablo Peptide Directly Relieves Caspase-3 Inhibition by XIAP: Dynamic and Cooperative Regulation of XIAP by Smac/Diablo. J. Biol. Chem. 2007 (282) 30718-30727",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "b1fd60804d0e9ea5d4d2f21a7d4b68ff074eadecce3d7ff426efd52f3d1d31b5",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/488910,488912,488915,488917,488918,488919,488922,488965,488966,488975,488977,489028,489030,489031,492947,492953,492956,492967,492972,493008/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "AAI36532.1"
+          },
+          "name": "Apoptotic peptidase activating factor 1 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "uHTS Fluorescent assay for identification of inhibitors of Apaf-1"
+    },
+    {
+      "CYP_text_hits": [
+        "Cytochrome",
+        "cytochrome"
+      ],
+      "aid": 489031,
+      "assay_id": "assayID-489031",
+      "description_excerpt": "Data Source: Sanford-Burnham Center for Chemical Genomics (SBCCG) Source Affiliation: Sanford-Burnham Medical Research Institute (SBIMR, San Diego, CA) Network: NIH Molecular Libraries Probe Production Centers Network (MLPCN) Grant Number: R01 CA136513 Assay Provider: Dr. Xuejun Jiang, Sloan-Kettering Institute for Cancer Research, New York, NY  Apoptosis is a major form of programmed cell death that multicellular organisms utilize to maintain tissue homeostasis and to eliminate unwanted or damaged cells. It plays a critical role in development, immune responses and many other physiological events. In mammals, the mitochondrial cytochrome c-mediated apoptotic pathway is initiated by cytochrome c release from mitochondria. Deregulation of the cytochrome c apoptotic pathway can lead to diseases such as cancer, immune disorders, and neurodegenerative diseases.   The overall goal of this project is to identify Apaf-1 activators by high throughput screening. Apaf-1 is the essential mediator of the mitochondrial cytochrome c-mediated caspase activation pathway. In this pathway, various apoptotic stimuli can cause cytochrome c release from mitochondria. The released cytochrome c binds to and activates Apaf-1 to trigger formation of the multiprotein complex, the apoptosome. Apoptosome complex subsequently induces activation of caspases, the executioners of apoptosis. Therefore activation of Apaf-1 function can trigger caspase activation in the upstream of the pathway.   In this biochemical fluorescent assay, the Apaf-dependent activation of caspase-9 and consequently caspase-3 is detected based on ability of the activated caspase-3 to cleave a fluorogenic rhodamine 110 -labeled DEVD tetra-peptide, generating a strongly fluorescent Rh110 that is monitored fluorimetrically.   References:  1. Jiang X, Wang X. Cytochrome c Promotes Caspase-9 Activation by Inducing Nucleotide Binding to Apaf-1. J. Biol. Chem. 2000 (275): 31199-31203. 2. Acehan D, Jiang X, Morgan DG, Heuser JE, Wang X, Akey CW. Three-Dimensional Structure of the Apoptosome: Implications for Assembly, Procaspase-9 Binding, and Activation. Molecular Cell 2002 (9): 423-432. 3. Jiang X, Kim H, Shu H, Zhao Y, Zhang H, Kofron J, Donnelly J, Burns D, Ng S, Rosenberg S, Wang X. Distinctive Roles of PHAP Proteins and Prothymosin-a in a Death Regulatory Pathway. Science 2003 (299): 223-226. 4. Yin Q, Park HH, Chung JY, Lin SC, Lo YC, da Graca LS, Jiang X, Wu H. Caspase-9 holoenzyme is a specific and optimal pro-caspase-3 processing machine. Molecular Cell 2006 (22) 259-268. 5. Gao Z, Tian Y, Wang J, Yin Q, Wu H, Li Y, Jiang X. A Dimeric Smac/Diablo Peptide Directly Relieves Caspase-3 Inhibition by XIAP: Dynamic and Cooperative Regulation of XIAP by Smac/Diablo. J. Biol. Chem. 2007 (282) 30718-30727",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "b1fd60804d0e9ea5d4d2f21a7d4b68ff074eadecce3d7ff426efd52f3d1d31b5",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/488910,488912,488915,488917,488918,488919,488922,488965,488966,488975,488977,489028,489030,489031,492947,492953,492956,492967,492972,493008/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "AAI36532.1"
+          },
+          "name": "Apoptotic peptidase activating factor 1 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "uHTS Fluorescent assay for identification of activators of Apaf-1"
+    },
+    {
+      "CYP_text_hits": [
+        "cytochrome"
+      ],
+      "aid": 602163,
+      "assay_id": "assayID-602163",
+      "description_excerpt": "Source (MLPCN Center Name): The Scripps Research Institute Molecular Screening Center (SRIMSC) Affiliation: The Scripps Research Institute, TSRI Assay Provider: Herbert Weissbach, Florida Atlantic University Network: Molecular Library Probe Production Centers Network (MLPCN) Grant Proposal Number: 1R03DA032473-01 Grant Proposal PI: Herbert Weissbach, Florida Atlantic University External Assay ID: MSRA_ACT_ABS_1536_1X%ACT  Name: Absorbance-based biochemical primary high throughput screening assay to identify activators of Methionine sulfoxide reductase A (MsrA).  Description:  Oxidative damage, resulting from the production of reactive oxygen species (ROS) within cells, is believed to be a major factor in age-related diseases and the aging process. One of the mechanisms by which this damage occurs is via oxidation of methionine residues to methionine sulfoxide (Met(O)) derivatives in cellular proteins, which can lead to protein inactivation (1). These Met(O) species can be repaired/reduced by the thioredoxin (Trx)-dependent (2, 3) action of Methionine sulfoxide reductase A (MsrA) (4, 5). MsrA can reduce both free and protein-bound Met(O), and is highly expressed in oxidant-sensitive tissues such as kidney (6), neurons (7), liver(8), retinal epithelial cells (9), and macrophages (10). Each round of methionine oxidation and reduction by the MsrA system destroys one equivalent of ROS (11). Importantly, the action of MsrA has been shown to prevent irreversible oxidative protein damage and extend life span of both flies and yeast (12-14). As a result, the identification of compounds that modulate MsrA activity could have therapeutic value for cardiovascular (15, 16), neurodegenerative, lung (17), and eye diseases (18) involving oxidative damage. Similarly, because MsrA is found in virtually all species (19), and the catalytic mechanism has been elucidated (1, 20, 21), the identification of chemical tools that modulate MsrA would help elucidate its function and activation in cells, and may lead to useful tools to extend lifespan and reduce aging-related diseases (11).  References:  1. Lowther, W.T., N. Brot, H. Weissbach, and B.W. Matthews, Structure and mechanism of peptide methionine sulfoxide reductase, an \"anti-oxidation\" enzyme. Biochemistry, 2000. 39(44): p. 13307-12. 2. Lowther, W.T., N. Brot, H. Weissbach, J.F. Honek, and B.W. Matthews, Thiol-disulfide exchange is involved in the catalytic mechanism of peptide methionine sulfoxide reductase. Proc Natl Acad Sci U S A, 2000. 97(12): p. 6463-8. 3. Sagher, D., D. Brunell, J.F. Hejtmancik, M. Kantorow, N. Brot, and H. Weissbach, Thionein can serve as a reducing agent for the methionine sulfoxide reductases. Proc Natl Acad Sci U S A, 2006. 103(23): p. 8656-61. 4. Weissbach, H., L. Resnick, and N. Brot, Methionine sulfoxide reductases: history and cellular role in protecting against oxidative damage. Biochim Biophys Acta, 2005. 1703(2): p. 203-12. 5. Weissbach, H., F. Etienne, T. Hoshi, S.H. Heinemann,",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "5e7eacef741e280c36d68a570a43e9d3fe22f5d8f2145dd79344a1871ca49475",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/588689,588692,588726,588727,588795,588812,588813,588814,588819,588850,588852,588855,588856,602123,602141,602162,602163,602179,602229,602233/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "AAI02981.1"
+          },
+          "name": "MSRA protein [Bos taurus]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "cattle",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9913
+                  }
+                }
+              ],
+              "taxname": "Bos taurus"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "Absorbance-based biochemical primary high throughput screening assay to identify activators of Methionine sulfoxide reductase A (MsrA)"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP7A"
+      ],
+      "aid": 602396,
+      "assay_id": "assayID-602396",
+      "description_excerpt": "Source (MLPCN Center Name): The Scripps Research Institute Molecular Screening Center (SRIMSC) Affiliation: The Scripps Research Institute, TSRI Assay Provider: Patrick Griffin, TSRI Network: Molecular Library Probe Production Centers Network (MLPCN) Grant Proposal Number: CA134873 Grant Proposal PI: Patrick Griffin, TSRI External Assay ID: LRH1_INH_LUMI_1536_1X%INH PRUN  Name: Luminescence-based cell-based primary high throughput screening assay to identify inverse agonists of the liver receptor homolog-1 (LRH-1; NR5A2).  Description:  The goal of this project is to identify modulators (inverse agonists) of the orphan nuclear receptor LRH-1, which has been implicated in cancer by enhancing proliferation and cell cycle progression and metabolic disorders through its regulation of genes involved cholesterol and bile acid homeostasis.  NR5A2 or Liver receptor homologue-1 (LRH-1) is a member of the NR5A, or Ftz-F1, subfamily V nuclear receptors for which there are four members (1). Murine LRH-1 was originally identified due to its sequence homology to the Drosophila Fushi tarazu factor-1 but orthologs have been subsequently identified in several other species including rat, chicken, horse, zebrafish and human (2-7). LRH-1, and its closest family member steroidogenic factor-1 (SF-1, NR5A1), bind to identical DNA consensus sequences (response elements or REs) and both have the ability to bind phospholipids in their ligand binding domains (LBDs) (8-10). However, LRH-1 and SF-1 are expressed in different tissues and thus are considered likely to have non-overlapping, non-redundant functions. SF-1 expression is confined to steroidogenic tissues and adrenals where it regulates development, differentiation, steroidogenesis and sexual determination (5, 7, 11). LRH-1 is highly expressed in tissues of endodermal origin and its expression is essential for normal liver, intestine, and pancreas function. LRH-1 has also been shown to be expressed in the ovary and adipose tissue.  In a recent report, Chand and colleagues investigated the mechanism of action of LRH-1 in invasive breast cancer cells. They found that LRH-1 promotes motility and cell invasiveness in both ER-positive (MCF-7) and ER-negative (MDA-MB-231) breast cancer cells and similar effects were observed in non-tumorigenic mammary epithelial cells. Interestingly, both remodeling of the actin cytoskeleton and E-cadherin processing were observed when LRH-1 was over-expressed. These findings implicate LRH-1 in promotion of migration and invasion in breast cancer independent of estrogen sensitivity. Together these findings provided strong evidence that LRH-1 plays a significant role in tumor formation both in vitro and in vivo. Therefore, the identification of potent and selective LRH-1 inverse agonists may provide new approaches for the treatment of cancer.  References:  1. Fayard, E., J. Auwerx, and K. Schoonjans, LRH-1: an orphan nuclear receptor involved in development, metabolism and steroidogenesis",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "ce221f0d6a7ace46316af10d86ffec7d559a03b2d67f74ca6ae08dfae2f55199",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/602396,602399,602405,602410,602429,602438,602440,602449,602481,623870,623877,623901,624037,624038,624040,624101,624125,624126,624127,624136/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_003813.1"
+          },
+          "name": "nuclear receptor subfamily 5 group A member 2 isoform 2 [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "Luminescence-based cell-based primary high throughput screening assay to identify inverse agonists of the liver receptor homolog-1 (LRH-1; NR5A2)"
+    },
+    {
+      "CYP_text_hits": [
+        "cytochrome"
+      ],
+      "aid": 651718,
+      "assay_id": "assayID-651718",
+      "description_excerpt": "Source (MLPCN Center Name): The Scripps Research Institute Molecular Screening Center (SRIMSC) Affiliation: The Scripps Research Institute, TSRI Assay Provider: Herbert Weissbach, Florida Atlantic University Network: Molecular Library Probe Production Centers Network (MLPCN) Grant Proposal Number: 1R03DA032473-01 Grant Proposal PI: Herbert Weissbach, Florida Atlantic University External Assay ID: MSRA_INH_ABS_1536_1X%INH  Name: Absorbance-based biochemical primary high throughput screening assay to identify inhibitors of Methionine sulfoxide reductase A (MsrA).  Description:  Oxidative damage, resulting from the production of reactive oxygen species (ROS) within cells, is believed to be a major factor in age-related diseases and the aging process. One of the mechanisms by which this damage occurs is via oxidation of methionine residues to methionine sulfoxide (Met(O)) derivatives in cellular proteins, which can lead to protein inactivation (1). These Met(O) species can be repaired/reduced by the thioredoxin (Trx)-dependent (2, 3) action of Methionine sulfoxide reductase A (MsrA) (4, 5). MsrA can reduce both free and protein-bound Met(O), and is highly expressed in oxidant-sensitive tissues such as kidney (6), neurons (7), liver(8), retinal epithelial cells (9), and macrophages (10). Each round of methionine oxidation and reduction by the MsrA system destroys one equivalent of ROS (11). Importantly, the action of MsrA has been shown to prevent irreversible oxidative protein damage and extend life span of both flies and yeast (12-14). As a result, the identification of compounds that modulate MsrA activity could have therapeutic value for cardiovascular (15, 16), neurodegenerative, lung (17), and eye diseases (18) involving oxidative damage. Similarly, because MsrA is found in virtually all species (19), and the catalytic mechanism has been elucidated (1, 20, 21), the identification of chemical tools that modulate MsrA would help elucidate its function and activation in cells, and may lead to useful tools to extend lifespan and reduce aging-related diseases (11).  References:  1. Lowther, W.T., N. Brot, H. Weissbach, and B.W. Matthews, Structure and mechanism of peptide methionine sulfoxide reductase, an \"anti-oxidation\" enzyme. Biochemistry, 2000. 39(44): p. 13307-12. 2. Lowther, W.T., N. Brot, H. Weissbach, J.F. Honek, and B.W. Matthews, Thiol-disulfide exchange is involved in the catalytic mechanism of peptide methionine sulfoxide reductase. Proc Natl Acad Sci U S A, 2000. 97(12): p. 6463-8. 3. Sagher, D., D. Brunell, J.F. Hejtmancik, M. Kantorow, N. Brot, and H. Weissbach, Thionein can serve as a reducing agent for the methionine sulfoxide reductases. Proc Natl Acad Sci U S A, 2006. 103(23): p. 8656-61. 4. Weissbach, H., L. Resnick, and N. Brot, Methionine sulfoxide reductases: history and cellular role in protecting against oxidative damage. Biochim Biophys Acta, 2005. 1703(2): p. 203-12. 5. Weissbach, H., F. Etienne, T. Hoshi, S.H. Heinemann,",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "d2cdb98b6fe7c9101d0e110779817a1376c9857a4354a33c3f5476a29317836f",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/651661,651687,651699,651702,651704,651710,651711,651718,651719,651723,651724,651725,651768,651800,651819,651820,651821,651828,651838,651903/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "AAI02981.1"
+          },
+          "name": "MSRA protein [Bos taurus]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "cattle",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9913
+                  }
+                }
+              ],
+              "taxname": "Bos taurus"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "Absorbance-based biochemical primary high throughput screening assay to identify inhibitors of Methionine sulfoxide reductase A (MsrA)"
+    },
+    {
+      "CYP_text_hits": [
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 652067,
+      "assay_id": "assayID-652067",
+      "description_excerpt": "Source (MLPCN Center Name): The Scripps Research Institute Molecular Screening Center (SRIMSC) Affiliation: The Scripps Research Institute, TSRI Assay Provider: David Mangelsdorf, UT Southwestern Network: Molecular Library Probe Production Centers Network (MLPCN) Grant Proposal Number: U19 DK062434 Grant Proposal PI: David Mangelsdorf, UT Southwestern External Assay ID: HCDAF12_AG_LUMI_1536_1X%ACT PRUN  Name: Luminescence-based cell-based primary high throughput screening assay to identify activators of the DAF-12 from the parasite H. contortus (hcDAF-12).  Description:  Parasitic helminthes (worms) are a significant health and economic burden: over two billion people are infected by helminthes (1), and parasitic nematodes cause billions of dollars of crop damage each year in the United States (2). The developmental stages of these organisms are widely studied (3, 4). One stage, dauer (German for \"duration,\" also known as an alternative L3 larval stage) covers an alternative larval stage in which development stops and the worms enter a hibernation-like state in which they can survive extremely harsh environmental conditions, often for years. In the case of parasitic nematodes, this resting state is quite often the infectious state (5). As the burden of parasitic nematodes grows in the face of emerging resistance to the few existing antihelminthic agents, it is becoming increasingly important to understand the life cycles of parasitic worms so that new drugs may be developed (1). The nuclear receptor DAF-12 (for \"dauer formation\"), first identified in C. elegans, is known to control many nematode species' entry into and exit from the dauer resting state (6). Daf-12 belongs to a family of over 30 genes which transduce environmental signals to influence the choice between dauer or reproductive development. Favorable environments activate insulin/IGF and TGF-beta pathways converge, leading to production of the steroid hormone dafachronic acid (DA), which binds and activates Daf-12 (7). Currently available antihelminthic agents, to which resistance is beginning to emerge, act primarily on the feeding stages of the worms and have little effect on the infectious stages (8). Therefore, pharmacologic activators developed through high-throughput screening would be used both practically as nematicides and academically as tools to characterize the role of DAF-12 in modulating life cycle (8, 9).  References:  1. Jasmer, D.P., A. Goverse, and G. Smant, Parasitic nematode interactions with mammals and plants. Annu Rev Phytopathol, 2003. 41: p. 245-70. 2. Hotez, P.J., J. Bethony, M.E. Bottazzi, S. Brooker, D. Diemert, and A. Loukas, New technologies for the control of human hookworm infection. Trends Parasitol, 2006. 22(7): p. 327-31. 3. Mooijaart, S.P., B.W. Brandt, E.A. Baldal, J. Pijpe, M. Kuningas, M. Beekman, B.J. Zwaan, P.E. Slagboom, R.G. Westendorp, and D. van Heemst, C. elegans DAF-12, Nuclear Hormone Receptors and human longevity and disease at old age",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "93281ec3663497157d9f6af18f867d469c080856e46c137ce9e8cf574f4e32f6",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/651957,651958,651965,651999,652010,652017,652025,652031,652039,652048,652051,652054,652067,652104,652105,652106,652115,652126,652154,652162/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_001024547.1"
+          },
+          "name": "Protein DAF-12, isoform a [Caenorhabditis elegans]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 6239
+                  }
+                }
+              ],
+              "taxname": "Caenorhabditis elegans"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "Luminescence-based cell-based primary high throughput screening assay to identify activators of the DAF-12 from the parasite H. contortus (hcDAF-12)"
+    },
+    {
+      "CYP_text_hits": [
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 652126,
+      "assay_id": "assayID-652126",
+      "description_excerpt": "Source (MLPCN Center Name): The Scripps Research Institute Molecular Screening Center Affiliation: UT Southwestern Assay Provider: David Mangelsdorf, UT Southwestern Network: Molecular Library Probe Production Centers Network (MLPCN) Grant Proposal Number: U19 DK062434 Grant Proposal Pi: David Mangelsdorf, UT Southwestern External Assay ID: SSDAF12_AG_LUMI_1536_1X%ACT PRUN  Name: Luminescence-based cell-based primary high throughput screening assay to identify activators of the DAF-12 from the parasite S. stercoralis (ssDAF-12).  Description:  Parasitic helminthes (worms) are a significant health and economic burden: over two billion people are infected by helminthes [1], and parasitic nematodes cause billions of dollars of crop damage each year in the United States [2]. The developmental stages of these organisms are widely studied [3, 4]. One stage, dauer (German for \"duration\", also known as an alternative L3 larval stage) covers an alternative larval stage in which development stops and the worms enter a hibernation-like state in which they can survive extremely harsh environmental conditions, often for years. In the case of parasitic nematodes, this resting state is quite often the infectious state [5]. As the burden of parasitic nematodes grows in the face of emerging resistance to the few existing antihelminthic agents, it is becoming increasingly important to understand the life cycles of parasitic worms so that new drugs may be developed [1]. The nuclear receptor DAF-12 (for \"dauer formation\"), first identified in C. elegans, is known to control many nematode species' entry into and exit from the dauer resting state [6]. Daf-12 belongs to a family of over 30 genes which transduce environmental signals to influence the choice between dauer or reproductive development. Favorable environments activate insulin/IGF and TGF-beta pathways converge, leading to production of the steroid hormone dafachronic acid (DA), which binds and activates Daf-12 [7]. Currently available antihelminthic agents, to which resistance is beginning to emerge, act primarily on the feeding stages of the worms and have little effect on the infectious stages [8]. Therefore, pharmacologic activators developed through high-throughput screening would be used both practically as nematicides and academically as tools to characterize the role of DAF-12 in modulating life cycle [8, 9].  References:  1. Jasmer, D.P., A. Goverse, and G. Smant, Parasitic nematode interactions with mammals and plants. Annu Rev Phytopathol, 2003. 41: p. 245-70. 2. Hotez, P.J., J. Bethony, M.E. Bottazzi, S. Brooker, D. Diemert, and A. Loukas, New technologies for the control of human hookworm infection. Trends Parasitol, 2006. 22(7): p. 327-31 3. Mooijaart, S.P., B.W. Brandt, E.A. Baldal, J. Pijpe, M. Kuningas, M. Beekman, B.J. Zwaan, P.E. Slagboom, R.G. Westendorp, and D. van Heemst, C. elegans DAF-12, Nuclear Hormone Receptors and human longevity and disease at old age. Aging Res Rev, 2005. 4(3): ",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "93281ec3663497157d9f6af18f867d469c080856e46c137ce9e8cf574f4e32f6",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/651957,651958,651965,651999,652010,652017,652025,652031,652039,652048,652051,652054,652067,652104,652105,652106,652115,652126,652154,652162/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "NP_001024547.1"
+          },
+          "name": "Protein DAF-12, isoform a [Caenorhabditis elegans]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 6239
+                  }
+                }
+              ],
+              "taxname": "Caenorhabditis elegans"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "Luminescence-based cell-based primary high throughput screening assay to identify activators of the DAF-12 from the parasite S. stercoralis (ssDAF-12)"
+    },
+    {
+      "CYP_text_hits": [
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 687014,
+      "assay_id": "assayID-687014",
+      "description_excerpt": "Source (MLPCN Center Name): The Scripps Research Institute Molecular Screening Center Affiliation: UT Southwestern Assay Provider: David Mangelsdorf, UT Southwestern Network: Molecular Library Probe Production Centers Network (MLPCN) Grant Proposal Number: U19 DK062434 Grant Proposal Pi: David Mangelsdorf, UT Southwestern External Assay ID: HGDAF12_AG_LUMI_1536_1X%ACT PRUN  Name: Luminescence-based cell-based primary high throughput screening assay to identify agonists of the DAF-12 from the parasite H. glycines (hgDAF-12).  Description:  Parasitic helminthes (worms) are a significant health and economic burden: over two billion people are infected by helminthes [1], and parasitic nematodes cause billions of dollars of crop damage each year in the United States [2]. The developmental stages of these organisms are widely studied [3, 4]. One stage, dauer (German for \"duration\", also known as an alternative L3 larval stage) covers an alternative larval stage in which development stops and the worms enter a hibernation-like state in which they can survive extremely harsh environmental conditions, often for years. In the case of parasitic nematodes, this resting state is quite often the infectious state [5]. As the burden of parasitic nematodes grows in the face of emerging resistance to the few existing antihelminthic agents, it is becoming increasingly important to understand the life cycles of parasitic worms so that new drugs may be developed [1]. The nuclear receptor DAF-12 (for \"dauer formation\"), first identified in C. elegans, is known to control many nematode species' entry into and exit from the dauer resting state [6]. Daf-12 belongs to a family of over 30 genes which transduce environmental signals to influence the choice between dauer or reproductive development. Favorable environments activate insulin/IGF and TGF-beta pathways converge, leading to production of the steroid hormone dafachronic acid (DA), which binds and activates Daf-12 [7]. Currently available antihelminthic agents, to which resistance is beginning to emerge, act primarily on the feeding stages of the worms and have little effect on the infectious stages [8]. Therefore, pharmacologic activators developed through high-throughput screening would be used both practically as nematicides and academically as tools to characterize the role of DAF-12 in modulating life cycle [8, 9].  References:  1. Jasmer, D.P., A. Goverse, and G. Smant, Parasitic nematode interactions with mammals and plants. Annu Rev Phytopathol, 2003. 41: p. 245-70. 2. Hotez, P.J., J. Bethony, M.E. Bottazzi, S. Brooker, D. Diemert, and A. Loukas, New technologies for the control of human hookworm infection. Trends Parasitol, 2006. 22(7): p. 327-31 3. Mooijaart, S.P., B.W. Brandt, E.A. Baldal, J. Pijpe, M. Kuningas, M. Beekman, B.J. Zwaan, P.E. Slagboom, R.G. Westendorp, and D. van Heemst, C. elegans DAF-12, Nuclear Hormone Receptors and human longevity and disease at old age. Aging Res Rev, 2005. 4(3): p. 35",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "546fcf6dcf4338facf7436e45cdcceaeb50f5b3a7a79095c4e77d4dc4a116466",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/652163,652197,652257,686940,686954,686964,686970,686971,686978,686979,686992,686996,687014,687016,687043,720488,720504,720508,720509,720511/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "descr": "No protein entry for H. glycines. Refers to closest known orthologue from the prototypic parasitic helminth C.elegans. ##",
+          "mol_id": {
+            "protein_accession": "NP_001024547.1"
+          },
+          "name": "Protein DAF-12, isoform a [Caenorhabditis elegans]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 6239
+                  }
+                }
+              ],
+              "taxname": "Caenorhabditis elegans"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "Luminescence-based cell-based primary high throughput screening assay to identify agonists of the DAF-12 from the parasite H. glycines (hgDAF-12)."
+    },
+    {
+      "CYP_text_hits": [
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 743083,
+      "assay_id": "assayID-743083",
+      "description_excerpt": "U.S. Tox21 Program  National Center for Advancing Translational Sciences [NCATS] NIH Chemical Genomics Center [NCGC] U.S. Environmental Protection Agency [EPA] National Institutes of Environmental Health Sciences [NIEHS] National Toxicology Program [NTP] U.S. Food and Drug Administration [FDA]  Tox21 Assay Overview:  Endocrine disrupting chemicals (EDCs) interfere with the biosynthesis and normal functions of steroid hormones including estrogen and androgen in the body. Aromatase catalyzes the conversion of androgen to estrogen and plays a key role in maintaining the androgen and estrogen balance in many of the EDC-sensitive organs. MCF-7 aro ERE cell line (provided by Dr. Shiuan Chen at Beckman Research Institute of the City of Hope) was used to screen the Tox21 10K compound library collection for identification of aromatase inhibitors. MCF-7 aro ERE is human breast carcinoma cell line that was stably transfected with a promoter plasmid, pGL3-Luc, containing three repeats of estrogen responsive element (ERE).",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "64777dd2891b7ed722a06c8650b8c4bb4eaa5f4606e9f1eaa6df3ed2f9dfea42",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/743066,743067,743069,743074,743075,743077,743078,743079,743080,743081,743083,743084,743085,743086,743091,743093,743094,743122,743126,743139/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "EAW77416.1"
+          },
+          "name": "cytochrome P450, family 19, subfamily A, polypeptide 1, isoform CRA_a [Homo sapiens]",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "qHTS assay to identify aromatase inhibitors"
+    },
+    {
+      "CYP_text_hits": [
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 743139,
+      "assay_id": "assayID-743139",
+      "description_excerpt": "U.S. Tox21 Program  National Center for Advancing Translational Sciences [NCATS] NIH Chemical Genomics Center [NCGC] U.S. Environmental Protection Agency [EPA] National Institutes of Environmental Health Sciences [NIEHS] National Toxicology Program [NTP] U.S. Food and Drug Administration [FDA]  Tox21 Assay Overview:  Endocrine disrupting chemicals (EDCs) interfere with the biosynthesis and normal functions of steroid hormones including estrogen and androgen in the body. Aromatase catalyzes the conversion of androgen to estrogen and plays a key role in maintaining the androgen and estrogen balance in many of the EDC-sensitive organs. MCF-7 aro ERE cell line (provided by Dr. Shiuan Chen at Beckman Research Institute of the City of Hope) was used to screen the Tox21 10K compound library collection for identification of aromatase inhibitors. MCF-7 aro ERE is human breast carcinoma cell line that was stably transfected with a promoter plasmid, pGL3-Luc, containing three repeats of estrogen responsive element (ERE). The cytotoxicity of the Tox21 compound library against the MCF-7 aro ERE cell line was tested in parallel by measuring the cell viability using CellTiter-Fluor assay (Promega, Madison, WI) in the same wells.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "64777dd2891b7ed722a06c8650b8c4bb4eaa5f4606e9f1eaa6df3ed2f9dfea42",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/743066,743067,743069,743074,743075,743077,743078,743079,743080,743081,743083,743084,743085,743086,743091,743093,743094,743122,743126,743139/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "EAW77416.1"
+          },
+          "name": "cytochrome P450, family 19, subfamily A, polypeptide 1, isoform CRA_a [Homo sapiens]"
+        }
+      ],
+      "title": "qHTS assay to identify aromatase inhibitors: Summary"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP2B6",
+        "CYP2B6-2",
+        "CYP2B6-hCAR",
+        "CYP3A4"
+      ],
+      "aid": 1224836,
+      "assay_id": "assayID-1224836",
+      "description_excerpt": "U.S. Tox21 Program  National Center for Advancing Translational Sciences [NCATS] NIH Chemical Genomics Center [NCGC] U.S. Environmental Protection Agency [EPA] National Institutes of Environmental Health Sciences [NIEHS] National Toxicology Program [NTP] U.S. Food and Drug Administration [FDA]  Tox21 Assay Overview:  The constitutive androstane receptor (CAR) is a nuclear receptor which regulates multiple drug metabolizing enzymes (DMEs) and transporters. Activating CAR will generally increase the transcription and subsequent translation of CYP2B6 and CYP3A4. These two DMEs represent about 50% of the drug metabolizing potential in the body. Therefore, when these two proteins are induced, through activation of CAR, a drug can either be metabolized quicker than was intended, or create a more potent therapeutic effect if the drug is a pro-drug. Recently, there have also been studies performed indicating CARs role in energy metabolism and cancer therapy. Therefore, inducing CARs activity could have a potential effect on diabetes and cancer. Identifying environmental toxins and compounds which modulate CAR, through the use of the Tox21 10K compound collection, will be an important step in determining the toxicity and potential therapeutic effects these factors will have on the human body. To differentiate true CAR agonists from cytotoxic substances, the assay is multiplexed with a cell viability assay.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "b9e7946d997f01f489ede9c90c6bf9b90e39a246788498e8a867c03b68129044",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1159537,1159551,1159552,1159553,1159554,1159555,1159580,1159583,1159585,1159586,1159588,1159602,1159603,1159606,1159607,1159614,1224834,1224835,1224836,1224837/description/JSON",
+      "status": "retrieved",
+      "target": [],
+      "title": "qHTS assay to identify small molecule agonists of the constitutive androstane receptor (CAR) signaling pathway - cell viability counter screen"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP2B6",
+        "CYP2B6-2",
+        "CYP2B6-hCAR",
+        "CYP3A4"
+      ],
+      "aid": 1224837,
+      "assay_id": "assayID-1224837",
+      "description_excerpt": "U.S. Tox21 Program  National Center for Advancing Translational Sciences [NCATS] NIH Chemical Genomics Center [NCGC] U.S. Environmental Protection Agency [EPA] National Institutes of Environmental Health Sciences [NIEHS] National Toxicology Program [NTP] U.S. Food and Drug Administration [FDA]  Tox21 Assay Overview:  The constitutive androstane receptor (CAR) is a nuclear receptor which regulates multiple drug metabolizing enzymes (DMEs) and transporters. Activating CAR will generally increase the transcription and subsequent translation of CYP2B6 and CYP3A4. These two DMEs represent about 50% of the drug metabolizing potential in the body. When CAR is deactivated, the metabolizing potential in the body will decrease, subsequently increasing the toxicity in the body or lowering the therapeutic potential of a pro-drug. Recently, there have also been studies performed indicating CARs role in energy metabolism and cancer therapy. Therefore, inhibiting CARs activity could have a potential effect on diabetes and cancer. Identifying environmental toxins and compounds which modulate CAR, through the use of the Tox21 10K compound collection, will be an important step in determining the toxicity and potential therapeutic effects these factors will have on the human body. To differentiate true CAR antagonists from cytotoxic substances, the assay is multiplexed with a cell viability assay.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "b9e7946d997f01f489ede9c90c6bf9b90e39a246788498e8a867c03b68129044",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1159537,1159551,1159552,1159553,1159554,1159555,1159580,1159583,1159585,1159586,1159588,1159602,1159603,1159606,1159607,1159614,1224834,1224835,1224836,1224837/description/JSON",
+      "status": "retrieved",
+      "target": [],
+      "title": "qHTS assay to identify small molecule antagonists of the constitutive androstane receptor (CAR) signaling pathway - cell viability counter screen"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP2B6",
+        "CYP2B6-2",
+        "CYP2B6-hCAR",
+        "CYP3A4"
+      ],
+      "aid": 1224838,
+      "assay_id": "assayID-1224838",
+      "description_excerpt": "U.S. Tox21 Program  National Center for Advancing Translational Sciences [NCATS] NIH Chemical Genomics Center [NCGC] U.S. Environmental Protection Agency [EPA] National Institutes of Environmental Health Sciences [NIEHS] National Toxicology Program [NTP] U.S. Food and Drug Administration [FDA]  Tox21 Assay Overview:  The constitutive androstane receptor (CAR) is a nuclear receptor which regulates multiple drug metabolizing enzymes (DMEs) and transporters. Activating CAR will generally increase the transcription and subsequent translation of CYP2B6 and CYP3A4. These two DMEs represent about 50% of the drug metabolizing potential in the body. When CAR is deactivated, the metabolizing potential in the body will decrease, subsequently increasing the toxicity in the body or lowering the therapeutic potential of a pro-drug. Recently, there have also been studies performed indicating CARs role in energy metabolism and cancer therapy. Therefore, inhibiting CARs activity could have a potential effect on diabetes and cancer. Identifying environmental toxins and compounds which modulate CAR, through the use of the Tox21 10K compound collection, will be an important step in determining the toxicity and potential therapeutic effects these factors will have on the human body. ",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "1c6c0d37de8818abc83881320931b8e1a2f9516f00d44090d13bd4237a927a5f",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1224838,1224839,1224840,1224841,1224842,1224843,1224844,1224845,1224846,1224847,1224848,1224849,1224863,1224865,1224867,1224868,1224869,1224870,1224871,1224872/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "AAY56401.1"
+          },
+          "name": ""
+        }
+      ],
+      "title": "qHTS assay to identify small molecule antagonists of the constitutive androstane receptor (CAR) signaling pathway"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP2B6",
+        "CYP2B6-2",
+        "CYP2B6-hCAR",
+        "CYP3A4"
+      ],
+      "aid": 1224839,
+      "assay_id": "assayID-1224839",
+      "description_excerpt": "National Center for Advancing Translational Sciences [NCATS] NIH Chemical Genomics Center [NCGC] U.S. Environmental Protection Agency [EPA] National Institutes of Environmental Health Sciences [NIEHS] National Toxicology Program [NTP]  Assay overview:  The constitutive androstane receptor (CAR) is a nuclear receptor which regulates multiple drug metabolizing enzymes (DMEs) and transporters. Activating CAR will generally increase the transcription and subsequent translation of CYP2B6 and CYP3A4. These two DMEs represent about 50% of the drug metabolizing potential in the body. Therefore, when these two proteins are induced, through activation of CAR, a drug can either be metabolized quicker than was intended, or create a more potent therapeutic effect if the drug is a pro-drug. Recently, there have also been studies performed indicating CARs role in energy metabolism and cancer therapy. Therefore, inducing CARs activity could have a potential effect on diabetes and cancer. Identifying environmental toxins and compounds which modulate CAR, through the use of the Tox21 10K compound collection, will be an important step in determining the toxicity and potential therapeutic effects these factors will have on the human body.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "1c6c0d37de8818abc83881320931b8e1a2f9516f00d44090d13bd4237a927a5f",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1224838,1224839,1224840,1224841,1224842,1224843,1224844,1224845,1224846,1224847,1224848,1224849,1224863,1224865,1224867,1224868,1224869,1224870,1224871,1224872/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "AAY56401.1"
+          },
+          "name": ""
+        }
+      ],
+      "title": "qHTS assay to identify small molecule agonists of the constitutive androstane receptor (CAR) signaling pathway"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP2B6",
+        "CYP3A4"
+      ],
+      "aid": 1224892,
+      "assay_id": "assayID-1224892",
+      "description_excerpt": "U.S. Tox21 Program  National Center for Advancing Translational Sciences [NCATS] NIH Chemical Genomics Center [NCGC] U.S. Environmental Protection Agency [EPA] National Institutes of Environmental Health Sciences [NIEHS] National Toxicology Program [NTP] U.S. Food and Drug Administration [FDA]  Tox21 Assay Overview:  The constitutive androstane receptor (CAR) is a nuclear receptor which regulates multiple drug metabolizing enzymes (DMEs) and transporters. Activating CAR will generally increase the transcription and subsequent translation of CYP2B6 and CYP3A4. These two DMEs represent about 50% of the drug metabolizing potential in the body. Therefore, when these two proteins are induced, through activation of CAR, a drug can either be metabolized quicker than was intended, or create a more potent therapeutic effect if the drug is a pro-drug. Recently, there have also been studies performed indicating CAR's role in energy metabolism and cancer therapy. Therefore, inducing CAR's activity could have a potential effect on diabetes and cancer. Identifying environmental toxins and compounds which modulate CAR, through the use of the Tox21 10K compound collection, will be an important step in determining the toxicity and potential therapeutic effects these factors will have on the human body. To differentiate true CAR agonists from cytotoxic substances, the assay is multiplexed with a cell viability assay.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "c4b71a1ce789d33cf0f42e5bcd0509337c0ffd58bb6cd5d4b709974913da44fc",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1224873,1224874,1224875,1224876,1224877,1224878,1224879,1224880,1224881,1224882,1224883,1224884,1224885,1224886,1224887,1224888,1224889,1224890,1224892,1224893/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "AAY56401.1"
+          },
+          "name": "nuclear receptor subfamily 1, group I, member 3 [Homo sapiens]"
+        }
+      ],
+      "title": "qHTS assay to identify small molecule agonists of the constitutive androstane receptor (CAR) signaling pathway: Summary"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP2B6",
+        "CYP3A4"
+      ],
+      "aid": 1224893,
+      "assay_id": "assayID-1224893",
+      "description_excerpt": "U.S. Tox21 Program  National Center for Advancing Translational Sciences [NCATS] NIH Chemical Genomics Center [NCGC] U.S. Environmental Protection Agency [EPA] National Institutes of Environmental Health Sciences [NIEHS] National Toxicology Program [NTP] U.S. Food and Drug Administration [FDA]  Tox21 Assay Overview:  The constitutive androstane receptor (CAR) is a nuclear receptor which regulates multiple drug metabolizing enzymes (DMEs) and transporters. Activating CAR will generally increase the transcription and subsequent translation of CYP2B6 and CYP3A4. These two DMEs represent about 50% of the drug metabolizing potential in the body. When CAR is deactivated, the metabolizing potential in the body will decrease, subsequently increasing the toxicity in the body or lowering the therapeutic potential of a pro-drug. Recently, there have also been studies performed indicating CAR's role in energy metabolism and cancer therapy. Therefore, inhibiting CAR's activity could have a potential effect on diabetes and cancer. Identifying environmental toxins and compounds which modulate CAR, through the use of the Tox21 10K compound collection, will be an important step in determining the toxicity and potential therapeutic effects these factors will have on the human body. To differentiate true CAR antagonists from cytotoxic substances, the assay is multiplexed with a cell viability assay.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "c4b71a1ce789d33cf0f42e5bcd0509337c0ffd58bb6cd5d4b709974913da44fc",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1224873,1224874,1224875,1224876,1224877,1224878,1224879,1224880,1224881,1224882,1224883,1224884,1224885,1224886,1224887,1224888,1224889,1224890,1224892,1224893/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "descr": "nuclear receptor subfamily 1, group I, member 3 [Homo sapiens]",
+          "mol_id": {
+            "protein_accession": "AAY56401.1"
+          },
+          "name": "nuclear receptor subfamily 1, group I, member 3 [Homo sapiens]"
+        }
+      ],
+      "title": "qHTS assay to identify small molecule antagonists of the constitutive androstane receptor (CAR) signaling pathway: Summary"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP3A4",
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 1346977,
+      "assay_id": "assayID-1346977",
+      "description_excerpt": "U.S. Tox21 Program  National Center for Advancing Translational Sciences [NCATS] NIH Chemical Genomics Center [NCGC] U.S. Environmental Protection Agency [EPA] National Institutes of Environmental Health Sciences [NIEHS] National Toxicology Program [NTP] U.S. Food and Drug Administration [FDA]  Tox21 Assay Overview:  The human pregnane X receptor (hPXR) regulates the expression of several drug metabolizing enzymes and induction of these proteins is a major mechanism for developing drug resistance in cancer. One such key enzyme catalyzing the drug metabolism is cytochrome P450 3A4 (CYP3A4). Changes in CYP3A4 expression affect drug metabolism, thereby reducing the therapeutic efficacy and altering toxicological response to a drug and which finally causes adverse drug interaction. To screen Tox21 libraries for compounds that activate hPXR-mediated CYP3A4 gene expression, PXR-Luc HepG2 cells were used. Also cytotoxicity of the compounds was tested in parallel by measuring the cell viability using CellTiter-Fluor assay system in the same wells.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "bca87e343c750726b63fcc34ce734368a5fb4fb7c05b1ef71f680e0f8def45ff",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1346798,1346799,1346824,1346829,1346859,1346877,1346891,1346924,1346977,1346978,1346979,1346980,1346981,1346982,1346986,1346987,1347030,1347031,1347032,1347033/description/JSON",
+      "status": "retrieved",
+      "target": [],
+      "title": "Human pregnane X receptor (PXR) small molecule agonists, qHTS cell viability counter screen"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP3A4",
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 1346982,
+      "assay_id": "assayID-1346982",
+      "description_excerpt": "National Center for Advancing Translational Sciences [NCATS] NIH Chemical Genomics Center [NCGC] U.S. Environmental Protection Agency [EPA] National Institutes of Environmental Health Sciences [NIEHS] National Toxicology Program [NTP]  Assay overview:  The human pregnane X receptor (hPXR) regulates the expression of several drug metabolizing enzymes and induction of these proteins is a major mechanism for developing drug resistance in cancer. One such key enzyme catalyzing the drug metabolism is cytochrome P450 3A4 (CYP3A4). Changes in CYP3A4 expression affect drug metabolism, thereby reducing the therapeutic efficacy and altering toxicological response to a drug and which finally causes adverse drug interaction. To screen Tox21 libraries for compounds that activate hPXR-mediated CYP3A4 gene expression, PXR-Luc HepG2 cells were used.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "bca87e343c750726b63fcc34ce734368a5fb4fb7c05b1ef71f680e0f8def45ff",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1346798,1346799,1346824,1346829,1346859,1346877,1346891,1346924,1346977,1346978,1346979,1346980,1346981,1346982,1346986,1346987,1347030,1347031,1347032,1347033/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "ADZ17384.1"
+          },
+          "name": ""
+        }
+      ],
+      "title": "Human pregnane X receptor (PXR) small molecule agonists, qHTS assay"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP3A4",
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 1347033,
+      "assay_id": "assayID-1347033",
+      "description_excerpt": "U.S. Tox21 Program  National Center for Advancing Translational Sciences [NCATS] NIH Chemical Genomics Center [NCGC] U.S. Environmental Protection Agency [EPA] National Institutes of Environmental Health Sciences [NIEHS] National Toxicology Program [NTP] U.S. Food and Drug Administration [FDA]  Tox21 Assay Overview:  The human pregnane X receptor (hPXR) regulates the expression of several drug metabolizing enzymes and induction of these proteins is a major mechanism for developing drug resistance in cancer. One such key enzyme catalyzing the drug metabolism is cytochrome P450 3A4 (CYP3A4). Changes in CYP3A4 expression affect drug metabolism, thereby reducing the therapeutic efficacy and altering toxicological response to a drug and which finally causes adverse drug interaction. To screen Tox21 libraries for compounds that activate hPXR-mediated CYP3A4 gene expression, PXR-Luc HepG2 cells were used. To differentiate true PXR agonists from cytotoxic substances, the assay is multiplexed with a cell viability assay.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "bca87e343c750726b63fcc34ce734368a5fb4fb7c05b1ef71f680e0f8def45ff",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1346798,1346799,1346824,1346829,1346859,1346877,1346891,1346924,1346977,1346978,1346979,1346980,1346981,1346982,1346986,1346987,1347030,1347031,1347032,1347033/description/JSON",
+      "status": "retrieved",
+      "target": [],
+      "title": "Human pregnane X receptor (PXR) small molecule agonists: Summary"
+    },
+    {
+      "CYP_text_hits": [
+        "CYP",
+        "P450",
+        "cytochrome"
+      ],
+      "aid": 1347399,
+      "assay_id": "assayID-1347399",
+      "description_excerpt": "U.S. Tox21 Program  National Center for Advancing Translational Sciences [NCATS] Division of Preclinical Innovation [DPI] U.S. Environmental Protection Agency [EPA] National Institutes of Environmental Health Sciences [NIEHS] National Toxicology Program [NTP] U.S. Food and Drug Administration [FDA]  Tox21 Assay Overview:  Acetylcholinesterase (AChE) is the primary cholinesterase in the body that hydrolyzes a key neurotransmitter, acetylcholine. Inhibition of AChE activity can lead to neurotoxicity. The known inhibitors include organophosphorous pesticides (OP), chemical warfare agents, drugs, and various phytochemicals. Some compounds like OP compounds may need metabolic activation to be active AChE inhibitors. The cytochrome P450 (CYP) superfamily in the human microsomes is responsible for the metabolism of various endogenous and exogenous compounds.  An enzyme-based assay with the recombinant human AChE, human liver microsomes and Amplite Colormetric acetylcholinesterase assay kit (AAT Bioquest, Sunnyvale, CA) was used to evaluate compounds in the Tox21 10K library that need metabolic activation for AChE inhibition. The assay uses 5, 5-dithiobis-(2-nitrobenzoic acid) (DTNB) to quantify the thiocholine produced from the hydrolysis of acetylthiocholine by AChE. AChE hydrolyses the acetylthiocholine to produce thiocholine that in turn reduces the DTNB, producing 5-thio-2-nitrobenzoic acid (TNB) which absorbs at 405 nm.",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "42677c7bcceb3044b8562b725d439742c423663a8ace3307b4d2435ae307ffc2",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1347120,1347131,1347154,1347165,1347385,1347395,1347397,1347398,1347399,1347404,1347417,1347419,1347428,1347430,1508598,1508601,1508602,1508611,1508623,1508624/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "AAA68151.1"
+          },
+          "name": ""
+        }
+      ],
+      "title": "Acetylcholinesterase (AChE) small molecule antagonists: enzyme-based qHTS assay with human liver microsomes"
+    },
+    {
+      "CYP_text_hits": [
+        "CypHer"
+      ],
+      "aid": 1508602,
+      "assay_id": "assayID-1508602",
+      "description_excerpt": "Source: The Scripps Research Institute Molecular Screening Center (SRIMSC) Center Affiliation: The Scripps Research Institute Assay Provider: The Scripps Research Institute Network: Scripps Molecular Screening Center Grant Proposal Number: 1R01MH111116 Grant Proposal PI: Patricia McDonald, The Scripps Research Institute External Assay ID: GPR151_PHUNTER_AG_LUMI_1536_1X%ACT Name: Cell-based high throughput primary assay to identify activators of GPR151 Description: The orphan G protein-coupled receptor GPR151 has a distinctive distribution pattern in mammalian brains, with highly specific enrichment in a small bilateral brain structure known as the habenula complex. This structure sends projections to the dopaminergic striatum and receives inputs from the limbic forebrain, modulating cross-talk between these brain regions. It is therefore ideally located, both anatomically and functionally, to regulate emotional, motivational and cognitive behaviors. Consequently, it is believed that the habenula plays a critically important role in the pathophysiology of neuropsychiatric disorders such as schizophrenia, depression and drug dependence. The restricted and unique brain expression pattern of GPR151 suggests a role for this receptor in regulating the habenula complex and thus affecting such disorders. In this proposal we will implement and miniaturize a HTS-compatible cell-based functional assay to facilitate the identification of potent GPR151-selective small molecule molecular probes. These molecules will then be optimized and used to interrogate GPR151's role in regulating the habenula complex and the impact of GPR151 modulation upon both normal physiological processes and disease states.  1. Wise, A., S.C. Jupe, and S. Rees, The identification of ligands at orphan G-protein coupled receptors. Annu Rev Pharmacol Toxicol, 2004. 44: p. 43-66. 2. Overington, J.P., B. Al-Lazikani, and A.L. Hopkins, How many drug targets are there? Nat Rev Drug Discov, 2006. 5(12): p. 993-6. 3. Chung, S., T. Funakoshi, and O. Civelli, Orphan GPCR research. Br J Pharmacol, 2008. 153 Suppl 1: p. S339-46. 4. Berthold, M., et al., Cloning of a novel orphan G protein-coupled receptor (GPCR-2037): in situ hybridization reveals high mRNA expression in rat brain restricted to neurons of the habenular complex. Brain Res Mol Brain Res, 2003. 120(1): p. 22-9. 5. Ignatov, A., I. Hermans-Borgmeyer, and H.C. Schaller, Cloning and characterization of a novel G-protein- coupled receptor with homology to galanin receptors. Neuropharmacology, 2004. 46(8): p. 1114-20. 6. Quina, L.A., et al., Brn3a and Nurr1 mediate a gene regulatory pathway for habenula development. J Neurosci, 2009. 29(45): p. 14309-22. 7. Aizawa, H., et al., Molecular characterization of the subnuclei in rat habenula. J Comp Neurol, 2012. 520(18): p. 4051-66. 8. Johnson, E.A., et al., Agonist-selective mechanisms of mu-opioid receptor desensitization in human embryonic kidney 293 cells. Mol Pharmacol, 2006. 70(2): p. 67",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "42677c7bcceb3044b8562b725d439742c423663a8ace3307b4d2435ae307ffc2",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1347120,1347131,1347154,1347165,1347385,1347395,1347397,1347398,1347399,1347404,1347417,1347419,1347428,1347430,1508598,1508601,1508602,1508611,1508623,1508624/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "Q8TDV0.1"
+          },
+          "name": "RecName: Full=G-protein coupled receptor 151; AltName: Full=G-protein coupled receptor PGR7; AltName: Full=GPCR-2037; AltName: Full=Galanin receptor 4; AltName: Full=Galanin-receptor-like protein; Short=GalRL",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "Cell-based high throughput primary assay to identify activators of GPR151"
+    },
+    {
+      "CYP_text_hits": [
+        "CypHer"
+      ],
+      "aid": 1508611,
+      "assay_id": "assayID-1508611",
+      "description_excerpt": "Source: The Scripps Research Institute Molecular Screening Center (SRIMSC) Center Affiliation: The Scripps Research Institute Assay Provider: The Scripps Research Institute Network: Scripps Molecular Screening Center Grant Proposal Number: 1R01MH111116 Grant Proposal PI: Patricia McDonald, The Scripps Research Institute External Assay ID: GPR119_PHUNTER_AG_LUMI_1536_3X%ACT Name: Cell-based high throughput counterscreen assay to identify off target activators of GPR151 Description: The orphan G protein-coupled receptor GPR151 has a distinctive distribution pattern in mammalian brains, with highly specific enrichment in a small bilateral brain structure known as the habenula complex. This structure sends projections to the dopaminergic striatum and receives inputs from the limbic forebrain, modulating cross-talk between these brain regions. It is therefore ideally located, both anatomically and functionally, to regulate emotional, motivational and cognitive behaviors. Consequently, it is believed that the habenula plays a critically important role in the pathophysiology of neuropsychiatric disorders such as schizophrenia, depression and drug dependence. The restricted and unique brain expression pattern of GPR151 suggests a role for this receptor in regulating the habenula complex and thus affecting such disorders. In this proposal we will implement and miniaturize a HTS-compatible cell-based functional assay to facilitate the identification of potent GPR151-selective small molecule molecular probes. These molecules will then be optimized and used to interrogate GPR151's role in regulating the habenula complex and the impact of GPR151 modulation upon both normal physiological processes and disease states.  1. Wise, A., S.C. Jupe, and S. Rees, The identification of ligands at orphan G-protein coupled receptors. Annu Rev Pharmacol Toxicol, 2004. 44: p. 43-66. 2. Overington, J.P., B. Al-Lazikani, and A.L. Hopkins, How many drug targets are there? Nat Rev Drug Discov, 2006. 5(12): p. 993-6. 3. Chung, S., T. Funakoshi, and O. Civelli, Orphan GPCR research. Br J Pharmacol, 2008. 153 Suppl 1: p. S339-46. 4. Berthold, M., et al., Cloning of a novel orphan G protein-coupled receptor (GPCR-2037): in situ hybridization reveals high mRNA expression in rat brain restricted to neurons of the habenular complex. Brain Res Mol Brain Res, 2003. 120(1): p. 22-9. 5. Ignatov, A., I. Hermans-Borgmeyer, and H.C. Schaller, Cloning and characterization of a novel G-protein- coupled receptor with homology to galanin receptors. Neuropharmacology, 2004. 46(8): p. 1114-20. 6. Quina, L.A., et al., Brn3a and Nurr1 mediate a gene regulatory pathway for habenula development. J Neurosci, 2009. 29(45): p. 14309-22. 7. Aizawa, H., et al., Molecular characterization of the subnuclei in rat habenula. J Comp Neurol, 2012. 520(18): p. 4051-66. 8. Johnson, E.A., et al., Agonist-selective mechanisms of mu-opioid receptor desensitization in human embryonic kidney 293 cells. Mol Pharmacol, 2",
+      "known_CYP_assay": false,
+      "potential_CYP_text": true,
+      "present_in_raw_pcba": true,
+      "response_sha256": "42677c7bcceb3044b8562b725d439742c423663a8ace3307b4d2435ae307ffc2",
+      "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1347120,1347131,1347154,1347165,1347385,1347395,1347397,1347398,1347399,1347404,1347417,1347419,1347428,1347430,1508598,1508601,1508602,1508611,1508623,1508624/description/JSON",
+      "status": "retrieved",
+      "target": [
+        {
+          "mol_id": {
+            "protein_accession": "Q8TDV5.1"
+          },
+          "name": "RecName: Full=Glucose-dependent insulinotropic receptor; AltName: Full=G-protein coupled receptor 119",
+          "organism": {
+            "genome": 0,
+            "org": {
+              "common": "human",
+              "db": [
+                {
+                  "db": "taxon",
+                  "tag": {
+                    "id": 9606
+                  }
+                }
+              ],
+              "taxname": "Homo sapiens"
+            },
+            "origin": 0
+          }
+        }
+      ],
+      "title": "GPR151 activator identification: cell-based high-throughput counter-screen assay"
+    }
+  ],
+  "published_filter": {
+    "min_neg": 100,
+    "min_pos": 100,
+    "min_valid": 1000,
+    "raw_assays_passing_necessary_thresholds": 1120,
+    "raw_count_note": "Failure on full raw counts proves failure on every training subset; passing raw counts does not establish historical head retention.",
+    "reconstructed_exactly": false,
+    "reported_retained_heads": 1089,
+    "training_only": true
+  },
+  "qualifications": [
+    "Raw PCBA structure overlap is not itself proof of access to CYP labels.",
+    "A nonmissing CYP-labelled raw match is potential supervised domain exposure; actual retained task and training membership remain unknown.",
+    "Source excludes only collected Polaris/MoleculeACE test InChIs, with catch-and-continue load failures; no explicit challenge train/test exclusion appears.",
+    "Actual historical benchmark exclusions, retained assay manifest, DuckDB version, InChI-dedup choice and successful graph membership are not shipped with the checkpoint.",
+    "Binary PubChem activity outcomes differ from the challenge quantitative pIC50 labels; no equality of assay measurements is asserted.",
+    "Do not declare absent CYP exposure merely from missing assay descriptions, IDs, parsing failures or absence of CYP text in column names."
+  ],
+  "raw_pcba_assays": 1328,
+  "raw_pcba_rows": 1563664,
+  "source": {
+    "parquet_sha256": "9407f5e658211bb4871dc817d4561a87251c009971aeff27f8df982f3458eeb5",
+    "parquet_size": 150055049,
+    "transport": {
+      "chunk_bytes": 4194304,
+      "chunks_received": 37,
+      "chunks_reused": 0,
+      "deadline_seconds": 900,
+      "elapsed_seconds": 373.6695383999613,
+      "max_attempts_per_chunk": 3,
+      "method": "verified_http_ranges",
+      "strict_http206_content_range_length": true
+    },
+    "url": "https://zenodo.org/api/records/8024997/files/pcba_1328.zip/content",
+    "zip_md5": "7ae4c2f871fe86b07f4ec161023caa62",
+    "zip_sha256": "e6291edf40e0b12938c41b1c0c7cef87373194cd178bd79b26b3a4c676579d24",
+    "zip_sha256_supplied": false,
+    "zip_size": 152820002
+  },
+  "status": "completed_audit_membership_unresolved",
+  "versions": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "rdkit": "2026.09.1"
+  }
+}

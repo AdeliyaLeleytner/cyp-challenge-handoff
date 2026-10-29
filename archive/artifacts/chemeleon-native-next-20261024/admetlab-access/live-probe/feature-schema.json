@@ -1,0 +1,956 @@
+[
+  {
+    "category": "physicochemical",
+    "name": "MW",
+    "display": "Molecular Weight (MW)",
+    "value": 46.04,
+    "explanation": "Contain hydrogen atoms.<br/>Optimal:100~600",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "Vol",
+    "display": "Volume",
+    "value": 51.939,
+    "explanation": "Van der Waals volume",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "Dense",
+    "display": "Density",
+    "value": 0.886,
+    "explanation": "Density = MW / Volume",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "nHA",
+    "display": "nHA",
+    "value": 1.0,
+    "explanation": "Number of hydrogen bond acceptors.<br/>Optimal:0~12",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "nHD",
+    "display": "nHD",
+    "value": 1.0,
+    "explanation": "Number of hydrogen bond donors.<br/>Optimal:0~7",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "nRot",
+    "display": "nRot",
+    "value": 0.0,
+    "explanation": "Number of rotatable bonds.<br/>Optimal:0~11",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "nRing",
+    "display": "nRing",
+    "value": 0.0,
+    "explanation": "Number of rings.<br/>Optimal:0~6",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "MaxRing",
+    "display": "MaxRing",
+    "value": 0.0,
+    "explanation": "Number of atoms in the biggest ring.<br/>Optimal:0~18",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "nHet",
+    "display": "nHet",
+    "value": 1.0,
+    "explanation": "Number of heteroatoms.<br/>Optimal:1~15",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "fChar",
+    "display": "fChar",
+    "value": 0.0,
+    "explanation": "Formal charge.<br/>Optimal:-4 ~4",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "nRig",
+    "display": "nRig",
+    "value": 0.0,
+    "explanation": "Number of rigid bonds.<br/>Optimal:0~30",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "Flex",
+    "display": "Flexibility",
+    "value": 0.0,
+    "explanation": "Flexibility = nRot /nRig",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "nStereo",
+    "display": "Stereo Centers",
+    "value": 0.0,
+    "explanation": "Stereo Centers<br/>Optimal: \u2264 2",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "TPSA",
+    "display": "TPSA",
+    "value": 20.23,
+    "explanation": "Topological Polar Surface Area.<br/>Optimal:0~140",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "logS",
+    "display": "logS",
+    "value": 1.2796067927936376,
+    "explanation": "The logarithm of aqueous solubility value.",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "logP",
+    "display": "logP",
+    "value": -0.25905939519814014,
+    "explanation": "The logarithm of the n-octanol/water distribution coefficients.",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "logD",
+    "display": "logD7.4",
+    "value": -0.32781440288275565,
+    "explanation": "The logarithm of the n-octanol/water distribution coefficient at pH=7.4.",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "pka_acidic",
+    "display": "pka (Acid)",
+    "value": 16.56188970942032,
+    "explanation": "Acid-base dissociation constant (pKa) value represents the strength of a drug molecule's acidity or basicity.",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "pka_basic",
+    "display": "pka (Base)",
+    "value": 6.666049680898146,
+    "explanation": "Acid-base dissociation constant (pKa) value represents the strength of a drug molecule's acidity or basicity.",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "mp",
+    "display": "Melting point",
+    "value": -123.57518278751589,
+    "explanation": "The predicted melting point of a compound is expressed in degrees Celsius (\u00b0C).<br/> Melting points below 25\u00b0C are classified as liquids, while melting points above 25\u00b0C are classified as solids.",
+    "decision": ""
+  },
+  {
+    "category": "physicochemical",
+    "name": "bp",
+    "display": "Boiling point",
+    "value": 84.00238277178778,
+    "explanation": "The predicted melting point of a compound is expressed in degrees Celsius (\u00b0C).<br/> A normal boiling point below 25\u00b0C is categorized as a gas.",
+    "decision": ""
+  },
+  {
+    "category": "medchem",
+    "name": "QED",
+    "display": "QED",
+    "value": 0.407,
+    "explanation": "A measure of drug-likeness based on the concept of desirability;<br/>Attractive: > 0.67;<br/>unattractive: 0.49~0.67;<br/>too complex: < 0.34",
+    "decision": 1
+  },
+  {
+    "category": "medchem",
+    "name": "Synth",
+    "display": "SAscore",
+    "value": 1.0,
+    "explanation": "Synthetic accessibility score is designed to estimate ease of synthesis of drug-like molecules.<br/>SAscore \u2265 6, difficult to synthesize; SAscore <6, easy to synthesize",
+    "decision": ""
+  },
+  {
+    "category": "medchem",
+    "name": "gasa",
+    "display": "GASA",
+    "value": 0.0,
+    "explanation": "ES: Easy to synthesize; HS: Hard to synthesize;<br/>The output value represents the probability of being difficult to synthesize, ranging from 0 to 1.",
+    "decision": 0.0
+  },
+  {
+    "category": "medchem",
+    "name": "Fsp3",
+    "display": "Fsp3",
+    "value": 1.0,
+    "explanation": "The number of sp3 hybridized carbons / total carbon count, correlating with melting point and solubility.<br/>Fsp<sup>3</sup> \u22650.42 is considered a suitable value.",
+    "decision": 0
+  },
+  {
+    "category": "medchem",
+    "name": "MCE-18",
+    "display": "MCE-18",
+    "value": 0.0,
+    "explanation": "MCE-18 stands for medicinal chemistry evolution.<br/>MCE-18\u226545 is considered a suitable value.",
+    "decision": 1
+  },
+  {
+    "category": "medchem",
+    "name": "Natural Product-likeness",
+    "display": "NPscore",
+    "value": 0.598,
+    "explanation": "Natural product-likeness score.<br/>This score is typically in the range from -5 to 5.<br/>The higher the score is, the higher the probability is that the molecule is a NP.",
+    "decision": ""
+  },
+  {
+    "category": "medchem",
+    "name": "Lipinski",
+    "display": "Lipinski Rule",
+    "value": 0.0,
+    "explanation": "MW \u2264 500; logP \u2264 5; Hacc \u2264 10; Hdon \u2264 5<br/>If two properties are out of range, a poor absorption or permeability is possible, one is acceptable.",
+    "decision": 0.0
+  },
+  {
+    "category": "medchem",
+    "name": "Pfizer",
+    "display": "Pfizer Rule",
+    "value": 0.0,
+    "explanation": "logP > 3; TPSA < 75<br/>Compounds with a high log P (>3) and low TPSA (<75) are likely to be toxic.",
+    "decision": 0.0
+  },
+  {
+    "category": "medchem",
+    "name": "GSK",
+    "display": "GSK Rule",
+    "value": 0.0,
+    "explanation": "MW \u2264 400; logP \u2264 4<br/>Compounds satisfying the GSK rule may have a more favorable ADMET profile",
+    "decision": 0.0
+  },
+  {
+    "category": "medchem",
+    "name": "GoldenTriangle",
+    "display": "GoldenTriangle",
+    "value": 1.0,
+    "explanation": "200 \u2264 MW \u2264 500; -2 \u2264 logD \u2264 5<br/>Compounds satisfying the Golden Triangle rule may have a more favorable ADMET profile.",
+    "decision": 1.0
+  },
+  {
+    "category": "medchem",
+    "name": "PAINS",
+    "display": "PAINS",
+    "value": 0,
+    "explanation": "frequent hitters, Alpha-screen artifacts and reactive compound 480 substructures (J Med Chem 201053:2719-40)",
+    "decision": ""
+  },
+  {
+    "category": "medchem",
+    "name": "Alarm_NMR",
+    "display": "Alarm_NMR Rule",
+    "value": 0,
+    "explanation": "Thiol reactive compounds.",
+    "decision": ""
+  },
+  {
+    "category": "medchem",
+    "name": "BMS",
+    "display": "BMS Rule",
+    "value": 0,
+    "explanation": "undesirable, reactive compounds 176 substructures (J Chem Inf Model 200646:1060-8)",
+    "decision": ""
+  },
+  {
+    "category": "medchem",
+    "name": "Chelating",
+    "display": "Chelating Rule",
+    "value": 0,
+    "explanation": "Chelating compounds.",
+    "decision": ""
+  },
+  {
+    "category": "medchem",
+    "name": "Aggregators",
+    "display": "Colloidal aggregators",
+    "value": 0.020999999716877937,
+    "explanation": "Category 0: non-colloidal aggregators;<br/> Category 1: colloidal aggregators.<br/> The output value is the probability of being colloidal aggregators, within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "medchem",
+    "name": "Fluc",
+    "display": "FLuc inhibitors",
+    "value": 0.03200000151991844,
+    "explanation": "Category 0: non-fLuc inhibitors;<br/>Category 1: fLuc inhibitors.<br/>The output value is the probability of being fLuc inhibitors, within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "medchem",
+    "name": "Blue_fluorescence",
+    "display": "Blue fluorescence",
+    "value": 0.0010000000474974513,
+    "explanation": "Category 0: non-blue fluorescence;<br/> Category 1: blue fluorescence.<br/> The output value is the probability of being blue fluorescence, within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "medchem",
+    "name": "Green_fluorescence",
+    "display": "Green fluorescence",
+    "value": 0.0,
+    "explanation": "Category 0: non-green fluorescence;<br/> Category 1: green fluorescence.<br/> The output value is the probability of being green fluorescence, within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "medchem",
+    "name": "Reactive",
+    "display": "Reactive compounds",
+    "value": 1.0,
+    "explanation": "Category 0: non-reactive compound;<br/> Category 1: reactive compound.<br/> The output value is the probability of being reactive compound, within the range of 0 to 1.",
+    "decision": 1
+  },
+  {
+    "category": "medchem",
+    "name": "Promiscuous",
+    "display": "Promiscuous compounds",
+    "value": 0.40799999237060547,
+    "explanation": "Category 0: non-promiscuous compound;<br/> Category 1: promiscuous compound.<br/> The output value is the probability of being promiscuous compound, within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "absorption",
+    "name": "caco2",
+    "display": "Caco-2 Permeability",
+    "value": -4.453913783320791,
+    "explanation": "Optimal: higher than -5.15 Log unit",
+    "decision": 0
+  },
+  {
+    "category": "absorption",
+    "name": "MDCK",
+    "display": "MDCK Permeability (cm/s)",
+    "value": 3.627403767334283e-05,
+    "explanation": "low permeability: < 2 \u00d7 10-6 cm/s<br/>medium permeability: 2-20 \u00d7 10<sup>-6</sup> cm/s<br/>high passive permeability: > 20 \u00d7 10<sup>-6</sup> cm/s",
+    "decision": 0
+  },
+  {
+    "category": "absorption",
+    "name": "PAMPA",
+    "display": "PAMPA",
+    "value": 0.2918759286403656,
+    "explanation": "The experimental data for Peff was logarithmically transformed (logPeff). <br/>Molecules with log Peff values below 2.0 were classified as low-permeability (Category 0), while those with log Peff values exceeding 2.5 were classified as high-permeability (Category 1).",
+    "decision": 1
+  },
+  {
+    "category": "absorption",
+    "name": "pgp_inh",
+    "display": "Pgp inhibitor",
+    "value": 0.00033502609585411847,
+    "explanation": "Category 1: Inhibitor;<br/>Category 0: Non-inhibitor;<br/>The output value is the probability of being Pgp-inhibitor",
+    "decision": 0
+  },
+  {
+    "category": "absorption",
+    "name": "pgp_sub",
+    "display": "Pgp substrate",
+    "value": 0.11890023946762085,
+    "explanation": "Category 1: substrate;<br/>Category 0: Non-substrate;<br/>The output value is the probability of being Pgp-substrate",
+    "decision": 0
+  },
+  {
+    "category": "absorption",
+    "name": "hia",
+    "display": "HIA",
+    "value": 0.009859025478363037,
+    "explanation": "Human Intestinal Absorption<br/>Category 1: HIA+( HIA < 30%); <br/>Category 0: HIA-( HIA >= 30%); <br/>The output value is the probability of being HIA+",
+    "decision": 0
+  },
+  {
+    "category": "absorption",
+    "name": "f20",
+    "display": "F20%",
+    "value": 0.006656050682067871,
+    "explanation": "20% Bioavailability<br/>Category 1: F 20% + (bioavailability < 20%);<br/>Category 0: F 20% - (bioavailability \u2265 20%);<br/>The output value is the probability of being F 20% +",
+    "decision": 0
+  },
+  {
+    "category": "absorption",
+    "name": "f30",
+    "display": "F30%",
+    "value": 0.010558366775512695,
+    "explanation": "30% Bioavailability<br/>Category 1: F 30% + (bioavailability < 30%);<br/>Category 0: F 30% - (bioavailability \u2265 30%);<br/>The output value is the probability of being F 30% +",
+    "decision": 0
+  },
+  {
+    "category": "absorption",
+    "name": "f50",
+    "display": "F50%",
+    "value": 0.3192102313041687,
+    "explanation": "50% Bioavailability<br/>Category 1: F 50% + (bioavailability < 50%);<br/>Category 0: F 50% - (bioavailability \u2265 50%);<br/>The output value is the probability of being F 50% +",
+    "decision": -1
+  },
+  {
+    "category": "distribution",
+    "name": "PPB",
+    "display": "PPB",
+    "value": -0.11753691668567967,
+    "explanation": "Plasma Protein Binding<br/>Optimal: < 90%.<br/>Drugs with high protein-bound may have a low therapeutic index.",
+    "decision": 0
+  },
+  {
+    "category": "distribution",
+    "name": "VDss",
+    "display": "VDss (L/kg)",
+    "value": 0.7154651344470202,
+    "explanation": "Volume Distribution<br/>Optimal: 0.04-20L/kg",
+    "decision": 0
+  },
+  {
+    "category": "distribution",
+    "name": "BBB",
+    "display": "BBB",
+    "value": 0.982900083065033,
+    "explanation": "Blood-Brain Barrier Penetration<br/>Category 1: BBB+; Category 0: BBB-;<br/>The output value is the probability of being BBB+",
+    "decision": 1
+  },
+  {
+    "category": "distribution",
+    "name": "Fu",
+    "display": "Fu",
+    "value": 84.49231510719008,
+    "explanation": "The fraction unbound in plasms<br/>Low: <5%; Middle: 5~20%; High: > 20%",
+    "decision": 0
+  },
+  {
+    "category": "distribution",
+    "name": "OATP1B1",
+    "display": "OATP1B1 inhibitor",
+    "value": 0.009031444787979126,
+    "explanation": "Category 0: Non-inhibitor; Category 1: inhibitor. <br/>The output value is the probability of being inhibitor, within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "distribution",
+    "name": "OATP1B3",
+    "display": "OATP1B3 inhibitor",
+    "value": 0.032236531376838684,
+    "explanation": "Category 0: Non-inhibitor; Category 1: inhibitor. <br/>The output value is the probability of being inhibitor, within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "distribution",
+    "name": "BCRP",
+    "display": "BCRP inhibitor",
+    "value": 0.022291110828518867,
+    "explanation": "Category 0: Non-inhibitor; Category 1: inhibitor.<br/>The output value is the probability of being inhibitor, within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "distribution",
+    "name": "MRP1",
+    "display": "MRP1 inhibitor",
+    "value": 0.7942876815795898,
+    "explanation": "Category 0: Non-inhibitor; Category 1: inhibitor. <br/>The output value is the probability of being inhibitor, within the range of 0 to 1.",
+    "decision": 1
+  },
+  {
+    "category": "distribution",
+    "name": "BSEP",
+    "display": "BSEP inhibitor",
+    "value": 0.0036033871583640575,
+    "explanation": "Category 0: Non-BSEP inhibitor; Category 1: BSEP inhibitor.<br/>The output value is the probability of being BSEP inhibitor, within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "metabolism",
+    "name": "CYP1A2-inh",
+    "display": "CYP1A2 inhibitor",
+    "value": 0.0446079820394516,
+    "explanation": "Category 1: Inhibitor; Category 0: Non-inhibitor;<br/>The output value is the probability of being inhibitor.",
+    "decision": 0
+  },
+  {
+    "category": "metabolism",
+    "name": "CYP1A2-sub",
+    "display": "CYP1A2 substrate",
+    "value": 0.35986682772636414,
+    "explanation": "Category 1: Inhibitor; Category 0: Non-inhibitor;<br/>The output value is the probability of being inhibitor.",
+    "decision": -1
+  },
+  {
+    "category": "metabolism",
+    "name": "CYP2C19-inh",
+    "display": "CYP2C19 inhibitor",
+    "value": 0.0695924386382103,
+    "explanation": "Category 1: Inhibitor; Category 0: Non-inhibitor;<br/>The output value is the probability of being inhibitor.",
+    "decision": 0
+  },
+  {
+    "category": "metabolism",
+    "name": "CYP2C19-sub",
+    "display": "CYP2C19 substrate",
+    "value": 0.2806788682937622,
+    "explanation": "Category 1: Inhibitor; Category 0: Non-inhibitor;<br/>The output value is the probability of being inhibitor.",
+    "decision": 0
+  },
+  {
+    "category": "metabolism",
+    "name": "CYP2C9-inh",
+    "display": "CYP2C9 inhibitor",
+    "value": 0.0075698369182646275,
+    "explanation": "Category 1: Inhibitor; Category 0: Non-inhibitor;<br/>The output value is the probability of being inhibitor.",
+    "decision": 0
+  },
+  {
+    "category": "metabolism",
+    "name": "CYP2C9-sub",
+    "display": "CYP2C9 substrate",
+    "value": 0.6163751482963562,
+    "explanation": "Category 1: Inhibitor; Category 0: Non-inhibitor;<br/>The output value is the probability of being inhibitor.",
+    "decision": -1
+  },
+  {
+    "category": "metabolism",
+    "name": "CYP2D6-inh",
+    "display": "CYP2D6 inhibitor",
+    "value": 0.04494469240307808,
+    "explanation": "Category 1: Inhibitor; Category 0: Non-inhibitor;<br/>The output value is the probability of being inhibitor.",
+    "decision": 0
+  },
+  {
+    "category": "metabolism",
+    "name": "CYP2D6-sub",
+    "display": "CYP2D6 substrate",
+    "value": 0.6685868501663208,
+    "explanation": "Category 1: Inhibitor; Category 0: Non-inhibitor;<br/>The output value is the probability of being inhibitor.",
+    "decision": -1
+  },
+  {
+    "category": "metabolism",
+    "name": "CYP3A4-inh",
+    "display": "CYP3A4 inhibitor",
+    "value": 0.0035344550851732492,
+    "explanation": "Category 1: Inhibitor; Category 0: Non-inhibitor;<br/>The output value is the probability of being inhibitor.",
+    "decision": 0
+  },
+  {
+    "category": "metabolism",
+    "name": "CYP3A4-sub",
+    "display": "CYP3A4 substrate",
+    "value": 0.35245007276535034,
+    "explanation": "Category 1: Inhibitor; Category 0: Non-inhibitor;<br/>The output value is the probability of being inhibitor.",
+    "decision": -1
+  },
+  {
+    "category": "metabolism",
+    "name": "CYP2B6-inh",
+    "display": "CYP2B6 inhibitor",
+    "value": 0.08934624493122101,
+    "explanation": "Category 1: Inhibitor; Category 0: Non-inhibitor;<br/>The output value is the probability of being inhibitor.",
+    "decision": 0
+  },
+  {
+    "category": "metabolism",
+    "name": "CYP2B6-sub",
+    "display": "CYP2B6 substrate",
+    "value": 0.3425651490688324,
+    "explanation": "Category 1: Inhibitor; Category 0: Non-inhibitor;<br/>The output value is the probability of being inhibitor.",
+    "decision": -1
+  },
+  {
+    "category": "metabolism",
+    "name": "CYP2C8-inh",
+    "display": "CYP2C8 inhibitor",
+    "value": 0.010193748399615288,
+    "explanation": "Category 1: Inhibitor; Category 0: Non-inhibitor;<br/>The output value is the probability of being inhibitor.",
+    "decision": 0
+  },
+  {
+    "category": "metabolism",
+    "name": "LM-human",
+    "display": "HLM Stability",
+    "value": 0.29685166478157043,
+    "explanation": "human liver microsomal (HLM) stability<br/>Category 0: stable+ (HLM > 30 min); Category 1: unstable- ( HLM \u2264 30 min). The output value is the probability of human liver microsomal instability, where a value closer to 1 indicates a higher likelihood of instability. The range is between 0 and 1.",
+    "decision": 0
+  },
+  {
+    "category": "excretion",
+    "name": "cl-plasma",
+    "display": "CL<sub>plasma</sub>",
+    "value": 6.010320290050544,
+    "explanation": "The unit of predicted CLplasma penetration is ml/min/kg. <br/>>15 ml/min/kg: high clearance; <br/>5-15 ml/min/kg: moderate clearance; <br/>< 5 ml/min/kg: low clearance.",
+    "decision": -1
+  },
+  {
+    "category": "excretion",
+    "name": "t0.5",
+    "display": "T1/2",
+    "value": 2.2978476172798503,
+    "explanation": "The unit of predicted T1/2 is hours.<br/>ultra-short half-life drugs: 1/2 < 1 hour;<br/>short half-life drugs: T1/2 between 1-4 hours;<br/>intermediate short half-life drugs: T1/2 between 4-8 hours;<br/>long half-life drugs: T1/2 > 8 hours.",
+    "decision": -1
+  },
+  {
+    "category": "toxicity",
+    "name": "hERG",
+    "display": "hERG Blockers",
+    "value": 0.0011524853762239218,
+    "explanation": "Molecules with IC50 \u226410\u03bcM or \u226550% inhibition at 10 \u03bcM were classified as hERG+ (Category 1), <br/>while molecules with IC50 >10\u03bcM or < 50% inhibition at 10\u03bcM were classified as hERG - (Category 0). <br/>The output value is the probability of being hERG+, within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "hERG-10um",
+    "display": "hERG Blockers (10um)",
+    "value": 0.9935063123703003,
+    "explanation": "Molecules with IC50 \u226410 \u03bcM are classified as hERG+ (Category 1), <br/>and molecules with IC50 > 10\u03bcM are classified as hERG- (Category 0). <br/>The output value is the probability of being hERG+, within the range of 0 to 1.",
+    "decision": 1
+  },
+  {
+    "category": "toxicity",
+    "name": "DILI",
+    "display": "DILI",
+    "value": 4.684536179411225e-05,
+    "explanation": "Drug Induced Liver Injury.<br/>Category 1: drugs with a high risk of DILI;<br/>Category 0: drugs with no risk of DILI.<br/>The output value is the probability of being toxic.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "Ames",
+    "display": "AMES Toxicity",
+    "value": 0.03707592189311981,
+    "explanation": "AMES Toxicity<br/>Category 1: Ames positive(+);<br/>Category 0: Ames negative(-);<br/>The output value is the probability of being toxic.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "ROA",
+    "display": "Rat Oral Acute Toxicity",
+    "value": 0.08230435848236084,
+    "explanation": "Rat Oral Acute Toxicity.<br/>Category 0: low-toxicity, > 500 mg/kg; <br/>Category 1: high-toxicity; < 500 mg/kg. <br/>The output value is the probability of being toxic, within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "FDAMDD",
+    "display": "FDAMDD",
+    "value": 6.873654001537943e-06,
+    "explanation": "FDA Maximum (Recommended) Daily Dose.<br/>Category 1: FDAMDD (+);<br/>Category 0: FDAMDD (-);<br/>The output value is the probability of being positive.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "SkinSen",
+    "display": "Skin Sensitization",
+    "value": 0.06612460315227509,
+    "explanation": "Category 1: Sensitizer; <br/>Category 0: Non-sensitizer. <br/>The output value is the probability of being toxic, within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "Carcinogenicity",
+    "display": "Carcinogenicity",
+    "value": 0.08473342657089233,
+    "explanation": "Category 1: carcinogens;<br/>Category 0: non-carcinogens;<br/>The output value is the probability of being toxic.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "EC",
+    "display": "Eye Corrosion",
+    "value": 0.9999591112136841,
+    "explanation": "Eye Corrosion<br/>Category 1: corrosives;<br/>Category 0: noncorrosives;<br/>The output value is the probability of being corrosives.",
+    "decision": 1
+  },
+  {
+    "category": "toxicity",
+    "name": "EI",
+    "display": "Eye Irritation",
+    "value": 0.9999992847442627,
+    "explanation": "Eye Irritation<br/>Category 1: irritants;<br/>Category 0: nonirritants;<br/>The output value is the probability of being irritants.",
+    "decision": 1
+  },
+  {
+    "category": "toxicity",
+    "name": "Respiratory",
+    "display": "Respiratory",
+    "value": 0.00991076324135065,
+    "explanation": "Category 1: respiratory toxicants; <br/>Category 0: non-respiratory toxicants. <br/>The output value is the probability of being toxic, within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "H-HT",
+    "display": "Human Hepatotoxicity",
+    "value": 0.00047779985470697284,
+    "explanation": "Human Hepatotoxicity<br/>Category 1: H-HT positive(+);<br/>Category 0: H-HT negative(-);<br/>The output value is the probability of being toxic.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "Nephrotoxicity-DI",
+    "display": "Drug-induced Nephrotoxicity",
+    "value": 0.0012255890760570765,
+    "explanation": "Category 0: non-nephrotoxic (-); <br/>Category 1: nephrotoxic (+). <br/>The output value is the probability of being nephrotoxic (+), within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "Neurotoxicity-DI",
+    "display": "Drug-induced Neurotoxicity",
+    "value": 0.002648125635460019,
+    "explanation": "Category 0: non-neurotoxic (-); <br/>Category 1: neurotoxic (+). <br/>The output value is the probability of being neurotoxic (+), within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "Ototoxicity",
+    "display": "Ototoxicity",
+    "value": 0.9611780047416687,
+    "explanation": "Category 0: non-ototoxicity (-); <br/>Category 1: ototoxicity (+). <br/>The output value is the probability of being ototoxicity (+), within the range of 0 to 1.",
+    "decision": 1
+  },
+  {
+    "category": "toxicity",
+    "name": "Hematotoxicity",
+    "display": "Hematotoxicity",
+    "value": 0.9850496649742126,
+    "explanation": "Category 0: non-hematotoxicity (-); <br/>Category 1: hematotoxicity (+). <br/>The output value is the probability of being hematotoxicity (+), within the range of 0 to 1.",
+    "decision": 1
+  },
+  {
+    "category": "toxicity",
+    "name": "Genotoxicity",
+    "display": "Genotoxicity",
+    "value": 0.000291012751404196,
+    "explanation": "Category 0: non-Genotoxicity (-); <br/>Category 1: Genotoxicity (+). <br/>The output value is the probability of being ototoxicity (+), within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "RPMI-8226",
+    "display": "RPMI-8226 Immunitoxicity",
+    "value": 4.48240655259724e-07,
+    "explanation": "Category 0: non-cytotoxicity (-); <br/>Category 1: cytotoxicity (+). <br/>The output value is the probability of being ototoxicity (+), within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "A549",
+    "display": "A549 Cytotoxicity",
+    "value": 9.821211498142052e-14,
+    "explanation": "Category 0: non-cytotoxicity (-); <br/>Category 1: cytotoxicity (+). <br/>The output value is the probability of being ototoxicity (+), within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "HEK293",
+    "display": "Hek293 Cytotoxicity",
+    "value": 0.0001631023915251717,
+    "explanation": "Category 0: non-cytotoxicity (-); <br/>Category 1: cytotoxicity (+). <br/>The output value is the probability of being ototoxicity (+), within the range of 0 to 1.",
+    "decision": 0
+  },
+  {
+    "category": "toxicity",
+    "name": "BCF",
+    "display": "BCF",
+    "value": 0.3127419860673297,
+    "explanation": "Bioconcentration factors are used for considering secondary poisoning potential and assessing risks to human health via the food chain.<br/>The unit is -log10[(mg/L)/(1000*MW)].",
+    "decision": ""
+  },
+  {
+    "category": "toxicity",
+    "name": "IGC50",
+    "display": "IGC50",
+    "value": 0.9185693576032348,
+    "explanation": "48 hour Tetrahymena pyriformis IGC50. <br/>The unit of IGC50 is -log10[(mg/L)/(1000*MW)]",
+    "decision": ""
+  },
+  {
+    "category": "toxicity",
+    "name": "LC50DM",
+    "display": "LC50DM",
+    "value": 0.45609393186745084,
+    "explanation": "48 hour Daphnia magna LC50. <br/>The unit of LC50DM is -log10[(mg/L)/(1000*MW)]",
+    "decision": ""
+  },
+  {
+    "category": "toxicity",
+    "name": "LC50FM",
+    "display": "LC50FM",
+    "value": 0.6836626117764766,
+    "explanation": "96 hour fathead minnow LC50. <br/>The unit of LC50FM is -log10[(mg/L)/(1000*MW)].",
+    "decision": ""
+  },
+  {
+    "category": "tox21",
+    "name": "NR-AhR",
+    "display": "NR-AhR",
+    "value": 0.002141989069059491,
+    "explanation": "Aryl hydrocarbon receptor<br/>Category 1: actives ;<br/>Category 0: inactives;<br/>The output value is the probability of being active.",
+    "decision": 0
+  },
+  {
+    "category": "tox21",
+    "name": "NR-AR",
+    "display": "NR-AR",
+    "value": 0.0018684826791286469,
+    "explanation": "Androgen receptor<br/>Category 1: actives ;<br/>Category 0: inactives;<br/>The output value is the probability of being active.",
+    "decision": 0
+  },
+  {
+    "category": "tox21",
+    "name": "NR-AR-LBD",
+    "display": "NR-AR-LBD",
+    "value": 0.00015021492436062545,
+    "explanation": "Androgen receptor ligand-binding domain<br/>Category 1: actives ;<br/>Category 0: inactives;<br/>The output value is the probability of being active.",
+    "decision": 0
+  },
+  {
+    "category": "tox21",
+    "name": "NR-Aromatase",
+    "display": "NR-Aromatase",
+    "value": 0.0002774010645225644,
+    "explanation": "Category 1: actives ;<br/>Category 0: inactives;<br/>The output value is the probability of being active.",
+    "decision": 0
+  },
+  {
+    "category": "tox21",
+    "name": "NR-ER",
+    "display": "NR-ER",
+    "value": 0.07152433693408966,
+    "explanation": "Estrogen receptor<br/>Category 1: actives ;<br/>Category 0: inactives;<br/>The output value is the probability of being active.",
+    "decision": 0
+  },
+  {
+    "category": "tox21",
+    "name": "NR-ER-LBD",
+    "display": "NR-ER-LBD",
+    "value": 0.0009673453751020133,
+    "explanation": "Estrogen receptor ligand-binding domain<br/>Category 1: actives ;<br/>Category 0: inactives;<br/>The output value is the probability of being active.",
+    "decision": 0
+  },
+  {
+    "category": "tox21",
+    "name": "NR-PPAR-gamma",
+    "display": "NR-PPAR-gamma",
+    "value": 4.2496103560552e-06,
+    "explanation": "Peroxisome proliferator-activated receptor gamma<br/>Category 1: actives ;<br/>Category 0: inactives;<br/>The output value is the probability of being active.",
+    "decision": 0
+  },
+  {
+    "category": "tox21",
+    "name": "SR-ARE",
+    "display": "SR-ARE",
+    "value": 0.012920747511088848,
+    "explanation": "Antioxidant response element<br/>Category 1: actives ;<br/>Category 0: inactives;<br/>The output value is the probability of being active.",
+    "decision": 0
+  },
+  {
+    "category": "tox21",
+    "name": "SR-ATAD5",
+    "display": "SR-ATAD5",
+    "value": 3.994032795162639e-06,
+    "explanation": "ATPase family AAA domain-containing protein 5<br/>Category 1: actives ;<br/>Category 0: inactives;<br/>The output value is the probability of being active.",
+    "decision": 0
+  },
+  {
+    "category": "tox21",
+    "name": "SR-HSE",
+    "display": "SR-HSE",
+    "value": 0.005115066189318895,
+    "explanation": "Heat shock factor response element<br/>Category 1: actives ;<br/>Category 0: inactives;<br/>The output value is the probability of being active.",
+    "decision": 0
+  },
+  {
+    "category": "tox21",
+    "name": "SR-MMP",
+    "display": "SR-MMP",
+    "value": 0.00048263141070492566,
+    "explanation": "Mitochondrial membrane potential<br/>Category 1: actives ;<br/>Category 0: inactives;<br/>The output value is the probability of being active.",
+    "decision": 0
+  },
+  {
+    "category": "tox21",
+    "name": "SR-p53",
+    "display": "SR-p53",
+    "value": 1.1105435078206938e-05,
+    "explanation": "p53, a tumor suppressor protein<br/>Category 1: actives ;<br/>Category 0: inactives;<br/>The output value is the probability of being active.",
+    "decision": 0
+  },
+  {
+    "category": "toxicityrule",
+    "name": "Acute_Aquatic_Toxicity",
+    "display": "Aquatic Toxicity Rule",
+    "value": 1,
+    "explanation": "99 substructures;<br/>toxicity to liquid(water)",
+    "decision": [
+      "<?xml version='1.0' encoding='iso-8859-1'?><svg version='1.1' baseProfile='full'              xmlns='http://www.w3.org/2000/svg'                      xmlns:rdkit='http://www.rdkit.org/xml'                      xmlns:xlink='http://www.w3.org/1999/xlink'                  xml:space='preserve'width='400px' height='400px' viewBox='0 0 400 400'><!-- END OF HEADER --><rect style='opacity:1.0;fill:none;stroke:none' width='400.0' height='400.0' x='0.0' y='0.0'> </rect><path class='bond-0 atom-0 atom-1' d='M 189.5,144.8 L 189.5,181.2 L 69.5,250.5 L 53.7,223.2 Z' style='fill:#FF7F7F;fill-rule:evenodd;fill-opacity:1;stroke:#FF7F7F;stroke-width:0.0px;stroke-linecap:square;stroke-linejoin:miter;stroke-opacity:1;' /><path class='bond-1 atom-1 atom-2' d='M 189.5,144.8 L 325.4,223.2 L 309.6,250.5 L 189.5,181.2 Z' style='fill:#FF7F7F;fill-rule:evenodd;fill-opacity:1;stroke:#FF7F7F;stroke-width:0.0px;stroke-linecap:square;stroke-linejoin:miter;stroke-opacity:1;' /><ellipse cx='61.6' cy='236.8' rx='29.5' ry='29.5' class='atom-0'  style='fill:#FF7F7F;fill-rule:evenodd;stroke:#FF7F7F;stroke-width:1.0px;stroke-linecap:square;stroke-linejoin:miter;stroke-opacity:1' /><ellipse cx='189.5' cy='163.0' rx='29.5' ry='29.5' class='atom-1'  style='fill:#FF7F7F;fill-rule:evenodd;stroke:#FF7F7F;stroke-width:1.0px;stroke-linecap:square;stroke-linejoin:miter;stroke-opacity:1' /><ellipse cx='330.8' cy='237.0' rx='37.2' ry='29.5' class='atom-2'  style='fill:#FF7F7F;fill-rule:evenodd;stroke:#FF7F7F;stroke-width:1.0px;stroke-linecap:square;stroke-linejoin:miter;stroke-opacity:1' /><path class='bond-0 atom-0 atom-1' d='M 61.6,236.8 L 189.5,163.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:square;stroke-linejoin:miter;stroke-opacity:1' /><path class='bond-1 atom-1 atom-2' d='M 189.5,163.0 L 244.6,194.7' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:square;stroke-linejoin:miter;stroke-opacity:1' /><path class='bond-1 atom-1 atom-2' d='M 244.6,194.7 L 299.6,226.5' style='fill:none;fill-rule:evenodd;stroke:#FF0000;stroke-width:2.0px;stroke-linecap:square;stroke-linejoin:miter;stroke-opacity:1' /><path d='M 183.1,166.6 L 189.5,163.0 L 192.3,164.5' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:square;stroke-linejoin:miter;stroke-opacity:1;' /><path class='atom-2' d='M 304.5 236.9Q 304.5 230.1, 307.9 226.3Q 311.2 222.5, 317.5 222.5Q 323.8 222.5, 327.1 226.3Q 330.5 230.1, 330.5 236.9Q 330.5 243.8, 327.1 247.7Q 323.7 251.6, 317.5 251.6Q 311.3 251.6, 307.9 247.7Q 304.5 243.8, 304.5 236.9M 317.5 248.4Q 321.8 248.4, 324.1 245.5Q 326.5 242.6, 326.5 236.9Q 326.5 231.3, 324.1 228.5Q 321.8 225.7, 317.5 225.7Q 313.2 225.7, 310.8 228.5Q 308.5 231.3, 308.5 236.9Q 308.5 242.6, 310.8 245.5Q 313.2 248.4, 317.5 248.4' fill='#FF0000'/><path class='atom-2' d='M 334.9 222.8L 338.7 222.8L 338.7 234.9L 353.2 234.9L 353.2 222.8L 357.1 222.8L 357.1 251.1L 353.2 251.1L 353.2 238.1L 338.7 238.1L 338.7 251.1L 334.9 251.1L 334.9 222.8' fill='#FF0000'/></svg>"
+    ]
+  },
+  {
+    "category": "toxicityrule",
+    "name": "Genotoxic_Carcinogenicity_Mutagenicity",
+    "display": "Genotoxic Carcinogenicity Mutagenicity Rule",
+    "value": 0,
+    "explanation": "117 substructures;<br/>carcinogenicity or mutagenicity",
+    "decision": ""
+  },
+  {
+    "category": "toxicityrule",
+    "name": "NonGenotoxic_Carcinogenicity",
+    "display": "NonGenotoxic Carcinogenicity Rule",
+    "value": 0,
+    "explanation": "23 substructures;<br/>carcinogenicity through nongenotoxic mechanisms",
+    "decision": ""
+  },
+  {
+    "category": "toxicityrule",
+    "name": "Skin_Sensitization",
+    "display": "Skin Sensitization Rule",
+    "value": 0,
+    "explanation": "155 substructures;<br/>skin irritation",
+    "decision": ""
+  },
+  {
+    "category": "toxicityrule",
+    "name": "LD50_oral",
+    "display": "Acute Toxicity Rule",
+    "value": 0,
+    "explanation": "20 substructures;<br/>acute toxicity during oral administration",
+    "decision": ""
+  },
+  {
+    "category": "toxicityrule",
+    "name": "NonBiodegradable",
+    "display": "NonBiodegradable",
+    "value": 0,
+    "explanation": "19 substructures;<br/>non-biodegradable",
+    "decision": ""
+  },
+  {
+    "category": "toxicityrule",
+    "name": "SureChEMBL",
+    "display": "SureChEMBL Rule",
+    "value": 0,
+    "explanation": "164 substructures; <br/>MedChem unfriendly status",
+    "decision": ""
+  },
+  {
+    "category": "toxicityrule",
+    "name": "Toxicophores",
+    "display": "FAF-Drugs4 Rule",
+    "value": 0,
+    "explanation": "154 toxic substructures from FAF-Drug4",
+    "decision": ""
+  }
+]

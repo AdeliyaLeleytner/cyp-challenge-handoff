@@ -1,0 +1,72 @@
+{
+  "signature": {
+    "recipe": {
+      "initialization": "generic CheMeleon foundation only",
+      "targets": [
+        "CYP2D6_is_TDI",
+        "CYP3A4_is_TDI"
+      ],
+      "aggregation": "MeanAggregation",
+      "ffn_hidden": 512,
+      "ffn_layers": 2,
+      "ffn_dropout": 0.1,
+      "batch_norm": false,
+      "max_epochs": 50,
+      "early_stopping_patience": 8,
+      "batch_size": 128,
+      "optimizer": "Chemprop native Adam",
+      "init_lr": 1e-05,
+      "max_lr": 0.0001,
+      "final_lr": 1e-05,
+      "warmup_epochs": 2,
+      "primary_weight": "inverse finite-label counts within fitting fold, mean-normalized",
+      "proposal_revision": "Two provided binary endpoints only; tentative four-head design withdrawn because 1A2/2C9 labels are not provided",
+      "checkpoint_monitor": "val_loss",
+      "checkpoint_mode": "min",
+      "query_prediction": "equal mean of five best-checkpoint fold probabilities",
+      "full_query_alias": "query_full is an alias of query_bag; no sixth full-data fit"
+    },
+    "cohort": "briford529",
+    "seed": 42,
+    "device": "cuda",
+    "foundation_sha256": "c376624d3407204e780a0ed13a9ac097cc9bb1c13ef89cdbc633c1715c183651",
+    "implementation_sha256": "8bf2b0033146893c577d045a5b139384a2131fe59fe466c30a11333d96e4b23c",
+    "train_csv_sha256": "19bba34f0c1115ed9b030177b39ffefbc900c96ea862ad0705bc355fa51c0a9c",
+    "test_csv_sha256": "7fd661745023c083fe5c970db77db2e3ff95c131d3e260c12464d5ca4171e1b4",
+    "dev_indices_sha256": "45f06ae44aacde8d6bfd43e3a41b884e324983c6d31e236ada6c370feca15c9f",
+    "query_indices_sha256": "b6949e7ce26586bed0310219accb9061356d3237ede17d3c32d2d54fcdc88019",
+    "folds_sha256": "d7f24d36673febff46f95a9e5c5309f9df9864f8f7f234db6a2374558fb43a9c",
+    "packages": {
+      "torch": "2.6.0+cu124",
+      "chemprop": "2.2.1",
+      "lightning": "2.5.5",
+      "numpy": "2.2.6",
+      "rdkit": "2026.9.1"
+    }
+  },
+  "fold": 2,
+  "fit_seed": 44,
+  "fitting_rows": 3521,
+  "validation_labeled_rows": 898,
+  "validation_all_rows": 1123,
+  "finite_task_counts": [
+    1071,
+    2626
+  ],
+  "task_weights": [
+    1.420611306464701,
+    0.5793886935352989
+  ],
+  "identity_overlap": {
+    "parent_key": 0,
+    "canonical_parent": 0
+  },
+  "best_epoch": 8,
+  "best_val_loss": 0.4045841097831726,
+  "best_checkpoint": "checkpoint/best.ckpt",
+  "best_checkpoint_loaded_for_predictions": true,
+  "output_sha256": {
+    "predictions.npz": "72085dd4a18f1c4079b63b91d8f5246835a803191fa76c7ebe0e32499c86142b",
+    "checkpoint/best.ckpt": "8430ced5cf4a74c9ac461813a428cfab41d36d9e7057ebbf201e94a5b2c6b785"
+  }
+}

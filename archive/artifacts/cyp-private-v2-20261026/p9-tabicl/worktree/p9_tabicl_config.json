@@ -1,0 +1,84 @@
+{
+  "schema": "p9-paired-tabicl-profile-v1",
+  "output": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9-tabicl/profile-results",
+  "deps_target": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9-tabicl/isolated-deps",
+  "files": {
+    "table": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p7/stage/table.csv",
+      "sha256": "da57ea6afdfb061a7f11abcf03216b308d64ee965b9f298c744af6b85befebe2"
+    },
+    "folds": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p7/stage/fold-manifest.json",
+      "sha256": "436ec6c3895a3e937ae9fa3debc464b75a9e8dbcf36a7f526da67b74fbad599c"
+    },
+    "official": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-admet500-pilot-20261025/stage/official-train.csv",
+      "sha256": "b8f79addd266fb6f9f4c222c5e4e73d926362328b6a8d2841871a54e46bd2278"
+    },
+    "adme": {
+      "path": "/Users/adeliyaleleytner/.local/share/cyp-inhibition/reciprocal-comparison-20261023/full/prepared/adme_pretrain.npy",
+      "sha256": "e0216aeaad3f8b9a34ea124b0eb90bd36ae671ae79b1d30268feccf5f8731378"
+    },
+    "adme_rows": {
+      "path": "/Users/adeliyaleleytner/.local/share/cyp-inhibition/reciprocal-comparison-20261023/full/prepared/challenge.csv",
+      "sha256": "b7391fb28af2972a7f5070f253ee914dc4baef010177adaa87489673e23350fe"
+    },
+    "tabicl_weight": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9-tabicl/assets/tabicl-regressor-v2-20260212.ckpt",
+      "sha256": "0db9cb538f114e79026bf08f45f41ad8dd7ad2de2aaca9a5ca8cd3bd9748ae7a"
+    },
+    "pins": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/representation-prep/tabicl/PINS.json",
+      "sha256": "a97b71d8ea91933ad504e43f25dc89001fdb97a8b41a977a00fbcc35eb643481"
+    },
+    "einops_receipt": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9-tabicl/einops-receipt.json",
+      "sha256": "d934a7c87ee47800b528efa08d0c3543d1f5b4935561732aa0ffcaacb28108c6"
+    },
+    "outer_manifest": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9-tabicl/stage/outer-cohorts.json",
+      "sha256": "f188adc71c370fd3cb357645ef8dc5ae549be4676bf901113630ae0cc5ab2738"
+    },
+    "bank_config": {
+      "path": "/Users/adeliyaleleytner/.cache/cyp-inhibition/orx-store/local-runs/57881623-7ebf-4816-b9c5-89e0805c0a9c/repo/p9_resume_config.json",
+      "sha256": "2ff3de1b2b5bb929ce69eb407a89b63abaf514145424338c610ca8e44abedd6b"
+    },
+    "bank_validator": {
+      "path": "/Users/adeliyaleleytner/.cache/cyp-inhibition/orx-store/local-runs/57881623-7ebf-4816-b9c5-89e0805c0a9c/repo/night/p9_identity.py",
+      "sha256": "e7d0c7312b95f6d9c6ba7d232c2187c358de80049a4259df607373f7aa105feb"
+    }
+  },
+  "bank_complete": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9b-resume/results/COMPLETE.json",
+    "sha256": "6c39effbb82b1087ff13f76c07fe7ff098eacb20cdf0cea3b3f0b73b7796e8d4"
+  },
+  "bank_rows": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9b-resume/results/embedding-rows.csv",
+    "sha256": "541530de65e3311bc481db985033632456b2096a8cc4f8942eba525358317950"
+  },
+  "bank_features": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9b-resume/results/embeddings.npy",
+    "sha256": "3ce3d1b947f09849dc44548232c54ba9be417eb6fa3c3f8dc2bb0c599d2f2c69"
+  },
+  "pca": 96,
+  "seed": 42,
+  "folds": [
+    0
+  ],
+  "targets": [
+    3
+  ],
+  "threads": 4,
+  "timeout_seconds": 600,
+  "memory_max_bytes": 4294967296,
+  "no_external_label_objective": true,
+  "expected_calls": 2,
+  "outer_cohorts": [],
+  "bank_audit": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9b-resume/COORDINATE_AUDIT.json",
+    "sha256": "46f52a8b02464a7b852aecc53dc4ac16970230eed2b7c12b289d128da94fa2c2"
+  },
+  "bank_expected_worker_sha256": "4538abfbf0037f4c54b4ad7aeec266d1ed89ef5f5e347081881ccb39dc16c92a",
+  "bank_run": "57881623-7ebf-4816-b9c5-89e0805c0a9c",
+  "bank_source_commit": "0b7a2d3395f26615ec1005ff3e7b398c7901d779"
+}

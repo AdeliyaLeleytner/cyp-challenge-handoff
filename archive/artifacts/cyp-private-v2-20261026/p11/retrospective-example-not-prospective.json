@@ -1,0 +1,163 @@
+{
+  "sealed_utc": "2026-10-27T06:41:12.134033+00:00",
+  "metric_protocol": "P11-provisional-v1",
+  "provisional_primary_metric": "macro_MAE_own750_before_blind_population_placement",
+  "value": 0.529889319656494,
+  "delta_vs_exact_original_recipe": 0.005060383818066172,
+  "all_metrics": {
+    "own750": {
+      "macro": {
+        "MAE": 0.529889319656494,
+        "RMSE": 0.7217120793301646,
+        "ST_RAE": 0.6208612934989087,
+        "R2": 0.45411020056216284,
+        "Pearson": 0.6858972160688775,
+        "Spearman": 0.6712146123152594,
+        "Kendall": 0.49203873316678737
+      },
+      "per_CYP": {
+        "CYP1A2_pIC50_direct_inhibition": {
+          "n": 150,
+          "MAE": 0.6685439731625537,
+          "RMSE": 0.9076189797556414,
+          "ST_RAE": 0.708060694582256,
+          "R2": 0.390404789583812,
+          "Pearson": 0.6478344705394008,
+          "Spearman": 0.6181483621494289,
+          "Kendall": 0.45252796420581654
+        },
+        "CYP2C9_pIC50_direct_inhibition": {
+          "n": 151,
+          "MAE": 0.46449462762684085,
+          "RMSE": 0.6086786414131032,
+          "ST_RAE": 0.6166184739237995,
+          "R2": 0.4467810623477193,
+          "Pearson": 0.6809790792911028,
+          "Spearman": 0.6476228651097943,
+          "Kendall": 0.46701986754966884
+        },
+        "CYP2D6_pIC50_direct_inhibition": {
+          "n": 150,
+          "MAE": 0.5458778386993748,
+          "RMSE": 0.7953910068970882,
+          "ST_RAE": 0.7477386124532074,
+          "R2": 0.2669127438203537,
+          "Pearson": 0.5667595279049698,
+          "Spearman": 0.5723436597182097,
+          "Kendall": 0.3877404921700224
+        },
+        "CYP3A4_pIC50_direct_inhibition": {
+          "n": 515,
+          "MAE": 0.4406408391372066,
+          "RMSE": 0.5751596892548256,
+          "ST_RAE": 0.41102739303637215,
+          "R2": 0.7123422064967664,
+          "Pearson": 0.8480157865400367,
+          "Spearman": 0.8467435622836048,
+          "Kendall": 0.6608666087416418
+        }
+      }
+    },
+    "briford529": {
+      "macro": {
+        "MAE": 0.46004422103475834,
+        "RMSE": 0.6476768646756741,
+        "ST_RAE": 0.5771130505070181,
+        "R2": 0.41461985483047775,
+        "Pearson": 0.6749086034202603,
+        "Spearman": 0.6695223824523028,
+        "Kendall": 0.49376694925048514
+      },
+      "per_CYP": {
+        "CYP1A2_pIC50_direct_inhibition": {
+          "n": 161,
+          "MAE": 0.4997148255563378,
+          "RMSE": 0.7227435997182527,
+          "ST_RAE": 0.595603682718711,
+          "R2": 0.3452126026336214,
+          "Pearson": 0.6786951547154261,
+          "Spearman": 0.6781573498964805,
+          "Kendall": 0.5003105590062111
+        },
+        "CYP2C9_pIC50_direct_inhibition": {
+          "n": 139,
+          "MAE": 0.36789525259950323,
+          "RMSE": 0.4874120392708041,
+          "ST_RAE": 0.47228698827370086,
+          "R2": 0.48908876915378596,
+          "Pearson": 0.7215160577769866,
+          "Spearman": 0.7049287278251931,
+          "Kendall": 0.5233030966531123
+        },
+        "CYP2D6_pIC50_direct_inhibition": {
+          "n": 175,
+          "MAE": 0.5731506097362684,
+          "RMSE": 0.8413780733430358,
+          "ST_RAE": 0.7915464730734872,
+          "R2": 0.1948610050520697,
+          "Pearson": 0.49856020852232225,
+          "Spearman": 0.5096596506941334,
+          "Kendall": 0.35619047619047617
+        },
+        "CYP3A4_pIC50_direct_inhibition": {
+          "n": 270,
+          "MAE": 0.39941619624692387,
+          "RMSE": 0.5391737463706033,
+          "ST_RAE": 0.4490150579621733,
+          "R2": 0.6293170424824339,
+          "Pearson": 0.8008629926663062,
+          "Spearman": 0.7853438013934041,
+          "Kendall": 0.5952636651521409
+        }
+      }
+    }
+  },
+  "blind_distribution_diagnostics": {
+    "CYP1A2_pIC50_direct_inhibition": {
+      "mean_shift_vs_incumbent": 0.06793675833039448,
+      "SD_ratio_vs_incumbent": 0.8091291129403234,
+      "floor1_count": 0
+    },
+    "CYP2C9_pIC50_direct_inhibition": {
+      "mean_shift_vs_incumbent": -0.07578292480407267,
+      "SD_ratio_vs_incumbent": 0.853908516717799,
+      "floor1_count": 0
+    },
+    "CYP2D6_pIC50_direct_inhibition": {
+      "mean_shift_vs_incumbent": 0.017632293104446806,
+      "SD_ratio_vs_incumbent": 0.9021319889085653,
+      "floor1_count": 0
+    },
+    "CYP3A4_pIC50_direct_inhibition": {
+      "mean_shift_vs_incumbent": -0.09516333443010527,
+      "SD_ratio_vs_incumbent": 0.9045750314644974,
+      "floor1_count": 0
+    }
+  },
+  "inputs": {
+    "own750": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/results/own750-raw-refit_original_OOF.csv",
+      "sha256": "cfe90e272d6621ae0d498c5ecacee4d8c15beae34c5975dca5ee5c2015ef1a0f"
+    },
+    "briford529": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/results/briford529-raw-refit_original_OOF.csv",
+      "sha256": "566d469dff9d046a643eac759cc44355d44eeb8892e005a85bfd51242c6076ca"
+    },
+    "blind": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/candidate/results/incumbent-anchored-H6-served-PRIVATE.csv",
+      "sha256": "6807263f0ccadcb31aa28a5c54653608e12271939a2490a2404d4353aeb0e16d"
+    },
+    "provenance": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/VERIFICATION.json",
+      "sha256": "e13da7c4f6b553470859b4e2b44c7ab82764e7912175f3b96a6d2aa806a74152"
+    }
+  },
+  "numeric_leaderboard_forecast": null,
+  "automatic_promotion_or_submission": false,
+  "limitations": [
+    "Metric chosen retrospectively from four related submissions; future forecast validity unestablished.",
+    "CSV identity does not verify model training provenance; human review of provided provenance remains necessary.",
+    "No arbitrary distribution-drift cutoff; report changes and test calibration policy separately.",
+    "Do not replace missing labels or count overlapping cohorts as independent evidence."
+  ]
+}

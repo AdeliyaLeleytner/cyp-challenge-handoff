@@ -1,0 +1,43 @@
+test_duplicate_missing_or_graph_swapped_predictions_rejected (test_final_feature_executor.Tests.test_duplicate_missing_or_graph_swapped_predictions_rejected) ... ok
+test_ids_are_aligned_not_positionally_joined (test_final_feature_executor.Tests.test_ids_are_aligned_not_positionally_joined) ... ok
+test_lane_cannot_change_after_selection (test_final_feature_executor.Tests.test_lane_cannot_change_after_selection) ... {"event": "finalfit_training_OOF_metric", "model": "native", "lane": "training_OOF_raw", "macro": {"ST_RAE": 0.528314792203681, "MAE": 1.0, "R2": 0.7812975486052409, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "toy__grid0", "lane": "training_OOF_raw", "macro": {"ST_RAE": 0.0, "MAE": 0.0, "R2": 1.0, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "toy__native_blend_global", "lane": "training_OOF_raw", "macro": {"ST_RAE": 5.894278618504653e-17, "MAE": 0.04999999999999982, "R2": 0.9994532438715131, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "toy__native_blend_per_target", "lane": "training_OOF_raw", "macro": {"ST_RAE": 1.8275276125516983e-17, "MAE": 0.01249999999999994, "R2": 0.9998550295857989, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+ok
+test_leaked_fold_indices_rejected_before_prediction (test_final_feature_executor.Tests.test_leaked_fold_indices_rejected_before_prediction) ... {"event": "finalfit_training_OOF_metric", "model": "native", "lane": "training_OOF_raw", "macro": {"ST_RAE": 0.528314792203681, "MAE": 1.0, "R2": 0.7812975486052409, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+ok
+test_native_component_oof_reconstruction_and_coverage (test_final_feature_executor.Tests.test_native_component_oof_reconstruction_and_coverage) ... ok
+test_no_silent_tabpfn_substitution (test_final_feature_executor.Tests.test_no_silent_tabpfn_substitution) ... ok
+test_nonfinite_and_flat_output_blocked (test_final_feature_executor.Tests.test_nonfinite_and_flat_output_blocked) ... ok
+test_null_inputs_fail_closed (test_final_feature_executor.Tests.test_null_inputs_fail_closed) ... ok
+test_official_output_750_roundtrip_and_validator (test_final_feature_executor.Tests.test_official_output_750_roundtrip_and_validator) ... /Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/submission-preparation/locked-h6-worktree/night/final_feature_engine.py:148: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  validate_export(pd.read_csv(path,float_precision='round_trip'),blind,require_spread)
+ok
+test_parent_overlap_in_full_folds_rejected (test_final_feature_executor.Tests.test_parent_overlap_in_full_folds_rejected) ... ok
+test_partial_official_complete_snapshot_cannot_unlock_finalfit (test_final_feature_executor.Tests.test_partial_official_complete_snapshot_cannot_unlock_finalfit) ... ok
+test_query_start_receipt_is_separate_from_immutable_selection_lock (test_final_feature_executor.Tests.test_query_start_receipt_is_separate_from_immutable_selection_lock) ... {"event": "finalfit_training_OOF_metric", "model": "native", "lane": "training_OOF_raw", "macro": {"ST_RAE": 0.528314792203681, "MAE": 1.0, "R2": 0.7812975486052409, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "toy__grid0", "lane": "training_OOF_raw", "macro": {"ST_RAE": 0.0, "MAE": 0.0, "R2": 1.0, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "toy__native_blend_global", "lane": "training_OOF_raw", "macro": {"ST_RAE": 5.894278618504653e-17, "MAE": 0.04999999999999982, "R2": 0.9994532438715131, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "toy__native_blend_per_target", "lane": "training_OOF_raw", "macro": {"ST_RAE": 1.8275276125516983e-17, "MAE": 0.01249999999999994, "R2": 0.9998550295857989, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+ok
+test_selection_file_cannot_change_before_test_prediction (test_final_feature_executor.Tests.test_selection_file_cannot_change_before_test_prediction) ... {"event": "finalfit_training_OOF_metric", "model": "native", "lane": "training_OOF_raw", "macro": {"ST_RAE": 0.528314792203681, "MAE": 1.0, "R2": 0.7812975486052409, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "toy__grid0", "lane": "training_OOF_raw", "macro": {"ST_RAE": 0.0, "MAE": 0.0, "R2": 1.0, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "toy__native_blend_global", "lane": "training_OOF_raw", "macro": {"ST_RAE": 5.894278618504653e-17, "MAE": 0.04999999999999982, "R2": 0.9994532438715131, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "toy__native_blend_per_target", "lane": "training_OOF_raw", "macro": {"ST_RAE": 1.8275276125516983e-17, "MAE": 0.01249999999999994, "R2": 0.9998550295857989, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+ok
+test_selection_then_final_refit_boundaries_and_all_metrics (test_final_feature_executor.Tests.test_selection_then_final_refit_boundaries_and_all_metrics) ... {"event": "finalfit_training_OOF_metric", "model": "native", "lane": "training_OOF_raw", "macro": {"ST_RAE": 0.528314792203681, "MAE": 1.0, "R2": 0.7812975486052409, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "toy__grid0", "lane": "training_OOF_raw", "macro": {"ST_RAE": 0.0, "MAE": 0.0, "R2": 1.0, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "toy__native_blend_global", "lane": "training_OOF_raw", "macro": {"ST_RAE": 5.894278618504653e-17, "MAE": 0.04999999999999982, "R2": 0.9994532438715131, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "toy__native_blend_per_target", "lane": "training_OOF_raw", "macro": {"ST_RAE": 1.8275276125516983e-17, "MAE": 0.01249999999999994, "R2": 0.9998550295857989, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+ok
+test_terminal_failure_allowed_only_with_full_official_eligibility_and_pins (test_final_feature_executor.Tests.test_terminal_failure_allowed_only_with_full_official_eligibility_and_pins) ... ok
+test_validated_pair_does_not_reselect_standalone_family (test_final_feature_executor.Tests.test_validated_pair_does_not_reselect_standalone_family) ... {"event": "finalfit_training_OOF_metric", "model": "native", "lane": "training_OOF_raw", "macro": {"ST_RAE": 0.528314792203681, "MAE": 1.0, "R2": 0.7812975486052409, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "toy__grid0", "lane": "training_OOF_raw", "macro": {"ST_RAE": 0.0, "MAE": 0.0, "R2": 1.0, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+{"event": "finalfit_training_OOF_metric", "model": "toy__native_blend_global", "lane": "training_OOF_raw", "macro": {"ST_RAE": 5.894278618504653e-17, "MAE": 0.04999999999999982, "R2": 0.9994532438715131, "Spearman": 1.0, "Kendall": 1.0}, "not_independent_validation": true}
+ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.086s
+
+OK

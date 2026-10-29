@@ -1,0 +1,33 @@
+{
+  "model_input_scope": "official_5655",
+  "observed_requests": 18460,
+  "goal_collection_complete": false,
+  "features": 120,
+  "fits_started": 0,
+  "cohorts": {
+    "own750": {
+      "train": 4155,
+      "test": 750,
+      "inner_folds": 5,
+      "native_outer": {
+        "ST_RAE": 0.6207769340116913,
+        "MAE": 0.5234272074832216,
+        "R2": 0.4704859914361903,
+        "Spearman": 0.6732446935124395,
+        "Kendall": 0.4955021966322005
+      }
+    },
+    "briford529": {
+      "train": 4375,
+      "test": 529,
+      "inner_folds": 5,
+      "native_outer": {
+        "ST_RAE": 0.6423089039065255,
+        "MAE": 0.47577741558303693,
+        "R2": 0.3846352026627161,
+        "Spearman": 0.6530918554894118,
+        "Kendall": 0.47718871036874755
+      }
+    }
+  }
+}

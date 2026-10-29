@@ -1,0 +1,30 @@
+{
+  "job_sha256": "dce549c53b52fd1ecfd765f84862181fb4d6983a91bc433515a6ab63d50936f4",
+  "fit": 4,
+  "metadata": {
+    "learner": "jeremy_lgbm",
+    "seed": 142,
+    "device": "cpu",
+    "n_jobs": 2,
+    "n_train_pool": 4316,
+    "n_train_observed": 1090,
+    "n_train_positive": 232,
+    "n_valid": 1079,
+    "n_query": 750,
+    "feature_width": 2265,
+    "train_rows_sha256": "e991d9dc55f1363c251fd5790d734f1981a8ea94d248dfb30f4f050899482327",
+    "observed_train_rows_sha256": "2389b008338aed01e40e9757abe88a363b08ac6efc958697a38796777bc13304",
+    "valid_rows_sha256": "99de3d6de2d1b3c6cb337bff9b866b0cbbd5a85d83059a740ba85feede84db7a",
+    "pca_scope": "none",
+    "preset": {
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "verbose": -1,
+      "class_weight": "balanced"
+    }
+  },
+  "npz_sha256": "3992ad3fab7571f4cedd38554f3de55daa7d08bd3172c9517393a9d9cb8b7d9c"
+}

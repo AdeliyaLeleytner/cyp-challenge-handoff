@@ -1,0 +1,17 @@
+{
+  "seed": 20261023,
+  "accelerator": "mps",
+  "batch_size": 64,
+  "min_epochs": 20,
+  "max_epochs": 60,
+  "patience": 10,
+  "warmup_epochs": 2,
+  "init_lr": 0.0001,
+  "max_lr": 0.001,
+  "final_lr": 0.0001,
+  "loss": "Chemprop default masked MSE on train-scaled targets",
+  "checkpoint_selection": "minimum inner-validation scaled MSE",
+  "bootstrap_samples": 1000,
+  "holdout_policy": "predict once after checkpoint selection; no feedback-based changes",
+  "max_wall_hours": 3
+}

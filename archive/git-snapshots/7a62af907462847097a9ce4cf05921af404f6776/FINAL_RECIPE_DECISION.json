@@ -1,0 +1,56 @@
+{
+  "selected_utc": "2026-10-26T04:48:37.529841+00:00",
+  "selected_recipe": "H6 lightgbm__adme720 with native_blend_per_target",
+  "evaluation_node": "45e61a59-ce5e-4646-b5c2-0b351513322e",
+  "evaluation_run": "35635752-241c-4080-bd0e-e17ae3bb6206",
+  "evaluation_source": "61a00bd673e421b026f2f7c1d630d86c24c841fd",
+  "base_experts": [
+    "qualified corrected native four-member fivefold ensemble",
+    "per-endpoint LightGBM on frozenADME600 followed by120ADMETlab features"
+  ],
+  "feature_order": "600 frozen Jeremy ADME coordinates then120 sorted declared ADMET columns",
+  "grid": [
+    {
+      "num_leaves": 7,
+      "max_depth": 3
+    },
+    {
+      "num_leaves": 15,
+      "max_depth": 4
+    }
+  ],
+  "blend_modes": [
+    "per_target"
+  ],
+  "model_seed": 42,
+  "selection_rule_for_full_data": "Choose one of the two evaluated LightGBM settings using full official-training OOF macro ST-RAE, then fit one convex native/feature weight per CYP on those OOF vectors. Final head refit once on all observed official labels per target; native fullfit companion already fixed.",
+  "serving_lane": "native_published_placement",
+  "raw_development_ST_RAE": {
+    "own750": 0.6157064726420673,
+    "briford529": 0.579887676564332
+  },
+  "raw_corrected_native_ST_RAE": {
+    "own750": 0.6207769340116913,
+    "briford529": 0.6423089039065256
+  },
+  "rationale": "Development-selected balance across both requested cohorts and the primary challenge metric; this H6 option was also chosen by training OOF in each cohort. H7 did not improve on simpler H6. The primary ADMET-only global blend remains better on own750 alone, while H6 improves briford529 more strongly. No uniform dominance claim.",
+  "limitations": [
+    "Both cohorts were reused development diagnostics, not an independent post-selection test.",
+    "Own750 ST gain uncertainty includes no improvement and secondary metrics are mixed.",
+    "Relative to ADME600-only, the additional ADMET contribution is modest/cohort-dependent; do not attribute the entire gain over native to ADMET labeling.",
+    "Published placement is a fixed competition population assumption and worsens own750 diagnostics; it is not independently validated local calibration.",
+    "ADME encoder and ADMETlab pretraining membership unknown; native expert retains disclosed legacy source representations."
+  ],
+  "not_promoted": [
+    "H7 three-way mixture",
+    "TabPFN ADMET120 and H5 ADME600/720 paths"
+  ],
+  "required_before_final_fit": [
+    "Full32421 terminal-outcome acquisition and new-version chemical audit including every reviewed rejection",
+    "Verified750 ADME bank and original4905 cache parity",
+    "Pinned final native companion certificate/OOF/raw/placed assets",
+    "Committed exact final runtime/source/input/recipe contract"
+  ],
+  "final_fit_started": false,
+  "submission_performed": false
+}

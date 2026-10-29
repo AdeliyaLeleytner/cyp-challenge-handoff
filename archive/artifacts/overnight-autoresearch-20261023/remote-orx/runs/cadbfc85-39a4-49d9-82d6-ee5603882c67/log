@@ -1,0 +1,17 @@
+Pinned asset hashes verified
+{"event": "zip_download_integrity", "actual_bytes": 7349760, "expected_bytes": 152820002, "actual_md5": "1c91b12789a35118c3cceabc04d783bb", "expected_md5": "7ae4c2f871fe86b07f4ec161023caa62"}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/root/.orx/runs/cadbfc85-39a4-49d9-82d6-ee5603882c67/repo/night/audit_monroe_pcba.py", line 361, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/.orx/runs/cadbfc85-39a4-49d9-82d6-ee5603882c67/repo/night/audit_monroe_pcba.py", line 354, in main
+    try:return run_audit(args)
+               ^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/cadbfc85-39a4-49d9-82d6-ee5603882c67/repo/night/audit_monroe_pcba.py", line 265, in run_audit
+    parquet,source_meta=stage_parquet(args.cache_root,args.zip_sha256)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/cadbfc85-39a4-49d9-82d6-ee5603882c67/repo/night/audit_monroe_pcba.py", line 83, in stage_parquet
+    raise ValueError('Downloaded ZIP differs from pinned Zenodo size/MD5')
+ValueError: Downloaded ZIP differs from pinned Zenodo size/MD5

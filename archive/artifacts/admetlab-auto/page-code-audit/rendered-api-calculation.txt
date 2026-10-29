@@ -1,0 +1,136 @@
+- navigation:
+  - link "🏠 Home":
+    - /url: /
+- main:
+  - button "Menu"
+  - complementary:
+    - searchbox "Search text"
+    - heading "ADMETlab3.0 API" [level=1]:
+      - link "ADMETlab3.0 API":
+        - /url: "#"
+    - list:
+      - link "Introduction":
+        - /url: "#/"
+      - link "ADMETlab Utils":
+        - /url: "#/one"
+      - link "ADMET Calculation":
+        - /url: "#/two"
+      - list:
+        - link "1. Calculate the ADMET properties of molecule(s).":
+          - /url: "#/two?id=_1-calculate-the-admet-properties-of-molecules"
+        - link "2. Retrieve a CSV file of the calculation results for molecule(s).":
+          - /url: "#/two?id=_2-retrieve-a-csv-file-of-the-calculation-results-for-molecules"
+      - link "Quick Examples":
+        - /url: "#/three"
+  - article:
+    - heading "ADMET Calculation" [level=1]:
+      - link "ADMET Calculation":
+        - /url: "#/two?id=-admet-calculation"
+        - text: ADMET Calculation
+    - separator
+    - paragraph: Our servers have unfortunately been under persistent unknown attacks, which has led to a collapse of server resources and instability. We are doing our utmost to fix these issues and restore normal service as quickly as possible.
+    - paragraph:
+      - text: In the meantime, if it’s convenient for you and you have a significant volume of calculations, you are welcome to send the molecules you wish to compute directly to
+      - code: minddance@163.com
+      - text: . We will process your request as soon as possible and return the results to you in a timely manner.
+    - heading "1. Calculate the ADMET properties of molecule(s)." [level=2]:
+      - link "1. Calculate the ADMET properties of molecule(s).":
+        - /url: "#/two?id=_1-calculate-the-admet-properties-of-molecules"
+    - blockquote:
+      - paragraph:
+        - generic: POST
+        - code: https://admetlab3.scbdd.com
+        - text: /api/admet
+    - paragraph: "Description:"
+    - paragraph: Calculate the ADMET properties of molecule(s), including molecular basic properties, physical chemistry, medicinal chemistry, absorption, distribution, metabolism, excretion, and toxicity, among others.
+    - blockquote:
+      - paragraph: Each property includes computed values, detailed explanations, and provides decision results. In this context, 0 represents ‘pass’, -1 represents ‘warning’, and 1 represents ‘danger’. Any other numbers indicate that the property has no decision. Additionally, for properties related to toxicity groups or substructure rule matches, the decision value may be an array of SVG strings, representing highlighted images of molecules matching the endpoint. These ‘values’ are displayed as two-dimensional arrays, where each element represents the indices of highlighted matching atoms in the molecule.
+    - paragraph: "Query Parameters & Example:"
+    - table:
+      - rowgroup:
+        - row "Key Value Type Description":
+          - columnheader "Key"
+          - columnheader "Value"
+          - columnheader "Type"
+          - columnheader "Description"
+      - rowgroup:
+        - row "SMILES [“molecule”, “CC(C)OC(=O)CC(=O)CSc1nc2c(cc1C#N)CCC2”] string or [string] Molecular SMILES string, which is commonly provided by most chemical toolkits.":
+          - cell "SMILES"
+          - cell "[“molecule”, “CC(C)OC(=O)CC(=O)CSc1nc2c(cc1C#N)CCC2”]"
+          - cell "string or [string]"
+          - cell "Molecular SMILES string, which is commonly provided by most chemical toolkits."
+        - row "feature false boolean Whether to use models with descriptors":
+          - cell "feature"
+          - cell "false"
+          - cell "boolean"
+          - cell "Whether to use models with descriptors"
+        - row "uncertain false boolean Whether to use models with uncertainty":
+          - cell "uncertain"
+          - cell "false"
+          - cell "boolean"
+          - cell "Whether to use models with uncertainty"
+    - paragraph: "Result & Example:"
+    - paragraph: Return all computable properties of the molecule, ‘structure’ represents the SVG string of the molecular structure, and ‘taskid’ serves as the unique identifier of the task, which can be used to retrieve the result file later.
+    - paragraph:
+      - text: "Content-Type:"
+      - code: application/json,application/xml
+    - code: "{ \"status\": \"success\", \"code\": 200, \"data\": { // The unique identifier for a submitted task. \"taskid\": \"tmpvvsp7s291702724373\", // Number of all molecules. \"number of all molecules\": 1, // Number of valid molecules. \"number of valid molecules\": 0, // Response data. \"data\": [ { \"smiles\": \"molecule\", \"MW\": \"Invalid Molecule\", \"Vol\": \"Invalid Molecule\", \"Dense\": \"Invalid Molecule\", \"nHA\": \"Invalid Molecule\", \"nHD\": \"Invalid Molecule\", \"TPSA\": \"Invalid Molecule\" // ... }, { \"smiles\": \"CC(C)OC(=O)CC(=O)CSc1nc2c(cc1C#N)CCC2\", \"MW\": 318.1, \"Vol\": 316.59731852400796, \"Dense\": 1.0047463493468538, \"nHA\": 5, \"nHD\": 0, \"TPSA\": 80.05 // ... } ], // Explanation of each key. \"explanation\": { \"Aggregators\": \"Category 0: non-colloidal aggregators; Category 1: colloidal aggregators. The output value is the probability of being colloidal aggregators, within the range of 0 to 1.\", \"Fluc\": \"Category 0: non-fLuc inhibitors; Category 1: fLuc inhibitors. The output value is the probability of being fLuc inhibitors, within the range of 0 to 1.\", \"Blue_fluorescence\": \"Category 0: non-blue fluorescence; Category 1: blue fluorescence. The output value is the probability of being blue fluorescence, within the range of 0 to 1.\", \"Green_fluorescence\": \"Category 0: non-green fluorescence; Category 1: green fluorescence. The output value is the probability of being green fluorescence, within the range of 0 to 1.\", \"Reactive\": \"Category 0: non-reactive compound; Category 1: reactive compound. The output value is the probability of being reactive compound, within the range of 0 to 1.\", \"Other_assay_interference\": \"\" // ... } } }"
+    - button "Copy to clipboard Error Copied":
+      - text: Copy to clipboard
+      - generic: Error
+      - generic: Copied
+    - text: json
+    - table:
+      - rowgroup:
+        - row:
+          - columnheader
+          - columnheader
+          - columnheader
+      - rowgroup:
+        - row "200 OK The service call has completed successfully.":
+          - cell "200"
+          - cell "OK"
+          - cell "The service call has completed successfully."
+        - row "500 Internal Server Error An unexpected error has happened while resolving the request.":
+          - cell "500"
+          - cell "Internal Server Error"
+          - cell "An unexpected error has happened while resolving the request."
+    - heading "2. Retrieve a CSV file of the calculation results for molecule(s)." [level=2]:
+      - link "2. Retrieve a CSV file of the calculation results for molecule(s).":
+        - /url: "#/two?id=_2-retrieve-a-csv-file-of-the-calculation-results-for-molecules"
+    - blockquote:
+      - paragraph:
+        - generic: POST
+        - code: https://admetlab3.scbdd.com
+        - text: /api/admetCSV
+    - paragraph: "Description:"
+    - paragraph: Retrieve the result file of the calculation by using the task ID. Each line in the result file represents a molecule, and if the SMILES of a molecule is invalid, the result will display “Invalid SMILES”.
+    - paragraph: "Query Parameters & Example:"
+    - table:
+      - rowgroup:
+        - row "Key Value Type Description":
+          - columnheader "Key"
+          - columnheader "Value"
+          - columnheader "Type"
+          - columnheader "Description"
+      - rowgroup:
+        - row "taskId tmpva_lbtw11700216887 string The ‘taskId’ in the returned result of the request 2.1.":
+          - cell "taskId"
+          - cell "tmpva_lbtw11700216887"
+          - cell "string"
+          - cell "The ‘taskId’ in the returned result of the request 2.1."
+    - paragraph: "Result & Example:"
+    - paragraph: CSV file of ADMET results.
+    - paragraph:
+      - text: "Content-Type:"
+      - code: text/csv
+    - link " Download Example":
+      - /url: ../static/apis/files/results.csv
+      - button " Download Example":
+        - generic: 
+        - text: Download Example
+    - text: Made with
+    - text: by
+    - link "Computational Biology & Drug Design Group":
+      - /url: http://www.scbdd.com/
+    - text: © 2023

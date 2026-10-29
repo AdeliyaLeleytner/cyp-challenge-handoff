@@ -1,0 +1,7 @@
+# Enhancing uncertainty quantification in drug discovery with censored regression labels
+Emma Svensson, Hannah Rosa Friesacher, Susanne Winiwarter, Lewis Mervin, Ádám Arany, Ola Engkvist
+2025-02-14 · 9 citations
+DOI: https://doi.org/10.1016/j.ailsci.2025.100128
+PDF: https://doi.org/10.1016/j.ailsci.2025.100128
+
+In the early stages of drug discovery , decisions regarding which experiments to pursue can be influenced by computational models for quantitative structure–activity relationships (QSAR). These decisions are critical due to the time-consuming and expensive nature of the experiments. Therefore, it is becoming essential to accurately quantify the uncertainty in machine learning predictions, such that resources can be used optimally and trust in the models improves. While computational methods for QSAR modeling often suffer from limited data and sparse experimental observations, additional information can exist in the form of censored labels that provide thresholds rather than precise values of observations. However, the standard approaches that quantify uncertainty in machine learning cannot fully utilize censored labels. In this work, we adapt ensemble-based, Bayesian , and Gaussian models with tools to learn from censored labels by using the Tobit model from survival analysis . Our results demonstrate that despite the partial information available in censored labels, they are essential to reliably estimate uncertainties in real pharmaceutical settings where approximately one-third or more of experimental labels are censored.

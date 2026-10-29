@@ -1,0 +1,34 @@
+{
+  "status": "partial_explicit_failures",
+  "requested": 5655,
+  "successful": 5654,
+  "failed": 1,
+  "dimensions": 256,
+  "model_loaded_seconds": 0.3557815420208499,
+  "runtime_seconds": 5231.746552709024,
+  "smoke_sentinel_max_abs": 0.0,
+  "representation": "last-after-finalnorm-degree0-atommean",
+  "geometry_seed": 42,
+  "execution": {
+    "device": "cpu",
+    "precision": "fp32",
+    "cuequivariance": false,
+    "compile": false
+  },
+  "packages": {
+    "atom-jepa": "0.3.0",
+    "torch": "2.8.0",
+    "numpy": "2.5.4",
+    "rdkit": "2026.9.1",
+    "e3nn": "0.6.0",
+    "torch-geometric": "2.8.1"
+  },
+  "source_sha256": "707e9b4ef968c30a2329266418f1801b812cbd2375b6b132d8ed1a1ecd44a264",
+  "config_sha256": "e378281e5a7504ee171526721f4d2113daeef8904c038d465219b067f7dafc85",
+  "no_fits": true,
+  "no_neutralization_or_fragment_removal": true,
+  "input_labels_loaded": false,
+  "embeddings_sha256": "b1ea21c4591a2772af6c62a47fdef922f33aef183ad17bc5fff82e8076cc4b20",
+  "rows_sha256": "541530de65e3311bc481db985033632456b2096a8cc4f8942eba525358317950",
+  "outcomes_sha256": "3c826a2ffe549ef75147335061c71a1276564b3697bd689da28a77bcb5f5f91d"
+}

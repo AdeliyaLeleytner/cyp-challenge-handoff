@@ -1,0 +1,57 @@
+{
+  "cohort": "full",
+  "native_revision": "06e1e1fcf7341333e4623ce353c65c6b4b6e71f3",
+  "sources": {
+    "final_tdi.py": {
+      "path": "/root/.orx/runs/2c9179d9-f3ca-4627-bece-98dbcda700f2/repo/vendor/hauser/final_tdi.py",
+      "sha256": "fce6313d3ad3d1850a9f6d4a2bdbc2e5102e4dca06a239bdc08449c64cd0442c"
+    },
+    "features.py": {
+      "path": "/root/.orx/runs/2c9179d9-f3ca-4627-bece-98dbcda700f2/repo/vendor/hauser/features.py",
+      "sha256": "d95af6301de8a17d5a407d38d257b70495b4afdfe37e4ee983dc58e19d5242bb"
+    },
+    "tdi_features.py": {
+      "path": "/root/.orx/runs/2c9179d9-f3ca-4627-bece-98dbcda700f2/repo/vendor/hauser/tdi_features.py",
+      "sha256": "65b82d3704c97a568e9a28adad9bcdb9bb5183d53cec2cf96eafd9e8af55695b"
+    }
+  },
+  "prepared_manifest_sha256": "a7b94f51298991da659bfb6ddba17e80bd1f596b18153a9769fbbc24080155d9",
+  "oof_ids_sha256": "9064cd6f7f90b76754bdf18f10c532e785fc7a48846780c1f77dfade526cf4fd",
+  "query_ids_sha256": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9",
+  "screen_source": {
+    "path": "/workspace/cyp-tdi/assets/single_concentration.csv",
+    "sha256": "5bf429cb438a730d364309394aba8276725b76a70906761cc631a4e2aa31bf80"
+  },
+  "native_registry_train_rows": 6146,
+  "cohort_train_rows": 6145,
+  "extra_registry_rows_minus_collapsed_duplicates": 1,
+  "query_rows": 750,
+  "screen_rows_used": 17504,
+  "target_order": [
+    "CYP2D6_is_TDI",
+    "CYP3A4_is_TDI"
+  ],
+  "structure_weights": [
+    0.95,
+    0.6
+  ],
+  "partition_seeds": [
+    0,
+    1,
+    2
+  ],
+  "repeats": 3,
+  "folds_per_repeat": 5,
+  "query_labels_used": false,
+  "threshold_policy": "native exact midpoint; highest threshold on MCC ties",
+  "oof_score_role": "same-OOF threshold calibration, not unbiased validation",
+  "registry_policy": "canonical isomeric identity union: direct then TDI then raw screen; outer exclusions propagated",
+  "fidelity_limit": "Published cached registry ordering/software may differ; original model/feature functions unchanged",
+  "packages": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "lightgbm": "4.7.0",
+    "scikit-learn": "1.7.2",
+    "rdkit": "2026.9.1"
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "stage": "finalfit",
+  "snapshot_manifest": null,
+  "snapshot_manifest_sha256": null,
+  "output_dir": "SET_NEW_H5_SELECTOR_OUTPUT",
+  "model_seed": 42,
+  "threads": 2,
+  "scorer_sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3",
+  "placement_source_sha256": "7f8834425973369531cb21805fe54c966e72e47a5c764c49395a1d7dc7a9aec6",
+  "portfolio": [
+    {
+      "name": "lightgbm__structure",
+      "family": "lightgbm",
+      "view": "structure",
+      "grid": [
+        {
+          "num_leaves": 7,
+          "max_depth": 3
+        },
+        {
+          "num_leaves": 15,
+          "max_depth": 4
+        }
+      ]
+    },
+    {
+      "name": "lightgbm__admet",
+      "family": "lightgbm",
+      "view": "admet",
+      "grid": [
+        {
+          "num_leaves": 7,
+          "max_depth": 3
+        },
+        {
+          "num_leaves": 15,
+          "max_depth": 4
+        }
+      ]
+    },
+    {
+      "name": "lightgbm__augmented",
+      "family": "lightgbm",
+      "view": "augmented",
+      "grid": [
+        {
+          "num_leaves": 7,
+          "max_depth": 3
+        },
+        {
+          "num_leaves": 15,
+          "max_depth": 4
+        }
+      ]
+    },
+    {
+      "name": "kernel__admet",
+      "family": "kernel",
+      "view": "admet",
+      "grid": [
+        {
+          "alpha": 1.0
+        },
+        {
+          "alpha": 10.0
+        }
+      ]
+    },
+    {
+      "name": "chemeleon_ridge__structure",
+      "family": "chemeleon_ridge",
+      "view": "structure",
+      "grid": [
+        {
+          "alpha": 1.0
+        },
+        {
+          "alpha": 10.0
+        }
+      ]
+    },
+    {
+      "name": "chemeleon_ridge__augmented",
+      "family": "chemeleon_ridge",
+      "view": "augmented",
+      "grid": [
+        {
+          "alpha": 1.0
+        },
+        {
+          "alpha": 10.0
+        }
+      ]
+    },
+    {
+      "name": "lightgbm__cyp_only",
+      "family": "lightgbm",
+      "view": "cyp_only",
+      "grid": [
+        {
+          "num_leaves": 7,
+          "max_depth": 3
+        },
+        {
+          "num_leaves": 15,
+          "max_depth": 4
+        }
+      ]
+    },
+    {
+      "name": "lightgbm__non_cyp",
+      "family": "lightgbm",
+      "view": "non_cyp",
+      "grid": [
+        {
+          "num_leaves": 7,
+          "max_depth": 3
+        },
+        {
+          "num_leaves": 15,
+          "max_depth": 4
+        }
+      ]
+    }
+  ],
+  "selection_rule": "Repeat exact per-recipe grid and raw OOF convex selection on full official4905; native/standalone/global/per-CYP options; deterministic name tie-break; no blind/outer outcomes.",
+  "placement_policy": "native_published_placement_diagnostic only; raw selection; not an independent test calibration",
+  "scope": "Full32421 terminal/audited collection required; only official4905 experimental labels train new feature readouts; qualified nativefull8421 companion required.",
+  "blend_modes": [
+    "global",
+    "per_target"
+  ],
+  "feature_group_policy": "Prespecified13CYP-only and107non-CYP arms use identical LGBM settings/folds toall120. All120 remains the primary feature arm; no outer-driven column selection.",
+  "training_enabled": false,
+  "final_manifest": null,
+  "final_manifest_sha256": null,
+  "submission_lane": "native_published_placement",
+  "source_sha256": {
+    "night/admet_full_models.py": "9c4ba8679855d543d081b19697f47e9d7366f4bfb26a2e7c81e3609c6364d67f",
+    "night/admet_full_math.py": "8ceaba16c0ef21466978eaeacc56ed0f3814d2610cfe425be990d909119639fa",
+    "night/admet500_pilot.py": "e7bcf37e24b157059af50c02cf6b515d0a18464219eb49f80050d0007d147880",
+    "night/admet500_embed.py": "c71f25d987c9116841390a5febb7595b11949d574cdb1f4dd6d5dbb08b86c0ff",
+    "night/public_data.py": "c91d5a3268cd3b0ea0e96fbbe601524333d62804c8985f7641382968bb560968",
+    "official_scoring_functions.py": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3",
+    "vendor/briford_native/cyp_recalibrate.py": "7f8834425973369531cb21805fe54c966e72e47a5c764c49395a1d7dc7a9aec6",
+    "vendor/final_activity_validation.py": "276a53d7f22ff973aaf567e64d977202995e91ba3cef2bbdc4de71c13bdebcb2",
+    "full_feature_config.json": "5562cf3debe420665042c58d9a689d045a6c649074bcc77e3e7234f8b58ad3f1",
+    "night/final_feature_folds.py": "61cd49c3736e2c0420e5358090f4d67651a3655c0f43e780b0f2f4b828720003",
+    "night/final_feature_engine.py": "fbdf14057c9a235776654684bc65903b3fa27457b9fd7de1e78759be304c979b",
+    "night/final_feature_run.py": "58b98621cc005401bbdad8b96d4ef07ddbe2052b8cb8b263bf348aa8e5392871",
+    "SERVING_LANE_DECISION.json": "336503bcb6fa9c256b190a340c35116a28952533abf6f610f646495ec0a4a493",
+    "night/admet_outcome_contract.py": "bfea980a5f6f77104381500a646abb5d0a9fc35ba2fcf698cc7dd7afe612fd0f",
+    "night/admet_full_contract_v1.py": "3ca6d482f3488e157bd87a25926728bfe51b12bcfa31a2fbeae71bcbee5fab99",
+    "night/final_feature_contract.py": "fe995c643689b6c08b062e6443aca6217ca93252bebd84e1226ff0065c338e43",
+    "night/external_tabpfn_contract.py": "60573c754c0f890299fddda8608ec00d2ab3e679b607892c3335065973886246",
+    "vendor/tabpfn_final_predictor.py": "445b658683025d9d97c134b0d48efe33362b757f09b038c9171a4bbaa2064521",
+    "tabpfn35-LICENSE": "9570fdd687bb76ed45499412ad57d6ba949848e6d731f1242572bb57f2f73ae1",
+    "tools/pin_external_tabpfn_result.py": "93f18448cd3a4542d2c0a86cee2613f3fcd2cf6a4a88ae0a480bd5b51593c53f",
+    "run.sh": "494080bd571979415413e964fd2a819c757368b4b9021d8bbe931ad94eaffed3",
+    "vendor/tabpfn_h5_predictor.py": "3d1a6b2459eeb1249f87a94aeab66e066039a3997c8d218b401c8ff8536d2ff2",
+    "h6_feature_portfolio.json": "c940181c4928abe5aec1cff2b53b458fd660b279895778326b46899b12c7394b",
+    "h6_embedding_asset_sha256.json": "157e5501f9bef30f1ff9d12d40f2843bbf8b547f376c87cf6fcb9a42e2995581",
+    "night/h5_features.py": "baeb25eb93a7824ee71638b43bfb098193461ebd3f937eda09a40b6a1f878351",
+    "night/final_adme_features.py": "394ba65c2e80dd0e0c08b2d9e4f462bb2ed6003739f9bbcd8b805887b0ce66cc"
+  },
+  "serving_lane_decision": {
+    "decided_by": "parent before new feature results or blind inference",
+    "reason": "Preserve established incumbent/briford published serving recipe. Raw OOF selects models/weights; constants are fixed, not fit to new public/hidden feedback.",
+    "placement_source_sha256": "7f8834425973369531cb21805fe54c966e72e47a5c764c49395a1d7dc7a9aec6",
+    "caveat": "Leaderboard-derived population assumptions; poor local placed diagnostics must remain disclosed, not portrayed as independent local calibration.",
+    "failure_policy": "Parity, defined-scale or export-schema failure blocks final export; no silent raw fallback."
+  },
+  "supervision_scope": "official_experimental_targets_only",
+  "approved_data_disposition_sha256": "f5c223e6bb33aae059bfd32e02baacdd71d91c418c8abd2af095b6462fd23c60",
+  "approved_output_disposition_sha256": "48de537781769d001c2144b194f19d9c22f07591a14bdb573461635d0b94da0b",
+  "bridge_phase": "select",
+  "producer_experiment_id": null,
+  "external_tabpfn_oof_manifest": null,
+  "external_tabpfn_oof_manifest_sha256": null,
+  "selection_bundle_manifest": null,
+  "selection_bundle_manifest_sha256": null,
+  "external_tabpfn_query_manifest": null,
+  "external_tabpfn_query_manifest_sha256": null,
+  "expected_tabpfn_model_contract": {
+    "spec": {
+      "name": "tabpfn35__adme600",
+      "family": "tabpfn35",
+      "view": "adme",
+      "grid": [
+        {
+          "n_estimators": 8
+        }
+      ]
+    },
+    "seed": 42,
+    "checkpoint_sha256": "ece4d67eadfea42eb0e610df5189bea60cb7f31073d81e9c7a019b76eacf0be3",
+    "license_sha256": "9570fdd687bb76ed45499412ad57d6ba949848e6d731f1242572bb57f2f73ae1",
+    "predictor_source_sha256": "3d1a6b2459eeb1249f87a94aeab66e066039a3997c8d218b401c8ff8536d2ff2",
+    "runtime": {
+      "python": "3.11.13",
+      "torch": "2.8.0+cu128",
+      "tabpfn": "9.2.0",
+      "numpy": "2.2.6",
+      "scikit-learn": "1.7.2"
+    },
+    "preprocessing": "train-only median+StandardScaler; noPCA",
+    "features": "frozenADME600",
+    "targets": [
+      "CYP1A2_pIC50_direct_inhibition",
+      "CYP2C9_pIC50_direct_inhibition",
+      "CYP2D6_pIC50_direct_inhibition",
+      "CYP3A4_pIC50_direct_inhibition"
+    ],
+    "feature_count": 600,
+    "embedding_assets_sha256": {
+      "adme_matrix": "e0216aeaad3f8b9a34ea124b0eb90bd36ae671ae79b1d30268feccf5f8731378",
+      "adme_source_rows": "b7391fb28af2972a7f5070f253ee914dc4baef010177adaa87489673e23350fe",
+      "adme_checkpoint": "b8137a0d202669baa9747f21eac4ef78b000afe68a3f100d25c849c41ad8a3d5",
+      "adme_preparation_record": "f11bcadbe187b7df894cba97dc1cbfc06364094b08ed2f68ba9d5315c3609118",
+      "adme_producer_source": "588e331659515e8ba0d5797f6172b3339946da960bb10ec30217214424857104",
+      "adme_provenance": "42709f849eaffee7b51fcad91ed6fb4c2332e8fdc83ed66360fcf078d3653fe1",
+      "adme_runtime_lock": "252b616dd6ae1e90a35717e88fecef10f552af9cd96497ae1e43bfd41723f2e8"
+    }
+  }
+}

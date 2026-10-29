@@ -1,0 +1,96 @@
+{
+  "component": {
+    "component": "2d6single",
+    "source_commits": {
+      "union18": "971f6a7f24d86e59bab219347c3e14c006ae4e35",
+      "framework_and_specialists": "8c72c7559471febaf0962fd551b4eaab8db3a136"
+    },
+    "supplied_official_rows": 3924,
+    "primary_fraction": null,
+    "primary_fraction_note": "Historical source has no primary_fraction sampler parameter.",
+    "deviations": [
+      "Fixed caller official folds with external auxiliary rows in every fit, rather than author CV over each union.",
+      "Task weights recomputed on the supplied training partition, rather than full-source counts.",
+      "Public CSVs are current pinned snapshots; historical trained model/OOF artifacts are unavailable.",
+      "External structures use normalized neutral nonstereo parents and exclude all provided official train/test parents."
+    ],
+    "train_rows": 1198,
+    "dropped_all_unknown_rows": 2726,
+    "target_counts": {
+      "cyp2d6_pic50_direct_inhibition": 1198
+    },
+    "task_weights": [
+      1.0
+    ],
+    "weighted_label_mass": 1198.0,
+    "target_order": [
+      "cyp2d6_pic50_direct_inhibition"
+    ]
+  },
+  "initialization": {
+    "initialization": "scratch"
+  },
+  "effective_config": {
+    "hidden_dim": 700,
+    "depth": 5,
+    "dropout": 0.1,
+    "ffn_hidden_dim": 300,
+    "ffn_num_layers": 2,
+    "batch_norm": true,
+    "aggregation": "norm",
+    "loss": "mae",
+    "max_epochs": 400,
+    "patience": 40,
+    "batch_size": 64,
+    "warmup_epochs": 2,
+    "init_lr": 0.0001,
+    "max_lr": 0.001,
+    "final_lr": 0.0001,
+    "seed": 42,
+    "component": "2d6single",
+    "fold_index": 2,
+    "include_official_side_rows": true,
+    "kind": "neural",
+    "name": "2d6single",
+    "num_workers": 0,
+    "targets": [
+      "CYP2D6_pIC50_direct_inhibition"
+    ],
+    "torch_num_threads": 4
+  },
+  "excluded_parent_keys_count": 5649,
+  "target_order": [
+    "cyp2d6_pic50_direct_inhibition"
+  ],
+  "output_mapping": {
+    "cyp2d6_pic50_direct_inhibition": "CYP2D6_pIC50_direct_inhibition"
+  },
+  "supplied_train_id_sha256": "79d30f092df883afd810bb76fe9fa78dbf53aab80cd4d7177c57b87dcdee5f34",
+  "fit_id_sha256": "d7a3ac2a31be236ac534d293fd93200a34147ad6ef4098db41fbb8b762501276",
+  "validation_id_sha256": "0daad714d1941cc745f777b79ba5afa3f763390ba425b2c1aa83d4a662e02cba",
+  "query_id_sha256": "c8f33bbfc05f7341ece799799e999818171acff3ef80652fec225745daf800e5",
+  "validation_query_overlap": 295,
+  "query_labels_used": false,
+  "scaler_mean": [
+    4.796987441027901
+  ],
+  "scaler_scale": [
+    0.9072302290543738
+  ],
+  "accelerator": "gpu",
+  "precision": "16-mixed",
+  "seed": 44,
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "chemprop": "2.2.1",
+    "lightning": "2.5.5",
+    "rdkit": "2026.9.1",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3"
+  },
+  "best_epoch": 13,
+  "best_val_loss": 0.6548251509666443,
+  "elapsed_epochs": 54,
+  "best_checkpoint": "/workspace/cyp-night/results/FINAL_reference_seed42/2d6single/seed42/fold2/checkpoints/best.ckpt",
+  "trainable_parameters": 1393601
+}

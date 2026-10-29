@@ -1,0 +1,13 @@
+Seed set to 42
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 3090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Loading `train_dataloader` to estimate number of stepping batches.
+{"event": "epoch_timing", "epoch": 0, "seconds": 10.236422777175903, "max_gpu_bytes": 1855264768}
+{"event": "epoch_timing", "epoch": 1, "seconds": 10.289857387542725, "max_gpu_bytes": 1855264768}
+{"event": "epoch_timing", "epoch": 2, "seconds": 11.042808294296265, "max_gpu_bytes": 1855264768}
+`Trainer.fit` stopped: `max_epochs=3` reached.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+{"event": "p3_complete", "cell": "mae_uniform", "fold": 0, "seconds": 37.44394850730896, "raw_strae": 0.6610574594310306, "raw_per_target_strae": [0.7571120896615129, 0.5408582260395306, 0.8319043552159986, 0.5143551668070805]}

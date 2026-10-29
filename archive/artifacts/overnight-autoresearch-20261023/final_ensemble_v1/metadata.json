@@ -1,0 +1,309 @@
+{
+  "actual_test_labels_read": false,
+  "actual_test_scored": false,
+  "candidate_name": "reference_reweight_affine",
+  "gate_qualifications": {
+    "calibration_limits": [
+      "Neural inner-OOF checkpoints may be selected using the same inner validation labels.",
+      "Calibration cross-fitting over existing OOF predictions is not fully nested base-model cross-validation.",
+      "OOF predictions use one inner model per molecule; outer predictions average five models.",
+      "Calibration and blend choices must be fitted on development labels only, never these outer labels."
+    ],
+    "development_seen": "These cohorts have been inspected during development; repeated selection can overfit their readouts.",
+    "holdout_overlap": {
+      "expected_campaign_overlap": 143,
+      "interpretation": "The two evaluation cohorts overlap and are not independent replications.",
+      "shared_molecules": 143
+    },
+    "provenance_limit": "Hashes bind the supplied artifacts and saved ORX done evidence; this gate does not independently replay training or query remote ORX.",
+    "seed_confirmation": "The second seed measures initialization variability on the same cohorts, not a new independent holdout.",
+    "statistical_limit": "Passing establishes observed improvement under this protocol, not statistical significance or a guarantee on the blinded test."
+  },
+  "model_selection_labels": "Full official TRAIN OOF only, using the gate-bound procedure",
+  "official_test_sha256": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9",
+  "official_train_sha256": "b8f79addd266fb6f9f4c222c5e4e73d926362328b6a8d2841871a54e46bd2278",
+  "provenance_attestation": "Root-owned; this module does not set the competition provenance checkbox or submit",
+  "qualification_chain": {
+    "binding_chain": "pinned certificate -> canonical+raw gate manifest -> candidate.recipe.sha256 -> exact qualified recipe bytes",
+    "canonical_manifest_sha256": "7f0a6aef5b894ce7629a4437a4cccb5635522d3cddca772aa5a62979ceeb0073",
+    "certificate": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/gate_bundle_v1/certificate.json",
+      "sha256": "c9c971a6d9f5e9d6f6f86847c31d7e9e56fdadee2526851cb6deb476368718b0"
+    },
+    "gate_manifest": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/gate_bundle_v1/manifest.json",
+      "sha256": "a4ef6fcb7fb6aaa3c7f918c7b3f6a9a3f10d2745c691a3a5182c4baa3bd46b53"
+    },
+    "recipe": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/gate_bundle_v1/qualified_recipe.json",
+      "sha256": "78a3d92c074d2ed0f08118b1dacd140aac8fd6ad3f2688e6a95dc7f0eecccb0e"
+    }
+  },
+  "recipe": {
+    "aggregation": "mean of five fold models per seed, then mean of both final seed vectors",
+    "base_members": [
+      "union18",
+      "mtaux8",
+      "2d6isoform6",
+      "2d6single"
+    ],
+    "base_recipe": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-direct-overnight-20261023/reference_audit/reference_recipe.json",
+      "sha256": "401e9bc20c36bfc5bbe35ea7903ca1e8ba58fa01bfafa9545f4db3e3e1b801c1"
+    },
+    "candidate_name": "reference_reweight_affine",
+    "fold_seed": 42,
+    "foundation_initialization": "scratch",
+    "inner_folds": 5,
+    "metamodel": {
+      "l1_grid": [
+        0,
+        0.01,
+        0.1,
+        1.0
+      ],
+      "model_names": [
+        "briford_reference",
+        "union18",
+        "mtaux8",
+        "specialist_single_view",
+        "specialist_aux_view"
+      ],
+      "reference_model": "briford_reference",
+      "selection": "development crossfit ST-RAE only",
+      "weight_constraint": "positive_affine"
+    },
+    "proprietary_data_used": false,
+    "public_parent_exclusion": "all official train and actualTEST normalized parents",
+    "schema_version": 1,
+    "seeds": [
+      42,
+      142
+    ],
+    "unknown_CYP_pretraining_weights_used": false,
+    "views": "R0 raw four-member average plus union18,mtaux8,and two views replacing only CYP2D6 by its specialist"
+  },
+  "recipe_compatibility": {
+    "actual_runtime_relative_source_hashes": {
+      "night/evaluation.py": "f674c658e44baf14b442c6a0d4aa7c0c1a54538437e498cf8ced337e3a47d963",
+      "night/public_data.py": "c91d5a3268cd3b0ea0e96fbbe601524333d62804c8985f7641382968bb560968",
+      "night/reference.py": "dd10a6be65a813e9ea2b76a4afc15806f0de1a64d809da42f3e8171c40ea3320",
+      "night/reference_views.py": "e7eefe2f06c06c3d69f1f6ff62173b254e528205865b12aa7af4f61909d84ce2",
+      "night/stacking.py": "f230f87cfc420d6a042d9e29ec5529ca37c546c4aba885a92bef01d7d436b4fc",
+      "official_scoring_functions.py": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+    },
+    "base_members": [
+      "union18",
+      "mtaux8",
+      "2d6isoform6",
+      "2d6single"
+    ],
+    "matched": true,
+    "metamodel_source_revision": "262990e",
+    "no_additional_base_placement": true,
+    "no_additional_width_or_neighbor_correction": true,
+    "same_full_train_folds_both_seeds": true,
+    "training_source_revision": "72dc8a7",
+    "view_semantics": "R0 raw reference copied; only CYP2D6 replaced in each specialist view",
+    "views": [
+      "briford_reference",
+      "union18",
+      "mtaux8",
+      "specialist_single_view",
+      "specialist_aux_view"
+    ]
+  },
+  "runtime_packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "rdkit": "2026.9.1",
+    "scipy": "1.18.1"
+  },
+  "seeds": {
+    "142": {
+      "prediction_sha256": "4eecf42ca97dab108c05f9dac70b7af8f536fa750b82452ff70b378915c61f4a",
+      "selected_candidate": "positive_affine_l1_0",
+      "source_audit_sha256": "d72a1b3ea313c5e09440bb9fab208651363d1fdd6cf90dc2a685196274a6cd87",
+      "weights": {
+        "CYP1A2_pIC50_direct_inhibition": {
+          "constraint_type": "positive_affine",
+          "fit_interval_mae": 0.35006954025208153,
+          "intercept": 1.163522572862373,
+          "l1_distance_to_prior": 1.7891894789108034,
+          "n_observed": 1412,
+          "solver": {
+            "iterations": 1066,
+            "method": "scipy.optimize.linprog/highs",
+            "objective": 0.35006954025208176,
+            "status": 0
+          },
+          "total_weight": 0.7891894789108033,
+          "weights": {
+            "briford_reference": 0.0,
+            "mtaux8": 0.2272713897133607,
+            "specialist_aux_view": 0.0,
+            "specialist_single_view": 0.0,
+            "union18": 0.5619180891974426
+          }
+        },
+        "CYP2C9_pIC50_direct_inhibition": {
+          "constraint_type": "positive_affine",
+          "fit_interval_mae": 0.1605955562534806,
+          "intercept": 0.6722933522650846,
+          "l1_distance_to_prior": 1.8741964095863701,
+          "n_observed": 1285,
+          "solver": {
+            "iterations": 705,
+            "method": "scipy.optimize.linprog/highs",
+            "objective": 0.1605955562534804,
+            "status": 0
+          },
+          "total_weight": 0.87419640958637,
+          "weights": {
+            "briford_reference": 0.0,
+            "mtaux8": 0.22170834469874923,
+            "specialist_aux_view": 0.0,
+            "specialist_single_view": 0.0,
+            "union18": 0.6524880648876208
+          }
+        },
+        "CYP2D6_pIC50_direct_inhibition": {
+          "constraint_type": "positive_affine",
+          "fit_interval_mae": 0.3353715470525456,
+          "intercept": 0.5628311723181948,
+          "l1_distance_to_prior": 1.8886858183475481,
+          "n_observed": 1493,
+          "solver": {
+            "iterations": 1158,
+            "method": "scipy.optimize.linprog/highs",
+            "objective": 0.3353715470525459,
+            "status": 0
+          },
+          "total_weight": 0.8886858183475479,
+          "weights": {
+            "briford_reference": 0.0,
+            "mtaux8": 0.21678553831517747,
+            "specialist_aux_view": 0.3913989484023161,
+            "specialist_single_view": 0.11572158636975642,
+            "union18": 0.16477974526029787
+          }
+        },
+        "CYP3A4_pIC50_direct_inhibition": {
+          "constraint_type": "positive_affine",
+          "fit_interval_mae": 0.20397422825954173,
+          "intercept": 0.8233563546864021,
+          "l1_distance_to_prior": 1.8453132356447481,
+          "n_observed": 2335,
+          "solver": {
+            "iterations": 1443,
+            "method": "scipy.optimize.linprog/highs",
+            "objective": 0.20397422825954176,
+            "status": 0
+          },
+          "total_weight": 0.8453132356447484,
+          "weights": {
+            "briford_reference": 0.0,
+            "mtaux8": 0.3784400206105335,
+            "specialist_aux_view": 0.0,
+            "specialist_single_view": 0.0,
+            "union18": 0.4668732150342148
+          }
+        }
+      }
+    },
+    "42": {
+      "prediction_sha256": "de5042eb90a0cadd04db11037294d470f2ef3315ff1d70a21f2fbf8850a4de52",
+      "selected_candidate": "positive_affine_l1_0",
+      "source_audit_sha256": "39a05d1e8255d61ab64c58b2ef7c7e97e47ca77155647efac25c78446996b667",
+      "weights": {
+        "CYP1A2_pIC50_direct_inhibition": {
+          "constraint_type": "positive_affine",
+          "fit_interval_mae": 0.35811046677461883,
+          "intercept": 1.2145905327188358,
+          "l1_distance_to_prior": 1.774083842767797,
+          "n_observed": 1412,
+          "solver": {
+            "iterations": 1075,
+            "method": "scipy.optimize.linprog/highs",
+            "objective": 0.35811046677461933,
+            "status": 0
+          },
+          "total_weight": 0.774083842767797,
+          "weights": {
+            "briford_reference": 0.0,
+            "mtaux8": 0.33969860170860033,
+            "specialist_aux_view": 0.0,
+            "specialist_single_view": 0.0,
+            "union18": 0.4343852410591966
+          }
+        },
+        "CYP2C9_pIC50_direct_inhibition": {
+          "constraint_type": "positive_affine",
+          "fit_interval_mae": 0.16123385697255854,
+          "intercept": 0.7320782854049827,
+          "l1_distance_to_prior": 1.864500040045494,
+          "n_observed": 1285,
+          "solver": {
+            "iterations": 703,
+            "method": "scipy.optimize.linprog/highs",
+            "objective": 0.16123385697255846,
+            "status": 0
+          },
+          "total_weight": 0.8645000400454941,
+          "weights": {
+            "briford_reference": 0.0,
+            "mtaux8": 0.3315104799927704,
+            "specialist_aux_view": 0.0,
+            "specialist_single_view": 0.0,
+            "union18": 0.5329895600527237
+          }
+        },
+        "CYP2D6_pIC50_direct_inhibition": {
+          "constraint_type": "positive_affine",
+          "fit_interval_mae": 0.3375897959139253,
+          "intercept": 0.3919435388487381,
+          "l1_distance_to_prior": 1.9231435523381286,
+          "n_observed": 1493,
+          "solver": {
+            "iterations": 1153,
+            "method": "scipy.optimize.linprog/highs",
+            "objective": 0.33758979591392524,
+            "status": 0
+          },
+          "total_weight": 0.9231435523381286,
+          "weights": {
+            "briford_reference": 0.0,
+            "mtaux8": 0.11069380735794958,
+            "specialist_aux_view": 0.3587402900230751,
+            "specialist_single_view": 0.1043036954892523,
+            "union18": 0.3494057594678517
+          }
+        },
+        "CYP3A4_pIC50_direct_inhibition": {
+          "constraint_type": "positive_affine",
+          "fit_interval_mae": 0.21261968338153958,
+          "intercept": 0.8206507975828309,
+          "l1_distance_to_prior": 1.838646183555926,
+          "n_observed": 2335,
+          "solver": {
+            "iterations": 1450,
+            "method": "scipy.optimize.linprog/highs",
+            "objective": 0.21261968338153953,
+            "status": 0
+          },
+          "total_weight": 0.838646183555926,
+          "weights": {
+            "briford_reference": 0.0,
+            "mtaux8": 0.3454663934511158,
+            "specialist_aux_view": 0.0,
+            "specialist_single_view": 0.0,
+            "union18": 0.4931797901048102
+          }
+        }
+      }
+    }
+  },
+  "source_module_sha256": "ccb4d7a138436e66934459684cd9f5a118e5f3670e497291da76cc7512a48eec",
+  "submission_rows": 750,
+  "submission_sha256": "f0e32b5fecab41d9a68c098e0ebe4b0d05cbc61760eb3dbd63c300382945e053"
+}

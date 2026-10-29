@@ -1,0 +1,1 @@
+The fixed56-call sourcefeature/preprocessing comparison is authorized after the largest-context profile passed runtime and memory limits. SamepreLN256 versusADME600, endpoint-labeled PCA128 without externalStandardScaler, TabICL2.2/twoestimators. Alloldcohorts, sourcehashes andinputgates retained. No nestedblend, finalblindfit, outcome-drivenchanges or publicaction.

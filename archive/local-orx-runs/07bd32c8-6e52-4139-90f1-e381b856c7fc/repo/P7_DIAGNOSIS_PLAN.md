@@ -1,0 +1,9 @@
+# Fixed P7 cached OOF diagnosis
+
+No model fitting, inference, recalibration, hyperparameter selection, paid compute or publication. Parent is frozen full P7; compare its zero and fusion cells only. Exact original official ID/SMILES/targets, prediction and initial-state receipts are mandatory.
+
+All five official metrics plus Pearson, RMSE, signed bias, population SD/ratio, within log10(2) and 1 pIC50 errors, interval coverage/miss distance are evaluated pooled, per CYP/fold and by released-single coverage, primary-label availability and nearest same-target actual-training-fold support. Stopping rows never count as training support. Population MSE decomposes exactly into squared bias, squared SD difference and 2*SDpred*SDtruth*(1-Pearson); components are numerical, not causal.
+
+Geometry is the prespecified Cleanup+FragmentParent Morgan radius2,2048bit,no-chirality matrix. It is used only after exact official SMILES and order validation and a fresh deterministic fingerprint spot check. Close pairs require Tanimoto>=0.7, same held-out fold, same measured CYP, distinct IDs. Save continuous differences and CI gaps, point>=1pIC50 and disjoint-interval-gap>=1pIC50 contrasts. No synthetic dense benchmark, inhibition classification, independent-pair p-values or identity merges. Pairs are dependent; count unique supporting molecules.
+
+Support strata are fixed [0,.4),[.4,.6),[.6,.7),[.7,.8),[.8,1]. Plot raw paired errors/predictions and preserve improved/worsened examples with exact IDs/SMILES. Reuse existing paired scaffold-bootstrap official-metric intervals; newly described metrics are point diagnostics with n and fold detail. Undefined metrics stay null. No operator fitted to outcomes. Save all pins, package versions, data and verification receipts; only then interpret shrinkage, ordering and neighborhood hypotheses with contrary cases.

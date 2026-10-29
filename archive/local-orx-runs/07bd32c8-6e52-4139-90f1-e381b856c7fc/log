@@ -1,0 +1,20 @@
+/Users/adeliyaleleytner/.cache/cyp-inhibition/orx-store/local-runs/07bd32c8-6e52-4139-90f1-e381b856c7fc/repo/night/p7_diagnosis.py:37: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  df=pd.read_csv(paths['table'],float_precision='round_trip');f=json.loads(paths['folds'].read_text());assert sha(paths['table'])==f['data_sha256'];targets=f['targets'][:4]
+/Users/adeliyaleleytner/.cache/cyp-inhibition/orx-store/local-runs/07bd32c8-6e52-4139-90f1-e381b856c7fc/repo/night/p7_diagnosis.py:38: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  official=pd.read_csv(paths['official'],float_precision='round_trip');official.columns=official.columns.str.lower();assert len(official)==4905 and official.molecule_name.is_unique
+/Users/adeliyaleleytner/.cache/cyp-inhibition/orx-store/local-runs/07bd32c8-6e52-4139-90f1-e381b856c7fc/repo/night/p7_diagnosis.py:50: Pandas4Warning: The 'float_precision' argument is deprecated. Use the default float precision instead.
+  a=pd.read_csv(p,float_precision='round_trip');assert a.molecule_name.tolist()==df.molecule_name.iloc[fold['test']].tolist();whole[fold['test']]=a[targets];inits[cell].append(json.loads(ip.read_text()))
+{"close_pair_csv": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p7/diagnosis/results/close-pairs.csv", "pairs": 120}
+FIGURE AUDIT /Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p7/diagnosis/results/paired-predictions-errors: 5 problem(s) — fix before using
+  - width 9.00in is not a known column width (3.25/5.5/6.75); it will be rescaled on import and the text with it
+  - axes title 'CYP1A2' duplicates the caption — delete it
+  - axes title 'CYP2C9' duplicates the caption — delete it
+  - axes title 'CYP2D6' duplicates the caption — delete it
+  - axes title 'CYP3A4' duplicates the caption — delete it
+FIGURE AUDIT /Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p7/diagnosis/results/support-error-change: 5 problem(s) — fix before using
+  - width 9.00in is not a known column width (3.25/5.5/6.75); it will be rescaled on import and the text with it
+  - axes title 'CYP1A2' duplicates the caption — delete it
+  - axes title 'CYP2C9' duplicates the caption — delete it
+  - axes title 'CYP2D6' duplicates the caption — delete it
+  - axes title 'CYP3A4' duplicates the caption — delete it
+{"status": "verified", "measured_cells": 6525, "close_pairs": 120, "macro_ST": {"fusion": 0.7025708946585574, "zero": 0.6744560522933591}, "output": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p7/diagnosis/results"}

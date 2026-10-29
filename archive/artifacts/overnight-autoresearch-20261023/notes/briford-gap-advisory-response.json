@@ -1,0 +1,87 @@
+{
+  "summary": "The leaderboard gap is almost entirely a placement/calibration gap, not a model gap: your Spearman and Kendall match or exceed briford's on the live blind set (affine-invariant), while briford's ST-RAE 0.4378 includes board-derived placement (blind moments solved from three scored submissions plus CYP2D6 ST-RAE probes) that you deliberately replaced with train-only calibration; the R² = 2ρk − k² − b² decomposition applied to your submitted vector's moments quantitatively reproduces the observed collapse (predicted macro R² ≈ 0.21 vs observed 0.169). \"Fully reproduced briford\" should be corrected to \"ranking quality reproduced at parity; leaderboard placement intentionally not reproduced; reconstruction has documented deviations and was never officially scored unmodified.\" On timing, only this is warranted: accepted 00:10:10 UTC (03:10 MSK), score absent at 00:13:26, first observed 08:33:17 UTC (11:33 MSK) — appearance occurred somewhere in that ~8h20m unobserved window; the \"within 2 hours\" figure was a platform promise, not an observation.",
+  "recommendation": "Tell the user: (1) the model's ordering quality reproduced briford at parity on the real blind set (Spearman 0.7564 vs 0.7516, Kendall 0.5790 vs 0.5748, both within leaderboard noise and invariant to calibration), and the rank-118 position comes from placement — briford fitted his predictions' mean/spread to the blind set via scored board probes, while our submission used train-only calibration, leaving e.g. CYP2D6 centered at 4.70/sd 0.345 against a blind population of 3.11/sd 1.60; (2) correct the campaign record from \"fully reproduced briford\" to \"rank-parity reproduction with documented deviations; board-derived placement deliberately not reproduced; unmodified reference never officially scored\"; (3) state timing as \"accepted 00:10 UTC / 03:10 MSK, first observed on the board 08:33 UTC / 11:33 MSK, actual completion unknown within that window.\" No new compute or submission is needed to answer the question. If a board-comparable score is ever desired and authorized, prefer estimating blind moments from external population priors (PubChem qHTS inactivity rates, as the author's blog itself derives) over board-probing.",
+  "confidence": "high",
+  "files_inspected": [
+    "reference_audit/reference_recipe.json",
+    "reference_audit/sources/8c72c7559471febaf0962fd551b4eaab8db3a136/docs/blogs/cyp_challenge.md",
+    "reference_audit/sources/8c72c7559471febaf0962fd551b4eaab8db3a136/ml_pipelines/OpenADMET/cyp/scripts/cyp_recalibrate.py",
+    "submission_package_v1/test_vector_comparison.json",
+    "official_results/20261024T084528Z/leaderboard.csv",
+    "submission-ledger/attempts/f0e32b5fecab41d9a68c098e0ebe4b0d05cbc61760eb3dbd63c300382945e053/receipt.json",
+    "official_results/20261024T001326Z/result.json",
+    "official_results/20261024T083317Z/result.json",
+    "remote/results/FINAL_reference_seed42/union18/seed42/fold0/trial_metadata.json",
+    "gate_bundle_v1/certificate.json"
+  ],
+  "verified_facts": [
+    "Live board (leaderboard.csv line 119): AdeliyaLL-CYP rank 118, ST-RAE 0.7521, MAE 0.9284, R² 0.1686, Spearman 0.7564, Kendall 0.5790; briford (line 25) rank 24, ST-RAE 0.4378, MAE 0.6331, R² 0.6181, Spearman 0.7516, Kendall 0.5748 — our rank metrics equal or exceed briford's within quoted std (~0.014).",
+    "Spearman/Kendall are invariant under positive affine placement; ST-RAE/MAE/R² are not (cyp_recalibrate.py lines 21–24, 41–43; blog cyp_challenge.md line 55).",
+    "Briford's published score includes board-derived placement: BLIND_MOMENTS and SOLVED_PEARSON solved from three scored submissions (cyp_recalibrate.py lines 54–104), and CYP2D6 ST-RAE placement (mean 3.57, sd 0.90) selected by sampling four board probes scoring 0.6944/0.6271/0.5502/0.8558 at means 3.11/3.32/3.57/4.35 (lines 66–78; blog line 65).",
+    "Our submission used train-only calibration by design (reference_recipe.json line 117; leaderboard model tag 'TRAIN-OOF affine stacking').",
+    "Our submitted vector's CYP2D6 moments are mean 4.695 / sd 0.345 (test_vector_comparison.json) versus the author's solved live-half population mean 3.107 / sd 1.599 (cyp_recalibrate.py line 57); analogous high-mean/under-spread offsets exist on the other three isoforms.",
+    "The reconstructed unmodified reference was never officially scored, and the reconstruction has documented deviations: fixed official folds with auxiliary rows in every fit, recomputed task weights, newer pinned data snapshots, normalized-parent exclusions (trial_metadata.json lines 11–16).",
+    "Timing: receipt accepted 2026-10-24T00:10:09.925Z with a '2 hours' platform promise (receipt.json); score absent at 00:13:26.6Z (result.json); first observed present at 08:33:17.9Z (result.json); no checks between those snapshots; leaderboard 'Submitted 00:10 UTC' is submission time."
+  ],
+  "inferences": [
+    "Placement explains essentially the whole ST-RAE/MAE/R² gap: applying R² = 2ρk − k² − b² with briford-level Pearsons to our vector's moments gives per-isoform R² ≈ 0.27/0.62/−0.74/0.68 (1A2/2C9/2D6/3A4), macro ≈ 0.21, matching the observed 0.169 within noise.",
+    "CYP2D6 dominates the damage: our mean 4.70 sits above the author's worst board probe (4.35 → ST-RAE 0.856), in the region where the ST-RAE penalty is steepest.",
+    "Applying briford's placement constants to our vector would likely land near his 0.4378, given rank parity — plausible but unscored, and BLIND_MOMENTS describe only the live half.",
+    "The documented training deviations appear score-neutral for ranking (board Spearman parity), but their effect on Pearson — which caps attainable R² — is unmeasured."
+  ],
+  "opportunities": [
+    {
+      "item": "Correct the campaign record: replace 'fully reproduced briford' with 'rank-parity reproduction with documented deviations; board-derived placement deliberately not reproduced; unmodified reference never officially scored', and restate timing as a bounded first-observed interval (00:13–08:33 UTC).",
+      "importance": "high",
+      "basis": "leaderboard.csv lines 25/119; trial_metadata.json deviations; receipt.json and the two result.json snapshots"
+    },
+    {
+      "item": "If a board-comparable score is ever authorized, estimate blind moments from external population priors (PubChem qHTS inactivity rates, as the author's own blog line 37 does) instead of board probes — recovers most of the placement gap without adaptive test-set fitting or spending multiple scored submissions.",
+      "importance": "medium",
+      "basis": "cyp_challenge.md lines 37, 53; cyp_recalibrate.py BLIND_MOMENTS provenance"
+    },
+    {
+      "item": "A zero-cost offline check: apply the author's published BLIND_MOMENTS/STRAE placement to the already-submitted vector and report the implied R² per isoform via the decomposition, to quantify the counterfactual without any submission.",
+      "importance": "low",
+      "basis": "All inputs already local: test_vector_comparison.json moments and cyp_recalibrate.py constants"
+    }
+  ],
+  "risks": [
+    {
+      "item": "Presenting the placement explanation as fully proven: the counterfactual (our vector + briford placement, officially scored) does not exist, and per-isoform live metrics are unavailable, so the decomposition rests on the author's solved moments and Pearsons.",
+      "severity": "low",
+      "basis": "Known-missing list in brief; cyp_recalibrate.py lines 122–126 note ρ solve is approximate (±0.07 per ±0.005 board noise)"
+    },
+    {
+      "item": "If the team later adopts board-probing placement to climb the board, that is adaptive test-set calibration; it should be an explicit user decision with challenge-rules review, not an implementation detail.",
+      "severity": "medium",
+      "basis": "cyp_recalibrate.py SOLVE_ENTRIES/STRAE_MOMENTS show the method consumes scored submissions to fit the blind set"
+    }
+  ],
+  "alternatives": [
+    "Answer the user using only the affine-invariance argument (Spearman/Kendall parity) without the quantitative R² decomposition — simpler but weaker; the decomposition is cheap and already consistent, so include it.",
+    "Request one additional scored submission of the author-placed vector to close the counterfactual — unnecessary for the explanation and spends a submission; only worth it if the user wants board-comparable standing."
+  ],
+  "missing_information": [
+    "Official score of the unmodified reconstructed reference and of our vector under briford's placement (counterfactuals).",
+    "Per-isoform live metrics for our entry and briford's (board shows macro only).",
+    "Our vector's blind-half Pearson (caps attainable R²).",
+    "Backend scoring start/end timestamps; only the 00:13–08:33 UTC observation bounds exist.",
+    "Original briford checkpoints/OOF artifacts to isolate the effect of the documented training deviations."
+  ],
+  "what_would_change_view": [
+    "A scored submission of our vector with the author's placement landing far from ~0.44 ST-RAE would mean the gap is not placement-only.",
+    "Per-isoform live metrics showing a rank (Spearman) deficit on any isoform versus briford would reopen the model-quality question.",
+    "Evidence that the blind half's moments differ materially from the author's solved BLIND_MOMENTS (e.g., board re-scoring or stale constants) would weaken the quantitative decomposition.",
+    "Discovery of an intermediate leaderboard snapshot between 00:13 and 08:33 UTC would tighten or correct the timing statement."
+  ],
+  "user_escalation_required": false,
+  "escalation_reason": "No escalation needed: the request is explanatory and factual, answerable from existing local evidence with no new training, submission, or irreversible action. (If a future board-comparable re-submission is contemplated, that would require user authorization and a rules check on board-derived calibration.)",
+  "_consultation": {
+    "id": "20261024T085754Z-cbe4dace",
+    "requested_model": "claude-fable-5",
+    "primary_model": "claude-fable-5",
+    "automatic_fallback_used": false,
+    "explicit_opus": false
+  }
+}

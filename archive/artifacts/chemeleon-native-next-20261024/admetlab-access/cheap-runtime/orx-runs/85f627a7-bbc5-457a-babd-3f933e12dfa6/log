@@ -1,0 +1,17 @@
+{"event": "admetlab_status", "status": "stopped_partial", "updated_utc": "2026-10-24T16:27:01.703811+00:00", "queue_size": 32421, "successes": 0, "cached_successes": 0, "new_successes": 0, "remaining": 32421, "requests_started": 1, "error_events": 0, "endpoint_names_observed": 0, "feature_columns": 0, "elapsed_seconds": 1.2732388370204717, "new_successes_per_second": 0.0, "estimated_remaining_seconds": null, "circuit_reason": "AttributeError: 'Request' object has no attribute 'method'", "queue_sha256": "ae515913b1bedacd216e424305b57daa3dfce0cf8169352a4f41df36de477493", "feature": "web_default", "global_requests_per_second": 1.0, "max_inflight": 1, "official_requests_per_second_limit": 5.0}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/root/.orx/runs/85f627a7-bbc5-457a-babd-3f933e12dfa6/repo/night/admetlab_web.py", line 180, in <module>
+    report=run(json.loads(Path('admetlab_web_config.json').read_text()));sys.exit(0 if report['status']=='complete' else 2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/85f627a7-bbc5-457a-babd-3f933e12dfa6/repo/night/admetlab_web.py", line 157, in run
+    t=time.monotonic();success,failed,association=client.batch(batch,root/'batches'/f'{index:04d}',cfg)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/85f627a7-bbc5-457a-babd-3f933e12dfa6/repo/night/admetlab_web.py", line 105, in batch
+    _,body=self.fetch('form-get',urllib.request.Request(BASE+'/server/screening'),folder)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/85f627a7-bbc5-457a-babd-3f933e12dfa6/repo/night/admetlab_web.py", line 89, in fetch
+    meta={'started_utc':started,'status':status,'seconds':time.monotonic()-self.last_start,'url':url,'method':req.method,'headers':{k:v for k,v in headers.items() if k.lower()!='set-cookie'},'wire_sha256':hashlib.sha256(body).hexdigest(),**PROVENANCE}
+                                                                                                              ^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'method'

@@ -1,0 +1,17 @@
+Subject: ADMETlab screening POST returns429 across direct and proxy connections
+
+Hello,
+We are using the public ADMETlab3 web screening form (method2). The form GET succeeds, but several correctly encoded POST requests return the same169-byte nginx/1.20.1 HTTP429 page, without Retry-After. One direct10-molecule POST succeeded and downloaded a valid result. Both direct and Shifter-proxied50-molecule POSTs failed; a later proxied10-molecule POST also failed. Form CSRF tokens match their GET cookies.
+
+Could you check the following UTC requests and tell us the permitted batch size/frequency or the appropriate bulk-processing route? We would particularly like to know whether the restriction is per IP, global, concurrent-job based, or a security rule. We cannot identify the exact cooldown from the response.
+
+2026-10-25T17:47:59.285826+00:00 | POST /server/screeningCal | 500 molecules | en0 | HTTP429 | 32764 bytes
+2026-10-25T20:05:20.732256+00:00 | POST /server/screeningCal | 500 molecules | en0 | HTTP429 | 32735 bytes
+2026-10-25T20:09:34.231630+00:00 | POST /server/screeningCal | 10 molecules | en0 | HTTP302 | 753 bytes
+2026-10-25T20:12:02.308433+00:00 | POST /server/screeningCal | 50 molecules | en0 | HTTP429 | 3492 bytes
+2026-10-25T20:53:23.291805+00:00 | POST /server/screeningCal | 50 molecules | shifter_sticky | HTTP429 | 3492 bytes
+2026-10-25T21:01:56.332359+00:00 | POST /server/screeningCal | 50 molecules | shifter_per_request | HTTP429 | 3492 bytes
+2026-10-25T21:09:39.559332+00:00 | POST /server/screeningCal | 10 molecules | shifter_per_request | HTTP429 | 757 bytes
+
+If available, the applicable nginx/WAF rule, limiter key, upstream status, and configured rate/concurrency limit would distinguish these cases.
+This draft contains no credentials, cookies, or molecular structures.

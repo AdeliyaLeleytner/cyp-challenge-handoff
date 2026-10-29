@@ -1,0 +1,72 @@
+{
+  "files": {
+    "official_train": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-admet500-pilot-20261025/stage/official-train.csv",
+      "sha256": "b8f79addd266fb6f9f4c222c5e4e73d926362328b6a8d2841871a54e46bd2278"
+    },
+    "official_blind": {
+      "path": "/Users/adeliyaleleytner/.local/share/openresearch/projects/cyp-chemeleon-baseline-20261023/data/official-test.csv",
+      "sha256": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9"
+    },
+    "id_map": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/official-snapshot-18460/source-id-map-snapshot.csv",
+      "sha256": "7849899d79cb16d17deac9ed854c000383275c75bac5ae61d5a5c9355e95f231"
+    },
+    "strict_pairs": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/stage/audit/tautomer-pair-chemical-details.csv",
+      "sha256": "a78bfe5d1440c4e601e9f0338dae9e124d28255117c80d2971611658fd0911ec"
+    },
+    "single": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/cyp-review/sources/cyp-challenge-single-concentration-TRAIN.csv",
+      "sha256": "cf275440aa33d10b16e7a3a19f1b196d59dc379052175ab79b47ca43db663c7a"
+    },
+    "union18": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/incumbent-artifact-copy/prepared/union18.csv",
+      "sha256": "6dfb2235d3ae61914b6cecc50a3ee4d30d735c3a63f117baa14ef8d9b1aa73d1"
+    },
+    "union18_spec": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/incumbent-artifact-copy/prepared/union18.json",
+      "sha256": "8afff7b7d40dd448fc923b961863af76ea567f665080f7d82d468f4223d78d88"
+    },
+    "mtaux8": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/incumbent-artifact-copy/prepared/mtaux8.csv",
+      "sha256": "b12d50d94b815551659116331e54eafb7022b5813407729e1e58d66c8d31d6c6"
+    },
+    "mtaux8_spec": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/incumbent-artifact-copy/prepared/mtaux8.json",
+      "sha256": "e00111366d655ba164e6829f78b372808870b850efa0ddc7ee1f359c76033ee5"
+    },
+    "2d6isoform6": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/incumbent-artifact-copy/prepared/2d6isoform6.csv",
+      "sha256": "0ed26a5d2a0fb301d364fff8055ac0ed468063f743e3413e73c1a9ff61a9e714"
+    },
+    "2d6isoform6_spec": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/incumbent-artifact-copy/prepared/2d6isoform6.json",
+      "sha256": "b7e61ea738b0100ec69e738505921a6b7ffe764ba38d3850bb1dc72154506ea9"
+    },
+    "2d6single": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/incumbent-artifact-copy/prepared/2d6single.csv",
+      "sha256": "b155217ba8cd4a72365d6cb75780fa4b773466665d25db1ffae7f8b2f35abef8"
+    },
+    "2d6single_spec": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/model-audit/incumbent-artifact-copy/prepared/2d6single.json",
+      "sha256": "a8a5139d96bbcb47fda8b73eeeba26beb01306533ebbe3ed336f84ec0e002fda"
+    }
+  },
+  "seed": 20261026,
+  "seed_pool_fraction": 0.5,
+  "hits_per_target": 25,
+  "neighbors_per_hit": 10,
+  "seed_targets": [
+    "CYP1A2",
+    "CYP2C9",
+    "CYP3A4"
+  ],
+  "series_similarity_cutoff": 0.6,
+  "fingerprint": "raw sparse-count Morgan radius2 no chirality",
+  "partition": "hash of parent/connectivity/audited-strict connected component IDs, independent of outcomes",
+  "query_ranking": "Top10 by Tanimoto per unique selected seed; ID tiebreak; no similarity floor, no quota fill",
+  "output_dir": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p2/results",
+  "no_model_fit": true,
+  "private_only": true
+}

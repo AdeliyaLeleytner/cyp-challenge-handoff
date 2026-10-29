@@ -1,0 +1,19 @@
+{
+  "dry_run": true,
+  "network_requests": 0,
+  "action": "/server/screeningCal",
+  "method": "POST",
+  "encoding": "application/x-www-form-urlencoded",
+  "payload_keys": [
+    "csrfmiddlewaretoken",
+    "method",
+    "smiles-list"
+  ],
+  "method_field": "2",
+  "smiles_count": 2,
+  "max_smiles_per_documented_form": 1000,
+  "csrf_and_session_cookie_required_for_web_form": true,
+  "current_api_requires_authentication": false,
+  "output_contract": "unknown_without_an_authorized_form_submission",
+  "no_rate_limit_workaround": true
+}

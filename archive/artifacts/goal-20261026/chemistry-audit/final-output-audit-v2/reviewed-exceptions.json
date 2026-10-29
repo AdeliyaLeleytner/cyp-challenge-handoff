@@ -1,0 +1,28 @@
+{
+  "policy_path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/data-policy/OUTPUT_DISPOSITION.json",
+  "policy_sha256": "48de537781769d001c2144b194f19d9c22f07591a14bdb573461635d0b94da0b",
+  "exceptions": [
+    {
+      "request_id": "68bd1bd95ba465c01242172601c742e27c193936ade6718ca7f8c8b4764c40d4",
+      "request_smiles": "Cl",
+      "service_smiles": "Cl",
+      "kind": "service_rejected",
+      "raw_row_sha256": "8e5284aabe23bc902d533508842a793e3698359e3d54a135a8bcfe3c3ccf872d",
+      "approval_manifest_path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/data-policy/service-rejections.json",
+      "approval_manifest_sha256": "bd6c09021a51ed9312336da1b762b17892f8d4385831b38f25432e43023d0cb9"
+    },
+    {
+      "request_id": "3488cefb9a5eaad40d36431e5760123e7ee1738496efb2ac00a5204f00afeed1",
+      "request_smiles": "NS(=O)(=O)CC1C=C[CH]([Sb-]([Cl])([Cl])([Cl])([Cl])[Cl])C=C1",
+      "service_smiles": "NS(=O)(=O)CC1C=CC([SbH](Cl)(Cl)(Cl)(Cl)Cl)C=C1",
+      "kind": "unresolved_service_structure",
+      "raw_row_sha256": "816593d86ead5086c5654b19b13a4e34824f17ad280953d93312c718f0223ba0",
+      "approval_manifest_path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/data-policy/feature-eligibility-exclusions.json",
+      "approval_manifest_sha256": "42bdbf2bd4729c7ca9de046f12d15856b0963799f862f849f5d934a8a094e018"
+    }
+  ],
+  "queue_sha256": "ae515913b1bedacd216e424305b57daa3dfce0cf8169352a4f41df36de477493",
+  "source_map_sha256": "7849899d79cb16d17deac9ed854c000383275c75bac5ae61d5a5c9355e95f231",
+  "schema_sha256": "e71816d2be797165532b2373c4c49fabe64bf817760b3e494dcf9adf2d2fd177",
+  "endpoint_types_sha256": "0013aeea48b65d5eb8bc1d4b53e856483ed38110c99eb181e90f8c3ba4dc6e56"
+}

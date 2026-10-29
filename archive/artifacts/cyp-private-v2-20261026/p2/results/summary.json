@@ -1,0 +1,250 @@
+{
+  "status": "feasibility_complete_not_model_validation",
+  "design": {
+    "seed": 20261026,
+    "seed_pool_fraction": 0.5,
+    "hits_per_target": 25,
+    "neighbors_per_hit": 10,
+    "seed_targets": [
+      "CYP1A2",
+      "CYP2C9",
+      "CYP3A4"
+    ],
+    "series_similarity_cutoff": 0.6
+  },
+  "official_rows": 4905,
+  "seed_pool_rows": 2478,
+  "query_candidate_rows": 2427,
+  "seed_selections": 75,
+  "unique_seed_molecules": 68,
+  "neighbor_slots": 680,
+  "unique_query_molecules": 474,
+  "query_observed_per_target": {
+    "CYP1A2_pIC50_direct_inhibition": 164,
+    "CYP2C9_pIC50_direct_inhibition": 134,
+    "CYP2D6_pIC50_direct_inhibition": 158,
+    "CYP3A4_pIC50_direct_inhibition": 224
+  },
+  "query_all4_observed": 2,
+  "query_no_released_single": 59,
+  "query_numeric_perturbation_leaves_selector_inputs_identical": true,
+  "seed_query_role_groups_disjoint": true,
+  "source_panels": {
+    "union18": {
+      "source_rows": 31670,
+      "query_equivalent_rows_removed": 477,
+      "source_policy": "Original incumbent pools retained for review; no automatic new source curation. Paired policy changes require separate declaration.",
+      "panels": {
+        "anchor_retained": {
+          "rows": 31193,
+          "observed_target_cells": {
+            "cyp3a4_pic50_direct_inhibition": 2111,
+            "cyp2c9_pic50_direct_inhibition": 1151,
+            "cyp2d6_pic50_direct_inhibition": 1335,
+            "cyp1a2_pic50_direct_inhibition": 1248,
+            "cyp3a4_log2fc": 3960,
+            "cyp2c9_log2fc": 3960,
+            "cyp2d6_log2fc": 3960,
+            "cyp1a2_log2fc": 3960,
+            "cyp3a4_pic50_chembl": 15764,
+            "cyp2c9_pic50_chembl": 10543,
+            "cyp2d6_pic50_chembl": 8405,
+            "cyp1a2_pic50_chembl": 10957,
+            "cyp2c19_pic50_chembl": 10986,
+            "cyp3a4_max_response": 16119,
+            "cyp2c9_max_response": 16119,
+            "cyp2d6_max_response": 16119,
+            "cyp1a2_max_response": 16119,
+            "cyp2c19_max_response": 16119
+          },
+          "retained_indices_sha256": "41f264c635a0a04a81439c4bb28aa6c0bb6d148c1ac7260d993b67ef2d06f0f3"
+        },
+        "series_withheld": {
+          "rows": 31045,
+          "observed_target_cells": {
+            "cyp3a4_pic50_direct_inhibition": 2033,
+            "cyp2c9_pic50_direct_inhibition": 1141,
+            "cyp2d6_pic50_direct_inhibition": 1323,
+            "cyp1a2_pic50_direct_inhibition": 1237,
+            "cyp3a4_log2fc": 3925,
+            "cyp2c9_log2fc": 3925,
+            "cyp2d6_log2fc": 3925,
+            "cyp1a2_log2fc": 3925,
+            "cyp3a4_pic50_chembl": 15732,
+            "cyp2c9_pic50_chembl": 10521,
+            "cyp2d6_pic50_chembl": 8386,
+            "cyp1a2_pic50_chembl": 10935,
+            "cyp2c19_pic50_chembl": 10966,
+            "cyp3a4_max_response": 16088,
+            "cyp2c9_max_response": 16088,
+            "cyp2d6_max_response": 16088,
+            "cyp1a2_max_response": 16088,
+            "cyp2c19_max_response": 16088
+          },
+          "retained_indices_sha256": "f88bc9ca18f324204836d842284bc26d0bb8d292a0ececcddbb9d4b40636d5c6"
+        },
+        "availability_matched_random": {
+          "rows": 31045,
+          "observed_target_cells": {
+            "cyp3a4_pic50_direct_inhibition": 2033,
+            "cyp2c9_pic50_direct_inhibition": 1141,
+            "cyp2d6_pic50_direct_inhibition": 1323,
+            "cyp1a2_pic50_direct_inhibition": 1237,
+            "cyp3a4_log2fc": 3925,
+            "cyp2c9_log2fc": 3925,
+            "cyp2d6_log2fc": 3925,
+            "cyp1a2_log2fc": 3925,
+            "cyp3a4_pic50_chembl": 15732,
+            "cyp2c9_pic50_chembl": 10521,
+            "cyp2d6_pic50_chembl": 8386,
+            "cyp1a2_pic50_chembl": 10935,
+            "cyp2c19_pic50_chembl": 10966,
+            "cyp3a4_max_response": 16088,
+            "cyp2c9_max_response": 16088,
+            "cyp2d6_max_response": 16088,
+            "cyp1a2_max_response": 16088,
+            "cyp2c19_max_response": 16088
+          },
+          "retained_indices_sha256": "6e28b5c5e46222fd02b63f6cc893f6015c31e12519336b458af6b635eb3e6d3c"
+        }
+      },
+      "random_matches_every_target_availability_count": true
+    },
+    "mtaux8": {
+      "source_rows": 4905,
+      "query_equivalent_rows_removed": 474,
+      "source_policy": "Original incumbent pools retained for review; no automatic new source curation. Paired policy changes require separate declaration.",
+      "panels": {
+        "anchor_retained": {
+          "rows": 4431,
+          "observed_target_cells": {
+            "cyp3a4_pic50_direct_inhibition": 2111,
+            "cyp2c9_pic50_direct_inhibition": 1151,
+            "cyp2d6_pic50_direct_inhibition": 1335,
+            "cyp1a2_pic50_direct_inhibition": 1248,
+            "cyp3a4_log2fc": 3960,
+            "cyp2c9_log2fc": 3960,
+            "cyp2d6_log2fc": 3960,
+            "cyp1a2_log2fc": 3960
+          },
+          "retained_indices_sha256": "0f835e8f7e60064ce4682131776c2c16e29036699477bfb0c5bee519235469bf"
+        },
+        "series_withheld": {
+          "rows": 4336,
+          "observed_target_cells": {
+            "cyp3a4_pic50_direct_inhibition": 2033,
+            "cyp2c9_pic50_direct_inhibition": 1141,
+            "cyp2d6_pic50_direct_inhibition": 1323,
+            "cyp1a2_pic50_direct_inhibition": 1237,
+            "cyp3a4_log2fc": 3925,
+            "cyp2c9_log2fc": 3925,
+            "cyp2d6_log2fc": 3925,
+            "cyp1a2_log2fc": 3925
+          },
+          "retained_indices_sha256": "bf9326f482cad852761678c07cd1afbf2d212bbf722ea5464a0e57ab029cf727"
+        },
+        "availability_matched_random": {
+          "rows": 4336,
+          "observed_target_cells": {
+            "cyp3a4_pic50_direct_inhibition": 2033,
+            "cyp2c9_pic50_direct_inhibition": 1141,
+            "cyp2d6_pic50_direct_inhibition": 1323,
+            "cyp1a2_pic50_direct_inhibition": 1237,
+            "cyp3a4_log2fc": 3925,
+            "cyp2c9_log2fc": 3925,
+            "cyp2d6_log2fc": 3925,
+            "cyp1a2_log2fc": 3925
+          },
+          "retained_indices_sha256": "ba5ddfd910cf59c89dfbd7b0fbfc8cdf4d708ea7f570d007ecc2a03bf7fb37bc"
+        }
+      },
+      "random_matches_every_target_availability_count": true
+    },
+    "2d6isoform6": {
+      "source_rows": 23264,
+      "query_equivalent_rows_removed": 417,
+      "source_policy": "Original incumbent pools retained for review; no automatic new source curation. Paired policy changes require separate declaration.",
+      "panels": {
+        "anchor_retained": {
+          "rows": 22847,
+          "observed_target_cells": {
+            "cyp2d6_pic50_direct_inhibition": 1335,
+            "cyp2d6_log2fc": 3960,
+            "cyp2d6_pic50_tdi_condition": 1339,
+            "cyp2d6_emax_vs_pos_ctrl_direct_inhibition": 1335,
+            "cyp2d6_pic50_chembl": 8405,
+            "cyp2d6_max_response": 16119
+          },
+          "retained_indices_sha256": "24e824f4d42ca3766cba132d5382b69cf3a4faa7a695be5478e022891e957829"
+        },
+        "series_withheld": {
+          "rows": 22783,
+          "observed_target_cells": {
+            "cyp2d6_pic50_direct_inhibition": 1323,
+            "cyp2d6_log2fc": 3925,
+            "cyp2d6_pic50_tdi_condition": 1327,
+            "cyp2d6_emax_vs_pos_ctrl_direct_inhibition": 1323,
+            "cyp2d6_pic50_chembl": 8386,
+            "cyp2d6_max_response": 16088
+          },
+          "retained_indices_sha256": "adf42476d8963e666f5662326826ba099f0ef1290a4b9d5b5852daae6698ab5e"
+        },
+        "availability_matched_random": {
+          "rows": 22783,
+          "observed_target_cells": {
+            "cyp2d6_pic50_direct_inhibition": 1323,
+            "cyp2d6_log2fc": 3925,
+            "cyp2d6_pic50_tdi_condition": 1327,
+            "cyp2d6_emax_vs_pos_ctrl_direct_inhibition": 1323,
+            "cyp2d6_pic50_chembl": 8386,
+            "cyp2d6_max_response": 16088
+          },
+          "retained_indices_sha256": "cee30a5a91a7079f482786a54c363eb410937b1016289de295c5dd27f2d7f6db"
+        }
+      },
+      "random_matches_every_target_availability_count": true
+    },
+    "2d6single": {
+      "source_rows": 1493,
+      "query_equivalent_rows_removed": 158,
+      "source_policy": "Original incumbent pools retained for review; no automatic new source curation. Paired policy changes require separate declaration.",
+      "panels": {
+        "anchor_retained": {
+          "rows": 1335,
+          "observed_target_cells": {
+            "cyp2d6_pic50_direct_inhibition": 1335
+          },
+          "retained_indices_sha256": "7127e6c134e09d862d0ea69b4533df5a6c3aac36768ab997fd360a279c691ddf"
+        },
+        "series_withheld": {
+          "rows": 1323,
+          "observed_target_cells": {
+            "cyp2d6_pic50_direct_inhibition": 1323
+          },
+          "retained_indices_sha256": "712249b6e1cb40e9001375373448655a1b4612e5894a1f5674da9322ee2610fd"
+        },
+        "availability_matched_random": {
+          "rows": 1323,
+          "observed_target_cells": {
+            "cyp2d6_pic50_direct_inhibition": 1323
+          },
+          "retained_indices_sha256": "c06b0c8157c70c383d1f69e369b1aa3e2f412b19dc62cca21c7c6cebdbf61792"
+        }
+      },
+      "random_matches_every_target_availability_count": true
+    }
+  },
+  "no_750_forcing": true,
+  "no_imputed_labels": true,
+  "no_model_fits": true,
+  "no_hidden_labels": true,
+  "private_only": true,
+  "no_network": true,
+  "limitations": [
+    "One declared50/50 role partition, not an optimized split search.",
+    "Allquery numeric values were excluded from selector inputs; only known availability was reported.",
+    "This does not establish a dense4-CYP target panel or recover true organizer parent series.",
+    "Series/random controls match row counts and every target availability count, not numeric activity distributions.",
+    "Purges cover declared parent/connectivity/audited strict rules, not all possible chemical equivalences."
+  ]
+}

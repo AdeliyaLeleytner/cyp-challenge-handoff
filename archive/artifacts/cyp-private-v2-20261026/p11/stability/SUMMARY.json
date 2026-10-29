@@ -1,0 +1,48 @@
+{
+  "status": "complete",
+  "replicates": 1000,
+  "seed": 20261027,
+  "scaffold_groups": 665,
+  "own750_observed_union_rows": 750,
+  "point_MAE": {
+    "adapted": 0.5332807419214207,
+    "native": 0.5248289358384278,
+    "H6": 0.5289842970556098,
+    "anchored": 0.529889319656494
+  },
+  "full_four_order_retained_fraction": 0.331,
+  "paired_deltas": [
+    {
+      "candidate": "adapted",
+      "reference": "native",
+      "MAE_delta": 0.008451806082992896,
+      "lower95": -0.003872663044753141,
+      "upper95": 0.02163291836087431,
+      "bootstrap_fraction_delta_positive": 0.913
+    },
+    {
+      "candidate": "H6",
+      "reference": "native",
+      "MAE_delta": 0.004155361217181963,
+      "lower95": -0.007579281495179558,
+      "upper95": 0.016733463839213175,
+      "bootstrap_fraction_delta_positive": 0.749
+    },
+    {
+      "candidate": "anchored",
+      "reference": "native",
+      "MAE_delta": 0.005060383818066172,
+      "lower95": -0.005783082628864011,
+      "upper95": 0.016219968660158054,
+      "bootstrap_fraction_delta_positive": 0.82
+    }
+  ],
+  "caveats": [
+    "Conditional scaffold bootstrap of existing predictions, not all training-seed or leaderboard-subset uncertainty.",
+    "Retrospectively selected metric: intervals do not correct metric or model selection.",
+    "Fraction positive is a bootstrap description, not posterior probability or proof of future gain."
+  ],
+  "base_model_fits": 0,
+  "calibrator_fits": 0,
+  "source_sha256": "7ac28c82208f28361e19d4d8cbfad0f69f2b1c568e642a5168a9e4cb84af8bf1"
+}

@@ -1,0 +1,317 @@
+{
+  "normalization": "RDKit FragmentParent, uncharge, remove stereochemistry, canonical SMILES; no tautomer canonicalization",
+  "official_files": {
+    "official_train": {
+      "rows": 4905,
+      "parents": 4901,
+      "invalid": 0
+    },
+    "actual_blinded_TEST": {
+      "rows": 750,
+      "parents": 748,
+      "invalid": 0
+    },
+    "own750_outer_holdout": {
+      "rows": 750,
+      "parents": 750,
+      "invalid": 0
+    },
+    "briford529_outer_holdout": {
+      "rows": 529,
+      "parents": 529,
+      "invalid": 0
+    }
+  },
+  "checkpoints": {
+    "chemprop_medium.pt": {
+      "sha256": "b8137a0d202669baa9747f21eac4ef78b000afe68a3f100d25c849c41ad8a3d5",
+      "git_blob_sha1": "94989630583632331f545379813c639de612abc3",
+      "git_blob_matches_pinned_Jeremy_revision": true,
+      "metadata": {
+        "d_h": 600,
+        "depth": 4,
+        "n_tasks": 47,
+        "output_columns": null
+      },
+      "training_membership": "unknown; no hash-linked training membership manifest or named output columns found"
+    },
+    "chemprop_chemeleon.pt": {
+      "sha256": "b2b3ce2d5a40c46c4dbae1e553ce63d3c0e6a15abe800fde18b8b8814e2f7cc6",
+      "git_blob_sha1": "385d0ebf503efc0f294a5882b7096d649541ab7c",
+      "git_blob_matches_pinned_Jeremy_revision": true,
+      "metadata": {
+        "d_h": 2048,
+        "depth": 6,
+        "n_tasks": 47,
+        "output_columns": null
+      },
+      "training_membership": "unknown; no hash-linked training membership manifest or named output columns found"
+    }
+  },
+  "sources": {
+    "cyp1a2-cyp2d6-cyp3a4-cyp2c9-chemeleon-v1": {
+      "identity": {
+        "repo": "openadmet/cyp1a2-cyp2d6-cyp3a4-cyp2c9-chemeleon-v1",
+        "revision": "ef24cf941ae21c7d7a64df378a846bd2066eceda",
+        "model_sha256": "81d15cc43a3608f1aab465b1e690d86fd41c420615094cca1439c2e52f3b4e7b",
+        "matches_either_Jeremy_checkpoint": false,
+        "X_train_sha256": "208d3662cdf3221c9ef7e4adc138fd48e1ae03ef9edb3e984f8344c8c26d35dd",
+        "y_train_sha256": "9f5b06ad99a1982b85d48e8b885a0c52bcc6c3655f1c03465c5141cb0eb483be",
+        "applicability": "Verified membership of this different official OpenADMET model; not evidence of exact Jeremy membership"
+      },
+      "rows": 8068,
+      "unique_parents": 7800,
+      "invalid_structures": 0,
+      "labeled_parents": 7800,
+      "label_columns": [
+        "OPENADMET_LOGAC50_CYP3A4",
+        "OPENADMET_LOGAC50_CYP2D6",
+        "OPENADMET_LOGAC50_CYP2C9",
+        "OPENADMET_LOGAC50_CYP1A2"
+      ],
+      "membership": {
+        "official_train": {
+          "matching_structure_rows": 67,
+          "matching_labeled_rows": 67,
+          "matching_labeled_unique_parents": 64,
+          "per_endpoint_matching_rows": {
+            "OPENADMET_LOGAC50_CYP3A4": 29,
+            "OPENADMET_LOGAC50_CYP2D6": 46,
+            "OPENADMET_LOGAC50_CYP2C9": 20,
+            "OPENADMET_LOGAC50_CYP1A2": 21
+          }
+        },
+        "actual_blinded_TEST": {
+          "matching_structure_rows": 0,
+          "matching_labeled_rows": 0,
+          "matching_labeled_unique_parents": 0,
+          "per_endpoint_matching_rows": {
+            "OPENADMET_LOGAC50_CYP3A4": 0,
+            "OPENADMET_LOGAC50_CYP2D6": 0,
+            "OPENADMET_LOGAC50_CYP2C9": 0,
+            "OPENADMET_LOGAC50_CYP1A2": 0
+          }
+        },
+        "own750_outer_holdout": {
+          "matching_structure_rows": 10,
+          "matching_labeled_rows": 10,
+          "matching_labeled_unique_parents": 10,
+          "per_endpoint_matching_rows": {
+            "OPENADMET_LOGAC50_CYP3A4": 1,
+            "OPENADMET_LOGAC50_CYP2D6": 9,
+            "OPENADMET_LOGAC50_CYP2C9": 2,
+            "OPENADMET_LOGAC50_CYP1A2": 2
+          }
+        },
+        "briford529_outer_holdout": {
+          "matching_structure_rows": 5,
+          "matching_labeled_rows": 5,
+          "matching_labeled_unique_parents": 5,
+          "per_endpoint_matching_rows": {
+            "OPENADMET_LOGAC50_CYP3A4": 3,
+            "OPENADMET_LOGAC50_CYP2D6": 3,
+            "OPENADMET_LOGAC50_CYP2C9": 1,
+            "OPENADMET_LOGAC50_CYP1A2": 0
+          }
+        }
+      }
+    },
+    "cyp1a2-cyp2d6-cyp3a4-cyp3c9-chemeleon-baseline": {
+      "identity": {
+        "repo": "openadmet/cyp1a2-cyp2d6-cyp3a4-cyp3c9-chemeleon-baseline",
+        "revision": "12265ee807889b4a3765b308c69d00022b99c176",
+        "model_sha256": "5260ba497cfd3dbbd15ce3300580c45d33d71f427c499bda4c3bb5029df0fd55",
+        "matches_either_Jeremy_checkpoint": false,
+        "X_train_sha256": "208d3662cdf3221c9ef7e4adc138fd48e1ae03ef9edb3e984f8344c8c26d35dd",
+        "y_train_sha256": "1ab43020a8064c4dac065afa60f65d021692f1716a4aacec1b6808c44fb37d9e",
+        "applicability": "Verified membership of this different official OpenADMET model; not evidence of exact Jeremy membership"
+      },
+      "rows": 8068,
+      "unique_parents": 7800,
+      "invalid_structures": 0,
+      "labeled_parents": 7800,
+      "label_columns": [
+        "OPENADMET_LOGAC50_cyp3a4",
+        "OPENADMET_LOGAC50_cyp2d6",
+        "OPENADMET_LOGAC50_cyp2c9",
+        "OPENADMET_LOGAC50_cyp1a2"
+      ],
+      "membership": {
+        "official_train": {
+          "matching_structure_rows": 67,
+          "matching_labeled_rows": 67,
+          "matching_labeled_unique_parents": 64,
+          "per_endpoint_matching_rows": {
+            "OPENADMET_LOGAC50_cyp3a4": 29,
+            "OPENADMET_LOGAC50_cyp2d6": 46,
+            "OPENADMET_LOGAC50_cyp2c9": 20,
+            "OPENADMET_LOGAC50_cyp1a2": 21
+          }
+        },
+        "actual_blinded_TEST": {
+          "matching_structure_rows": 0,
+          "matching_labeled_rows": 0,
+          "matching_labeled_unique_parents": 0,
+          "per_endpoint_matching_rows": {
+            "OPENADMET_LOGAC50_cyp3a4": 0,
+            "OPENADMET_LOGAC50_cyp2d6": 0,
+            "OPENADMET_LOGAC50_cyp2c9": 0,
+            "OPENADMET_LOGAC50_cyp1a2": 0
+          }
+        },
+        "own750_outer_holdout": {
+          "matching_structure_rows": 10,
+          "matching_labeled_rows": 10,
+          "matching_labeled_unique_parents": 10,
+          "per_endpoint_matching_rows": {
+            "OPENADMET_LOGAC50_cyp3a4": 1,
+            "OPENADMET_LOGAC50_cyp2d6": 9,
+            "OPENADMET_LOGAC50_cyp2c9": 2,
+            "OPENADMET_LOGAC50_cyp1a2": 2
+          }
+        },
+        "briford529_outer_holdout": {
+          "matching_structure_rows": 5,
+          "matching_labeled_rows": 5,
+          "matching_labeled_unique_parents": 5,
+          "per_endpoint_matching_rows": {
+            "OPENADMET_LOGAC50_cyp3a4": 3,
+            "OPENADMET_LOGAC50_cyp2d6": 3,
+            "OPENADMET_LOGAC50_cyp2c9": 1,
+            "OPENADMET_LOGAC50_cyp1a2": 0
+          }
+        }
+      }
+    },
+    "Jeremy_disclosed_cyp_chembl": {
+      "identity": {
+        "sha256": "ab3bdd182072ea95ba7cddf7bc6378ce35a77a699aa5eabc48248b30a0fc0e4e",
+        "repo": "jeremycheminf/openadmet_scripts",
+        "revision": "d3a5549e0c98167435cbf8f5115c68a9a184ed7a",
+        "applicability": "Published auxiliary/source table with README association to adme_pretrain; no hash-linked row-level training membership for either checkpoint"
+      },
+      "rows": 17051,
+      "unique_parents": 13120,
+      "invalid_structures": 0,
+      "labeled_parents": 13120,
+      "label_columns": [
+        "CYP1A2_IC50_PIC50",
+        "CYP1A2_Ki_PIC50",
+        "CYP2C9_IC50_PIC50",
+        "CYP2C9_Ki_PIC50",
+        "CYP2C19_IC50_PIC50",
+        "CYP2C19_Ki_PIC50",
+        "CYP2D6_IC50_PIC50",
+        "CYP2D6_Ki_PIC50",
+        "CYP3A4_IC50_PIC50",
+        "CYP3A4_Ki_PIC50",
+        "CYP2B6_IC50_PIC50",
+        "CYP2B6_Ki_PIC50"
+      ],
+      "membership": {
+        "official_train": {
+          "matching_structure_rows": 67,
+          "matching_labeled_rows": 67,
+          "matching_labeled_unique_parents": 65,
+          "per_endpoint_matching_rows": {
+            "CYP1A2_IC50_PIC50": 2,
+            "CYP1A2_Ki_PIC50": 0,
+            "CYP2C9_IC50_PIC50": 25,
+            "CYP2C9_Ki_PIC50": 2,
+            "CYP2C19_IC50_PIC50": 28,
+            "CYP2C19_Ki_PIC50": 13,
+            "CYP2D6_IC50_PIC50": 1,
+            "CYP2D6_Ki_PIC50": 1,
+            "CYP3A4_IC50_PIC50": 37,
+            "CYP3A4_Ki_PIC50": 9,
+            "CYP2B6_IC50_PIC50": 1,
+            "CYP2B6_Ki_PIC50": 2
+          }
+        },
+        "actual_blinded_TEST": {
+          "matching_structure_rows": 0,
+          "matching_labeled_rows": 0,
+          "matching_labeled_unique_parents": 0,
+          "per_endpoint_matching_rows": {
+            "CYP1A2_IC50_PIC50": 0,
+            "CYP1A2_Ki_PIC50": 0,
+            "CYP2C9_IC50_PIC50": 0,
+            "CYP2C9_Ki_PIC50": 0,
+            "CYP2C19_IC50_PIC50": 0,
+            "CYP2C19_Ki_PIC50": 0,
+            "CYP2D6_IC50_PIC50": 0,
+            "CYP2D6_Ki_PIC50": 0,
+            "CYP3A4_IC50_PIC50": 0,
+            "CYP3A4_Ki_PIC50": 0,
+            "CYP2B6_IC50_PIC50": 0,
+            "CYP2B6_Ki_PIC50": 0
+          }
+        },
+        "own750_outer_holdout": {
+          "matching_structure_rows": 13,
+          "matching_labeled_rows": 13,
+          "matching_labeled_unique_parents": 13,
+          "per_endpoint_matching_rows": {
+            "CYP1A2_IC50_PIC50": 1,
+            "CYP1A2_Ki_PIC50": 0,
+            "CYP2C9_IC50_PIC50": 4,
+            "CYP2C9_Ki_PIC50": 0,
+            "CYP2C19_IC50_PIC50": 5,
+            "CYP2C19_Ki_PIC50": 3,
+            "CYP2D6_IC50_PIC50": 1,
+            "CYP2D6_Ki_PIC50": 0,
+            "CYP3A4_IC50_PIC50": 5,
+            "CYP3A4_Ki_PIC50": 2,
+            "CYP2B6_IC50_PIC50": 0,
+            "CYP2B6_Ki_PIC50": 0
+          }
+        },
+        "briford529_outer_holdout": {
+          "matching_structure_rows": 6,
+          "matching_labeled_rows": 6,
+          "matching_labeled_unique_parents": 6,
+          "per_endpoint_matching_rows": {
+            "CYP1A2_IC50_PIC50": 0,
+            "CYP1A2_Ki_PIC50": 0,
+            "CYP2C9_IC50_PIC50": 2,
+            "CYP2C9_Ki_PIC50": 0,
+            "CYP2C19_IC50_PIC50": 4,
+            "CYP2C19_Ki_PIC50": 3,
+            "CYP2D6_IC50_PIC50": 0,
+            "CYP2D6_Ki_PIC50": 0,
+            "CYP3A4_IC50_PIC50": 5,
+            "CYP3A4_Ki_PIC50": 0,
+            "CYP2B6_IC50_PIC50": 0,
+            "CYP2B6_Ki_PIC50": 0
+          }
+        }
+      }
+    }
+  },
+  "feature_caches": {
+    "adme_pretrain": {
+      "sha256": "e0216aeaad3f8b9a34ea124b0eb90bd36ae671ae79b1d30268feccf5f8731378",
+      "shape": [
+        4905,
+        600
+      ],
+      "checkpoint": "chemprop_medium.pt",
+      "proof": "prepare_remote.py maps tag to checkpoint and performs frozen forward pass; saved outputs/preparation.json matches checkpoint SHA256"
+    },
+    "chemeleon": {
+      "sha256": "1c788aeee3e11ec20dc28d1936e18b07e99cfed6b961708a142df12933d9d232",
+      "shape": [
+        4905,
+        2048
+      ],
+      "checkpoint": "chemprop_chemeleon.pt",
+      "proof": "prepare_remote.py maps tag to checkpoint and performs frozen forward pass; saved outputs/preparation.json matches checkpoint SHA256"
+    }
+  },
+  "foundation_hash_comparison": {
+    "repo": "openadmet/chemprop-foundation-pretraining-weights",
+    "revision": "0f8201d06c4656c3f97bc244ce2dc18ac2881be9",
+    "weights_compared": 15,
+    "matches": []
+  }
+}

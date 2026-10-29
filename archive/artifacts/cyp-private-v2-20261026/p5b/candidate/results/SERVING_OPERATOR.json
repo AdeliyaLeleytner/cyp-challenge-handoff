@@ -1,0 +1,54 @@
+{
+  "source": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/candidate/stage/original-serving-source.py",
+    "sha256": "7f8834425973369531cb21805fe54c966e72e47a5c764c49395a1d7dc7a9aec6",
+    "source": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/candidate/worktree/vendor/briford_native/cyp_recalibrate.py"
+  },
+  "original_placement": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p5b/candidate/stage/blind750_original_calibration.json",
+    "sha256": "4f21c36afc2d9dfb399f78c89aa34a6769c69cdadef046b46994387209428f10",
+    "source": "/Users/adeliyaleleytner/autoresearch-runs/cyp-briford-reproduction-20261024/remote/finalized/placement.json"
+  },
+  "frozen_numeric_operator": {
+    "context": "blind750",
+    "original_raw_reference_mean": [
+      4.878279883384705,
+      4.885473371982575,
+      4.662027442137401,
+      4.748822559197744
+    ],
+    "calibration": {
+      "CYP1A2": {
+        "offset": -0.46627988338470505,
+        "scale": 1.6356156417245602
+      },
+      "CYP2C9": {
+        "offset": -0.055473371982574626,
+        "scale": 1.3553960534051763
+      },
+      "CYP2D6": {
+        "offset": -1.0920274421374008,
+        "scale": 2.444851065573069
+      },
+      "CYP3A4": {
+        "offset": 0.13117744080225613,
+        "scale": 1.179085201409878
+      }
+    },
+    "floor": 1.0,
+    "coefficients_fixed_from_existing_training_OOF": true,
+    "feature_weights": [
+      0.5566722699140008,
+      0.3996000026493514,
+      0.26228117392586486,
+      0.4059953161742888
+    ]
+  },
+  "reference_mean_frozen": [
+    4.878279883384705,
+    4.885473371982575,
+    4.662027442137401,
+    4.748822559197744
+  ],
+  "candidate_dependent_calibration": false
+}

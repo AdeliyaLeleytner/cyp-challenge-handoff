@@ -1,0 +1,137 @@
+Seed set to 45
+Loading foundation model: /workspace/cyp-repro/assets/weights/chemeleon_mp.pt
+  Loaded custom foundation weights (hidden_dim=2048)
+{"event": "exact_strae_fold_config", "fold": 3, "criterion_mode": "exact_strae_v1", "fit_statistics": {"primary_indices": [0, 1, 2, 3], "primary_counts": [1635, 925, 1056, 993], "primary_means": [4.016767374329663, 4.574973711749189, 4.793972394558712, 4.958622118540785], "primary_denominators": [849.7579564443977, 299.6410666638594, 449.9542733538144, 493.42499235416017], "mode": "exact_strae_v1", "n_fit_rows": 24912, "n_targets": 18, "target_counts": [1635, 925, 1056, 993, 3157, 3157, 3157, 3157, 12693, 8387, 6681, 8687, 8769, 12901, 12901, 12901, 12901, 12901], "auxiliary_indices": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], "native_task_weights": [0.6643903851509094, 1.1971782445907593, 1.0417358875274658, 1.0966956615447998, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896, 0.30000001192092896], "primary_native_weight_sum": 4.000000178813934, "auxiliary_head_coefficients": [0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099, 0.07499999962747099], "auxiliary_total_nominal_budget": 1.0499999947845937, "scaler_mean": [4.016767374893212, 4.574973715189341, 4.7939723979568845, 4.958622112495061, -1.8513839386715636, -0.6717232757760625, -0.3942518501575254, -0.6285929552922223, 5.238186410271153, 5.282642783063436, 5.259676698402915, 5.3531155851365675, 5.275956215588203, -37.61177013556991, -30.815965145655294, -21.07747461725042, -44.646927216174845, -48.17152174455021], "scaler_scale": [1.109745829098512, 0.7969872316449688, 0.9093717447363536, 1.0444699672452036, 1.3653886703106846, 0.46463134980775106, 1.1038203897930239, 0.6821826894992403, 0.6508274196192421, 0.6803223140596513, 0.7562850379392846, 0.7012447872105818, 0.68758821323434, 38.394618122477496, 42.08863556995434, 32.037027468383826, 37.66148505827197, 51.031903187612194], "per_entry_coefficients": [0.0003264888021001796, 0.0006649516040294951, 0.0005052578665150734, 0.000529193891386599, 2.375673095580329e-05, 2.375673095580329e-05, 2.375673095580329e-05, 2.375673095580329e-05, 5.9087685832719596e-06, 8.942410829554189e-06, 1.122586433579868e-05, 8.633590379586852e-06, 8.552856611639981e-06, 5.813502800362064e-06, 5.813502800362064e-06, 5.813502800362064e-06, 5.813502800362064e-06, 5.813502800362064e-06], "normalization": "N_fit / B; primary sigma/(J*D_fit); auxiliary native_weight/(sum_primary_native_weights*n_aux_fit)", "qualification": "Preserves nominal native auxiliary head ratios, not native realized label-frequency weighting. Test denominators are unknown."}, "validation_statistics": {"primary_indices": [0, 1, 2, 3], "primary_counts": [430, 221, 261, 258], "primary_means": [4.098043631948838, 4.569308786135747, 4.752701633681992, 4.970085598674419], "primary_denominators": [216.02196733993947, 67.81208695501357, 102.26396669790805, 131.37295782953487]}, "checkpoint_monitor": "val_primary_strae", "bounds_scaling": "same fit-center mean and scale for central/lower/upper; no bound-specific fitting", "native_architecture_and_optimizer_preserved": true, "explicit_changes": ["primary exact interval macro objective", "per-auxiliary-head observed-label mean and nominal author budget", "uniform-row unbiased minibatch estimator", "primary-only validation checkpoint selection"], "precision": "16-mixed forward; FP32 differentiable loss; float64 full-validation official arithmetic"}
+Using 16bit Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [7]
+Loading `train_dataloader` to estimate number of stepping batches.
+/opt/conda/lib/python3.11/site-packages/lightning/pytorch/utilities/model_summary/model_summary.py:231: Precision 16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
+
+  | Name            | Type               | Params | Mode 
+---------------------------------------------------------------
+0 | message_passing | BondMessagePassing | 8.7 M  | train
+1 | agg             | MeanAggregation    | 0      | train
+2 | bn              | BatchNorm1d        | 4.1 K  | train
+3 | predictor       | RegressionFFN      | 710 K  | train
+4 | X_d_transform   | Identity           | 0      | train
+5 | metrics         | ModuleList         | 0      | train
+6 | loss_objective  | ExactSTObjective   | 0      | train
+---------------------------------------------------------------
+9.4 M     Trainable params
+0         Non-trainable params
+9.4 M     Total params
+37.715    Total estimated model params size (MB)
+27        Modules in train mode
+0         Modules in eval mode
+{"event": "exact_strae_epoch", "epoch": 0, "val_primary_strae": 0.8178306050734885, "per_primary_ST_RAE": [0.708404633525692, 0.7930416006120101, 0.969907266481627, 0.7999689196746247]}
+{"event": "exact_strae_epoch", "epoch": 1, "val_primary_strae": 0.9227216918693555, "per_primary_ST_RAE": [0.861992005752713, 0.9152179673669666, 1.001096258150839, 0.9125805362069033]}
+[rank: 0] Received SIGTERM: 15
+Exception in thread Thread-6 (_pin_memory_loop):
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/opt/conda/lib/python3.11/threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/conda/lib/python3.11/site-packages/torch/utils/data/_utils/pin_memory.py", line 59, in _pin_memory_loop
+    do_one_step()
+  File "/opt/conda/lib/python3.11/site-packages/torch/utils/data/_utils/pin_memory.py", line 35, in do_one_step
+    r = in_queue.get(timeout=MP_STATUS_CHECK_INTERVAL)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/multiprocessing/queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torch/multiprocessing/reductions.py", line 541, in rebuild_storage_fd
+    fd = df.detach()
+         ^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/multiprocessing/resource_sharer.py", line 57, in detach
+    with _resource_sharer.get_connection(self._id) as conn:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/multiprocessing/resource_sharer.py", line 86, in get_connection
+    c = Client(address, authkey=process.current_process().authkey)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/multiprocessing/connection.py", line 525, in Client
+    answer_challenge(c, authkey)
+  File "/opt/conda/lib/python3.11/multiprocessing/connection.py", line 769, in answer_challenge
+    message = connection.recv_bytes(256)         # reject large message
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/multiprocessing/connection.py", line 216, in recv_bytes
+    buf = self._recv_bytes(maxlength)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/multiprocessing/connection.py", line 430, in _recv_bytes
+    buf = self._recv(4)
+          ^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/multiprocessing/connection.py", line 399, in _recv
+    raise EOFError
+EOFError
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 49, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 598, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1011, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1055, in _run_stage
+    self.fit_loop.run()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/fit_loop.py", line 216, in run
+    self.advance()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/fit_loop.py", line 458, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/training_epoch_loop.py", line 153, in run
+    self.on_advance_end(data_fetcher)
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/loops/training_epoch_loop.py", line 414, in on_advance_end
+    raise SIGTERMException
+lightning.pytorch.utilities.exceptions.SIGTERMException
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/briford_native.py", line 210, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/briford_native.py", line 208, in main
+    if args.worker:return worker(args.worker)
+                          ^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/briford_native.py", line 116, in worker
+    model,valid=train_fn(fs,df.iloc[f['train']].reset_index(drop=True),df.iloc[f['validation']].reset_index(drop=True),y[f['train']],y[f['validation']],fold_idx=job['fold'],checkpoint_dir=str(out/'checkpoints'))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/briford_native.py", line 113, in <lambda>
+    train_fn=lambda *a,**kw:train_exact_strae_fold(core,*a,**kw)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/strae_trainer.py", line 143, in train_exact_strae_fold
+    start = time.time(); trainer.fit(model, train_loader, val_loader)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 560, in fit
+    call._call_and_handle_interrupt(
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/call.py", line 70, in _call_and_handle_interrupt
+    trainer._teardown()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/trainer/trainer.py", line 1034, in _teardown
+    self.strategy.teardown()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/pytorch/strategies/strategy.py", line 536, in teardown
+    self.lightning_module.cpu()
+  File "/opt/conda/lib/python3.11/site-packages/lightning/fabric/utilities/device_dtype_mixin.py", line 82, in cpu
+    return super().cpu()
+           ^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1121, in cpu
+    return self._apply(lambda t: t.cpu())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 903, in _apply
+    module._apply(fn)
+  File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 903, in _apply
+    module._apply(fn)
+  File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 967, in _apply
+    grad_applied = fn(param_grad)
+                   ^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1121, in <lambda>
+    return self._apply(lambda t: t.cpu())
+                                 ^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torch/utils/data/_utils/signal_handling.py", line 73, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 119737) is killed by signal: Terminated. 

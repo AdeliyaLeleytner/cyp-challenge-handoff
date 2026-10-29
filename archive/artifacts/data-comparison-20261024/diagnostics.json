@@ -1,0 +1,107 @@
+{
+  "density_gains": [
+    {
+      "fingerprint": "AtomPair2048",
+      "quantity": "max_similarity",
+      "n_queries": 750,
+      "queries_with_increase": 21,
+      "mean_increase": 0.0008823553552255069,
+      "median_increase": 0.0,
+      "max_increase": 0.18043016708206405
+    },
+    {
+      "fingerprint": "AtomPair2048",
+      "quantity": "mean_top10",
+      "n_queries": 750,
+      "queries_with_increase": 181,
+      "mean_increase": 0.0020046569027003364,
+      "median_increase": 0.0,
+      "max_increase": 0.3562181346170196
+    },
+    {
+      "fingerprint": "AtomPair2048",
+      "quantity": "neighbors_ge_0_4",
+      "n_queries": 750,
+      "queries_with_increase": 603,
+      "mean_increase": 37.752,
+      "median_increase": 13.0,
+      "max_increase": 353
+    },
+    {
+      "fingerprint": "AtomPair2048",
+      "quantity": "neighbors_ge_0_5",
+      "n_queries": 750,
+      "queries_with_increase": 157,
+      "mean_increase": 0.7,
+      "median_increase": 0.0,
+      "max_increase": 28
+    },
+    {
+      "fingerprint": "AtomPair2048",
+      "quantity": "neighbors_ge_0_7",
+      "n_queries": 750,
+      "queries_with_increase": 2,
+      "mean_increase": 0.017333333333333333,
+      "median_increase": 0.0,
+      "max_increase": 11
+    },
+    {
+      "fingerprint": "Morgan2048_r2",
+      "quantity": "max_similarity",
+      "n_queries": 750,
+      "queries_with_increase": 4,
+      "mean_increase": 0.0005889156856898793,
+      "median_increase": 0.0,
+      "max_increase": 0.19979209979209978
+    },
+    {
+      "fingerprint": "Morgan2048_r2",
+      "quantity": "mean_top10",
+      "n_queries": 750,
+      "queries_with_increase": 137,
+      "mean_increase": 0.0016425515199026464,
+      "median_increase": 0.0,
+      "max_increase": 0.34412671345971446
+    },
+    {
+      "fingerprint": "Morgan2048_r2",
+      "quantity": "neighbors_ge_0_4",
+      "n_queries": 750,
+      "queries_with_increase": 69,
+      "mean_increase": 0.2773333333333333,
+      "median_increase": 0.0,
+      "max_increase": 30
+    },
+    {
+      "fingerprint": "Morgan2048_r2",
+      "quantity": "neighbors_ge_0_5",
+      "n_queries": 750,
+      "queries_with_increase": 10,
+      "mean_increase": 0.064,
+      "median_increase": 0.0,
+      "max_increase": 28
+    },
+    {
+      "fingerprint": "Morgan2048_r2",
+      "quantity": "neighbors_ge_0_7",
+      "n_queries": 750,
+      "queries_with_increase": 2,
+      "mean_increase": 0.012,
+      "median_increase": 0.0,
+      "max_increase": 8
+    }
+  ],
+  "veith_clip": {
+    "raw_values": 85535,
+    "below_minus150": 515,
+    "above50": 1193,
+    "note": "Historical training clips the SMILES/CYP mean rather than each raw record; these raw counts describe available extremes only."
+  },
+  "briford_train_flag": {
+    "flagged_rows": 198,
+    "audit_matched_rows": 225,
+    "audit_matched_parents": 182,
+    "disagree_rows": 113
+  },
+  "envelope_note": "A descriptive three-descriptor box; the README does not disclose exact catalogue filters or quantiles."
+}

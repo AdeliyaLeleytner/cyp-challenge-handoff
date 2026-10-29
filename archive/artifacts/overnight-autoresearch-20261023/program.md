@@ -1,0 +1,1 @@
+Goal andsubmissioncondition: TASK.md andSUBMISSION.md. FixedofficialST-RAE; immutabledata/splits; nohidden-testprobes. Rootorchestrator selectsdiversebatchesfromPLAN, agentsimplement/propose/critique, ORXlaunches immutablecommits, ledgerrecordsallfailures/results. Initialcredittranche andnightdeadline inBUDGET. Continueacrossgoalturns; do notmarkgoalcompletefrombatchcompletion.

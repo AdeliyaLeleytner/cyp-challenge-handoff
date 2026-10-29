@@ -1,0 +1,100 @@
+{
+  "status": "independently_verified",
+  "experiment_id": "8421e31b-790d-4c13-9f29-d3b9bdc1ee59",
+  "source_commit": "ed1ab38328eb9d088d785f90d4f96b99d95712e3",
+  "folds": 20,
+  "new_fits": 10,
+  "verified_reuses": 10,
+  "inner_train_rows_removed": 32,
+  "official_oof_rows": 4905,
+  "blind_query_rows": 750,
+  "raw_parity_max_abs": {
+    "CYP1A2": 0.0,
+    "CYP2C9": 0.0,
+    "CYP2D6": 0.0,
+    "CYP3A4": 0.0
+  },
+  "official_oof_parity_max_abs": {
+    "CYP1A2": 8.881784197001252e-16,
+    "CYP2C9": 8.881784197001252e-16,
+    "CYP2D6": 1.7763568394002505e-15,
+    "CYP3A4": 8.881784197001252e-16
+  },
+  "placement_estimated_rho_verified": {
+    "CYP1A2": 0.7780251168245269,
+    "CYP2C9": 0.8929187337582557,
+    "CYP2D6": 0.7677482533870689,
+    "CYP3A4": 0.8753026455940927
+  },
+  "stage_manifest_sha256": "5ca02769cea1f2471c16d903dd87120af3b10da24eb30e73e69d9b38f07c85f4",
+  "purge_manifest_sha256": "9a0d90b9b6ffae37db2f38fc899bbb262f954339658e12ea5674921e55aed91d",
+  "qualified_source_policy": "Unchanged legacy parent/source associations, strict audited tautomer inner-fold exclusions; not newly curated full-pool feature supervision",
+  "raw_placed_lanes_separate": true,
+  "no_submission": true,
+  "run_id": "91132654-801e-4d65-af63-84e014955d15",
+  "runtime_packages": {
+    "chemprop": "2.2.1",
+    "lightning": "2.5.5",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "rdkit": "2026.9.1",
+    "scikit-learn": "1.7.2",
+    "torch": "2.6.0+cu124"
+  },
+  "native_adapter_sha256": "ab28d67cff7dd1875bc1e8b8df5894c61ecc975e7e3e926fbb8c5bd1fb3a79bc",
+  "native_source_sha256": {
+    "chemprop.template": "32bc43e240ef66f36bab4db13fefc0e240d36b2a64e6611393789c18a1db4d8f",
+    "chemprop_core.py": "089ab0316573f478b8d1c5a25c558363d545090cad82e43fbb40ccfb2897c539",
+    "chemprop_utils.py": "5372b4b50882e09c509803ce4c21e40c1c0a1f702d661b66d7a420da10abbced",
+    "cyp_aux_features.py": "f6b5f7b01c57eca6b6f73ce4146f4f0e3106b5bc5724e0fd012049eddb901b0a",
+    "cyp_chemprop_2d6.py": "fdcd07a485b34682f3acfdf1d0ff636370edb4df0f07d2df61bf21d1828b9021",
+    "cyp_chemprop_mt_aux_100.py": "6df23cb4d82d2310e94297b6ac4ec4c35962ab1366ecff495849fc244f35b89c",
+    "cyp_chemprop_union.py": "0011c94b3da0faaa40d3695ed727dda57eb9c1c3c2720e7d78cf862ef71447ea",
+    "cyp_ensemble_submit.py": "f94d9b57cf7c4f14be811b0598a06b2f555ecb720c36b58abb76e467b56be2fd",
+    "cyp_recalibrate.py": "7f8834425973369531cb21805fe54c966e72e47a5c764c49395a1d7dc7a9aec6",
+    "cyp_union_features.py": "6734af897d58031a783d9bd2843f7063d8e15a4e43b631bf26e2a359be72fb8c",
+    "multi_task.py": "bf6024422b0d9e5fdbadda58511fb1ae3610e7897ab51188e09a9265e08eee27",
+    "splits.py": "b80b9d31db0b7a14fe5f69ef058c7631f8e6fe60dbb6295f3db59b1b902af9d8"
+  },
+  "serving_precision_source": "38fe110e5a8d17a7bfb48ac78fe12e425da8deeb",
+  "historical_finalized_placed_control_sha256": "349165ecf50906e43a27f12dee97891a92cda59e798db614ef27a7c920c38a37",
+  "effective_config_sha256": "19a8fe050a3e1e73b5277a5232f5bbf9e264887f655d370f4c1974b0e3a82bb7",
+  "recovery_certificate_sha256": "74c5caf28f85c1fa83996ae45342d7c83b52b236ef354f7633ec9e322e844754",
+  "component_oof_files": {
+    "union18": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/oof.csv",
+      "sha256": "8af0b9865224f243a87522270ad48bee5f57b69bf68c8a181a39cbb8b3b63838"
+    },
+    "mtaux8": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/oof.csv",
+      "sha256": "ae8afeee65b2f17de0d74cf7c7bd40990e468b775e2ae474bb863d783bd2ff32"
+    },
+    "2d6isoform6": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/oof.csv",
+      "sha256": "3f5daba713aa73447bee2b924fa2bd1a0f898bcca865b0d5a34f7697fed5d582"
+    },
+    "2d6single": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/oof.csv",
+      "sha256": "07a5bc3463b861c6f1a57cea06159bb2ff7f1a9b474c78ddaef351119a0cbe20"
+    }
+  },
+  "component_blind_files": {
+    "union18": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/union18/test_raw.csv",
+      "sha256": "c312f0469c8e99894b6d3df51bd4f058849c524349b58ca66c3e3dc1db0e5ce9"
+    },
+    "mtaux8": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/mtaux8/test_raw.csv",
+      "sha256": "f52758b219c98529c0fe712a491338c5b8cf374b1e1f7bd90b76ae31f10f4c7e"
+    },
+    "2d6isoform6": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6isoform6/test_raw.csv",
+      "sha256": "f070b1125ccd0e0890954195d2ef3b3680c127b88148041a7804e6821ab3b6e6"
+    },
+    "2d6single": {
+      "path": "/Users/adeliyaleleytner/Documents/ChatGPT/CYP Inhibition/artifacts/goal-20261026/model-audit/corrected-fullfit-native/recovered-output/results/2d6single/test_raw.csv",
+      "sha256": "2ef0547ff078ca679cd23010ce4cb4aab84c2beddd2569de560b90c406832d5d"
+    }
+  }
+}
+

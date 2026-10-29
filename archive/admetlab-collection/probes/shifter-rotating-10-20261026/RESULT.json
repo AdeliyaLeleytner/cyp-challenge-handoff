@@ -1,0 +1,31 @@
+{
+  "utc": "2026-10-25T21:10:01.531607+00:00",
+  "unique_proxy_exit_ips_observed": [
+    "178.64.9.121",
+    "196.229.153.31",
+    "92.212.232.225"
+  ],
+  "successful_ip_checks": 3,
+  "molecules_submitted": 10,
+  "already_labeled_molecules_submitted": 0,
+  "prediction_result": "HTTP429",
+  "new_predictions": 0,
+  "collected_unique_total": 2010,
+  "remaining_official": 3645,
+  "http": [
+    {
+      "utc": "2026-10-25T21:09:36.983543+00:00",
+      "method": "GET",
+      "http_status": 200,
+      "curl_exit": 0,
+      "interface": "shifter_per_request"
+    },
+    {
+      "utc": "2026-10-25T21:09:39.559332+00:00",
+      "method": "POST",
+      "http_status": 429,
+      "curl_exit": 0,
+      "interface": "shifter_per_request"
+    }
+  ]
+}

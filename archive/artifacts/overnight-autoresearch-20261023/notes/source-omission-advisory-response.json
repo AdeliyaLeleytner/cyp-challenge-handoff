@@ -1,0 +1,109 @@
+{
+  "summary": "The omission has a verifiable mechanical cause: the review filtered on the leaderboard's self-declared `Open Code` boolean, so stir_bar (Open Code=No) was discarded even though its exact GitHub URL was already sitting in the `Model Report Link` column of our own archived CSV — no retrieval failure, a filter applied to the wrong column. The gap is systematic, not a one-off: the same filter also excluded rasayan-labs (rank 11, ST-RAE 0.42345, public GitHub) which is better than briford, and Scigantic (rank 25, 0.44249). Separately, the user's \"best open result\" claim is factually off — stir_bar's 0.44354 is beaten by both rasayan-labs 0.42286 and briford 0.43780 on the current live board — but that correction must not be used to soften the concession.",
+  "recommendation": "Answer with the mechanism, not a justification. Concede plainly: the selection criterion was the declared Open Code=Yes flag (DEEPRESEARCH.md:18, notes/presend-20261023T2345.md:17), stir_bar declared No, so it was excluded by construction while its URL was already in hand in sources/presend-20261023T2345/leaderboard-live.csv:30 — the limitation was even written down at notes/presend-20261023T2345.md:26 and then not acted on. Volunteer the two further misses (rasayan-labs, Scigantic) rather than waiting to be told; a reviewer who only fixes the one link named has not fixed the filter. Correct the \"best\" claim with the three live ST-RAE numbers and state clearly that this does not reduce the omission, since briford was already the stronger target and we still never scanned the link column. Keep the two meanings of \"открытый\" separate — released training code vs public method write-up; stir_bar's README:9-10 says \"write-up only… not the training code\", so its Open Code=No was an honest declaration and our filter was semantically correct but wrong for the actual purpose. Make no claim in either direction about whether using its method would have changed our 0.7521; that is untested. Then name the two read-only checks below, and leave any decision about spending remaining pre-deadline compute to the user.",
+  "confidence": "high",
+  "files_inspected": [
+    "notes/presend-20261023T2345.md",
+    "DEEPRESEARCH.md",
+    "PREVIOUS_WORK.md",
+    "sources/lachrymator-README-20261024.md",
+    "sources/presend-20261023T2345/leaderboard-live.csv",
+    "official_results/20261024T084528Z/leaderboard.csv",
+    "official_results/20261024T001326Z/leaderboard.csv",
+    "official_results/20261024T001041Z/leaderboard.csv",
+    "notes/source-omission-advisory-brief.md",
+    "notes/submit-candidate-protocol.md"
+  ],
+  "verified_facts": [
+    "The selection criterion was the declared flag, stated twice: DEEPRESEARCH.md:18 'brifordrank21/.4378, strongestdeclaredopen-code entry'; notes/presend-20261023T2345.md:17 'The best **declared Open Code=Yes** entry'.",
+    "The user-linked URL was already in our own archived pre-submission CSV: sources/presend-20261023T2345/leaderboard-live.csv:30 contains '27,stir_bar,2026-10-19 15:30 UTC,https://github.com/lachrymator/openadmet-cyp-challenge-public,0.443539995892439,...,No,No'. No new retrieval was needed to find it.",
+    "The limitation was explicitly recorded before submission and not closed: notes/presend-20261023T2345.md:26 '...does not ... prove that every OpenCode=No entry has no public material.'",
+    "stir_bar is not the best publicly-linked entry on the live board. official_results/20261024T084528Z/leaderboard.csv:13 rasayan-labs rank 12, MA-ST-RAE 0.4228634234054336, link https://github.com/whis9/rasayan-cyp, Open Code=No; :25 briford rank 24, 0.4377997714479094, Open Code=Yes; :30 stir_bar rank 29, 0.443539995892439. Lower ST-RAE ranks better (rank 1 preheat-to-450 = 0.35525, leaderboard.csv:2).",
+    "rasayan-labs was on the board before our submission, at a better score than briford: sources/presend-20261023T2345/leaderboard-live.csv:12 '11,rasayan-labs,2026-10-23 12:50 UTC,https://github.com/whis9/rasayan-cyp,0.4234541473652078,...,No,No'. Scigantic likewise at :26, rank 25, 0.4424923626440543.",
+    "31 rows in official_results/20261024T084528Z/leaderboard.csv carry an http(s) URL in `Model Report Link`; 15 of those are Proprietary=No / Open Code=No. The declared-flag filter therefore discarded roughly half the publicly-linked field.",
+    "The README is internally explicit that its 0.465 / rank 28 / TDI rank 6 are interim-board numbers scored on the whole held-out set, while the live board scores half: sources/lachrymator-README-20261024.md:7, :43, :58. The live 0.44354 and the README's 0.465 are different boards, not a discrepancy in the README.",
+    "The README states it is a write-up only, not training code (sources/lachrymator-README-20261024.md:9-10), which is consistent with its Open Code=No declaration.",
+    "Our accepted submission stands at rank 118, MA-ST-RAE 0.7521204949751441, MA-R² 0.1686025409018953 (official_results/20261024T084528Z/leaderboard.csv:119), i.e. ~0.31 ST-RAE behind briford and ~0.33 behind rasayan-labs.",
+    "The README documents the exact failure mode of CV-gated iteration: 'one revision improved cross-validated error on all four endpoints while real held-out error got *worse* on three' (:140-143), and 'on **regression**, 100% of submission-endpoint pairs came out worse on the blind set than in cross-validation (median MAE +0.208)' (:85)."
+  ],
+  "inferences": [
+    "The most defensible characterization is a scoping error, not a search error: the campaign operationalized 'strongest public solution' as a leaderboard checkbox rather than as 'entry with public method material', and the checkbox answers a licensing question, not an evidence-availability question.",
+    "Because the limitation was written down at presend-20261023T2345.md:26 and the data was already local, this is a known-unknown left open under time pressure rather than something the retrieval could not have reached. That reading is less flattering than 'we missed a source' and is the one the artifacts support.",
+    "The highest-value content of the missed README is methodological rather than competitive: Butina whole-cluster folds credited with making local numbers track the board, non-negative stacking adopted after observing CV/blind inversion, PCA caps and correlation pruning on tabular legs. Those speak directly to a gate that cleared two local holdouts yet landed at rank 118.",
+    "Our submitted model's live 0.7521 with R² 0.169 looks more like a calibration/scale or generalization failure than a ranking failure, since its Spearman 0.7564 is close to briford's 0.7516 (leaderboard.csv:119 vs :25). This is a hypothesis from two rows, not an established cause.",
+    "rasayan-labs' current rank-12 row (submitted 2026-10-24 02:02 UTC) is a resubmission; the 2026-10-23 12:50 UTC version was already present pre-run, so its exclusion cannot be attributed to timing."
+  ],
+  "opportunities": [
+    {
+      "item": "Rescan the `Model Report Link` column of both the archived and fresh CSVs for all http(s) values regardless of the Open Code flag (~31 rows), and record which were never reviewed. Read-only, minutes, no compute, and it converts the user's single data point into a closed gap.",
+      "importance": "high",
+      "basis": "31 URL-bearing rows found in official_results/20261024T084528Z/leaderboard.csv; 15 are Open Code=No and were excluded by the stated filter."
+    },
+    {
+      "item": "Test the gate rather than the rival: from existing artifacts, compare our submitted model's own-750 holdout value against the recorded Jeremy own750=.6294287248 (PREVIOUS_WORK.md:3), then against live ordering (ours 0.7521 vs jeremy 0.5185, leaderboard.csv:119 and :59). If our model won locally and lost by ~0.23 live, that is a measurable holdout-to-blind rank inversion and is the campaign's main finding.",
+      "importance": "high",
+      "basis": "PREVIOUS_WORK.md:3 records Jeremy own750; official_results/20261024T084528Z/leaderboard.csv:59 gives jeremy live 0.5184912977981068. No training needed."
+    },
+    {
+      "item": "Treat PREVIOUS_WORK.md:6 ('Existingholdouts alreadyuseddevelopment') as a named defect with a fix, since it independently predicts the inversion above and matches the README's cluster-disjoint-folds finding.",
+      "importance": "medium",
+      "basis": "PREVIOUS_WORK.md:6; sources/lachrymator-README-20261024.md:193-195."
+    },
+    {
+      "item": "Record a standing rule for future campaigns: 'public material available' is evaluated from the link column and independent search, and the Open Code flag is used only for reuse/licensing decisions.",
+      "importance": "medium",
+      "basis": "The two meanings diverge in this very dataset — stir_bar has a detailed public write-up with Open Code=No (README:9-10)."
+    }
+  ],
+  "risks": [
+    {
+      "item": "Leading with the fact-correction ('actually stir_bar is not the best open result') would read as deflection and would also be self-defeating, since the correction surfaces an entry we missed that is better than the one we chose.",
+      "severity": "high",
+      "basis": "rasayan-labs 0.42286 at leaderboard.csv:13 beats briford 0.43780 at :25, and was present pre-run at presend leaderboard-live.csv:12."
+    },
+    {
+      "item": "Claiming or implying that including this write-up would have improved our score. No such experiment was run, and the README's own method sits at live 0.4435 — strong relative to us, mid-field absolutely.",
+      "severity": "high",
+      "basis": "Brief states no controlled test was performed; leaderboard.csv:30 gives stir_bar rank 29 of 258."
+    },
+    {
+      "item": "Mixing the README's interim 0.465 / rank 28 with the live 0.44354 / rank 29 when discussing 'how good is it'. The README already separates these, so conflating them would be our error, not theirs.",
+      "severity": "medium",
+      "basis": "sources/lachrymator-README-20261024.md:7, :43, :58."
+    },
+    {
+      "item": "Over-reading the write-up as a reproducible recipe. It is explicitly not training code, and no OOF predictions, split IDs, or the 4,999-neighbour selection are published, so any adoption is a fresh reimplementation of a described idea.",
+      "severity": "medium",
+      "basis": "sources/lachrymator-README-20261024.md:9-10, :111-113; brief's missing-information section."
+    },
+    {
+      "item": "Using the README's blind-set-neighbour technique (88,683 retrieved near-neighbours of the held-out structures, alerts vetoed against held-out compounds) without checking it against challenge rules and our own standards. The README limits admitted neighbours to calculated properties with no assay endpoints, but the alert-selection step reads the held-out set directly.",
+      "severity": "medium",
+      "basis": "sources/lachrymator-README-20261024.md:104-126; DEEPRESEARCH.md:18 already warns 'Board-derivedplacementmoments mustnotbeused forlocalholdoutevaluation.'"
+    }
+  ],
+  "alternatives": [
+    "Frame the response around the gate rather than the source list. The sharper admission is not 'we missed a repo' but 'our improvement gate cleared a model that placed 118th, and the missed write-up contains the one external datapoint that would have warned us' (README:85, :140-143). This is more useful to the user and is supported without new compute.",
+    "Instead of a narrative explanation, deliver a one-page corrected public-solution table built from the link column of the fresh CSV, with reviewed/not-reviewed marked per row. It answers 'why did you miss it' by showing the gap closed rather than described."
+  ],
+  "missing_information": [
+    "Our submitted model's score on our own 750 holdout, needed to quantify the local-vs-live inversion. PREVIOUS_WORK.md:3-5 lists reference values but I did not locate the submitted configuration's own-holdout number in the files I read.",
+    "Whether the three URL-bearing Open Code=No entries ranked at or above us (rasayan-labs, Scigantic, stir_bar) contain code, data, or write-up only. Only the lachrymator README was fetched.",
+    "Whether the 57-config sweep ever used cluster-disjoint folds, which determines how much of the README's central claim is actually new information for us.",
+    "Whether any artifact records a deliberate decision to restrict to Open Code=Yes, versus the restriction being inherited by default. This changes the explanation from 'wrong judgment call' to 'unexamined default'."
+  ],
+  "what_would_change_view": [
+    "Evidence that the Open Code=Yes restriction was an explicit instruction or constraint in the original request, rather than a choice made during review — that would move responsibility for the scoping, though not for leaving presend-20261023T2345.md:26 unresolved.",
+    "A record showing the link column was in fact scanned and these entries were reviewed and set aside for a stated reason, which would reduce this to an incomplete write-up rather than an omitted review.",
+    "A finding that the submitted model's own-750 holdout was also poor, which would mean the gate was never passed meaningfully and would shift the diagnosis away from CV/blind inversion toward a pipeline defect."
+  ],
+  "user_escalation_required": false,
+  "escalation_reason": "The current request is for an explanation and is answerable read-only from existing artifacts. Note for later, not blocking: whether to spend remaining compute on a revision informed by these newly surfaced public methods before the 2026-11-03 23:59 UTC deadline (notes/presend-20261023T2345.md:7, with a 12-hour per-track cooldown) is a user decision, and any new submission replaces the current standing entry since only the latest valid submission counts.",
+  "_consultation": {
+    "id": "20261024T084622Z-7cb1fc13",
+    "requested_model": "claude-fable-5",
+    "primary_model": "claude-opus-5",
+    "automatic_fallback_used": true,
+    "explicit_opus": false
+  }
+}

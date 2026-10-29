@@ -1,0 +1,60 @@
+{
+  "status": "complete",
+  "approved": true,
+  "expected_rows": 750,
+  "expected_dimensions": 600,
+  "checkpoint_sha256": "b8137a0d202669baa9747f21eac4ef78b000afe68a3f100d25c849c41ad8a3d5",
+  "official_test_sha256": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9",
+  "protocol": "MPNN.load_from_file.eval; SimpleMoleculeMolGraphFeaturizer; MoleculeDataset from exact official SMILES; DataLoader batch256 shuffleFalse drop_lastFalse; torch.inference_mode; model.fingerprint(bmg,Vd,Xd); concatenate in original order",
+  "source_producer_sha256": "588e331659515e8ba0d5797f6172b3339946da960bb10ec30217214424857104",
+  "historical_runtime_lock_sha256": "252b616dd6ae1e90a35717e88fecef10f552af9cd96497ae1e43bfd41723f2e8",
+  "required_runtime": {
+    "torch": "2.8.0+cu128",
+    "chemprop": "2.2.1",
+    "lightning": "2.5.5",
+    "rdkit": "2026.9.1",
+    "numpy": "2.2.6"
+  },
+  "actual_runtime": {
+    "torch": "2.8.0+cu128",
+    "chemprop": "2.2.1",
+    "lightning": "2.5.5",
+    "rdkit": "2026.9.1",
+    "numpy": "2.2.6"
+  },
+  "producer_run_id": "f9a8d969-0728-4760-b212-377f7f5480be",
+  "producer_commit": "c2cad8087b19282387fb9e188f24d402227fe706",
+  "exact_input_ids_smiles_order_sha256": "4d2261b1d27422d837fc32a4b06189a526b9d0151b6055310bc0acc6dbb0e485",
+  "output_matrix_sha256": "43b136e8a368c91b625180b13cd2be1ed6f2b4686646a6ed757c277d3e016adc",
+  "output_ids_smiles_order_sha256": "4d2261b1d27422d837fc32a4b06189a526b9d0151b6055310bc0acc6dbb0e485",
+  "shape_verified": true,
+  "all_finite": true,
+  "training_labels_read_by_encoder": false,
+  "pretraining_membership": "Unknown; no checkpoint independence claim.",
+  "canary_comparison": {
+    "rows": 4905,
+    "dimensions": 600,
+    "atol": 1e-05,
+    "rtol": 1e-05,
+    "all_within_tolerance": true,
+    "failed_values": 0,
+    "max_abs_difference": 5.960464477539063e-08,
+    "max_scaled_error": 0.005194425866796766,
+    "reference_sha256": "e0216aeaad3f8b9a34ea124b0eb90bd36ae671ae79b1d30268feccf5f8731378",
+    "reproduced_sha256": "29b498e267b02251b426c04578f9aaff54781357affed371ebe50b3c4c8fccf1",
+    "input_ids_smiles_order_sha256": "0f5772ecf955909a1aadf12a190366d7366e38a29a3a1465c58f52d5b7c0305c",
+    "precision": {
+      "matmul_precision": "highest",
+      "cuda_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "default_dtype": "torch.float32",
+      "autocast_enabled": false
+    }
+  },
+  "encoder_state_unchanged": true,
+  "encoder_state_sha256": "100decd364c416c60778e73c969b81bbd9f72397b9aca27c4b2c83ae1fc8714f",
+  "producer_current_source_sha256": "ecea9ea21bad248bbd22eacd2cb6ab7e63f09c801a14bf64e0e4f0ecc22bc381",
+  "scope": "Frozen encoder feature identity only; not final acquisition/model/submission approval.",
+  "producer_commit_annotation": "Bound from verified ORX run metadata after recovery; remote scientific values unchanged.",
+  "remote_receipt_sha256": "bcb160c42315541e1a8c316a2e5c9d12d5430731623d3eadd1f526aa631f180a"
+}

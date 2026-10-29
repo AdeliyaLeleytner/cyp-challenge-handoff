@@ -21,7 +21,7 @@ python3 tools/verify_handoff.py --all
 python3 tools/prepare_runtime.py --source archive/artifacts/cyp-private-v2-20261026/p11 --output .runtime/p11
 ```
 
-Команда создаёт отдельную runtime-копию, заменяет известные локальные source prefixes в UTF-8 конфигурациях/скриптах и сохраняет список изменений. Зафиксированные архивные файлы не меняются. Пути удалённых GPU (`/workspace/...`) зависят от конкретного запуска: их надо сопоставить с его recovered/stage/output каталогом вручную и проверить asset hashes. Автоматически обходить manifest hash gate нельзя. Для старых git hashes имеются исходные snapshots, но `.git` worktree pointers и полная git-история хоста не перенесены.
+Команда создаёт отдельную runtime-копию, заменяет известные локальные source prefixes в UTF-8 конфигурациях/скриптах и сохраняет список изменений. Зафиксированные архивные файлы не меняются. Пути удалённых GPU (`/workspace/...`) зависят от конкретного запуска: их надо сопоставить с его recovered/stage/output каталогом вручную и проверить asset hashes. Автоматически обходить manifest hash gate нельзя. Для старых git hashes имеются исходные snapshots, дополнительно доступны точные `archive/git-snapshots/<commit>/`; `.git` worktree pointers и полная git-история хоста не перенесены.
 
 ## Уровень 3: новые кандидаты
 

@@ -1,0 +1,22 @@
+{
+  "name": "chemeleon_aux_inv_mae/own750/42/0",
+  "asset_root": "/workspace/cyp-night/assets",
+  "output_dir": "/workspace/cyp-night/results/E1_metric_weights/chemeleon_aux_inv_mae/own750/seed42/fold0",
+  "config": {
+    "kind": "neural",
+    "initialization": "chemeleon",
+    "component": "official_aux",
+    "max_epochs": 100,
+    "patience": 15,
+    "min_epochs": 20,
+    "init_lr": 1e-05,
+    "max_lr": 0.0001,
+    "final_lr": 1e-05,
+    "name": "chemeleon_aux_inv_mae",
+    "loss": "mae",
+    "primary_weighting": "inverse_count",
+    "seed": 42
+  },
+  "cohort": "own750",
+  "fold": 0
+}

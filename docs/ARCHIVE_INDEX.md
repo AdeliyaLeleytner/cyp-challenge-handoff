@@ -27,3 +27,5 @@
 [Полный сырой сбор ADMETlab](../archive/admetlab-collection/) добавлен отдельно из рабочего каталога Downloads. Аутентификационные материалы исключены.
 
 Список файлов и контрольные суммы: [manifest/files.jsonl](../manifest/files.jsonl). Исходные machine paths сопоставлены в [path-map.json](../manifest/path-map.json). Имеются повторные snapshots одного кода: выбирайте snapshot по source/run manifest конкретного результата.
+
+Дополнительно сохранены [точные Git-снимки исходников](../archive/git-snapshots/) и [локальные ORX-запуски](../archive/local-orx-runs/), включая исходные CheMeleon checkpoint. Связь версий с рабочими деревьями: [git-snapshots.json](../manifest/git-snapshots.json).

@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "feature_join_certificate_sha256": "f3f55caa1ca76c90f1c70162a3332dd926399f8c46b1a04c95a54112868037f1",
+  "revised_p7_fold_manifest_sha256": "436ec6c3895a3e937ae9fa3debc464b75a9e8dbcf36a7f526da67b74fbad599c",
+  "parent_p3_manifest_sha256": "4ebbdc08185f18fe7e61ad4a6ed629c8abb56cb09f68129ab5b34faa692c2a5b",
+  "table_sha256": "da57ea6afdfb061a7f11abcf03216b308d64ee965b9f298c744af6b85befebe2",
+  "pair_manifest_sha256": "a78bfe5d1440c4e601e9f0338dae9e124d28255117c80d2971611658fd0911ec",
+  "all18task_row_selection": true,
+  "removed_stopping_rows": 4,
+  "removed_exact_identity_duplicates": 0,
+  "removed_approved_stereo_preserving_equivalence_counterparts": 4,
+  "folds": [
+    {
+      "fold": 0,
+      "train": 18950,
+      "stop": 6321,
+      "test": 6368,
+      "removed_stop_rows": 0,
+      "removed_stop_ids": [],
+      "exact_request_overlap_before": 0,
+      "approved_equivalence_stop_test_overlap_after": 0,
+      "train_stop_or_test_overlap_after": 0,
+      "train_and_test_indices_unchanged": true
+    },
+    {
+      "fold": 1,
+      "train": 19003,
+      "stop": 6312,
+      "test": 6321,
+      "removed_stop_rows": 2,
+      "removed_stop_ids": [
+        "OCNT-0483502",
+        "CHEMBL58"
+      ],
+      "exact_request_overlap_before": 0,
+      "approved_equivalence_stop_test_overlap_after": 0,
+      "train_stop_or_test_overlap_after": 0,
+      "train_and_test_indices_unchanged": true
+    },
+    {
+      "fold": 2,
+      "train": 19007,
+      "stop": 6314,
+      "test": 6314,
+      "removed_stop_rows": 1,
+      "removed_stop_ids": [
+        "CHEMBL832"
+      ],
+      "exact_request_overlap_before": 0,
+      "approved_equivalence_stop_test_overlap_after": 0,
+      "train_stop_or_test_overlap_after": 0,
+      "train_and_test_indices_unchanged": true
+    },
+    {
+      "fold": 3,
+      "train": 19000,
+      "stop": 6322,
+      "test": 6315,
+      "removed_stop_rows": 1,
+      "removed_stop_ids": [
+        "OCNT-0022129"
+      ],
+      "exact_request_overlap_before": 0,
+      "approved_equivalence_stop_test_overlap_after": 0,
+      "train_stop_or_test_overlap_after": 0,
+      "train_and_test_indices_unchanged": true
+    },
+    {
+      "fold": 4,
+      "train": 18947,
+      "stop": 6368,
+      "test": 6323,
+      "removed_stop_rows": 0,
+      "removed_stop_ids": [],
+      "exact_request_overlap_before": 0,
+      "approved_equivalence_stop_test_overlap_after": 0,
+      "train_stop_or_test_overlap_after": 0,
+      "train_and_test_indices_unchanged": true
+    }
+  ],
+  "scope": "read-only staged data and fold validation; no fitting"
+}

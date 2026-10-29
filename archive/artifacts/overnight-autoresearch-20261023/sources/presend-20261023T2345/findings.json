@@ -1,0 +1,94 @@
+{
+  "checked_utc": "2026-10-23T23:48:04.005514+00:00",
+  "space_revision": "7f3873d820029457d722da25dac088a0d64c9fcf",
+  "phase": 2,
+  "deadline_utc": "2026-11-03T23:59:00Z",
+  "cooldown_hours": 12,
+  "minimum_prediction_std_ddof1": 0.01,
+  "api_signature": {
+    "api_name": "/submit_predictions",
+    "parameters": [
+      "username",
+      "user_alias",
+      "anon_checkbox",
+      "participant_name",
+      "discord_username",
+      "email",
+      "affiliation",
+      "model_tag",
+      "paper_checkbox",
+      "proprietary_data_checkbox",
+      "open_code_checkbox",
+      "track_select",
+      "file_input"
+    ],
+    "components": [
+      "Textbox",
+      "Textbox",
+      "Checkbox",
+      "Textbox",
+      "Textbox",
+      "Textbox",
+      "Textbox",
+      "Textbox",
+      "Checkbox",
+      "Checkbox",
+      "Checkbox",
+      "Radio",
+      "File"
+    ],
+    "track_choices": [
+      "Regression Prediction",
+      "Classification Prediction",
+      "Structure Prediction"
+    ],
+    "defaults": {
+      "anon_checkbox": true,
+      "paper_checkbox": false,
+      "proprietary_data_checkbox": false,
+      "open_code_checkbox": false
+    },
+    "returns": [
+      "Textbox"
+    ]
+  },
+  "leaderboard_rows": {
+    "regression": 254,
+    "classification": 134,
+    "structure": 39
+  },
+  "best_declared_open_regression": {
+    "Rank": "22",
+    "Username": "briford",
+    "Submitted": "2026-08-30 15:14 UTC",
+    "Model Report Link": "https://supercowpowers.github.io/workbench/blogs/cyp_challenge/",
+    "MA-ST-RAE": "0.4377997714479094",
+    "MA-ST-RAE std": "0.0175100750282699",
+    "MA-MAE": "0.6331430020143404",
+    "MA-MAE std": "0.0123448302180709",
+    "MA-R\u00b2": "0.6181047184289781",
+    "MA-R\u00b2 std": "0.0195842347797753",
+    "MA-Spearman's \u03c1": "0.7515780014272241",
+    "MA-Spearman's \u03c1 std": "0.0141889587858892",
+    "MA-Kendall's \u03c4": "0.5748346390820729",
+    "MA-Kendall's \u03c4 std": "0.0126014570404372",
+    "Proprietary Data": "No",
+    "Open Code": "Yes"
+  },
+  "adeliya_visible_matches": {
+    "regression": [],
+    "classification": [],
+    "structure": []
+  },
+  "adeliya_absence_limit": "No public scored rows under AdeliyaLL or AdeliyaLL-CYP; this cannot exclude unscored/rejected/private-pending requests or a different anonymous alias.",
+  "helper": {
+    "path": "/Users/adeliyaleleytner/.local/share/openresearch/projects/cyp-chemeleon-baseline-20261023/night/submit_candidate.py",
+    "sha256": "936bf402652bc2975a30a9d05430ff662b63a585500a3d96df3c11235f3b8dd7",
+    "automatic_public_result_polling": false,
+    "accepted_response_status": "accepted_pending",
+    "backend_submission_id_returned_by_current_api": false,
+    "reconciliation_support": "Root supplies immutable attempts/<csvsha>/reconciliation.json with matching csv_sha256, status processed/rejected/not_received, and hashed evidence record.",
+    "retry_policy": "Duplicate hash blocked; pending/unknown blocks new submissions until audited reconciliation;12h local cooldown remains."
+  },
+  "network_operations": "Read-only official source GETs and source-verified public leaderboard refresh/download callbacks. submit_predictions was never called."
+}

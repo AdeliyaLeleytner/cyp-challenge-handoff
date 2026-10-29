@@ -1,0 +1,19 @@
+{
+  "source_submission_sha256": "f0e32b5fecab41d9a68c098e0ebe4b0d05cbc61760eb3dbd63c300382945e053",
+  "candidate_sha256": "d7fb298eaa487ff13d57241006bb041f3200bff9bef88f226967b4539d03a48b",
+  "shifts": {
+    "cyp1a2": 0.0,
+    "cyp2c9": 0.0,
+    "cyp2d6": 0.663,
+    "cyp3a4": 0.0
+  },
+  "expand": {
+    "cyp1a2": 1.0,
+    "cyp2c9": 1.0,
+    "cyp2d6": 1.0,
+    "cyp3a4": 1.0
+  },
+  "derivation": "Transductive: two LightGBM models differing only in whether they saw screen-derived 2D6 non-inhibitors, compared on the 750 test structures; no spread change (metric curve is flat at its optimum)",
+  "leaderboard_derived_constants_used": false,
+  "submitted": false
+}

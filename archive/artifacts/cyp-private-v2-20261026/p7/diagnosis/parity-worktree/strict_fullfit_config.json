@@ -1,0 +1,44 @@
+{
+  "training_enabled": true,
+  "stage_root": "/workspace/cyp-strict-fullfit/assets",
+  "output_root": "/workspace/cyp-strict-fullfit/output",
+  "gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "asset_manifest_sha256": "5ca02769cea1f2471c16d903dd87120af3b10da24eb30e73e69d9b38f07c85f4",
+  "native_adapter_sha256": "ab28d67cff7dd1875bc1e8b8df5894c61ecc975e7e3e926fbb8c5bd1fb3a79bc",
+  "support_source_sha256": {
+    "night/strict_fullfit_runner.py": "5381a8b24613e20c37df18e5e8e5e5fc5e832087ffce8d07cb066e677d237e38",
+    "night/strict_fullfit_prepare.py": "c1360bcc4829302c718d59ed97bd5168e317cdb2d135523bc280cd3b4c4ec191",
+    "night/strict_reference_prepare.py": "1e1a412c1367eccfea50d91fa7c5e4f08b2d9da3db3e4b92f23be6c98c9c3c8f",
+    "night/strict_fullfit_setup.sh": "a480ecaab0087bc14f174a4dbbad3f8506fa7b89a6d1af10251471cc1ab2a2cb"
+  },
+  "retrained_members": [
+    "union18",
+    "2d6isoform6"
+  ],
+  "reused_members": [
+    "mtaux8",
+    "2d6single"
+  ],
+  "pool_policy": "No outer exclusions; all full native rows retained including legitimate public blinded-test assay overlap",
+  "inner_policy": "Only audited stereo-preserving tautomer train-side exclusion; original validation assignments and hyperparameters preserved",
+  "serving_precision_source": "38fe110e5a8d17a7bfb48ac78fe12e425da8deeb",
+  "no_submission": true,
+  "compute": {
+    "gpu_name": "RTX 3090",
+    "gpu_count": 8,
+    "image_digest": "pytorch/pytorch@sha256:77f17f843507062875ce8be2a6f76aa6aa3df7f9ef1e31d9d7432f4b0f563dee",
+    "phase_cap_usd": 1.7,
+    "max_lease_seconds": 4200,
+    "fixed_legacy_expert_source_policy": "Retain legacy source association policy to match corrected outer expert; no new full-pool feature supervised fit",
+    "dependency_index_transport": "https://pypi.tuna.tsinghua.edu.cn/simple; TLS verified; pinned package versions unchanged"
+  }
+}

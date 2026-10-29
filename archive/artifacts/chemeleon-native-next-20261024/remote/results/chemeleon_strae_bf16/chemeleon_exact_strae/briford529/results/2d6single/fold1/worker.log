@@ -1,0 +1,154 @@
+Seed set to 43
+Loading foundation model: /workspace/cyp-repro/assets/weights/chemeleon_mp.pt
+  Loaded custom foundation weights (hidden_dim=2048)
+{"event": "exact_strae_fold_config", "fold": 1, "criterion_mode": "exact_strae_v1", "fit_statistics": {"primary_indices": [0], "primary_counts": [1053], "primary_means": [4.784146994656221], "primary_denominators": [433.5913400992166], "mode": "exact_strae_v1", "n_fit_rows": 1053, "n_targets": 1, "target_counts": [1053], "auxiliary_indices": [], "native_task_weights": [1.0], "primary_native_weight_sum": 1.0, "auxiliary_head_coefficients": [], "auxiliary_total_nominal_budget": 0.0, "scaler_mean": [4.784146999814685], "scaler_scale": [0.8935036196493582], "per_entry_coefficients": [0.002060704486037249], "normalization": "N_fit / B; primary sigma/(J*D_fit); auxiliary native_weight/(sum_primary_native_weights*n_aux_fit)", "qualification": "Preserves nominal native auxiliary head ratios, not native realized label-frequency weighting. Test denominators are unknown."}, "validation_statistics": {"primary_indices": [0], "primary_counts": [264], "primary_means": [4.792360566939394], "primary_denominators": [117.80474321448486]}, "checkpoint_monitor": "val_primary_strae", "bounds_scaling": "same fit-center mean and scale for central/lower/upper; no bound-specific fitting", "native_architecture_and_optimizer_preserved": true, "explicit_changes": ["primary exact interval macro objective", "per-auxiliary-head observed-label mean and nominal author budget", "uniform-row unbiased minibatch estimator", "primary-only validation checkpoint selection", "explicit FP32 validation numerical repair", "explicit configurable training precision"], "training_precision": "bf16-mixed", "validation_precision": "explicit_fp32", "precision": "bf16-mixed training forward; explicit FP32 validation forward and differentiable loss; float64 full-validation official arithmetic", "numerical_repair_note": "FP32 validation matches serving precision. BF16 training, when explicitly selected, is a separate numerical precision repair; no proof of scientific improvement or stability is inferred before replay."}
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [3]
+Loading `train_dataloader` to estimate number of stepping batches.
+/opt/conda/lib/python3.11/site-packages/lightning/pytorch/utilities/model_summary/model_summary.py:231: Precision bf16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
+
+  | Name            | Type               | Params | Mode 
+---------------------------------------------------------------
+0 | message_passing | BondMessagePassing | 8.7 M  | train
+1 | agg             | MeanAggregation    | 0      | train
+2 | bn              | BatchNorm1d        | 4.1 K  | train
+3 | predictor       | RegressionFFN      | 705 K  | train
+4 | X_d_transform   | Identity           | 0      | train
+5 | metrics         | ModuleList         | 0      | train
+6 | loss_objective  | ExactSTObjective   | 0      | train
+---------------------------------------------------------------
+9.4 M     Trainable params
+0         Non-trainable params
+9.4 M     Total params
+37.695    Total estimated model params size (MB)
+27        Modules in train mode
+0         Modules in eval mode
+{"event": "exact_strae_epoch", "epoch": 0, "val_primary_strae": 0.9937472589541673, "per_primary_ST_RAE": [0.9937472589541673]}
+{"event": "exact_strae_epoch", "epoch": 1, "val_primary_strae": 0.9650320360349819, "per_primary_ST_RAE": [0.9650320360349819]}
+{"event": "exact_strae_epoch", "epoch": 2, "val_primary_strae": 0.9373453103061984, "per_primary_ST_RAE": [0.9373453103061984]}
+{"event": "exact_strae_epoch", "epoch": 3, "val_primary_strae": 0.9172708207877242, "per_primary_ST_RAE": [0.9172708207877242]}
+{"event": "exact_strae_epoch", "epoch": 4, "val_primary_strae": 0.9293929169880399, "per_primary_ST_RAE": [0.9293929169880399]}
+{"event": "exact_strae_epoch", "epoch": 5, "val_primary_strae": 0.9713506781614121, "per_primary_ST_RAE": [0.9713506781614121]}
+{"event": "exact_strae_epoch", "epoch": 6, "val_primary_strae": 1.0245100772292963, "per_primary_ST_RAE": [1.0245100772292963]}
+{"event": "exact_strae_epoch", "epoch": 7, "val_primary_strae": 0.9788292477728473, "per_primary_ST_RAE": [0.9788292477728473]}
+{"event": "exact_strae_epoch", "epoch": 8, "val_primary_strae": 0.9592807461417932, "per_primary_ST_RAE": [0.9592807461417932]}
+{"event": "exact_strae_epoch", "epoch": 9, "val_primary_strae": 0.9892419862451381, "per_primary_ST_RAE": [0.9892419862451381]}
+{"event": "exact_strae_epoch", "epoch": 10, "val_primary_strae": 0.9422461077355313, "per_primary_ST_RAE": [0.9422461077355313]}
+{"event": "exact_strae_epoch", "epoch": 11, "val_primary_strae": 0.9312726097160616, "per_primary_ST_RAE": [0.9312726097160616]}
+{"event": "exact_strae_epoch", "epoch": 12, "val_primary_strae": 0.9421369980624128, "per_primary_ST_RAE": [0.9421369980624128]}
+{"event": "exact_strae_epoch", "epoch": 13, "val_primary_strae": 0.9706419380884042, "per_primary_ST_RAE": [0.9706419380884042]}
+{"event": "exact_strae_epoch", "epoch": 14, "val_primary_strae": 0.8927129403979202, "per_primary_ST_RAE": [0.8927129403979202]}
+{"event": "exact_strae_epoch", "epoch": 15, "val_primary_strae": 0.9075458121288961, "per_primary_ST_RAE": [0.9075458121288961]}
+{"event": "exact_strae_epoch", "epoch": 16, "val_primary_strae": 0.9077247563605804, "per_primary_ST_RAE": [0.9077247563605804]}
+{"event": "exact_strae_epoch", "epoch": 17, "val_primary_strae": 0.9261354724399933, "per_primary_ST_RAE": [0.9261354724399933]}
+{"event": "exact_strae_epoch", "epoch": 18, "val_primary_strae": 0.950519941459133, "per_primary_ST_RAE": [0.950519941459133]}
+{"event": "exact_strae_epoch", "epoch": 19, "val_primary_strae": 0.9231500046495038, "per_primary_ST_RAE": [0.9231500046495038]}
+{"event": "exact_strae_epoch", "epoch": 20, "val_primary_strae": 0.9218699827045014, "per_primary_ST_RAE": [0.9218699827045014]}
+{"event": "exact_strae_epoch", "epoch": 21, "val_primary_strae": 0.9005765910599564, "per_primary_ST_RAE": [0.9005765910599564]}
+{"event": "exact_strae_epoch", "epoch": 22, "val_primary_strae": 0.9190155716897939, "per_primary_ST_RAE": [0.9190155716897939]}
+{"event": "exact_strae_epoch", "epoch": 23, "val_primary_strae": 0.9100557442038836, "per_primary_ST_RAE": [0.9100557442038836]}
+{"event": "exact_strae_epoch", "epoch": 24, "val_primary_strae": 0.8911306636926531, "per_primary_ST_RAE": [0.8911306636926531]}
+{"event": "exact_strae_epoch", "epoch": 25, "val_primary_strae": 0.9237780296186365, "per_primary_ST_RAE": [0.9237780296186365]}
+{"event": "exact_strae_epoch", "epoch": 26, "val_primary_strae": 0.903678989808863, "per_primary_ST_RAE": [0.903678989808863]}
+{"event": "exact_strae_epoch", "epoch": 27, "val_primary_strae": 0.8933839099649824, "per_primary_ST_RAE": [0.8933839099649824]}
+{"event": "exact_strae_epoch", "epoch": 28, "val_primary_strae": 0.9061008627180522, "per_primary_ST_RAE": [0.9061008627180522]}
+{"event": "exact_strae_epoch", "epoch": 29, "val_primary_strae": 0.9056100406102084, "per_primary_ST_RAE": [0.9056100406102084]}
+{"event": "exact_strae_epoch", "epoch": 30, "val_primary_strae": 0.9087183353455228, "per_primary_ST_RAE": [0.9087183353455228]}
+{"event": "exact_strae_epoch", "epoch": 31, "val_primary_strae": 0.903168246738756, "per_primary_ST_RAE": [0.903168246738756]}
+{"event": "exact_strae_epoch", "epoch": 32, "val_primary_strae": 0.9048558650274864, "per_primary_ST_RAE": [0.9048558650274864]}
+{"event": "exact_strae_epoch", "epoch": 33, "val_primary_strae": 0.911934925385149, "per_primary_ST_RAE": [0.911934925385149]}
+{"event": "exact_strae_epoch", "epoch": 34, "val_primary_strae": 0.9024248336008691, "per_primary_ST_RAE": [0.9024248336008691]}
+{"event": "exact_strae_epoch", "epoch": 35, "val_primary_strae": 0.8952619908304393, "per_primary_ST_RAE": [0.8952619908304393]}
+{"event": "exact_strae_epoch", "epoch": 36, "val_primary_strae": 0.9066015219183915, "per_primary_ST_RAE": [0.9066015219183915]}
+{"event": "exact_strae_epoch", "epoch": 37, "val_primary_strae": 0.8909408602078075, "per_primary_ST_RAE": [0.8909408602078075]}
+{"event": "exact_strae_epoch", "epoch": 38, "val_primary_strae": 0.8992665503911194, "per_primary_ST_RAE": [0.8992665503911194]}
+{"event": "exact_strae_epoch", "epoch": 39, "val_primary_strae": 0.9101491836809482, "per_primary_ST_RAE": [0.9101491836809482]}
+{"event": "exact_strae_epoch", "epoch": 40, "val_primary_strae": 0.9181317571133699, "per_primary_ST_RAE": [0.9181317571133699]}
+{"event": "exact_strae_epoch", "epoch": 41, "val_primary_strae": 0.8821971989035371, "per_primary_ST_RAE": [0.8821971989035371]}
+{"event": "exact_strae_epoch", "epoch": 42, "val_primary_strae": 0.8900515181092995, "per_primary_ST_RAE": [0.8900515181092995]}
+{"event": "exact_strae_epoch", "epoch": 43, "val_primary_strae": 0.8825494412007272, "per_primary_ST_RAE": [0.8825494412007272]}
+{"event": "exact_strae_epoch", "epoch": 44, "val_primary_strae": 0.9047219758429299, "per_primary_ST_RAE": [0.9047219758429299]}
+{"event": "exact_strae_epoch", "epoch": 45, "val_primary_strae": 0.9019430540081724, "per_primary_ST_RAE": [0.9019430540081724]}
+{"event": "exact_strae_epoch", "epoch": 46, "val_primary_strae": 0.9181181012533552, "per_primary_ST_RAE": [0.9181181012533552]}
+{"event": "exact_strae_epoch", "epoch": 47, "val_primary_strae": 0.8872154092378322, "per_primary_ST_RAE": [0.8872154092378322]}
+{"event": "exact_strae_epoch", "epoch": 48, "val_primary_strae": 0.8855428920204206, "per_primary_ST_RAE": [0.8855428920204206]}
+{"event": "exact_strae_epoch", "epoch": 49, "val_primary_strae": 0.8917400117943545, "per_primary_ST_RAE": [0.8917400117943545]}
+{"event": "exact_strae_epoch", "epoch": 50, "val_primary_strae": 0.8995972773748923, "per_primary_ST_RAE": [0.8995972773748923]}
+{"event": "exact_strae_epoch", "epoch": 51, "val_primary_strae": 0.8943575762086833, "per_primary_ST_RAE": [0.8943575762086833]}
+{"event": "exact_strae_epoch", "epoch": 52, "val_primary_strae": 0.8958002399291559, "per_primary_ST_RAE": [0.8958002399291559]}
+{"event": "exact_strae_epoch", "epoch": 53, "val_primary_strae": 0.8883712344141341, "per_primary_ST_RAE": [0.8883712344141341]}
+{"event": "exact_strae_epoch", "epoch": 54, "val_primary_strae": 0.8800285588917613, "per_primary_ST_RAE": [0.8800285588917613]}
+{"event": "exact_strae_epoch", "epoch": 55, "val_primary_strae": 0.9089408943737515, "per_primary_ST_RAE": [0.9089408943737515]}
+{"event": "exact_strae_epoch", "epoch": 56, "val_primary_strae": 0.8854308472814506, "per_primary_ST_RAE": [0.8854308472814506]}
+{"event": "exact_strae_epoch", "epoch": 57, "val_primary_strae": 0.9078945285620265, "per_primary_ST_RAE": [0.9078945285620265]}
+{"event": "exact_strae_epoch", "epoch": 58, "val_primary_strae": 0.9038285837383587, "per_primary_ST_RAE": [0.9038285837383587]}
+{"event": "exact_strae_epoch", "epoch": 59, "val_primary_strae": 0.8875715421058534, "per_primary_ST_RAE": [0.8875715421058534]}
+{"event": "exact_strae_epoch", "epoch": 60, "val_primary_strae": 0.8965922088078117, "per_primary_ST_RAE": [0.8965922088078117]}
+{"event": "exact_strae_epoch", "epoch": 61, "val_primary_strae": 0.8917574668802856, "per_primary_ST_RAE": [0.8917574668802856]}
+{"event": "exact_strae_epoch", "epoch": 62, "val_primary_strae": 0.8982989120252034, "per_primary_ST_RAE": [0.8982989120252034]}
+{"event": "exact_strae_epoch", "epoch": 63, "val_primary_strae": 0.8918970838762443, "per_primary_ST_RAE": [0.8918970838762443]}
+{"event": "exact_strae_epoch", "epoch": 64, "val_primary_strae": 0.9035766404210696, "per_primary_ST_RAE": [0.9035766404210696]}
+{"event": "exact_strae_epoch", "epoch": 65, "val_primary_strae": 0.9057709216111004, "per_primary_ST_RAE": [0.9057709216111004]}
+{"event": "exact_strae_epoch", "epoch": 66, "val_primary_strae": 0.8950157584848641, "per_primary_ST_RAE": [0.8950157584848641]}
+{"event": "exact_strae_epoch", "epoch": 67, "val_primary_strae": 0.8990971191141578, "per_primary_ST_RAE": [0.8990971191141578]}
+{"event": "exact_strae_epoch", "epoch": 68, "val_primary_strae": 0.8871092368277165, "per_primary_ST_RAE": [0.8871092368277165]}
+{"event": "exact_strae_epoch", "epoch": 69, "val_primary_strae": 0.9082654563192798, "per_primary_ST_RAE": [0.9082654563192798]}
+{"event": "exact_strae_epoch", "epoch": 70, "val_primary_strae": 0.8936190392726949, "per_primary_ST_RAE": [0.8936190392726949]}
+{"event": "exact_strae_epoch", "epoch": 71, "val_primary_strae": 0.9166493891243073, "per_primary_ST_RAE": [0.9166493891243073]}
+{"event": "exact_strae_epoch", "epoch": 72, "val_primary_strae": 0.9199461887129297, "per_primary_ST_RAE": [0.9199461887129297]}
+{"event": "exact_strae_epoch", "epoch": 73, "val_primary_strae": 0.9169768841221644, "per_primary_ST_RAE": [0.9169768841221644]}
+{"event": "exact_strae_epoch", "epoch": 74, "val_primary_strae": 0.8927754378336652, "per_primary_ST_RAE": [0.8927754378336652]}
+{"event": "exact_strae_epoch", "epoch": 75, "val_primary_strae": 0.8894429740552472, "per_primary_ST_RAE": [0.8894429740552472]}
+{"event": "exact_strae_epoch", "epoch": 76, "val_primary_strae": 0.8955431485008758, "per_primary_ST_RAE": [0.8955431485008758]}
+{"event": "exact_strae_epoch", "epoch": 77, "val_primary_strae": 0.8907354231523559, "per_primary_ST_RAE": [0.8907354231523559]}
+{"event": "exact_strae_epoch", "epoch": 78, "val_primary_strae": 0.8920286356777283, "per_primary_ST_RAE": [0.8920286356777283]}
+{"event": "exact_strae_epoch", "epoch": 79, "val_primary_strae": 0.9069602597262413, "per_primary_ST_RAE": [0.9069602597262413]}
+{"event": "exact_strae_epoch", "epoch": 80, "val_primary_strae": 0.8946866694749521, "per_primary_ST_RAE": [0.8946866694749521]}
+{"event": "exact_strae_epoch", "epoch": 81, "val_primary_strae": 0.8865645920970822, "per_primary_ST_RAE": [0.8865645920970822]}
+{"event": "exact_strae_epoch", "epoch": 82, "val_primary_strae": 0.8776082592788699, "per_primary_ST_RAE": [0.8776082592788699]}
+{"event": "exact_strae_epoch", "epoch": 83, "val_primary_strae": 0.8959397232921297, "per_primary_ST_RAE": [0.8959397232921297]}
+{"event": "exact_strae_epoch", "epoch": 84, "val_primary_strae": 0.9023194215614241, "per_primary_ST_RAE": [0.9023194215614241]}
+{"event": "exact_strae_epoch", "epoch": 85, "val_primary_strae": 0.903903030987556, "per_primary_ST_RAE": [0.903903030987556]}
+{"event": "exact_strae_epoch", "epoch": 86, "val_primary_strae": 0.9093962619115309, "per_primary_ST_RAE": [0.9093962619115309]}
+{"event": "exact_strae_epoch", "epoch": 87, "val_primary_strae": 0.903128833380478, "per_primary_ST_RAE": [0.903128833380478]}
+{"event": "exact_strae_epoch", "epoch": 88, "val_primary_strae": 0.9038341139715533, "per_primary_ST_RAE": [0.9038341139715533]}
+{"event": "exact_strae_epoch", "epoch": 89, "val_primary_strae": 0.8928426558565787, "per_primary_ST_RAE": [0.8928426558565787]}
+{"event": "exact_strae_epoch", "epoch": 90, "val_primary_strae": 0.9035536105058481, "per_primary_ST_RAE": [0.9035536105058481]}
+{"event": "exact_strae_epoch", "epoch": 91, "val_primary_strae": 0.9141482340354417, "per_primary_ST_RAE": [0.9141482340354417]}
+{"event": "exact_strae_epoch", "epoch": 92, "val_primary_strae": 0.90810848603545, "per_primary_ST_RAE": [0.90810848603545]}
+{"event": "exact_strae_epoch", "epoch": 93, "val_primary_strae": 0.909759470601469, "per_primary_ST_RAE": [0.909759470601469]}
+{"event": "exact_strae_epoch", "epoch": 94, "val_primary_strae": 0.9051463377653891, "per_primary_ST_RAE": [0.9051463377653891]}
+{"event": "exact_strae_epoch", "epoch": 95, "val_primary_strae": 0.9014797492838438, "per_primary_ST_RAE": [0.9014797492838438]}
+{"event": "exact_strae_epoch", "epoch": 96, "val_primary_strae": 0.9141647338082209, "per_primary_ST_RAE": [0.9141647338082209]}
+{"event": "exact_strae_epoch", "epoch": 97, "val_primary_strae": 0.9107516189822836, "per_primary_ST_RAE": [0.9107516189822836]}
+{"event": "exact_strae_epoch", "epoch": 98, "val_primary_strae": 0.8861067042303272, "per_primary_ST_RAE": [0.8861067042303272]}
+{"event": "exact_strae_epoch", "epoch": 99, "val_primary_strae": 0.9000114820823927, "per_primary_ST_RAE": [0.9000114820823927]}
+{"event": "exact_strae_epoch", "epoch": 100, "val_primary_strae": 0.8997089361405881, "per_primary_ST_RAE": [0.8997089361405881]}
+{"event": "exact_strae_epoch", "epoch": 101, "val_primary_strae": 0.9021552748566409, "per_primary_ST_RAE": [0.9021552748566409]}
+{"event": "exact_strae_epoch", "epoch": 102, "val_primary_strae": 0.9063025991038681, "per_primary_ST_RAE": [0.9063025991038681]}
+{"event": "exact_strae_epoch", "epoch": 103, "val_primary_strae": 0.8978509738860644, "per_primary_ST_RAE": [0.8978509738860644]}
+{"event": "exact_strae_epoch", "epoch": 104, "val_primary_strae": 0.879784759774558, "per_primary_ST_RAE": [0.879784759774558]}
+{"event": "exact_strae_epoch", "epoch": 105, "val_primary_strae": 0.8880426357568817, "per_primary_ST_RAE": [0.8880426357568817]}
+{"event": "exact_strae_epoch", "epoch": 106, "val_primary_strae": 0.9134206267964208, "per_primary_ST_RAE": [0.9134206267964208]}
+{"event": "exact_strae_epoch", "epoch": 107, "val_primary_strae": 0.9015625520183045, "per_primary_ST_RAE": [0.9015625520183045]}
+{"event": "exact_strae_epoch", "epoch": 108, "val_primary_strae": 0.9210567085751389, "per_primary_ST_RAE": [0.9210567085751389]}
+{"event": "exact_strae_epoch", "epoch": 109, "val_primary_strae": 0.9010279870022406, "per_primary_ST_RAE": [0.9010279870022406]}
+{"event": "exact_strae_epoch", "epoch": 110, "val_primary_strae": 0.8953044924114113, "per_primary_ST_RAE": [0.8953044924114113]}
+{"event": "exact_strae_epoch", "epoch": 111, "val_primary_strae": 0.8912060263963235, "per_primary_ST_RAE": [0.8912060263963235]}
+{"event": "exact_strae_epoch", "epoch": 112, "val_primary_strae": 0.8987456794999299, "per_primary_ST_RAE": [0.8987456794999299]}
+{"event": "exact_strae_epoch", "epoch": 113, "val_primary_strae": 0.8936183251906374, "per_primary_ST_RAE": [0.8936183251906374]}
+{"event": "exact_strae_epoch", "epoch": 114, "val_primary_strae": 0.8980936414328111, "per_primary_ST_RAE": [0.8980936414328111]}
+{"event": "exact_strae_epoch", "epoch": 115, "val_primary_strae": 0.896335529311002, "per_primary_ST_RAE": [0.896335529311002]}
+{"event": "exact_strae_epoch", "epoch": 116, "val_primary_strae": 0.8935629199947605, "per_primary_ST_RAE": [0.8935629199947605]}
+{"event": "exact_strae_epoch", "epoch": 117, "val_primary_strae": 0.9091986509115655, "per_primary_ST_RAE": [0.9091986509115655]}
+{"event": "exact_strae_epoch", "epoch": 118, "val_primary_strae": 0.8945200544012366, "per_primary_ST_RAE": [0.8945200544012366]}
+{"event": "exact_strae_epoch", "epoch": 119, "val_primary_strae": 0.8869829883294391, "per_primary_ST_RAE": [0.8869829883294391]}
+{"event": "exact_strae_epoch", "epoch": 120, "val_primary_strae": 0.8877744657404747, "per_primary_ST_RAE": [0.8877744657404747]}
+{"event": "exact_strae_epoch", "epoch": 121, "val_primary_strae": 0.9012374473644109, "per_primary_ST_RAE": [0.9012374473644109]}
+{"event": "exact_strae_epoch", "epoch": 122, "val_primary_strae": 0.896754640960183, "per_primary_ST_RAE": [0.896754640960183]}
+{"event": "exact_strae_fold_fit_complete", "fold": 1, "seconds": 74.47107696533203, "best_primary_validation_ST_RAE": 0.8776082396507263, "best_epoch": 82}
+{"event": "native_fold_complete", "member": "2d6single", "fold": 1, "best_epoch": 82, "seconds": 86.55613875389099}

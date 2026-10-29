@@ -1,0 +1,44 @@
+{
+  "utc": "2026-10-27T05:53:31.646312+00:00",
+  "reported_owned_charges": [
+    {
+      "amount": "0.689",
+      "description": "Instance 57884190 GPU  charge:    hours * $/hr",
+      "instance_id": 57884190,
+      "quantity": "6.460",
+      "rate": "0.1067",
+      "timestamp": 1793059200,
+      "type": "charge"
+    },
+    {
+      "amount": "0.005",
+      "description": "Instance 57884190 storage charge: hours * $/hr",
+      "instance_id": 57884190,
+      "quantity": "6.468",
+      "rate": "0.0008",
+      "timestamp": 1793059200,
+      "type": "charge"
+    },
+    {
+      "amount": "0.028",
+      "description": "Instance 57884190 download charge",
+      "instance_id": 57884190,
+      "quantity": "0.707",
+      "rate": "0.039",
+      "timestamp": 1793059200,
+      "type": "charge"
+    }
+  ],
+  "P10_reported_cost_usd": 0.722,
+  "P10_cap_usd": 1.2,
+  "campaign_prior_reported_usd": 4.741,
+  "campaign_reported_total_usd": 5.463,
+  "remaining_campaign_cap_usd": 4.537,
+  "failed_first_boot_has_no_charge_row": true,
+  "billing_caveat": "Provider-reported rounded charges at readback, not guarantee against later settlement; absent failed-boot row is no currently reported charge, not proof of zero eventual cost.",
+  "fresh_owned_instances_absent": true,
+  "remaining_instance_ids": [
+    55892464
+  ],
+  "raw_charge_receipt_sha256": "4ee7cdb33c44b4d3dbd809d5b0125b03e5db2716c73e3023fcb13528dab11826"
+}

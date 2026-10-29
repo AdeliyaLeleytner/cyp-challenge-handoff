@@ -1,0 +1,20 @@
+{"event": "native_runtime", "cuda": true, "torch": "2.6.0+cu124", "packages": {"chemprop": "2.2.1", "lightning": "2.5.5", "rdkit": "2026.9.1", "pandas": "2.3.3", "numpy": "2.2.6", "scipy": "1.16.2", "scikit-learn": "1.7.2"}}
+Native prepared data/folds/validator hashes verified
+{"event": "exact_strae_experiment_start", "criterion_mode": "exact_strae_v1", "initializations": ["chemeleon"], "pending_models": 40}
+{"event": "exact_strae_fold_start", "gpu": 0, "job": "/workspace/cyp-repro/results/chemeleon_strae/chemeleon_exact_strae/own750/results/union18/fold0/job.json"}
+{"event": "exact_strae_fold_start", "gpu": 1, "job": "/workspace/cyp-repro/results/chemeleon_strae/chemeleon_exact_strae/briford529/results/union18/fold0/job.json"}
+{"event": "exact_strae_fold_start", "gpu": 2, "job": "/workspace/cyp-repro/results/chemeleon_strae/chemeleon_exact_strae/own750/results/union18/fold1/job.json"}
+{"event": "exact_strae_fold_start", "gpu": 3, "job": "/workspace/cyp-repro/results/chemeleon_strae/chemeleon_exact_strae/briford529/results/union18/fold1/job.json"}
+{"event": "exact_strae_fold_start", "gpu": 4, "job": "/workspace/cyp-repro/results/chemeleon_strae/chemeleon_exact_strae/own750/results/union18/fold2/job.json"}
+{"event": "exact_strae_fold_start", "gpu": 5, "job": "/workspace/cyp-repro/results/chemeleon_strae/chemeleon_exact_strae/briford529/results/union18/fold2/job.json"}
+{"event": "exact_strae_fold_start", "gpu": 6, "job": "/workspace/cyp-repro/results/chemeleon_strae/chemeleon_exact_strae/own750/results/union18/fold3/job.json"}
+{"event": "exact_strae_fold_start", "gpu": 7, "job": "/workspace/cyp-repro/results/chemeleon_strae/chemeleon_exact_strae/briford529/results/union18/fold3/job.json"}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/strae_native.py", line 147, in <module>
+    run(json.loads(Path('briford_config.json').read_text()))
+  File "/root/.orx/runs/7c1316bc-a786-4b98-8876-c4e7ca89912c/repo/night/strae_native.py", line 111, in run
+    if code: raise RuntimeError(f'Worker failed exit={code}: {job}')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Worker failed exit=1: /workspace/cyp-repro/results/chemeleon_strae/chemeleon_exact_strae/briford529/results/union18/fold0/job.json

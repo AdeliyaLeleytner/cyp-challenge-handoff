@@ -1,0 +1,136 @@
+{
+  "asset_root": "/workspace/cyp-night/assets",
+  "output_dir": "/workspace/cyp-night/results/B0_G0_structure",
+  "seeds": [
+    42
+  ],
+  "confirmation_seeds": [
+    42,
+    142
+  ],
+  "cohorts": [
+    "briford529",
+    "own750"
+  ],
+  "gpus": [
+    -1,
+    -2,
+    -3,
+    -4
+  ],
+  "models": [
+    {
+      "name": "extratrees_morgan_fcfp",
+      "kind": "tabular",
+      "model": "extratrees",
+      "num_threads": 4,
+      "features": [
+        {
+          "family": "morgan_counts",
+          "include_chirality": true
+        },
+        {
+          "family": "fcfp_counts"
+        }
+      ],
+      "model_params": {
+        "n_estimators": 400,
+        "max_features": 0.5,
+        "min_samples_leaf": 2
+      }
+    },
+    {
+      "name": "catboost_descriptors_mae",
+      "kind": "tabular",
+      "model": "catboost",
+      "num_threads": 4,
+      "features": [
+        {
+          "family": "rdkit2d"
+        }
+      ],
+      "model_params": {
+        "iterations": 1500,
+        "depth": 6,
+        "learning_rate": 0.03,
+        "loss_function": "MAE",
+        "task_type": "CPU",
+        "verbose": false
+      }
+    },
+    {
+      "name": "krr_count_a0.1",
+      "kind": "tabular",
+      "model": "krr",
+      "num_threads": 4,
+      "features": [
+        {
+          "family": "morgan_counts",
+          "n_bits": 4096,
+          "include_chirality": true
+        }
+      ],
+      "model_params": {
+        "alpha": 0.1,
+        "kernel": "tanimoto",
+        "center_target": true
+      }
+    },
+    {
+      "name": "krr_count_a1.0",
+      "kind": "tabular",
+      "model": "krr",
+      "num_threads": 4,
+      "features": [
+        {
+          "family": "morgan_counts",
+          "n_bits": 4096,
+          "include_chirality": true
+        }
+      ],
+      "model_params": {
+        "alpha": 1.0,
+        "kernel": "tanimoto",
+        "center_target": true
+      }
+    },
+    {
+      "name": "krr_count_a10.0",
+      "kind": "tabular",
+      "model": "krr",
+      "num_threads": 4,
+      "features": [
+        {
+          "family": "morgan_counts",
+          "n_bits": 4096,
+          "include_chirality": true
+        }
+      ],
+      "model_params": {
+        "alpha": 10.0,
+        "kernel": "tanimoto",
+        "center_target": true
+      }
+    },
+    {
+      "name": "extratrees_path_atompair",
+      "kind": "tabular",
+      "model": "extratrees",
+      "num_threads": 4,
+      "features": [
+        {
+          "family": "rdkit_path_counts"
+        },
+        {
+          "family": "atom_pair_counts",
+          "include_chirality": true
+        }
+      ],
+      "model_params": {
+        "n_estimators": 400,
+        "max_features": 0.5,
+        "min_samples_leaf": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "own750": {
+    "method": "sparse HiGHS linear program; interval-distance exact macro ST-RAE",
+    "weight_scope": "one global simplex shared across targets",
+    "solver_status": 0,
+    "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_iterations": 4272,
+    "training_OOF_ST_RAE": 0.6150381433116627,
+    "solver_objective": 0.6150381433116637,
+    "target_denominators": [
+      608.3534946008098,
+      354.81195564701125,
+      560.5228298269262,
+      956.723712821846
+    ],
+    "observed_per_target": [
+      1262,
+      1134,
+      1343,
+      1820
+    ],
+    "sum_weights": 1.0,
+    "maximum_constraint_violation": 7.105427357601002e-15,
+    "tie_policy": "Deterministic solver result for frozen row/expert order; no outer selection or secondary fit",
+    "weights": [
+      0.5568414721678132,
+      0.0,
+      0.4431585278321869
+    ],
+    "expert_order": [
+      "corrected_native",
+      "primary_LGBM_ADMET120",
+      "H6_LGBM_ADME720"
+    ],
+    "selected_base_params": {
+      "primary": {
+        "num_leaves": 15,
+        "max_depth": 4
+      },
+      "h6": {
+        "num_leaves": 15,
+        "max_depth": 4
+      }
+    },
+    "training_only": true,
+    "two_expert_parity": {
+      "LP_weights": [
+        0.6879336624581803,
+        0.3120663375418197
+      ],
+      "weighted_median_extra_weight": 0.31206633754181956,
+      "objective_difference": 1.1102230246251565e-16
+    }
+  },
+  "briford529": {
+    "method": "sparse HiGHS linear program; interval-distance exact macro ST-RAE",
+    "weight_scope": "one global simplex shared across targets",
+    "solver_status": 0,
+    "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_iterations": 4416,
+    "training_OOF_ST_RAE": 0.6148461737500924,
+    "solver_objective": 0.6148461737500941,
+    "target_denominators": [
+      624.8031575834607,
+      367.5022935232741,
+      551.5754033241458,
+      1066.736979472774
+    ],
+    "observed_per_target": [
+      1251,
+      1146,
+      1317,
+      2065
+    ],
+    "sum_weights": 1.0,
+    "maximum_constraint_violation": 1.4210854715202004e-14,
+    "tie_policy": "Deterministic solver result for frozen row/expert order; no outer selection or secondary fit",
+    "weights": [
+      0.5872529734672418,
+      0.059642485153759334,
+      0.3531045413789988
+    ],
+    "expert_order": [
+      "corrected_native",
+      "primary_LGBM_ADMET120",
+      "H6_LGBM_ADME720"
+    ],
+    "selected_base_params": {
+      "primary": {
+        "num_leaves": 15,
+        "max_depth": 4
+      },
+      "h6": {
+        "num_leaves": 15,
+        "max_depth": 4
+      }
+    },
+    "training_only": true,
+    "two_expert_parity": {
+      "LP_weights": [
+        0.6833336881225934,
+        0.31666631187740657
+      ],
+      "weighted_median_extra_weight": 0.31666631187740635,
+      "objective_difference": -2.220446049250313e-16
+    }
+  }
+}

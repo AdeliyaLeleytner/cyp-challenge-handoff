@@ -1,0 +1,152 @@
+{
+  "component": {
+    "component": "mtaux8",
+    "source_commits": {
+      "union18": "971f6a7f24d86e59bab219347c3e14c006ae4e35",
+      "framework_and_specialists": "8c72c7559471febaf0962fd551b4eaab8db3a136"
+    },
+    "supplied_official_rows": 3924,
+    "primary_fraction": null,
+    "primary_fraction_note": "Historical source has no primary_fraction sampler parameter.",
+    "deviations": [
+      "Fixed caller official folds with external auxiliary rows in every fit, rather than author CV over each union.",
+      "Task weights recomputed on the supplied training partition, rather than full-source counts.",
+      "Public CSVs are current pinned snapshots; historical trained model/OOF artifacts are unavailable.",
+      "External structures use normalized neutral nonstereo parents and exclude all provided official train/test parents."
+    ],
+    "train_rows": 3924,
+    "dropped_all_unknown_rows": 0,
+    "target_counts": {
+      "cyp3a4_pic50_direct_inhibition": 1866,
+      "cyp2c9_pic50_direct_inhibition": 1031,
+      "cyp2d6_pic50_direct_inhibition": 1206,
+      "cyp1a2_pic50_direct_inhibition": 1125,
+      "cyp3a4_log2fc": 3496,
+      "cyp2c9_log2fc": 3496,
+      "cyp2d6_log2fc": 3496,
+      "cyp1a2_log2fc": 3496
+    },
+    "task_weights": [
+      0.6649130582809448,
+      1.203421711921692,
+      1.028795838356018,
+      1.1028691530227661,
+      0.29999998211860657,
+      0.29999998211860657,
+      0.29999998211860657,
+      0.29999998211860657
+    ],
+    "weighted_label_mass": 9158.110879898071,
+    "target_order": [
+      "cyp3a4_pic50_direct_inhibition",
+      "cyp2c9_pic50_direct_inhibition",
+      "cyp2d6_pic50_direct_inhibition",
+      "cyp1a2_pic50_direct_inhibition",
+      "cyp3a4_log2fc",
+      "cyp2c9_log2fc",
+      "cyp2d6_log2fc",
+      "cyp1a2_log2fc"
+    ],
+    "source_files": {
+      "chembl_all_isoforms.csv": "74a5233890e74e5514a6bbbad25cfe1c365181fb29af01c116e96cc5277b33fc",
+      "emax.csv": "06562915e3cd7ff7e6970e621ae4d709fe3f4b08fce3f29a8acafc96f4403bd7",
+      "inhibition.csv": "95576058689db7537458cde2615f8d72a84748cea9d4a2d73fe3c287f7c1cf0c",
+      "pubchem_all_isoforms.csv": "1465de66ba50c0cda5d7fab3083a8ccdfba4adfbefef8d13a1fedade86b0847b",
+      "single_concentration.csv": "5bf429cb438a730d364309394aba8276725b76a70906761cc631a4e2aa31bf80",
+      "tdi.csv": "2ebad28ff5e155dc7de3a7e6e10920e938f559be561ca74f2a7c95dcfdf03a82"
+    }
+  },
+  "initialization": {
+    "initialization": "scratch"
+  },
+  "effective_config": {
+    "hidden_dim": 700,
+    "depth": 5,
+    "dropout": 0.1,
+    "ffn_hidden_dim": 300,
+    "ffn_num_layers": 2,
+    "batch_norm": true,
+    "aggregation": "norm",
+    "loss": "mae",
+    "max_epochs": 400,
+    "patience": 40,
+    "batch_size": 64,
+    "warmup_epochs": 2,
+    "init_lr": 0.0001,
+    "max_lr": 0.001,
+    "final_lr": 0.0001,
+    "seed": 42,
+    "component": "mtaux8",
+    "fold_index": 3,
+    "include_official_side_rows": true,
+    "kind": "neural",
+    "name": "mtaux8",
+    "num_workers": 0,
+    "targets": [
+      "CYP1A2_pIC50_direct_inhibition",
+      "CYP2C9_pIC50_direct_inhibition",
+      "CYP2D6_pIC50_direct_inhibition",
+      "CYP3A4_pIC50_direct_inhibition"
+    ],
+    "torch_num_threads": 4
+  },
+  "excluded_parent_keys_count": 5649,
+  "target_order": [
+    "cyp3a4_pic50_direct_inhibition",
+    "cyp2c9_pic50_direct_inhibition",
+    "cyp2d6_pic50_direct_inhibition",
+    "cyp1a2_pic50_direct_inhibition",
+    "cyp3a4_log2fc",
+    "cyp2c9_log2fc",
+    "cyp2d6_log2fc",
+    "cyp1a2_log2fc"
+  ],
+  "output_mapping": {
+    "cyp3a4_pic50_direct_inhibition": "CYP3A4_pIC50_direct_inhibition",
+    "cyp2c9_pic50_direct_inhibition": "CYP2C9_pIC50_direct_inhibition",
+    "cyp2d6_pic50_direct_inhibition": "CYP2D6_pIC50_direct_inhibition",
+    "cyp1a2_pic50_direct_inhibition": "CYP1A2_pIC50_direct_inhibition"
+  },
+  "supplied_train_id_sha256": "f072d965f3bed0eded8a9ced58862f4a723638a3cda5095cc7b5e34808920c53",
+  "fit_id_sha256": "f072d965f3bed0eded8a9ced58862f4a723638a3cda5095cc7b5e34808920c53",
+  "validation_id_sha256": "58da05c0ddf7f6de404ad66be239f0c3fb34bcc97c8659f9c79821a2290590b2",
+  "query_id_sha256": "de36ae475c2518ca51825f4c68cfe3e0b76c8884b264273433da5fce757b6280",
+  "validation_query_overlap": 981,
+  "query_labels_used": false,
+  "scaler_mean": [
+    4.096852038323177,
+    4.587918559517477,
+    4.794877655964783,
+    4.961879057566325,
+    -1.906671756098103,
+    -0.6911701733346568,
+    -0.42180742410319644,
+    -0.6511688923627026
+  ],
+  "scaler_scale": [
+    1.0932535282859657,
+    0.7802881780209827,
+    0.9148100300969095,
+    1.012066912113664,
+    1.3687313844620688,
+    0.4637405707488639,
+    1.118757305500468,
+    0.6848126509602941
+  ],
+  "accelerator": "gpu",
+  "precision": "16-mixed",
+  "seed": 45,
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "chemprop": "2.2.1",
+    "lightning": "2.5.5",
+    "rdkit": "2026.9.1",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3"
+  },
+  "best_epoch": 17,
+  "best_val_loss": 0.2645770311355591,
+  "elapsed_epochs": 58,
+  "best_checkpoint": "/workspace/cyp-night/results/FINAL_reference_seed42/mtaux8/seed42/fold3/checkpoints/best.ckpt",
+  "trainable_parameters": 1395708
+}

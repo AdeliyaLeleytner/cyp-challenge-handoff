@@ -1,0 +1,80 @@
+Seed set to 42
+{"event": "exact_strae_fold_config", "fold": 0, "criterion_mode": "exact_strae_v1", "fit_statistics": {"primary_indices": [0], "primary_counts": [1074], "primary_means": [4.784064831807262], "primary_denominators": [448.73148926313405], "mode": "exact_strae_v1", "n_fit_rows": 1074, "n_targets": 1, "target_counts": [1074], "auxiliary_indices": [], "native_task_weights": [1.0], "primary_native_weight_sum": 1.0, "auxiliary_head_coefficients": [], "auxiliary_total_nominal_budget": 0.0, "scaler_mean": [4.784064831458434], "scaler_scale": [0.912018390980952], "per_entry_coefficients": [0.00203243679751244], "normalization": "N_fit / B; primary sigma/(J*D_fit); auxiliary native_weight/(sum_primary_native_weights*n_aux_fit)", "qualification": "Preserves nominal native auxiliary head ratios, not native realized label-frequency weighting. Test denominators are unknown."}, "validation_statistics": {"primary_indices": [0], "primary_counts": [269], "primary_means": [4.793557746717473], "primary_denominators": [111.7490637270223]}, "checkpoint_monitor": "val_primary_strae", "bounds_scaling": "same fit-center mean and scale for central/lower/upper; no bound-specific fitting", "native_architecture_and_optimizer_preserved": true, "explicit_changes": ["primary exact interval macro objective", "per-auxiliary-head observed-label mean and nominal author budget", "uniform-row unbiased minibatch estimator", "primary-only validation checkpoint selection", "explicit FP32 validation numerical repair", "explicit configurable training precision"], "training_precision": "bf16-mixed", "validation_precision": "explicit_fp32", "precision": "bf16-mixed training forward; explicit FP32 validation forward and differentiable loss; float64 full-validation official arithmetic", "numerical_repair_note": "FP32 validation matches serving precision. BF16 training, when explicitly selected, is a separate numerical precision repair; no proof of scientific improvement or stability is inferred before replay."}
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 4090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [4]
+Loading `train_dataloader` to estimate number of stepping batches.
+/opt/conda/lib/python3.11/site-packages/lightning/pytorch/utilities/model_summary/model_summary.py:231: Precision bf16-mixed is not supported by the model summary.  Estimated model size in MB will not be accurate. Using 32 bits instead.
+
+  | Name            | Type               | Params | Mode 
+---------------------------------------------------------------
+0 | message_passing | BondMessagePassing | 1.1 M  | train
+1 | agg             | NormAggregation    | 0      | train
+2 | bn              | BatchNorm1d        | 1.4 K  | train
+3 | predictor       | RegressionFFN      | 300 K  | train
+4 | X_d_transform   | Identity           | 0      | train
+5 | metrics         | ModuleList         | 0      | train
+6 | loss_objective  | ExactSTObjective   | 0      | train
+---------------------------------------------------------------
+1.4 M     Trainable params
+0         Non-trainable params
+1.4 M     Total params
+5.574     Total estimated model params size (MB)
+27        Modules in train mode
+0         Modules in eval mode
+{"event": "exact_strae_epoch", "epoch": 0, "val_primary_strae": 0.9955725405255397, "per_primary_ST_RAE": [0.9955725405255397]}
+{"event": "exact_strae_epoch", "epoch": 1, "val_primary_strae": 0.9905762494246629, "per_primary_ST_RAE": [0.9905762494246629]}
+{"event": "exact_strae_epoch", "epoch": 2, "val_primary_strae": 0.980382349163277, "per_primary_ST_RAE": [0.980382349163277]}
+{"event": "exact_strae_epoch", "epoch": 3, "val_primary_strae": 0.9606591809460944, "per_primary_ST_RAE": [0.9606591809460944]}
+{"event": "exact_strae_epoch", "epoch": 4, "val_primary_strae": 0.9102181547132006, "per_primary_ST_RAE": [0.9102181547132006]}
+{"event": "exact_strae_epoch", "epoch": 5, "val_primary_strae": 0.8993089730678145, "per_primary_ST_RAE": [0.8993089730678145]}
+{"event": "exact_strae_epoch", "epoch": 6, "val_primary_strae": 1.0155810606008497, "per_primary_ST_RAE": [1.0155810606008497]}
+{"event": "exact_strae_epoch", "epoch": 7, "val_primary_strae": 0.8992530268703955, "per_primary_ST_RAE": [0.8992530268703955]}
+{"event": "exact_strae_epoch", "epoch": 8, "val_primary_strae": 0.9135052561232058, "per_primary_ST_RAE": [0.9135052561232058]}
+{"event": "exact_strae_epoch", "epoch": 9, "val_primary_strae": 0.9097045747982386, "per_primary_ST_RAE": [0.9097045747982386]}
+{"event": "exact_strae_epoch", "epoch": 10, "val_primary_strae": 0.8705926337736969, "per_primary_ST_RAE": [0.8705926337736969]}
+{"event": "exact_strae_epoch", "epoch": 11, "val_primary_strae": 0.9644687106781576, "per_primary_ST_RAE": [0.9644687106781576]}
+{"event": "exact_strae_epoch", "epoch": 12, "val_primary_strae": 0.903663064950067, "per_primary_ST_RAE": [0.903663064950067]}
+{"event": "exact_strae_epoch", "epoch": 13, "val_primary_strae": 0.960052584379122, "per_primary_ST_RAE": [0.960052584379122]}
+{"event": "exact_strae_epoch", "epoch": 14, "val_primary_strae": 1.0183554684225413, "per_primary_ST_RAE": [1.0183554684225413]}
+{"event": "exact_strae_epoch", "epoch": 15, "val_primary_strae": 0.9078304816895069, "per_primary_ST_RAE": [0.9078304816895069]}
+{"event": "exact_strae_epoch", "epoch": 16, "val_primary_strae": 0.8908399778714264, "per_primary_ST_RAE": [0.8908399778714264]}
+{"event": "exact_strae_epoch", "epoch": 17, "val_primary_strae": 1.0926045703310632, "per_primary_ST_RAE": [1.0926045703310632]}
+{"event": "exact_strae_epoch", "epoch": 18, "val_primary_strae": 1.0708559277415093, "per_primary_ST_RAE": [1.0708559277415093]}
+{"event": "exact_strae_epoch", "epoch": 19, "val_primary_strae": 0.9787045159616882, "per_primary_ST_RAE": [0.9787045159616882]}
+{"event": "exact_strae_epoch", "epoch": 20, "val_primary_strae": 1.0459072261217701, "per_primary_ST_RAE": [1.0459072261217701]}
+{"event": "exact_strae_epoch", "epoch": 21, "val_primary_strae": 0.9927135123790771, "per_primary_ST_RAE": [0.9927135123790771]}
+{"event": "exact_strae_epoch", "epoch": 22, "val_primary_strae": 0.9905097018241593, "per_primary_ST_RAE": [0.9905097018241593]}
+{"event": "exact_strae_epoch", "epoch": 23, "val_primary_strae": 1.1002119664104042, "per_primary_ST_RAE": [1.1002119664104042]}
+{"event": "exact_strae_epoch", "epoch": 24, "val_primary_strae": 1.0532527999107297, "per_primary_ST_RAE": [1.0532527999107297]}
+{"event": "exact_strae_epoch", "epoch": 25, "val_primary_strae": 0.9311826425321523, "per_primary_ST_RAE": [0.9311826425321523]}
+{"event": "exact_strae_epoch", "epoch": 26, "val_primary_strae": 1.0070171364150011, "per_primary_ST_RAE": [1.0070171364150011]}
+{"event": "exact_strae_epoch", "epoch": 27, "val_primary_strae": 0.9647660059419272, "per_primary_ST_RAE": [0.9647660059419272]}
+{"event": "exact_strae_epoch", "epoch": 28, "val_primary_strae": 1.1542419251575877, "per_primary_ST_RAE": [1.1542419251575877]}
+{"event": "exact_strae_epoch", "epoch": 29, "val_primary_strae": 1.0353420585220563, "per_primary_ST_RAE": [1.0353420585220563]}
+{"event": "exact_strae_epoch", "epoch": 30, "val_primary_strae": 0.9968664803882438, "per_primary_ST_RAE": [0.9968664803882438]}
+{"event": "exact_strae_epoch", "epoch": 31, "val_primary_strae": 1.0518532058448338, "per_primary_ST_RAE": [1.0518532058448338]}
+{"event": "exact_strae_epoch", "epoch": 32, "val_primary_strae": 1.0470609215556952, "per_primary_ST_RAE": [1.0470609215556952]}
+{"event": "exact_strae_epoch", "epoch": 33, "val_primary_strae": 1.0804957260196395, "per_primary_ST_RAE": [1.0804957260196395]}
+{"event": "exact_strae_epoch", "epoch": 34, "val_primary_strae": 0.9620585231199749, "per_primary_ST_RAE": [0.9620585231199749]}
+{"event": "exact_strae_epoch", "epoch": 35, "val_primary_strae": 0.9789419698476576, "per_primary_ST_RAE": [0.9789419698476576]}
+{"event": "exact_strae_epoch", "epoch": 36, "val_primary_strae": 1.015420575885135, "per_primary_ST_RAE": [1.015420575885135]}
+{"event": "exact_strae_epoch", "epoch": 37, "val_primary_strae": 1.0359075102478745, "per_primary_ST_RAE": [1.0359075102478745]}
+{"event": "exact_strae_epoch", "epoch": 38, "val_primary_strae": 1.087293197989082, "per_primary_ST_RAE": [1.087293197989082]}
+{"event": "exact_strae_epoch", "epoch": 39, "val_primary_strae": 0.9938377686346889, "per_primary_ST_RAE": [0.9938377686346889]}
+{"event": "exact_strae_epoch", "epoch": 40, "val_primary_strae": 1.0240138894609871, "per_primary_ST_RAE": [1.0240138894609871]}
+{"event": "exact_strae_epoch", "epoch": 41, "val_primary_strae": 1.1006241414708238, "per_primary_ST_RAE": [1.1006241414708238]}
+{"event": "exact_strae_epoch", "epoch": 42, "val_primary_strae": 1.0081926396770906, "per_primary_ST_RAE": [1.0081926396770906]}
+{"event": "exact_strae_epoch", "epoch": 43, "val_primary_strae": 0.9936761812943454, "per_primary_ST_RAE": [0.9936761812943454]}
+{"event": "exact_strae_epoch", "epoch": 44, "val_primary_strae": 1.0198429084704115, "per_primary_ST_RAE": [1.0198429084704115]}
+{"event": "exact_strae_epoch", "epoch": 45, "val_primary_strae": 1.01808014895723, "per_primary_ST_RAE": [1.01808014895723]}
+{"event": "exact_strae_epoch", "epoch": 46, "val_primary_strae": 1.0189232125775778, "per_primary_ST_RAE": [1.0189232125775778]}
+{"event": "exact_strae_epoch", "epoch": 47, "val_primary_strae": 1.0336809425042754, "per_primary_ST_RAE": [1.0336809425042754]}
+{"event": "exact_strae_epoch", "epoch": 48, "val_primary_strae": 1.043745666353276, "per_primary_ST_RAE": [1.043745666353276]}
+{"event": "exact_strae_epoch", "epoch": 49, "val_primary_strae": 1.0041758827120448, "per_primary_ST_RAE": [1.0041758827120448]}
+{"event": "exact_strae_epoch", "epoch": 50, "val_primary_strae": 1.0172685819670613, "per_primary_ST_RAE": [1.0172685819670613]}
+{"event": "exact_strae_fold_fit_complete", "fold": 0, "seconds": 30.705047369003296, "best_primary_validation_ST_RAE": 0.8705926537513733, "best_epoch": 10}
+{"event": "native_fold_complete", "member": "2d6single", "fold": 0, "best_epoch": 10, "seconds": 38.241835832595825}

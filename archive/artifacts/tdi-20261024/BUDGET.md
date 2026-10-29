@@ -1,0 +1,18 @@
+# TDI campaign plan — frozen before implementation
+
+Question: can robust classification/probability ensembling improve on the strongest available public TDI recipe (Jeremy LightGBM+TabICL kit), on two unchanged external holdout ID sets and the kit's Butina CV?
+
+Official provided binary labels, missing labels masked. 6145 train molecules including1240 TDI-only rows. All external holdout identity/parent/connectivity matches removed across auxiliary sources. No full-data briford encoder use during holdout evaluations. Selected full-data final fit only after local comparison.
+
+Experiments:
+- R0 exact available Jeremy kit: ECFP4+RDKit2D LightGBM balanced; frozen chemprop_medium embeddings global-training PCA200; TabICL8; hard class fold votes and native Caruana. Source pinned d3a5549. Establish reference, not promise leaderboard .40247 because kit trimmed research ensemble.
+- E1 soft probabilities and OOF MCC thresholds: retain magnitude of classifier evidence instead of hardening before averaging. Expected direction +MCC, unknown magnitude; reject improvement if paired heldout scores do not improve. Same fitted models as reference where mathematically equivalent.
+- E2 fold-local preprocessing for TabICL: robust inductive validation and deployment preprocessing; reduce transductive optimistic selection. Metric direction uncertain, no invented minimum effect.
+- E3 complementary fingerprint models: ExtraTrees, logistic/Tanimoto similarity and alternative boosting regularization, probability ensemble. Test error complementarity rather than duplicate tree seeds. Expected +MCC only if errors complement on training OOF.
+- E4 representation: frozen generic CheMeleon versus public ADME chemprop encoder, optionally descriptor concatenation. External pretraining corpus held fixed; verify its provenance. Expected +MCC if it captures distinct chemical signal.
+- E5 cross-task predicted potency: only leak-safe cross-fitted/outer-purged available features, never observed query assay values. Native forty outer models may be evaluated only on matching outer cohort; nested input leakage must be explicitly controlled. Prioritize if E1–4 do not improve.
+- E6 external TDI data/surrogates: assessed from primary 2022 and2024 papers; require real accessible data and structural purge. Surrogate predictions must stay explicitly pseudo-label auxiliary data, never experimental labels.
+
+Selection: use training-side grouped OOF only for hyperparameters, two MCC thresholds and ensemble. Baseline and candidate all settings recorded before opening external holdout scores. Report both endpoint MCCs, macro MCC and confusion counts; evaluate repeat seed42/142. No arbitrary significance pass/fail cutoff. Submit only candidate improves mean macro MCC on BOTH frozen holdouts vs available native baseline, with no integrity error; report bootstrap uncertainty rather than equating positive delta with proof. If no candidate qualifies, no submission.
+
+Compute: authorized Vast.ai, target2CUDA GPUs and adequate CPU; first bounded campaign max2USD and available balance reserve1USD; no payment/topup changes. Extend only within existing explicit user authorization with a new recorded budget if evidence warrants; never leave idle rentals. All training through immutable ORX snapshots, fixed bash run.sh. Dataset/weight preparation and environment setup committed. No modifications to parallel CheMeleon thread's working tree.

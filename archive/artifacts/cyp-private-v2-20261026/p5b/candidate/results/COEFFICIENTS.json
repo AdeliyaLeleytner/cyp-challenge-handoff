@@ -1,0 +1,51 @@
+{
+  "feature_weight_convention": "(1-w)*ORIGINAL native + w*same frozen H6 feature-only expert",
+  "weights": {
+    "CYP1A2_pIC50_direct_inhibition": 0.5157990047110662,
+    "CYP2C9_pIC50_direct_inhibition": 0.40059750845919934,
+    "CYP2D6_pIC50_direct_inhibition": 0.26239057709730607,
+    "CYP3A4_pIC50_direct_inhibition": 0.39616806100691954
+  },
+  "training_fit": {
+    "CYP1A2_pIC50_direct_inhibition": {
+      "native_training_OOF_ST_RAE": 0.7563630770643062,
+      "extra_training_OOF_ST_RAE": 0.7551925592188774,
+      "blend_training_OOF_ST_RAE": 0.7136385486655048,
+      "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+      "fit_scope": "full official training OOF only; final coefficient fit, not independent validation"
+    },
+    "CYP2C9_pIC50_direct_inhibition": {
+      "native_training_OOF_ST_RAE": 0.5405418807761316,
+      "extra_training_OOF_ST_RAE": 0.5718256297921491,
+      "blend_training_OOF_ST_RAE": 0.507854477872035,
+      "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+      "fit_scope": "full official training OOF only; final coefficient fit, not independent validation"
+    },
+    "CYP2D6_pIC50_direct_inhibition": {
+      "native_training_OOF_ST_RAE": 0.8235730150746563,
+      "extra_training_OOF_ST_RAE": 0.8525327726086072,
+      "blend_training_OOF_ST_RAE": 0.8180761498167097,
+      "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+      "fit_scope": "full official training OOF only; final coefficient fit, not independent validation"
+    },
+    "CYP3A4_pIC50_direct_inhibition": {
+      "native_training_OOF_ST_RAE": 0.43060719408263837,
+      "extra_training_OOF_ST_RAE": 0.46214739943032346,
+      "blend_training_OOF_ST_RAE": 0.4074926644327754,
+      "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+      "fit_scope": "full official training OOF only; final coefficient fit, not independent validation"
+    }
+  },
+  "observed_label_counts": {
+    "CYP1A2_pIC50_direct_inhibition": 1412,
+    "CYP2C9_pIC50_direct_inhibition": 1285,
+    "CYP2D6_pIC50_direct_inhibition": 1493,
+    "CYP3A4_pIC50_direct_inhibition": 2335
+  },
+  "no_blind_labels_used": true,
+  "no_new_base_fit_feature_or_calibration": true,
+  "H6_params_frozen": {
+    "num_leaves": 15,
+    "max_depth": 4
+  }
+}

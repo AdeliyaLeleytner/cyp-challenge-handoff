@@ -1,0 +1,300 @@
+{
+  "source_files": {
+    "inhibition": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/fullfit-strae-prep/stage/original_full/raw/inhibition.csv",
+      "sha256": "95576058689db7537458cde2615f8d72a84748cea9d4a2d73fe3c287f7c1cf0c",
+      "rows": 4905,
+      "unique_ids": 4905,
+      "columns": [
+        "molecule_name",
+        "smiles",
+        "cyp1a2_pic50_direct_inhibition",
+        "cyp2c9_pic50_direct_inhibition",
+        "cyp2d6_pic50_direct_inhibition",
+        "cyp3a4_pic50_direct_inhibition",
+        "cyp1a2_pic50_direct_inhibition_ci_upper",
+        "cyp2c9_pic50_direct_inhibition_ci_upper",
+        "cyp2d6_pic50_direct_inhibition_ci_upper",
+        "cyp3a4_pic50_direct_inhibition_ci_upper",
+        "cyp1a2_pic50_direct_inhibition_ci_lower",
+        "cyp2c9_pic50_direct_inhibition_ci_lower",
+        "cyp2d6_pic50_direct_inhibition_ci_lower",
+        "cyp3a4_pic50_direct_inhibition_ci_lower",
+        "cyp1a2_pic50_direct_inhibition_std",
+        "cyp2c9_pic50_direct_inhibition_std",
+        "cyp2d6_pic50_direct_inhibition_std",
+        "cyp3a4_pic50_direct_inhibition_std"
+      ]
+    },
+    "tdi": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/fullfit-strae-prep/stage/original_full/raw/tdi.csv",
+      "sha256": "2ebad28ff5e155dc7de3a7e6e10920e938f559be561ca74f2a7c95dcfdf03a82",
+      "rows": 6145,
+      "unique_ids": 6145,
+      "columns": [
+        "molecule_name",
+        "smiles",
+        "cyp2d6_is_tdi",
+        "cyp3a4_is_tdi",
+        "cyp1a2_pic50_tdi_condition",
+        "cyp2c9_pic50_tdi_condition",
+        "cyp2d6_pic50_tdi_condition",
+        "cyp3a4_pic50_tdi_condition",
+        "cyp1a2_pic50_tdi_condition_ci_upper",
+        "cyp2c9_pic50_tdi_condition_ci_upper",
+        "cyp2d6_pic50_tdi_condition_ci_upper",
+        "cyp3a4_pic50_tdi_condition_ci_upper",
+        "cyp1a2_pic50_tdi_condition_ci_lower",
+        "cyp2c9_pic50_tdi_condition_ci_lower",
+        "cyp2d6_pic50_tdi_condition_ci_lower",
+        "cyp3a4_pic50_tdi_condition_ci_lower",
+        "cyp1a2_pic50_tdi_condition_std",
+        "cyp2c9_pic50_tdi_condition_std",
+        "cyp2d6_pic50_tdi_condition_std",
+        "cyp3a4_pic50_tdi_condition_std",
+        "cyp1a2_pic50_direct_inhibition",
+        "cyp2c9_pic50_direct_inhibition",
+        "cyp2d6_pic50_direct_inhibition",
+        "cyp3a4_pic50_direct_inhibition",
+        "cyp1a2_pic50_direct_inhibition_ci_upper",
+        "cyp2c9_pic50_direct_inhibition_ci_upper",
+        "cyp2d6_pic50_direct_inhibition_ci_upper",
+        "cyp3a4_pic50_direct_inhibition_ci_upper",
+        "cyp1a2_pic50_direct_inhibition_ci_lower",
+        "cyp2c9_pic50_direct_inhibition_ci_lower",
+        "cyp2d6_pic50_direct_inhibition_ci_lower",
+        "cyp3a4_pic50_direct_inhibition_ci_lower",
+        "cyp1a2_pic50_direct_inhibition_std",
+        "cyp2c9_pic50_direct_inhibition_std",
+        "cyp2d6_pic50_direct_inhibition_std",
+        "cyp3a4_pic50_direct_inhibition_std"
+      ]
+    },
+    "single_concentration": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/fullfit-strae-prep/stage/original_full/raw/single_concentration.csv",
+      "sha256": "5bf429cb438a730d364309394aba8276725b76a70906761cc631a4e2aa31bf80",
+      "rows": 17504,
+      "unique_ids": 4376,
+      "columns": [
+        "molecule_name",
+        "smiles",
+        "ocnt_batch",
+        "enzyme",
+        "plate_id",
+        "concentration_m",
+        "log2fc_estimate",
+        "log2fc_std_error",
+        "p_value",
+        "log2fc_fdr",
+        "log2fc_median",
+        "cohens_d"
+      ]
+    },
+    "emax": {
+      "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-chemeleon-native-20261024/fullfit-strae-prep/stage/original_full/raw/emax.csv",
+      "sha256": "06562915e3cd7ff7e6970e621ae4d709fe3f4b08fce3f29a8acafc96f4403bd7",
+      "rows": 6146,
+      "unique_ids": 6146,
+      "columns": [
+        "molecule_name",
+        "smiles",
+        "cyp1a2_emax_vs_pos_ctrl_tdi_condition",
+        "cyp2c9_emax_vs_pos_ctrl_tdi_condition",
+        "cyp2d6_emax_vs_pos_ctrl_tdi_condition",
+        "cyp3a4_emax_vs_pos_ctrl_tdi_condition",
+        "cyp1a2_emax_vs_pos_ctrl_tdi_condition_ci_upper",
+        "cyp2c9_emax_vs_pos_ctrl_tdi_condition_ci_upper",
+        "cyp2d6_emax_vs_pos_ctrl_tdi_condition_ci_upper",
+        "cyp3a4_emax_vs_pos_ctrl_tdi_condition_ci_upper",
+        "cyp1a2_emax_vs_pos_ctrl_tdi_condition_ci_lower",
+        "cyp2c9_emax_vs_pos_ctrl_tdi_condition_ci_lower",
+        "cyp2d6_emax_vs_pos_ctrl_tdi_condition_ci_lower",
+        "cyp3a4_emax_vs_pos_ctrl_tdi_condition_ci_lower",
+        "cyp1a2_emax_vs_pos_ctrl_direct_inhibition",
+        "cyp2c9_emax_vs_pos_ctrl_direct_inhibition",
+        "cyp2d6_emax_vs_pos_ctrl_direct_inhibition",
+        "cyp3a4_emax_vs_pos_ctrl_direct_inhibition",
+        "cyp1a2_emax_vs_pos_ctrl_direct_inhibition_ci_upper",
+        "cyp2c9_emax_vs_pos_ctrl_direct_inhibition_ci_upper",
+        "cyp2d6_emax_vs_pos_ctrl_direct_inhibition_ci_upper",
+        "cyp3a4_emax_vs_pos_ctrl_direct_inhibition_ci_upper",
+        "cyp1a2_emax_vs_pos_ctrl_direct_inhibition_ci_lower",
+        "cyp2c9_emax_vs_pos_ctrl_direct_inhibition_ci_lower",
+        "cyp2d6_emax_vs_pos_ctrl_direct_inhibition_ci_lower",
+        "cyp3a4_emax_vs_pos_ctrl_direct_inhibition_ci_lower",
+        "cyp1a2_is_tdi",
+        "cyp2c9_is_tdi",
+        "cyp2d6_is_tdi",
+        "cyp3a4_is_tdi"
+      ]
+    }
+  },
+  "per_endpoint": [
+    {
+      "gene": "cyp1a2",
+      "direct_finite": 1412,
+      "direct_missing": 3493,
+      "pic50_below4": 232,
+      "CI_entirely_below4": 109,
+      "CI_straddles4": 180,
+      "median_CI_width": 0.3283299999999998,
+      "pic50_range": [
+        1.90557896,
+        7.948524865
+      ],
+      "tdi_direct_finite": 1412,
+      "extra_direct_values_outside_primary_ids": 0,
+      "extra_direct_value_range": null,
+      "paired_direct_max_abs_difference": 0.0,
+      "tdi_condition_finite": 1413,
+      "emax_direct_finite": 1413,
+      "emax_quantiles": {
+        "0.0": -1.151038173,
+        "0.01": -1.1015696004,
+        "0.1": -1.0475838254,
+        "0.5": -0.9936407779,
+        "0.9": -0.92349153276,
+        "0.99": -0.8157476246200001,
+        "1.0": -0.4576769268
+      },
+      "emax_outside0to1": 1413,
+      "pic50_emax_spearman": -0.3935032264018719,
+      "single_rows": 4376,
+      "single_concentrations_M": {
+        "4.95049505e-05": 4376
+      },
+      "single_range_log2fc": [
+        -2.904849677,
+        4.540282566
+      ],
+      "single_missing_direct": 2964
+    },
+    {
+      "gene": "cyp2c9",
+      "direct_finite": 1285,
+      "direct_missing": 3620,
+      "pic50_below4": 259,
+      "CI_entirely_below4": 69,
+      "CI_straddles4": 354,
+      "median_CI_width": 0.5257579999999997,
+      "pic50_range": [
+        2.097982888,
+        7.47301149
+      ],
+      "tdi_direct_finite": 1285,
+      "extra_direct_values_outside_primary_ids": 0,
+      "extra_direct_value_range": null,
+      "paired_direct_max_abs_difference": 0.0,
+      "tdi_condition_finite": 1285,
+      "emax_direct_finite": 1285,
+      "emax_quantiles": {
+        "0.0": -1.269768644,
+        "0.01": -1.19179107128,
+        "0.1": -1.1164391792000001,
+        "0.5": -1.020739473,
+        "0.9": -0.9185577188599999,
+        "0.99": -0.7332366201159991,
+        "1.0": -0.4954684357
+      },
+      "emax_outside0to1": 1285,
+      "pic50_emax_spearman": -0.4069044105491861,
+      "single_rows": 4376,
+      "single_concentrations_M": {
+        "4.95049505e-05": 4376
+      },
+      "single_range_log2fc": [
+        -1.73845096,
+        0.2330692382
+      ],
+      "single_missing_direct": 3091
+    },
+    {
+      "gene": "cyp2d6",
+      "direct_finite": 1493,
+      "direct_missing": 3412,
+      "pic50_below4": 129,
+      "CI_entirely_below4": 77,
+      "CI_straddles4": 124,
+      "median_CI_width": 0.2716082499999999,
+      "pic50_range": [
+        1.946780292,
+        7.534508882
+      ],
+      "tdi_direct_finite": 1493,
+      "extra_direct_values_outside_primary_ids": 0,
+      "extra_direct_value_range": null,
+      "paired_direct_max_abs_difference": 0.0,
+      "tdi_condition_finite": 1497,
+      "emax_direct_finite": 1494,
+      "emax_quantiles": {
+        "0.0": -1.083070537,
+        "0.01": -1.06245142602,
+        "0.1": -1.047168512,
+        "0.5": -1.026824312,
+        "0.9": -0.97307566685,
+        "0.99": -0.9137914614950001,
+        "1.0": -0.8272068141
+      },
+      "emax_outside0to1": 1494,
+      "pic50_emax_spearman": 0.7704084403602425,
+      "single_rows": 4376,
+      "single_concentrations_M": {
+        "4.95049505e-05": 4376
+      },
+      "single_range_log2fc": [
+        -3.272708084,
+        0.7946301416
+      ],
+      "single_missing_direct": 2883
+    },
+    {
+      "gene": "cyp3a4",
+      "direct_finite": 2335,
+      "direct_missing": 2570,
+      "pic50_below4": 944,
+      "CI_entirely_below4": 640,
+      "CI_straddles4": 458,
+      "median_CI_width": 0.3791497500000003,
+      "pic50_range": [
+        1.909049648,
+        7.186665953
+      ],
+      "tdi_direct_finite": 2335,
+      "extra_direct_values_outside_primary_ids": 0,
+      "extra_direct_value_range": null,
+      "paired_direct_max_abs_difference": 0.0,
+      "tdi_condition_finite": 3583,
+      "emax_direct_finite": 2335,
+      "emax_quantiles": {
+        "0.0": -1.056162547,
+        "0.01": -1.0412245545,
+        "0.1": -1.0122572344,
+        "0.5": -0.9753969312,
+        "0.9": -0.96316005922,
+        "0.99": -0.8421711421720003,
+        "1.0": -0.3676591426
+      },
+      "emax_outside0to1": 2335,
+      "pic50_emax_spearman": -0.4619620835252751,
+      "single_rows": 4376,
+      "single_concentrations_M": {
+        "4.95049505e-05": 4376
+      },
+      "single_range_log2fc": [
+        -5.823967215,
+        0.2722846542
+      ],
+      "single_missing_direct": 2571
+    }
+  ],
+  "set_differences": {
+    "tdi minus inhibition": 1240,
+    "emax minus inhibition": 1241,
+    "single_concentration minus inhibition": 1,
+    "inhibition minus single_concentration": 530,
+    "emax minus tdi": 1
+  },
+  "emax_only_ids": [
+    "OCNT-2329004"
+  ]
+}

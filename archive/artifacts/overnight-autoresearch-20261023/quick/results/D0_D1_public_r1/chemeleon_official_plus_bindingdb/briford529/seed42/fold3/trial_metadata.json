@@ -1,0 +1,2506 @@
+{
+  "component": {
+    "component": "official_aux",
+    "source_commits": {
+      "union18": "971f6a7f24d86e59bab219347c3e14c006ae4e35",
+      "framework_and_specialists": "8c72c7559471febaf0962fd551b4eaab8db3a136"
+    },
+    "supplied_official_rows": 3501,
+    "primary_fraction": null,
+    "primary_fraction_note": "Historical source has no primary_fraction sampler parameter.",
+    "deviations": [
+      "Fixed caller official folds with external auxiliary rows in every fit, rather than author CV over each union.",
+      "Task weights recomputed on the supplied training partition, rather than full-source counts.",
+      "Public CSVs are current pinned snapshots; historical trained model/OOF artifacts are unavailable.",
+      "External structures use normalized neutral nonstereo parents and exclude all provided official train/test parents."
+    ],
+    "train_rows": 3501,
+    "dropped_all_unknown_rows": 0,
+    "target_counts": {
+      "cyp3a4_pic50_direct_inhibition": 1654,
+      "cyp2c9_pic50_direct_inhibition": 911,
+      "cyp2d6_pic50_direct_inhibition": 1077,
+      "cyp1a2_pic50_direct_inhibition": 986,
+      "cyp3a4_log2fc": 3146,
+      "cyp2c9_log2fc": 3146,
+      "cyp2d6_log2fc": 3146,
+      "cyp1a2_log2fc": 3146,
+      "cyp3a4_pic50_tdi_condition": 1661,
+      "cyp2c9_pic50_tdi_condition": 911,
+      "cyp2d6_pic50_tdi_condition": 1078,
+      "cyp1a2_pic50_tdi_condition": 987,
+      "cyp3a4_emax_vs_pos_ctrl_direct_inhibition": 1654,
+      "cyp2c9_emax_vs_pos_ctrl_direct_inhibition": 911,
+      "cyp2d6_emax_vs_pos_ctrl_direct_inhibition": 1077,
+      "cyp1a2_emax_vs_pos_ctrl_direct_inhibition": 986
+    },
+    "task_weights": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      0.3
+    ],
+    "weighted_label_mass": 11182.7,
+    "target_order": [
+      "cyp3a4_pic50_direct_inhibition",
+      "cyp2c9_pic50_direct_inhibition",
+      "cyp2d6_pic50_direct_inhibition",
+      "cyp1a2_pic50_direct_inhibition",
+      "cyp3a4_log2fc",
+      "cyp2c9_log2fc",
+      "cyp2d6_log2fc",
+      "cyp1a2_log2fc",
+      "cyp3a4_pic50_tdi_condition",
+      "cyp2c9_pic50_tdi_condition",
+      "cyp2d6_pic50_tdi_condition",
+      "cyp1a2_pic50_tdi_condition",
+      "cyp3a4_emax_vs_pos_ctrl_direct_inhibition",
+      "cyp2c9_emax_vs_pos_ctrl_direct_inhibition",
+      "cyp2d6_emax_vs_pos_ctrl_direct_inhibition",
+      "cyp1a2_emax_vs_pos_ctrl_direct_inhibition"
+    ],
+    "source_files": {
+      "chembl_all_isoforms.csv": "74a5233890e74e5514a6bbbad25cfe1c365181fb29af01c116e96cc5277b33fc",
+      "emax.csv": "06562915e3cd7ff7e6970e621ae4d709fe3f4b08fce3f29a8acafc96f4403bd7",
+      "inhibition.csv": "95576058689db7537458cde2615f8d72a84748cea9d4a2d73fe3c287f7c1cf0c",
+      "pubchem_all_isoforms.csv": "1465de66ba50c0cda5d7fab3083a8ccdfba4adfbefef8d13a1fedade86b0847b",
+      "single_concentration.csv": "5bf429cb438a730d364309394aba8276725b76a70906761cc631a4e2aa31bf80",
+      "tdi.csv": "2ebad28ff5e155dc7de3a7e6e10920e938f559be561ca74f2a7c95dcfdf03a82"
+    },
+    "extra_public": {
+      "table_sha256": "50f6fa64f33cf79540e6087ab0d52aff062d7ec527319bfad6d44a8444dd828b",
+      "sources": [
+        "bindingdb_native_articles"
+      ],
+      "heads": [
+        "aux_bindingdb_native_articles_CYP1A2_IC50_f8759f04c323",
+        "aux_bindingdb_native_articles_CYP2C9_IC50_f85f4de88be1",
+        "aux_bindingdb_native_articles_CYP2D6_IC50_05b208bf8e02",
+        "aux_bindingdb_native_articles_CYP3A4_IC50_b7f687f15443"
+      ],
+      "assembly": {
+        "schema_version": 1,
+        "official_rows": 3501,
+        "public_only_rows": 67,
+        "combined_rows": 3568,
+        "official_rows_with_auxiliary_labels": 0,
+        "public_only_net_new_parents": 67,
+        "primary_columns": [
+          "cyp3a4_pic50_direct_inhibition",
+          "cyp2c9_pic50_direct_inhibition",
+          "cyp2d6_pic50_direct_inhibition",
+          "cyp1a2_pic50_direct_inhibition",
+          "cyp3a4_log2fc",
+          "cyp2c9_log2fc",
+          "cyp2d6_log2fc",
+          "cyp1a2_log2fc",
+          "cyp3a4_pic50_tdi_condition",
+          "cyp2c9_pic50_tdi_condition",
+          "cyp2d6_pic50_tdi_condition",
+          "cyp1a2_pic50_tdi_condition",
+          "cyp3a4_emax_vs_pos_ctrl_direct_inhibition",
+          "cyp2c9_emax_vs_pos_ctrl_direct_inhibition",
+          "cyp2d6_emax_vs_pos_ctrl_direct_inhibition",
+          "cyp1a2_emax_vs_pos_ctrl_direct_inhibition"
+        ],
+        "auxiliary_heads": [
+          "aux_bindingdb_native_articles_CYP1A2_IC50_f8759f04c323",
+          "aux_bindingdb_native_articles_CYP2C9_IC50_f85f4de88be1",
+          "aux_bindingdb_native_articles_CYP2D6_IC50_05b208bf8e02",
+          "aux_bindingdb_native_articles_CYP3A4_IC50_b7f687f15443"
+        ],
+        "auxiliary_nonmissing_counts": {
+          "aux_bindingdb_native_articles_CYP1A2_IC50_f8759f04c323": 3,
+          "aux_bindingdb_native_articles_CYP2C9_IC50_f85f4de88be1": 20,
+          "aux_bindingdb_native_articles_CYP2D6_IC50_05b208bf8e02": 14,
+          "aux_bindingdb_native_articles_CYP3A4_IC50_b7f687f15443": 65
+        },
+        "public_exclusion": {
+          "input_records": 157,
+          "invalid_structure_records": 0,
+          "excluded_official_parent_records": 0,
+          "excluded_official_parent_count": 0,
+          "retained_records": 157
+        },
+        "wide_table": {
+          "records_used": 102,
+          "molecules": 67,
+          "heads": {
+            "aux_bindingdb_native_articles_CYP3A4_IC50_b7f687f15443": {
+              "source": "bindingdb_native_articles",
+              "target": "CYP3A4",
+              "endpoint": "IC50"
+            },
+            "aux_bindingdb_native_articles_CYP2C9_IC50_f85f4de88be1": {
+              "source": "bindingdb_native_articles",
+              "target": "CYP2C9",
+              "endpoint": "IC50"
+            },
+            "aux_bindingdb_native_articles_CYP1A2_IC50_f8759f04c323": {
+              "source": "bindingdb_native_articles",
+              "target": "CYP1A2",
+              "endpoint": "IC50"
+            },
+            "aux_bindingdb_native_articles_CYP2D6_IC50_05b208bf8e02": {
+              "source": "bindingdb_native_articles",
+              "target": "CYP2D6",
+              "endpoint": "IC50"
+            }
+          },
+          "group_by": [
+            "source",
+            "target",
+            "endpoint"
+          ],
+          "aggregation": "median within normalized isomeric identity and specified head; equality-only"
+        },
+        "source_metadata": {
+          "bindingdb_native_articles": {
+            "versions": [
+              "202610"
+            ],
+            "assay_ids": [
+              "BDB_ASSAY_1583_1",
+              "BDB_ASSAY_2487_1",
+              "BDB_ASSAY_2505_3",
+              "BDB_ASSAY_2860_1",
+              "BDB_ASSAY_2969_1",
+              "BDB_ASSAY_2969_2",
+              "BDB_ASSAY_3090_2",
+              "BDB_ASSAY_5760_1",
+              "BDB_ASSAY_6236_1",
+              "BDB_ASSAY_6236_2",
+              "BDB_ASSAY_7747_1",
+              "BDB_ASSAY_8135_4"
+            ],
+            "retained_tidy_records": 157,
+            "retained_parents": 101
+          }
+        },
+        "excluded_parent_count": 5649,
+        "excluded_parent_sha256": "8fff626c630fc268922d2588ddad184c5a07200dc24eecafcaa80b2842cfa648",
+        "join_identity": "FragmentParent + uncharge + canonical isomeric SMILES; no tautomer canonicalization",
+        "row_order": "Original official training order followed by deterministic public-only rows",
+        "primary_label_policy": "Official labels preserved; appended public rows have unknown primary labels",
+        "heldout_policy": "Exclusion applies only to public rows; caller supplies all official train+test parents for campaign policy",
+        "unparseable_normalized_external_structures": [],
+        "roundtrip_filter": "External normalized SMILES must parse after uncharging; base rows are never silently removed."
+      },
+      "manifest": {
+        "schema_version": 1,
+        "created_utc": "2026-10-23T21:19:16.636589+00:00",
+        "sources": [
+          "tox21_cyp",
+          "bindingdb_native_articles"
+        ],
+        "config": {},
+        "official_exclusions": {
+          "cohorts_sha256": "eee1078503c7793f8f1c1fcc788dd4db9225a6d682202930f9bb972bbe6bd82a",
+          "excluded_parent_count": 5649,
+          "official_files": {
+            "official-train.csv": {
+              "sha256": "b8f79addd266fb6f9f4c222c5e4e73d926362328b6a8d2841871a54e46bd2278",
+              "rows": 4905,
+              "unique_parents": 4901
+            },
+            "official-test.csv": {
+              "sha256": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9",
+              "rows": 750,
+              "unique_parents": 748
+            }
+          }
+        },
+        "loader": {
+          "created_utc": "2026-10-23T21:19:13.634729+00:00",
+          "schema_version": 1,
+          "source_audits": {
+            "tox21_cyp": {
+              "assays": [
+                {
+                  "raw_assay_rows": 9667,
+                  "parsed_measurements": 38584,
+                  "outcome_counts": {
+                    "Inactive": 4457,
+                    "Active": 2934,
+                    "Inconclusive": 2276
+                  },
+                  "aid": 1671199,
+                  "version": "1",
+                  "requested_sids": 9667,
+                  "unique_cids": 7671,
+                  "resolved_structure_cids": 7671
+                },
+                {
+                  "raw_assay_rows": 9667,
+                  "parsed_measurements": 36300,
+                  "outcome_counts": {
+                    "Inactive": 4864,
+                    "Active": 2931,
+                    "Inconclusive": 1872
+                  },
+                  "aid": 1671198,
+                  "version": "1",
+                  "requested_sids": 9667,
+                  "unique_cids": 7671,
+                  "resolved_structure_cids": 7671
+                },
+                {
+                  "raw_assay_rows": 9667,
+                  "parsed_measurements": 34142,
+                  "outcome_counts": {
+                    "Inactive": 5815,
+                    "Active": 2225,
+                    "Inconclusive": 1627
+                  },
+                  "aid": 1671196,
+                  "version": "1",
+                  "requested_sids": 9667,
+                  "unique_cids": 7671,
+                  "resolved_structure_cids": 7671
+                },
+                {
+                  "raw_assay_rows": 9667,
+                  "parsed_measurements": 32821,
+                  "outcome_counts": {
+                    "Inactive": 6877,
+                    "Active": 1792,
+                    "Inconclusive": 998
+                  },
+                  "aid": 1671201,
+                  "version": "1",
+                  "requested_sids": 9667,
+                  "unique_cids": 7671,
+                  "resolved_structure_cids": 7671
+                }
+              ],
+              "input_records": 141847,
+              "invalid_structure_records": 1795,
+              "excluded_official_parent_records": 6480,
+              "excluded_official_parent_count": 273,
+              "retained_records": 133572,
+              "exact_duplicate_records_removed": 0,
+              "retained_measurements": 133572,
+              "retained_unique_parents": 6837,
+              "net_new_parent_count": 5653,
+              "overlap_existing_parent_count": 1184,
+              "eligible_point_measurements": 50931,
+              "endpoint_counts": {
+                "AC50": 97232,
+                "activity_outcome": 36340
+              }
+            },
+            "bindingdb_native_articles": {
+              "raw_rows": 93712,
+              "extra_chain_tail_rows": 0,
+              "selected_target_rows": 159,
+              "excluded_multichain_rows": 0,
+              "excluded_nonhuman_rows": 0,
+              "excluded_imported_source_rows": 0,
+              "unsupported_target_rows": 93553,
+              "invalid_numeric_cells": 0,
+              "assay_mapped_measurements": 158,
+              "assay_unmapped_measurements": 0,
+              "assay_descriptions_found": 12,
+              "release": "202610",
+              "parsed_measurements": 158,
+              "license_note": "BindingDB Info links native data CC-BY; ChEMBL imports retain CC-BY-SA. Native-only rows selected.",
+              "input_records": 158,
+              "invalid_structure_records": 0,
+              "excluded_official_parent_records": 1,
+              "excluded_official_parent_count": 1,
+              "retained_records": 157,
+              "exact_duplicate_records_removed": 0,
+              "retained_measurements": 157,
+              "retained_unique_parents": 101,
+              "net_new_parent_count": 23,
+              "overlap_existing_parent_count": 78,
+              "eligible_point_measurements": 129,
+              "endpoint_counts": {
+                "IC50": 120,
+                "Ki": 30,
+                "Kd": 7
+              }
+            }
+          },
+          "sources": [
+            "tox21_cyp",
+            "bindingdb_native_articles"
+          ],
+          "config": {},
+          "excluded_parent_count": 5649,
+          "excluded_parent_sha256": "8fff626c630fc268922d2588ddad184c5a07200dc24eecafcaa80b2842cfa648",
+          "known_parent_count": 26825,
+          "retained_records": 133729,
+          "retained_unique_parents": 6935,
+          "table_path": "/workspace/cyp-night/assets/public_data/derived/f8e328b053bcb1fc1bf4/measurements.csv",
+          "table_sha256": "50f6fa64f33cf79540e6087ab0d52aff062d7ec527319bfad6d44a8444dd828b",
+          "downloads": [
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671199/description/JSON",
+              "method": "GET",
+              "request_sha256": "8f1bff0e0f9aeaeb580aa32da95bb552e5f333554f0655bf3302ae790dca3f17",
+              "retrieved_utc": "2026-10-23T21:15:20.955235+00:00",
+              "sha256": "e8d0505e1c889f7a4384be8894058ac66df3829fee36c6fb84145802bcf4d458",
+              "bytes": 516687,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671199-v1/description.json",
+              "content_type": "application/json"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671199/concise/CSV",
+              "method": "GET",
+              "request_sha256": "6af95247042a4d87ff088e9348b1fac6176fcd9215c2d2500851333244db86a5",
+              "retrieved_utc": "2026-10-23T21:15:26.256378+00:00",
+              "sha256": "312ca5f3ca4cbab1b7b3bb993aabb864b1c792d166cf3e444740aac7f9a26e3d",
+              "bytes": 3867769,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671199-v1/concise.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671199/CSV",
+              "method": "POST",
+              "request_sha256": "36fc5d1835af6e8ffdc914edb121cf84955a4c0243ac433de99790603afee9f0",
+              "retrieved_utc": "2026-10-23T21:15:34.351485+00:00",
+              "sha256": "b1e2ea5a7c5153777f8b323c2d8bbad088f73d1fccdfbd1a92d09998f0156216",
+              "bytes": 5820258,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671199-v1/full-000000-0d4136fd8723b33e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671199/CSV",
+              "method": "POST",
+              "request_sha256": "5ef04c07fc69c0dfc15a8c039d7c1a1a7d8bd2a9608bfdd9ddfcf711f12d9c2c",
+              "retrieved_utc": "2026-10-23T21:15:37.718501+00:00",
+              "sha256": "e7b6ef3cdb646bb33b2a993bfa9c8989f99d5e78c286f092049869d6fd17ea6b",
+              "bytes": 5788581,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671199-v1/full-002000-64066b3d492ad758.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671199/CSV",
+              "method": "POST",
+              "request_sha256": "03a5980bed3f96f75a100e54d8ed60ab617b79182efbaf8503916815df11c4f8",
+              "retrieved_utc": "2026-10-23T21:15:40.958787+00:00",
+              "sha256": "6f37c4316da992f66df0c63f28d88a2b16f8d88a23e70d5efd114b919b2b6c87",
+              "bytes": 5812552,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671199-v1/full-004000-627f44777242fd45.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671199/CSV",
+              "method": "POST",
+              "request_sha256": "0683a2ca3f7e6717a150606b95a2b1ea6713ec9d4c0dede45d4c0992b742e7cc",
+              "retrieved_utc": "2026-10-23T21:15:44.146759+00:00",
+              "sha256": "c117455be9c4c9a3c1a264b69ada0255b1bffe76e486dfdc0981e8b0e5389959",
+              "bytes": 6537077,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671199-v1/full-006000-99a6cc5843147e39.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671199/CSV",
+              "method": "POST",
+              "request_sha256": "5656eb7b9b8174a76208f59ff8164374376d599766c4bde1ce9853b2f0ac8908",
+              "retrieved_utc": "2026-10-23T21:15:47.872384+00:00",
+              "sha256": "f0b389589a7a57ef3053c1dfe61e20b6719d8fa8111421c6eca6bb5231e7834d",
+              "bytes": 4750905,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671199-v1/full-008000-169e4d7ee8067eed.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "492170017670a6f9edd146288e171d17a28d6a974bddf283603d4ff647f0b0d4",
+              "retrieved_utc": "2026-10-23T21:15:54.084673+00:00",
+              "sha256": "29bf77316a3ba60af10146e535542ad0570a79dd854d66327691771d13bc7cf5",
+              "bytes": 10346,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/9cdf7dfa78d2b42d21c6.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "96549b5d37a304bb56e50bcb0aa9041f20c4a503b4ee60e75f7deb9a24224462",
+              "retrieved_utc": "2026-10-23T21:15:54.878647+00:00",
+              "sha256": "b84f5b54c6729745926168379262c793b54f8df9d8f99da9eb8c1c2894f33a72",
+              "bytes": 16772,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4d4fafb1406651a356b4.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "3d4084e353003739f9a3740edc8c600a1abdc43af1b34bcd633231f493b26565",
+              "retrieved_utc": "2026-10-23T21:15:55.365579+00:00",
+              "sha256": "d017c13840366197149751701f79fcc599409ad40579e74bc66ad8ded86619fe",
+              "bytes": 18176,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4a68e387df0efd43e122.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "0b5aa5152def61b19982052ebe458eefb7a7068ec09f6b15ebc8b331cc087e52",
+              "retrieved_utc": "2026-10-23T21:15:56.197595+00:00",
+              "sha256": "614e518ba77c92603a043d3d816ffe735186ee1984147e2f6de9fa5fd3c3cae5",
+              "bytes": 17250,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/1cf09a948275b725b444.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "3d39c99a0b5281bdba1af26ca3b0e0c65e14cfaf3f075cd079144af42ef2d4e2",
+              "retrieved_utc": "2026-10-23T21:15:56.701584+00:00",
+              "sha256": "1c67c6003e476cf8d4b8fb78a0fbb2dc6f7ae520f86edce4bb400de3e5d67009",
+              "bytes": 17014,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3606ce4c6f5a4b90e05e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "625df08be0e0cd14033d02a1784578de54ba28b7fb57d36fdd885c969c821870",
+              "retrieved_utc": "2026-10-23T21:15:57.429097+00:00",
+              "sha256": "0b9ad71d56b8541a76f74e21eb3e31d1a1ff543a0ae7bf4959bcebea377e3b78",
+              "bytes": 13294,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/97e6e4d4294e0ba950ab.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "523167e0b70ff1acfce321daa19342f71ed7007b907c84c558983491cbb515ad",
+              "retrieved_utc": "2026-10-23T21:15:58.116660+00:00",
+              "sha256": "212f66b46165ffcf8414ea2e02762e0a2cb586c52cc552d25968ee55cab0bf59",
+              "bytes": 12585,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/92c44f8cedc5846fc292.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b38c3ea6076f4b503d30644711c828091927f23dd13df20558f60d68e1163b40",
+              "retrieved_utc": "2026-10-23T21:15:58.447570+00:00",
+              "sha256": "dc0b92d77f489227561041111837510b1b4424b95a720be522cd8110ca16b52d",
+              "bytes": 11299,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/6fde5fd09c92a5e75876.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "ea9de2b482f6851a925325cc70f3083324a732ad711687651ec77605ee0c5503",
+              "retrieved_utc": "2026-10-23T21:15:59.162332+00:00",
+              "sha256": "e7cfd598dcda28bb338a1098a21b590ac70e400fe9a8be3cbb927d85bfc0cb88",
+              "bytes": 8615,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/35ae84e5fbf28b1dfd01.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "814d68f932b8cf43234f28a37aa5082879c236371b37d8735226a051b155a452",
+              "retrieved_utc": "2026-10-23T21:15:59.491147+00:00",
+              "sha256": "18efedd44d2019e80cc2184a3e6db6d8de5cd0748087c769c83ffd155bfdb465",
+              "bytes": 9454,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/2057d66f630dd094116d.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "cccd69046e42adef62deb43c32d6d8f462541d051a97851aa7bcc45a191264c6",
+              "retrieved_utc": "2026-10-23T21:16:00.196804+00:00",
+              "sha256": "0d2d6194d93da1dd034bc20347171305a38b7709bc4342ef22a40afcc19e2b28",
+              "bytes": 12897,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/2b9670576887b267b04c.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "12fa62e1d212194722df064cca8c5ba0a505eb6a328a33c1ed0617f5b4daf1f3",
+              "retrieved_utc": "2026-10-23T21:16:00.969101+00:00",
+              "sha256": "32f6d56f896afbb6ac222854c86b8d040eb6a000e38efaf4b261a32647bcede3",
+              "bytes": 15492,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/d4fa25dbd853bb16a38a.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "59908d2140bc7036200fb08198c211286f9bcfc6c8c105fa0c398da894828b08",
+              "retrieved_utc": "2026-10-23T21:16:01.652657+00:00",
+              "sha256": "b81e54d4411c2e7fdcc4bc3d73de100db09a6b3e924bd3a0712bdc48076c2229",
+              "bytes": 12526,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/e18c18f218c8ecaf69c9.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "a8cc87b6ad82a1460cc15a17f9abe5efea44edf093ae72ebcb52e2e3caa34019",
+              "retrieved_utc": "2026-10-23T21:16:02.179525+00:00",
+              "sha256": "498bf841f9e9e60bae1188fcd48733762e45573e8bf5dd8d3efe327e626956e1",
+              "bytes": 11295,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3568c176648742bf5009.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "e02f0b5de7e1ee248207f2e9db67dff667a8b48f0cf779c82c51f9441a06b40e",
+              "retrieved_utc": "2026-10-23T21:16:02.857648+00:00",
+              "sha256": "af29422a29f825ac51c7119c401d19f9178e0c29ee4fca06fa82177a361569c0",
+              "bytes": 13477,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/b8bc081b80412f187f17.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "9b3ca29ed3d28bf0ef4981b3ed78bf6aad4941889759b610f92c7d6c78869ee0",
+              "retrieved_utc": "2026-10-23T21:16:03.564607+00:00",
+              "sha256": "3d6f9d994a1f10e5f13127857912cca672007369ac2c6a5670078955071b306e",
+              "bytes": 14403,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/5c843e99cdf39567ef6d.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "df4514220616d35704191071e9e6b99a8bd9f52baeaddd12a8c7581115495f21",
+              "retrieved_utc": "2026-10-23T21:16:04.069764+00:00",
+              "sha256": "28c11303de08cc754290bf525da5c9a55fa3ba6e14813785bc05f9a1a782162b",
+              "bytes": 13818,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/8b567f69d2b187a9981c.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "2707c11c662f2d8e5752fda26781f5dd0e608ee44ac04f6d40535add0bd00c9a",
+              "retrieved_utc": "2026-10-23T21:16:04.855651+00:00",
+              "sha256": "f5e722a01f79512f9dd7224a0c76cf8b3b6de535b7744bd251dcb273a0bb5136",
+              "bytes": 15077,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/5ae3cedfff7e4c28c0aa.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "314b9aab8ca1036c79accff69b8825fe3fc08718c7f9aba5f8d0f92bf31cca38",
+              "retrieved_utc": "2026-10-23T21:16:05.562547+00:00",
+              "sha256": "e1c2c34200dc8450b5cb9224becb5c9e77ef94d4dc39edaa67e5029f8cac527a",
+              "bytes": 15519,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/05aeea070ee2664032cf.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b0fedb7ec0d62cd1733483eccbdcd41824df24a77c54db576424a2abc0708974",
+              "retrieved_utc": "2026-10-23T21:16:05.925601+00:00",
+              "sha256": "8303ddd2e6a80beb489b5e964074115dc94638bba289951caa95ae81bfefb277",
+              "bytes": 16476,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/153c69fa55ec45f943fe.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "ccc6b62975050de5208a2ea02198bf194ede04629044a8a375428911a2f1184b",
+              "retrieved_utc": "2026-10-23T21:16:07.616641+00:00",
+              "sha256": "b7fd5b32fac445ccd9205adb5e2ee1b5f96f0191d214d79ac1f4b430ed98dd75",
+              "bytes": 20637,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3e47c1c52560bb205c7e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b79ea848fced9164174db22bb4517becdb24317f04a63f7cd1f30d12160dca5a",
+              "retrieved_utc": "2026-10-23T21:16:08.396606+00:00",
+              "sha256": "6dd7f52f32b05b6a443f0e2e4e31c9156cbc4a9453420ae98e0a3c109d6c6742",
+              "bytes": 15668,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/137e7eb9735badcdb1f2.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "8d314f79219f3c157427d60f9585783f30aaf8a17b1d4522fef855d4bcb4e89f",
+              "retrieved_utc": "2026-10-23T21:16:09.178634+00:00",
+              "sha256": "a099600b34d9843c02f7d642ab664678a2d932ff8e354b720585a95c35c33468",
+              "bytes": 18666,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/238b003c1c340909c534.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "1ccfae4f85674bc05960527fd7e5b0e0371fc4a06dc0312bd764b9defce6a26c",
+              "retrieved_utc": "2026-10-23T21:16:09.970573+00:00",
+              "sha256": "793a83827fc1dc67a9bd5471b908130109d7877858ebc50b7d904efdea3bcb79",
+              "bytes": 17142,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3ffcd8784380dabf8745.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "0c987b1e150989d611f9975ef500bd2aa044aece85418ce768ade24a74650229",
+              "retrieved_utc": "2026-10-23T21:16:10.491492+00:00",
+              "sha256": "99ecfefaabe3fbeb525dbd4e1587f2121e49443554b469cf77684c902678606f",
+              "bytes": 15044,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/b02a863effd65bfad21e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "39e2ba0cf56d17b588529a9185abcc021e220d6e5ecd46408afb3203e12204ec",
+              "retrieved_utc": "2026-10-23T21:16:11.242465+00:00",
+              "sha256": "c8dd5487e50401616194a63dd9f33d92b0a9cfad59dac407136e0a57a1213d21",
+              "bytes": 15196,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/632530f0bbf8c52e4593.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "34c3d89fafa738d700e6e965c40e6c923360bf564c1abb88ee5d6e29b9d97384",
+              "retrieved_utc": "2026-10-23T21:16:12.033926+00:00",
+              "sha256": "14d687a15273fea436f26b779b9fec6ed0cca3dbf54072f468aaeaa40af0f263",
+              "bytes": 17630,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/79e9fc068ab5d8be106b.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "9b39af987fbf4ca69d8623cfedcd0d9271ad510afea66afce715a425ce40a9da",
+              "retrieved_utc": "2026-10-23T21:16:12.705753+00:00",
+              "sha256": "86dcbbcc90bca941e14ce01070c5c3443a94b6a50fbd4d31e19927836fe53ac5",
+              "bytes": 19758,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/21036602ff02bcf9339b.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "11ef332368574524c0352b5da5a0715afaecf349f621187a2aa2b2efa0425052",
+              "retrieved_utc": "2026-10-23T21:16:13.527064+00:00",
+              "sha256": "3b1a85163f98c4fd1d825f04df5964b9a6195daca378f86e7c2d5573e2b3d11e",
+              "bytes": 20377,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4a93bdc51a67822e7ea9.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "9066e0c069d82a0265657141f22c8d9e306cb4576ad500603bf4c43571fca2c4",
+              "retrieved_utc": "2026-10-23T21:16:14.472635+00:00",
+              "sha256": "14d035d9c188014f030ad1315ee4e3bb3f38260897528184f69d16af233ed848",
+              "bytes": 20313,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/022761bdbe1c3527080b.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b15d4a04beb5b89ad8843736c5649f6c79a2ec418f1af67f9333eba5406641c8",
+              "retrieved_utc": "2026-10-23T21:16:15.266572+00:00",
+              "sha256": "83a61a0fd7ac5cf394d2bec169a450fc36d3b3d19a35b13d3b2d8839fee3f6e8",
+              "bytes": 16259,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/006f48217bf6a86a85b6.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "91496be4b2d5a95a68bec359fb4c5a4f0878d1642d8e599eb974366238e21509",
+              "retrieved_utc": "2026-10-23T21:16:16.113779+00:00",
+              "sha256": "95d5c5e60ff1d6420a353d8ab3b007278a6d297e58084afb737f1b990f4dee70",
+              "bytes": 18633,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/7d8f9ae4700c3eb63bc0.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "7773f9e70c7da42d7dd18c09cfcb80ad8b677592f5626dc85d3317041daaba98",
+              "retrieved_utc": "2026-10-23T21:16:16.897816+00:00",
+              "sha256": "934db37ac3c7ae0937f0e9572e540608d98f10c02987ee2e204f9106fc100189",
+              "bytes": 21482,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/b52b719f859e78f0cbcd.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "dfe17f2defc0c6303478e80544a1981eb04e7c2115ef95cc3b9feb9be1cca9bd",
+              "retrieved_utc": "2026-10-23T21:16:17.686741+00:00",
+              "sha256": "aef19921ca48ed24c453c61a200e87530635983f357f8ec35f9050373721599d",
+              "bytes": 20275,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/f12c3fb2b595702f39f8.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "bf788566ef8f08862b25e5ab768d8e3748af63ee34d33c10f0c881c20021f5e1",
+              "retrieved_utc": "2026-10-23T21:16:19.152212+00:00",
+              "sha256": "ba9a9e09c81423c0701e94485a35c1233f55b4d097e74fedce7019c8a12570ef",
+              "bytes": 24603,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/1e0f12bef05347643c1a.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "d147e64ae94adcfaaf66a51d7d63a36eefeff2afef88effec60fac671fc7a968",
+              "retrieved_utc": "2026-10-23T21:16:20.415800+00:00",
+              "sha256": "48953e3b27f99838be071837ea614dd1cf8545c9ad03a40e3a80fef6e573e159",
+              "bytes": 22269,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4c49c2c2640ea0a8c6c9.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "ea871f3a7169292b1f2b82470bd2c2d9bea3d019311153e386f96c5cf5ae1115",
+              "retrieved_utc": "2026-10-23T21:16:21.572624+00:00",
+              "sha256": "d0876dc4755401e240d9498cecbce399ffc0e1751cb4f08487ead0395a285cda",
+              "bytes": 22489,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/2558e8344fc4bfdab79f.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "53ce240113636f272e8938977141b64e83e2e352048bf564a877957dbc187e47",
+              "retrieved_utc": "2026-10-23T21:16:23.841726+00:00",
+              "sha256": "dc17b494cb585c9bea3e2f3973cbb226aefb2efcb83f9bad0a40d05b4a8c6502",
+              "bytes": 26518,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/0bfb3fe3b1465f03e43e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "56f0e0700f68be57f06a37071d084698c37cf080d77174ccca2bdf53a1c0a120",
+              "retrieved_utc": "2026-10-23T21:16:24.575547+00:00",
+              "sha256": "073f2b1a4c85328b4d9cc0a15b3a23b4c0ec8cac90913898961b91593d73ccbd",
+              "bytes": 8138,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/90e1a04ea1385521e803.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671198/description/JSON",
+              "method": "GET",
+              "request_sha256": "42219ac498e7b5d6fdc034122f9aea8d65b129cba0b2c3751dd5edee250dcbe4",
+              "retrieved_utc": "2026-10-23T21:16:38.303056+00:00",
+              "sha256": "07d75e3d1f68c8c019dd18a721621f566b26e6524e12b9b083a7c7aaa3c86773",
+              "bytes": 516696,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671198-v1/description.json",
+              "content_type": "application/json"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671198/concise/CSV",
+              "method": "GET",
+              "request_sha256": "8924fc7ee1ad97c98037fac5173e33925e47dec2ec9674b6cc2e11247c9b1ebf",
+              "retrieved_utc": "2026-10-23T21:16:40.627046+00:00",
+              "sha256": "2785097cf7a690a3f63358e4e83950dc603b94de1226387eff931f4bb9fc7d56",
+              "bytes": 3861913,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671198-v1/concise.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671198/CSV",
+              "method": "POST",
+              "request_sha256": "dd2b496748319a7b2dff19705fef86256a74464b4622d6d4c05a9ab530abbcbc",
+              "retrieved_utc": "2026-10-23T21:16:43.645976+00:00",
+              "sha256": "dedbd3cb7cb39391eff524dd133ea68187b2f2570fa0eeab5f36dd1eea4916a4",
+              "bytes": 5776413,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671198-v1/full-000000-0d4136fd8723b33e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671198/CSV",
+              "method": "POST",
+              "request_sha256": "24f266edf0a3cf298e04119635f2305082f7df18e1159ccc68bc7360329d9a84",
+              "retrieved_utc": "2026-10-23T21:16:47.511204+00:00",
+              "sha256": "2add03af940d91c4245d6beaf324b42bdf528b67f8242fe0c0beceb06905b1a1",
+              "bytes": 5769718,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671198-v1/full-002000-64066b3d492ad758.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671198/CSV",
+              "method": "POST",
+              "request_sha256": "7f81e139f9b3b3a2f8351256ddc8052b6e408c93293aeee66139d0808d7eca1a",
+              "retrieved_utc": "2026-10-23T21:16:51.892393+00:00",
+              "sha256": "f27a1a8a02dfd589e942272c5c50681670fe6a8a722e83bc899b6d2c9b287112",
+              "bytes": 5759651,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671198-v1/full-004000-627f44777242fd45.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671198/CSV",
+              "method": "POST",
+              "request_sha256": "89b0a3c667d0b9928e57172b440598cc4ee5134ad37df646c7b8514a2607e1f6",
+              "retrieved_utc": "2026-10-23T21:16:54.729426+00:00",
+              "sha256": "b78b432cffa2e89b7b2d13f8e43ae41f1231f4e43562a31bb004ebb694e3c0fe",
+              "bytes": 6508676,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671198-v1/full-006000-99a6cc5843147e39.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671198/CSV",
+              "method": "POST",
+              "request_sha256": "be7cf9198764eaa089b8e86d5fd0490ebee839e006b578a19ea477d78628b03d",
+              "retrieved_utc": "2026-10-23T21:16:56.024854+00:00",
+              "sha256": "8025138ddeec8d1ac8e6aab6adfb1bd30e73f801827e743dd7c9cffe600971a0",
+              "bytes": 4746957,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671198-v1/full-008000-169e4d7ee8067eed.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "492170017670a6f9edd146288e171d17a28d6a974bddf283603d4ff647f0b0d4",
+              "retrieved_utc": "2026-10-23T21:15:54.084673+00:00",
+              "sha256": "29bf77316a3ba60af10146e535542ad0570a79dd854d66327691771d13bc7cf5",
+              "bytes": 10346,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/9cdf7dfa78d2b42d21c6.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "96549b5d37a304bb56e50bcb0aa9041f20c4a503b4ee60e75f7deb9a24224462",
+              "retrieved_utc": "2026-10-23T21:15:54.878647+00:00",
+              "sha256": "b84f5b54c6729745926168379262c793b54f8df9d8f99da9eb8c1c2894f33a72",
+              "bytes": 16772,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4d4fafb1406651a356b4.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "3d4084e353003739f9a3740edc8c600a1abdc43af1b34bcd633231f493b26565",
+              "retrieved_utc": "2026-10-23T21:15:55.365579+00:00",
+              "sha256": "d017c13840366197149751701f79fcc599409ad40579e74bc66ad8ded86619fe",
+              "bytes": 18176,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4a68e387df0efd43e122.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "0b5aa5152def61b19982052ebe458eefb7a7068ec09f6b15ebc8b331cc087e52",
+              "retrieved_utc": "2026-10-23T21:15:56.197595+00:00",
+              "sha256": "614e518ba77c92603a043d3d816ffe735186ee1984147e2f6de9fa5fd3c3cae5",
+              "bytes": 17250,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/1cf09a948275b725b444.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "3d39c99a0b5281bdba1af26ca3b0e0c65e14cfaf3f075cd079144af42ef2d4e2",
+              "retrieved_utc": "2026-10-23T21:15:56.701584+00:00",
+              "sha256": "1c67c6003e476cf8d4b8fb78a0fbb2dc6f7ae520f86edce4bb400de3e5d67009",
+              "bytes": 17014,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3606ce4c6f5a4b90e05e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "625df08be0e0cd14033d02a1784578de54ba28b7fb57d36fdd885c969c821870",
+              "retrieved_utc": "2026-10-23T21:15:57.429097+00:00",
+              "sha256": "0b9ad71d56b8541a76f74e21eb3e31d1a1ff543a0ae7bf4959bcebea377e3b78",
+              "bytes": 13294,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/97e6e4d4294e0ba950ab.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "523167e0b70ff1acfce321daa19342f71ed7007b907c84c558983491cbb515ad",
+              "retrieved_utc": "2026-10-23T21:15:58.116660+00:00",
+              "sha256": "212f66b46165ffcf8414ea2e02762e0a2cb586c52cc552d25968ee55cab0bf59",
+              "bytes": 12585,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/92c44f8cedc5846fc292.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b38c3ea6076f4b503d30644711c828091927f23dd13df20558f60d68e1163b40",
+              "retrieved_utc": "2026-10-23T21:15:58.447570+00:00",
+              "sha256": "dc0b92d77f489227561041111837510b1b4424b95a720be522cd8110ca16b52d",
+              "bytes": 11299,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/6fde5fd09c92a5e75876.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "ea9de2b482f6851a925325cc70f3083324a732ad711687651ec77605ee0c5503",
+              "retrieved_utc": "2026-10-23T21:15:59.162332+00:00",
+              "sha256": "e7cfd598dcda28bb338a1098a21b590ac70e400fe9a8be3cbb927d85bfc0cb88",
+              "bytes": 8615,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/35ae84e5fbf28b1dfd01.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "814d68f932b8cf43234f28a37aa5082879c236371b37d8735226a051b155a452",
+              "retrieved_utc": "2026-10-23T21:15:59.491147+00:00",
+              "sha256": "18efedd44d2019e80cc2184a3e6db6d8de5cd0748087c769c83ffd155bfdb465",
+              "bytes": 9454,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/2057d66f630dd094116d.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "cccd69046e42adef62deb43c32d6d8f462541d051a97851aa7bcc45a191264c6",
+              "retrieved_utc": "2026-10-23T21:16:00.196804+00:00",
+              "sha256": "0d2d6194d93da1dd034bc20347171305a38b7709bc4342ef22a40afcc19e2b28",
+              "bytes": 12897,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/2b9670576887b267b04c.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "12fa62e1d212194722df064cca8c5ba0a505eb6a328a33c1ed0617f5b4daf1f3",
+              "retrieved_utc": "2026-10-23T21:16:00.969101+00:00",
+              "sha256": "32f6d56f896afbb6ac222854c86b8d040eb6a000e38efaf4b261a32647bcede3",
+              "bytes": 15492,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/d4fa25dbd853bb16a38a.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "59908d2140bc7036200fb08198c211286f9bcfc6c8c105fa0c398da894828b08",
+              "retrieved_utc": "2026-10-23T21:16:01.652657+00:00",
+              "sha256": "b81e54d4411c2e7fdcc4bc3d73de100db09a6b3e924bd3a0712bdc48076c2229",
+              "bytes": 12526,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/e18c18f218c8ecaf69c9.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "a8cc87b6ad82a1460cc15a17f9abe5efea44edf093ae72ebcb52e2e3caa34019",
+              "retrieved_utc": "2026-10-23T21:16:02.179525+00:00",
+              "sha256": "498bf841f9e9e60bae1188fcd48733762e45573e8bf5dd8d3efe327e626956e1",
+              "bytes": 11295,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3568c176648742bf5009.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "e02f0b5de7e1ee248207f2e9db67dff667a8b48f0cf779c82c51f9441a06b40e",
+              "retrieved_utc": "2026-10-23T21:16:02.857648+00:00",
+              "sha256": "af29422a29f825ac51c7119c401d19f9178e0c29ee4fca06fa82177a361569c0",
+              "bytes": 13477,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/b8bc081b80412f187f17.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "9b3ca29ed3d28bf0ef4981b3ed78bf6aad4941889759b610f92c7d6c78869ee0",
+              "retrieved_utc": "2026-10-23T21:16:03.564607+00:00",
+              "sha256": "3d6f9d994a1f10e5f13127857912cca672007369ac2c6a5670078955071b306e",
+              "bytes": 14403,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/5c843e99cdf39567ef6d.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "df4514220616d35704191071e9e6b99a8bd9f52baeaddd12a8c7581115495f21",
+              "retrieved_utc": "2026-10-23T21:16:04.069764+00:00",
+              "sha256": "28c11303de08cc754290bf525da5c9a55fa3ba6e14813785bc05f9a1a782162b",
+              "bytes": 13818,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/8b567f69d2b187a9981c.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "2707c11c662f2d8e5752fda26781f5dd0e608ee44ac04f6d40535add0bd00c9a",
+              "retrieved_utc": "2026-10-23T21:16:04.855651+00:00",
+              "sha256": "f5e722a01f79512f9dd7224a0c76cf8b3b6de535b7744bd251dcb273a0bb5136",
+              "bytes": 15077,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/5ae3cedfff7e4c28c0aa.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "314b9aab8ca1036c79accff69b8825fe3fc08718c7f9aba5f8d0f92bf31cca38",
+              "retrieved_utc": "2026-10-23T21:16:05.562547+00:00",
+              "sha256": "e1c2c34200dc8450b5cb9224becb5c9e77ef94d4dc39edaa67e5029f8cac527a",
+              "bytes": 15519,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/05aeea070ee2664032cf.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b0fedb7ec0d62cd1733483eccbdcd41824df24a77c54db576424a2abc0708974",
+              "retrieved_utc": "2026-10-23T21:16:05.925601+00:00",
+              "sha256": "8303ddd2e6a80beb489b5e964074115dc94638bba289951caa95ae81bfefb277",
+              "bytes": 16476,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/153c69fa55ec45f943fe.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "ccc6b62975050de5208a2ea02198bf194ede04629044a8a375428911a2f1184b",
+              "retrieved_utc": "2026-10-23T21:16:07.616641+00:00",
+              "sha256": "b7fd5b32fac445ccd9205adb5e2ee1b5f96f0191d214d79ac1f4b430ed98dd75",
+              "bytes": 20637,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3e47c1c52560bb205c7e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b79ea848fced9164174db22bb4517becdb24317f04a63f7cd1f30d12160dca5a",
+              "retrieved_utc": "2026-10-23T21:16:08.396606+00:00",
+              "sha256": "6dd7f52f32b05b6a443f0e2e4e31c9156cbc4a9453420ae98e0a3c109d6c6742",
+              "bytes": 15668,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/137e7eb9735badcdb1f2.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "8d314f79219f3c157427d60f9585783f30aaf8a17b1d4522fef855d4bcb4e89f",
+              "retrieved_utc": "2026-10-23T21:16:09.178634+00:00",
+              "sha256": "a099600b34d9843c02f7d642ab664678a2d932ff8e354b720585a95c35c33468",
+              "bytes": 18666,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/238b003c1c340909c534.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "1ccfae4f85674bc05960527fd7e5b0e0371fc4a06dc0312bd764b9defce6a26c",
+              "retrieved_utc": "2026-10-23T21:16:09.970573+00:00",
+              "sha256": "793a83827fc1dc67a9bd5471b908130109d7877858ebc50b7d904efdea3bcb79",
+              "bytes": 17142,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3ffcd8784380dabf8745.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "0c987b1e150989d611f9975ef500bd2aa044aece85418ce768ade24a74650229",
+              "retrieved_utc": "2026-10-23T21:16:10.491492+00:00",
+              "sha256": "99ecfefaabe3fbeb525dbd4e1587f2121e49443554b469cf77684c902678606f",
+              "bytes": 15044,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/b02a863effd65bfad21e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "39e2ba0cf56d17b588529a9185abcc021e220d6e5ecd46408afb3203e12204ec",
+              "retrieved_utc": "2026-10-23T21:16:11.242465+00:00",
+              "sha256": "c8dd5487e50401616194a63dd9f33d92b0a9cfad59dac407136e0a57a1213d21",
+              "bytes": 15196,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/632530f0bbf8c52e4593.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "34c3d89fafa738d700e6e965c40e6c923360bf564c1abb88ee5d6e29b9d97384",
+              "retrieved_utc": "2026-10-23T21:16:12.033926+00:00",
+              "sha256": "14d687a15273fea436f26b779b9fec6ed0cca3dbf54072f468aaeaa40af0f263",
+              "bytes": 17630,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/79e9fc068ab5d8be106b.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "9b39af987fbf4ca69d8623cfedcd0d9271ad510afea66afce715a425ce40a9da",
+              "retrieved_utc": "2026-10-23T21:16:12.705753+00:00",
+              "sha256": "86dcbbcc90bca941e14ce01070c5c3443a94b6a50fbd4d31e19927836fe53ac5",
+              "bytes": 19758,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/21036602ff02bcf9339b.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "11ef332368574524c0352b5da5a0715afaecf349f621187a2aa2b2efa0425052",
+              "retrieved_utc": "2026-10-23T21:16:13.527064+00:00",
+              "sha256": "3b1a85163f98c4fd1d825f04df5964b9a6195daca378f86e7c2d5573e2b3d11e",
+              "bytes": 20377,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4a93bdc51a67822e7ea9.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "9066e0c069d82a0265657141f22c8d9e306cb4576ad500603bf4c43571fca2c4",
+              "retrieved_utc": "2026-10-23T21:16:14.472635+00:00",
+              "sha256": "14d035d9c188014f030ad1315ee4e3bb3f38260897528184f69d16af233ed848",
+              "bytes": 20313,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/022761bdbe1c3527080b.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b15d4a04beb5b89ad8843736c5649f6c79a2ec418f1af67f9333eba5406641c8",
+              "retrieved_utc": "2026-10-23T21:16:15.266572+00:00",
+              "sha256": "83a61a0fd7ac5cf394d2bec169a450fc36d3b3d19a35b13d3b2d8839fee3f6e8",
+              "bytes": 16259,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/006f48217bf6a86a85b6.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "91496be4b2d5a95a68bec359fb4c5a4f0878d1642d8e599eb974366238e21509",
+              "retrieved_utc": "2026-10-23T21:16:16.113779+00:00",
+              "sha256": "95d5c5e60ff1d6420a353d8ab3b007278a6d297e58084afb737f1b990f4dee70",
+              "bytes": 18633,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/7d8f9ae4700c3eb63bc0.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "7773f9e70c7da42d7dd18c09cfcb80ad8b677592f5626dc85d3317041daaba98",
+              "retrieved_utc": "2026-10-23T21:16:16.897816+00:00",
+              "sha256": "934db37ac3c7ae0937f0e9572e540608d98f10c02987ee2e204f9106fc100189",
+              "bytes": 21482,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/b52b719f859e78f0cbcd.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "dfe17f2defc0c6303478e80544a1981eb04e7c2115ef95cc3b9feb9be1cca9bd",
+              "retrieved_utc": "2026-10-23T21:16:17.686741+00:00",
+              "sha256": "aef19921ca48ed24c453c61a200e87530635983f357f8ec35f9050373721599d",
+              "bytes": 20275,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/f12c3fb2b595702f39f8.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "bf788566ef8f08862b25e5ab768d8e3748af63ee34d33c10f0c881c20021f5e1",
+              "retrieved_utc": "2026-10-23T21:16:19.152212+00:00",
+              "sha256": "ba9a9e09c81423c0701e94485a35c1233f55b4d097e74fedce7019c8a12570ef",
+              "bytes": 24603,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/1e0f12bef05347643c1a.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "d147e64ae94adcfaaf66a51d7d63a36eefeff2afef88effec60fac671fc7a968",
+              "retrieved_utc": "2026-10-23T21:16:20.415800+00:00",
+              "sha256": "48953e3b27f99838be071837ea614dd1cf8545c9ad03a40e3a80fef6e573e159",
+              "bytes": 22269,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4c49c2c2640ea0a8c6c9.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "ea871f3a7169292b1f2b82470bd2c2d9bea3d019311153e386f96c5cf5ae1115",
+              "retrieved_utc": "2026-10-23T21:16:21.572624+00:00",
+              "sha256": "d0876dc4755401e240d9498cecbce399ffc0e1751cb4f08487ead0395a285cda",
+              "bytes": 22489,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/2558e8344fc4bfdab79f.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "53ce240113636f272e8938977141b64e83e2e352048bf564a877957dbc187e47",
+              "retrieved_utc": "2026-10-23T21:16:23.841726+00:00",
+              "sha256": "dc17b494cb585c9bea3e2f3973cbb226aefb2efcb83f9bad0a40d05b4a8c6502",
+              "bytes": 26518,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/0bfb3fe3b1465f03e43e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "56f0e0700f68be57f06a37071d084698c37cf080d77174ccca2bdf53a1c0a120",
+              "retrieved_utc": "2026-10-23T21:16:24.575547+00:00",
+              "sha256": "073f2b1a4c85328b4d9cc0a15b3a23b4c0ec8cac90913898961b91593d73ccbd",
+              "bytes": 8138,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/90e1a04ea1385521e803.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671196/description/JSON",
+              "method": "GET",
+              "request_sha256": "0c5212fa65ec5da86816b287694fe983f6b11807456a908d8b6a2dc15e3a0d88",
+              "retrieved_utc": "2026-10-23T21:17:10.124578+00:00",
+              "sha256": "f93dff78c287d6522280c054c69eede0ea84cce52c30bc76b1cc99d29d542b53",
+              "bytes": 516699,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671196-v1/description.json",
+              "content_type": "application/json"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671196/concise/CSV",
+              "method": "GET",
+              "request_sha256": "5324ad6cd84244279075144adf04cbe175e22f3ee1afce25b07c49e38cdbceb9",
+              "retrieved_utc": "2026-10-23T21:17:12.461594+00:00",
+              "sha256": "64ab0a455d8a8a42f3acf8e74fb9edd11b496efaf2596ddcd46b9c7d87ab2710",
+              "bytes": 3851727,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671196-v1/concise.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671196/CSV",
+              "method": "POST",
+              "request_sha256": "3d6992745b1558b3edfa9324512d8824f7f61f1ebedf8bb6de20cd69ffc1e70d",
+              "retrieved_utc": "2026-10-23T21:17:15.099211+00:00",
+              "sha256": "63d665424a3b162c3adf305f2cf790c9a13323003ee854392e513fa97c35134a",
+              "bytes": 5696797,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671196-v1/full-000000-0d4136fd8723b33e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671196/CSV",
+              "method": "POST",
+              "request_sha256": "8ec98e5c2b2c95489e5c5914e0947291c23bd1b04c1bff7a6037263bafe061bd",
+              "retrieved_utc": "2026-10-23T21:17:18.297531+00:00",
+              "sha256": "a8b69c4bc88de830409cf6eaf19098772fc632ab22406f2472712e139d37a40b",
+              "bytes": 5645954,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671196-v1/full-002000-64066b3d492ad758.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671196/CSV",
+              "method": "POST",
+              "request_sha256": "045778174d3ebf842b4a05719365e55ecc24242e5c8d25e913ec9a7b5f5b8eec",
+              "retrieved_utc": "2026-10-23T21:17:21.220699+00:00",
+              "sha256": "fd74f4a474c2cb3ab0d49a0a9af5330aa83e8fd3196c815b2aa5cb86c0ea36a0",
+              "bytes": 5654150,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671196-v1/full-004000-627f44777242fd45.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671196/CSV",
+              "method": "POST",
+              "request_sha256": "65b9012bc7e5872e76cf767d4257673bc8df23badf7a84cb590c927bb9bef3d1",
+              "retrieved_utc": "2026-10-23T21:17:24.038496+00:00",
+              "sha256": "9f0b33b0f1dbd3a3bc2a4d6ee5327558f792c25c84ff292b51f2db8b04e563c6",
+              "bytes": 6405043,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671196-v1/full-006000-99a6cc5843147e39.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671196/CSV",
+              "method": "POST",
+              "request_sha256": "32f33d5168cc8236dd3d4cb4d4d6722c67366d2fc3e2c4afd4acbcf66ac7263c",
+              "retrieved_utc": "2026-10-23T21:17:27.131504+00:00",
+              "sha256": "5040304be138336f6c760aa6a4fa06d752e8aa033e7ac689c9f15be78eac54a9",
+              "bytes": 4745568,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671196-v1/full-008000-169e4d7ee8067eed.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "492170017670a6f9edd146288e171d17a28d6a974bddf283603d4ff647f0b0d4",
+              "retrieved_utc": "2026-10-23T21:15:54.084673+00:00",
+              "sha256": "29bf77316a3ba60af10146e535542ad0570a79dd854d66327691771d13bc7cf5",
+              "bytes": 10346,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/9cdf7dfa78d2b42d21c6.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "96549b5d37a304bb56e50bcb0aa9041f20c4a503b4ee60e75f7deb9a24224462",
+              "retrieved_utc": "2026-10-23T21:15:54.878647+00:00",
+              "sha256": "b84f5b54c6729745926168379262c793b54f8df9d8f99da9eb8c1c2894f33a72",
+              "bytes": 16772,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4d4fafb1406651a356b4.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "3d4084e353003739f9a3740edc8c600a1abdc43af1b34bcd633231f493b26565",
+              "retrieved_utc": "2026-10-23T21:15:55.365579+00:00",
+              "sha256": "d017c13840366197149751701f79fcc599409ad40579e74bc66ad8ded86619fe",
+              "bytes": 18176,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4a68e387df0efd43e122.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "0b5aa5152def61b19982052ebe458eefb7a7068ec09f6b15ebc8b331cc087e52",
+              "retrieved_utc": "2026-10-23T21:15:56.197595+00:00",
+              "sha256": "614e518ba77c92603a043d3d816ffe735186ee1984147e2f6de9fa5fd3c3cae5",
+              "bytes": 17250,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/1cf09a948275b725b444.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "3d39c99a0b5281bdba1af26ca3b0e0c65e14cfaf3f075cd079144af42ef2d4e2",
+              "retrieved_utc": "2026-10-23T21:15:56.701584+00:00",
+              "sha256": "1c67c6003e476cf8d4b8fb78a0fbb2dc6f7ae520f86edce4bb400de3e5d67009",
+              "bytes": 17014,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3606ce4c6f5a4b90e05e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "625df08be0e0cd14033d02a1784578de54ba28b7fb57d36fdd885c969c821870",
+              "retrieved_utc": "2026-10-23T21:15:57.429097+00:00",
+              "sha256": "0b9ad71d56b8541a76f74e21eb3e31d1a1ff543a0ae7bf4959bcebea377e3b78",
+              "bytes": 13294,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/97e6e4d4294e0ba950ab.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "523167e0b70ff1acfce321daa19342f71ed7007b907c84c558983491cbb515ad",
+              "retrieved_utc": "2026-10-23T21:15:58.116660+00:00",
+              "sha256": "212f66b46165ffcf8414ea2e02762e0a2cb586c52cc552d25968ee55cab0bf59",
+              "bytes": 12585,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/92c44f8cedc5846fc292.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b38c3ea6076f4b503d30644711c828091927f23dd13df20558f60d68e1163b40",
+              "retrieved_utc": "2026-10-23T21:15:58.447570+00:00",
+              "sha256": "dc0b92d77f489227561041111837510b1b4424b95a720be522cd8110ca16b52d",
+              "bytes": 11299,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/6fde5fd09c92a5e75876.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "ea9de2b482f6851a925325cc70f3083324a732ad711687651ec77605ee0c5503",
+              "retrieved_utc": "2026-10-23T21:15:59.162332+00:00",
+              "sha256": "e7cfd598dcda28bb338a1098a21b590ac70e400fe9a8be3cbb927d85bfc0cb88",
+              "bytes": 8615,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/35ae84e5fbf28b1dfd01.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "814d68f932b8cf43234f28a37aa5082879c236371b37d8735226a051b155a452",
+              "retrieved_utc": "2026-10-23T21:15:59.491147+00:00",
+              "sha256": "18efedd44d2019e80cc2184a3e6db6d8de5cd0748087c769c83ffd155bfdb465",
+              "bytes": 9454,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/2057d66f630dd094116d.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "cccd69046e42adef62deb43c32d6d8f462541d051a97851aa7bcc45a191264c6",
+              "retrieved_utc": "2026-10-23T21:16:00.196804+00:00",
+              "sha256": "0d2d6194d93da1dd034bc20347171305a38b7709bc4342ef22a40afcc19e2b28",
+              "bytes": 12897,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/2b9670576887b267b04c.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "12fa62e1d212194722df064cca8c5ba0a505eb6a328a33c1ed0617f5b4daf1f3",
+              "retrieved_utc": "2026-10-23T21:16:00.969101+00:00",
+              "sha256": "32f6d56f896afbb6ac222854c86b8d040eb6a000e38efaf4b261a32647bcede3",
+              "bytes": 15492,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/d4fa25dbd853bb16a38a.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "59908d2140bc7036200fb08198c211286f9bcfc6c8c105fa0c398da894828b08",
+              "retrieved_utc": "2026-10-23T21:16:01.652657+00:00",
+              "sha256": "b81e54d4411c2e7fdcc4bc3d73de100db09a6b3e924bd3a0712bdc48076c2229",
+              "bytes": 12526,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/e18c18f218c8ecaf69c9.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "a8cc87b6ad82a1460cc15a17f9abe5efea44edf093ae72ebcb52e2e3caa34019",
+              "retrieved_utc": "2026-10-23T21:16:02.179525+00:00",
+              "sha256": "498bf841f9e9e60bae1188fcd48733762e45573e8bf5dd8d3efe327e626956e1",
+              "bytes": 11295,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3568c176648742bf5009.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "e02f0b5de7e1ee248207f2e9db67dff667a8b48f0cf779c82c51f9441a06b40e",
+              "retrieved_utc": "2026-10-23T21:16:02.857648+00:00",
+              "sha256": "af29422a29f825ac51c7119c401d19f9178e0c29ee4fca06fa82177a361569c0",
+              "bytes": 13477,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/b8bc081b80412f187f17.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "9b3ca29ed3d28bf0ef4981b3ed78bf6aad4941889759b610f92c7d6c78869ee0",
+              "retrieved_utc": "2026-10-23T21:16:03.564607+00:00",
+              "sha256": "3d6f9d994a1f10e5f13127857912cca672007369ac2c6a5670078955071b306e",
+              "bytes": 14403,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/5c843e99cdf39567ef6d.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "df4514220616d35704191071e9e6b99a8bd9f52baeaddd12a8c7581115495f21",
+              "retrieved_utc": "2026-10-23T21:16:04.069764+00:00",
+              "sha256": "28c11303de08cc754290bf525da5c9a55fa3ba6e14813785bc05f9a1a782162b",
+              "bytes": 13818,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/8b567f69d2b187a9981c.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "2707c11c662f2d8e5752fda26781f5dd0e608ee44ac04f6d40535add0bd00c9a",
+              "retrieved_utc": "2026-10-23T21:16:04.855651+00:00",
+              "sha256": "f5e722a01f79512f9dd7224a0c76cf8b3b6de535b7744bd251dcb273a0bb5136",
+              "bytes": 15077,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/5ae3cedfff7e4c28c0aa.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "314b9aab8ca1036c79accff69b8825fe3fc08718c7f9aba5f8d0f92bf31cca38",
+              "retrieved_utc": "2026-10-23T21:16:05.562547+00:00",
+              "sha256": "e1c2c34200dc8450b5cb9224becb5c9e77ef94d4dc39edaa67e5029f8cac527a",
+              "bytes": 15519,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/05aeea070ee2664032cf.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b0fedb7ec0d62cd1733483eccbdcd41824df24a77c54db576424a2abc0708974",
+              "retrieved_utc": "2026-10-23T21:16:05.925601+00:00",
+              "sha256": "8303ddd2e6a80beb489b5e964074115dc94638bba289951caa95ae81bfefb277",
+              "bytes": 16476,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/153c69fa55ec45f943fe.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "ccc6b62975050de5208a2ea02198bf194ede04629044a8a375428911a2f1184b",
+              "retrieved_utc": "2026-10-23T21:16:07.616641+00:00",
+              "sha256": "b7fd5b32fac445ccd9205adb5e2ee1b5f96f0191d214d79ac1f4b430ed98dd75",
+              "bytes": 20637,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3e47c1c52560bb205c7e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b79ea848fced9164174db22bb4517becdb24317f04a63f7cd1f30d12160dca5a",
+              "retrieved_utc": "2026-10-23T21:16:08.396606+00:00",
+              "sha256": "6dd7f52f32b05b6a443f0e2e4e31c9156cbc4a9453420ae98e0a3c109d6c6742",
+              "bytes": 15668,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/137e7eb9735badcdb1f2.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "8d314f79219f3c157427d60f9585783f30aaf8a17b1d4522fef855d4bcb4e89f",
+              "retrieved_utc": "2026-10-23T21:16:09.178634+00:00",
+              "sha256": "a099600b34d9843c02f7d642ab664678a2d932ff8e354b720585a95c35c33468",
+              "bytes": 18666,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/238b003c1c340909c534.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "1ccfae4f85674bc05960527fd7e5b0e0371fc4a06dc0312bd764b9defce6a26c",
+              "retrieved_utc": "2026-10-23T21:16:09.970573+00:00",
+              "sha256": "793a83827fc1dc67a9bd5471b908130109d7877858ebc50b7d904efdea3bcb79",
+              "bytes": 17142,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3ffcd8784380dabf8745.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "0c987b1e150989d611f9975ef500bd2aa044aece85418ce768ade24a74650229",
+              "retrieved_utc": "2026-10-23T21:16:10.491492+00:00",
+              "sha256": "99ecfefaabe3fbeb525dbd4e1587f2121e49443554b469cf77684c902678606f",
+              "bytes": 15044,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/b02a863effd65bfad21e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "39e2ba0cf56d17b588529a9185abcc021e220d6e5ecd46408afb3203e12204ec",
+              "retrieved_utc": "2026-10-23T21:16:11.242465+00:00",
+              "sha256": "c8dd5487e50401616194a63dd9f33d92b0a9cfad59dac407136e0a57a1213d21",
+              "bytes": 15196,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/632530f0bbf8c52e4593.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "34c3d89fafa738d700e6e965c40e6c923360bf564c1abb88ee5d6e29b9d97384",
+              "retrieved_utc": "2026-10-23T21:16:12.033926+00:00",
+              "sha256": "14d687a15273fea436f26b779b9fec6ed0cca3dbf54072f468aaeaa40af0f263",
+              "bytes": 17630,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/79e9fc068ab5d8be106b.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "9b39af987fbf4ca69d8623cfedcd0d9271ad510afea66afce715a425ce40a9da",
+              "retrieved_utc": "2026-10-23T21:16:12.705753+00:00",
+              "sha256": "86dcbbcc90bca941e14ce01070c5c3443a94b6a50fbd4d31e19927836fe53ac5",
+              "bytes": 19758,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/21036602ff02bcf9339b.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "11ef332368574524c0352b5da5a0715afaecf349f621187a2aa2b2efa0425052",
+              "retrieved_utc": "2026-10-23T21:16:13.527064+00:00",
+              "sha256": "3b1a85163f98c4fd1d825f04df5964b9a6195daca378f86e7c2d5573e2b3d11e",
+              "bytes": 20377,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4a93bdc51a67822e7ea9.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "9066e0c069d82a0265657141f22c8d9e306cb4576ad500603bf4c43571fca2c4",
+              "retrieved_utc": "2026-10-23T21:16:14.472635+00:00",
+              "sha256": "14d035d9c188014f030ad1315ee4e3bb3f38260897528184f69d16af233ed848",
+              "bytes": 20313,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/022761bdbe1c3527080b.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b15d4a04beb5b89ad8843736c5649f6c79a2ec418f1af67f9333eba5406641c8",
+              "retrieved_utc": "2026-10-23T21:16:15.266572+00:00",
+              "sha256": "83a61a0fd7ac5cf394d2bec169a450fc36d3b3d19a35b13d3b2d8839fee3f6e8",
+              "bytes": 16259,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/006f48217bf6a86a85b6.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "91496be4b2d5a95a68bec359fb4c5a4f0878d1642d8e599eb974366238e21509",
+              "retrieved_utc": "2026-10-23T21:16:16.113779+00:00",
+              "sha256": "95d5c5e60ff1d6420a353d8ab3b007278a6d297e58084afb737f1b990f4dee70",
+              "bytes": 18633,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/7d8f9ae4700c3eb63bc0.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "7773f9e70c7da42d7dd18c09cfcb80ad8b677592f5626dc85d3317041daaba98",
+              "retrieved_utc": "2026-10-23T21:16:16.897816+00:00",
+              "sha256": "934db37ac3c7ae0937f0e9572e540608d98f10c02987ee2e204f9106fc100189",
+              "bytes": 21482,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/b52b719f859e78f0cbcd.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "dfe17f2defc0c6303478e80544a1981eb04e7c2115ef95cc3b9feb9be1cca9bd",
+              "retrieved_utc": "2026-10-23T21:16:17.686741+00:00",
+              "sha256": "aef19921ca48ed24c453c61a200e87530635983f357f8ec35f9050373721599d",
+              "bytes": 20275,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/f12c3fb2b595702f39f8.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "bf788566ef8f08862b25e5ab768d8e3748af63ee34d33c10f0c881c20021f5e1",
+              "retrieved_utc": "2026-10-23T21:16:19.152212+00:00",
+              "sha256": "ba9a9e09c81423c0701e94485a35c1233f55b4d097e74fedce7019c8a12570ef",
+              "bytes": 24603,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/1e0f12bef05347643c1a.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "d147e64ae94adcfaaf66a51d7d63a36eefeff2afef88effec60fac671fc7a968",
+              "retrieved_utc": "2026-10-23T21:16:20.415800+00:00",
+              "sha256": "48953e3b27f99838be071837ea614dd1cf8545c9ad03a40e3a80fef6e573e159",
+              "bytes": 22269,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4c49c2c2640ea0a8c6c9.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "ea871f3a7169292b1f2b82470bd2c2d9bea3d019311153e386f96c5cf5ae1115",
+              "retrieved_utc": "2026-10-23T21:16:21.572624+00:00",
+              "sha256": "d0876dc4755401e240d9498cecbce399ffc0e1751cb4f08487ead0395a285cda",
+              "bytes": 22489,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/2558e8344fc4bfdab79f.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "53ce240113636f272e8938977141b64e83e2e352048bf564a877957dbc187e47",
+              "retrieved_utc": "2026-10-23T21:16:23.841726+00:00",
+              "sha256": "dc17b494cb585c9bea3e2f3973cbb226aefb2efcb83f9bad0a40d05b4a8c6502",
+              "bytes": 26518,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/0bfb3fe3b1465f03e43e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "56f0e0700f68be57f06a37071d084698c37cf080d77174ccca2bdf53a1c0a120",
+              "retrieved_utc": "2026-10-23T21:16:24.575547+00:00",
+              "sha256": "073f2b1a4c85328b4d9cc0a15b3a23b4c0ec8cac90913898961b91593d73ccbd",
+              "bytes": 8138,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/90e1a04ea1385521e803.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671201/description/JSON",
+              "method": "GET",
+              "request_sha256": "da8fa8fad75532dc5528d1acfb4e7594b246330a7cbc7b320b6d362cf8422d80",
+              "retrieved_utc": "2026-10-23T21:17:41.479699+00:00",
+              "sha256": "3d51bdf611e6d40a4a08a1bb3fe1f4d294482ab31ee34651d2588fdd49f5275f",
+              "bytes": 516705,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671201-v1/description.json",
+              "content_type": "application/json"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671201/concise/CSV",
+              "method": "GET",
+              "request_sha256": "e4819f9a85886039622a9baa1253c599e87fae52bcc4f886b83e1c52797f9b2f",
+              "retrieved_utc": "2026-10-23T21:17:43.785269+00:00",
+              "sha256": "e36ccfa7029196e376fb86f3bcd3f92f42714fc0f2a1a600df81e7e4d196f4ff",
+              "bytes": 3845205,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671201-v1/concise.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671201/CSV",
+              "method": "POST",
+              "request_sha256": "ea30041e767a9249111d3f99d88392b1273e5a86933a245ea4408e9360eae8b6",
+              "retrieved_utc": "2026-10-23T21:17:46.119504+00:00",
+              "sha256": "2afb0a19ff6bce87efbbb523ce66e96d842a9aaa14fe8269d2df10c2d4691e2c",
+              "bytes": 5611963,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671201-v1/full-000000-0d4136fd8723b33e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671201/CSV",
+              "method": "POST",
+              "request_sha256": "e9785caf23c298c0217eb798b94020e4adea0a0dcac488241ff641e2fd0cb81c",
+              "retrieved_utc": "2026-10-23T21:17:48.989338+00:00",
+              "sha256": "3c104a88da0aa445282c3dab65dcc6724f69f314b891ed483bd4492587d1caaa",
+              "bytes": 5620864,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671201-v1/full-002000-64066b3d492ad758.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671201/CSV",
+              "method": "POST",
+              "request_sha256": "116d12c1305e308653f168b140bc57227ac2df9cefac137ec9d369a6a794ec44",
+              "retrieved_utc": "2026-10-23T21:17:51.859886+00:00",
+              "sha256": "279e736e70c1b22ae5fedf4a18bd9e2772bb3c9ef0d0a869b1073d509d8e0a1c",
+              "bytes": 5632710,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671201-v1/full-004000-627f44777242fd45.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671201/CSV",
+              "method": "POST",
+              "request_sha256": "a0b0eccc83d88a41eed2f2c7f1f5e7bf6629b328556f1739cc06de230b3a8941",
+              "retrieved_utc": "2026-10-23T21:18:03.529578+00:00",
+              "sha256": "485fe7daab5f452431781aed3cefc0d5729ded0fcd90df3d06d7ff5da1470275",
+              "bytes": 6380902,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671201-v1/full-006000-99a6cc5843147e39.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/aid/1671201/CSV",
+              "method": "POST",
+              "request_sha256": "1bba32c068faef5edbd853aba7bd074a67d7e20f0cdf79f138bf14b05f3ad5f5",
+              "retrieved_utc": "2026-10-23T21:18:06.596069+00:00",
+              "sha256": "a7451e4c61997ebc671131feda074a5821576a7f88a109798f25527cf3e5a150",
+              "bytes": 4717072,
+              "path": "/workspace/cyp-night/assets/public_data/cache/tox21_cyp/aid1671201-v1/full-008000-169e4d7ee8067eed.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "492170017670a6f9edd146288e171d17a28d6a974bddf283603d4ff647f0b0d4",
+              "retrieved_utc": "2026-10-23T21:15:54.084673+00:00",
+              "sha256": "29bf77316a3ba60af10146e535542ad0570a79dd854d66327691771d13bc7cf5",
+              "bytes": 10346,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/9cdf7dfa78d2b42d21c6.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "96549b5d37a304bb56e50bcb0aa9041f20c4a503b4ee60e75f7deb9a24224462",
+              "retrieved_utc": "2026-10-23T21:15:54.878647+00:00",
+              "sha256": "b84f5b54c6729745926168379262c793b54f8df9d8f99da9eb8c1c2894f33a72",
+              "bytes": 16772,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4d4fafb1406651a356b4.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "3d4084e353003739f9a3740edc8c600a1abdc43af1b34bcd633231f493b26565",
+              "retrieved_utc": "2026-10-23T21:15:55.365579+00:00",
+              "sha256": "d017c13840366197149751701f79fcc599409ad40579e74bc66ad8ded86619fe",
+              "bytes": 18176,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4a68e387df0efd43e122.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "0b5aa5152def61b19982052ebe458eefb7a7068ec09f6b15ebc8b331cc087e52",
+              "retrieved_utc": "2026-10-23T21:15:56.197595+00:00",
+              "sha256": "614e518ba77c92603a043d3d816ffe735186ee1984147e2f6de9fa5fd3c3cae5",
+              "bytes": 17250,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/1cf09a948275b725b444.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "3d39c99a0b5281bdba1af26ca3b0e0c65e14cfaf3f075cd079144af42ef2d4e2",
+              "retrieved_utc": "2026-10-23T21:15:56.701584+00:00",
+              "sha256": "1c67c6003e476cf8d4b8fb78a0fbb2dc6f7ae520f86edce4bb400de3e5d67009",
+              "bytes": 17014,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3606ce4c6f5a4b90e05e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "625df08be0e0cd14033d02a1784578de54ba28b7fb57d36fdd885c969c821870",
+              "retrieved_utc": "2026-10-23T21:15:57.429097+00:00",
+              "sha256": "0b9ad71d56b8541a76f74e21eb3e31d1a1ff543a0ae7bf4959bcebea377e3b78",
+              "bytes": 13294,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/97e6e4d4294e0ba950ab.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "523167e0b70ff1acfce321daa19342f71ed7007b907c84c558983491cbb515ad",
+              "retrieved_utc": "2026-10-23T21:15:58.116660+00:00",
+              "sha256": "212f66b46165ffcf8414ea2e02762e0a2cb586c52cc552d25968ee55cab0bf59",
+              "bytes": 12585,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/92c44f8cedc5846fc292.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b38c3ea6076f4b503d30644711c828091927f23dd13df20558f60d68e1163b40",
+              "retrieved_utc": "2026-10-23T21:15:58.447570+00:00",
+              "sha256": "dc0b92d77f489227561041111837510b1b4424b95a720be522cd8110ca16b52d",
+              "bytes": 11299,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/6fde5fd09c92a5e75876.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "ea9de2b482f6851a925325cc70f3083324a732ad711687651ec77605ee0c5503",
+              "retrieved_utc": "2026-10-23T21:15:59.162332+00:00",
+              "sha256": "e7cfd598dcda28bb338a1098a21b590ac70e400fe9a8be3cbb927d85bfc0cb88",
+              "bytes": 8615,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/35ae84e5fbf28b1dfd01.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "814d68f932b8cf43234f28a37aa5082879c236371b37d8735226a051b155a452",
+              "retrieved_utc": "2026-10-23T21:15:59.491147+00:00",
+              "sha256": "18efedd44d2019e80cc2184a3e6db6d8de5cd0748087c769c83ffd155bfdb465",
+              "bytes": 9454,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/2057d66f630dd094116d.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "cccd69046e42adef62deb43c32d6d8f462541d051a97851aa7bcc45a191264c6",
+              "retrieved_utc": "2026-10-23T21:16:00.196804+00:00",
+              "sha256": "0d2d6194d93da1dd034bc20347171305a38b7709bc4342ef22a40afcc19e2b28",
+              "bytes": 12897,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/2b9670576887b267b04c.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "12fa62e1d212194722df064cca8c5ba0a505eb6a328a33c1ed0617f5b4daf1f3",
+              "retrieved_utc": "2026-10-23T21:16:00.969101+00:00",
+              "sha256": "32f6d56f896afbb6ac222854c86b8d040eb6a000e38efaf4b261a32647bcede3",
+              "bytes": 15492,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/d4fa25dbd853bb16a38a.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "59908d2140bc7036200fb08198c211286f9bcfc6c8c105fa0c398da894828b08",
+              "retrieved_utc": "2026-10-23T21:16:01.652657+00:00",
+              "sha256": "b81e54d4411c2e7fdcc4bc3d73de100db09a6b3e924bd3a0712bdc48076c2229",
+              "bytes": 12526,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/e18c18f218c8ecaf69c9.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "a8cc87b6ad82a1460cc15a17f9abe5efea44edf093ae72ebcb52e2e3caa34019",
+              "retrieved_utc": "2026-10-23T21:16:02.179525+00:00",
+              "sha256": "498bf841f9e9e60bae1188fcd48733762e45573e8bf5dd8d3efe327e626956e1",
+              "bytes": 11295,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3568c176648742bf5009.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "e02f0b5de7e1ee248207f2e9db67dff667a8b48f0cf779c82c51f9441a06b40e",
+              "retrieved_utc": "2026-10-23T21:16:02.857648+00:00",
+              "sha256": "af29422a29f825ac51c7119c401d19f9178e0c29ee4fca06fa82177a361569c0",
+              "bytes": 13477,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/b8bc081b80412f187f17.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "9b3ca29ed3d28bf0ef4981b3ed78bf6aad4941889759b610f92c7d6c78869ee0",
+              "retrieved_utc": "2026-10-23T21:16:03.564607+00:00",
+              "sha256": "3d6f9d994a1f10e5f13127857912cca672007369ac2c6a5670078955071b306e",
+              "bytes": 14403,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/5c843e99cdf39567ef6d.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "df4514220616d35704191071e9e6b99a8bd9f52baeaddd12a8c7581115495f21",
+              "retrieved_utc": "2026-10-23T21:16:04.069764+00:00",
+              "sha256": "28c11303de08cc754290bf525da5c9a55fa3ba6e14813785bc05f9a1a782162b",
+              "bytes": 13818,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/8b567f69d2b187a9981c.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "2707c11c662f2d8e5752fda26781f5dd0e608ee44ac04f6d40535add0bd00c9a",
+              "retrieved_utc": "2026-10-23T21:16:04.855651+00:00",
+              "sha256": "f5e722a01f79512f9dd7224a0c76cf8b3b6de535b7744bd251dcb273a0bb5136",
+              "bytes": 15077,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/5ae3cedfff7e4c28c0aa.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "314b9aab8ca1036c79accff69b8825fe3fc08718c7f9aba5f8d0f92bf31cca38",
+              "retrieved_utc": "2026-10-23T21:16:05.562547+00:00",
+              "sha256": "e1c2c34200dc8450b5cb9224becb5c9e77ef94d4dc39edaa67e5029f8cac527a",
+              "bytes": 15519,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/05aeea070ee2664032cf.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b0fedb7ec0d62cd1733483eccbdcd41824df24a77c54db576424a2abc0708974",
+              "retrieved_utc": "2026-10-23T21:16:05.925601+00:00",
+              "sha256": "8303ddd2e6a80beb489b5e964074115dc94638bba289951caa95ae81bfefb277",
+              "bytes": 16476,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/153c69fa55ec45f943fe.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "ccc6b62975050de5208a2ea02198bf194ede04629044a8a375428911a2f1184b",
+              "retrieved_utc": "2026-10-23T21:16:07.616641+00:00",
+              "sha256": "b7fd5b32fac445ccd9205adb5e2ee1b5f96f0191d214d79ac1f4b430ed98dd75",
+              "bytes": 20637,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3e47c1c52560bb205c7e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b79ea848fced9164174db22bb4517becdb24317f04a63f7cd1f30d12160dca5a",
+              "retrieved_utc": "2026-10-23T21:16:08.396606+00:00",
+              "sha256": "6dd7f52f32b05b6a443f0e2e4e31c9156cbc4a9453420ae98e0a3c109d6c6742",
+              "bytes": 15668,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/137e7eb9735badcdb1f2.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "8d314f79219f3c157427d60f9585783f30aaf8a17b1d4522fef855d4bcb4e89f",
+              "retrieved_utc": "2026-10-23T21:16:09.178634+00:00",
+              "sha256": "a099600b34d9843c02f7d642ab664678a2d932ff8e354b720585a95c35c33468",
+              "bytes": 18666,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/238b003c1c340909c534.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "1ccfae4f85674bc05960527fd7e5b0e0371fc4a06dc0312bd764b9defce6a26c",
+              "retrieved_utc": "2026-10-23T21:16:09.970573+00:00",
+              "sha256": "793a83827fc1dc67a9bd5471b908130109d7877858ebc50b7d904efdea3bcb79",
+              "bytes": 17142,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/3ffcd8784380dabf8745.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "0c987b1e150989d611f9975ef500bd2aa044aece85418ce768ade24a74650229",
+              "retrieved_utc": "2026-10-23T21:16:10.491492+00:00",
+              "sha256": "99ecfefaabe3fbeb525dbd4e1587f2121e49443554b469cf77684c902678606f",
+              "bytes": 15044,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/b02a863effd65bfad21e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "39e2ba0cf56d17b588529a9185abcc021e220d6e5ecd46408afb3203e12204ec",
+              "retrieved_utc": "2026-10-23T21:16:11.242465+00:00",
+              "sha256": "c8dd5487e50401616194a63dd9f33d92b0a9cfad59dac407136e0a57a1213d21",
+              "bytes": 15196,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/632530f0bbf8c52e4593.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "34c3d89fafa738d700e6e965c40e6c923360bf564c1abb88ee5d6e29b9d97384",
+              "retrieved_utc": "2026-10-23T21:16:12.033926+00:00",
+              "sha256": "14d687a15273fea436f26b779b9fec6ed0cca3dbf54072f468aaeaa40af0f263",
+              "bytes": 17630,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/79e9fc068ab5d8be106b.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "9b39af987fbf4ca69d8623cfedcd0d9271ad510afea66afce715a425ce40a9da",
+              "retrieved_utc": "2026-10-23T21:16:12.705753+00:00",
+              "sha256": "86dcbbcc90bca941e14ce01070c5c3443a94b6a50fbd4d31e19927836fe53ac5",
+              "bytes": 19758,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/21036602ff02bcf9339b.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "11ef332368574524c0352b5da5a0715afaecf349f621187a2aa2b2efa0425052",
+              "retrieved_utc": "2026-10-23T21:16:13.527064+00:00",
+              "sha256": "3b1a85163f98c4fd1d825f04df5964b9a6195daca378f86e7c2d5573e2b3d11e",
+              "bytes": 20377,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4a93bdc51a67822e7ea9.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "9066e0c069d82a0265657141f22c8d9e306cb4576ad500603bf4c43571fca2c4",
+              "retrieved_utc": "2026-10-23T21:16:14.472635+00:00",
+              "sha256": "14d035d9c188014f030ad1315ee4e3bb3f38260897528184f69d16af233ed848",
+              "bytes": 20313,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/022761bdbe1c3527080b.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "b15d4a04beb5b89ad8843736c5649f6c79a2ec418f1af67f9333eba5406641c8",
+              "retrieved_utc": "2026-10-23T21:16:15.266572+00:00",
+              "sha256": "83a61a0fd7ac5cf394d2bec169a450fc36d3b3d19a35b13d3b2d8839fee3f6e8",
+              "bytes": 16259,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/006f48217bf6a86a85b6.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "91496be4b2d5a95a68bec359fb4c5a4f0878d1642d8e599eb974366238e21509",
+              "retrieved_utc": "2026-10-23T21:16:16.113779+00:00",
+              "sha256": "95d5c5e60ff1d6420a353d8ab3b007278a6d297e58084afb737f1b990f4dee70",
+              "bytes": 18633,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/7d8f9ae4700c3eb63bc0.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "7773f9e70c7da42d7dd18c09cfcb80ad8b677592f5626dc85d3317041daaba98",
+              "retrieved_utc": "2026-10-23T21:16:16.897816+00:00",
+              "sha256": "934db37ac3c7ae0937f0e9572e540608d98f10c02987ee2e204f9106fc100189",
+              "bytes": 21482,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/b52b719f859e78f0cbcd.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "dfe17f2defc0c6303478e80544a1981eb04e7c2115ef95cc3b9feb9be1cca9bd",
+              "retrieved_utc": "2026-10-23T21:16:17.686741+00:00",
+              "sha256": "aef19921ca48ed24c453c61a200e87530635983f357f8ec35f9050373721599d",
+              "bytes": 20275,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/f12c3fb2b595702f39f8.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "bf788566ef8f08862b25e5ab768d8e3748af63ee34d33c10f0c881c20021f5e1",
+              "retrieved_utc": "2026-10-23T21:16:19.152212+00:00",
+              "sha256": "ba9a9e09c81423c0701e94485a35c1233f55b4d097e74fedce7019c8a12570ef",
+              "bytes": 24603,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/1e0f12bef05347643c1a.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "d147e64ae94adcfaaf66a51d7d63a36eefeff2afef88effec60fac671fc7a968",
+              "retrieved_utc": "2026-10-23T21:16:20.415800+00:00",
+              "sha256": "48953e3b27f99838be071837ea614dd1cf8545c9ad03a40e3a80fef6e573e159",
+              "bytes": 22269,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/4c49c2c2640ea0a8c6c9.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "ea871f3a7169292b1f2b82470bd2c2d9bea3d019311153e386f96c5cf5ae1115",
+              "retrieved_utc": "2026-10-23T21:16:21.572624+00:00",
+              "sha256": "d0876dc4755401e240d9498cecbce399ffc0e1751cb4f08487ead0395a285cda",
+              "bytes": 22489,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/2558e8344fc4bfdab79f.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "53ce240113636f272e8938977141b64e83e2e352048bf564a877957dbc187e47",
+              "retrieved_utc": "2026-10-23T21:16:23.841726+00:00",
+              "sha256": "dc17b494cb585c9bea3e2f3973cbb226aefb2efcb83f9bad0a40d05b4a8c6502",
+              "bytes": 26518,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/0bfb3fe3b1465f03e43e.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/property/CanonicalSMILES,IsomericSMILES/CSV",
+              "method": "POST",
+              "request_sha256": "56f0e0700f68be57f06a37071d084698c37cf080d77174ccca2bdf53a1c0a120",
+              "retrieved_utc": "2026-10-23T21:16:24.575547+00:00",
+              "sha256": "073f2b1a4c85328b4d9cc0a15b3a23b4c0ec8cac90913898961b91593d73ccbd",
+              "bytes": 8138,
+              "path": "/workspace/cyp-night/assets/public_data/cache/pubchem/compound-properties/90e1a04ea1385521e803.csv",
+              "content_type": "text/csv"
+            },
+            {
+              "url": "https://www.bindingdb.org/rwd/bind/downloads/BindingDB_BindingDB_Articles_202610_tsv.md5",
+              "method": "GET",
+              "request_sha256": "844a6f39e879eccbb3d4316f9a9fa671b02cbd2b6c1bdab0a9dd0d20080864eb",
+              "retrieved_utc": "2026-10-23T21:18:29.820630+00:00",
+              "sha256": "e5c8183d9a7814194143f1a37d8404a38ecc99f0b2223e2ea64a2ac01f03a948",
+              "bytes": 32,
+              "path": "/workspace/cyp-night/assets/public_data/cache/bindingdb/202610/BindingDB_BindingDB_Articles_202610_tsv.zip.md5",
+              "content_type": null
+            },
+            {
+              "url": "https://www.bindingdb.org/rwd/bind/downloads/BindingDB_BindingDB_Articles_202610_tsv.zip",
+              "method": "GET",
+              "request_sha256": "7ed840ba191f188dd53a8121cf137c580924e058f25cf33320aa0818807c36aa",
+              "retrieved_utc": "2026-10-23T21:18:43.461723+00:00",
+              "sha256": "727383bac35beed6bc5c55c40dfbd58ba023fa97a7f27dc1a61440c1ad54a2b7",
+              "bytes": 18271888,
+              "path": "/workspace/cyp-night/assets/public_data/cache/bindingdb/202610/BindingDB_BindingDB_Articles_202610_tsv.zip",
+              "content_type": "application/zip"
+            },
+            {
+              "url": "https://www.bindingdb.org/rwd/bind/downloads/BindingDB_rsid_eaids_202610_tsv.md5",
+              "method": "GET",
+              "request_sha256": "713ca23f9029f24b594fcdcb3ba3b9b3a06fd0e4b5213d778291b71aa110b9ab",
+              "retrieved_utc": "2026-10-23T21:18:49.945441+00:00",
+              "sha256": "6c5a2e94f97aef7856d5042d246285b23499690c3105e928fbed1aed521ebb44",
+              "bytes": 32,
+              "path": "/workspace/cyp-night/assets/public_data/cache/bindingdb/202610/BindingDB_rsid_eaids_202610_tsv.zip.md5",
+              "content_type": null
+            },
+            {
+              "url": "https://www.bindingdb.org/rwd/bind/downloads/BindingDB_rsid_eaids_202610_tsv.zip",
+              "method": "GET",
+              "request_sha256": "f5ec670de7c5aaa2dc0ca2b2f9aaf1173617ac7afb523bfea20607125761122f",
+              "retrieved_utc": "2026-10-23T21:18:55.248524+00:00",
+              "sha256": "c13f48505fd60a4b50b7d35465dc45068ac16488279a349e836f25b9a9a78e92",
+              "bytes": 7556077,
+              "path": "/workspace/cyp-night/assets/public_data/cache/bindingdb/202610/BindingDB_rsid_eaids_202610_tsv.zip",
+              "content_type": "application/zip"
+            },
+            {
+              "url": "https://www.bindingdb.org/rwd/bind/downloads/BindingDB_Assays_202610_tsv.md5",
+              "method": "GET",
+              "request_sha256": "307df899c7c487c1f66b969c5984ae89195e2ee942bf05148dc8885a266aae08",
+              "retrieved_utc": "2026-10-23T21:18:55.689101+00:00",
+              "sha256": "f378166b935f5b1522fa7797d41cda00dbdc25e86da7154d2162241753588286",
+              "bytes": 32,
+              "path": "/workspace/cyp-night/assets/public_data/cache/bindingdb/202610/BindingDB_Assays_202610_tsv.zip.md5",
+              "content_type": null
+            },
+            {
+              "url": "https://www.bindingdb.org/rwd/bind/downloads/BindingDB_Assays_202610_tsv.zip",
+              "method": "GET",
+              "request_sha256": "017ba197a8cb027c6903f47afc3ba43fbf1814d7487a89a822004a81e918d034",
+              "retrieved_utc": "2026-10-23T21:19:09.511883+00:00",
+              "sha256": "0fcb268c52aec04ccf500c6ea3ef82e24a640ebe95c1ff4d40ca764f756cac8e",
+              "bytes": 10120429,
+              "path": "/workspace/cyp-night/assets/public_data/cache/bindingdb/202610/BindingDB_Assays_202610_tsv.zip",
+              "content_type": "application/zip"
+            }
+          ],
+          "normalization": "FragmentParent, uncharge, remove stereo; no tautomer canonicalization",
+          "unknown_labels": "Retained as missing/unknown; never converted to inactive or numerical potency"
+        },
+        "table": {
+          "path": "/workspace/cyp-night/assets/new_public/measurements.csv",
+          "sha256": "50f6fa64f33cf79540e6087ab0d52aff062d7ec527319bfad6d44a8444dd828b",
+          "rows": 133729
+        },
+        "parquet": {
+          "status": "optional_engine_unavailable",
+          "reason": "Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.\nA suitable version of pyarrow or fastparquet is required for parquet support.\nTrying to import the above resulted in these errors:\n - Missing optional dependency 'pyarrow'. pyarrow is required for parquet support. Use pip or conda to install pyarrow.\n - Missing optional dependency 'fastparquet'. fastparquet is required for parquet support. Use pip or conda to install fastparquet."
+        },
+        "auxiliary_heads": [
+          "aux_bindingdb_native_articles_CYP1A2_IC50_f8759f04c323",
+          "aux_bindingdb_native_articles_CYP2C9_IC50_f85f4de88be1",
+          "aux_bindingdb_native_articles_CYP2D6_IC50_05b208bf8e02",
+          "aux_bindingdb_native_articles_CYP3A4_IC50_b7f687f15443",
+          "aux_pubchem_tox21_cyp_CYP1A2_AC50_106b1f39486a",
+          "aux_pubchem_tox21_cyp_CYP2C9_AC50_6079e0c769d4",
+          "aux_pubchem_tox21_cyp_CYP2D6_AC50_a62b6063a43d",
+          "aux_pubchem_tox21_cyp_CYP3A4_AC50_9535d278986f"
+        ],
+        "head_metadata": {
+          "records_used": 51033,
+          "molecules": 6249,
+          "heads": {
+            "aux_pubchem_tox21_cyp_CYP1A2_AC50_106b1f39486a": {
+              "source": "pubchem_tox21_cyp",
+              "target": "CYP1A2",
+              "endpoint": "AC50"
+            },
+            "aux_pubchem_tox21_cyp_CYP2C9_AC50_6079e0c769d4": {
+              "source": "pubchem_tox21_cyp",
+              "target": "CYP2C9",
+              "endpoint": "AC50"
+            },
+            "aux_pubchem_tox21_cyp_CYP2D6_AC50_a62b6063a43d": {
+              "source": "pubchem_tox21_cyp",
+              "target": "CYP2D6",
+              "endpoint": "AC50"
+            },
+            "aux_pubchem_tox21_cyp_CYP3A4_AC50_9535d278986f": {
+              "source": "pubchem_tox21_cyp",
+              "target": "CYP3A4",
+              "endpoint": "AC50"
+            },
+            "aux_bindingdb_native_articles_CYP3A4_IC50_b7f687f15443": {
+              "source": "bindingdb_native_articles",
+              "target": "CYP3A4",
+              "endpoint": "IC50"
+            },
+            "aux_bindingdb_native_articles_CYP2C9_IC50_f85f4de88be1": {
+              "source": "bindingdb_native_articles",
+              "target": "CYP2C9",
+              "endpoint": "IC50"
+            },
+            "aux_bindingdb_native_articles_CYP1A2_IC50_f8759f04c323": {
+              "source": "bindingdb_native_articles",
+              "target": "CYP1A2",
+              "endpoint": "IC50"
+            },
+            "aux_bindingdb_native_articles_CYP2D6_IC50_05b208bf8e02": {
+              "source": "bindingdb_native_articles",
+              "target": "CYP2D6",
+              "endpoint": "IC50"
+            }
+          },
+          "group_by": [
+            "source",
+            "target",
+            "endpoint"
+          ],
+          "aggregation": "median within normalized isomeric identity and specified head; equality-only"
+        },
+        "auxiliary_wide_sha256": "61ae20b6c4b135934473b0d73658f87e0c8774783570cb71e13e9dbc84b29ce8",
+        "data_quality": {
+          "status": "pass",
+          "passed": true,
+          "failures": [],
+          "excluded_parent_overlap_count": 0,
+          "source_counts": {
+            "tox21_cyp": {
+              "records": 133572,
+              "eligible_ic50_ac50_records": 50931,
+              "targets": [
+                "CYP1A2",
+                "CYP2C9",
+                "CYP2D6",
+                "CYP3A4"
+              ]
+            },
+            "bindingdb_native_articles": {
+              "records": 157,
+              "eligible_ic50_ac50_records": 102,
+              "targets": [
+                "CYP1A2",
+                "CYP2C9",
+                "CYP2D6",
+                "CYP3A4"
+              ]
+            }
+          },
+          "interpretation": "Pass means reproducible usable source/identity/label schema, not challenge-domain equivalence or model improvement"
+        },
+        "implementation_sha256": {
+          "public_prepare.py": "39059b10d171e281cf2e6ab24729495544f63d4a7e0d3983367f2a67310c9a4f",
+          "public_data.py": "c91d5a3268cd3b0ea0e96fbbe601524333d62804c8985f7641382968bb560968"
+        }
+      },
+      "external_only": true
+    }
+  },
+  "initialization": {
+    "initialization": "chemeleon",
+    "checkpoint_sha256": "c376624d3407204e780a0ed13a9ac097cc9bb1c13ef89cdbc633c1715c183651",
+    "checkpoint_path": "/workspace/cyp-night/assets/weights/chemeleon_mp.pt",
+    "encoder_hyperparameters": {
+      "d_v": 72,
+      "d_e": 14,
+      "d_h": 2048,
+      "bias": false,
+      "depth": 6,
+      "dropout": 0.0,
+      "activation": "relu",
+      "undirected": false,
+      "d_vd": null,
+      "V_d_transform": null,
+      "graph_transform": null
+    }
+  },
+  "effective_config": {
+    "hidden_dim": 700,
+    "depth": 5,
+    "dropout": 0.0,
+    "ffn_hidden_dim": 300,
+    "ffn_num_layers": 1,
+    "batch_norm": false,
+    "aggregation": "mean",
+    "loss": "mae",
+    "max_epochs": 100,
+    "patience": 15,
+    "batch_size": 64,
+    "warmup_epochs": 2,
+    "init_lr": 1e-05,
+    "max_lr": 0.0001,
+    "final_lr": 1e-05,
+    "seed": 42,
+    "min_epochs": 20,
+    "kind": "neural",
+    "initialization": "chemeleon",
+    "component": "official_aux",
+    "extra_public_sha256": "50f6fa64f33cf79540e6087ab0d52aff062d7ec527319bfad6d44a8444dd828b",
+    "name": "chemeleon_official_plus_bindingdb",
+    "extra_public_sources": [
+      "bindingdb_native_articles"
+    ],
+    "fold_index": 3,
+    "torch_num_threads": 4,
+    "num_workers": 0
+  },
+  "excluded_parent_keys_count": 5649,
+  "target_order": [
+    "cyp3a4_pic50_direct_inhibition",
+    "cyp2c9_pic50_direct_inhibition",
+    "cyp2d6_pic50_direct_inhibition",
+    "cyp1a2_pic50_direct_inhibition",
+    "cyp3a4_log2fc",
+    "cyp2c9_log2fc",
+    "cyp2d6_log2fc",
+    "cyp1a2_log2fc",
+    "cyp3a4_pic50_tdi_condition",
+    "cyp2c9_pic50_tdi_condition",
+    "cyp2d6_pic50_tdi_condition",
+    "cyp1a2_pic50_tdi_condition",
+    "cyp3a4_emax_vs_pos_ctrl_direct_inhibition",
+    "cyp2c9_emax_vs_pos_ctrl_direct_inhibition",
+    "cyp2d6_emax_vs_pos_ctrl_direct_inhibition",
+    "cyp1a2_emax_vs_pos_ctrl_direct_inhibition",
+    "aux_bindingdb_native_articles_CYP1A2_IC50_f8759f04c323",
+    "aux_bindingdb_native_articles_CYP2C9_IC50_f85f4de88be1",
+    "aux_bindingdb_native_articles_CYP2D6_IC50_05b208bf8e02",
+    "aux_bindingdb_native_articles_CYP3A4_IC50_b7f687f15443"
+  ],
+  "output_mapping": {
+    "cyp3a4_pic50_direct_inhibition": "CYP3A4_pIC50_direct_inhibition",
+    "cyp2c9_pic50_direct_inhibition": "CYP2C9_pIC50_direct_inhibition",
+    "cyp2d6_pic50_direct_inhibition": "CYP2D6_pIC50_direct_inhibition",
+    "cyp1a2_pic50_direct_inhibition": "CYP1A2_pIC50_direct_inhibition"
+  },
+  "supplied_train_id_sha256": "403aed029481924e53c0aa9bf8d6fc21275f9e02e681c8151d2c5096052bb41d",
+  "fit_id_sha256": "c302c9779dca6db03f0cca01cf58416885ee2a15663bc3fd54665a4d61fda851",
+  "validation_id_sha256": "b6d525c325444755a4c3621ec462a6dfeee604ee0a214be17f2c1c095eb9d669",
+  "query_id_sha256": "33e61223d729d72a19e0f87d588c5bc168840ffe363fc287c76b8e81f39c95ef",
+  "validation_query_overlap": 873,
+  "query_labels_used": false,
+  "scaler_mean": [
+    4.033375368224955,
+    4.554640421883073,
+    4.788469184297262,
+    4.9630346185778995,
+    -1.8476269931337579,
+    -0.6678347905639898,
+    -0.4080276513009258,
+    -0.6257757589072604,
+    4.373143151680581,
+    4.564281477755433,
+    5.056089878414027,
+    4.991590970313778,
+    -0.9764781554455912,
+    -1.0153861217912283,
+    -1.0164047719819078,
+    -0.9848820469502745,
+    4.604852199554443,
+    5.411005353927612,
+    4.934907112802778,
+    5.392550739875206
+  ],
+  "scaler_scale": [
+    1.105361640852753,
+    0.7886259664580757,
+    0.9111569239000151,
+    1.0569600114124005,
+    1.3633629722660594,
+    0.4657232762731569,
+    1.1146115711480071,
+    0.6953540131833464,
+    1.1458540310668426,
+    0.8114045268970089,
+    0.7846245150513186,
+    1.0909286448796172,
+    0.03930580504064309,
+    0.08268223998508002,
+    0.032108439895994524,
+    0.05828878855626642,
+    0.550333936127844,
+    0.6214834994108214,
+    0.5730275263629359,
+    0.8289445782518776
+  ],
+  "accelerator": "gpu",
+  "precision": "16-mixed",
+  "seed": 45,
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "chemprop": "2.2.1",
+    "lightning": "2.5.5",
+    "rdkit": "2026.9.1",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3"
+  },
+  "best_epoch": 20,
+  "best_val_loss": 0.23710420727729797,
+  "elapsed_epochs": 36,
+  "best_checkpoint": "/workspace/cyp-night/results/D0_D1_public_r1/chemeleon_official_plus_bindingdb/briford529/seed42/fold3/checkpoints/best.ckpt",
+  "trainable_parameters": 9334960
+}

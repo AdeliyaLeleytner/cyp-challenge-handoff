@@ -1,0 +1,17 @@
+# P7 chemical feature-join review
+
+The staged join passes independently:31,641 unique requests ×120 features, all3,796,920 numeric values exactly equal the audited immutable ADMETlab snapshot. Row order, column order, molecule IDs, request IDs, model SMILES, request/service strings, source hashes and eligibility all match. Request IDs reproduce SHA256 of exact request strings. The retained requests account for66,178 historical source alias rows;23,763 have multiple source aliases, consistently mapped without extra rows or averaged features.
+
+All29 approved source/feature exclusions remain absent. All18 existing supervised target columns remain unchanged to the source serialization tolerance1e-12. No new teacher data, source labels, neutralization, salt removal, stereochemistry erasure or tautomer merging occurs in the feature join. The4,874 model/request strings that differ textually have identical canonical isomeric graphs in all cases. The source's existing explicit service transformations remain bound by the completed v3 audit; this join does not reapprove or broaden them.
+
+Every rotating fold has zero train-to-stop/test overlaps under transitive components of the previously approved stereo-preserving equivalence pairs. Whole-row selection keeps this purge across all18 tasks. Fold sizes and exact hash bindings are in CERTIFICATE.json.
+
+A separate split caveat remains: stop/test subsets share0/2/1/1/0 approved equivalence groups, respectively. Exact8 rows/4 groups are preserved in stop-test-equivalent-rows.csv. Two pairs place an official row in stop/external counterpart in test; two reverse. None enter training. Whether this affects checkpoint selection for an evaluated official row depends on which stopping targets the runner actually consumes; the training owner has been asked to inspect this. The stage join PASS does not certify complete independence of stopping and testing.
+
+Execution still needs shared-arm input-hash checks, training-only feature scaling, all18-target row selection, epoch0 prediction parity for matched initial graph/head parameters, and actual nonzero learned feature-path gradients/weights. These are runner checks, not established by this staged-data review. ADMETlab outputs remain teacher predictions with unknown teacher training membership, not experimental labels.
+
+Files: CERTIFICATE.json; GRAPH_DETAIL.json; stop-test-equivalent-rows.csv; nonidentical-model-request-graphs.csv (empty); check.py; inspect_graphs.py. Read-only against P3/P7 stages; no fits or scientific stage edits.
+
+## Fresh P7 stopping repair independently verified
+
+The new P7 fold-manifest SHA436ec6c3895a3e937ae9fa3debc464b75a9e8dbcf36a7f526da67b74fbad599c resolves the split caveat above. Exactly4 stopping rows were removed:fold1 OCNT-0483502/CHEMBL58;fold2 CHEMBL832;fold3 OCNT-0022129. All4 are distinct exact request IDs and distinct canonical isomeric graphs linked by the previously approved stereo-preserving equivalence relation;0 were exact-identity duplicates. Train and test indices and order are unchanged in every fold. All5 folds now have zero train→stop/test and zero stop↔test equivalence overlap. Shared table remains byte-identical and whole-row selection applies across all18 tasks. REVISED_FOLD_CERTIFICATE.json binds the revised manifest, original P3 manifest, approved-pair file and exact feature-join certificate. P3 frozen artifacts were not changed.

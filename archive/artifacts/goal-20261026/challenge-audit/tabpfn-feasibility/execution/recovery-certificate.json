@@ -1,0 +1,122 @@
+{
+  "run_id": "d582f716-e4e2-43c3-a4cf-fed02a9d39f0",
+  "experiment_id": "4d577549-bb84-4f99-abc4-3c2d6bb9d530",
+  "commit": "4f2a84cc99a3a0868541b3b63446cb275fe74c29",
+  "recovered_files": 140,
+  "recovered_bytes": 6283437,
+  "all_file_hashes_verified": true,
+  "fit_receipts": 48,
+  "all_prediction_caches_finite_and_hash_verified": true,
+  "archive_sha256": "7cba3999f71c3f9ad047174442e5443ba6cceae344d3c2d376a741b014806ed7",
+  "remote_log_sha256": "b130e7918508482d2134b5e86465e03773ffbe62983f545e0203f67a765b9aef",
+  "remote_exit_code": 0,
+  "gpu": "NVIDIA GeForce RTX3090,24576MiB",
+  "driver": "595.71.05",
+  "independent_raw_metric_rechecks": [
+    {
+      "cohort": "briford529",
+      "model": "native",
+      "macro": {
+        "ST_RAE": 0.6423089039065256,
+        "MAE": 0.47577741558303693,
+        "R2": 0.38463520266271606,
+        "Spearman": 0.6530918554894118,
+        "Kendall": 0.47718871036874755
+      },
+      "max_metric_delta": 0.0,
+      "prediction_sha256": "7925734cf56fe0e8a7bfb6bf804881c843e529c2ced84f1186573411de28736b"
+    },
+    {
+      "cohort": "briford529",
+      "model": "tabpfn35__admet120__native_blend_global",
+      "macro": {
+        "ST_RAE": 0.6256434671169214,
+        "MAE": 0.4732987028539527,
+        "R2": 0.39421252814476737,
+        "Spearman": 0.6555350933863482,
+        "Kendall": 0.47694435218152353
+      },
+      "max_metric_delta": 0.0,
+      "prediction_sha256": "ea19d1063f79e2269d28dfaea6d889908b9eae11a804e2a9e1eb1edf786ec213"
+    },
+    {
+      "cohort": "briford529",
+      "model": "tabpfn35__admet120__native_blend_per_target",
+      "macro": {
+        "ST_RAE": 0.6268672953063408,
+        "MAE": 0.47346759631151003,
+        "R2": 0.3879107827045747,
+        "Spearman": 0.6528230133168511,
+        "Kendall": 0.4758043047228713
+      },
+      "max_metric_delta": 0.0,
+      "prediction_sha256": "8f0d9d26fdc47d0cd82a496d4f378473386d16ca185fe464b4d8bc0f0ebc0a9e"
+    },
+    {
+      "cohort": "briford529",
+      "model": "tabpfn35__admet120",
+      "macro": {
+        "ST_RAE": 0.7320679606744294,
+        "MAE": 0.5197164910705185,
+        "R2": 0.30458281152387,
+        "Spearman": 0.593738896151772,
+        "Kendall": 0.4248909370787419
+      },
+      "max_metric_delta": 0.0,
+      "prediction_sha256": "92f18db92ce3267f754b6ef63c39b27594ad3c2ea6aa8b6efd43a2c77064cb51"
+    },
+    {
+      "cohort": "own750",
+      "model": "native",
+      "macro": {
+        "ST_RAE": 0.6207769340116913,
+        "MAE": 0.5234272074832216,
+        "R2": 0.4704859914361904,
+        "Spearman": 0.6732446935124395,
+        "Kendall": 0.4955021966322005
+      },
+      "max_metric_delta": 0.0,
+      "prediction_sha256": "f7fcd93c9779af458664ffaeb075386d2f1a2c2b6ff510104d275ae0a3917b75"
+    },
+    {
+      "cohort": "own750",
+      "model": "tabpfn35__admet120__native_blend_global",
+      "macro": {
+        "ST_RAE": 0.6212457534994817,
+        "MAE": 0.5293401432939056,
+        "R2": 0.47036788581030364,
+        "Spearman": 0.6714407985153003,
+        "Kendall": 0.4921080496792712
+      },
+      "max_metric_delta": 0.0,
+      "prediction_sha256": "f1c4bcff264626fba5f217443f420e58a42b6cc46043e4a58e98665e380fdb63"
+    },
+    {
+      "cohort": "own750",
+      "model": "tabpfn35__admet120__native_blend_per_target",
+      "macro": {
+        "ST_RAE": 0.6194895270321533,
+        "MAE": 0.5317359202244512,
+        "R2": 0.46336221783767517,
+        "Spearman": 0.6678640538703868,
+        "Kendall": 0.4891590609589574
+      },
+      "max_metric_delta": 0.0,
+      "prediction_sha256": "bf1ebcb51f454e39127059bcf30e2d0920d10d5469184cbf704beacc67bc7039"
+    },
+    {
+      "cohort": "own750",
+      "model": "tabpfn35__admet120",
+      "macro": {
+        "ST_RAE": 0.7033324334197885,
+        "MAE": 0.5736885193512308,
+        "R2": 0.40215150727547566,
+        "Spearman": 0.6071999037522253,
+        "Kendall": 0.4361612085511074
+      },
+      "max_metric_delta": 0.0,
+      "prediction_sha256": "67a8bf743a34e65cbeff3645e906cc0943e69b97507a9db2b97b8f875b4f06c2"
+    }
+  ],
+  "no_new_fitted_model_weights": "TabPFN is in-context; pinned pretrained weights remain locallycached. All48 context predictions and preprocessing statistics recovered."
+}

@@ -1,0 +1,2878 @@
+{
+  "PC_AssayContainer": [
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 71,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the HCT-15 Colon cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the HCT-15 Colon cell line",
+          "description": [
+            "Growth inhibition of the HCT-15 human Colon tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, HCT-15 is panel number 4, cell number 15",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 73,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the KM12 Colon cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the KM12 Colon cell line",
+          "description": [
+            "Growth inhibition of the KM12 human Colon tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, KM12 is panel number 4, cell number 17",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 75,
+            "version": 2
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the KM20L2 Colon cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the KM20L2 Colon cell line",
+          "description": [
+            "Growth inhibition of the KM20L2 human Colon tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, KM20L2 is panel number 4, cell number 18",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 77,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the HCC-2998 Colon cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the HCC-2998 Colon cell line",
+          "description": [
+            "Growth inhibition of the HCC-2998 human Colon tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, HCC-2998 is panel number 4, cell number 2",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 79,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the HCT-116 Colon cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the HCT-116 Colon cell line",
+          "description": [
+            "Growth inhibition of the HCT-116 human Colon tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, HCT-116 is panel number 4, cell number 3",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 81,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the SW-620 Colon cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the SW-620 Colon cell line",
+          "description": [
+            "Growth inhibition of the SW-620 human Colon tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, SW-620 is panel number 4, cell number 9",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 83,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the MCF7 Breast cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the MCF7 Breast cell line",
+          "description": [
+            "Growth inhibition of the MCF7 human Breast tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, MCF7 is panel number 5, cell number 1",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 85,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the MDA-MB-435 Breast cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the MDA-MB-435 Melanoma cell line",
+          "description": [
+            "Growth inhibition of the MDA-MB-435 human Melanoma tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, MDA-MB-435 is panel number 5, cell number 11",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 87,
+            "version": 2
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the MDA-N Breast cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the MDA-N Breast cell line",
+          "description": [
+            "Growth inhibition of the MDA-N human Breast tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, MDA-N is panel number 5, cell number 12",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 89,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the BT-549 Breast cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the BT-549 Breast cell line",
+          "description": [
+            "Growth inhibition of the BT-549 human Breast tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, BT-549 is panel number 5, cell number 13",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 91,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the T-47D Breast cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the T-47D Breast cell line",
+          "description": [
+            "Growth inhibition of the T-47D human Breast tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, T-47D is panel number 5, cell number 14",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 93,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the NCI/ADR-RES Breast cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the NCI/ADR-RES Ovarian cell line",
+          "description": [
+            "Growth inhibition of the NCI/ADR-RES human Ovarian tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, NCI/ADR-RES is panel number 5, cell number 2",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 95,
+            "version": 13
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the MDA-MB-231/ATCC Breast cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the MDA-MB-231/ATCC Breast cell line",
+          "description": [
+            "Growth inhibition of the MDA-MB-231/ATCC human Breast tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, MDA-MB-231/ATCC is panel number 5, cell number 5",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 97,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the HS 578T Breast cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the HS 578T Breast cell line",
+          "description": [
+            "Growth inhibition of the HS 578T human Breast tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, HS 578T is panel number 5, cell number 6",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 99,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the OVCAR-3 Ovarian cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the OVCAR-3 Ovarian cell line",
+          "description": [
+            "Growth inhibition of the OVCAR-3 human Ovarian tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, OVCAR-3 is panel number 6, cell number 1",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 101,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the IGROV1 Ovarian cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the IGROV1 Ovarian cell line",
+          "description": [
+            "Growth inhibition of the IGROV1 human Ovarian tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, IGROV1 is panel number 6, cell number 10",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 103,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the SK-OV-3 Ovarian cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the SK-OV-3 Ovarian cell line",
+          "description": [
+            "Growth inhibition of the SK-OV-3 human Ovarian tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, SK-OV-3 is panel number 6, cell number 11",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 105,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the OVCAR-4 Ovarian cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the OVCAR-4 Ovarian cell line",
+          "description": [
+            "Growth inhibition of the OVCAR-4 human Ovarian tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, OVCAR-4 is panel number 6, cell number 2",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 107,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the OVCAR-5 Ovarian cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the OVCAR-5 Ovarian cell line",
+          "description": [
+            "Growth inhibition of the OVCAR-5 human Ovarian tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, OVCAR-5 is panel number 6, cell number 3",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    },
+    {
+      "assay": {
+        "descr": {
+          "aid": {
+            "id": 109,
+            "version": 12
+          },
+          "aid_source": {
+            "db": {
+              "name": "DTP/NCI",
+              "source_id": {
+                "str": "NCI human tumor cell line growth inhibition assay. Data for the OVCAR-8 Ovarian cell line"
+              }
+            }
+          },
+          "name": "NCI human tumor cell line growth inhibition assay. Data for the OVCAR-8 Ovarian cell line",
+          "description": [
+            "Growth inhibition of the OVCAR-8 human Ovarian tumor cell line is measured as a screen for anti-cancer activity. Cells are grown in 96 well plates and exposed to the test compound for 48 hours. Compounds are tested at 5 different concentrations and three endpoints are estimated from this dose response curve: GI50, concentration required for 50% inhibition of growth, TGI, the concentration requires for complete inhibition of growth, and LC50, the concentration required for 50% reduction in cell number. These estimates are done by simple linear interpolation between the concentrations that surround the approriate level. If a compound doesn't cause inhibition to the appropriate level, the endpoint is set to the highest concentration tested."
+          ],
+          "protocol": [
+            ""
+          ],
+          "comment": [
+            "These data are a subset of the data from the NCI human tumor cell line screen. Compounds are identified by the NCI NSC number. In the NCI numbering system, OVCAR-8 is panel number 6, cell number 5",
+            "Basically compounds  with LogGI50 (unit M) less than -6 were considered as active. Activity score was based on increasing values of -LogGI50."
+          ],
+          "xref": [
+            {
+              "xref": {
+                "dburl": "http://dtp.nci.nih.gov/"
+              }
+            },
+            {
+              "xref": {
+                "asurl": "http://dtp.nci.nih.gov/branches/btb/ivclsp.html"
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3335022
+              }
+            },
+            {
+              "xref": {
+                "pmid": 1462164
+              }
+            },
+            {
+              "xref": {
+                "pmid": 3051021
+              }
+            }
+          ],
+          "results": [
+            {
+              "tid": 1,
+              "name": "LogGI50_M",
+              "description": [
+                "Log of the GI50 result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 2,
+              "name": "LogGI50_u",
+              "description": [
+                "Log of the GI50 result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 3,
+              "name": "LogGI50_V",
+              "description": [
+                "Log of the GI50 result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 4,
+              "name": "IndnGI50",
+              "description": [
+                "Number of tests averaged for the GI50 value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 5,
+              "name": "StddevGI50",
+              "description": [
+                "Standard Deviation of the Log10 of the GI50 result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 6,
+              "name": "LogTGI_M",
+              "description": [
+                "Log of the TGI result, unit: M."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 7,
+              "name": "LogTGI_u",
+              "description": [
+                "Log of the TGI result, unit: ug/mL."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 8,
+              "name": "LogTGI_V",
+              "description": [
+                "Log of the TGI result, unit: Volumetric."
+              ],
+              "type": 1
+            },
+            {
+              "tid": 9,
+              "name": "IndnTGI",
+              "description": [
+                "Number of tests averaged for the TGI value for this NSC and cell line."
+              ],
+              "type": 2
+            },
+            {
+              "tid": 10,
+              "name": "StddevTGI",
+              "description": [
+                "Standard Deviation of the Log10 of the TGI result averaged across all tests for this NSC and cell line."
+              ],
+              "type": 1
+            }
+          ],
+          "revision": 1,
+          "activity_outcome_method": 2,
+          "project_category": 255,
+          "assay_group": [
+            "NCI-60_DOSERESP"
+          ]
+        }
+      }
+    }
+  ]
+}

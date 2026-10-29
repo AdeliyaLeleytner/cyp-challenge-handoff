@@ -1,0 +1,56 @@
+{
+  "scope": "Read-only recheck of current P10 inputs and inherited source-cleaned-to-model joins; no molecule/model/label rewrites. Literature methodological evidence, not a systematic review.",
+  "papers": [
+    {
+      "doi": "10.1186/s13321-020-00456-1",
+      "title": "An open source chemical structure curation pipeline using RDKit",
+      "read": "Main article Introduction, all three component descriptions, Results/discussion and Conclusion. Supplementary SDFs not downloaded or reprocessed.",
+      "evidence": [
+        "No global canonical tautomer in described ChEMBL pipeline; stereo consequences explicit.",
+        "GetParent uses salt/solvent lists and retains genuine mixtures; special handling for organometallics.",
+        "Assay data remain registered against measured form even when grouped by parent."
+      ]
+    },
+    {
+      "doi": "10.1186/s13321-018-0293-8",
+      "title": "PubChem chemical structure standardization",
+      "read": "Background, structure comparison and conclusions, valence-bond/tautomer methodological passage; figure2. Did not audit every functional transformation or supplement.",
+      "evidence": [
+        "Canonical tautomer is chosen by PubChem; registration identity is distinct from application-appropriate tautomer.",
+        "Different ionization, mesomerism, tautomerism and Kekule forms must be distinguished.",
+        "Deposited and standardized records are separate to preserve provenance."
+      ]
+    },
+    {
+      "doi": "10.1186/s13321-014-0043-5",
+      "title": "UniChem: extension of InChI-based compound mapping to salt, connectivity and stereochemistry layers",
+      "read": "Main article introduction, construction, utility, conclusion and limitations.",
+      "evidence": [
+        "First14-character block supports connectivity matches, not stereo/isotope identity.",
+        "Separate component parsing needed for salt/mixture relationships.",
+        "Returned alternative forms are annotated; connectivity linkage is not evidence of interchangeable assay values."
+      ]
+    },
+    {
+      "doi": "10.1021/ci100176x",
+      "title": "Trust, But Verify: On the Importance of Chemical Structure Curation in Cheminformatics and QSAR Modeling Research",
+      "read": "Discovery abstract only; DOI full text unavailable through attempted access; not used as full-text claim support."
+    }
+  ],
+  "correction_to_prior_answer": "Zero exact duplicates and zero multicomponent model inputs do not certify upstream source-to-model identity or a uniform whole-pool standardization procedure.",
+  "protocol_recommendation_not_applied": [
+    "Keep immutable measured entity and assay provenance, a versioned model representation, and a distinct broader split-group key.",
+    "Validate atom/bond/stereo/isotope content; preserve unknown stereo as unknown.",
+    "Normalize representation with a pinned ruleset. Identify listed counterions/solvents rather than indiscriminately taking the largest fragment; retain or separately flag mixtures/metal complexes.",
+    "Use exact stereo/isotope-aware standardized identities for label attachment. Keep first-block InChI matches as candidates for adjudication, not automatic merges.",
+    "Keep assay endpoint/conditions and relation qualifiers separate. Resolve duplicate measurements within compatible contexts; do not use arbitrary first-record selection as scientific reconciliation.",
+    "Canonical tautomer may be a tested model-view choice. Keep stereo-sensitive cases and incomplete enumeration flagged; canonical form is not a physiological-pH or bound-state prediction.",
+    "Keep equivalent forms together for validation without equating their measured activities.",
+    "If a model-input graph changes, recompute graph-derived descriptors/embeddings under the new identity; do not reuse ADMET values by old row position. Preserve original incumbent."
+  ],
+  "findings_not_proven": [
+    "These joins are not demonstrated to cause the ADMET-fusion regression.",
+    "No improvement from a stricter source join has been measured yet.",
+    "Counts of source edges are not independent experimental counts."
+  ]
+}

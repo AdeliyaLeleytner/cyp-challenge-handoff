@@ -1,0 +1,3268 @@
+{
+  "own750": {
+    "lightgbm__structure": {
+      "selected": {
+        "candidate": "lightgbm__structure__grid1",
+        "params": {
+          "num_leaves": 15,
+          "max_depth": 4
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.7382873838442696,
+            "MAE": 0.5734185416670589,
+            "R2": 0.29531039456888475,
+            "Spearman": 0.5371424869657093,
+            "Kendall": 0.38120836258738156
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.7939183478136891,
+              "MAE": 0.635242964723419,
+              "R2": 0.22095868115646844,
+              "Spearman": 0.5054850530713813,
+              "Kendall": 0.35111242932243797,
+              "n": 1262
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.6800229644942654,
+              "MAE": 0.4785626666997858,
+              "R2": 0.342141678572075,
+              "Spearman": 0.5901618336929059,
+              "Kendall": 0.4190074578424092,
+              "n": 1134
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.9252583557522043,
+              "MAE": 0.59764990089911,
+              "R2": 0.09281302005263381,
+              "Spearman": 0.32401971904824856,
+              "Kendall": 0.2192614457597692,
+              "n": 1343
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.5539498673169198,
+              "MAE": 0.5822186343459208,
+              "R2": 0.5253281984943619,
+              "Spearman": 0.7289033420503016,
+              "Kendall": 0.5354521174249098,
+              "n": 1820
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "lightgbm__structure__grid0",
+          "params": {
+            "num_leaves": 7,
+            "max_depth": 3
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7424835294197496,
+              "MAE": 0.5762276629397814,
+              "R2": 0.2883337009519078,
+              "Spearman": 0.531762250726146,
+              "Kendall": 0.37711176260135476
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7948880553008645,
+                "MAE": 0.637109060274343,
+                "R2": 0.2106932817105115,
+                "Spearman": 0.5054747720419799,
+                "Kendall": 0.3509741847023531,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6815502045728734,
+                "MAE": 0.4793831261226098,
+                "R2": 0.33994395190645144,
+                "Spearman": 0.5888995432727523,
+                "Kendall": 0.4188393411694382,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9300010739700477,
+                "MAE": 0.5984091585167918,
+                "R2": 0.08592833130463495,
+                "Spearman": 0.3126863811564363,
+                "Kendall": 0.21143813061610475,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5634947838352128,
+                "MAE": 0.5900093068453813,
+                "R2": 0.5167692388860334,
+                "Spearman": 0.7199883064334155,
+                "Kendall": 0.527195393917523,
+                "n": 1820
+              }
+            }
+          }
+        },
+        {
+          "candidate": "lightgbm__structure__grid1",
+          "params": {
+            "num_leaves": 15,
+            "max_depth": 4
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7382873838442696,
+              "MAE": 0.5734185416670589,
+              "R2": 0.29531039456888475,
+              "Spearman": 0.5371424869657093,
+              "Kendall": 0.38120836258738156
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7939183478136891,
+                "MAE": 0.635242964723419,
+                "R2": 0.22095868115646844,
+                "Spearman": 0.5054850530713813,
+                "Kendall": 0.35111242932243797,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6800229644942654,
+                "MAE": 0.4785626666997858,
+                "R2": 0.342141678572075,
+                "Spearman": 0.5901618336929059,
+                "Kendall": 0.4190074578424092,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9252583557522043,
+                "MAE": 0.59764990089911,
+                "R2": 0.09281302005263381,
+                "Spearman": 0.32401971904824856,
+                "Kendall": 0.2192614457597692,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5539498673169198,
+                "MAE": 0.5822186343459208,
+                "R2": 0.5253281984943619,
+                "Spearman": 0.7289033420503016,
+                "Kendall": 0.5354521174249098,
+                "n": 1820
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.24998628686870464,
+          "native_training_OOF_ST_RAE": 0.6417396343561931,
+          "extra_training_OOF_ST_RAE": 0.7382873838442696,
+          "blend_training_OOF_ST_RAE": 0.6298304037387884,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.4793353948066498,
+            0.17452314040925107,
+            0.1134533724089331,
+            0.18348080132843
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.7812886640197554,
+              "extra_training_OOF_ST_RAE": 0.7939183478136891,
+              "blend_training_OOF_ST_RAE": 0.7329027144832129,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5218265524750462,
+              "extra_training_OOF_ST_RAE": 0.6800229644942654,
+              "blend_training_OOF_ST_RAE": 0.5145203700682213,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8305397457188707,
+              "extra_training_OOF_ST_RAE": 0.9252583557522043,
+              "blend_training_OOF_ST_RAE": 0.8286242424240067,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43330357521110024,
+              "extra_training_OOF_ST_RAE": 0.5539498673169198,
+              "blend_training_OOF_ST_RAE": 0.4268816536702168,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.6257322451614143
+        }
+      }
+    },
+    "lightgbm__admet": {
+      "selected": {
+        "candidate": "lightgbm__admet__grid1",
+        "params": {
+          "num_leaves": 15,
+          "max_depth": 4
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.7134754609929759,
+            "MAE": 0.5606688649192577,
+            "R2": 0.3272063462544138,
+            "Spearman": 0.563023029817431,
+            "Kendall": 0.40159699613049027
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.7953562736474705,
+              "MAE": 0.6354064821155824,
+              "R2": 0.2318427597137689,
+              "Spearman": 0.4928464379506397,
+              "Kendall": 0.3426091284179411,
+              "n": 1262
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.6191931529127935,
+              "MAE": 0.4542050944514095,
+              "R2": 0.40338629764912093,
+              "Spearman": 0.6409759086462392,
+              "Kendall": 0.462689773369385,
+              "n": 1134
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.9027592029765367,
+              "MAE": 0.5865094870223001,
+              "R2": 0.11857408755428434,
+              "Spearman": 0.36978109571848505,
+              "Kendall": 0.24975004244562243,
+              "n": 1343
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.5365932144351028,
+              "MAE": 0.5665543960877389,
+              "R2": 0.555022240100481,
+              "Spearman": 0.7484886769543602,
+              "Kendall": 0.5513390402890127,
+              "n": 1820
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "lightgbm__admet__grid0",
+          "params": {
+            "num_leaves": 7,
+            "max_depth": 3
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7152889471335766,
+              "MAE": 0.5607752110555865,
+              "R2": 0.3239742423740336,
+              "Spearman": 0.5636050284929284,
+              "Kendall": 0.4019312269381547
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7938500756088561,
+                "MAE": 0.6366029356453022,
+                "R2": 0.2244093071632155,
+                "Spearman": 0.4946412417924047,
+                "Kendall": 0.34464258110246315,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6275261917833712,
+                "MAE": 0.45657187408672034,
+                "R2": 0.3971933277332239,
+                "Spearman": 0.6335132235222052,
+                "Kendall": 0.4564320972087962,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9013163515833079,
+                "MAE": 0.5850819557176062,
+                "R2": 0.11943808749990703,
+                "Spearman": 0.37906130495360624,
+                "Kendall": 0.2560397623932895,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.538463169558771,
+                "MAE": 0.564844078772717,
+                "R2": 0.5548562470997879,
+                "Spearman": 0.7472043437034974,
+                "Kendall": 0.55061046704807,
+                "n": 1820
+              }
+            }
+          }
+        },
+        {
+          "candidate": "lightgbm__admet__grid1",
+          "params": {
+            "num_leaves": 15,
+            "max_depth": 4
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7134754609929759,
+              "MAE": 0.5606688649192577,
+              "R2": 0.3272063462544138,
+              "Spearman": 0.563023029817431,
+              "Kendall": 0.40159699613049027
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7953562736474705,
+                "MAE": 0.6354064821155824,
+                "R2": 0.2318427597137689,
+                "Spearman": 0.4928464379506397,
+                "Kendall": 0.3426091284179411,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6191931529127935,
+                "MAE": 0.4542050944514095,
+                "R2": 0.40338629764912093,
+                "Spearman": 0.6409759086462392,
+                "Kendall": 0.462689773369385,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9027592029765367,
+                "MAE": 0.5865094870223001,
+                "R2": 0.11857408755428434,
+                "Spearman": 0.36978109571848505,
+                "Kendall": 0.24975004244562243,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5365932144351028,
+                "MAE": 0.5665543960877389,
+                "R2": 0.555022240100481,
+                "Spearman": 0.7484886769543602,
+                "Kendall": 0.5513390402890127,
+                "n": 1820
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.31206633754181956,
+          "native_training_OOF_ST_RAE": 0.6417396343561931,
+          "extra_training_OOF_ST_RAE": 0.7134754609929759,
+          "blend_training_OOF_ST_RAE": 0.6244482623310207,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.4886014071119503,
+            0.27727667194012734,
+            0.16083448099773368,
+            0.21339547226950106
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.7812886640197554,
+              "extra_training_OOF_ST_RAE": 0.7953562736474705,
+              "blend_training_OOF_ST_RAE": 0.7316644291037278,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5218265524750462,
+              "extra_training_OOF_ST_RAE": 0.6191931529127935,
+              "blend_training_OOF_ST_RAE": 0.5038153507014705,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8305397457188707,
+              "extra_training_OOF_ST_RAE": 0.9027592029765367,
+              "blend_training_OOF_ST_RAE": 0.826689632223722,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43330357521110024,
+              "extra_training_OOF_ST_RAE": 0.5365932144351028,
+              "blend_training_OOF_ST_RAE": 0.42394761425150307,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.6215292565701058
+        }
+      }
+    },
+    "lightgbm__augmented": {
+      "selected": {
+        "candidate": "lightgbm__augmented__grid1",
+        "params": {
+          "num_leaves": 15,
+          "max_depth": 4
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.6984457287009678,
+            "MAE": 0.5522696011632595,
+            "R2": 0.3420943652216965,
+            "Spearman": 0.5822858024556172,
+            "Kendall": 0.417200254632497
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.7747059939460528,
+              "MAE": 0.6261142430553105,
+              "R2": 0.2545200399502249,
+              "Spearman": 0.5245342542182319,
+              "Kendall": 0.36655561015519844,
+              "n": 1262
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.6062655632817703,
+              "MAE": 0.44824605691931824,
+              "R2": 0.4156908123749682,
+              "Spearman": 0.653395550491483,
+              "Kendall": 0.4736360367428328,
+              "n": 1134
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8980863387203207,
+              "MAE": 0.5852882239736615,
+              "R2": 0.12406965937602288,
+              "Spearman": 0.3897908825851833,
+              "Kendall": 0.26351685007984216,
+              "n": 1343
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.5147250188557273,
+              "MAE": 0.5494298807047477,
+              "R2": 0.5740969491855701,
+              "Spearman": 0.7614225225275706,
+              "Kendall": 0.5650925215521146,
+              "n": 1820
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "lightgbm__augmented__grid0",
+          "params": {
+            "num_leaves": 7,
+            "max_depth": 3
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7000800858244548,
+              "MAE": 0.5523119146003135,
+              "R2": 0.3407954513488694,
+              "Spearman": 0.5803694370268477,
+              "Kendall": 0.416139090965983
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7806260037330074,
+                "MAE": 0.6282738620261638,
+                "R2": 0.24328357914369558,
+                "Spearman": 0.5143298847574519,
+                "Kendall": 0.35937694406496995,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6093768006579057,
+                "MAE": 0.4491523069282934,
+                "R2": 0.41485873108455695,
+                "Spearman": 0.6525053221002924,
+                "Kendall": 0.47212921322953677,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.895515197665868,
+                "MAE": 0.583254705861385,
+                "R2": 0.12973113091301536,
+                "Spearman": 0.39383355565433553,
+                "Kendall": 0.26767374685541745,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5148023412410381,
+                "MAE": 0.548566783585412,
+                "R2": 0.5753083642542097,
+                "Spearman": 0.7608089855953112,
+                "Kendall": 0.5653764597140077,
+                "n": 1820
+              }
+            }
+          }
+        },
+        {
+          "candidate": "lightgbm__augmented__grid1",
+          "params": {
+            "num_leaves": 15,
+            "max_depth": 4
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.6984457287009678,
+              "MAE": 0.5522696011632595,
+              "R2": 0.3420943652216965,
+              "Spearman": 0.5822858024556172,
+              "Kendall": 0.417200254632497
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7747059939460528,
+                "MAE": 0.6261142430553105,
+                "R2": 0.2545200399502249,
+                "Spearman": 0.5245342542182319,
+                "Kendall": 0.36655561015519844,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6062655632817703,
+                "MAE": 0.44824605691931824,
+                "R2": 0.4156908123749682,
+                "Spearman": 0.653395550491483,
+                "Kendall": 0.4736360367428328,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8980863387203207,
+                "MAE": 0.5852882239736615,
+                "R2": 0.12406965937602288,
+                "Spearman": 0.3897908825851833,
+                "Kendall": 0.26351685007984216,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5147250188557273,
+                "MAE": 0.5494298807047477,
+                "R2": 0.5740969491855701,
+                "Spearman": 0.7614225225275706,
+                "Kendall": 0.5650925215521146,
+                "n": 1820
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.3192507775350677,
+          "native_training_OOF_ST_RAE": 0.6417396343561931,
+          "extra_training_OOF_ST_RAE": 0.6984457287009678,
+          "blend_training_OOF_ST_RAE": 0.6241183406033352,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.5283221748007197,
+            0.2808988115879258,
+            0.14671333528463398,
+            0.244147905149877
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.7812886640197554,
+              "extra_training_OOF_ST_RAE": 0.7747059939460528,
+              "blend_training_OOF_ST_RAE": 0.7277357120112101,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5218265524750462,
+              "extra_training_OOF_ST_RAE": 0.6062655632817703,
+              "blend_training_OOF_ST_RAE": 0.5040642565433507,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8305397457188707,
+              "extra_training_OOF_ST_RAE": 0.8980863387203207,
+              "blend_training_OOF_ST_RAE": 0.8274350738686949,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43330357521110024,
+              "extra_training_OOF_ST_RAE": 0.5147250188557273,
+              "blend_training_OOF_ST_RAE": 0.42282221639858847,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.6205143147054611
+        }
+      }
+    },
+    "kernel__admet": {
+      "selected": {
+        "candidate": "kernel__admet__grid0",
+        "params": {
+          "alpha": 1.0
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.7279203528078637,
+            "MAE": 0.5610164305705445,
+            "R2": 0.34453400345969787,
+            "Spearman": 0.5764468980057478,
+            "Kendall": 0.4120964845284536
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8070655187301097,
+              "MAE": 0.6376304762964591,
+              "R2": 0.2692012264929369,
+              "Spearman": 0.5081385855657673,
+              "Kendall": 0.3534525337096939,
+              "n": 1262
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.620729251021449,
+              "MAE": 0.44482603640116086,
+              "R2": 0.41314211810623536,
+              "Spearman": 0.6555746733754518,
+              "Kendall": 0.4725028058361391,
+              "n": 1134
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.951389319029245,
+              "MAE": 0.6058285537472126,
+              "R2": 0.12171576609436374,
+              "Spearman": 0.38238136210737006,
+              "Kendall": 0.2599503081052829,
+              "n": 1343
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.5324973224506513,
+              "MAE": 0.5557806558373455,
+              "R2": 0.5740769031452556,
+              "Spearman": 0.7596929709744018,
+              "Kendall": 0.5624802904626983,
+              "n": 1820
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "kernel__admet__grid0",
+          "params": {
+            "alpha": 1.0
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7279203528078637,
+              "MAE": 0.5610164305705445,
+              "R2": 0.34453400345969787,
+              "Spearman": 0.5764468980057478,
+              "Kendall": 0.4120964845284536
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8070655187301097,
+                "MAE": 0.6376304762964591,
+                "R2": 0.2692012264929369,
+                "Spearman": 0.5081385855657673,
+                "Kendall": 0.3534525337096939,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.620729251021449,
+                "MAE": 0.44482603640116086,
+                "R2": 0.41314211810623536,
+                "Spearman": 0.6555746733754518,
+                "Kendall": 0.4725028058361391,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.951389319029245,
+                "MAE": 0.6058285537472126,
+                "R2": 0.12171576609436374,
+                "Spearman": 0.38238136210737006,
+                "Kendall": 0.2599503081052829,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5324973224506513,
+                "MAE": 0.5557806558373455,
+                "R2": 0.5740769031452556,
+                "Spearman": 0.7596929709744018,
+                "Kendall": 0.5624802904626983,
+                "n": 1820
+              }
+            }
+          }
+        },
+        {
+          "candidate": "kernel__admet__grid1",
+          "params": {
+            "alpha": 10.0
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7355738769739596,
+              "MAE": 0.5759913460432537,
+              "R2": 0.3074056476088749,
+              "Spearman": 0.5606732329335674,
+              "Kendall": 0.398935815533338
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8065635849247431,
+                "MAE": 0.640440627026296,
+                "R2": 0.23069533519312757,
+                "Spearman": 0.5024061534337185,
+                "Kendall": 0.34927251910603485,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6503038493330894,
+                "MAE": 0.4663233996194126,
+                "R2": 0.3516654109645082,
+                "Spearman": 0.6311383924231962,
+                "Kendall": 0.4527179640448248,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9197271847959189,
+                "MAE": 0.592773367732013,
+                "R2": 0.1269314839291089,
+                "Spearman": 0.37141254236041416,
+                "Kendall": 0.25236003209221963,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.565700888842087,
+                "MAE": 0.6044279897952937,
+                "R2": 0.5203303603487549,
+                "Spearman": 0.7377358435169407,
+                "Kendall": 0.5413927468902728,
+                "n": 1820
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.278392166464724,
+          "native_training_OOF_ST_RAE": 0.6417396343561931,
+          "extra_training_OOF_ST_RAE": 0.7279203528078637,
+          "blend_training_OOF_ST_RAE": 0.6267336558600153,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.44924139737574204,
+            0.2954220881383004,
+            0.06682994239773295,
+            0.22912911475254746
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.7812886640197554,
+              "extra_training_OOF_ST_RAE": 0.8070655187301097,
+              "blend_training_OOF_ST_RAE": 0.7392941792032006,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5218265524750462,
+              "extra_training_OOF_ST_RAE": 0.620729251021449,
+              "blend_training_OOF_ST_RAE": 0.5014851058211466,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8305397457188707,
+              "extra_training_OOF_ST_RAE": 0.951389319029245,
+              "blend_training_OOF_ST_RAE": 0.8296315968160407,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43330357521110024,
+              "extra_training_OOF_ST_RAE": 0.5324973224506513,
+              "blend_training_OOF_ST_RAE": 0.42288680331285744,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.6233244212883114
+        }
+      }
+    },
+    "chemeleon_ridge__structure": {
+      "selected": {
+        "candidate": "chemeleon_ridge__structure__grid0",
+        "params": {
+          "alpha": 1.0
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.785260492715475,
+            "MAE": 0.5931254674828397,
+            "R2": 0.2835613960389068,
+            "Spearman": 0.5304679460308901,
+            "Kendall": 0.3768689763548376
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8880639431501766,
+              "MAE": 0.678935604681857,
+              "R2": 0.19815313750913066,
+              "Spearman": 0.44396835841851273,
+              "Kendall": 0.30450891112253375,
+              "n": 1262
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.6716957882733315,
+              "MAE": 0.4661459877493226,
+              "R2": 0.3568772014463627,
+              "Spearman": 0.6051338454144151,
+              "Kendall": 0.43300161423138767,
+              "n": 1134
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 1.0038787553450328,
+              "MAE": 0.6290158361789444,
+              "R2": 0.08556918506047806,
+              "Spearman": 0.3335904539170811,
+              "Kendall": 0.22559111804054396,
+              "n": 1343
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.5774034840933591,
+              "MAE": 0.5984044413212346,
+              "R2": 0.49364606013965573,
+              "Spearman": 0.7391791263735514,
+              "Kendall": 0.5443742620248851,
+              "n": 1820
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "chemeleon_ridge__structure__grid0",
+          "params": {
+            "alpha": 1.0
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.785260492715475,
+              "MAE": 0.5931254674828397,
+              "R2": 0.2835613960389068,
+              "Spearman": 0.5304679460308901,
+              "Kendall": 0.3768689763548376
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8880639431501766,
+                "MAE": 0.678935604681857,
+                "R2": 0.19815313750913066,
+                "Spearman": 0.44396835841851273,
+                "Kendall": 0.30450891112253375,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6716957882733315,
+                "MAE": 0.4661459877493226,
+                "R2": 0.3568772014463627,
+                "Spearman": 0.6051338454144151,
+                "Kendall": 0.43300161423138767,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 1.0038787553450328,
+                "MAE": 0.6290158361789444,
+                "R2": 0.08556918506047806,
+                "Spearman": 0.3335904539170811,
+                "Kendall": 0.22559111804054396,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5774034840933591,
+                "MAE": 0.5984044413212346,
+                "R2": 0.49364606013965573,
+                "Spearman": 0.7391791263735514,
+                "Kendall": 0.5443742620248851,
+                "n": 1820
+              }
+            }
+          }
+        },
+        {
+          "candidate": "chemeleon_ridge__structure__grid1",
+          "params": {
+            "alpha": 10.0
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.8089603161769905,
+              "MAE": 0.619021870775215,
+              "R2": 0.23433473724942788,
+              "Spearman": 0.5167672730495275,
+              "Kendall": 0.3645016149083042
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8630011200804105,
+                "MAE": 0.6718581911830135,
+                "R2": 0.184202393533754,
+                "Spearman": 0.4577179874290295,
+                "Kendall": 0.3156841035024903,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7573305482996916,
+                "MAE": 0.5061376940370138,
+                "R2": 0.2638752746019246,
+                "Spearman": 0.5855199015014039,
+                "Kendall": 0.4150617089852684,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9457486573849287,
+                "MAE": 0.6048673742669304,
+                "R2": 0.09977760767445087,
+                "Spearman": 0.32359202500257206,
+                "Kendall": 0.21885184868718185,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6697609389429309,
+                "MAE": 0.6932242236139025,
+                "R2": 0.38948367318758204,
+                "Spearman": 0.7002391782651045,
+                "Kendall": 0.5084087984582761,
+                "n": 1820
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.14048223022027628,
+          "native_training_OOF_ST_RAE": 0.6417396343561931,
+          "extra_training_OOF_ST_RAE": 0.785260492715475,
+          "blend_training_OOF_ST_RAE": 0.6372374018053735,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.22829175650597644,
+            0.19166419969679893,
+            0.0031220544596790166,
+            0.13315620323320815
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.7812886640197554,
+              "extra_training_OOF_ST_RAE": 0.8880639431501766,
+              "blend_training_OOF_ST_RAE": 0.7698848636254841,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5218265524750462,
+              "extra_training_OOF_ST_RAE": 0.6716957882733315,
+              "blend_training_OOF_ST_RAE": 0.5132773798171061,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8305397457188707,
+              "extra_training_OOF_ST_RAE": 1.0038787553450328,
+              "blend_training_OOF_ST_RAE": 0.8305337640213432,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43330357521110024,
+              "extra_training_OOF_ST_RAE": 0.5774034840933591,
+              "blend_training_OOF_ST_RAE": 0.42856537379755444,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.635565345315372
+        }
+      }
+    },
+    "chemeleon_ridge__augmented": {
+      "selected": {
+        "candidate": "chemeleon_ridge__augmented__grid1",
+        "params": {
+          "alpha": 10.0
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.7183611486578616,
+            "MAE": 0.5655589246521069,
+            "R2": 0.3402520769006734,
+            "Spearman": 0.5806000068383078,
+            "Kendall": 0.41667482971081216
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8076424726691245,
+              "MAE": 0.6398487772139164,
+              "R2": 0.25182247068387953,
+              "Spearman": 0.5126640952968318,
+              "Kendall": 0.3564612393504514,
+              "n": 1262
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.599045110400873,
+              "MAE": 0.44515709668245973,
+              "R2": 0.4259893042422874,
+              "Spearman": 0.666509194091419,
+              "Kendall": 0.48540420385080574,
+              "n": 1134
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.919797607898298,
+              "MAE": 0.5927642630617258,
+              "R2": 0.1384016568441231,
+              "Spearman": 0.38663921585537,
+              "Kendall": 0.26324164708989484,
+              "n": 1343
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.5469594036631513,
+              "MAE": 0.5844655616503256,
+              "R2": 0.5447948758324035,
+              "Spearman": 0.7565875221096106,
+              "Kendall": 0.5615922285520966,
+              "n": 1820
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "chemeleon_ridge__augmented__grid0",
+          "params": {
+            "alpha": 1.0
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7381545042598048,
+              "MAE": 0.5636518758274194,
+              "R2": 0.34761527616439447,
+              "Spearman": 0.5822935510850149,
+              "Kendall": 0.41882230743894916
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8514135239942531,
+                "MAE": 0.655284528179727,
+                "R2": 0.24144227460551593,
+                "Spearman": 0.4967423391128829,
+                "Kendall": 0.3446777706421212,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5964588781326544,
+                "MAE": 0.431670383772427,
+                "R2": 0.45672788291675903,
+                "Spearman": 0.6772107625364543,
+                "Kendall": 0.49240595195287745,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9814943588685301,
+                "MAE": 0.6179665480602867,
+                "R2": 0.11567135482977853,
+                "Spearman": 0.37988865772119557,
+                "Kendall": 0.2589160775140293,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5232512560437816,
+                "MAE": 0.5496860432972369,
+                "R2": 0.5766195923055244,
+                "Spearman": 0.7753324449695269,
+                "Kendall": 0.5792894296467688,
+                "n": 1820
+              }
+            }
+          }
+        },
+        {
+          "candidate": "chemeleon_ridge__augmented__grid1",
+          "params": {
+            "alpha": 10.0
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7183611486578616,
+              "MAE": 0.5655589246521069,
+              "R2": 0.3402520769006734,
+              "Spearman": 0.5806000068383078,
+              "Kendall": 0.41667482971081216
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8076424726691245,
+                "MAE": 0.6398487772139164,
+                "R2": 0.25182247068387953,
+                "Spearman": 0.5126640952968318,
+                "Kendall": 0.3564612393504514,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.599045110400873,
+                "MAE": 0.44515709668245973,
+                "R2": 0.4259893042422874,
+                "Spearman": 0.666509194091419,
+                "Kendall": 0.48540420385080574,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.919797607898298,
+                "MAE": 0.5927642630617258,
+                "R2": 0.1384016568441231,
+                "Spearman": 0.38663921585537,
+                "Kendall": 0.26324164708989484,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5469594036631513,
+                "MAE": 0.5844655616503256,
+                "R2": 0.5447948758324035,
+                "Spearman": 0.7565875221096106,
+                "Kendall": 0.5615922285520966,
+                "n": 1820
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.2766937820712579,
+          "native_training_OOF_ST_RAE": 0.6417396343561931,
+          "extra_training_OOF_ST_RAE": 0.7183611486578616,
+          "blend_training_OOF_ST_RAE": 0.6274443240043677,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.4418510671834785,
+            0.3076979941901709,
+            0.12183041325028561,
+            0.17532922138743626
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.7812886640197554,
+              "extra_training_OOF_ST_RAE": 0.8076424726691245,
+              "blend_training_OOF_ST_RAE": 0.7420338731485006,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5218265524750462,
+              "extra_training_OOF_ST_RAE": 0.599045110400873,
+              "blend_training_OOF_ST_RAE": 0.5004645590198327,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8305397457188707,
+              "extra_training_OOF_ST_RAE": 0.919797607898298,
+              "blend_training_OOF_ST_RAE": 0.8283439580129283,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43330357521110024,
+              "extra_training_OOF_ST_RAE": 0.5469594036631513,
+              "blend_training_OOF_ST_RAE": 0.4267454499273223,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.6243969600271461
+        }
+      }
+    },
+    "lightgbm__cyp_only": {
+      "selected": {
+        "candidate": "lightgbm__cyp_only__grid0",
+        "params": {
+          "num_leaves": 7,
+          "max_depth": 3
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.8419997831117776,
+            "MAE": 0.6312803817551909,
+            "R2": 0.18540030235351906,
+            "Spearman": 0.4181752706614022,
+            "Kendall": 0.28932993982550276
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8742793274567352,
+              "MAE": 0.67776934980804,
+              "R2": 0.12686045798805035,
+              "Spearman": 0.3557797659137969,
+              "Kendall": 0.24406082260576029,
+              "n": 1262
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8079510059419245,
+              "MAE": 0.5263602594992994,
+              "R2": 0.22312507209129695,
+              "Spearman": 0.45738301382627966,
+              "Kendall": 0.31879746766478156,
+              "n": 1134
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.9454927299898869,
+              "MAE": 0.6035406778153339,
+              "R2": 0.07041046753181313,
+              "Spearman": 0.28753787211653137,
+              "Kendall": 0.19414128344465367,
+              "n": 1343
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.7402760690585637,
+              "MAE": 0.7174512398980897,
+              "R2": 0.32120521180291584,
+              "Spearman": 0.5720004307890008,
+              "Kendall": 0.40032018558681554,
+              "n": 1820
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "lightgbm__cyp_only__grid0",
+          "params": {
+            "num_leaves": 7,
+            "max_depth": 3
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.8419997831117776,
+              "MAE": 0.6312803817551909,
+              "R2": 0.18540030235351906,
+              "Spearman": 0.4181752706614022,
+              "Kendall": 0.28932993982550276
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8742793274567352,
+                "MAE": 0.67776934980804,
+                "R2": 0.12686045798805035,
+                "Spearman": 0.3557797659137969,
+                "Kendall": 0.24406082260576029,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8079510059419245,
+                "MAE": 0.5263602594992994,
+                "R2": 0.22312507209129695,
+                "Spearman": 0.45738301382627966,
+                "Kendall": 0.31879746766478156,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9454927299898869,
+                "MAE": 0.6035406778153339,
+                "R2": 0.07041046753181313,
+                "Spearman": 0.28753787211653137,
+                "Kendall": 0.19414128344465367,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7402760690585637,
+                "MAE": 0.7174512398980897,
+                "R2": 0.32120521180291584,
+                "Spearman": 0.5720004307890008,
+                "Kendall": 0.40032018558681554,
+                "n": 1820
+              }
+            }
+          }
+        },
+        {
+          "candidate": "lightgbm__cyp_only__grid1",
+          "params": {
+            "num_leaves": 15,
+            "max_depth": 4
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.8462496934620587,
+              "MAE": 0.6326215219382574,
+              "R2": 0.18313253147425618,
+              "Spearman": 0.4127888883831344,
+              "Kendall": 0.2856833822528795
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8775936278906129,
+                "MAE": 0.6766323836332214,
+                "R2": 0.12649974523836516,
+                "Spearman": 0.34606385878718343,
+                "Kendall": 0.2374527297657005,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8155146563234792,
+                "MAE": 0.5289930910370164,
+                "R2": 0.22050470855801352,
+                "Spearman": 0.4557437487166754,
+                "Kendall": 0.3177856543552336,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9440906433272677,
+                "MAE": 0.6037461892721168,
+                "R2": 0.0724796902123559,
+                "Spearman": 0.2823520405445658,
+                "Kendall": 0.1910075203655761,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7477998463068749,
+                "MAE": 0.7211144238106749,
+                "R2": 0.31304598188829014,
+                "Spearman": 0.5669959054841129,
+                "Kendall": 0.39648762452500763,
+                "n": 1820
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.15950215809690405,
+          "native_training_OOF_ST_RAE": 0.6417396343561931,
+          "extra_training_OOF_ST_RAE": 0.8419997831117776,
+          "blend_training_OOF_ST_RAE": 0.6339572301083112,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.34653300371572415,
+            0.1152339449772828,
+            0.14313147318714128,
+            0.06156386840467459
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.7812886640197554,
+              "extra_training_OOF_ST_RAE": 0.8742793274567352,
+              "blend_training_OOF_ST_RAE": 0.7488635977973368,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5218265524750462,
+              "extra_training_OOF_ST_RAE": 0.8079510059419245,
+              "blend_training_OOF_ST_RAE": 0.5155950234916624,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8305397457188707,
+              "extra_training_OOF_ST_RAE": 0.9454927299898869,
+              "blend_training_OOF_ST_RAE": 0.8260566063439412,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43330357521110024,
+              "extra_training_OOF_ST_RAE": 0.7402760690585637,
+              "blend_training_OOF_ST_RAE": 0.4317147872121541,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.6305575037112736
+        }
+      }
+    },
+    "lightgbm__non_cyp": {
+      "selected": {
+        "candidate": "lightgbm__non_cyp__grid0",
+        "params": {
+          "num_leaves": 7,
+          "max_depth": 3
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.7416762522981909,
+            "MAE": 0.5734462497594042,
+            "R2": 0.2941515348200253,
+            "Spearman": 0.5349843223890699,
+            "Kendall": 0.3791329901953693
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8090187395135308,
+              "MAE": 0.6452096204403635,
+              "R2": 0.19728024103789166,
+              "Spearman": 0.47379397696519837,
+              "Kendall": 0.32746003159517956,
+              "n": 1262
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.6541462293070446,
+              "MAE": 0.4636928699440674,
+              "R2": 0.3652791358393753,
+              "Spearman": 0.6073699617431707,
+              "Kendall": 0.43657565016788313,
+              "n": 1134
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.9253138097596917,
+              "MAE": 0.5957476293056081,
+              "R2": 0.09443030351003545,
+              "Spearman": 0.34077616100865066,
+              "Kendall": 0.22807336822936838,
+              "n": 1343
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.5782262306124965,
+              "MAE": 0.5891348793475777,
+              "R2": 0.519616458892799,
+              "Spearman": 0.7179971898392598,
+              "Kendall": 0.5244229107890459,
+              "n": 1820
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "lightgbm__non_cyp__grid0",
+          "params": {
+            "num_leaves": 7,
+            "max_depth": 3
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7416762522981909,
+              "MAE": 0.5734462497594042,
+              "R2": 0.2941515348200253,
+              "Spearman": 0.5349843223890699,
+              "Kendall": 0.3791329901953693
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8090187395135308,
+                "MAE": 0.6452096204403635,
+                "R2": 0.19728024103789166,
+                "Spearman": 0.47379397696519837,
+                "Kendall": 0.32746003159517956,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6541462293070446,
+                "MAE": 0.4636928699440674,
+                "R2": 0.3652791358393753,
+                "Spearman": 0.6073699617431707,
+                "Kendall": 0.43657565016788313,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9253138097596917,
+                "MAE": 0.5957476293056081,
+                "R2": 0.09443030351003545,
+                "Spearman": 0.34077616100865066,
+                "Kendall": 0.22807336822936838,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5782262306124965,
+                "MAE": 0.5891348793475777,
+                "R2": 0.519616458892799,
+                "Spearman": 0.7179971898392598,
+                "Kendall": 0.5244229107890459,
+                "n": 1820
+              }
+            }
+          }
+        },
+        {
+          "candidate": "lightgbm__non_cyp__grid1",
+          "params": {
+            "num_leaves": 15,
+            "max_depth": 4
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7426327867273321,
+              "MAE": 0.5747017304528884,
+              "R2": 0.2948169227417228,
+              "Spearman": 0.532079961955084,
+              "Kendall": 0.3766644076694602
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8159614439564452,
+                "MAE": 0.6482093140612307,
+                "R2": 0.19911752541945937,
+                "Spearman": 0.4664924519765848,
+                "Kendall": 0.32192521971468824,
+                "n": 1262
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6552810971723007,
+                "MAE": 0.4650861900416105,
+                "R2": 0.3656918259664136,
+                "Spearman": 0.6098808990473162,
+                "Kendall": 0.4365040449182844,
+                "n": 1134
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9281189295911341,
+                "MAE": 0.5976322385612978,
+                "R2": 0.09356381504216293,
+                "Spearman": 0.33001798410322264,
+                "Kendall": 0.22052747979532888,
+                "n": 1343
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5711696761894487,
+                "MAE": 0.5878791791474148,
+                "R2": 0.5208945245388551,
+                "Spearman": 0.7219285126932122,
+                "Kendall": 0.5277008862495393,
+                "n": 1820
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.26611793506145326,
+          "native_training_OOF_ST_RAE": 0.6417396343561931,
+          "extra_training_OOF_ST_RAE": 0.7416762522981909,
+          "blend_training_OOF_ST_RAE": 0.6268265786232985,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.4469329783839117,
+            0.26611793506145326,
+            0.12687383761783275,
+            0.16984328148906183
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.7812886640197554,
+              "extra_training_OOF_ST_RAE": 0.8090187395135308,
+              "blend_training_OOF_ST_RAE": 0.7318408605069094,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5218265524750462,
+              "extra_training_OOF_ST_RAE": 0.6541462293070446,
+              "blend_training_OOF_ST_RAE": 0.5068001965512562,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8305397457188707,
+              "extra_training_OOF_ST_RAE": 0.9253138097596917,
+              "blend_training_OOF_ST_RAE": 0.8278147526912079,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43330357521110024,
+              "extra_training_OOF_ST_RAE": 0.5782262306124965,
+              "blend_training_OOF_ST_RAE": 0.4257223234692469,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.6230445333046551
+        }
+      }
+    }
+  },
+  "briford529": {
+    "lightgbm__structure": {
+      "selected": {
+        "candidate": "lightgbm__structure__grid1",
+        "params": {
+          "num_leaves": 15,
+          "max_depth": 4
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.7469523686973643,
+            "MAE": 0.582507248806965,
+            "R2": 0.2938213549471469,
+            "Spearman": 0.5373221443638616,
+            "Kendall": 0.3812662000547262
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8142629804721503,
+              "MAE": 0.6638206880426286,
+              "R2": 0.21716848540045564,
+              "Spearman": 0.49225646141233986,
+              "Kendall": 0.3415392486011191,
+              "n": 1251
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.7134471933210861,
+              "MAE": 0.4982170051224445,
+              "R2": 0.31861993074841566,
+              "Spearman": 0.5688165152915369,
+              "Kendall": 0.402647522805734,
+              "n": 1146
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.9104088246017595,
+              "MAE": 0.589293145466749,
+              "R2": 0.10388772554718795,
+              "Spearman": 0.3515705642409501,
+              "Kendall": 0.2372113096680537,
+              "n": 1317
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.549690476394461,
+              "MAE": 0.5786981565960381,
+              "R2": 0.5356092780925283,
+              "Spearman": 0.7366450365106195,
+              "Kendall": 0.543666719143998,
+              "n": 2065
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "lightgbm__structure__grid0",
+          "params": {
+            "num_leaves": 7,
+            "max_depth": 3
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7521824321616358,
+              "MAE": 0.5849542361977925,
+              "R2": 0.2885690809979021,
+              "Spearman": 0.5322037025167793,
+              "Kendall": 0.37694311082550036
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8170131676488895,
+                "MAE": 0.6662019210769774,
+                "R2": 0.20793887113716625,
+                "Spearman": 0.4851443982194437,
+                "Kendall": 0.33614452438049564,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7164274894511086,
+                "MAE": 0.49812317161956043,
+                "R2": 0.3160794053737841,
+                "Spearman": 0.5657223588292709,
+                "Kendall": 0.3998826371582951,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.912159901789854,
+                "MAE": 0.5887183311234988,
+                "R2": 0.10380015609243076,
+                "Spearman": 0.3509132467274201,
+                "Kendall": 0.23705898779809506,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5631291697566914,
+                "MAE": 0.5867735209711334,
+                "R2": 0.5264578913882274,
+                "Spearman": 0.7270348062909825,
+                "Kendall": 0.5346862939651155,
+                "n": 2065
+              }
+            }
+          }
+        },
+        {
+          "candidate": "lightgbm__structure__grid1",
+          "params": {
+            "num_leaves": 15,
+            "max_depth": 4
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7469523686973643,
+              "MAE": 0.582507248806965,
+              "R2": 0.2938213549471469,
+              "Spearman": 0.5373221443638616,
+              "Kendall": 0.3812662000547262
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8142629804721503,
+                "MAE": 0.6638206880426286,
+                "R2": 0.21716848540045564,
+                "Spearman": 0.49225646141233986,
+                "Kendall": 0.3415392486011191,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7134471933210861,
+                "MAE": 0.4982170051224445,
+                "R2": 0.31861993074841566,
+                "Spearman": 0.5688165152915369,
+                "Kendall": 0.402647522805734,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9104088246017595,
+                "MAE": 0.589293145466749,
+                "R2": 0.10388772554718795,
+                "Spearman": 0.3515705642409501,
+                "Kendall": 0.2372113096680537,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.549690476394461,
+                "MAE": 0.5786981565960381,
+                "R2": 0.5356092780925283,
+                "Spearman": 0.7366450365106195,
+                "Kendall": 0.543666719143998,
+                "n": 2065
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.2406628462099977,
+          "native_training_OOF_ST_RAE": 0.6401310236422734,
+          "extra_training_OOF_ST_RAE": 0.7469523686973643,
+          "blend_training_OOF_ST_RAE": 0.628451272542043,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.38978248084636646,
+            0.18026771462539068,
+            0.10617611214131563,
+            0.23931661491419434
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.765769017977351,
+              "extra_training_OOF_ST_RAE": 0.8142629804721503,
+              "blend_training_OOF_ST_RAE": 0.7338279139583452,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5439398851193842,
+              "extra_training_OOF_ST_RAE": 0.7134471933210861,
+              "blend_training_OOF_ST_RAE": 0.5334099279118825,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8114610005237017,
+              "extra_training_OOF_ST_RAE": 0.9104088246017595,
+              "blend_training_OOF_ST_RAE": 0.8100963381047764,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43935419094865613,
+              "extra_training_OOF_ST_RAE": 0.549690476394461,
+              "blend_training_OOF_ST_RAE": 0.42803039860164854,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.6263411446441631
+        }
+      }
+    },
+    "lightgbm__admet": {
+      "selected": {
+        "candidate": "lightgbm__admet__grid1",
+        "params": {
+          "num_leaves": 15,
+          "max_depth": 4
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.7125303914538046,
+            "MAE": 0.5641720445457962,
+            "R2": 0.3273185485366322,
+            "Spearman": 0.5629563901578529,
+            "Kendall": 0.4025887015458949
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.7976277149773238,
+              "MAE": 0.6553734656396168,
+              "R2": 0.23459160915718136,
+              "Spearman": 0.49871400923989245,
+              "Kendall": 0.34868105515587533,
+              "n": 1251
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.6388810234500385,
+              "MAE": 0.46823217591203975,
+              "R2": 0.38699504358354164,
+              "Spearman": 0.6257181334799377,
+              "Kendall": 0.4503364655494334,
+              "n": 1146
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8865447872737381,
+              "MAE": 0.5759446467153094,
+              "R2": 0.12320191751353571,
+              "Spearman": 0.36951481176791817,
+              "Kendall": 0.25042638584052823,
+              "n": 1317
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.5270680401141179,
+              "MAE": 0.5571378899162185,
+              "R2": 0.5644856238922702,
+              "Spearman": 0.7578786061436636,
+              "Kendall": 0.5609108996377424,
+              "n": 2065
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "lightgbm__admet__grid0",
+          "params": {
+            "num_leaves": 7,
+            "max_depth": 3
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7138824203800728,
+              "MAE": 0.5649322481455139,
+              "R2": 0.326790469119507,
+              "Spearman": 0.5649870132129842,
+              "Kendall": 0.4037092750113034
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.79885243159946,
+                "MAE": 0.657829166712153,
+                "R2": 0.2294237400373249,
+                "Spearman": 0.49336128898797904,
+                "Kendall": 0.3445192645883293,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.643041094343787,
+                "MAE": 0.4704038308028041,
+                "R2": 0.3869317088415064,
+                "Spearman": 0.6201753553859043,
+                "Kendall": 0.4461114032480548,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8815717879479197,
+                "MAE": 0.5733352733271622,
+                "R2": 0.12775713239899744,
+                "Spearman": 0.3920158555530593,
+                "Kendall": 0.2664732640499616,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5320643676291242,
+                "MAE": 0.5581607217399367,
+                "R2": 0.5630492952001992,
+                "Spearman": 0.7543955529249937,
+                "Kendall": 0.5577331681588678,
+                "n": 2065
+              }
+            }
+          }
+        },
+        {
+          "candidate": "lightgbm__admet__grid1",
+          "params": {
+            "num_leaves": 15,
+            "max_depth": 4
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7125303914538046,
+              "MAE": 0.5641720445457962,
+              "R2": 0.3273185485366322,
+              "Spearman": 0.5629563901578529,
+              "Kendall": 0.4025887015458949
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7976277149773238,
+                "MAE": 0.6553734656396168,
+                "R2": 0.23459160915718136,
+                "Spearman": 0.49871400923989245,
+                "Kendall": 0.34868105515587533,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6388810234500385,
+                "MAE": 0.46823217591203975,
+                "R2": 0.38699504358354164,
+                "Spearman": 0.6257181334799377,
+                "Kendall": 0.4503364655494334,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8865447872737381,
+                "MAE": 0.5759446467153094,
+                "R2": 0.12320191751353571,
+                "Spearman": 0.36951481176791817,
+                "Kendall": 0.25042638584052823,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5270680401141179,
+                "MAE": 0.5571378899162185,
+                "R2": 0.5644856238922702,
+                "Spearman": 0.7578786061436636,
+                "Kendall": 0.5609108996377424,
+                "n": 2065
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.31666631187740635,
+          "native_training_OOF_ST_RAE": 0.6401310236422734,
+          "extra_training_OOF_ST_RAE": 0.7125303914538046,
+          "blend_training_OOF_ST_RAE": 0.6199967916744282,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.4230813989198194,
+            0.3043317579302636,
+            0.17405609917200543,
+            0.2969234108458293
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.765769017977351,
+              "extra_training_OOF_ST_RAE": 0.7976277149773238,
+              "blend_training_OOF_ST_RAE": 0.7274155496665022,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5439398851193842,
+              "extra_training_OOF_ST_RAE": 0.6388810234500385,
+              "blend_training_OOF_ST_RAE": 0.5188063677881392,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8114610005237017,
+              "extra_training_OOF_ST_RAE": 0.8865447872737381,
+              "blend_training_OOF_ST_RAE": 0.8077869273615903,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43935419094865613,
+              "extra_training_OOF_ST_RAE": 0.5270680401141179,
+              "blend_training_OOF_ST_RAE": 0.4206418809643971,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.6186626814451572
+        }
+      }
+    },
+    "lightgbm__augmented": {
+      "selected": {
+        "candidate": "lightgbm__augmented__grid1",
+        "params": {
+          "num_leaves": 15,
+          "max_depth": 4
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.6996989374945721,
+            "MAE": 0.5568265022554146,
+            "R2": 0.34424266525559444,
+            "Spearman": 0.5816490572351964,
+            "Kendall": 0.41742216623674155
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.7902484754529473,
+              "MAE": 0.6517646429375065,
+              "R2": 0.2462256806028248,
+              "Spearman": 0.5131854766665901,
+              "Kendall": 0.3584217426059153,
+              "n": 1251
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.6278356997839314,
+              "MAE": 0.4630664142088081,
+              "R2": 0.39898101472538106,
+              "Spearman": 0.638229425146984,
+              "Kendall": 0.46027115389012097,
+              "n": 1146
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8784383511270435,
+              "MAE": 0.573574226709181,
+              "R2": 0.14072034496223929,
+              "Spearman": 0.40046431904323115,
+              "Kendall": 0.27265614722601106,
+              "n": 1317
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.5022732236143663,
+              "MAE": 0.5389007251661633,
+              "R2": 0.5910436207319327,
+              "Spearman": 0.7747170080839805,
+              "Kendall": 0.5783396212249189,
+              "n": 2065
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "lightgbm__augmented__grid0",
+          "params": {
+            "num_leaves": 7,
+            "max_depth": 3
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7012156422306173,
+              "MAE": 0.5580360505607047,
+              "R2": 0.3425632029531295,
+              "Spearman": 0.5830540970452671,
+              "Kendall": 0.41790357363222175
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.788408300399292,
+                "MAE": 0.6525613029077241,
+                "R2": 0.24359828065425015,
+                "Spearman": 0.5150326522168848,
+                "Kendall": 0.36069064748201435,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.632267437994143,
+                "MAE": 0.46675581782299286,
+                "R2": 0.39811623683512487,
+                "Spearman": 0.6348041693701322,
+                "Kendall": 0.4564515268600868,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8742187432354941,
+                "MAE": 0.5719626266036121,
+                "R2": 0.14087414564978606,
+                "Spearman": 0.4136171780321689,
+                "Kendall": 0.2816039031325223,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5099680872935399,
+                "MAE": 0.5408644549084898,
+                "R2": 0.5876641486733569,
+                "Spearman": 0.7687623885618826,
+                "Kendall": 0.5728682170542636,
+                "n": 2065
+              }
+            }
+          }
+        },
+        {
+          "candidate": "lightgbm__augmented__grid1",
+          "params": {
+            "num_leaves": 15,
+            "max_depth": 4
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.6996989374945721,
+              "MAE": 0.5568265022554146,
+              "R2": 0.34424266525559444,
+              "Spearman": 0.5816490572351964,
+              "Kendall": 0.41742216623674155
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7902484754529473,
+                "MAE": 0.6517646429375065,
+                "R2": 0.2462256806028248,
+                "Spearman": 0.5131854766665901,
+                "Kendall": 0.3584217426059153,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6278356997839314,
+                "MAE": 0.4630664142088081,
+                "R2": 0.39898101472538106,
+                "Spearman": 0.638229425146984,
+                "Kendall": 0.46027115389012097,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8784383511270435,
+                "MAE": 0.573574226709181,
+                "R2": 0.14072034496223929,
+                "Spearman": 0.40046431904323115,
+                "Kendall": 0.27265614722601106,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5022732236143663,
+                "MAE": 0.5389007251661633,
+                "R2": 0.5910436207319327,
+                "Spearman": 0.7747170080839805,
+                "Kendall": 0.5783396212249189,
+                "n": 2065
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.33904227638002427,
+          "native_training_OOF_ST_RAE": 0.6401310236422734,
+          "extra_training_OOF_ST_RAE": 0.6996989374945721,
+          "blend_training_OOF_ST_RAE": 0.620498961030462,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.44083151211404925,
+            0.32468861645890895,
+            0.16602732113175106,
+            0.32095267247409676
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.765769017977351,
+              "extra_training_OOF_ST_RAE": 0.7902484754529473,
+              "blend_training_OOF_ST_RAE": 0.7287536551319094,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5439398851193842,
+              "extra_training_OOF_ST_RAE": 0.6278356997839314,
+              "blend_training_OOF_ST_RAE": 0.5194293227620704,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8114610005237017,
+              "extra_training_OOF_ST_RAE": 0.8784383511270435,
+              "blend_training_OOF_ST_RAE": 0.8086681257954521,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43935419094865613,
+              "extra_training_OOF_ST_RAE": 0.5022732236143663,
+              "blend_training_OOF_ST_RAE": 0.41994822301520357,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.6191998316761589
+        }
+      }
+    },
+    "kernel__admet": {
+      "selected": {
+        "candidate": "kernel__admet__grid0",
+        "params": {
+          "alpha": 1.0
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.7296996109597016,
+            "MAE": 0.5673730535152441,
+            "R2": 0.3479639666603785,
+            "Spearman": 0.5722047326190675,
+            "Kendall": 0.40947452783134664
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8174583293982354,
+              "MAE": 0.6607779839342516,
+              "R2": 0.2675268447012068,
+              "Spearman": 0.49967804721079373,
+              "Kendall": 0.34711047162270187,
+              "n": 1251
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.6371588659055594,
+              "MAE": 0.46116635908723264,
+              "R2": 0.4048663183714667,
+              "Spearman": 0.6385786074737178,
+              "Kendall": 0.45931396084348836,
+              "n": 1146
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.938246420121709,
+              "MAE": 0.5970635088621227,
+              "R2": 0.1335278613858798,
+              "Spearman": 0.38408295715060137,
+              "Kendall": 0.2619774609790604,
+              "n": 1317
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.5259348284133027,
+              "MAE": 0.5504843621773696,
+              "R2": 0.5859348421829607,
+              "Spearman": 0.7664793186411568,
+              "Kendall": 0.5694962178801359,
+              "n": 2065
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "kernel__admet__grid0",
+          "params": {
+            "alpha": 1.0
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7296996109597016,
+              "MAE": 0.5673730535152441,
+              "R2": 0.3479639666603785,
+              "Spearman": 0.5722047326190675,
+              "Kendall": 0.40947452783134664
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8174583293982354,
+                "MAE": 0.6607779839342516,
+                "R2": 0.2675268447012068,
+                "Spearman": 0.49967804721079373,
+                "Kendall": 0.34711047162270187,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6371588659055594,
+                "MAE": 0.46116635908723264,
+                "R2": 0.4048663183714667,
+                "Spearman": 0.6385786074737178,
+                "Kendall": 0.45931396084348836,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.938246420121709,
+                "MAE": 0.5970635088621227,
+                "R2": 0.1335278613858798,
+                "Spearman": 0.38408295715060137,
+                "Kendall": 0.2619774609790604,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5259348284133027,
+                "MAE": 0.5504843621773696,
+                "R2": 0.5859348421829607,
+                "Spearman": 0.7664793186411568,
+                "Kendall": 0.5694962178801359,
+                "n": 2065
+              }
+            }
+          }
+        },
+        {
+          "candidate": "kernel__admet__grid1",
+          "params": {
+            "alpha": 10.0
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7390188739930001,
+              "MAE": 0.5818641499374959,
+              "R2": 0.3068536368243847,
+              "Spearman": 0.5572855661258495,
+              "Kendall": 0.3964939004679159
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8142858599386381,
+                "MAE": 0.6626008448516815,
+                "R2": 0.2290756416774541,
+                "Spearman": 0.4983065345806423,
+                "Kendall": 0.34646842525979216,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6685957079479251,
+                "MAE": 0.4811857950968184,
+                "R2": 0.3427381956420681,
+                "Spearman": 0.6181937745842109,
+                "Kendall": 0.44177355068321944,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9137701128083737,
+                "MAE": 0.5884141741113459,
+                "R2": 0.12232800655782139,
+                "Spearman": 0.36866414487013865,
+                "Kendall": 0.25021405838543437,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5594238152770632,
+                "MAE": 0.5952557856901379,
+                "R2": 0.5332727034201954,
+                "Spearman": 0.743977810468406,
+                "Kendall": 0.5475195675432175,
+                "n": 2065
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.2653248928101616,
+          "native_training_OOF_ST_RAE": 0.6401310236422734,
+          "extra_training_OOF_ST_RAE": 0.7296996109597016,
+          "blend_training_OOF_ST_RAE": 0.6252167537550534,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.3510923658048309,
+            0.3035917592560468,
+            0.05037458748038956,
+            0.29167599537875644
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.765769017977351,
+              "extra_training_OOF_ST_RAE": 0.8174583293982354,
+              "blend_training_OOF_ST_RAE": 0.7424451438970984,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5439398851193842,
+              "extra_training_OOF_ST_RAE": 0.6371588659055594,
+              "blend_training_OOF_ST_RAE": 0.5176020739045625,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8114610005237017,
+              "extra_training_OOF_ST_RAE": 0.938246420121709,
+              "blend_training_OOF_ST_RAE": 0.8109537584651659,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43935419094865613,
+              "extra_training_OOF_ST_RAE": 0.5259348284133027,
+              "blend_training_OOF_ST_RAE": 0.42153418273620563,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.6231337897507582
+        }
+      }
+    },
+    "chemeleon_ridge__structure": {
+      "selected": {
+        "candidate": "chemeleon_ridge__structure__grid0",
+        "params": {
+          "alpha": 1.0
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.7889714750187422,
+            "MAE": 0.5968765310509704,
+            "R2": 0.283400907593291,
+            "Spearman": 0.5260063504285143,
+            "Kendall": 0.3742519034916433
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8873059813076217,
+              "MAE": 0.6954289906397954,
+              "R2": 0.21939786431409036,
+              "Spearman": 0.4561281578537219,
+              "Kendall": 0.3134057959430191,
+              "n": 1251
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.7228397681733393,
+              "MAE": 0.49112171563768964,
+              "R2": 0.30902484622608695,
+              "Spearman": 0.5817429348732704,
+              "Kendall": 0.4137009686244923,
+              "n": 1146
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.9976905941960595,
+              "MAE": 0.6253588126136073,
+              "R2": 0.0699981730245256,
+              "Spearman": 0.3091149825138212,
+              "Kendall": 0.20807398227065751,
+              "n": 1317
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.5480495563979483,
+              "MAE": 0.5755966053127891,
+              "R2": 0.5351827468084611,
+              "Spearman": 0.7570393264732438,
+              "Kendall": 0.5618268671284044,
+              "n": 2065
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "chemeleon_ridge__structure__grid0",
+          "params": {
+            "alpha": 1.0
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7889714750187422,
+              "MAE": 0.5968765310509704,
+              "R2": 0.283400907593291,
+              "Spearman": 0.5260063504285143,
+              "Kendall": 0.3742519034916433
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8873059813076217,
+                "MAE": 0.6954289906397954,
+                "R2": 0.21939786431409036,
+                "Spearman": 0.4561281578537219,
+                "Kendall": 0.3134057959430191,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7228397681733393,
+                "MAE": 0.49112171563768964,
+                "R2": 0.30902484622608695,
+                "Spearman": 0.5817429348732704,
+                "Kendall": 0.4137009686244923,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9976905941960595,
+                "MAE": 0.6253588126136073,
+                "R2": 0.0699981730245256,
+                "Spearman": 0.3091149825138212,
+                "Kendall": 0.20807398227065751,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5480495563979483,
+                "MAE": 0.5755966053127891,
+                "R2": 0.5351827468084611,
+                "Spearman": 0.7570393264732438,
+                "Kendall": 0.5618268671284044,
+                "n": 2065
+              }
+            }
+          }
+        },
+        {
+          "candidate": "chemeleon_ridge__structure__grid1",
+          "params": {
+            "alpha": 10.0
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.8115089108696882,
+              "MAE": 0.6240207754157976,
+              "R2": 0.23290082902430834,
+              "Spearman": 0.510910855753357,
+              "Kendall": 0.3607040791819287
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.864729397456531,
+                "MAE": 0.6927474139380538,
+                "R2": 0.18696666813135032,
+                "Spearman": 0.45562355789489817,
+                "Kendall": 0.31415379696243007,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7907078059858977,
+                "MAE": 0.5270328517920218,
+                "R2": 0.23890831434134163,
+                "Spearman": 0.5557277711752682,
+                "Kendall": 0.3917434478764185,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9416521749766901,
+                "MAE": 0.6010649144196989,
+                "R2": 0.09310845089480124,
+                "Spearman": 0.31644560687784307,
+                "Kendall": 0.21368578172613184,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6489462650596342,
+                "MAE": 0.6752379215134159,
+                "R2": 0.41261988272974015,
+                "Spearman": 0.7158464870654188,
+                "Kendall": 0.5232332901627345,
+                "n": 2065
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.13733412216148635,
+          "native_training_OOF_ST_RAE": 0.6401310236422734,
+          "extra_training_OOF_ST_RAE": 0.7889714750187422,
+          "blend_training_OOF_ST_RAE": 0.6357137914367657,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.21471128630078998,
+            0.1556576993179689,
+            0.0,
+            0.22055857797061962
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.765769017977351,
+              "extra_training_OOF_ST_RAE": 0.8873059813076217,
+              "blend_training_OOF_ST_RAE": 0.7561191290100213,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5439398851193842,
+              "extra_training_OOF_ST_RAE": 0.7228397681733393,
+              "blend_training_OOF_ST_RAE": 0.538333496763197,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8114610005237017,
+              "extra_training_OOF_ST_RAE": 0.9976905941960595,
+              "blend_training_OOF_ST_RAE": 0.8114610005237017,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43935419094865613,
+              "extra_training_OOF_ST_RAE": 0.5480495563979483,
+              "blend_training_OOF_ST_RAE": 0.4281359307485165,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.6335123892613592
+        }
+      }
+    },
+    "chemeleon_ridge__augmented": {
+      "selected": {
+        "candidate": "chemeleon_ridge__augmented__grid1",
+        "params": {
+          "alpha": 10.0
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.7246310362072221,
+            "MAE": 0.5723794200722927,
+            "R2": 0.3371710197425193,
+            "Spearman": 0.5754935844274834,
+            "Kendall": 0.4125044549797934
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8136359764778528,
+              "MAE": 0.661620491815079,
+              "R2": 0.25631508886207544,
+              "Spearman": 0.5122433079734297,
+              "Kendall": 0.35496338928856913,
+              "n": 1251
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.6263062846073336,
+              "MAE": 0.4631737947964941,
+              "R2": 0.405492934630274,
+              "Spearman": 0.6476002684785133,
+              "Kendall": 0.4700656164978624,
+              "n": 1146
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.9163084336552075,
+              "MAE": 0.5889057257286233,
+              "R2": 0.13026323681246532,
+              "Spearman": 0.37720306851345875,
+              "Kendall": 0.25549916569157594,
+              "n": 1317
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.5422734500884949,
+              "MAE": 0.5758176679489743,
+              "R2": 0.5566128186652622,
+              "Spearman": 0.764927692744532,
+              "Kendall": 0.569489648441166,
+              "n": 2065
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "chemeleon_ridge__augmented__grid0",
+          "params": {
+            "alpha": 1.0
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7476956370094662,
+              "MAE": 0.5726591839357127,
+              "R2": 0.3448881050343434,
+              "Spearman": 0.5749396171541263,
+              "Kendall": 0.41301253825793083
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8535378591814704,
+                "MAE": 0.6748698481101197,
+                "R2": 0.266636042031941,
+                "Spearman": 0.5030541353498672,
+                "Kendall": 0.34705675459632296,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6413036259431233,
+                "MAE": 0.45840386867365185,
+                "R2": 0.4185467314804123,
+                "Spearman": 0.6497881694324819,
+                "Kendall": 0.4702393744712957,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9869382359108336,
+                "MAE": 0.6190335240656922,
+                "R2": 0.09841651766010073,
+                "Spearman": 0.3607660752026037,
+                "Kendall": 0.24435197429914632,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5090028270024375,
+                "MAE": 0.5383294948933866,
+                "R2": 0.5959531289649196,
+                "Spearman": 0.7861500886315527,
+                "Kendall": 0.5904020496649586,
+                "n": 2065
+              }
+            }
+          }
+        },
+        {
+          "candidate": "chemeleon_ridge__augmented__grid1",
+          "params": {
+            "alpha": 10.0
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7246310362072221,
+              "MAE": 0.5723794200722927,
+              "R2": 0.3371710197425193,
+              "Spearman": 0.5754935844274834,
+              "Kendall": 0.4125044549797934
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8136359764778528,
+                "MAE": 0.661620491815079,
+                "R2": 0.25631508886207544,
+                "Spearman": 0.5122433079734297,
+                "Kendall": 0.35496338928856913,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6263062846073336,
+                "MAE": 0.4631737947964941,
+                "R2": 0.405492934630274,
+                "Spearman": 0.6476002684785133,
+                "Kendall": 0.4700656164978624,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9163084336552075,
+                "MAE": 0.5889057257286233,
+                "R2": 0.13026323681246532,
+                "Spearman": 0.37720306851345875,
+                "Kendall": 0.25549916569157594,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5422734500884949,
+                "MAE": 0.5758176679489743,
+                "R2": 0.5566128186652622,
+                "Spearman": 0.764927692744532,
+                "Kendall": 0.569489648441166,
+                "n": 2065
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.2754702693829019,
+          "native_training_OOF_ST_RAE": 0.6401310236422734,
+          "extra_training_OOF_ST_RAE": 0.7246310362072221,
+          "blend_training_OOF_ST_RAE": 0.6260601416931948,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.3657072749626535,
+            0.321842216256913,
+            0.08936930775277575,
+            0.23048874698054225
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.765769017977351,
+              "extra_training_OOF_ST_RAE": 0.8136359764778528,
+              "blend_training_OOF_ST_RAE": 0.7393463538961269,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5439398851193842,
+              "extra_training_OOF_ST_RAE": 0.6263062846073336,
+              "blend_training_OOF_ST_RAE": 0.5200079201201504,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8114610005237017,
+              "extra_training_OOF_ST_RAE": 0.9163084336552075,
+              "blend_training_OOF_ST_RAE": 0.8105578792378147,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43935419094865613,
+              "extra_training_OOF_ST_RAE": 0.5422734500884949,
+              "blend_training_OOF_ST_RAE": 0.4268324886054315,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.6241861604648808
+        }
+      }
+    },
+    "lightgbm__cyp_only": {
+      "selected": {
+        "candidate": "lightgbm__cyp_only__grid0",
+        "params": {
+          "num_leaves": 7,
+          "max_depth": 3
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.8383879249399417,
+            "MAE": 0.6357075294678461,
+            "R2": 0.20114443354392367,
+            "Spearman": 0.42171386525766374,
+            "Kendall": 0.2916502315683468
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8648523366747815,
+              "MAE": 0.692545598759485,
+              "R2": 0.16443182721934457,
+              "Spearman": 0.3793711908428529,
+              "Kendall": 0.26048537170263786,
+              "n": 1251
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8143343181740457,
+              "MAE": 0.5408033741300368,
+              "R2": 0.23097690136442284,
+              "Spearman": 0.4523710382939875,
+              "Kendall": 0.31284208601019686,
+              "n": 1146
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.9327378215491144,
+              "MAE": 0.5964964462439007,
+              "R2": 0.07936676227048023,
+              "Spearman": 0.2823613659541961,
+              "Kendall": 0.1905546593182904,
+              "n": 1317
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.7416272233618255,
+              "MAE": 0.7129846987379621,
+              "R2": 0.32980224332144703,
+              "Spearman": 0.5727518659396185,
+              "Kendall": 0.40271880924226217,
+              "n": 2065
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "lightgbm__cyp_only__grid0",
+          "params": {
+            "num_leaves": 7,
+            "max_depth": 3
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.8383879249399417,
+              "MAE": 0.6357075294678461,
+              "R2": 0.20114443354392367,
+              "Spearman": 0.42171386525766374,
+              "Kendall": 0.2916502315683468
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8648523366747815,
+                "MAE": 0.692545598759485,
+                "R2": 0.16443182721934457,
+                "Spearman": 0.3793711908428529,
+                "Kendall": 0.26048537170263786,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8143343181740457,
+                "MAE": 0.5408033741300368,
+                "R2": 0.23097690136442284,
+                "Spearman": 0.4523710382939875,
+                "Kendall": 0.31284208601019686,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9327378215491144,
+                "MAE": 0.5964964462439007,
+                "R2": 0.07936676227048023,
+                "Spearman": 0.2823613659541961,
+                "Kendall": 0.1905546593182904,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7416272233618255,
+                "MAE": 0.7129846987379621,
+                "R2": 0.32980224332144703,
+                "Spearman": 0.5727518659396185,
+                "Kendall": 0.40271880924226217,
+                "n": 2065
+              }
+            }
+          }
+        },
+        {
+          "candidate": "lightgbm__cyp_only__grid1",
+          "params": {
+            "num_leaves": 15,
+            "max_depth": 4
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.8416969105084987,
+              "MAE": 0.6367688548822332,
+              "R2": 0.19765318385774971,
+              "Spearman": 0.419418762287045,
+              "Kendall": 0.2899172025967145
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8755646842774218,
+                "MAE": 0.6973904455878207,
+                "R2": 0.1536564548353816,
+                "Spearman": 0.3638819316431839,
+                "Kendall": 0.24997474020783375,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8200640562188408,
+                "MAE": 0.5424343894394493,
+                "R2": 0.22642879738421673,
+                "Spearman": 0.4516183448729807,
+                "Kendall": 0.31168979629163907,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9320677736848884,
+                "MAE": 0.5958494893376252,
+                "R2": 0.08036949647471647,
+                "Spearman": 0.2858837225191431,
+                "Kendall": 0.19271024456891758,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.7390911278528437,
+                "MAE": 0.7114010951640376,
+                "R2": 0.33015798673668406,
+                "Spearman": 0.5762910501128724,
+                "Kendall": 0.40529402931846764,
+                "n": 2065
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.15895619250974455,
+          "native_training_OOF_ST_RAE": 0.6401310236422734,
+          "extra_training_OOF_ST_RAE": 0.8383879249399417,
+          "blend_training_OOF_ST_RAE": 0.6313503793444781,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.32502024835213567,
+            0.1335815809560276,
+            0.1272265874042269,
+            0.1105016361657063
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.765769017977351,
+              "extra_training_OOF_ST_RAE": 0.8648523366747815,
+              "blend_training_OOF_ST_RAE": 0.7366956345315921,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5439398851193842,
+              "extra_training_OOF_ST_RAE": 0.8143343181740457,
+              "blend_training_OOF_ST_RAE": 0.5349268257354712,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8114610005237017,
+              "extra_training_OOF_ST_RAE": 0.9327378215491144,
+              "blend_training_OOF_ST_RAE": 0.8093105969643157,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43935419094865613,
+              "extra_training_OOF_ST_RAE": 0.7416272233618255,
+              "blend_training_OOF_ST_RAE": 0.4344989034216443,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.6288579901632558
+        }
+      }
+    },
+    "lightgbm__non_cyp": {
+      "selected": {
+        "candidate": "lightgbm__non_cyp__grid1",
+        "params": {
+          "num_leaves": 15,
+          "max_depth": 4
+        },
+        "training_OOF": {
+          "macro": {
+            "ST_RAE": 0.7363802496383949,
+            "MAE": 0.5762071307946683,
+            "R2": 0.3016132315867262,
+            "Spearman": 0.5396959936479897,
+            "Kendall": 0.3834293118147398
+          },
+          "per_cyp": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8184093719436776,
+              "MAE": 0.6653615785931126,
+              "R2": 0.20369282402921363,
+              "Spearman": 0.47231022134369194,
+              "Kendall": 0.32772629896083133,
+              "n": 1251
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "ST_RAE": 0.6675954063196163,
+              "MAE": 0.4792995580625134,
+              "R2": 0.35786475441127075,
+              "Spearman": 0.6014834767373471,
+              "Kendall": 0.43076887903244243,
+              "n": 1146
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "ST_RAE": 0.8991212264261197,
+              "MAE": 0.5822256891935006,
+              "R2": 0.11033441113503806,
+              "Spearman": 0.35101630931421546,
+              "Kendall": 0.23647739520370745,
+              "n": 1317
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "ST_RAE": 0.5603949938641659,
+              "MAE": 0.5779416973295464,
+              "R2": 0.5345609367713824,
+              "Spearman": 0.7339739671967044,
+              "Kendall": 0.538744674061978,
+              "n": 2065
+            }
+          }
+        }
+      },
+      "candidates": [
+        {
+          "candidate": "lightgbm__non_cyp__grid0",
+          "params": {
+            "num_leaves": 7,
+            "max_depth": 3
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7410287004256743,
+              "MAE": 0.5775068781974468,
+              "R2": 0.2948518115658082,
+              "Spearman": 0.5349648644644391,
+              "Kendall": 0.38007901004279976
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8260808266628543,
+                "MAE": 0.6693406093024883,
+                "R2": 0.18745639209472675,
+                "Spearman": 0.45689647489676,
+                "Kendall": 0.3160671462829736,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6660293342412414,
+                "MAE": 0.47891628774588313,
+                "R2": 0.3563688105840268,
+                "Spearman": 0.6005747096995846,
+                "Kendall": 0.4309487337768734,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.9035881350457837,
+                "MAE": 0.5837409309343673,
+                "R2": 0.10549953529804024,
+                "Spearman": 0.35356396035559096,
+                "Kendall": 0.23844834788468772,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5684165057528178,
+                "MAE": 0.5780296848070487,
+                "R2": 0.5300825082864389,
+                "Spearman": 0.7288243129058213,
+                "Kendall": 0.5348518122266644,
+                "n": 2065
+              }
+            }
+          }
+        },
+        {
+          "candidate": "lightgbm__non_cyp__grid1",
+          "params": {
+            "num_leaves": 15,
+            "max_depth": 4
+          },
+          "training_OOF": {
+            "macro": {
+              "ST_RAE": 0.7363802496383949,
+              "MAE": 0.5762071307946683,
+              "R2": 0.3016132315867262,
+              "Spearman": 0.5396959936479897,
+              "Kendall": 0.3834293118147398
+            },
+            "per_cyp": {
+              "CYP1A2_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8184093719436776,
+                "MAE": 0.6653615785931126,
+                "R2": 0.20369282402921363,
+                "Spearman": 0.47231022134369194,
+                "Kendall": 0.32772629896083133,
+                "n": 1251
+              },
+              "CYP2C9_pIC50_direct_inhibition": {
+                "ST_RAE": 0.6675954063196163,
+                "MAE": 0.4792995580625134,
+                "R2": 0.35786475441127075,
+                "Spearman": 0.6014834767373471,
+                "Kendall": 0.43076887903244243,
+                "n": 1146
+              },
+              "CYP2D6_pIC50_direct_inhibition": {
+                "ST_RAE": 0.8991212264261197,
+                "MAE": 0.5822256891935006,
+                "R2": 0.11033441113503806,
+                "Spearman": 0.35101630931421546,
+                "Kendall": 0.23647739520370745,
+                "n": 1317
+              },
+              "CYP3A4_pIC50_direct_inhibition": {
+                "ST_RAE": 0.5603949938641659,
+                "MAE": 0.5779416973295464,
+                "R2": 0.5345609367713824,
+                "Spearman": 0.7339739671967044,
+                "Kendall": 0.538744674061978,
+                "n": 2065
+              }
+            }
+          }
+        }
+      ],
+      "selection_uses_outer_labels": false,
+      "blends": {
+        "global": {
+          "weight": 0.2759002200900358,
+          "native_training_OOF_ST_RAE": 0.6401310236422734,
+          "extra_training_OOF_ST_RAE": 0.7363802496383949,
+          "blend_training_OOF_ST_RAE": 0.6239988487789522,
+          "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+          "fit_scope": "outer training OOF only"
+        },
+        "per_target": {
+          "weight": [
+            0.3724214596973901,
+            0.2712768648041109,
+            0.15431621359598713,
+            0.2388596611825901
+          ],
+          "per_target_fit": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.765769017977351,
+              "extra_training_OOF_ST_RAE": 0.8184093719436776,
+              "blend_training_OOF_ST_RAE": 0.732893318320175,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.5439398851193842,
+              "extra_training_OOF_ST_RAE": 0.6675954063196163,
+              "blend_training_OOF_ST_RAE": 0.5247748633669035,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.8114610005237017,
+              "extra_training_OOF_ST_RAE": 0.8991212264261197,
+              "blend_training_OOF_ST_RAE": 0.8076214245109727,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "native_training_OOF_ST_RAE": 0.43935419094865613,
+              "extra_training_OOF_ST_RAE": 0.5603949938641659,
+              "blend_training_OOF_ST_RAE": 0.42583793505739714,
+              "method": "Exact weighted endpoint median; one global convex weight; smallest minimizer",
+              "fit_scope": "outer training OOF only"
+            }
+          },
+          "fit_scope": "outer training OOF only",
+          "blend_training_OOF_ST_RAE": 0.622781885313862
+        }
+      }
+    }
+  }
+}

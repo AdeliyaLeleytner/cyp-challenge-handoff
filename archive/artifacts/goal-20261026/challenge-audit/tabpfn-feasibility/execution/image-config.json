@@ -1,0 +1,150 @@
+{
+  "architecture": "amd64",
+  "config": {
+    "Env": [
+      "PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "NVIDIA_VISIBLE_DEVICES=all",
+      "NVIDIA_DRIVER_CAPABILITIES=compute,utility",
+      "LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64",
+      "PYTORCH_VERSION=2.8.0"
+    ],
+    "Cmd": [
+      "/bin/bash"
+    ],
+    "WorkingDir": "/workspace",
+    "Labels": {
+      "com.nvidia.volumes.needed": "nvidia_driver",
+      "org.opencontainers.image.ref.name": "ubuntu",
+      "org.opencontainers.image.version": "22.04"
+    }
+  },
+  "created": "2025-08-06T17:20:49.136285477Z",
+  "history": [
+    {
+      "created": "2025-07-14T16:33:29.423355846Z",
+      "created_by": "/bin/sh -c #(nop)  ARG RELEASE",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-07-14T16:33:29.453029252Z",
+      "created_by": "/bin/sh -c #(nop)  ARG LAUNCHPAD_BUILD_ARCH",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-07-14T16:33:29.47806068Z",
+      "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.ref.name=ubuntu",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-07-14T16:33:29.50487452Z",
+      "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.version=22.04",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-07-14T16:33:31.666121772Z",
+      "created_by": "/bin/sh -c #(nop) ADD file:415bbc01dfb447d002e2d8173e113ef025d2bbfa20f1205823fa699dc87a2019 in / "
+    },
+    {
+      "created": "2025-07-14T16:33:32.00234559Z",
+      "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-08-06T17:16:04.721499084Z",
+      "created_by": "ARG PYTORCH_VERSION=2.8.0",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-08-06T17:16:04.721499084Z",
+      "created_by": "ARG TRITON_VERSION=",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-08-06T17:16:04.721499084Z",
+      "created_by": "ARG TARGETPLATFORM=linux/amd64",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-08-06T17:16:04.721499084Z",
+      "created_by": "ARG CUDA_VERSION=12.8.1",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-08-06T17:16:04.721499084Z",
+      "created_by": "LABEL com.nvidia.volumes.needed=nvidia_driver",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-08-06T17:16:04.721499084Z",
+      "created_by": "RUN |4 PYTORCH_VERSION=2.8.0 TRITON_VERSION= TARGETPLATFORM=linux/amd64 CUDA_VERSION=12.8.1 /bin/sh -c apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends         ca-certificates         libjpeg-dev         libpng-dev         && rm -rf /var/lib/apt/lists/* # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2025-08-06T17:20:48.553260214Z",
+      "created_by": "COPY /opt/conda /opt/conda # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2025-08-06T17:20:49.100012531Z",
+      "created_by": "RUN |4 PYTORCH_VERSION=2.8.0 TRITON_VERSION= TARGETPLATFORM=linux/amd64 CUDA_VERSION=12.8.1 /bin/sh -c if test -n \"${TRITON_VERSION}\" -a \"${TARGETPLATFORM}\" != \"linux/arm64\"; then         DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends gcc;         rm -rf /var/lib/apt/lists/*;     fi # buildkit",
+      "comment": "buildkit.dockerfile.v0"
+    },
+    {
+      "created": "2025-08-06T17:20:49.100012531Z",
+      "created_by": "ENV PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-08-06T17:20:49.100012531Z",
+      "created_by": "ENV NVIDIA_VISIBLE_DEVICES=all",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-08-06T17:20:49.100012531Z",
+      "created_by": "ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-08-06T17:20:49.100012531Z",
+      "created_by": "ENV LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-08-06T17:20:49.100012531Z",
+      "created_by": "ENV PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-08-06T17:20:49.100012531Z",
+      "created_by": "ENV PYTORCH_VERSION=2.8.0",
+      "comment": "buildkit.dockerfile.v0",
+      "empty_layer": true
+    },
+    {
+      "created": "2025-08-06T17:20:49.136285477Z",
+      "created_by": "WORKDIR /workspace",
+      "comment": "buildkit.dockerfile.v0"
+    }
+  ],
+  "os": "linux",
+  "rootfs": {
+    "type": "layers",
+    "diff_ids": [
+      "sha256:3cc982388b71ef357e0157e0b7d3059dcefa4dc9fd2e3815bde6c6ce040302f3",
+      "sha256:574501c8d7d0c0a3e4756cf91d6d517a50d69b3355f3eadd9a6cb7b8f88334e1",
+      "sha256:99a4f2df9c934e6a4efc4f61a96ebe8f44727f5213776355b1795290b197533c",
+      "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "sha256:026db027580493d2f7409238901521387c4961a6d0f99242e20394f994904412"
+    ]
+  }
+}

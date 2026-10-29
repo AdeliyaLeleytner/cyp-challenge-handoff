@@ -1,0 +1,292 @@
+[
+  {
+    "cell": "zero",
+    "fold": 0,
+    "checkpoint_epoch": 22,
+    "load_seconds": 0.09583520796149969,
+    "callbacks": [
+      {
+        "callback": "EarlyStopping{'monitor': 'primary_strae', 'mode': 'min'}",
+        "best_score": 0.7087854146957397,
+        "wait_count": 0,
+        "stopped_epoch": 0
+      },
+      {
+        "callback": "ModelCheckpoint{'monitor': 'primary_strae', 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}",
+        "best_model_score": 0.7087854146957397,
+        "current_score": 0.7087854146957397
+      }
+    ],
+    "graph_input_weight_frobenius": 54.24686813354492,
+    "descriptor_input_weight_frobenius": 0.0,
+    "graph_bn_gamma_rms": 0.8620221614837646,
+    "graph_bn_beta_rms": 0.07991005480289459,
+    "optimizer_steps_in_diagnostic": 0,
+    "timing": {
+      "featurization_seconds": 0.6537631250103004,
+      "forward_seconds": 27.958904792030808,
+      "rows": 4904
+    }
+  },
+  {
+    "cell": "fusion",
+    "fold": 0,
+    "checkpoint_epoch": 10,
+    "load_seconds": 0.0970015829661861,
+    "callbacks": [
+      {
+        "callback": "EarlyStopping{'monitor': 'primary_strae', 'mode': 'min'}",
+        "best_score": 0.7157542109489441,
+        "wait_count": 0,
+        "stopped_epoch": 0
+      },
+      {
+        "callback": "ModelCheckpoint{'monitor': 'primary_strae', 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}",
+        "best_model_score": 0.7157542109489441,
+        "current_score": 0.7157542109489441
+      }
+    ],
+    "graph_input_weight_frobenius": 28.965055465698242,
+    "descriptor_input_weight_frobenius": 15.958425521850586,
+    "graph_bn_gamma_rms": 0.8741157650947571,
+    "graph_bn_beta_rms": 0.06895468384027481,
+    "optimizer_steps_in_diagnostic": 0,
+    "timing": {
+      "featurization_seconds": 0.59327262500301,
+      "forward_seconds": 22.972123000014108,
+      "rows": 4904
+    }
+  },
+  {
+    "cell": "zero",
+    "fold": 1,
+    "checkpoint_epoch": 17,
+    "load_seconds": 0.07999195903539658,
+    "callbacks": [
+      {
+        "callback": "EarlyStopping{'monitor': 'primary_strae', 'mode': 'min'}",
+        "best_score": 0.6329037547111511,
+        "wait_count": 0,
+        "stopped_epoch": 0
+      },
+      {
+        "callback": "ModelCheckpoint{'monitor': 'primary_strae', 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}",
+        "best_model_score": 0.6329037547111511,
+        "current_score": 0.6329037547111511
+      }
+    ],
+    "graph_input_weight_frobenius": 48.24113464355469,
+    "descriptor_input_weight_frobenius": 0.0,
+    "graph_bn_gamma_rms": 0.8767096400260925,
+    "graph_bn_beta_rms": 0.07484546303749084,
+    "optimizer_steps_in_diagnostic": 0,
+    "timing": {
+      "featurization_seconds": 0.39810462499735877,
+      "forward_seconds": 15.823814375034999,
+      "rows": 4903
+    }
+  },
+  {
+    "cell": "fusion",
+    "fold": 1,
+    "checkpoint_epoch": 11,
+    "load_seconds": 0.10306904098251835,
+    "callbacks": [
+      {
+        "callback": "EarlyStopping{'monitor': 'primary_strae', 'mode': 'min'}",
+        "best_score": 0.6541939973831177,
+        "wait_count": 0,
+        "stopped_epoch": 0
+      },
+      {
+        "callback": "ModelCheckpoint{'monitor': 'primary_strae', 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}",
+        "best_model_score": 0.6541939973831177,
+        "current_score": 0.6541939973831177
+      }
+    ],
+    "graph_input_weight_frobenius": 28.178300857543945,
+    "descriptor_input_weight_frobenius": 16.18085479736328,
+    "graph_bn_gamma_rms": 0.8933679461479187,
+    "graph_bn_beta_rms": 0.06272970885038376,
+    "optimizer_steps_in_diagnostic": 0,
+    "timing": {
+      "featurization_seconds": 0.4375649580033496,
+      "forward_seconds": 14.66414770897245,
+      "rows": 4903
+    }
+  },
+  {
+    "cell": "zero",
+    "fold": 2,
+    "checkpoint_epoch": 14,
+    "load_seconds": 0.07668841700069606,
+    "callbacks": [
+      {
+        "callback": "EarlyStopping{'monitor': 'primary_strae', 'mode': 'min'}",
+        "best_score": 0.6709237098693848,
+        "wait_count": 0,
+        "stopped_epoch": 0
+      },
+      {
+        "callback": "ModelCheckpoint{'monitor': 'primary_strae', 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}",
+        "best_model_score": 0.6709237098693848,
+        "current_score": 0.6709237098693848
+      }
+    ],
+    "graph_input_weight_frobenius": 43.99205780029297,
+    "descriptor_input_weight_frobenius": 0.0,
+    "graph_bn_gamma_rms": 0.8907368779182434,
+    "graph_bn_beta_rms": 0.07096007466316223,
+    "optimizer_steps_in_diagnostic": 0,
+    "timing": {
+      "featurization_seconds": 0.36679900001036003,
+      "forward_seconds": 14.02074916602578,
+      "rows": 4902
+    }
+  },
+  {
+    "cell": "fusion",
+    "fold": 2,
+    "checkpoint_epoch": 4,
+    "load_seconds": 0.07574479200411588,
+    "callbacks": [
+      {
+        "callback": "EarlyStopping{'monitor': 'primary_strae', 'mode': 'min'}",
+        "best_score": 0.7668999433517456,
+        "wait_count": 0,
+        "stopped_epoch": 0
+      },
+      {
+        "callback": "ModelCheckpoint{'monitor': 'primary_strae', 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}",
+        "best_model_score": 0.7668999433517456,
+        "current_score": 0.7668999433517456
+      }
+    ],
+    "graph_input_weight_frobenius": 22.249225616455078,
+    "descriptor_input_weight_frobenius": 10.055437088012695,
+    "graph_bn_gamma_rms": 0.941326916217804,
+    "graph_bn_beta_rms": 0.043364107608795166,
+    "optimizer_steps_in_diagnostic": 0,
+    "timing": {
+      "featurization_seconds": 0.3904516249895096,
+      "forward_seconds": 14.687175875005778,
+      "rows": 4902
+    }
+  },
+  {
+    "cell": "zero",
+    "fold": 3,
+    "checkpoint_epoch": 12,
+    "load_seconds": 0.07567570800893009,
+    "callbacks": [
+      {
+        "callback": "EarlyStopping{'monitor': 'primary_strae', 'mode': 'min'}",
+        "best_score": 0.6571707725524902,
+        "wait_count": 0,
+        "stopped_epoch": 0
+      },
+      {
+        "callback": "ModelCheckpoint{'monitor': 'primary_strae', 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}",
+        "best_model_score": 0.6571707725524902,
+        "current_score": 0.6571707725524902
+      }
+    ],
+    "graph_input_weight_frobenius": 40.239532470703125,
+    "descriptor_input_weight_frobenius": 0.0,
+    "graph_bn_gamma_rms": 0.9062454104423523,
+    "graph_bn_beta_rms": 0.06729862838983536,
+    "optimizer_steps_in_diagnostic": 0,
+    "timing": {
+      "featurization_seconds": 0.36666566698113456,
+      "forward_seconds": 14.461635374987964,
+      "rows": 4902
+    }
+  },
+  {
+    "cell": "fusion",
+    "fold": 3,
+    "checkpoint_epoch": 16,
+    "load_seconds": 0.0767153330380097,
+    "callbacks": [
+      {
+        "callback": "EarlyStopping{'monitor': 'primary_strae', 'mode': 'min'}",
+        "best_score": 0.6801055073738098,
+        "wait_count": 0,
+        "stopped_epoch": 0
+      },
+      {
+        "callback": "ModelCheckpoint{'monitor': 'primary_strae', 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}",
+        "best_model_score": 0.6801055073738098,
+        "current_score": 0.6801055073738098
+      }
+    ],
+    "graph_input_weight_frobenius": 31.920825958251953,
+    "descriptor_input_weight_frobenius": 19.636133193969727,
+    "graph_bn_gamma_rms": 0.8933791518211365,
+    "graph_bn_beta_rms": 0.046239517629146576,
+    "optimizer_steps_in_diagnostic": 0,
+    "timing": {
+      "featurization_seconds": 0.3680684589780867,
+      "forward_seconds": 15.948126292030793,
+      "rows": 4902
+    }
+  },
+  {
+    "cell": "zero",
+    "fold": 4,
+    "checkpoint_epoch": 19,
+    "load_seconds": 0.07884233398362994,
+    "callbacks": [
+      {
+        "callback": "EarlyStopping{'monitor': 'primary_strae', 'mode': 'min'}",
+        "best_score": 0.6461032629013062,
+        "wait_count": 0,
+        "stopped_epoch": 0
+      },
+      {
+        "callback": "ModelCheckpoint{'monitor': 'primary_strae', 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}",
+        "best_model_score": 0.6461032629013062,
+        "current_score": 0.6461032629013062
+      }
+    ],
+    "graph_input_weight_frobenius": 50.07530975341797,
+    "descriptor_input_weight_frobenius": 0.0,
+    "graph_bn_gamma_rms": 0.8807199001312256,
+    "graph_bn_beta_rms": 0.07821076363325119,
+    "optimizer_steps_in_diagnostic": 0,
+    "timing": {
+      "featurization_seconds": 0.3687820410123095,
+      "forward_seconds": 15.020276791008655,
+      "rows": 4904
+    }
+  },
+  {
+    "cell": "fusion",
+    "fold": 4,
+    "checkpoint_epoch": 8,
+    "load_seconds": 0.0784417919931002,
+    "callbacks": [
+      {
+        "callback": "EarlyStopping{'monitor': 'primary_strae', 'mode': 'min'}",
+        "best_score": 0.692773699760437,
+        "wait_count": 0,
+        "stopped_epoch": 0
+      },
+      {
+        "callback": "ModelCheckpoint{'monitor': 'primary_strae', 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}",
+        "best_model_score": 0.692773699760437,
+        "current_score": 0.692773699760437
+      }
+    ],
+    "graph_input_weight_frobenius": 27.78252601623535,
+    "descriptor_input_weight_frobenius": 14.177732467651367,
+    "graph_bn_gamma_rms": 0.9051697850227356,
+    "graph_bn_beta_rms": 0.06665630638599396,
+    "optimizer_steps_in_diagnostic": 0,
+    "timing": {
+      "featurization_seconds": 0.3681132079800591,
+      "forward_seconds": 16.020393208018504,
+      "rows": 4904
+    }
+  }
+]

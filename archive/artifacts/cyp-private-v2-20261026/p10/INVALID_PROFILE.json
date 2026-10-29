@@ -1,0 +1,8 @@
+{
+  "run_id": "fc0ad05e-b580-4194-ae87-9cb2fc353a17",
+  "status": "cancelled_scientifically_invalid",
+  "cause": "epoch0 evaluation left model submodules in eval; inherited Trainer.fit preserved output unscaling during standardized-target training",
+  "remote_evidence": "/workspace/p10/invalid-eval-mode-fc0ad05e",
+  "repair": "explicit train() before fit, train-start/epoch mode assertions and UnscaleTransform regression test",
+  "not_a_scientific_result": true
+}

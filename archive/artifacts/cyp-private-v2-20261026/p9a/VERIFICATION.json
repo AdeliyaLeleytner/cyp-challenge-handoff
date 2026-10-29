@@ -1,0 +1,60 @@
+{
+  "status": "pass",
+  "smoke_rows": 32,
+  "embedding_shape": [
+    32,
+    256
+  ],
+  "finite": true,
+  "same_exactID_SMILES_order": true,
+  "enhanced_stereo_group_rows_preserved": 3,
+  "assigned_bond_stereo_preserved": 0,
+  "repeat_max_abs": 0.0,
+  "reorder_max_abs": 0.0,
+  "full_structure_only_inventory": {
+    "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-private-v2-20261026/p9a/next-stage/official5655-structures.csv",
+    "sha256": "541530de65e3311bc481db985033632456b2096a8cc4f8942eba525358317950",
+    "rows": 5655,
+    "train": 4905,
+    "blind": 750,
+    "no_labels": true,
+    "sources": [
+      {
+        "role": "train",
+        "path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-admet500-pilot-20261025/stage/official-train.csv",
+        "sha256": "b8f79addd266fb6f9f4c222c5e4e73d926362328b6a8d2841871a54e46bd2278",
+        "rows": 4905
+      },
+      {
+        "role": "blind",
+        "path": "/Users/adeliyaleleytner/.local/share/openresearch/projects/cyp-chemeleon-baseline-20261023/data/official-test.csv",
+        "sha256": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9",
+        "rows": 750
+      }
+    ]
+  },
+  "adme600_train_control": {
+    "path": "/Users/adeliyaleleytner/.local/share/cyp-inhibition/reciprocal-comparison-20261023/full/prepared/adme_pretrain.npy",
+    "sha256": "e0216aeaad3f8b9a34ea124b0eb90bd36ae671ae79b1d30268feccf5f8731378",
+    "mapping": "/Users/adeliyaleleytner/.local/share/cyp-inhibition/reciprocal-comparison-20261023/full/prepared/challenge.csv",
+    "mapping_sha256": "b7391fb28af2972a7f5070f253ee914dc4baef010177adaa87489673e23350fe",
+    "exact_official_training_order_and_smiles": true,
+    "shape": [
+      4905,
+      600
+    ]
+  },
+  "blind_adme600_not_required_for_current_OOF_comparison": true,
+  "no_fullbank_inference_or_TabICL_calls": true,
+  "code_sha256": "c5de50753a8539991e8d08adadd57fc04eaba87c6558bb2efd02ee68b4bb2051",
+  "smoke_files": {
+    "supervisor.json": "81854bdf4e3ec9087ab8dacab21134bd4f1df9ff7a9e9d61afc224f44f41b8e7",
+    "embeddings-progress.npy": "ab30163a96a5263a3a4b7fa0057ffc6b67d8d7f96f68b78b08f2d6088f1ba5c7",
+    "environment-receipt.json": "3c27d7aa5e1bf43b1ccb1d748f59c6dd5646dcd643a3ce1cd7fe80d0669b066f",
+    "coordinates.npz": "9eb4a31f2612b0946b680f7ca236d7e3bd3002084ef0d836de7debc992fc7f11",
+    "embedding-rows.csv": "3d9c6f8c1e90421f7a3ce0dfe855e9e7fd30f65b6e41cbca2ecc02bdf9fd1904",
+    "COMPLETE.json": "bd588a16e154a370dfc2b641786e841613b0f96f798e2e1392b3dbaf1346569e",
+    "embeddings.npy": "ab30163a96a5263a3a4b7fa0057ffc6b67d8d7f96f68b78b08f2d6088f1ba5c7",
+    "row-outcomes.jsonl": "aaa1aba04a3bf3bb4a5747e6338c554687e1ac835e958e5de6e4a74c72e3a740"
+  }
+}

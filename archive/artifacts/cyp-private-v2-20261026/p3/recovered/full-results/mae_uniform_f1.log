@@ -1,0 +1,51 @@
+Seed set to 43
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 3090') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2]
+Loading `train_dataloader` to estimate number of stepping batches.
+{"event": "epoch_timing", "epoch": 0, "seconds": 10.071851968765259, "max_gpu_bytes": 1834859008}
+{"event": "epoch_timing", "epoch": 1, "seconds": 9.76259970664978, "max_gpu_bytes": 1834859008}
+{"event": "epoch_timing", "epoch": 2, "seconds": 9.831323623657227, "max_gpu_bytes": 1836806656}
+{"event": "epoch_timing", "epoch": 3, "seconds": 9.718618154525757, "max_gpu_bytes": 1857685504}
+{"event": "epoch_timing", "epoch": 4, "seconds": 9.702030420303345, "max_gpu_bytes": 1861342208}
+{"event": "epoch_timing", "epoch": 5, "seconds": 9.74895429611206, "max_gpu_bytes": 1861342208}
+{"event": "epoch_timing", "epoch": 6, "seconds": 9.85645341873169, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 7, "seconds": 9.832326173782349, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 8, "seconds": 9.774693727493286, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 9, "seconds": 9.81071662902832, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 10, "seconds": 9.780169010162354, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 11, "seconds": 9.75492811203003, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 12, "seconds": 9.74050235748291, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 13, "seconds": 9.76492953300476, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 14, "seconds": 10.006550312042236, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 15, "seconds": 9.716078519821167, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 16, "seconds": 9.69708251953125, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 17, "seconds": 9.7196946144104, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 18, "seconds": 9.732244968414307, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 19, "seconds": 9.716898918151855, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 20, "seconds": 9.731703519821167, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 21, "seconds": 9.91142225265503, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 22, "seconds": 9.844966888427734, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 23, "seconds": 9.741122007369995, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 24, "seconds": 9.76089882850647, "max_gpu_bytes": 1882780160}
+{"event": "epoch_timing", "epoch": 25, "seconds": 9.908629894256592, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 26, "seconds": 9.855042219161987, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 27, "seconds": 9.837727069854736, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 28, "seconds": 9.76984453201294, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 29, "seconds": 9.786406993865967, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 30, "seconds": 10.000086069107056, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 31, "seconds": 9.73811650276184, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 32, "seconds": 9.750338554382324, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 33, "seconds": 9.694856405258179, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 34, "seconds": 9.695953130722046, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 35, "seconds": 9.702919483184814, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 36, "seconds": 9.778498888015747, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 37, "seconds": 9.838319063186646, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 38, "seconds": 9.83326268196106, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 39, "seconds": 9.781096458435059, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 40, "seconds": 9.821467161178589, "max_gpu_bytes": 1894130176}
+{"event": "epoch_timing", "epoch": 41, "seconds": 9.722283363342285, "max_gpu_bytes": 1894130176}
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2]
+{"event": "p3_complete", "cell": "mae_uniform", "fold": 1, "seconds": 418.1027579307556, "raw_strae": 0.7218999644775774, "raw_per_target_strae": [0.8201350511350053, 0.6228371469046454, 0.9579390440192411, 0.48668861585141804]}

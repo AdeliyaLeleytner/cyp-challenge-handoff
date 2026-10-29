@@ -1,0 +1,33 @@
+{
+  "participant": "jeremycheminf/openadmet_scripts",
+  "revision": "d3a5549e0c98167435cbf8f5115c68a9a184ed7a",
+  "scope": "Full four-family Direct Inhibition ensemble; TDI excluded because not requested",
+  "outer_sets": [
+    "our_fixed_750",
+    "jeremy_0",
+    "jeremy_1",
+    "jeremy_2",
+    "jeremy_3",
+    "jeremy_4"
+  ],
+  "outer_policy": "Preserve our750; reconstruct Jeremy Butina5fold from pinned code/input, not claim recovered original saved folds.",
+  "ensemble_development": "All non-outer challenge rows. Generate5Butina inner folds. Train LGB andTabPFN OOF on4; Chemprop OOF on3 plus nextfold validation. Fit placement+Caruana on innerOOF only. FinalLGB/TabPFNfitall development; finalChemproptraininner0-3,val4 exactly author recipe. Evaluate outeronce.",
+  "chemeleon_policy": "Our750 uses existing3805fit350validation checkpoint. Jeremyouterf: train3remainingfolds,val(f+1)%5. Same baseline config and original foundation initialization; CUDA hardware change only. No previous trained state reused.",
+  "matched_lgb": "Also evaluate exact Jeremy LGB parameters on identical fit molecules as CheMeleon on all sixoutersets.",
+  "additional_control": "TabPFN/finalLGB see all nonouter development, unlike neural models retaining epoch-selection validation. Endtoend workflow comparison with equal accessibledevelopment set, not samefit or representation-only attribution.",
+  "external_data": "Participant ChEMBL+PubChemAID1851 and provided pretrainedencoders. Filter normalized stereo-stripped parent matches to ALL officialtrain/test from externalaux tables. Exclude outerofficial molecules from all challenge auxiliary heads. Frozen checkpoint pretrainingmembership remains unknown; report explicitly.",
+  "adaptations": [
+    "PCA/imputer/scaler fit inside each training fold rather than globally beforeCV",
+    "Train-only taskweight counts rather than fullchallengecounts",
+    "No hidden-test BLIND_MOMENTS calibration",
+    "Graph caching and CUDA paralleljobs only throughput changes",
+    "GPU-safe prediction conversion and explicit drop_last=False",
+    "Pin presently available dependencyversions because authorprovidednolock",
+    "TabPFN9.2.0(current default model),RDKit2026.9.1,LightGBM4.6.0 pinned; author did not pin versions",
+    "Convert nonfinite classical descriptors to NaN for LightGBM missing-value handling"
+  ],
+  "metrics": "Official point macroST-RAE, perendpointST-RAE,MAE,R2,Spearman; paired molecule bootstrap1000 byID preservesendpoint availability; report pooledOOF and perfold separately; infer no leaderboard rank.",
+  "no_selection": "Freeze allconfigs before outcomes; no leaderboard calls, no modelchanges basedon outer scores.",
+  "resources": "Vast.ai instance57405450,8RTX5090,100GBdisk,actual8.6259259259USD/h; automaticstop120min afterrental and earlydestroyafterverifiedartifactexport. Existingcredit18.895USD. Original6.61USDofferbecameunavailable.",
+  "comparability": "Fullensemble has extra externaldata/pretraining compared withdirect-onlyCheMeleon. Result is comparison ofrecipes, not isolatedarchitecture. OriginalauthorOOFscore may beoptimistic becauseweights selectedon sameOOF; ournested estimate differs."
+}

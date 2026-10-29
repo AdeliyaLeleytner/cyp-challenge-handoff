@@ -1,0 +1,1402 @@
+{
+  "checked_utc": "2026-10-24T15:45:41.274470+00:00",
+  "independent_method": "stdlib CSV by molecule ID + direct integer confusion-matrix MCC; checked against sklearn; no campaign evaluator imported",
+  "truth_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/stage/official-tdi.csv",
+  "truth_sha256": "b458f599a792412292664386e8f18adc5d4a4129d6bd212ae80a60fb9b96bb60",
+  "holdout_id_overlap": 143,
+  "results": {
+    "baseline": {
+      "own750": {
+        "native_seed42": {
+          "macro_mcc": 0.3005504451586478,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.25884639012444155,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 6,
+              "tn": 112,
+              "fp": 3,
+              "fn": 29
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3422545001928541,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 76,
+              "tn": 302,
+              "fp": 62,
+              "fn": 75
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/baseline/evaluation/own750/native_seed42_predictions.csv",
+          "prediction_sha256": "8386b3b99b4f62c2beca5b5f87e1531a1b1bada41a835f5d642ca964fcb83279",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "native_reference": {
+          "macro_mcc": 0.2568411839710498,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.15082668058310103,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 7,
+              "tn": 105,
+              "fp": 10,
+              "fn": 28
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3628556873589986,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 83,
+              "tn": 296,
+              "fp": 68,
+              "fn": 68
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/baseline/evaluation/own750/native_reference_predictions.csv",
+          "prediction_sha256": "b99a859bd5f759c11f83ccd8e97b8ce4976f1e2cf5b40e2feb49ddf8638e7266",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "hauser_native": {
+          "macro_mcc": 0.18487986082663008,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.04996852148741305,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 6,
+              "tn": 100,
+              "fp": 15,
+              "fn": 29
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3197912001658471,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 120,
+              "tn": 202,
+              "fp": 162,
+              "fn": 31
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/baseline/evaluation/own750/hauser_native_predictions.csv",
+          "prediction_sha256": "b8166c5bccaa273a893a530dc1ea10c058a138508b7b1c85e0aa5a866a58e495",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "soft_candidate": {
+          "macro_mcc": 0.32566327411186147,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.25884639012444155,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 6,
+              "tn": 112,
+              "fp": 3,
+              "fn": 29
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3924801580992814,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 97,
+              "tn": 280,
+              "fp": 84,
+              "fn": 54
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/baseline/evaluation/own750/soft_candidate_predictions.csv",
+          "prediction_sha256": "2d7c192f4f76151ab1b4d85fea7a2f61c8ec3d3dc66684e25f92f1414ffbf28c",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "candidate_delta_vs_strongest_baseline": 0.02511282895321365,
+        "selected_candidate_models": [
+          "tabicl_native",
+          "jeremy_lgbm"
+        ]
+      },
+      "briford529": {
+        "native_seed42": {
+          "macro_mcc": 0.2625832868499942,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.18252363227300772,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 2,
+              "tn": 146,
+              "fp": 1,
+              "fn": 26
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.34264294142698076,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 56,
+              "tn": 132,
+              "fp": 51,
+              "fn": 32
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/baseline/evaluation/briford529/native_seed42_predictions.csv",
+          "prediction_sha256": "62585d70b591ab67db5e94c6eab83fcdf86154b32daccb9fd2f4f20178ff7504",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "native_reference": {
+          "macro_mcc": 0.24187511865196104,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.14953902821290413,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 3,
+              "tn": 143,
+              "fp": 4,
+              "fn": 25
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3342112090910179,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 59,
+              "tn": 125,
+              "fp": 58,
+              "fn": 29
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/baseline/evaluation/briford529/native_reference_predictions.csv",
+          "prediction_sha256": "edd2efeef27859de040798b1d67ac83ddfefa73d8aed9c1a6d14ce5a3886ba92",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "hauser_native": {
+          "macro_mcc": 0.2493180160882521,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.2512320631673686,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 5,
+              "tn": 143,
+              "fp": 4,
+              "fn": 23
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.2474039690091356,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 68,
+              "tn": 89,
+              "fp": 94,
+              "fn": 20
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/baseline/evaluation/briford529/hauser_native_predictions.csv",
+          "prediction_sha256": "09e2e0499aad4d53a9d8da8150f0b9d5c460f51989e49e2660050fe11ff17962",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "soft_candidate": {
+          "macro_mcc": 0.23275615417938575,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.0997174648937912,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 1,
+              "tn": 146,
+              "fp": 1,
+              "fn": 27
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3657948434649803,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 73,
+              "tn": 102,
+              "fp": 81,
+              "fn": 15
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/baseline/evaluation/briford529/soft_candidate_predictions.csv",
+          "prediction_sha256": "fbcb8f14d1e29151825a93010b94b304a72c158774294f09279e9d3c866fb05c",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "candidate_delta_vs_strongest_baseline": -0.029827132670608464,
+        "selected_candidate_models": [
+          "tabicl_native",
+          "jeremy_lgbm"
+        ]
+      }
+    },
+    "candidate": {
+      "own750": {
+        "native_seed42": {
+          "macro_mcc": 0.3005504451586478,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.25884639012444155,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 6,
+              "tn": 112,
+              "fp": 3,
+              "fn": 29
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3422545001928541,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 76,
+              "tn": 302,
+              "fp": 62,
+              "fn": 75
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/candidate/evaluation/own750/native_seed42_predictions.csv",
+          "prediction_sha256": "8386b3b99b4f62c2beca5b5f87e1531a1b1bada41a835f5d642ca964fcb83279",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "native_reference": {
+          "macro_mcc": 0.2568411839710498,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.15082668058310103,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 7,
+              "tn": 105,
+              "fp": 10,
+              "fn": 28
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3628556873589986,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 83,
+              "tn": 296,
+              "fp": 68,
+              "fn": 68
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/candidate/evaluation/own750/native_reference_predictions.csv",
+          "prediction_sha256": "b99a859bd5f759c11f83ccd8e97b8ce4976f1e2cf5b40e2feb49ddf8638e7266",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "hauser_native": {
+          "macro_mcc": 0.18487986082663008,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.04996852148741305,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 6,
+              "tn": 100,
+              "fp": 15,
+              "fn": 29
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3197912001658471,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 120,
+              "tn": 202,
+              "fp": 162,
+              "fn": 31
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/candidate/evaluation/own750/hauser_native_predictions.csv",
+          "prediction_sha256": "b8166c5bccaa273a893a530dc1ea10c058a138508b7b1c85e0aa5a866a58e495",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "soft_candidate": {
+          "macro_mcc": 0.24928755704120817,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.12163689874874493,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 7,
+              "tn": 103,
+              "fp": 12,
+              "fn": 28
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3769382153336714,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 105,
+              "tn": 259,
+              "fp": 105,
+              "fn": 46
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/candidate/evaluation/own750/soft_candidate_predictions.csv",
+          "prediction_sha256": "1649fe4e86d0a3baf1007fbd502b89f73dea3c365824d3b18875fecbcc25d7c2",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "candidate_delta_vs_strongest_baseline": -0.05126288811743965,
+        "selected_candidate_models": [
+          "tabicl_local",
+          "tabicl_chemeleon_adme",
+          "hauser_lgbm"
+        ]
+      },
+      "briford529": {
+        "native_seed42": {
+          "macro_mcc": 0.2625832868499942,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.18252363227300772,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 2,
+              "tn": 146,
+              "fp": 1,
+              "fn": 26
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.34264294142698076,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 56,
+              "tn": 132,
+              "fp": 51,
+              "fn": 32
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/candidate/evaluation/briford529/native_seed42_predictions.csv",
+          "prediction_sha256": "62585d70b591ab67db5e94c6eab83fcdf86154b32daccb9fd2f4f20178ff7504",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "native_reference": {
+          "macro_mcc": 0.24187511865196104,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.14953902821290413,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 3,
+              "tn": 143,
+              "fp": 4,
+              "fn": 25
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3342112090910179,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 59,
+              "tn": 125,
+              "fp": 58,
+              "fn": 29
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/candidate/evaluation/briford529/native_reference_predictions.csv",
+          "prediction_sha256": "edd2efeef27859de040798b1d67ac83ddfefa73d8aed9c1a6d14ce5a3886ba92",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "hauser_native": {
+          "macro_mcc": 0.2493180160882521,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.2512320631673686,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 5,
+              "tn": 143,
+              "fp": 4,
+              "fn": 23
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.2474039690091356,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 68,
+              "tn": 89,
+              "fp": 94,
+              "fn": 20
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/candidate/evaluation/briford529/hauser_native_predictions.csv",
+          "prediction_sha256": "09e2e0499aad4d53a9d8da8150f0b9d5c460f51989e49e2660050fe11ff17962",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "soft_candidate": {
+          "macro_mcc": 0.25774574282443163,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.21602860177232847,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 6,
+              "tn": 139,
+              "fp": 8,
+              "fn": 22
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.29946288387653486,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 73,
+              "tn": 88,
+              "fp": 95,
+              "fn": 15
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/candidate/evaluation/briford529/soft_candidate_predictions.csv",
+          "prediction_sha256": "c0e6fdd60900943af52a130e01d76d992bc4be12f2f94cdae15ff4c2e115b3bb",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "candidate_delta_vs_strongest_baseline": -0.004837544025562579,
+        "selected_candidate_models": [
+          "tabicl_native",
+          "tabicl_local",
+          "tabicl_chemeleon_adme"
+        ]
+      }
+    },
+    "fixed_soft": {
+      "own750": {
+        "native_seed42": {
+          "macro_mcc": 0.3005504451586478,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.25884639012444155,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 6,
+              "tn": 112,
+              "fp": 3,
+              "fn": 29
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3422545001928541,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 76,
+              "tn": 302,
+              "fp": 62,
+              "fn": 75
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/fixed_soft/evaluation/own750/native_seed42_predictions.csv",
+          "prediction_sha256": "8386b3b99b4f62c2beca5b5f87e1531a1b1bada41a835f5d642ca964fcb83279",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "native_reference": {
+          "macro_mcc": 0.2568411839710498,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.15082668058310103,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 7,
+              "tn": 105,
+              "fp": 10,
+              "fn": 28
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3628556873589986,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 83,
+              "tn": 296,
+              "fp": 68,
+              "fn": 68
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/fixed_soft/evaluation/own750/native_reference_predictions.csv",
+          "prediction_sha256": "b99a859bd5f759c11f83ccd8e97b8ce4976f1e2cf5b40e2feb49ddf8638e7266",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "hauser_native": {
+          "macro_mcc": 0.18487986082663008,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.04996852148741305,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 6,
+              "tn": 100,
+              "fp": 15,
+              "fn": 29
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3197912001658471,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 120,
+              "tn": 202,
+              "fp": 162,
+              "fn": 31
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/fixed_soft/evaluation/own750/hauser_native_predictions.csv",
+          "prediction_sha256": "b8166c5bccaa273a893a530dc1ea10c058a138508b7b1c85e0aa5a866a58e495",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "soft_candidate": {
+          "macro_mcc": 0.30502681290405204,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.21852128682357483,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 11,
+              "tn": 101,
+              "fp": 14,
+              "fn": 24
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.39153233898452927,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 100,
+              "tn": 274,
+              "fp": 90,
+              "fn": 51
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/fixed_soft/evaluation/own750/soft_candidate_predictions.csv",
+          "prediction_sha256": "12485d1ac93f90a8102d9971b773e28c5a41f2db2c0806fa771ad862f26e6c1d",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "candidate_delta_vs_strongest_baseline": 0.0044763677454042194,
+        "selected_candidate_models": [
+          "jeremy_lgbm",
+          "tabicl_native"
+        ]
+      },
+      "briford529": {
+        "native_seed42": {
+          "macro_mcc": 0.2625832868499942,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.18252363227300772,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 2,
+              "tn": 146,
+              "fp": 1,
+              "fn": 26
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.34264294142698076,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 56,
+              "tn": 132,
+              "fp": 51,
+              "fn": 32
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/fixed_soft/evaluation/briford529/native_seed42_predictions.csv",
+          "prediction_sha256": "62585d70b591ab67db5e94c6eab83fcdf86154b32daccb9fd2f4f20178ff7504",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "native_reference": {
+          "macro_mcc": 0.24187511865196104,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.14953902821290413,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 3,
+              "tn": 143,
+              "fp": 4,
+              "fn": 25
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3342112090910179,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 59,
+              "tn": 125,
+              "fp": 58,
+              "fn": 29
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/fixed_soft/evaluation/briford529/native_reference_predictions.csv",
+          "prediction_sha256": "edd2efeef27859de040798b1d67ac83ddfefa73d8aed9c1a6d14ce5a3886ba92",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "hauser_native": {
+          "macro_mcc": 0.2493180160882521,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.2512320631673686,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 5,
+              "tn": 143,
+              "fp": 4,
+              "fn": 23
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.2474039690091356,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 68,
+              "tn": 89,
+              "fp": 94,
+              "fn": 20
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/fixed_soft/evaluation/briford529/hauser_native_predictions.csv",
+          "prediction_sha256": "09e2e0499aad4d53a9d8da8150f0b9d5c460f51989e49e2660050fe11ff17962",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "soft_candidate": {
+          "macro_mcc": 0.2548350924875795,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.19971270713383904,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 13,
+              "tn": 114,
+              "fp": 33,
+              "fn": 15
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.30995747784132,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 71,
+              "tn": 95,
+              "fp": 88,
+              "fn": 17
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/fixed_soft/evaluation/briford529/soft_candidate_predictions.csv",
+          "prediction_sha256": "76ca18dd57b698d962f7247bf65a410a4f6a3c87dba1b9fd2aa5fc200062b63b",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "candidate_delta_vs_strongest_baseline": -0.007748194362414695,
+        "selected_candidate_models": [
+          "jeremy_lgbm",
+          "tabicl_native"
+        ]
+      }
+    },
+    "gnn": {
+      "own750": {
+        "native_seed42": {
+          "macro_mcc": 0.3005504451586478,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.25884639012444155,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 6,
+              "tn": 112,
+              "fp": 3,
+              "fn": 29
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3422545001928541,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 76,
+              "tn": 302,
+              "fp": 62,
+              "fn": 75
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn/evaluation/own750/native_seed42_predictions.csv",
+          "prediction_sha256": "8386b3b99b4f62c2beca5b5f87e1531a1b1bada41a835f5d642ca964fcb83279",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "native_reference": {
+          "macro_mcc": 0.2568411839710498,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.15082668058310103,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 7,
+              "tn": 105,
+              "fp": 10,
+              "fn": 28
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3628556873589986,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 83,
+              "tn": 296,
+              "fp": 68,
+              "fn": 68
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn/evaluation/own750/native_reference_predictions.csv",
+          "prediction_sha256": "b99a859bd5f759c11f83ccd8e97b8ce4976f1e2cf5b40e2feb49ddf8638e7266",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "hauser_native": {
+          "macro_mcc": 0.18487986082663008,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.04996852148741305,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 6,
+              "tn": 100,
+              "fp": 15,
+              "fn": 29
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3197912001658471,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 120,
+              "tn": 202,
+              "fp": 162,
+              "fn": 31
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn/evaluation/own750/hauser_native_predictions.csv",
+          "prediction_sha256": "b8166c5bccaa273a893a530dc1ea10c058a138508b7b1c85e0aa5a866a58e495",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "soft_candidate": {
+          "macro_mcc": 0.24928755704120817,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.12163689874874493,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 7,
+              "tn": 103,
+              "fp": 12,
+              "fn": 28
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3769382153336714,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 105,
+              "tn": 259,
+              "fp": 105,
+              "fn": 46
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn/evaluation/own750/soft_candidate_predictions.csv",
+          "prediction_sha256": "1649fe4e86d0a3baf1007fbd502b89f73dea3c365824d3b18875fecbcc25d7c2",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "candidate_delta_vs_strongest_baseline": -0.05126288811743965,
+        "selected_candidate_models": [
+          "tabicl_local",
+          "tabicl_chemeleon_adme",
+          "hauser_lgbm"
+        ]
+      },
+      "briford529": {
+        "native_seed42": {
+          "macro_mcc": 0.2625832868499942,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.18252363227300772,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 2,
+              "tn": 146,
+              "fp": 1,
+              "fn": 26
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.34264294142698076,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 56,
+              "tn": 132,
+              "fp": 51,
+              "fn": 32
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn/evaluation/briford529/native_seed42_predictions.csv",
+          "prediction_sha256": "62585d70b591ab67db5e94c6eab83fcdf86154b32daccb9fd2f4f20178ff7504",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "native_reference": {
+          "macro_mcc": 0.24187511865196104,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.14953902821290413,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 3,
+              "tn": 143,
+              "fp": 4,
+              "fn": 25
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3342112090910179,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 59,
+              "tn": 125,
+              "fp": 58,
+              "fn": 29
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn/evaluation/briford529/native_reference_predictions.csv",
+          "prediction_sha256": "edd2efeef27859de040798b1d67ac83ddfefa73d8aed9c1a6d14ce5a3886ba92",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "hauser_native": {
+          "macro_mcc": 0.2493180160882521,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.2512320631673686,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 5,
+              "tn": 143,
+              "fp": 4,
+              "fn": 23
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.2474039690091356,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 68,
+              "tn": 89,
+              "fp": 94,
+              "fn": 20
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn/evaluation/briford529/hauser_native_predictions.csv",
+          "prediction_sha256": "09e2e0499aad4d53a9d8da8150f0b9d5c460f51989e49e2660050fe11ff17962",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "soft_candidate": {
+          "macro_mcc": 0.25774574282443163,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.21602860177232847,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 6,
+              "tn": 139,
+              "fp": 8,
+              "fn": 22
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.29946288387653486,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 73,
+              "tn": 88,
+              "fp": 95,
+              "fn": 15
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn/evaluation/briford529/soft_candidate_predictions.csv",
+          "prediction_sha256": "c0e6fdd60900943af52a130e01d76d992bc4be12f2f94cdae15ff4c2e115b3bb",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "candidate_delta_vs_strongest_baseline": -0.004837544025562579,
+        "selected_candidate_models": [
+          "tabicl_native",
+          "tabicl_local",
+          "tabicl_chemeleon_adme"
+        ]
+      }
+    },
+    "gnn_standalone": {
+      "own750": {
+        "native_seed42": {
+          "macro_mcc": 0.3005504451586478,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.25884639012444155,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 6,
+              "tn": 112,
+              "fp": 3,
+              "fn": 29
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3422545001928541,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 76,
+              "tn": 302,
+              "fp": 62,
+              "fn": 75
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn_standalone/evaluation/own750/native_seed42_predictions.csv",
+          "prediction_sha256": "8386b3b99b4f62c2beca5b5f87e1531a1b1bada41a835f5d642ca964fcb83279",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "native_reference": {
+          "macro_mcc": 0.2568411839710498,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.15082668058310103,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 7,
+              "tn": 105,
+              "fp": 10,
+              "fn": 28
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3628556873589986,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 83,
+              "tn": 296,
+              "fp": 68,
+              "fn": 68
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn_standalone/evaluation/own750/native_reference_predictions.csv",
+          "prediction_sha256": "b99a859bd5f759c11f83ccd8e97b8ce4976f1e2cf5b40e2feb49ddf8638e7266",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "hauser_native": {
+          "macro_mcc": 0.18487986082663008,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.04996852148741305,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 6,
+              "tn": 100,
+              "fp": 15,
+              "fn": 29
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3197912001658471,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 120,
+              "tn": 202,
+              "fp": 162,
+              "fn": 31
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn_standalone/evaluation/own750/hauser_native_predictions.csv",
+          "prediction_sha256": "b8166c5bccaa273a893a530dc1ea10c058a138508b7b1c85e0aa5a866a58e495",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "soft_candidate": {
+          "macro_mcc": 0.12127094103024688,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.07424589923624692,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 6,
+              "tn": 102,
+              "fp": 13,
+              "fn": 29
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.16829598282424685,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 98,
+              "tn": 195,
+              "fp": 169,
+              "fn": 53
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn_standalone/evaluation/own750/soft_candidate_predictions.csv",
+          "prediction_sha256": "64db843608ac65a7bc0fb7ebb726f297f5e88fd14375051172855b57f6c59bd7",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "candidate_delta_vs_strongest_baseline": -0.17927950412840093,
+        "selected_candidate_models": [
+          "gnn"
+        ]
+      },
+      "briford529": {
+        "native_seed42": {
+          "macro_mcc": 0.2625832868499942,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.18252363227300772,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 2,
+              "tn": 146,
+              "fp": 1,
+              "fn": 26
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.34264294142698076,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 56,
+              "tn": 132,
+              "fp": 51,
+              "fn": 32
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn_standalone/evaluation/briford529/native_seed42_predictions.csv",
+          "prediction_sha256": "62585d70b591ab67db5e94c6eab83fcdf86154b32daccb9fd2f4f20178ff7504",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "native_reference": {
+          "macro_mcc": 0.24187511865196104,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.14953902821290413,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 3,
+              "tn": 143,
+              "fp": 4,
+              "fn": 25
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3342112090910179,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 59,
+              "tn": 125,
+              "fp": 58,
+              "fn": 29
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn_standalone/evaluation/briford529/native_reference_predictions.csv",
+          "prediction_sha256": "edd2efeef27859de040798b1d67ac83ddfefa73d8aed9c1a6d14ce5a3886ba92",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "hauser_native": {
+          "macro_mcc": 0.2493180160882521,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.2512320631673686,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 5,
+              "tn": 143,
+              "fp": 4,
+              "fn": 23
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.2474039690091356,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 68,
+              "tn": 89,
+              "fp": 94,
+              "fn": 20
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn_standalone/evaluation/briford529/hauser_native_predictions.csv",
+          "prediction_sha256": "09e2e0499aad4d53a9d8da8150f0b9d5c460f51989e49e2660050fe11ff17962",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "soft_candidate": {
+          "macro_mcc": 0.11487180103327854,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.0666100402219504,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 3,
+              "tn": 138,
+              "fp": 9,
+              "fn": 25
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.16313356184460667,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 59,
+              "tn": 92,
+              "fp": 91,
+              "fn": 29
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/gnn_standalone/evaluation/briford529/soft_candidate_predictions.csv",
+          "prediction_sha256": "3ae6f88b481fd08383b59a150e00061dd3269abe69d0759666e67c1ac83617af",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_or_native_complete_verified": true
+        },
+        "candidate_delta_vs_strongest_baseline": -0.14771148581671567,
+        "selected_candidate_models": [
+          "gnn"
+        ]
+      }
+    },
+    "assay_stack": {
+      "own750": {
+        "soft_candidate": {
+          "macro_mcc": 0.20117174223036802,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.060088984267881965,
+              "n": 150,
+              "positive": 35,
+              "negative": 115,
+              "tp": 18,
+              "tn": 64,
+              "fp": 51,
+              "fn": 17
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.3422545001928541,
+              "n": 515,
+              "positive": 151,
+              "negative": 364,
+              "tp": 76,
+              "tn": 302,
+              "fp": 62,
+              "fn": 75
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/assay_stack/own750/predictions.csv",
+          "prediction_sha256": "1427a46a503b186d9ca697a5657146477761e7ed48a75824b9d9f7747fc3ae38",
+          "rows": 750,
+          "id_order_verified": true,
+          "prediction_lock_verified": true,
+          "cyp3a4_identical_to_native_seed42": true
+        },
+        "candidate_delta_vs_strongest_baseline": -0.0993787029282798,
+        "selected_candidate_models": [
+          "assay_logistic"
+        ],
+        "limitations": [
+          "Native regression OOF folds differ from TDI folds; inner stacking CV is not strictly nested.",
+          "Native regressors used validation-assay values for early stopping; OOF is not a completely untouched assay evaluation.",
+          "Full isoform6 contains public Veith structure overlapping test OCNT-0496981; matching outer models have zero query overlap.",
+          "CYP3A4 is copied exactly from native_seed42 baseline; only CYP2D6 changes.",
+          "Unknown or excluded development labels never enter fitting/calibration; baseline probabilities only fill aligned output rows."
+        ]
+      },
+      "briford529": {
+        "soft_candidate": {
+          "macro_mcc": 0.20406752271321438,
+          "per_target": {
+            "CYP2D6_is_TDI": {
+              "mcc": 0.06549210399944798,
+              "n": 175,
+              "positive": 28,
+              "negative": 147,
+              "tp": 21,
+              "tn": 49,
+              "fp": 98,
+              "fn": 7
+            },
+            "CYP3A4_is_TDI": {
+              "mcc": 0.34264294142698076,
+              "n": 271,
+              "positive": 88,
+              "negative": 183,
+              "tp": 56,
+              "tn": 132,
+              "fp": 51,
+              "fn": 32
+            }
+          },
+          "prediction_path": "/Users/adeliyaleleytner/autoresearch-runs/cyp-tdi-20261024/remote/assay_stack/briford529/predictions.csv",
+          "prediction_sha256": "bad6be54a81302d0b148c6cfb314555be37cff35d6f8599a02a1102a6112dfd2",
+          "rows": 529,
+          "id_order_verified": true,
+          "prediction_lock_verified": true,
+          "cyp3a4_identical_to_native_seed42": true
+        },
+        "candidate_delta_vs_strongest_baseline": -0.058515764136779835,
+        "selected_candidate_models": [
+          "assay_logistic"
+        ],
+        "limitations": [
+          "Native regression OOF folds differ from TDI folds; inner stacking CV is not strictly nested.",
+          "Native regressors used validation-assay values for early stopping; OOF is not a completely untouched assay evaluation.",
+          "Full isoform6 contains public Veith structure overlapping test OCNT-0496981; matching outer models have zero query overlap.",
+          "CYP3A4 is copied exactly from native_seed42 baseline; only CYP2D6 changes.",
+          "Unknown or excluded development labels never enter fitting/calibration; baseline probabilities only fill aligned output rows."
+        ]
+      }
+    }
+  },
+  "missing_stages": [],
+  "mismatches": [],
+  "integrity": [],
+  "qualified_stages": {
+    "baseline": false,
+    "candidate": false,
+    "fixed_soft": false,
+    "gnn": false,
+    "gnn_standalone": false,
+    "assay_stack": false
+  },
+  "any_qualified_candidate": false,
+  "caveats": [
+    "Inherited own750/briford529 holdouts have been reused to decide additional campaign stages. They are not a fresh untouched confirmation of the whole adaptive search.",
+    "Outer holdouts overlap by 143 molecules; their results are correlated.",
+    "CYP2D6 has only35positive labels in own750 and28in briford529, so individual mistakes have a substantial effect.",
+    "Training OOF thresholds/ensembles are fitted calibration scores, not independent validation.",
+    "No public leaderboard claim is implied by these local results.",
+    "Pending stages not scored until actual saved predictions are available."
+  ],
+  "final_decision": "No candidate meets declared improvement comparison on both outer holdouts; no submission."
+}

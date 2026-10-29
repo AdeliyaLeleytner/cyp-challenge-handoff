@@ -1,0 +1,2676 @@
+{
+  "allowed_fit_ids_checked": true,
+  "caveats": [
+    "Caller must establish base OOF provenance. This module cannot undo base-model epoch selection on the same OOF labels.",
+    "Development method-selection score is selected among candidates and is not an independent performance estimate; use the frozen outer gate.",
+    "Cross-fitting only the stack is not fully nested retraining of base models; base OOF fits can share other development-fold labels.",
+    "Single-fold base OOF predictions and fold-bagged outer predictions may differ in variance. No query-moment correction is fitted.",
+    "A supplied reference average may duplicate component models; fixed-family membership and prior must be chosen before scoring."
+  ],
+  "development_crossfit": {
+    "flat_mean": {
+      "fold_parameters": [
+        {
+          "fold": "4",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.3790007434210526,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1140,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.16679680532629557,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1042,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.3365335454757859,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1177,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.22404879025627333,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1873,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "0",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.366650389196197,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1157,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.17433687825661115,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1021,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.3345022705357143,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1204,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.22329332358795045,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1859,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "3",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.36477489599999996,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1125,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.16758153035887485,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1031,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.33813917833747925,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1206,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.22033828590568058,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1866,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "2",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.35948334124218045,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1119,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.17085866795366791,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1036,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.3376527878130217,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1198,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.21758087287723094,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1849,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "1",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.367031103839205,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1107,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.17306575361386137,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1010,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.3470087847304128,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1187,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "fixed_uniform",
+              "fit_interval_mae": 0.227146332725832,
+              "intercept": 0.0,
+              "l1_distance_to_prior": 1.5999999999999999,
+              "n_observed": 1893,
+              "solver": {
+                "method": "flat_mean",
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        }
+      ],
+      "metrics": {
+        "defined": true,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "MAE": 0.6023938333293201,
+            "ST_RAE": 0.747504819667718,
+            "baseline_error_sum": 694.0464937478519,
+            "interval_error_sum": 518.80309915,
+            "n": 1412,
+            "truth_mean": 4.95541032675425
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "MAE": 0.4155274559735409,
+            "ST_RAE": 0.5434586910245874,
+            "baseline_error_sum": 403.15059234205444,
+            "interval_error_sum": 219.09569319999997,
+            "n": 1285,
+            "truth_mean": 4.58073792014786
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "MAE": 0.5458328652337575,
+            "ST_RAE": 0.8087441531115848,
+            "baseline_error_sum": 625.365891461621,
+            "interval_error_sum": 505.76100827499994,
+            "n": 1493,
+            "truth_mean": 4.784202026339584
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "MAE": 0.46422604291648817,
+            "ST_RAE": 0.4247103970083163,
+            "baseline_error_sum": 1223.2994357089558,
+            "interval_error_sum": 519.5479889999999,
+            "n": 2335,
+            "truth_mean": 4.096054449714775
+          }
+        },
+        "macro_ST_RAE": 0.6311045152030516,
+        "n_molecules": 4905,
+        "scorer": {
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample.",
+          "function": "rae_soft_threshold_absolute_error",
+          "path": "/Users/adeliyaleleytner/.cache/cyp-inhibition/orx-store/local-runs/d61f74fa-febd-4384-a381-78c3c79d294a/repo/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+        }
+      },
+      "prediction_sha256": "18dde42da07e2ee49f6f13ea7334e48b989ea64bf59d255eac757237f9f2ba75"
+    },
+    "positive_affine_l1_0": {
+      "fold_parameters": [
+        {
+          "fold": "4",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.36138125518684394,
+              "intercept": 1.2053789306071099,
+              "l1_distance_to_prior": 1.7800379596761267,
+              "n_observed": 1140,
+              "solver": {
+                "iterations": 857,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3613812551868431,
+                "status": 0
+              },
+              "total_weight": 0.7800379596761265,
+              "weights": [
+                0.0,
+                0.5529731082753946,
+                0.227064851400732,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.15765371222343316,
+              "intercept": 0.6854771419349006,
+              "l1_distance_to_prior": 1.8688098864501488,
+              "n_observed": 1042,
+              "solver": {
+                "iterations": 572,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.15765371222343302,
+                "status": 0
+              },
+              "total_weight": 0.8688098864501488,
+              "weights": [
+                0.0,
+                0.6311421287292767,
+                0.2376677577208721,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.33410153044701346,
+              "intercept": 0.3778918805747951,
+              "l1_distance_to_prior": 1.9253619459510447,
+              "n_observed": 1177,
+              "solver": {
+                "iterations": 915,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3341015304470136,
+                "status": 0
+              },
+              "total_weight": 0.9253619459510446,
+              "weights": [
+                0.0,
+                0.11938907693586083,
+                0.2338858654540667,
+                0.2279933998622807,
+                0.34409360369883635
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.20496312958945456,
+              "intercept": 0.8314826572422007,
+              "l1_distance_to_prior": 1.8450630391441782,
+              "n_observed": 1873,
+              "solver": {
+                "iterations": 1167,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.2049631295894545,
+                "status": 0
+              },
+              "total_weight": 0.8450630391441784,
+              "weights": [
+                0.0,
+                0.4585553475023712,
+                0.38650769164180715,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "0",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.35115173236837605,
+              "intercept": 1.0195053993833014,
+              "l1_distance_to_prior": 1.8196714778134382,
+              "n_observed": 1157,
+              "solver": {
+                "iterations": 864,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3511517323683764,
+                "status": 0
+              },
+              "total_weight": 0.8196714778134382,
+              "weights": [
+                0.0,
+                0.5370451649388208,
+                0.28262631287461737,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.16614115574416788,
+              "intercept": 0.5620986492047036,
+              "l1_distance_to_prior": 1.8967024464850428,
+              "n_observed": 1021,
+              "solver": {
+                "iterations": 565,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.1661411557441678,
+                "status": 0
+              },
+              "total_weight": 0.8967024464850427,
+              "weights": [
+                0.0,
+                0.6652043650366694,
+                0.2314980814483734,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3296015283250129,
+              "intercept": 0.6465863616337972,
+              "l1_distance_to_prior": 1.8726493235304031,
+              "n_observed": 1204,
+              "solver": {
+                "iterations": 929,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.32960152832501316,
+                "status": 0
+              },
+              "total_weight": 0.8726493235304031,
+              "weights": [
+                0.0,
+                0.17693383099821272,
+                0.24996007003949594,
+                0.03556487998730222,
+                0.4101905425053923
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.20374525797525322,
+              "intercept": 0.8689349615471118,
+              "l1_distance_to_prior": 1.8340132325702934,
+              "n_observed": 1859,
+              "solver": {
+                "iterations": 1139,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.20374525797525334,
+                "status": 0
+              },
+              "total_weight": 0.8340132325702934,
+              "weights": [
+                0.0,
+                0.4647097933424494,
+                0.369303439227844,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "3",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3478380112574168,
+              "intercept": 1.207419587895514,
+              "l1_distance_to_prior": 1.7797700616616647,
+              "n_observed": 1125,
+              "solver": {
+                "iterations": 845,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.34783801125741687,
+                "status": 0
+              },
+              "total_weight": 0.7797700616616647,
+              "weights": [
+                0.0,
+                0.5328241547082081,
+                0.24694590695345658,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.15631493081470257,
+              "intercept": 0.5655610773612096,
+              "l1_distance_to_prior": 1.8988144928540098,
+              "n_observed": 1031,
+              "solver": {
+                "iterations": 566,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.1563149308147026,
+                "status": 0
+              },
+              "total_weight": 0.8988144928540097,
+              "weights": [
+                0.0,
+                0.6756300538684916,
+                0.2231844389855181,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3337845386945689,
+              "intercept": 0.5058644418096045,
+              "l1_distance_to_prior": 1.9033540852843471,
+              "n_observed": 1206,
+              "solver": {
+                "iterations": 935,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.33378453869456914,
+                "status": 0
+              },
+              "total_weight": 0.9033540852843474,
+              "weights": [
+                0.0,
+                0.2130100984932953,
+                0.21806942144089742,
+                0.08592810915051748,
+                0.3863464561996371
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.20335888325935664,
+              "intercept": 0.787928824123232,
+              "l1_distance_to_prior": 1.8520538647880254,
+              "n_observed": 1866,
+              "solver": {
+                "iterations": 1159,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.2033588832593569,
+                "status": 0
+              },
+              "total_weight": 0.8520538647880256,
+              "weights": [
+                0.0,
+                0.4703426056161827,
+                0.3817112591718429,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "2",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3417118159666511,
+              "intercept": 1.1387177677416327,
+              "l1_distance_to_prior": 1.7925213488956622,
+              "n_observed": 1119,
+              "solver": {
+                "iterations": 836,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.34171181596665134,
+                "status": 0
+              },
+              "total_weight": 0.7925213488956622,
+              "weights": [
+                0.0,
+                0.5886558683966141,
+                0.2038654804990481,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.15987217835076864,
+              "intercept": 0.6832234040877103,
+              "l1_distance_to_prior": 1.8726135655869118,
+              "n_observed": 1036,
+              "solver": {
+                "iterations": 568,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.15987217835076856,
+                "status": 0
+              },
+              "total_weight": 0.8726135655869118,
+              "weights": [
+                0.0,
+                0.6505949700153997,
+                0.2220185955715122,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3349811214956742,
+              "intercept": 0.5239321863382423,
+              "l1_distance_to_prior": 1.8959568301994687,
+              "n_observed": 1198,
+              "solver": {
+                "iterations": 924,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.33498112149567427,
+                "status": 0
+              },
+              "total_weight": 0.8959568301994686,
+              "weights": [
+                0.0,
+                0.17337819712727356,
+                0.2023703962030586,
+                0.1195783090743263,
+                0.4006299277948101
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.20053232509661567,
+              "intercept": 0.7589239742829806,
+              "l1_distance_to_prior": 1.8597612952812905,
+              "n_observed": 1849,
+              "solver": {
+                "iterations": 1134,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.20053232509661567,
+                "status": 0
+              },
+              "total_weight": 0.8597612952812906,
+              "weights": [
+                0.0,
+                0.4836623524029561,
+                0.37609894287833456,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "1",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3470331168390228,
+              "intercept": 1.202313046631831,
+              "l1_distance_to_prior": 1.7858835392088914,
+              "n_observed": 1107,
+              "solver": {
+                "iterations": 846,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3470331168390227,
+                "status": 0
+              },
+              "total_weight": 0.7858835392088914,
+              "weights": [
+                0.0,
+                0.5701631342060609,
+                0.2157204050028305,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.16244375982438786,
+              "intercept": 0.8262334627459227,
+              "l1_distance_to_prior": 1.840861572456015,
+              "n_observed": 1010,
+              "solver": {
+                "iterations": 564,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.16244375982438788,
+                "status": 0
+              },
+              "total_weight": 0.840861572456015,
+              "weights": [
+                0.0,
+                0.5683000822143224,
+                0.2725614902416926,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3435655129875169,
+              "intercept": 0.5987559106060213,
+              "l1_distance_to_prior": 1.8818178357571052,
+              "n_observed": 1187,
+              "solver": {
+                "iterations": 924,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.34356551298751775,
+                "status": 0
+              },
+              "total_weight": 0.881817835757105,
+              "weights": [
+                0.0,
+                0.15432027260994025,
+                0.20667614282006017,
+                0.1165033288242824,
+                0.4043180915028223
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.2068766746334771,
+              "intercept": 0.8651518495581519,
+              "l1_distance_to_prior": 1.8361178030890541,
+              "n_observed": 1893,
+              "solver": {
+                "iterations": 1193,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.20687667463347717,
+                "status": 0
+              },
+              "total_weight": 0.8361178030890541,
+              "weights": [
+                0.0,
+                0.45903687943647126,
+                0.37708092365258294,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        }
+      ],
+      "metrics": {
+        "defined": true,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "MAE": 0.5996902539874088,
+            "ST_RAE": 0.7155476964534377,
+            "baseline_error_sum": 694.0464937478519,
+            "interval_error_sum": 496.6233698328607,
+            "n": 1412,
+            "truth_mean": 4.95541032675425
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "MAE": 0.42134847091653316,
+            "ST_RAE": 0.5164199282271498,
+            "baseline_error_sum": 403.15059234205444,
+            "interval_error_sum": 208.19499996201668,
+            "n": 1285,
+            "truth_mean": 4.58073792014786
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "MAE": 0.5444746565994657,
+            "ST_RAE": 0.8051528975778901,
+            "baseline_error_sum": 625.365891461621,
+            "interval_error_sum": 503.5151595567045,
+            "n": 1493,
+            "truth_mean": 4.784202026339584
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "MAE": 0.5024046882679173,
+            "ST_RAE": 0.390383361662091,
+            "baseline_error_sum": 1223.2994357089558,
+            "interval_error_sum": 477.5557460314011,
+            "n": 2335,
+            "truth_mean": 4.096054449714775
+          }
+        },
+        "macro_ST_RAE": 0.6068759709801421,
+        "n_molecules": 4905,
+        "scorer": {
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample.",
+          "function": "rae_soft_threshold_absolute_error",
+          "path": "/Users/adeliyaleleytner/.cache/cyp-inhibition/orx-store/local-runs/d61f74fa-febd-4384-a381-78c3c79d294a/repo/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+        }
+      },
+      "prediction_sha256": "6b10022f52af6a26b585608f23404e547ecb05f0af8532a0a27a566d34929608"
+    },
+    "positive_affine_l1_0.01": {
+      "fold_parameters": [
+        {
+          "fold": "4",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3637037858419078,
+              "intercept": 1.0859357063688382,
+              "l1_distance_to_prior": 0.1958674837145552,
+              "n_observed": 1140,
+              "solver": {
+                "iterations": 845,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3656624606790531,
+                "status": 0
+              },
+              "total_weight": 0.8041325162854448,
+              "weights": [
+                0.8041325162854448,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.16052956609217836,
+              "intercept": 0.49752789341364134,
+              "l1_distance_to_prior": 0.09125830073000518,
+              "n_observed": 1042,
+              "solver": {
+                "iterations": 574,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.16144214909947838,
+                "status": 0
+              },
+              "total_weight": 0.9087416992699948,
+              "weights": [
+                0.9087416992699948,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.33514967803927465,
+              "intercept": 0.1707351194335837,
+              "l1_distance_to_prior": 0.029034311889762354,
+              "n_observed": 1177,
+              "solver": {
+                "iterations": 905,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.335440021158172,
+                "status": 0
+              },
+              "total_weight": 0.9709656881102376,
+              "weights": [
+                0.9709656881102376,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.20526803188449813,
+              "intercept": 0.7634442113247634,
+              "l1_distance_to_prior": 0.13968203251987932,
+              "n_observed": 1873,
+              "solver": {
+                "iterations": 1152,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.20666485220969713,
+                "status": 0
+              },
+              "total_weight": 0.8603179674801207,
+              "weights": [
+                0.8603179674801207,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "0",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3528803926391904,
+              "intercept": 0.8674504211612659,
+              "l1_distance_to_prior": 0.1517330468456045,
+              "n_observed": 1157,
+              "solver": {
+                "iterations": 859,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3543977231076465,
+                "status": 0
+              },
+              "total_weight": 0.8482669531543955,
+              "weights": [
+                0.8482669531543955,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.16941425710910996,
+              "intercept": 0.40169279398055496,
+              "l1_distance_to_prior": 0.07115168338327993,
+              "n_observed": 1021,
+              "solver": {
+                "iterations": 567,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.17012577394294273,
+                "status": 0
+              },
+              "total_weight": 0.9288483166167201,
+              "weights": [
+                0.9288483166167201,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3321273861405174,
+              "intercept": 0.29616623188117547,
+              "l1_distance_to_prior": 0.054355930602486,
+              "n_observed": 1204,
+              "solver": {
+                "iterations": 925,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.332670945446542,
+                "status": 0
+              },
+              "total_weight": 0.945644069397514,
+              "weights": [
+                0.945644069397514,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.20415998844372577,
+              "intercept": 0.8212146139785005,
+              "l1_distance_to_prior": 0.15574377202615164,
+              "n_observed": 1859,
+              "solver": {
+                "iterations": 1126,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.20571742616398733,
+                "status": 0
+              },
+              "total_weight": 0.8442562279738484,
+              "weights": [
+                0.8442562279738484,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "3",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.34978218589495635,
+              "intercept": 1.049908137843714,
+              "l1_distance_to_prior": 0.1879689567971472,
+              "n_observed": 1125,
+              "solver": {
+                "iterations": 855,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3516618754629278,
+                "status": 0
+              },
+              "total_weight": 0.8120310432028528,
+              "weights": [
+                0.8120310432028528,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.1604109998056583,
+              "intercept": 0.3327938446551627,
+              "l1_distance_to_prior": 0.04987179169449696,
+              "n_observed": 1031,
+              "solver": {
+                "iterations": 574,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.16090971772260348,
+                "status": 0
+              },
+              "total_weight": 0.950128208305503,
+              "weights": [
+                0.950128208305503,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3356775057775343,
+              "intercept": 0.22399509175785745,
+              "l1_distance_to_prior": 0.037812260715641255,
+              "n_observed": 1206,
+              "solver": {
+                "iterations": 931,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.33605562838469055,
+                "status": 0
+              },
+              "total_weight": 0.9621877392843587,
+              "weights": [
+                0.9621877392843587,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.2037105871781882,
+              "intercept": 0.7071593313385197,
+              "l1_distance_to_prior": 0.12997573871787982,
+              "n_observed": 1866,
+              "solver": {
+                "iterations": 1145,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.20501034456536704,
+                "status": 0
+              },
+              "total_weight": 0.8700242612821202,
+              "weights": [
+                0.8700242612821202,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "2",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3453861640845073,
+              "intercept": 1.0203097315071128,
+              "l1_distance_to_prior": 0.184052670013104,
+              "n_observed": 1119,
+              "solver": {
+                "iterations": 833,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.34722669078463847,
+                "status": 0
+              },
+              "total_weight": 0.815947329986896,
+              "weights": [
+                0.815947329986896,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.16340299722478688,
+              "intercept": 0.4529715195219082,
+              "l1_distance_to_prior": 0.07955638837594747,
+              "n_observed": 1036,
+              "solver": {
+                "iterations": 578,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.16419856110854636,
+                "status": 0
+              },
+              "total_weight": 0.9204436116240525,
+              "weights": [
+                0.9204436116240525,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.33645195400453975,
+              "intercept": 0.1667518283362446,
+              "l1_distance_to_prior": 0.028640703680296142,
+              "n_observed": 1198,
+              "solver": {
+                "iterations": 924,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.33673836104134275,
+                "status": 0
+              },
+              "total_weight": 0.9713592963197039,
+              "weights": [
+                0.9713592963197039,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.20091364260612396,
+              "intercept": 0.6641063442871196,
+              "l1_distance_to_prior": 0.11945395791172442,
+              "n_observed": 1849,
+              "solver": {
+                "iterations": 1126,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.2021081821852413,
+                "status": 0
+              },
+              "total_weight": 0.8805460420882756,
+              "weights": [
+                0.8805460420882756,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "1",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3503820845456523,
+              "intercept": 1.0377262967740257,
+              "l1_distance_to_prior": 0.1821526540584062,
+              "n_observed": 1107,
+              "solver": {
+                "iterations": 851,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.35220361108623593,
+                "status": 0
+              },
+              "total_weight": 0.8178473459415938,
+              "weights": [
+                0.8178473459415938,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.16420657922613807,
+              "intercept": 0.6900756436783667,
+              "l1_distance_to_prior": 0.12981871199692285,
+              "n_observed": 1010,
+              "solver": {
+                "iterations": 562,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.16550476634610714,
+                "status": 0
+              },
+              "total_weight": 0.8701812880030771,
+              "weights": [
+                0.8701812880030771,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3452293220408307,
+              "intercept": 0.31956520486852136,
+              "l1_distance_to_prior": 0.06134361362277674,
+              "n_observed": 1187,
+              "solver": {
+                "iterations": 920,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.34584275817705834,
+                "status": 0
+              },
+              "total_weight": 0.9386563863772233,
+              "weights": [
+                0.9386563863772233,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.20721882475275907,
+              "intercept": 0.8266071035622182,
+              "l1_distance_to_prior": 0.15548763858266113,
+              "n_observed": 1893,
+              "solver": {
+                "iterations": 1171,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.20877370113858584,
+                "status": 0
+              },
+              "total_weight": 0.8445123614173389,
+              "weights": [
+                0.8445123614173389,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        }
+      ],
+      "metrics": {
+        "defined": true,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "MAE": 0.6003371368389127,
+            "ST_RAE": 0.7193887856148168,
+            "baseline_error_sum": 694.0464937478519,
+            "interval_error_sum": 499.28926429748867,
+            "n": 1412,
+            "truth_mean": 4.95541032675425
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "MAE": 0.42256118309456,
+            "ST_RAE": 0.5270122719719373,
+            "baseline_error_sum": 403.15059234205444,
+            "interval_error_sum": 212.46530961701845,
+            "n": 1285,
+            "truth_mean": 4.58073792014786
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "MAE": 0.5459823310744824,
+            "ST_RAE": 0.8054417099948774,
+            "baseline_error_sum": 625.365891461621,
+            "interval_error_sum": 503.69577299131896,
+            "n": 1493,
+            "truth_mean": 4.784202026339584
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "MAE": 0.49926592471411957,
+            "ST_RAE": 0.39136821915552344,
+            "baseline_error_sum": 1223.2994357089558,
+            "interval_error_sum": 478.76052164737075,
+            "n": 2335,
+            "truth_mean": 4.096054449714775
+          }
+        },
+        "macro_ST_RAE": 0.6108027466842888,
+        "n_molecules": 4905,
+        "scorer": {
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample.",
+          "function": "rae_soft_threshold_absolute_error",
+          "path": "/Users/adeliyaleleytner/.cache/cyp-inhibition/orx-store/local-runs/d61f74fa-febd-4384-a381-78c3c79d294a/repo/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+        }
+      },
+      "prediction_sha256": "f713c43b40951c7148f314bba2ca7937ee11032773f909ee037b268f665893aa"
+    },
+    "positive_affine_l1_0.10000000000000001": {
+      "fold_parameters": [
+        {
+          "fold": "4",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.37280588894736844,
+              "intercept": 0.09073675000000048,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1140,
+              "solver": {
+                "iterations": 866,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3728058889473687,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.16268144217850286,
+              "intercept": 0.07276360000000004,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1042,
+              "solver": {
+                "iterations": 576,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.16268144217850306,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.33551219088785045,
+              "intercept": 0.031906924999999475,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1177,
+              "solver": {
+                "iterations": 900,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3355121908878504,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.21239800189535504,
+              "intercept": 0.1327835000000004,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1873,
+              "solver": {
+                "iterations": 1119,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.2123980018953549,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "0",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3589203114088159,
+              "intercept": 0.1003159999999994,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1157,
+              "solver": {
+                "iterations": 879,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3589203114088159,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.17068889755142017,
+              "intercept": 0.07234724999999997,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1021,
+              "solver": {
+                "iterations": 564,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.17068889755142028,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.33307224684385384,
+              "intercept": 0.04018092500000048,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1204,
+              "solver": {
+                "iterations": 929,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3330722468438539,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.21201408695871918,
+              "intercept": 0.1832118159083686,
+              "l1_distance_to_prior": 0.014819375984987504,
+              "n_observed": 1859,
+              "solver": {
+                "iterations": 1095,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.2134960245572175,
+                "status": 0
+              },
+              "total_weight": 0.9851806240150125,
+              "weights": [
+                0.9851806240150125,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "3",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3580421059555555,
+              "intercept": 0.09737330000000011,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1125,
+              "solver": {
+                "iterations": 861,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3580421059555554,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.1613641395732299,
+              "intercept": 0.08884994999999929,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1031,
+              "solver": {
+                "iterations": 567,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.16136413957322987,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.33622503965588724,
+              "intercept": 0.04829772500000029,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1206,
+              "solver": {
+                "iterations": 932,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3362250396558872,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.21021557869774915,
+              "intercept": 0.11989174999999985,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1866,
+              "solver": {
+                "iterations": 1125,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.21021557869774898,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "2",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3541944819034852,
+              "intercept": 0.08676174999999997,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1119,
+              "solver": {
+                "iterations": 845,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.35419448190348524,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.1654021896235521,
+              "intercept": 0.08480829999999973,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1036,
+              "solver": {
+                "iterations": 578,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.16540218962355221,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3368373639816361,
+              "intercept": 0.02944552499999986,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1198,
+              "solver": {
+                "iterations": 925,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.33683736398163616,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.20675045243374798,
+              "intercept": 0.12517574999999947,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1849,
+              "solver": {
+                "iterations": 1091,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.2067504524337479,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "1",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3578728350045167,
+              "intercept": 0.11081680000000027,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1107,
+              "solver": {
+                "iterations": 860,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3578728350045166,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.1678687442574257,
+              "intercept": 0.0866219500000005,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1010,
+              "solver": {
+                "iterations": 557,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.1678687442574258,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3461136135425442,
+              "intercept": 0.03216547499999933,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1187,
+              "solver": {
+                "iterations": 920,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.34611361354254383,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.21574304120052315,
+              "intercept": 0.13098963134913927,
+              "l1_distance_to_prior": 0.0006200486883102263,
+              "n_observed": 1893,
+              "solver": {
+                "iterations": 1148,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.21580504606935416,
+                "status": 0
+              },
+              "total_weight": 0.9993799513116898,
+              "weights": [
+                0.9993799513116898,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        }
+      ],
+      "metrics": {
+        "defined": true,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "MAE": 0.6008377706211048,
+            "ST_RAE": 0.7342150664118633,
+            "baseline_error_sum": 694.0464937478519,
+            "interval_error_sum": 509.5793924999999,
+            "n": 1412,
+            "truth_mean": 4.95541032675425
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "MAE": 0.42030240636887156,
+            "ST_RAE": 0.5291006070729489,
+            "baseline_error_sum": 403.15059234205444,
+            "interval_error_sum": 213.30722314999997,
+            "n": 1285,
+            "truth_mean": 4.58073792014786
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "MAE": 0.5461437624909579,
+            "ST_RAE": 0.8066908861481454,
+            "baseline_error_sum": 625.365891461621,
+            "interval_error_sum": 504.47696515,
+            "n": 1493,
+            "truth_mean": 4.784202026339584
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "MAE": 0.47366456015314506,
+            "ST_RAE": 0.40438365457938663,
+            "baseline_error_sum": 1223.2994357089558,
+            "interval_error_sum": 494.68229645688893,
+            "n": 2335,
+            "truth_mean": 4.096054449714775
+          }
+        },
+        "macro_ST_RAE": 0.6185975535530861,
+        "n_molecules": 4905,
+        "scorer": {
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample.",
+          "function": "rae_soft_threshold_absolute_error",
+          "path": "/Users/adeliyaleleytner/.cache/cyp-inhibition/orx-store/local-runs/d61f74fa-febd-4384-a381-78c3c79d294a/repo/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+        }
+      },
+      "prediction_sha256": "14edfb37e99ea57bf526ea2252780127371e560abe8846d1737c1c4093f81faa"
+    },
+    "positive_affine_l1_1": {
+      "fold_parameters": [
+        {
+          "fold": "4",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.37280588894736844,
+              "intercept": 0.09001309999999929,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1140,
+              "solver": {
+                "iterations": 865,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3728058889473684,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.16268144217850286,
+              "intercept": 0.07280350000000002,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1042,
+              "solver": {
+                "iterations": 576,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.1626814421785028,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.33551219088785045,
+              "intercept": 0.031906924999999475,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1177,
+              "solver": {
+                "iterations": 900,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3355121908878504,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.21239800189535504,
+              "intercept": 0.13214425000000052,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1873,
+              "solver": {
+                "iterations": 1123,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.21239800189535485,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "0",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3589203114088159,
+              "intercept": 0.1003159999999994,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1157,
+              "solver": {
+                "iterations": 881,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3589203114088159,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.17068889755142017,
+              "intercept": 0.07234724999999997,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1021,
+              "solver": {
+                "iterations": 564,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.17068889755142028,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.33307224684385384,
+              "intercept": 0.04018092500000048,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1204,
+              "solver": {
+                "iterations": 929,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3330722468438539,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.21355172210866058,
+              "intercept": 0.11577790000000032,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1859,
+              "solver": {
+                "iterations": 1095,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.2135517221086603,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "3",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3580421059555555,
+              "intercept": 0.09737330000000011,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1125,
+              "solver": {
+                "iterations": 862,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3580421059555554,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.1613641395732299,
+              "intercept": 0.08884994999999929,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1031,
+              "solver": {
+                "iterations": 568,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.16136413957322987,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.33622503965588724,
+              "intercept": 0.048178025000000346,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1206,
+              "solver": {
+                "iterations": 931,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3362250396558874,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.21021557869774915,
+              "intercept": 0.11989174999999985,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1866,
+              "solver": {
+                "iterations": 1125,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.21021557869774898,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "2",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3541944819034852,
+              "intercept": 0.08676174999999997,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1119,
+              "solver": {
+                "iterations": 848,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.35419448190348524,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.1654021896235521,
+              "intercept": 0.08480829999999973,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1036,
+              "solver": {
+                "iterations": 579,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.16540218962355221,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3368373639816361,
+              "intercept": 0.02944552499999986,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1198,
+              "solver": {
+                "iterations": 925,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.33683736398163616,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.20675045243374798,
+              "intercept": 0.12517574999999947,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1849,
+              "solver": {
+                "iterations": 1086,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.2067504524337479,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        },
+        {
+          "fold": "1",
+          "per_target": {
+            "CYP1A2_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3578728350045167,
+              "intercept": 0.11081680000000027,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1107,
+              "solver": {
+                "iterations": 863,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.3578728350045166,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2C9_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.1678687442574257,
+              "intercept": 0.0866219500000005,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1010,
+              "solver": {
+                "iterations": 558,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.1678687442574258,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP2D6_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.3461136135425442,
+              "intercept": 0.03216547499999933,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1187,
+              "solver": {
+                "iterations": 921,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.34611361354254383,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "CYP3A4_pIC50_direct_inhibition": {
+              "constraint_type": "positive_affine",
+              "fit_interval_mae": 0.21580514825673536,
+              "intercept": 0.12850075000000016,
+              "l1_distance_to_prior": 0.0,
+              "n_observed": 1893,
+              "solver": {
+                "iterations": 1147,
+                "method": "scipy.optimize.linprog/highs",
+                "objective": 0.21580514825673508,
+                "status": 0
+              },
+              "total_weight": 1.0,
+              "weights": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "train_rows": 3924,
+          "validation_rows": 981
+        }
+      ],
+      "metrics": {
+        "defined": true,
+        "endpoints": {
+          "CYP1A2_pIC50_direct_inhibition": {
+            "MAE": 0.6008439206211049,
+            "ST_RAE": 0.7342307062142366,
+            "baseline_error_sum": 694.0464937478519,
+            "interval_error_sum": 509.59024725,
+            "n": 1412,
+            "truth_mean": 4.95541032675425
+          },
+          "CYP2C9_pIC50_direct_inhibition": {
+            "MAE": 0.4203027479252918,
+            "ST_RAE": 0.5290988256046499,
+            "baseline_error_sum": 403.15059234205444,
+            "interval_error_sum": 213.30650494999998,
+            "n": 1285,
+            "truth_mean": 4.58073792014786
+          },
+          "CYP2D6_pIC50_direct_inhibition": {
+            "MAE": 0.5461407960475553,
+            "ST_RAE": 0.8066857181336374,
+            "baseline_error_sum": 625.365891461621,
+            "interval_error_sum": 504.47373325000007,
+            "n": 1493,
+            "truth_mean": 4.784202026339584
+          },
+          "CYP3A4_pIC50_direct_inhibition": {
+            "MAE": 0.47313612403511784,
+            "ST_RAE": 0.40462723581911664,
+            "baseline_error_sum": 1223.2994357089558,
+            "interval_error_sum": 494.98026925,
+            "n": 2335,
+            "truth_mean": 4.096054449714775
+          }
+        },
+        "macro_ST_RAE": 0.6186606214429101,
+        "n_molecules": 4905,
+        "scorer": {
+          "denominator": "Sum of interval distances from mean observed truth, recomputed on each evaluated sample.",
+          "function": "rae_soft_threshold_absolute_error",
+          "path": "/Users/adeliyaleleytner/.cache/cyp-inhibition/orx-store/local-runs/d61f74fa-febd-4384-a381-78c3c79d294a/repo/official_scoring_functions.py",
+          "sha256": "c0ee287c06c0301d4b3bfd74559b90eb1bd85db68b75b7d018ae92280c0e1dd3"
+        }
+      },
+      "prediction_sha256": "72c907925234bdf34ca1029a08ef6ce3078db4225455052746d3b690f8f806b8"
+    }
+  },
+  "development_fold_sha256": "1401ef058d2e49ae6d7e78d035c596ad9b92cc0a14bebf2f3732c7ed7c6e754e",
+  "forbidden_fit_ids_checked": true,
+  "n_development": 4905,
+  "n_query": 750,
+  "per_target": {
+    "CYP1A2_pIC50_direct_inhibition": {
+      "constraint_type": "positive_affine",
+      "fit_interval_mae": 0.35006954025208153,
+      "intercept": 1.163522572862373,
+      "l1_distance_to_prior": 1.7891894789108034,
+      "n_observed": 1412,
+      "solver": {
+        "iterations": 1066,
+        "method": "scipy.optimize.linprog/highs",
+        "objective": 0.35006954025208176,
+        "status": 0
+      },
+      "total_weight": 0.7891894789108033,
+      "weights": {
+        "briford_reference": 0.0,
+        "mtaux8": 0.2272713897133607,
+        "specialist_aux_view": 0.0,
+        "specialist_single_view": 0.0,
+        "union18": 0.5619180891974426
+      }
+    },
+    "CYP2C9_pIC50_direct_inhibition": {
+      "constraint_type": "positive_affine",
+      "fit_interval_mae": 0.1605955562534806,
+      "intercept": 0.6722933522650846,
+      "l1_distance_to_prior": 1.8741964095863701,
+      "n_observed": 1285,
+      "solver": {
+        "iterations": 705,
+        "method": "scipy.optimize.linprog/highs",
+        "objective": 0.1605955562534804,
+        "status": 0
+      },
+      "total_weight": 0.87419640958637,
+      "weights": {
+        "briford_reference": 0.0,
+        "mtaux8": 0.22170834469874923,
+        "specialist_aux_view": 0.0,
+        "specialist_single_view": 0.0,
+        "union18": 0.6524880648876208
+      }
+    },
+    "CYP2D6_pIC50_direct_inhibition": {
+      "constraint_type": "positive_affine",
+      "fit_interval_mae": 0.3353715470525456,
+      "intercept": 0.5628311723181948,
+      "l1_distance_to_prior": 1.8886858183475481,
+      "n_observed": 1493,
+      "solver": {
+        "iterations": 1158,
+        "method": "scipy.optimize.linprog/highs",
+        "objective": 0.3353715470525459,
+        "status": 0
+      },
+      "total_weight": 0.8886858183475479,
+      "weights": {
+        "briford_reference": 0.0,
+        "mtaux8": 0.21678553831517747,
+        "specialist_aux_view": 0.3913989484023161,
+        "specialist_single_view": 0.11572158636975642,
+        "union18": 0.16477974526029787
+      }
+    },
+    "CYP3A4_pIC50_direct_inhibition": {
+      "constraint_type": "positive_affine",
+      "fit_interval_mae": 0.20397422825954173,
+      "intercept": 0.8233563546864021,
+      "l1_distance_to_prior": 1.8453132356447481,
+      "n_observed": 2335,
+      "solver": {
+        "iterations": 1443,
+        "method": "scipy.optimize.linprog/highs",
+        "objective": 0.20397422825954176,
+        "status": 0
+      },
+      "total_weight": 0.8453132356447484,
+      "weights": {
+        "briford_reference": 0.0,
+        "mtaux8": 0.3784400206105335,
+        "specialist_aux_view": 0.0,
+        "specialist_single_view": 0.0,
+        "union18": 0.4668732150342148
+      }
+    }
+  },
+  "protocol": {
+    "candidates": [
+      {
+        "kind": "flat_mean",
+        "name": "flat_mean"
+      },
+      {
+        "kind": "positive_affine_intercept",
+        "l1_strength": 0.0,
+        "name": "positive_affine_l1_0"
+      },
+      {
+        "kind": "positive_affine_intercept",
+        "l1_strength": 0.01,
+        "name": "positive_affine_l1_0.01"
+      },
+      {
+        "kind": "positive_affine_intercept",
+        "l1_strength": 0.1,
+        "name": "positive_affine_l1_0.10000000000000001"
+      },
+      {
+        "kind": "positive_affine_intercept",
+        "l1_strength": 1.0,
+        "name": "positive_affine_l1_1"
+      }
+    ],
+    "intercept": "Unconstrained per target for LP; fixed zero for flat mean",
+    "model_names": [
+      "briford_reference",
+      "union18",
+      "mtaux8",
+      "specialist_single_view",
+      "specialist_aux_view"
+    ],
+    "prior_weights": {
+      "briford_reference": 1.0,
+      "mtaux8": 0.0,
+      "specialist_aux_view": 0.0,
+      "specialist_single_view": 0.0,
+      "union18": 0.0
+    },
+    "regularizer": "L1 distance from fixed prior; objective = mean interval distance + lambda*L1",
+    "selection": "Minimum pooled cross-fitted development macro ST-RAE across all four targets",
+    "targets": [
+      "CYP1A2_pIC50_direct_inhibition",
+      "CYP2C9_pIC50_direct_inhibition",
+      "CYP2D6_pIC50_direct_inhibition",
+      "CYP3A4_pIC50_direct_inhibition"
+    ],
+    "tie_order": [
+      "flat_mean",
+      "positive_affine_l1_0",
+      "positive_affine_l1_0.01",
+      "positive_affine_l1_0.10000000000000001",
+      "positive_affine_l1_1"
+    ],
+    "version": 1,
+    "weight_constraint": "positive_affine",
+    "weight_sum_constraint": "No sum constraint; each weight is nonnegative"
+  },
+  "protocol_sha256": "165201151a0ad2539288e8c397703d8b375ca6c9e1e140ad118078c5297bef7b",
+  "query_labels_used": false,
+  "query_moments_used": false,
+  "query_prediction_sha256": "4eecf42ca97dab108c05f9dac70b7af8f536fa750b82452ff70b378915c61f4a",
+  "selected_candidate": "positive_affine_l1_0",
+  "source_prediction_hashes": {
+    "briford_reference": {
+      "oof_sha256": "682712e43555c38d41a0019451403a7cfdda794aa0ff27b9f327ab951b15bd42",
+      "query_sha256": "fa25bfbdf8448b48d87c72befa3e18dbdfee8c0d5b7d01a00b4e8769b42ec6d6"
+    },
+    "mtaux8": {
+      "oof_sha256": "1590afe15fe26142c46bfa16f4e60c87aeb83f946e601e2742a08c9916bee3fc",
+      "query_sha256": "bf92e2e917d09955815a3859807401e48bca3406cc8ab627e124921ce2d9ddd6"
+    },
+    "specialist_aux_view": {
+      "oof_sha256": "5a3508578a250f3065b97c087f58060e7e258c5ccd8008501501c62da1bab29c",
+      "query_sha256": "de94ff046d9b21297a89a590c3ef864454a2e36e70e761e887fc78ff243524f3"
+    },
+    "specialist_single_view": {
+      "oof_sha256": "5fb2285860e325130c11f62d7a2a91e10041b2ce51d87923e663a48049917219",
+      "query_sha256": "eb31ea9ad5f1f42a30885307a99176ba69a3e9f8fc9ca3ce6dc830cadab505a9"
+    },
+    "union18": {
+      "oof_sha256": "68758d48f9f63cbec3d7646d0a4b2ed7243a8c961fb2d679f430ad18705ee5f0",
+      "query_sha256": "319e0c73b3d66d5cfd4890fa02917f99f9b62359d5850a3a5ca603d6ba304bd7"
+    }
+  },
+  "truth_sha256": "b3ac69e0caaaa39c368561d74b27dc6ec95aa48224e1bcf1d93ea0334c691fa8"
+}

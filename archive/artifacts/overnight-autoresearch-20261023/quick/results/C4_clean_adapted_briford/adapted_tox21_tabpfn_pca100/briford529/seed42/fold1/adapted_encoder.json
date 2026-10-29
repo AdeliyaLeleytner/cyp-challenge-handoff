@@ -1,0 +1,107 @@
+{
+  "parent_trial_dir": "/workspace/cyp-night/results/D0_D1_public_r1/chemeleon_official_plus_tox21/briford529/seed42/fold1",
+  "checkpoint": "/workspace/cyp-night/results/D0_D1_public_r1/chemeleon_official_plus_tox21/briford529/seed42/fold1/checkpoints/best.ckpt",
+  "checkpoint_sha256": "450d10ab85769be0cff61e67b37e8768da59556d3a218e95b8f005431e3b8620",
+  "metadata_sha256": "06128629400d28088e3f5f93362ccf4c76535f7712bde7802da38dddd99a6c80",
+  "job_sha256": "f4db44f78cce7f3586f5309fc06cfab2ee542be492cb13d2a7f6f572add9bc79",
+  "complete_sha256": "ec8e5172b28e39750cd0ea6cec2ef8ac37ce03b9d023ca9da121e9925c1304c1",
+  "worker_done_sha256": "7102a27b7688a206c21aa05f21bdeb77bbf249a8420ab041f18a59317e584bda",
+  "parent_predictions_sha256": "a633a00ea745011d850bbd3e4725f3cb444cfb4ba53e138a5ffc2161ed11974a",
+  "cohorts_sha256": "eee1078503c7793f8f1c1fcc788dd4db9225a6d682202930f9bb972bbe6bd82a",
+  "official_train_sha256": "b8f79addd266fb6f9f4c222c5e4e73d926362328b6a8d2841871a54e46bd2278",
+  "official_test_sha256": "a342f8444a8dcb531ca12f3685293f0bd6c36ae9073f491e44a9bc1cc4b741f9",
+  "parent_effective_config": {
+    "hidden_dim": 700,
+    "depth": 5,
+    "dropout": 0.0,
+    "ffn_hidden_dim": 300,
+    "ffn_num_layers": 1,
+    "batch_norm": false,
+    "aggregation": "mean",
+    "loss": "mae",
+    "max_epochs": 100,
+    "patience": 15,
+    "batch_size": 64,
+    "warmup_epochs": 2,
+    "init_lr": 1e-05,
+    "max_lr": 0.0001,
+    "final_lr": 1e-05,
+    "seed": 42,
+    "min_epochs": 20,
+    "kind": "neural",
+    "initialization": "chemeleon",
+    "component": "official_aux",
+    "extra_public_sha256": "50f6fa64f33cf79540e6087ab0d52aff062d7ec527319bfad6d44a8444dd828b",
+    "name": "chemeleon_official_plus_tox21",
+    "extra_public_sources": [
+      "pubchem_tox21_cyp"
+    ],
+    "fold_index": 1,
+    "torch_num_threads": 4,
+    "num_workers": 0
+  },
+  "parent_effective_config_sha256": "70e8b947d61a2299abc9ac979249cd1230ac60d4374236fa1169c425a31cc77e",
+  "initialization": {
+    "initialization": "chemeleon",
+    "checkpoint_sha256": "c376624d3407204e780a0ed13a9ac097cc9bb1c13ef89cdbc633c1715c183651",
+    "checkpoint_path": "/workspace/cyp-night/assets/weights/chemeleon_mp.pt",
+    "encoder_hyperparameters": {
+      "d_v": 72,
+      "d_e": 14,
+      "d_h": 2048,
+      "bias": false,
+      "depth": 6,
+      "dropout": 0.0,
+      "activation": "relu",
+      "undirected": false,
+      "d_vd": null,
+      "V_d_transform": null,
+      "graph_transform": null
+    }
+  },
+  "public_source": {
+    "table_sha256": "50f6fa64f33cf79540e6087ab0d52aff062d7ec527319bfad6d44a8444dd828b",
+    "sources": [
+      "pubchem_tox21_cyp"
+    ],
+    "excluded_parent_sha256": "8fff626c630fc268922d2588ddad184c5a07200dc24eecafcaa80b2842cfa648"
+  },
+  "reference_source_hashes": {
+    "chembl_all_isoforms.csv": "74a5233890e74e5514a6bbbad25cfe1c365181fb29af01c116e96cc5277b33fc",
+    "emax.csv": "06562915e3cd7ff7e6970e621ae4d709fe3f4b08fce3f29a8acafc96f4403bd7",
+    "inhibition.csv": "95576058689db7537458cde2615f8d72a84748cea9d4a2d73fe3c287f7c1cf0c",
+    "pubchem_all_isoforms.csv": "1465de66ba50c0cda5d7fab3083a8ccdfba4adfbefef8d13a1fedade86b0847b",
+    "single_concentration.csv": "5bf429cb438a730d364309394aba8276725b76a70906761cc631a4e2aa31bf80",
+    "tdi.csv": "2ebad28ff5e155dc7de3a7e6e10920e938f559be561ca74f2a7c95dcfdf03a82"
+  },
+  "supplied_train_ids_sha256": "90b8296b8b678f4d9b9fcf770bfe45e6452c9e9fae9790332eecc4cae2fd6067",
+  "parent_fit_ids_sha256": "af8bc4940f904f2568b4927d35013f9957a3dbbd013a7d316d96029cf864f55f",
+  "parent_validation_ids_sha256": "5a05b7862a8c31fce9ea2d060370e266ce216aaced267ea3ca8c4c366dbb5fcc",
+  "query_ids_sha256": "fb0706b39eded19d3ed5213f0249196f07e3ae551e3d44fb5924a331bda54a90",
+  "cohort": "briford529",
+  "fold_index": 1,
+  "base_seed": 42,
+  "parent_effective_seed": 43,
+  "parent_fit_rows": 9684,
+  "official_child_fit_rows": 3500,
+  "best_epoch": 14,
+  "known_caveat": "Parent neural epoch was chosen using this inner validation fold. Its OOF predictions and encoder are not independent of epoch selection; outer query labels remain unused.",
+  "encoder_stage": "message_passing -> aggregation -> BatchNorm",
+  "encoder_eval": true,
+  "encoder_gradients_enabled": false,
+  "feature_shape": [
+    4903,
+    2048
+  ],
+  "feature_asset": {
+    "matrix_path": "/workspace/cyp-night/results/C4_clean_adapted_briford/adapted_tox21_tabpfn_pca100/briford529/seed42/fold1/encoder_features.npy",
+    "sha256": "d9367792f241da4a55c93f3da75c3269ad3512653d64fc731cecb98acb9a9a35",
+    "ids_path": "/workspace/cyp-night/results/C4_clean_adapted_briford/adapted_tox21_tabpfn_pca100/briford529/seed42/fold1/encoder_feature_ids.json",
+    "ids_sha256": "7479167c8a15615913615d6049edf602c621c884acecd28aae54e5eb244f8aef"
+  },
+  "transform_fit_scope": "Supplied official training molecules only; no public auxiliary/query/validation rows",
+  "tabpfn_label_scope": "Observed official primary training labels only; missing labels remain unknown",
+  "source_module_sha256": "a1d0b7a31c88c58a0f91f968d91096c8f557f65ba7617385968408619cd84f80",
+  "child_config_sha256": "0913adae621e7101d762accc1ccf7d2314a1b527a5a5fc9e419b483c5667ad3e",
+  "representation_caveat": "Encoder was supervised on these training molecules; downstream learner fits their in-sample representations. Outer performance, not training fit, determines utility."
+}
