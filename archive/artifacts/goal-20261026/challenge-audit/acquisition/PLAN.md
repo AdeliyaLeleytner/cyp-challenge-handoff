@@ -1,7 +1,0 @@
-# Acquisition repair H0d
-
-Parent delegated acquisition supervision and authorized splitting the stopped200-molecule batch into100, then50 if subsequent uploaded-response losses justify it. Hypothesis: shorter synchronous inference batches reduce exposure to proxy/long-response loss while preserving exact requested structures and web_default120 output semantics. This does not establish a fixed service size limit or prove unusual molecules invalid.
-
-Before network work: verify the old worker is gone, preserve its state and all request evidence, verify no accepted resultURL exists, and check that the selected inputs remain absent from all validated caches. Add an adaptive split only for an unknown uploaded POST after the existing two-reissue cap:200→100→50. Keep the original outcome unknown and explicitly record potential repeated server computation; do not rewrite it as rejected/not-submitted. Do not automatically split smaller than50 or split a known accepted job. One worker lock, unchanged>=4s HTTP-start spacing, fresh user-authorized Shifter sessions, acceptedCSV downloads directly viaen0, and actualRetryAfter precedence remain.
-
-Verification: offline state tests must distinguish known-result recovery, explicit429, pre-origin failures, and cap-exhausted unknown uploads; preserve original input hashes. Then launch one worker at100 and observe validated cache growth. Preserve actual partial/unsupported responses for separate identity-aware salvage, never fabricated zero labels.

@@ -1,1 +1,0 @@
-Reproduce strongest available public TDI methods, compare on frozen own750 andbriford529 plus nativeCV, test improvements andsubmitonlyifqualified. Current user: «давай попробуем заодно поучаствовать в TDI. также проанализируй лучшие решения, воспроизведи их и попробуй улучшить. если получится -- засылай».

@@ -1,1 +1,0 @@
-A optimizer; B regularization/trees; C representations/learnerarchitecture; D assaydata; E loss; F cache/kernelthroughput; G local/pairwiseresidualtransfer; H/K ensemble/compute scale; I publicrecipeengineering; J testoppositeofassumingfinetunebeatsfrozen. Allhypotheses pointtoPLAN/DEEPRESEARCH.

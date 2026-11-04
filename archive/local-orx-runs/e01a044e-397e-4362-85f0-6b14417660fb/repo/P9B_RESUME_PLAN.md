@@ -1,9 +1,0 @@
-# One bounded P9b CPU resume with validator repair
-
-Parent authorizes up to60additionalminutes if the90minute originalbankrun is incomplete, withidentical scientificpins/SMILES/seed42/ETKDGv3/MMFF500/model/last256/CPUfp32/thread4 and no newpaidlease. Do noteditinflightfrozenrun. Waitforits terminalreceipt, thenpinallpersistedinputs/outputs; do notcopywhilemutable.
-
-Independentreview confirms onelegacyCIP falsepositive: OCNT-2315767 atom13legacyS→R afterMMFF whilemodernCIP R/R, graph/chiraltags andorientationunchanged. Newvalidator reconstructs originalreferencegraph withsavedatomorder/exactcoordinates, clearsstaleCIPCode/CIPRank, appliesmodernrdCIPLabeler consistently toreferenceand3D-assignedcopies, comparesoriginalspecifiedchiraltags/orientation andmodernlabels, explicitbondstereo andenhancedgroups. RevalidateALLsavedcoordinatechunks beforeembeddingreuse; anynewgenuineflag stopsandisreported. Preserveoriginalfailureledger/source andallnumericfeatures bitwise.
-
-Reuseonlyverifiedpersistedsuccessfulindex/vector/coordinate triplets withsourcehashes. Retainoriginal5655order andexplicitoutcomeledger. Do notclaim unflushedlastchunk embeddingsrecoverable. Computeonlyfailed/missing/unpersistedrows, neverrecomputepersistedsuccesses. Failedrow3072 hadno originalcoordinatefile becauseitscheckfailedbeforewrite; regenerate exactsamefixedprotocol, savefullprecisioncoordinates, andrecordthislimitation. Neverfeedrounded auditSDFcoordinates orchange seed/conformerpolicy. NoCPU/GPUfeaturemix orencoderchange. Replay smoke32 tolerance1e-5 afterassembly.
-
-Outputisanewbankartifactwithrow-level prior/resume provenance, alloriginalfailedattempts preserved, complete modernchemicalaudit andexactinput/model/runtimepins. No imputation or rowdropping; anyremainingfailedoutcome keepsreadoutgateclosed. Runtimecap3600s, incrementalcheckpoints every100processednewrows. Completebank requiredbeforeTabICLprofile; PCA96/readoutsettings unchanged. Privateonly.

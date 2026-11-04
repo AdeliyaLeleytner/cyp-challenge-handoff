@@ -1,6 +1,6 @@
 # Data Description
 
-This document describes the data used by the selected Direct Inhibition regression model. The broader research archive contains additional experiments; collecting a dataset does not imply that it contributes to the submitted predictor.
+This document describes the data used by the selected Direct Inhibition regression model. Additional experiments are retained separately in a private research archive; collecting a dataset does not imply that it contributes to the submitted predictor.
 
 ## 1. Official task data
 

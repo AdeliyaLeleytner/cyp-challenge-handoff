@@ -1,1 +1,0 @@
-OfficialTRAIN_TDI6145rows,labels2D6/3A4; givenbinarylabels authoritative. Complete6145pool retained,unknownlabels masked. DirectTRAIN usedonlyidentities/Hauserregistry. PublicfrozenADME/CheMeleonweights preservedwithSHA256. SourceDownload metadata andstagingmanifest pinbytes.

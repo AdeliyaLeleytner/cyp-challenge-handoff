@@ -11,6 +11,6 @@ The model predicts direct-inhibition pIC50 for **CYP1A2, CYP2C9, CYP2D6 and CYP3
 
 The report identifies the submitted prediction artifact by its SHA256 and describes its frozen serving procedure. The owner confirmed that this artifact was resubmitted before the deadline. This documentation update does not submit or modify predictions and does not establish a final leaderboard result.
 
-**Documentation updated: 4 November 2026.** This update contains text only; no new model checkpoints, prediction tables or experimental datasets are included. Earlier repository contents are a historical research archive and may describe superseded experiments. The two reports above describe the selected regression model.
+**Documentation updated: 4 November 2026.** This repository contains only the model report and data description. Code, checkpoints, prediction tables and datasets are not included.
 
-This repository is private. Reviewers need explicitly granted repository access. Updating the documentation does not change repository visibility or grant redistribution rights to archived materials.
+This repository is private. Reviewers need explicitly granted repository access. Repository access does not grant redistribution rights to third-party data or pretrained models.
